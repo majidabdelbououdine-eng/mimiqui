@@ -1068,4 +1068,68 @@ els.forEach(function(e,k){e.classList.add('fx');e.style.transitionDelay=(k%4)*70
 document.documentElement.classList.add('fx-on');
 setTimeout(function(){els.forEach(function(e){e.classList.add('fx-vu')})},6000);
 }catch(e){document.documentElement.classList.remove('fx-on')}})();
-</script><script src="site-commun.js" defer></script><script src="accueil-interactif.js" defer></script><p class="pied-legal">Site de fan non officiel &middot; <a href="mentions-legales.html#liens">Liens affili&eacute;s</a> &middot; <a href="mentions-legales.html">Mentions l&eacute;gales</a></p><style>.pied-legal{margin:1.2rem auto 1.4rem;text-align:center;font-size:.72rem;font-weight:300;color:#7a869a;letter-spacing:.02em}.pied-legal a{color:#7a869a;text-decoration:underline}</style></body></html>
+</script><script src="site-commun.js" defer></script><script src="accueil-interactif.js" defer></script><p class="pied-legal">Site de fan non officiel &middot; <a href="mentions-legales.html#liens">Liens affili&eacute;s</a> &middot; <a href="mentions-legales.html">Mentions l&eacute;gales</a></p><style>.pied-legal{margin:1.2rem auto 1.4rem;text-align:center;font-size:.72rem;font-weight:300;color:#7a869a;letter-spacing:.02em}.pied-legal a{color:#7a869a;text-decoration:underline}</style><!-- Fenetre commentaires des fans (hologramme, gauche) -->
+<script src="commentaires-fans.js" defer></script>
+<style>
+#fen-com{position:fixed;left:16px;bottom:16px;width:280px;z-index:8000;border-radius:16px;padding:12px 14px 10px;font:14px/1.45 "Source Sans 3",Arial,sans-serif;
+ background:rgba(255,255,255,.42);background-image:repeating-linear-gradient(0deg,rgba(0,200,255,.06) 0 1px,transparent 1px 4px);
+ -webkit-backdrop-filter:blur(12px) saturate(1.3);backdrop-filter:blur(12px) saturate(1.3);
+ border:1px solid rgba(0,210,255,.75);box-shadow:0 0 14px rgba(0,200,255,.45),0 10px 26px rgba(0,0,0,.18);transition:background-color .3s,color .3s}
+#fen-com::before{content:"";position:absolute;inset:-1px;border-radius:16px;padding:1px;background:linear-gradient(120deg,#00e5ff,#a46bff,#ff5fa2,#ffd76b,#00e5ff);background-size:300% 100%;animation:fc-iri 8s linear infinite;-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none;opacity:.8}
+@keyframes fc-iri{to{background-position:300% 0}}
+#fen-com .fc-tete{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:6px}
+#fen-com .fc-titre{font:800 11px/1.2 "Source Sans 3",Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;margin:0}
+#fen-com .fc-btn{border:1px solid currentColor;background:transparent;color:inherit;border-radius:999px;font:700 11px "Source Sans 3",Arial,sans-serif;padding:2px 9px;cursor:pointer}
+#fen-com .fc-corps{min-height:96px;position:relative}
+#fen-com .fc-q{margin:0 0 6px;font-weight:600;transition:opacity .4s}
+#fen-com .fc-q::before{content:"« "}#fen-com .fc-q::after{content:" »"}
+#fen-com .fc-meta{font-size:12px;margin:0;transition:opacity .4s}
+#fen-com .fc-meta a{color:inherit}
+#fen-com .fc-pied{display:flex;justify-content:space-between;align-items:center;margin-top:8px;font-size:12px}
+#fen-com .fc-pied a{color:inherit;font-weight:700}
+#fen-com .fc-pts{display:flex;gap:4px}#fen-com .fc-pts button{width:20px;height:20px;padding:0;border:0;background:none;color:inherit;cursor:pointer;font-size:14px}
+#fen-com.fc-clair{color:#0b3d91;text-shadow:0 0 1px rgba(255,255,255,.9)}
+#fen-com.fc-clair .fc-titre{color:#0a58ca}
+#fen-com.fc-sombre{color:#f2fbff;background-color:rgba(5,15,30,.5);text-shadow:0 0 6px rgba(0,220,255,.7),0 1px 2px rgba(0,0,0,.8)}
+#fen-com.fc-reduit{width:auto;padding:6px 12px}#fen-com.fc-reduit .fc-corps,#fen-com.fc-reduit .fc-pied{display:none}#fen-com.fc-reduit .fc-tete{margin:0}
+.fc-off{opacity:0}
+@media (max-width:600px){#fen-com{left:10px;bottom:10px;width:calc(100vw - 20px);max-width:340px}#fen-com:not(.fc-reduit){bottom:152px}#fen-com.fc-reduit{max-width:200px}}
+@media (prefers-reduced-motion:reduce){#fen-com::before{animation:none}}
+</style>
+<aside id="fen-com" class="fc-clair" aria-label="Commentaires des fans" aria-live="polite">
+ <div class="fc-tete"><p class="fc-titre">💬 Commentaires des fans <span id="fc-n"></span></p><button type="button" class="fc-btn" id="fc-tog" aria-expanded="true">Réduire</button></div>
+ <div class="fc-corps"><p class="fc-q" id="fc-q"></p><p class="fc-meta" id="fc-meta"></p></div>
+ <div class="fc-pied"><a href="blog.html#fan-form">Laisser un commentaire</a><span class="fc-pts"><button type="button" id="fc-prec" aria-label="Commentaire précédent">‹</button><button type="button" id="fc-suiv" aria-label="Commentaire suivant">›</button></span></div>
+</aside>
+<script>
+(function(){
+var w=document.getElementById("fen-com"),q=document.getElementById("fc-q"),me=document.getElementById("fc-meta"),tog=document.getElementById("fc-tog");
+var C=[],i=0,t=null,K="coin-mimiqui-fencom";
+function esc(s){return String(s==null?"":s).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+function jour(d){var m=/^(\d{4})-(\d{2})-(\d{2})/.exec(d||"");return m?m[3]+"/"+m[2]+"/"+m[1]:""}
+function aff(){if(!C.length){q.textContent="Soyez le premier à laisser un commentaire";q.style.fontStyle="italic";me.textContent="";return}
+ var c=C[i];q.classList.add("fc-off");me.classList.add("fc-off");
+ setTimeout(function(){q.textContent=c.texte_fr||c.texte_original||"";var src=[c.provenance,c.source].filter(Boolean).join(" · "),d=jour(c.date);
+  me.innerHTML="— <b>"+esc(c.pseudo||"Anonyme")+"</b>"+(src?", "+(c.lien?'<a href="'+esc(c.lien)+'" target="_blank" rel="noopener nofollow">'+esc(src)+"</a>":esc(src)):"")+(d?" · "+d:"");
+  q.classList.remove("fc-off");me.classList.remove("fc-off")},250)}
+function go(n){if(!C.length)return;i=(i+n+C.length)%C.length;aff()}
+function auto(){clearInterval(t);if(C.length>1&&!w.classList.contains("fc-reduit"))t=setInterval(function(){go(1)},7000)}
+function fond(){var L=null;try{if(window.__fdFond)L=window.__fdFond(w)}catch(e){}
+ if(L==null){L=matchMedia("(prefers-color-scheme: dark)").matches?0.1:0.9}
+ w.classList.toggle("fc-clair",L>0.55);w.classList.toggle("fc-sombre",L<=0.55)}
+function reduit(r){w.classList.toggle("fc-reduit",r);tog.textContent=r?"Ouvrir":"Réduire";tog.setAttribute("aria-expanded",r?"false":"true");try{localStorage.setItem(K,r?"1":"0")}catch(e){}auto()}
+tog.addEventListener("click",function(){reduit(!w.classList.contains("fc-reduit"))});
+document.getElementById("fc-prec").addEventListener("click",function(){go(-1);auto()});
+document.getElementById("fc-suiv").addEventListener("click",function(){go(1);auto()});
+w.addEventListener("mouseenter",function(){clearInterval(t)});w.addEventListener("mouseleave",auto);
+function init(){C=(window.COMMENTAIRES_FANS||[]).filter(function(c){return c&&(c.texte_fr||c.texte_original)});
+ C=C.map(function(c,k){return{c:c,k:k}}).sort(function(x,y){var a=x.c.date||"",b=y.c.date||"";return a===b?x.k-y.k:(a<b?1:-1)}).map(function(o){return o.c});
+ document.getElementById("fc-n").textContent=C.length?"("+C.length+")":"";
+ var s=null;try{s=localStorage.getItem(K)}catch(e){}
+ reduit(s==="1"||(s===null&&innerWidth<=600));aff();fond();setTimeout(fond,800);setTimeout(fond,2500)}
+var r=0;addEventListener("scroll",function(){if(!r){r=1;requestAnimationFrame(function(){r=0;fond()})}},{passive:true});
+addEventListener("resize",fond);matchMedia("(prefers-color-scheme: dark)").addEventListener&&matchMedia("(prefers-color-scheme: dark)").addEventListener("change",fond);
+if(document.readyState==="complete")init();else addEventListener("load",init);
+})();
+</script>
+</body></html>
