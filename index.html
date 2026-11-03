@@ -408,7 +408,7 @@ fieldset.champ { border: 0; margin: 0; padding: 0 }
     </div>
     <a class="cartes-btn" href="cartes.html">Voir les cartes</a>
     <button type="button" class="aide-btn" id="aide-ouvrir" aria-haspopup="dialog">Aide</button>
-    <ul class="menu-principal" id="menu-principal"><li><a href="index.html">Accueil</a></li><li><a href="blog.html">Blog</a></li><li><a href="cartes.html">Cartes</a><button type="button" class="ouvre-sous" aria-expanded="false" aria-label="Sous-menu Cartes">&#9662;</button><ul class="sous-menu"><li class="sm-groupe"><button type="button" class="sm-tog" aria-expanded="false">Cartes Mimiqui <span class="sm-fl" aria-hidden="true">&#9656;</span></button><ul class="sm-sous"><li><a href="cartes.html">Cartes fran&ccedil;aises</a></li><li><a href="cartes-japonaises.html">Cartes japonaises</a></li><li><a href="cartes-anglaises.html">Cartes anglaises</a></li></ul></li><li><a href="cartes-pokemon.html">Cartes Pok&eacute;mon</a></li><li><a href="equilibre-parfait.html">&Eacute;quilibre Parfait</a></li><li><a href="equilibre-parfait-ventes.html">&Eacute;quilibre Parfait, ventes eBay</a></li><li><a href="trentieme-anniversaire.html">30<sup>e</sup> Anniversaire</a></li><li><a href="trentieme-anniversaire-ventes.html">30<sup>e</sup> Anniversaire, ventes eBay</a></li></ul></li><li><a href="cotation.html">Prix</a><button type="button" class="ouvre-sous" aria-expanded="false" aria-label="Sous-menu Prix">&#9662;</button><ul class="sous-menu"><li><a href="cotation.html">Cotation</a></li><li><a href="registre.html">Registre des ventes pass&eacute;es</a></li><li><a href="registre-pokemon.html">Registre des cartes pass&eacute;es</a></li><li><a href="adjuge.html">Adjug&eacute;</a></li></ul></li><li><a href="boutique.html">Acheter</a><button type="button" class="ouvre-sous" aria-expanded="false" aria-label="Sous-menu Acheter">&#9662;</button><ul class="sous-menu"><li><a href="boutique.html">Boutique</a></li><li><a href="jeu.html#boosters">Boosters</a></li></ul></li><li><a href="vendre.html">Vendre sur eBay</a></li></ul>
+    <ul class="menu-principal" id="menu-principal"><li><a href="index.html">Accueil</a></li><li><a href="blog.html">Blog</a></li><li><a href="cartes.html">Cartes</a><button type="button" class="ouvre-sous" aria-expanded="false" aria-label="Sous-menu Cartes">&#9662;</button><ul class="sous-menu"><li class="sm-groupe"><button type="button" class="sm-tog" aria-expanded="false">Spécial Mimiqui <span class="sm-fl" aria-hidden="true">&#9656;</span></button><ul class="sm-sous"><li><a href="cartes.html">Cartes fran&ccedil;aises</a></li><li><a href="cartes-japonaises.html">Cartes japonaises</a></li><li><a href="cartes-anglaises.html">Cartes anglaises</a></li></ul></li><li><a href="cartes-pokemon.html">1025 Pok&eacute;mon</a></li><li><a href="equilibre-parfait-ventes.html">&Eacute;quilibre Parfait</a></li><li><a href="trentieme-anniversaire-ventes.html">30<sup>e</sup> Anniversaire</a></li><li><a href="chaos-ascendant-ventes.html">Chaos Ascendant</a></li></ul></li><li><a href="cotation.html">Prix</a><button type="button" class="ouvre-sous" aria-expanded="false" aria-label="Sous-menu Prix">&#9662;</button><ul class="sous-menu"><li><a href="cotation.html">Cotation</a></li><li><a href="registre.html">Registre des ventes pass&eacute;es</a></li><li><a href="registre-pokemon.html">Registre des cartes pass&eacute;es</a></li><li><a href="adjuge.html">Adjug&eacute;</a></li></ul></li><li><a href="boutique.html">Acheter</a><button type="button" class="ouvre-sous" aria-expanded="false" aria-label="Sous-menu Acheter">&#9662;</button><ul class="sous-menu"><li><a href="boutique.html">Boutique</a></li><li><a href="jeu.html#boosters">Boosters</a></li><li><a href="cartes-psa10.html">Cartes PSA 10</a></li></ul></li><li><a href="vendre.html">Vendre sur eBay</a></li></ul>
   </nav>
 </header>
 <section class="wrap accueil-recherche recherche-petite" aria-label="Recherche">
@@ -434,6 +434,47 @@ fieldset.champ { border: 0; margin: 0; padding: 0 }
     </div>
   </div>
 </section>
+<style>
+#psa-rub{position:fixed;top:calc(var(--psa-top,5cm));left:1.5cm;z-index:7000;font:700 14px/1 "Source Sans 3",Arial,sans-serif}
+#psa-rub>button{display:inline-flex;align-items:center;gap:6px;cursor:pointer;border-radius:999px;padding:10px 16px;text-transform:uppercase;letter-spacing:.08em;font:800 13px/1 "Source Sans 3",Arial,sans-serif;
+ color:#0b3d91;background:rgba(255,255,255,.6);background-image:repeating-linear-gradient(0deg,rgba(0,200,255,.06) 0 1px,transparent 1px 4px);-webkit-backdrop-filter:blur(12px) saturate(1.3);backdrop-filter:blur(12px) saturate(1.3);
+ border:1px solid rgba(0,210,255,.8);box-shadow:0 0 12px rgba(0,200,255,.45);transition:background .15s,box-shadow .15s,color .15s}
+#psa-rub>button:hover,#psa-rub.ouvert>button{box-shadow:0 0 18px rgba(0,200,255,.75);color:#0a58ca}
+#psa-rub ul{visibility:hidden;opacity:0;pointer-events:none;position:absolute;top:100%;left:0;margin:6px 0 0;padding:.5rem 0;list-style:none;min-width:13rem;border-radius:12px;
+ background:rgba(255,255,255,.6);background-image:repeating-linear-gradient(0deg,rgba(0,200,255,.06) 0 1px,transparent 1px 4px);-webkit-backdrop-filter:blur(12px) saturate(1.3);backdrop-filter:blur(12px) saturate(1.3);
+ border:1px solid rgba(0,210,255,.8);box-shadow:0 0 14px rgba(0,200,255,.45),0 10px 30px rgba(0,0,0,.18);transition:opacity .15s ease,visibility 0s linear .15s}
+#psa-rub ul::before{content:"";position:absolute;left:0;right:0;top:-10px;height:10px}
+#psa-rub.droite ul{top:0;left:100%;margin:0 0 0 8px}#psa-rub.droite ul::before{top:0;bottom:0;left:-10px;width:10px;height:auto;right:auto}
+#psa-rub:hover ul,#psa-rub:focus-within ul,#psa-rub.ouvert ul{visibility:visible;opacity:1;pointer-events:auto;transition:opacity .15s ease,visibility 0s}
+#psa-rub ul{max-height:calc(100vh - var(--psa-top,5cm) - 60px);overflow:auto}
+#psa-rub ul a{display:block;padding:.5rem 1rem;text-decoration:none;white-space:nowrap;font-weight:800;color:#0b3d91;text-shadow:0 0 1px rgba(255,255,255,.9)}
+#psa-rub ul a:hover,#psa-rub ul a:focus{background:rgba(0,200,255,.15);color:#0a58ca}
+#psa-rub.pr-sombre>button,#psa-rub.pr-sombre ul{background-color:rgba(5,15,30,.6)}
+#psa-rub.pr-sombre>button,#psa-rub.pr-sombre ul a{color:#f2fbff;text-shadow:0 0 6px rgba(0,220,255,.8),0 1px 2px rgba(0,0,0,.8)}
+.psa-lien{display:none}
+@media (max-width:600px){#psa-rub{display:none}.psa-lien{display:block;margin-top:18px}
+ .psa-lien a{display:block;text-align:center;padding:12px 16px;border-radius:14px;font-weight:800;color:#0b3d91;text-decoration:none;background:rgba(255,255,255,.9);background-image:repeating-linear-gradient(0deg,rgba(0,200,255,.06) 0 1px,transparent 1px 4px);border:1px solid rgba(0,210,255,.8);box-shadow:0 0 12px rgba(0,200,255,.35)}}
+</style>
+<div id="psa-rub"><button type="button" aria-expanded="false" aria-controls="psa-rub-l">Cartes PSA 10 <span aria-hidden="true">&#9662;</span></button>
+<ul id="psa-rub-l"><li><a href="cartes-psa10.html">Toutes les PSA 10</a></li><li><a href="cartes-psa10.html?serie=equilibre-parfait">&Eacute;quilibre Parfait</a></li><li><a href="cartes-psa10.html?serie=chaos-ascendant">Chaos Ascendant</a></li><li><a href="cartes-psa10.html?serie=30e-anniversaire">30<sup>e</sup> Anniversaire</a></li><li><a href="cartes-psa10.html?serie=mimiqui">Mimiqui</a></li></ul></div>
+<section class="wrap psa-lien" aria-label="Cartes PSA 10"><a href="cartes-psa10.html">Cartes PSA 10 : records de vente et bonnes affaires &rarr;</a></section>
+<script>
+(function(){var r=document.getElementById("psa-rub");if(!r)return;var b=r.querySelector("button"),u=r.querySelector("ul");
+function place(){r.classList.remove("droite");var c=document.getElementById("fen-com"),bb=b.getBoundingClientRect(),bas=bb.bottom+6+u.offsetHeight;
+ var lim=innerHeight-8;if(c&&getComputedStyle(c).display!=="none"){var cr=c.getBoundingClientRect();if(cr.left<bb.left+u.offsetWidth)lim=Math.min(lim,cr.top-8)}
+ if(bas>lim)r.classList.add("droite")}
+function fond(){if(!window.__fdFond)return;try{var L=window.__fdFond(b);r.classList.toggle("pr-sombre",L<=0.4)}catch(e){}}
+function ouvre(o){r.classList.toggle("ouvert",o);b.setAttribute("aria-expanded",o?"true":"false");if(o){place();fond()}}
+b.addEventListener("click",function(e){e.stopPropagation();ouvre(!r.classList.contains("ouvert"))});
+r.addEventListener("mouseenter",function(){place();fond()});
+document.addEventListener("click",function(e){if(!r.contains(e.target))ouvre(false)});
+document.addEventListener("keydown",function(e){if(e.key==="Escape"&&r.classList.contains("ouvert")){ouvre(false);b.focus()}});
+var t=0;addEventListener("scroll",function(){if(!t){t=1;requestAnimationFrame(function(){t=0;fond()})}},{passive:true});
+function haut(){var h=document.querySelector("header.site, header.wrap, header");if(!h)return;var cm=5*96/2.54,y=Math.max(cm,h.getBoundingClientRect().bottom+2);r.style.setProperty("--psa-top",Math.round(y)+"px");if(r.classList.contains("ouvert"))place()}
+haut();addEventListener("scroll",haut,{passive:true});addEventListener("resize",haut);if(window.ResizeObserver){var hh=document.querySelector("header.site, header.wrap, header");if(hh)new ResizeObserver(haut).observe(hh)}
+var hi=setInterval(haut,400);setTimeout(function(){clearInterval(hi)},12000);if(window.ResizeObserver)new ResizeObserver(haut).observe(document.body);
+addEventListener("load",function(){haut();setTimeout(fond,600)});})();
+</script>
 
 <section class="wrap accueil-tuiles" aria-label="Rubriques principales">
   <a href="cartes.html"><span class="ico" aria-hidden="true">&#127183;</span><strong>Cartes</strong><span class="d">Cartes FR, JA, EN et les 1025 Pok&eacute;mon</span></a>
@@ -1099,7 +1140,7 @@ setTimeout(function(){els.forEach(function(e){e.classList.add('fx-vu')})},6000);
 <aside id="fen-com" class="fc-clair" aria-label="Commentaires des fans" aria-live="polite">
  <div class="fc-tete"><p class="fc-titre">💬 Commentaires des fans <span id="fc-n"></span></p><button type="button" class="fc-btn" id="fc-tog" aria-expanded="true">Réduire</button></div>
  <div class="fc-corps"><p class="fc-q" id="fc-q"></p><p class="fc-meta" id="fc-meta"></p></div>
- <div class="fc-pied"><a href="blog.html#fan-form">Laisser un commentaire</a><span class="fc-pts"><button type="button" id="fc-prec" aria-label="Commentaire précédent">‹</button><button type="button" id="fc-suiv" aria-label="Commentaire suivant">›</button></span></div>
+ <div class="fc-pied"><a href="blog.html#fan-form" id="fc-laisser" role="button">Laisser un commentaire</a><span class="fc-pts"><button type="button" id="fc-prec" aria-label="Commentaire précédent">‹</button><button type="button" id="fc-suiv" aria-label="Commentaire suivant">›</button></span></div>
 </aside>
 <script>
 (function(){
@@ -1113,7 +1154,7 @@ function aff(){if(!C.length){q.textContent="Soyez le premier à laisser un comme
   me.innerHTML="— <b>"+esc(c.pseudo||"Anonyme")+"</b>"+(src?", "+(c.lien?'<a href="'+esc(c.lien)+'" target="_blank" rel="noopener nofollow">'+esc(src)+"</a>":esc(src)):"")+(d?" · "+d:"");
   q.classList.remove("fc-off");me.classList.remove("fc-off")},250)}
 function go(n){if(!C.length)return;i=(i+n+C.length)%C.length;aff()}
-function auto(){clearInterval(t);if(C.length>1&&!w.classList.contains("fc-reduit"))t=setInterval(function(){go(1)},7000)}
+function auto(){clearInterval(t);if(C.length>1&&!w.classList.contains("fc-reduit"))t=setInterval(function(){if(!window.__fcPause)go(1)},7000)}
 function fond(){var L=null;try{if(window.__fdFond)L=window.__fdFond(w)}catch(e){}
  if(L==null){L=matchMedia("(prefers-color-scheme: dark)").matches?0.1:0.9}
  w.classList.toggle("fc-clair",L>0.55);w.classList.toggle("fc-sombre",L<=0.55)}
@@ -1130,6 +1171,63 @@ function init(){C=(window.COMMENTAIRES_FANS||[]).filter(function(c){return c&&(c
 var r=0;addEventListener("scroll",function(){if(!r){r=1;requestAnimationFrame(function(){r=0;fond()})}},{passive:true});
 addEventListener("resize",fond);matchMedia("(prefers-color-scheme: dark)").addEventListener&&matchMedia("(prefers-color-scheme: dark)").addEventListener("change",fond);
 if(document.readyState==="complete")init();else addEventListener("load",init);
+})();
+</script>
+<style>
+#fc-q,#fc-meta{cursor:pointer}
+#cp-ov{position:fixed;inset:0;z-index:9500;display:none;align-items:center;justify-content:center;background:rgba(5,15,30,.35);backdrop-filter:blur(2px)}
+#cp-ov.ouvert{display:flex}
+#cp-box{position:relative;width:360px;height:360px;max-width:calc(100vw - 24px);box-sizing:border-box;padding:18px 18px 14px;border-radius:16px;background:linear-gradient(135deg,rgba(255,255,255,.42),rgba(200,240,255,.30));-webkit-backdrop-filter:blur(10px) saturate(1.3);backdrop-filter:blur(10px) saturate(1.3);border:1px solid rgba(0,200,255,.5);text-shadow:0 0 2px rgba(255,255,255,.95);box-shadow:0 0 22px rgba(0,200,255,.55),inset 0 0 22px rgba(0,220,255,.15);color:#0b3d91;font:14px/1.4 "Source Sans 3",Arial,sans-serif;display:flex;flex-direction:column}
+#cp-box h2{margin:0 0 10px;font:800 13px/1.2 "Source Sans 3",Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#0a58ca}
+#cp-x{position:absolute;top:8px;right:10px;width:28px;height:28px;border:1px solid rgba(0,120,200,.5);border-radius:50%;background:rgba(255,255,255,.7);color:#0b3d91;font-size:18px;line-height:1;cursor:pointer}
+#cp-f{display:flex;flex-direction:column;gap:6px;flex:1;min-height:0}
+#cp-f label{font-weight:800}
+#cp-f input[type=text],#cp-f textarea{width:100%;box-sizing:border-box;padding:8px 10px;border-radius:10px;border:1px solid rgba(0,170,220,.8);background:rgba(255,255,255,.9);color:#0b3d91;font:inherit}
+#cp-f textarea{flex:1;min-height:70px;resize:none}
+#cp-f button[type=submit]{align-self:flex-start;padding:8px 22px;border:0;border-radius:999px;font-weight:800;color:#fff;background:linear-gradient(90deg,#0b3d91,#00a8d6);box-shadow:0 0 12px rgba(0,200,255,.5);cursor:pointer}
+#cp-f button:disabled{opacity:.6;cursor:wait}
+.cp-hp{position:absolute;left:-9999px;opacity:0;height:0;width:0}
+#cp-st{margin:0;font-size:13px;font-weight:700;min-height:1.2em}#cp-st.ok{color:#0a7a3a}#cp-st.err{color:#b00020}
+#cp-box::before{content:"";position:absolute;inset:-1px;border-radius:16px;padding:1.5px;background:linear-gradient(120deg,#00e5ff,#a46bff,#ff5fa2,#ffd76b,#00e5ff);background-size:300% 100%;animation:fc-iri 8s linear infinite;-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
+@media(min-width:601px){#cp-box{transform:translateX(max(-4cm,calc(180px + 12px - 50vw)))}}
+@media(max-width:600px){#cp-box{width:calc(100vw - 24px);height:auto;min-height:340px}}
+</style>
+<div id="cp-ov" aria-hidden="true"><div id="cp-box" role="dialog" aria-modal="true" aria-labelledby="cp-t">
+<button type="button" id="cp-x" aria-label="Fermer">×</button>
+<h2 id="cp-t">💬 Laisse ton commentaire</h2>
+<form id="cp-f" novalidate>
+<input type="hidden" name="access_key" value="c8f600de-749f-4654-9435-5e034ccd29f1">
+<input type="hidden" name="subject" value="Nouveau message de fan &ndash; Le Repaire des Fans">
+<input type="hidden" name="from_name" value="Le Repaire des Fans">
+<input type="checkbox" name="botcheck" class="cp-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+<label for="cp-pseudo">Pseudo</label>
+<input id="cp-pseudo" type="text" name="name" required maxlength="40" placeholder="Ton pseudo de fan">
+<label for="cp-msg">Commentaire</label>
+<textarea id="cp-msg" name="message" required maxlength="600" placeholder="Ton commentaire (600 caractères max)"></textarea>
+<button type="submit">Envoyer</button>
+<p id="cp-st" role="status" aria-live="polite"></p>
+</form></div></div>
+<script>
+(function(){
+var ov=document.getElementById("cp-ov"),f=document.getElementById("cp-f"),st=document.getElementById("cp-st"),bt=f.querySelector("button[type=submit]"),dern=null;
+function ouvrir(){dern=document.activeElement;window.__fcPause=true;ov.classList.add("ouvert");ov.setAttribute("aria-hidden","false");st.textContent="";st.className="";setTimeout(function(){document.getElementById("cp-pseudo").focus()},30)}
+function fermer(){ov.classList.remove("ouvert");ov.setAttribute("aria-hidden","true");window.__fcPause=false;if(dern&&dern.focus)try{dern.focus()}catch(e){}}
+["fc-q","fc-meta"].forEach(function(id){var el=document.getElementById(id);if(el)el.addEventListener("click",function(e){if(e.target.closest("a"))return;ouvrir()})});
+var lb=document.getElementById("fc-laisser");if(lb)lb.addEventListener("click",function(e){e.preventDefault();ouvrir()});
+document.getElementById("cp-x").addEventListener("click",fermer);
+ov.addEventListener("click",function(e){if(e.target===ov)fermer()});
+document.addEventListener("keydown",function(e){if(e.key==="Escape"&&ov.classList.contains("ouvert"))fermer()});
+f.addEventListener("submit",function(ev){ev.preventDefault();
+ if(!f.checkValidity()){st.className="err";st.textContent="Remplis ton pseudo et ton commentaire.";return}
+ if(f.botcheck.checked)return;
+ var d={};new FormData(f).forEach(function(v,k){if(k!=="botcheck")d[k]=v});d.botcheck=false;
+ bt.disabled=true;st.className="";st.textContent="Envoi en cours…";
+ fetch("https://api.web3forms.com/submit",{method:"POST",headers:{"Content-Type":"application/json","Accept":"application/json"},body:JSON.stringify(d)})
+ .then(function(r){return r.json()})
+ .then(function(j){if(j&&j.success){st.className="ok";st.textContent="Merci ! Ton commentaire sera affiché après validation.";f.reset()}else{throw 0}})
+ .catch(function(){st.className="err";st.textContent="Oups, le commentaire n’est pas parti. Réessaie dans un instant."})
+ .then(function(){bt.disabled=false});
+});
 })();
 </script>
 </body></html>

@@ -459,3 +459,8 @@ nav ul.menu-principal .sm-groupe.sm-ouvert>ul.sm-sous{visibility:visible;opacity
 nav ul.menu-principal>li:has(>a[href="cotation.html"])>ul.sous-menu,
 nav ul.menu-principal>li:has(>a[href="boutique.html"])>ul.sous-menu{left:auto!important;right:0!important}
 }
+
+/* Debordement horizontal : la bande holo pleine largeur (header::before, left/right -1280px) elargissait la page a 2510px. On coupe au bord de la fenetre sans changer l affichage (2026-11-03) */
+html{overflow-x:hidden}
+body{overflow-x:hidden}
+@supports (overflow:clip){html,body{overflow-x:clip}}
