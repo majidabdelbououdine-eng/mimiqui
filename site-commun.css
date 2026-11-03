@@ -350,3 +350,82 @@ dialog.aide a{color:#8ff3ff!important;text-decoration:underline}
 dialog.aide li::marker{color:#00e5ff}
 dialog.aide .btn{background:rgba(0,229,255,.12)!important;color:#fff!important;border:1px solid rgba(0,229,255,.75)!important;box-shadow:0 0 12px rgba(0,229,255,.35);opacity:.85;cursor:pointer;text-shadow:0 0 6px rgba(0,229,255,.7)}
 dialog.aide .btn:hover{opacity:1;background:rgba(0,229,255,.25)!important}@media (max-width:600px){html,body{overflow-x:clip}}
+
+/* ===== Fenetre defilante : a droite, 10 cm x 6 cm (2026-11-02) ===== */
+html body #fenetre-defilante{position:fixed!important;left:auto!important;right:16px!important;top:96px!important;bottom:auto!important;transform:none!important;width:378px!important;height:227px!important;max-width:calc(100vw - 32px)!important;max-height:calc(100vh - 300px)!important;z-index:7900}
+html body #fenetre-defilante p{font-weight:300}
+html body #fenetre-defilante p b,html body #fenetre-defilante .fd-titre,html body #fenetre-defilante .fd-tag,html body #fenetre-defilante .fd-date{font-weight:800}
+html body #fenetre-defilante .fd-titre{font-size:1.45rem}
+html body #fd-rouvrir{position:fixed;right:12px;top:96px;bottom:auto;left:auto;z-index:7900}
+@media (max-width:600px){html body #fenetre-defilante{right:8px!important;top:70px!important;width:calc(100vw - 16px)!important;height:180px!important}}
+/* pokemon.html : sans hologramme */
+html body #fenetre-defilante.fd-simple{background:#fff!important;border:1px solid #0b3d91!important;box-shadow:0 2px 10px rgba(0,0,0,.2)!important;animation:none!important;pointer-events:auto}
+html body #fenetre-defilante.fd-simple::after{display:none!important}
+html body #fenetre-defilante.fd-simple p,html body #fenetre-defilante.fd-simple p b,html body #fenetre-defilante.fd-simple .fd-tag{color:#0b3d91!important;text-shadow:none!important}
+html body #fenetre-defilante.fd-simple .fd-titre em{color:#c8102e!important}
+html body #fenetre-defilante.fd-simple .fd-fermer{background:#fff!important;color:#0b3d91!important;border-color:#0b3d91!important;box-shadow:none!important;opacity:1}
+/* ===== Video flottante : moins d'hologramme, toujours aussi nette qu'au survol (2026-11-02) ===== */
+html body #mini-teaser,html body #mini-teaser:hover{opacity:.85!important;animation:none!important;border:1px solid rgba(120,230,255,.45)!important;box-shadow:0 0 6px rgba(0,200,255,.3),0 4px 14px rgba(0,0,0,.25)!important}
+html body #mini-teaser::before{opacity:.35}
+html body #mini-teaser .mt-video::after{background:repeating-linear-gradient(0deg,rgba(0,230,255,.025) 0 1px,transparent 1px 4px)!important}
+html body #mini-teaser .mt-video iframe{filter:none!important}
+/* ===== Infos du film toujours en bleu, comme l'accueil (2026-11-02) ===== */
+html body #fenetre-defilante{background:rgba(255,255,255,.14)!important;border-color:rgba(11,61,145,.45)!important}
+html body #fenetre-defilante::after{background:repeating-linear-gradient(0deg,rgba(11,61,145,.04) 0 1px,transparent 1px 3px)!important}
+html body #fenetre-defilante p,html body #fenetre-defilante p b,html body #fenetre-defilante .fd-titre,html body #fenetre-defilante .fd-date{color:#0b3d91!important;text-shadow:0 0 2px #fff,0 0 5px #fff,0 0 10px rgba(255,255,255,.85)!important}
+html body #fenetre-defilante .fd-tag{color:#0a58ca!important}
+html body #fenetre-defilante .fd-titre em{color:#c8102e!important}
+html body #fenetre-defilante .fd-fermer{background:rgba(255,255,255,.75)!important;color:#0b3d91!important;border-color:rgba(11,61,145,.6)!important}
+/* ===== Teaser en grand au milieu (2026-11-02) ===== */
+#mt-fond{position:fixed;inset:0;z-index:100002;background:rgba(2,12,24,.72);-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px);animation:mt-fond-in .35s ease}
+@keyframes mt-fond-in{from{opacity:0}to{opacity:1}}
+html body #mini-teaser.mt-grand{position:fixed!important;left:50%!important;right:auto!important;top:56%!important;bottom:auto!important;width:min(80vw,960px)!important;transform:translate(-50%,-50%);opacity:1!important;z-index:100003!important;border:1px solid rgba(120,230,255,.7)!important;box-shadow:0 0 24px rgba(0,210,255,.55),0 20px 60px rgba(0,0,0,.6)!important;border-radius:14px}
+html body #mini-teaser.mt-grand .mt-video{max-height:calc(80vh - 40px)}
+html body #mini-teaser.mt-grand .mt-titre{font-size:1rem}
+#mini-teaser .mt-grand-btn{flex:none;margin-left:auto;margin-right:.3rem;background:rgba(0,170,220,.45);color:#fff;border:0;border-radius:999px;padding:.15rem .55rem;font-size:.72rem;font-weight:700;cursor:pointer}
+#mini-teaser.mt-grand .mt-grand-btn,#mini-teaser.mt-grand .mt-taille{display:none}
+#mini-teaser .mt-fermer-grand{position:absolute;top:-16px;right:-16px;z-index:6;width:38px;height:38px;border-radius:50%;border:1px solid rgba(120,230,255,.8);background:#06263c;color:#fff;font-size:1.4rem;line-height:1;cursor:pointer;box-shadow:0 0 12px rgba(0,220,255,.7)}
+html body #mini-teaser.mt-grand{overflow:visible!important}
+html body #mini-teaser.mt-grand .mt-video{overflow:hidden;border-radius:0 0 14px 14px}
+@media (max-width:600px){html body #mini-teaser.mt-grand{width:94vw!important;top:52%!important}#mini-teaser .mt-fermer-grand{top:-44px;right:0}}
+html body #mini-teaser.mt-grand{background:#000!important}html body #mini-teaser.mt-grand .mt-video{background:#000}
+
+#mini-teaser video#mini-teaser-yt{object-fit:contain;background:#000;cursor:pointer}html body #mini-teaser.mt-grand video#mini-teaser-yt{cursor:auto}
+
+/* Video flottante plus transparente (2026-11-02) */
+html body #mini-teaser:not(.mt-grand),html body #mini-teaser:not(.mt-grand):hover{opacity:.65!important}
+html body #mini-teaser:not(.mt-grand) .mt-barre{background:linear-gradient(90deg,rgba(0,90,130,.3),rgba(0,120,140,.25))!important;text-shadow:0 1px 2px #000,0 0 4px rgba(0,0,0,.9)!important}
+html body #mini-teaser:not(.mt-grand) .mt-titre{color:#fff!important;font-weight:800}
+html body #mini-teaser:not(.mt-grand) .mt-taille,html body #mini-teaser:not(.mt-grand) .mt-grand-btn{background:rgba(0,60,100,.7)!important;color:#fff!important}
+
+/* === Mobile 390px (pre-publication) === */
+@media (max-width:600px){
+  html,body{overflow-x:hidden;max-width:100%}
+  img,video,iframe,table{max-width:100%;height:auto}
+  h1,h2,h3{overflow-wrap:anywhere;word-break:normal}
+  #fenetre-defilante,.rf-droite,.rf-bas{display:none!important}
+  #mini-teaser{width:160px!important;height:auto!important;right:8px!important;bottom:8px!important}
+  #mini-teaser.mt-grand,.mt-grand{width:94vw!important;max-width:94vw!important;left:3vw!important;right:auto!important}
+  nav ul,nav{flex-wrap:wrap}
+}
+/* === Bande video : cadre seul, transparent === */
+#mini-teaser .mt-barre,#mini-teaser .mt-barre::before,#mini-teaser .mt-barre::after{background:transparent!important;background-image:none!important;box-shadow:none!important;filter:none!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+#mini-teaser .mt-barre{border:1px solid rgba(120,200,255,.75)!important;color:#fff!important;text-shadow:0 1px 3px rgba(0,0,0,.95),0 0 2px rgba(0,0,0,.9)!important}
+#mini-teaser .mt-barre *{text-shadow:0 1px 3px rgba(0,0,0,.95),0 0 2px rgba(0,0,0,.9)!important}
+#mini-teaser .mt-barre button,#mini-teaser .mt-barre a{background:transparent!important;box-shadow:none!important;border:1px solid rgba(120,200,255,.75)!important;color:#fff!important}
+/* === Bande video v2 : cadre seul (specificite html body + id) === */
+html body div#mini-teaser:not(.mt-grand){background:transparent!important}
+html body div#mini-teaser:not(.mt-grand) .mt-barre,html body div#mini-teaser:not(.mt-grand) .mt-barre::before,html body div#mini-teaser:not(.mt-grand) .mt-barre::after{background:transparent!important;background-image:none!important;box-shadow:none!important;filter:none!important;backdrop-filter:none!important}
+html body div#mini-teaser:not(.mt-grand) .mt-barre{border-bottom:1px solid rgba(120,200,255,.75)!important;color:#fff!important;text-shadow:0 1px 3px #000,0 0 3px rgba(0,0,0,.95)!important}
+html body div#mini-teaser:not(.mt-grand) .mt-taille,html body div#mini-teaser:not(.mt-grand) .mt-grand-btn{background:transparent!important;box-shadow:none!important;border:1px solid rgba(120,200,255,.75)!important;color:#fff!important;text-shadow:0 1px 3px #000!important}
+/* === Entree / sortie hologramme (classe posee par JS, jamais cache sans JS) === */
+html.h5-in body{animation:h5entree .7s ease-out both}
+html.h5-in body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:100005;background:linear-gradient(180deg,transparent 0,rgba(0,230,255,.0) 40%,rgba(0,230,255,.35) 50%,transparent 60%),repeating-linear-gradient(0deg,rgba(0,230,255,.08) 0 1px,transparent 1px 3px);background-size:100% 200%,100% 100%;animation:h5balaye .7s ease-out forwards}
+@keyframes h5entree{0%{opacity:0;transform:scale(.985);filter:brightness(1.4) hue-rotate(-10deg)}30%{opacity:.6}38%{opacity:.35}55%{opacity:.9}100%{opacity:1;transform:none;filter:none}}
+@keyframes h5balaye{0%{background-position:0 100%,0 0;opacity:1}100%{background-position:0 -100%,0 0;opacity:0}}
+html.h5-out body{animation:h5sortie .3s ease-in forwards}
+@keyframes h5sortie{0%{opacity:1}40%{opacity:.6}55%{opacity:.85}100%{opacity:.15;transform:scale(.99);filter:brightness(1.5)}}
+@media(prefers-reduced-motion:reduce){html.h5-in body,html.h5-out body{animation:none!important}html.h5-in body::after{display:none}}
+/* Video coin : pas de bouton play rouge, clic sur l'image = grand ecran */
+html body #mini-teaser .mt-play{display:none!important}
+html body #mini-teaser:not(.mt-grand) .mt-video{cursor:pointer}

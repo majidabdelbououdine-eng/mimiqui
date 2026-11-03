@@ -1,0 +1,31 @@
+/* holo5 : 5 hologrammes legers (pas sur pokemon.html) */
+.h5-holo{position:relative;display:inline-block;isolation:isolate}
+.h5-holo img,.h5-holo video{display:block;filter:drop-shadow(0 0 6px rgba(0,230,255,.9)) sepia(1) hue-rotate(150deg) saturate(3) brightness(1.15);opacity:.78;mix-blend-mode:normal}
+.h5-holo::after{content:"";position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(0deg,rgba(0,230,255,.22) 0 1px,transparent 1px 3px);-webkit-mask:var(--h5m);mask:var(--h5m);-webkit-mask-size:contain;mask-size:contain;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-position:center;mask-position:center}
+.h5-socle{position:absolute;left:50%;bottom:-10px;width:120%;height:14px;transform:translateX(-50%);border-radius:50%;background:radial-gradient(ellipse at center,rgba(0,240,255,.9),rgba(0,160,255,.35) 45%,transparent 72%);filter:blur(1px);z-index:-1}
+.h5-faisceau{position:absolute;left:10%;right:10%;bottom:-4px;top:15%;background:linear-gradient(0deg,rgba(0,230,255,.35),transparent);clip-path:polygon(30% 100%,70% 100%,100% 0,0 0);z-index:-1;pointer-events:none}
+.h5-anim{animation:h5flot 4.5s ease-in-out infinite,h5flick 3.2s steps(1) infinite}
+@keyframes h5flot{0%,100%{transform:translateY(0) rotateY(-14deg)}50%{transform:translateY(-6px) rotateY(14deg)}}
+@keyframes h5flick{0%,100%{opacity:1}47%{opacity:.82}49%{opacity:1}83%{opacity:.9}}
+/* 1 accueil */
+.h5-mimi-titre{height:1.25em;vertical-align:middle;margin-left:.35em;perspective:400px}
+.h5-mimi-titre img{height:1.25em;width:auto}
+/* 2 cartes : projection */
+.h5-lift{transition:transform .25s ease,box-shadow .25s ease}
+.h5-lift.h5-on{transform:translateY(-8px)!important;box-shadow:0 0 16px rgba(0,220,255,.55)!important}
+#h5-proj{position:fixed;z-index:9000;pointer-events:none;width:90px;opacity:0;transition:opacity .2s;perspective:400px}
+#h5-proj.on{opacity:1}#h5-proj img{width:90px;height:auto;border-radius:5px}
+/* 3 blog hero */
+.tete{position:relative}
+.h5-film{position:absolute!important;right:1.4rem;top:1.2rem;width:230px;z-index:2;pointer-events:none}
+.h5-film video{width:230px;height:auto;border-radius:6px;opacity:.7}
+.h5-film::after{-webkit-mask:none!important;mask:none!important;border-radius:6px}
+@media(max-width:1100px){.h5-film{position:relative!important;right:auto;top:auto;display:block;margin:.6rem auto 0;width:200px}.h5-film video{width:200px}}
+/* 4 aide */
+.h5-aide{position:absolute;top:14px;right:58px;height:64px;perspective:400px}.h5-aide img{height:64px;width:auto}
+dialog.aide{overflow:visible}
+/* 5 socle bas de page */
+.h5-pied{display:flex;justify-content:center;margin:2.2rem auto .4rem;pointer-events:none}
+.h5-pied .h5-holo{height:78px;perspective:400px}.h5-pied img{height:78px;width:auto;border-radius:4px}
+@media(max-width:600px){.h5-pied .h5-holo,.h5-pied img{height:60px}.h5-film,.h5-film video{width:160px}}
+@media(prefers-reduced-motion:reduce){.h5-anim{animation:none!important}.h5-lift{transition:none}}

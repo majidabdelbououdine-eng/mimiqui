@@ -97,37 +97,35 @@ var __acc=/(\/|\/index\.html?)$/i.test(location.pathname);
   window.addEventListener('load',rechercheQ);
 })();
 
-/* Mini-lecteur teaser Pokémon : Wild Card (toujours visible, sans bouton fermer) */
+/* Mini-lecteur teaser Pokemon : Wild Card - video locale (sans YouTube) */
 (function(){
   if(window.__miniTeaser)return;window.__miniTeaser=1;
-  var VID='H6_jMQ6whtQ',KT='mimiquiTeaserTemps',KR='mimiquiTeaserReduit',player=null;
+  var SRC='videos/wild-card-bande-annonce.mp4',KT='mimiquiTeaserTemps',KR='mimiquiTeaserReduit';
   function go(){
-    if(document.getElementById('mini-teaser'))return;var auto=true;try{auto=sessionStorage.getItem('mimiquiTeaserVu')!=='1';sessionStorage.setItem('mimiquiTeaserVu','1')}catch(e){}window.__mtAuto=auto;
-    var t=0;try{t=Math.floor(parseFloat(localStorage.getItem(KT))||0)}catch(e){}
+    if(/(^|\/)registre-pokemon\.html$/i.test(location.pathname))return;if(document.getElementById('mini-teaser'))return;window.__mtAuto=true;
+    var t=0;try{t=parseFloat(localStorage.getItem(KT))||0}catch(e){}
     var red=false;try{red=localStorage.getItem(KR)==='1'}catch(e){}
     var box=document.createElement('div');box.id='mini-teaser';if(red)box.className='reduit';
-    box.innerHTML='<div class="mt-barre"><span class="mt-titre">Pok\u00e9mon : Wild Card \u2013 teaser</span><button type="button" class="mt-taille" aria-label="R\u00e9duire ou agrandir"></button></div><div class="mt-video"><div id="mini-teaser-yt"></div><button type="button" class="mt-play" aria-label="Lecture"></button></div>';
+    box.innerHTML='<div class="mt-barre"><span class="mt-titre">Pok\u00e9mon : Wild Card \u2013 teaser</span><button type="button" class="mt-taille" aria-label="R\u00e9duire ou agrandir"></button></div><div class="mt-video"><video id="mini-teaser-yt" src="'+SRC+'" muted autoplay loop playsinline preload="metadata"></video><button type="button" class="mt-play" aria-label="Lecture"></button></div>';
     document.body.appendChild(box);
-    var pb=box.querySelector('.mt-play');
-    pb.addEventListener('click',function(){try{if(player&&player.playVideo){player.unMute();player.setVolume(100);player.playVideo();pb.style.display='none'}}catch(x){}});
+    var v=box.querySelector('video'),pb=box.querySelector('.mt-play');v.muted=true;
+    v.addEventListener('loadedmetadata',function(){try{if(t&&t<v.duration)v.currentTime=t}catch(e){}});
+    function maj(){pb.style.display=(!v.paused&&!v.muted)?'none':''}
+    v.addEventListener('play',maj);v.addEventListener('pause',maj);v.addEventListener('volumechange',maj);
+    var pl=v.play();if(pl&&pl.catch)pl.catch(function(){});
+    window.__mtPlayer={unMute:function(){v.muted=false},mute:function(){v.muted=true},setVolume:function(n){v.volume=Math.min(1,n/100)},playVideo:function(){var q=v.play();if(q&&q.catch)q.catch(function(){})},pauseVideo:function(){v.pause()},isMuted:function(){return v.muted},getCurrentTime:function(){return v.currentTime}};
+    new MutationObserver(function(){var g=box.classList.contains('mt-grand');v.controls=g;if(g){v.muted=false;v.volume=1;window.__mtPlayer.playVideo()}else{v.muted=true}}).observe(box,{attributes:true,attributeFilter:['class']});
     var b=box.querySelector('.mt-taille');
     function lab(){b.textContent=box.classList.contains('reduit')?'\u2922 Agrandir':'\u2013 R\u00e9duire'}lab();
     b.addEventListener('click',function(){box.classList.toggle('reduit');try{localStorage.setItem(KR,box.classList.contains('reduit')?'1':'0')}catch(e){}lab()});
-    window.onYouTubeIframeAPIReady=function(){
-      player=window.__mtPlayer=new YT.Player('mini-teaser-yt',{host:'https://www.youtube.com',videoId:VID,width:'100%',height:'100%',
-        playerVars:{autoplay:auto?1:0,mute:1,controls:1,loop:1,playlist:VID,start:t,playsinline:1,rel:0,modestbranding:1,origin:location.origin,widget_referrer:location.href},
-        events:{onStateChange:function(e){try{pb.style.display=(e.data===1&&!e.target.isMuted())||e.data===3&&pb.style.display==='none'?'none':''}catch(x){}},onReady:function(e){try{e.target.mute();if(t)e.target.seekTo(t,true);if(auto)e.target.playVideo();else e.target.pauseVideo()}catch(x){}}}});
-    };
-    function api(){var s=document.createElement('script');s.src='https://www.youtube.com/iframe_api';document.head.appendChild(s)}if(document.readyState==='complete')setTimeout(api,300);else window.addEventListener('load',function(){setTimeout(api,300)});
-    function save(){try{if(player&&player.getCurrentTime)localStorage.setItem(KT,String(player.getCurrentTime()))}catch(e){}}
+    function save(){try{localStorage.setItem(KT,String(v.currentTime||0))}catch(e){}}
     window.addEventListener('beforeunload',save);window.addEventListener('pagehide',save);setInterval(save,3000);
     document.body.classList.add('avec-mini-teaser');
   }
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',go);else go();
 })();
-
 /* Son au premier geste du visiteur */
-(function(){var fait=false;function son(e){if(fait||!window.__mtAuto)return;var p=window.__mtPlayer;if(!p||!p.unMute)return;try{p.unMute();p.setVolume(100);p.playVideo();fait=true;['pointerdown','keydown','touchstart','click'].forEach(function(t){window.removeEventListener(t,son,true)})}catch(x){}}['pointerdown','keydown','touchstart','click'].forEach(function(t){window.addEventListener(t,son,true)})})();
+(function(){var fait=false;function son(e){return;if(fait||!window.__mtAuto)return;var p=window.__mtPlayer;if(!p||!p.unMute)return;try{p.unMute();p.setVolume(100);p.playVideo();fait=true;['pointerdown','keydown','touchstart','click'].forEach(function(t){window.removeEventListener(t,son,true)})}catch(x){}}['pointerdown','keydown','touchstart','click'].forEach(function(t){window.addEventListener(t,son,true)})})();
 /* Navigation instantanee : precharge une page interne au survol */
 (function(){var vu={};function pre(e){var a=e.target.closest&&e.target.closest('a[href]');if(!a)return;var u;try{u=new URL(a.href,location.href)}catch(x){return}
 if(u.origin!==location.origin||!/\.html?$/.test(u.pathname)||u.pathname===location.pathname||vu[u.pathname])return;vu[u.pathname]=1;
@@ -140,10 +138,10 @@ var T='<p class="fd-tag">Au cin\u00e9ma</p><p class="fd-titre">Pok\u00e9mon : <e
 function ferme(){try{return localStorage.getItem(K)==='1'}catch(e){return false}}
 function set(v){try{localStorage.setItem(K,v?'1':'0')}catch(e){}}
 function tab(){if(document.getElementById('fd-rouvrir'))return;var b=document.createElement('button');b.id='fd-rouvrir';b.type='button';b.textContent='Wild Card \u25b8';b.setAttribute('aria-label','Rouvrir la fen\u00eatre du film');b.addEventListener('click',function(){set(false);b.remove();win()});document.body.appendChild(b)}
-function win(){if(document.getElementById('fenetre-defilante'))return;var d=document.createElement('section');d.id='fenetre-defilante';d.setAttribute('aria-label','Le film Pok\u00e9mon : Wild Card en bref');
+function win(){if(document.getElementById('fenetre-defilante'))return;var d=document.createElement('section');d.id='fenetre-defilante';if(/pokemon\.html?$/i.test(location.pathname))d.className='fd-simple';d.setAttribute('aria-label','Le film Pok\u00e9mon : Wild Card en bref');
 d.innerHTML='<button type="button" class="fd-fermer" aria-label="Fermer">\u00d7</button><div class="fd-piste"><div class="fd-bloc">'+T+'</div><div class="fd-bloc" aria-hidden="true">'+T+'</div></div>';
 d.querySelector('.fd-fermer').addEventListener('click',function(){set(true);d.remove();tab()});document.body.appendChild(d)}
-function go(){if(window.matchMedia&&matchMedia('(max-width:600px)').matches){tab();return}if(/(\/|\/index\.html?)$/i.test(location.pathname)){set(false);win();return}if(ferme())tab();else win()}
+function go(){if(/blog\.html?$/i.test(location.pathname))return;if(window.matchMedia&&matchMedia('(max-width:600px)').matches){tab();return}if(/(\/|\/index\.html?)$/i.test(location.pathname)){set(false);win();return}if(ferme())tab();else win()}
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',go);else go();})();
 /* Fenetre defilante : profondeur (le texte arrive du fond vers le visiteur en montant) */
 (function(){if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches)return;
@@ -174,3 +172,61 @@ window.__fdMaj=maj;window.__fdFond=fondSous;})();
  function att(e){var li=e.target.closest&&e.target.closest('ul.menu-principal>li');if(!li)return;setTimeout(function(){majSM(li)},40);setTimeout(function(){majSM(li)},260)}
  document.addEventListener('mouseover',att,{passive:true});document.addEventListener('focusin',att);
  addEventListener('scroll',function(){var o=document.querySelectorAll('ul.menu-principal>li:hover,ul.menu-principal>li:focus-within');for(var i=0;i<o.length;i++)majSM(o[i])},{passive:true});})();
+/* Teaser : clic = grand ecran au milieu avec effet ouverture (2026-11-02) */
+(function(){
+var fond=null,ouvert=false,etaitReduit=false;
+function box(){return document.getElementById('mini-teaser')}
+function anim(b,r1,r2,inv){if(!b.animate||matchMedia('(prefers-reduced-motion:reduce)').matches)return;var dx=r1.left-r2.left,dy=r1.top-r2.top,s=r1.width/r2.width;
+var a='translate(-50%,-50%) translate('+(dx+ (r1.width-r2.width)/2)+'px,'+(dy+(r1.height-r2.height)/2)+'px) scale('+s+')',z='translate(-50%,-50%)';
+b.animate([{transform:a,filter:'brightness(1.6) drop-shadow(0 0 30px rgba(0,230,255,.9))'},{transform:z,filter:'brightness(1) drop-shadow(0 0 0 rgba(0,230,255,0))'}],{duration:520,easing:'cubic-bezier(.2,.8,.2,1)'})}
+function ouvrir(){var b=box();if(!b||ouvert)return;ouvert=true;var r1=b.getBoundingClientRect();etaitReduit=b.classList.contains('reduit');b.classList.remove('reduit');
+fond=document.createElement('div');fond.id='mt-fond';fond.addEventListener('click',fermer);document.body.appendChild(fond);
+var x=document.createElement('button');x.type='button';x.className='mt-fermer-grand';x.setAttribute('aria-label','Fermer la grande vid\u00e9o');x.textContent='\u00d7';x.addEventListener('click',function(e){e.stopPropagation();fermer()});b.appendChild(x);
+b.classList.add('mt-grand');document.body.classList.add('mt-grand-ouvert');var r2=b.getBoundingClientRect();anim(b,r1,r2);
+try{var p=window.__mtPlayer;if(p&&p.unMute){p.unMute();p.setVolume(100);p.playVideo();var pb=b.querySelector('.mt-play');if(pb)pb.style.display='none'}}catch(e){}}
+function fermer(){var b=box();if(!b||!ouvert)return;ouvert=false;b.classList.remove('mt-grand');document.body.classList.remove('mt-grand-ouvert');if(etaitReduit)b.classList.add('reduit');
+var x=b.querySelector('.mt-fermer-grand');if(x)x.remove();if(fond){fond.remove();fond=null}
+if(b.animate&&!matchMedia('(prefers-reduced-motion:reduce)').matches)b.animate([{transform:'scale(1.25)',opacity:.6},{transform:'scale(1)',opacity:1}],{duration:320,easing:'ease-out'})}
+window.mimiquiTeaserGrand=ouvrir;document.addEventListener('keydown',function(e){if(e.key==='Escape'&&ouvert)fermer()});document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href*="H6_jMQ6whtQ"],a[href*="wild-card-bande-annonce"]');if(!a||!box()||!/voir le teaser/i.test(a.textContent))return;e.preventDefault();ouvrir()},true);
+document.addEventListener('click',function(e){var b=box();if(!b||ouvert||!b.contains(e.target))return;if(e.target.closest('.mt-taille'))return;if(e.target.closest('.mt-barre,.mt-play,.mt-grand-btn,.mt-video')){e.preventDefault();ouvrir()}},true);
+function ajout(){var b=box();if(!b){return setTimeout(ajout,300)}if(b.querySelector('.mt-grand-btn'))return;var g=document.createElement('button');g.type='button';g.className='mt-grand-btn';g.setAttribute('aria-label','Voir en grand');g.textContent='\u26f6 Grand';var t=b.querySelector('.mt-taille');if(t)t.parentNode.insertBefore(g,t);var ti=b.querySelector('.mt-titre');if(ti){ti.style.cursor='pointer';ti.title='Voir en grand'}}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',ajout);else ajout();
+})();
+/* === holo5 : 5 hologrammes (sauf pokemon.html) === */
+(function(){
+var page=(location.pathname.split('/').pop()||'index.html').toLowerCase();if(page==='pokemon.html')return;
+var MIMI='img/logo-mimiqui.webp';
+function holo(src,cls,video){var w=document.createElement('span');w.className='h5-holo h5-anim '+(cls||'');w.style.setProperty('--h5m','url("'+src+'")');
+ w.innerHTML='<span class="h5-faisceau"></span>'+(video?'<video src="'+src+'" muted autoplay loop playsinline aria-hidden="true"></video>':'<img src="'+src+'" alt="" aria-hidden="true">')+'<span class="h5-socle"></span>';return w}
+function go(){
+ if(!document.querySelector('link[href="holo5.css"]')){var l=document.createElement('link');l.rel='stylesheet';l.href='holo5.css';document.head.appendChild(l)}
+ var RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
+ // 1 accueil
+ if(page==='index.html'||page===''){var h=document.querySelector('h1');if(h&&!h.querySelector('.h5-holo'))h.appendChild(holo(MIMI,'h5-mimi-titre'))}
+ // 3 blog
+ if(page==='blog.html'){var t=document.querySelector('.tete');if(t&&!t.querySelector('.h5-film')){var f=holo('videos/wild-card-bande-annonce.mp4','h5-film',true);t.appendChild(f);if(RM){var v=f.querySelector('video');v.removeAttribute('autoplay');v.pause()}}}
+ // 4 aide
+ document.querySelectorAll('dialog.aide').forEach(function(d){new MutationObserver(function(){if(d.open&&!d.querySelector('.h5-aide'))d.appendChild(holo(MIMI,'h5-aide'))}).observe(d,{attributes:true,attributeFilter:['open']})});
+ // 2 cartes
+ function estCarte(i){return i&&i.tagName==='IMG'&&/(^|\/)img\/(?!logo)[\w-]+\.(webp|png|jpe?g)/i.test(i.getAttribute('src')||'')&&!i.closest('.h5-holo,header,#mini-teaser')&&i.offsetWidth>50}
+ var P=document.createElement('div');P.id='h5-proj';document.body.appendChild(P);var cur=null;
+ if(matchMedia('(hover:hover)').matches){
+  document.addEventListener('mouseover',function(e){var i=e.target;if(!estCarte(i)||i===cur)return;if(cur)cur.classList.remove('h5-on');cur=i;i.classList.add('h5-lift');void i.offsetWidth;i.classList.add('h5-on');P.innerHTML='';P.appendChild(holo(i.currentSrc||i.src,''));var r=i.getBoundingClientRect();P.style.left=Math.max(4,r.left+r.width/2-45)+'px';P.style.top=Math.max(4,r.top-140)+'px';P.classList.add('on')});
+  document.addEventListener('mouseout',function(e){if(cur&&e.target===cur){cur.classList.remove('h5-on');cur=null;P.classList.remove('on')}});
+  addEventListener('scroll',function(){if(cur){cur.classList.remove('h5-on');cur=null;P.classList.remove('on')}},{passive:true})}
+ // 5 socle bas de page
+ if(!document.querySelector('.h5-pied')){var src=MIMI;if(page!=='index.html'&&page!=='blog.html'){var c=[].filter.call(document.images,function(i){return /(^|\/)img\/(?!logo)[\w-]+\.webp/i.test(i.getAttribute('src')||'')})[0];if(c)src=c.getAttribute('src')}
+  var d=document.createElement('div');d.className='h5-pied';d.appendChild(holo(src,''));var pl=document.querySelector('.pied-legal');if(pl)pl.parentNode.insertBefore(d,pl);else document.body.appendChild(d)}
+}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',go);else go();
+})();
+/* === Entree / sortie hologramme (sauf pokemon.html) === */
+(function(){
+var page=(location.pathname.split('/').pop()||'index.html').toLowerCase();if(page==='pokemon.html')return;
+var H=document.documentElement,RM=matchMedia('(prefers-reduced-motion: reduce)').matches;if(RM)return;
+H.classList.add('h5-in');setTimeout(function(){H.classList.remove('h5-in')},900);
+addEventListener('pageshow',function(e){if(e.persisted)H.classList.remove('h5-out')});
+document.addEventListener('click',function(e){if(e.defaultPrevented||e.button!==0||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey)return;var a=e.target.closest&&e.target.closest('a[href]');if(!a||a.target&&a.target!=='_self'||a.hasAttribute('download'))return;
+ var u;try{u=new URL(a.href,location.href)}catch(x){return}if(u.origin!==location.origin||(u.pathname===location.pathname&&u.hash))return;if(u.href===location.href)return;
+ e.preventDefault();H.classList.add('h5-out');setTimeout(function(){location.href=u.href},280)});
+})();
