@@ -351,7 +351,7 @@ dl.chiffres dd small{display:block;font-size:.7rem;color:var(--muted);font-weigh
   function tuile(c) {
     var art = document.createElement("article"); art.className = "tuile"; art.id = c.id;
     var box = document.createElement("div"); box.className = "carte-in";
-    var im = document.createElement("img"); im.loading = "lazy"; im.alt = ""; im.src = c.photo || ((c.langue === "ja" ? "img-jp/" : "img/") + c.id + ".webp");
+    var im = document.createElement("img"); im.loading = "lazy"; im.alt = ""; im.src = c.photo || {"M2a-079":"images-cartes/M2a-079-JP.png","M2a-205":"images-cartes/M2a-205-JP.png","MC-341":"images-cartes/MC-341-JP.png","SM4p-043":"images-cartes/SM4p-043-JP.png","SM7b-060":"images-cartes/SM7b-060-JP.jpg","SV-P-156":"images-cartes/SV-P-156-JP.png","swsh9tg-TG16":"img-en/swsh9tg-TG16.webp","swsh9tg-TG17":"img-en/swsh9tg-TG17.webp"}[c.id] || ((c.langue === "ja" ? "img-jp/" : "img/") + c.id + ".webp");
     im.onerror = function () { var v = document.createElement("span"); v.className = "vide-img"; this.replaceWith(v); };
     var t = document.createElement("div");
     var page = c.page || ((c.langue === "ja" ? "cartes-japonaises.html#" : "cartes.html#") + c.id);
