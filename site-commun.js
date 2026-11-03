@@ -230,3 +230,10 @@ document.addEventListener('click',function(e){if(e.defaultPrevented||e.button!==
  var u;try{u=new URL(a.href,location.href)}catch(x){return}if(u.origin!==location.origin||(u.pathname===location.pathname&&u.hash))return;if(u.href===location.href)return;
  e.preventDefault();H.classList.add('h5-out');setTimeout(function(){location.href=u.href},280)});
 })();
+/* Sous-rubrique « Cartes Mimiqui » : flyout a droite, a gauche si pas de place (t358u) */
+(function(){function init(){document.querySelectorAll('.sm-groupe').forEach(function(g){var b=g.querySelector('.sm-tog'),s=g.querySelector('.sm-sous');if(!b||!s)return;
+function cote(){var r=g.getBoundingClientRect(),d=window.innerWidth>600,gc=d&&r.left-s.offsetWidth-8>=0;if(d&&!gc&&r.right+s.offsetWidth+8>window.innerWidth)gc=true;g.classList.toggle('sm-gauche',gc);var f=g.querySelector('.sm-fl');if(f)f.textContent=gc?'\u25C2':'\u25B8';}cote();window.addEventListener('resize',cote);
+g.addEventListener('mouseenter',cote);
+b.addEventListener('click',function(e){e.preventDefault();e.stopPropagation();cote();var o=g.classList.toggle('sm-ouvert');b.setAttribute('aria-expanded',o?'true':'false');});
+var li=g.closest('ul.menu-principal>li');if(li)li.addEventListener('mouseleave',function(){g.classList.remove('sm-ouvert');b.setAttribute('aria-expanded','false');});});}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();})();

@@ -429,3 +429,33 @@ html.h5-out body{animation:h5sortie .3s ease-in forwards}
 /* Video coin : pas de bouton play rouge, clic sur l'image = grand ecran */
 html body #mini-teaser .mt-play{display:none!important}
 html body #mini-teaser:not(.mt-grand) .mt-video{cursor:pointer}
+
+/* === Sous-rubrique « Cartes Mimiqui » en flyout a droite (t356u, t358u) === */
+nav ul.menu-principal ul.sous-menu{overflow:visible!important}
+nav ul.menu-principal .sm-groupe{position:relative}
+nav ul.menu-principal .sm-tog{display:flex;align-items:center;justify-content:space-between;gap:.8rem;width:100%;box-sizing:border-box;background:none;border:0;cursor:pointer;padding:.5rem 1rem;font:inherit;font-weight:800;font-size:.95rem;letter-spacing:inherit;text-transform:inherit;color:#0b3d91;text-align:left;white-space:nowrap}
+nav ul.menu-principal ul.sous-menu.sm-sombre .sm-tog{color:#f2fbff;text-shadow:0 0 6px rgba(0,220,255,.8)}
+nav ul.menu-principal .sm-groupe:hover>.sm-tog,nav ul.menu-principal .sm-groupe.sm-ouvert>.sm-tog{background:rgba(0,200,255,.14)}
+nav ul.menu-principal .sm-fl{display:inline-block;transition:transform .2s}
+nav ul.menu-principal ul.sm-sous{position:absolute;top:-.5rem;left:100%;margin:0;padding:.5rem 0;list-style:none;min-width:13rem;z-index:10050;
+ background:rgba(240,250,255,.96);background-image:repeating-linear-gradient(0deg,rgba(0,200,255,.06) 0 1px,transparent 1px 4px);border:1px solid rgba(0,210,255,.8);border-radius:12px;box-shadow:0 0 14px rgba(0,200,255,.45),0 10px 26px rgba(0,0,0,.25);
+ visibility:hidden;opacity:0;pointer-events:none;transform:translateX(-6px);transition:opacity .15s ease,transform .15s ease,visibility 0s linear .3s}
+nav ul.menu-principal ul.sm-sous::before{content:"";position:absolute;top:0;bottom:0;left:-12px;width:12px}
+nav ul.menu-principal ul.sm-sous a{color:#0b3d91!important;font-weight:800!important;text-shadow:none!important;display:block;padding:.5rem 1rem;white-space:nowrap}
+nav ul.menu-principal ul.sm-sous a:hover,nav ul.menu-principal ul.sm-sous a[aria-current]{background:rgba(10,88,202,.1)}
+nav ul.menu-principal .sm-groupe.sm-gauche>ul.sm-sous{left:auto;right:100%;transform:translateX(6px)}
+nav ul.menu-principal .sm-groupe.sm-gauche>ul.sm-sous::before{left:auto;right:-12px}
+nav ul.menu-principal .sm-groupe.sm-ouvert>ul.sm-sous{visibility:visible;opacity:1;pointer-events:auto;transform:none;transition:opacity .15s ease,transform .15s ease,visibility 0s}
+@media(hover:hover) and (min-width:601px){nav ul.menu-principal .sm-groupe:hover>ul.sm-sous{visibility:visible;opacity:1;pointer-events:auto;transform:none;transition:opacity .15s ease,transform .15s ease,visibility 0s}}
+@media(max-width:600px){
+ nav ul.menu-principal ul.sm-sous{position:static;transform:none;min-width:0;box-shadow:none;border:0;border-left:2px solid rgba(0,210,255,.75);border-radius:0;background:transparent;margin:0 0 .3rem 1rem;padding:.1rem 0;display:none;visibility:visible;opacity:1;pointer-events:auto;transition:none}
+ nav ul.menu-principal ul.sm-sous::before{display:none}
+ nav ul.menu-principal .sm-groupe.sm-ouvert>ul.sm-sous{display:block}
+ nav ul.menu-principal .sm-groupe.sm-ouvert .sm-fl{transform:rotate(90deg)}
+}
+
+/* Prix et Acheter : dépliant vers la gauche (ordinateur) */
+@media (min-width:601px){
+nav ul.menu-principal>li:has(>a[href="cotation.html"])>ul.sous-menu,
+nav ul.menu-principal>li:has(>a[href="boutique.html"])>ul.sous-menu{left:auto!important;right:0!important}
+}
