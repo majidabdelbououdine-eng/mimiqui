@@ -9,7 +9,7 @@ var __acc=/(\/|\/index\.html?)$/i.test(location.pathname);
     {t:'Cartes',h:'cartes.html',p:['cartes.html','cartes-japonaises.html','cartes-anglaises.html','cartes-pokemon.html','pokemon.html'],s:[
       ['Cartes FR','cartes.html'],['Cartes JA','cartes-japonaises.html'],['Cartes EN','cartes-anglaises.html'],['Cartes Pok\u00e9mon','cartes-pokemon.html']]},
     {t:'Prix',h:'cotation.html',p:['cotation.html','registre.html','registre-pokemon.html','adjuge.html'],s:[
-      ['Cotation','cotation.html'],['Registre des ventes pass\u00e9es','registre.html'],['Registre des cartes pass\u00e9es','registre-pokemon.html'],['Adjug\u00e9','adjuge.html']]},
+      ['Cotation','cotation.html'],['Ventes pass\u00e9es Sp\u00e9cial Mimiqui','registre.html'],['Registre des cartes pass\u00e9es','registre-pokemon.html']]},
     {t:'Acheter',h:'boutique.html',p:['boutique.html'],s:[['Boutique','boutique.html'],['Boosters','jeu.html#boosters']]},
     {t:'Vendre sur eBay',h:'vendre.html',p:['vendre.html']}
   ];
@@ -68,7 +68,7 @@ var __acc=/(\/|\/index\.html?)$/i.test(location.pathname);
     if(document.querySelector('.pied-commun'))return;
     var groupes=[
       ['Cartes',[['Cartes FR','cartes.html'],['Cartes JA','cartes-japonaises.html'],['Cartes EN','cartes-anglaises.html'],['Cartes Pok\u00e9mon','cartes-pokemon.html']]],
-      ['Prix',[['Cotation','cotation.html'],['Registre des ventes pass\u00e9es','registre.html'],['Registre des cartes pass\u00e9es','registre-pokemon.html'],['Adjug\u00e9','adjuge.html']]],
+      ['Prix',[['Cotation','cotation.html'],['Ventes pass\u00e9es Sp\u00e9cial Mimiqui','registre.html'],['Registre des cartes pass\u00e9es','registre-pokemon.html']]],
       ['Acheter et vendre',[['Boutique','boutique.html'],['Boosters','jeu.html#boosters'],['Vendre sur eBay','vendre.html']]],
       ['D\u00e9couvrir',[['Blog','blog.html'],['Blog Instagram','https://www.instagram.com/lecoindemimiqui/'],['Jeu','jeu.html'],['Le film 2027','index.html#film'],['Le d\u00e9guisement','index.html#deguisement'],['Faiblesses','index.html#types'],['Rubriques','index.html#rubriques']]],
       ['Le site',[['Cr\u00e9er un compte','index.html#compte'],['Assistant Instagram','assistant-instagram.html'],['Cookies et vie priv\u00e9e','confidentialite.html']]]

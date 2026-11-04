@@ -240,7 +240,7 @@ dl{font-size:13px}
 </style><link rel="stylesheet" href="holo5.css">
 <header class="site wrap"><nav class="sitenav" aria-label="Navigation principale">
   <a class="logo" href="index.html"><img class="logo-img" src="img/logo-mimiqui.webp" alt="" width="95" height="120" style="width:auto;height:3.4rem;object-fit:contain;transform:none">Le Coin de Mimiqui<span>.</span></a>
-  <ul class="menu-principal" id="menu-principal"><li><a href="index.html">Accueil</a></li><li><a href="blog.html">Blog</a></li><li><a href="cartes.html">Cartes</a><button type="button" class="ouvre-sous" aria-expanded="false" aria-label="Sous-menu Cartes">&#9662;</button><ul class="sous-menu"><li class="sm-groupe"><button type="button" class="sm-tog" aria-expanded="false">Spécial Mimiqui <span class="sm-fl" aria-hidden="true">&#9656;</span></button><ul class="sm-sous"><li><a href="cartes.html">Cartes fran&ccedil;aises</a></li><li><a href="cartes-japonaises.html">Cartes japonaises</a></li><li><a href="cartes-anglaises.html">Cartes anglaises</a></li></ul></li><li><a href="cartes-pokemon.html">1025 Pok&eacute;mon</a></li><li><a href="equilibre-parfait-ventes.html">&Eacute;quilibre Parfait</a></li><li><a href="trentieme-anniversaire-ventes.html">30<sup>e</sup> Anniversaire</a></li><li><a href="chaos-ascendant-ventes.html" aria-current="page">Chaos Ascendant</a></li></ul></li><li><a href="cotation.html">Prix</a><button type="button" class="ouvre-sous" aria-expanded="false" aria-label="Sous-menu Prix">&#9662;</button><ul class="sous-menu"><li><a href="cotation.html">Cotation</a></li><li><a href="registre.html">Registre des ventes pass&eacute;es</a></li><li><a href="registre-pokemon.html">Registre des cartes pass&eacute;es</a></li><li><a href="adjuge.html">Adjug&eacute;</a></li></ul></li><li><a href="boutique.html">Acheter</a><button type="button" class="ouvre-sous" aria-expanded="false" aria-label="Sous-menu Acheter">&#9662;</button><ul class="sous-menu"><li><a href="boutique.html">Boutique</a></li><li><a href="jeu.html#boosters">Boosters</a></li><li><a href="cartes-psa10.html">Cartes PSA 10</a></li></ul></li><li><a href="vendre.html">Vendre sur eBay</a></li></ul>
+  <ul class="menu-principal" id="menu-principal"><li><a href="index.html">Accueil</a></li><li><a href="blog.html">Blog</a></li><li><a href="cartes.html">Cartes</a><button type="button" class="ouvre-sous" aria-expanded="false" aria-label="Sous-menu Cartes">&#9662;</button><ul class="sous-menu"><li class="sm-groupe"><button type="button" class="sm-tog" aria-expanded="false">Spécial Mimiqui <span class="sm-fl" aria-hidden="true">&#9656;</span></button><ul class="sm-sous"><li><a href="cartes.html">Cartes fran&ccedil;aises</a></li><li><a href="cartes-japonaises.html">Cartes japonaises</a></li><li><a href="cartes-anglaises.html">Cartes anglaises</a></li></ul></li><li><a href="cartes-pokemon.html">1025 Pok&eacute;mon</a></li><li><a href="equilibre-parfait-ventes.html">&Eacute;quilibre Parfait</a></li><li><a href="trentieme-anniversaire-ventes.html">30<sup>e</sup> Anniversaire</a></li><li><a href="chaos-ascendant-ventes.html" aria-current="page">Chaos Ascendant</a></li><li><a href="nuit-noire-ventes.html">Nuit Noire</a></li></ul></li><li><a href="cotation.html">Prix</a><button type="button" class="ouvre-sous" aria-expanded="false" aria-label="Sous-menu Prix">&#9662;</button><ul class="sous-menu"><li><a href="cotation.html">Cotation</a></li><li><a href="registre.html">Ventes pass&eacute;es Sp&eacute;cial Mimiqui</a></li><li><a href="registre-pokemon.html">Registre des cartes pass&eacute;es</a></li></ul></li><li><a href="boutique.html">Acheter</a><button type="button" class="ouvre-sous" aria-expanded="false" aria-label="Sous-menu Acheter">&#9662;</button><ul class="sous-menu"><li><a href="boutique.html">Boutique</a></li><li><a href="jeu.html#boosters">Boosters</a></li><li><a href="cartes-psa10.html">Cartes PSA 10</a></li></ul></li><li><a href="vendre.html">Vendre sur eBay</a></li></ul>
 </nav></header>
 
 <header class="hero wrap">
@@ -250,6 +250,73 @@ dl{font-size:13px}
   <div class="stats" id="stats"></div>
   <nav class="langs" aria-label="Pages du set"><a href="chaos-ascendant.html">Toutes les cartes et cotes</a><a href="chaos-ascendant-ventes.html" aria-current="page">Ventes eBay du 11/10 au 03/11/2026</a></nav>
 </header>
+<style>
+#psa-rub{position:fixed;top:calc(var(--psa-top,5cm));left:1.5cm;z-index:7000;font:700 14px/1 "Source Sans 3",Arial,sans-serif}
+#psa-rub>button{display:inline-flex;align-items:center;gap:6px;cursor:pointer;border-radius:999px;padding:10px 16px;text-transform:uppercase;letter-spacing:.08em;font:800 13px/1 "Source Sans 3",Arial,sans-serif;
+ color:#0b3d91;background:rgba(255,255,255,.6);background-image:repeating-linear-gradient(0deg,rgba(0,200,255,.06) 0 1px,transparent 1px 4px);-webkit-backdrop-filter:blur(12px) saturate(1.3);backdrop-filter:blur(12px) saturate(1.3);
+ border:1px solid rgba(0,210,255,.8);box-shadow:0 0 12px rgba(0,200,255,.45);transition:background .15s,box-shadow .15s,color .15s}
+#psa-rub>button:hover,#psa-rub.ouvert>button{box-shadow:0 0 18px rgba(0,200,255,.75);color:#0a58ca}
+#psa-rub ul{visibility:hidden;opacity:0;pointer-events:none;position:absolute;top:100%;left:0;margin:6px 0 0;padding:.5rem 0;list-style:none;min-width:13rem;border-radius:12px;
+ background:rgba(255,255,255,.6);background-image:repeating-linear-gradient(0deg,rgba(0,200,255,.06) 0 1px,transparent 1px 4px);-webkit-backdrop-filter:blur(12px) saturate(1.3);backdrop-filter:blur(12px) saturate(1.3);
+ border:1px solid rgba(0,210,255,.8);box-shadow:0 0 14px rgba(0,200,255,.45),0 10px 30px rgba(0,0,0,.18);transition:opacity .15s ease,visibility 0s linear .15s}
+#psa-rub ul::before{content:"";position:absolute;left:0;right:0;top:-10px;height:10px}
+#psa-rub.droite ul{top:0;left:100%;margin:0 0 0 8px}#psa-rub.droite ul::before{top:0;bottom:0;left:-10px;width:10px;height:auto;right:auto}
+#psa-rub:hover ul,#psa-rub:focus-within ul,#psa-rub.ouvert ul{visibility:visible;opacity:1;pointer-events:auto;transition:opacity .15s ease,visibility 0s}
+#psa-rub ul{max-height:calc(100vh - var(--psa-top,5cm) - 60px);overflow:auto}
+#psa-rub ul a{display:block;padding:.5rem 1rem;text-decoration:none;white-space:nowrap;font-weight:800;color:#0b3d91;text-shadow:0 0 1px rgba(255,255,255,.9)}
+#psa-rub ul a:hover,#psa-rub ul a:focus{background:rgba(0,200,255,.15);color:#0a58ca}
+#psa-rub.pr-sombre>button,#psa-rub.pr-sombre ul{background-color:rgba(5,15,30,.6)}
+#psa-rub.pr-sombre>button,#psa-rub.pr-sombre ul a{color:#f2fbff;text-shadow:0 0 6px rgba(0,220,255,.8),0 1px 2px rgba(0,0,0,.8)}
+.psa-lien{display:none}
+@media (max-width:600px){#psa-rub{display:none}.psa-lien{display:block;margin-top:18px}
+ .psa-lien details{border-radius:14px;background:rgba(255,255,255,.9);background-image:repeating-linear-gradient(0deg,rgba(0,200,255,.06) 0 1px,transparent 1px 4px);border:1px solid rgba(0,210,255,.8);box-shadow:0 0 12px rgba(0,200,255,.35);overflow:hidden}
+ .psa-lien summary{list-style:none;cursor:pointer;text-align:center;padding:12px 16px;font-weight:800;color:#0b3d91;text-transform:uppercase;letter-spacing:.08em}
+ .psa-lien summary::-webkit-details-marker{display:none}
+ .psa-lien details[open] summary span{display:inline-block;transform:rotate(180deg)}
+ .psa-lien ul{list-style:none;margin:0;padding:0 0 6px;border-top:1px solid rgba(0,210,255,.5)}
+ .psa-lien ul a{display:block;text-align:center;padding:11px 16px;font-weight:800;color:#0b3d91;text-decoration:none}
+ .psa-lien ul a:hover,.psa-lien ul a:focus{background:rgba(0,200,255,.15);color:#0a58ca}}
+#psa-rub ul a.actif,.psa-lien ul a.actif{background:rgba(0,200,255,.22);color:#0a58ca;box-shadow:inset 3px 0 0 #00b4e6}
+.pr-bloc{position:relative;z-index:6;margin-top:-6px;margin-bottom:14px}
+#psa-rub{position:relative!important;top:auto!important;left:auto!important;display:inline-block}
+@media (max-width:600px){.pr-bloc{margin:0}#psa-rub{display:none!important}.psa-lien{margin:0 auto 14px}}
+#psa-rub .pr-cour{text-transform:none;letter-spacing:0;font-weight:700;opacity:.85}
+</style>
+<style id="holo-btn">
+#psa-rub>button,#vm-rub,.psa-lien summary,.vm-lien{position:relative;overflow:hidden;color:#fff!important;text-shadow:0 0 6px rgba(140,220,255,.9),0 1px 2px rgba(0,30,80,.6)!important;background-color:rgba(10,88,202,.62)!important;background-image:linear-gradient(115deg,rgba(255,255,255,.22) 0%,rgba(120,220,255,.10) 30%,rgba(10,88,202,0) 50%,rgba(160,200,255,.18) 75%,rgba(255,255,255,.08) 100%),repeating-linear-gradient(0deg,rgba(150,230,255,.10) 0 1px,transparent 1px 4px)!important;background-size:250% 100%,auto!important;-webkit-backdrop-filter:blur(12px) saturate(1.5);backdrop-filter:blur(12px) saturate(1.5);border:1px solid rgba(110,200,255,.85)!important;box-shadow:0 0 12px rgba(10,88,202,.55),inset 0 0 10px rgba(120,210,255,.35)!important;animation:holoBtn 6s linear infinite}
+.psa-lien details{background:transparent!important;border:0!important;box-shadow:none!important}
+.psa-lien details[open] summary{border-radius:14px 14px 0 0}
+.psa-lien summary{border-radius:14px}
+#psa-rub>button:hover,#psa-rub.ouvert>button,#vm-rub:hover,#vm-rub:focus,.psa-lien summary:hover,.vm-lien:hover{color:#fff!important;box-shadow:0 0 22px rgba(60,170,255,.85),0 0 4px rgba(200,240,255,.9),inset 0 0 14px rgba(150,225,255,.5)!important;background-color:rgba(10,88,202,.75)!important}
+#psa-rub.pr-sombre>button,#vm-rub.pr-sombre{background-color:rgba(10,88,202,.7)!important}
+#psa-rub>button *,#vm-rub *{color:inherit!important}
+#psa-rub .pr-cour{opacity:.9}
+@keyframes holoBtn{0%{background-position:0% 0,0 0}100%{background-position:250% 0,0 0}}
+@media (prefers-reduced-motion:reduce){#psa-rub>button,#vm-rub,.psa-lien summary,.vm-lien{animation:none}}
+.psa-lien ul{background:rgba(255,255,255,.95)!important}
+</style>
+<div class="wrap pr-bloc"><div id="psa-rub"><button type="button" aria-expanded="false" aria-controls="psa-rub-l">Cartes PSA 10 <span aria-hidden="true">&#9662;</span></button>
+<ul id="psa-rub-l"><li><a href="cartes-psa10.html">Toutes les PSA 10</a></li><li><a href="cartes-psa10.html?serie=special-mimiqui">Sp&eacute;cial Mimiqui</a></li><li><a href="cartes-psa10.html?serie=equilibre-parfait">&Eacute;quilibre Parfait</a></li><li><a href="cartes-psa10.html?serie=chaos-ascendant">Chaos Ascendant</a></li><li><a href="cartes-psa10.html?serie=30e-anniversaire">30<sup>e</sup> Anniversaire</a></li><li><a href="cartes-psa10.html?serie=nuit-noire">Nuit Noire</a></li></ul></div></div>
+<section class="wrap psa-lien" aria-label="Cartes PSA 10"><details><summary>Cartes PSA 10 <span aria-hidden="true">&#9662;</span></summary><ul><li><a href="cartes-psa10.html">Toutes les PSA 10</a></li><li><a href="cartes-psa10.html?serie=special-mimiqui">Sp&eacute;cial Mimiqui</a></li><li><a href="cartes-psa10.html?serie=equilibre-parfait">&Eacute;quilibre Parfait</a></li><li><a href="cartes-psa10.html?serie=chaos-ascendant">Chaos Ascendant</a></li><li><a href="cartes-psa10.html?serie=30e-anniversaire">30<sup>e</sup> Anniversaire</a></li><li><a href="cartes-psa10.html?serie=nuit-noire">Nuit Noire</a></li></ul></details></section>
+<script>
+(function(){var r=document.getElementById("psa-rub");if(!r)return;var b=r.querySelector("button"),u=r.querySelector("ul");
+function place(){r.classList.remove("droite");var c=document.getElementById("fen-com"),bb=b.getBoundingClientRect(),bas=bb.bottom+6+u.offsetHeight;
+ var lim=innerHeight-8;if(c&&getComputedStyle(c).display!=="none"){var cr=c.getBoundingClientRect();if(cr.left<bb.left+u.offsetWidth)lim=Math.min(lim,cr.top-8)}
+ if(bas>lim)r.classList.add("droite")}
+function fond(){if(!window.__fdFond)return;try{var L=window.__fdFond(b);r.classList.toggle("pr-sombre",L<=0.4)}catch(e){}}
+function ouvre(o){r.classList.toggle("ouvert",o);b.setAttribute("aria-expanded",o?"true":"false");if(o){place();fond()}}
+b.addEventListener("click",function(e){e.stopPropagation();ouvre(!r.classList.contains("ouvert"))});
+r.addEventListener("mouseenter",function(){place();fond()});
+document.addEventListener("click",function(e){if(!r.contains(e.target))ouvre(false)});
+document.addEventListener("keydown",function(e){if(e.key==="Escape"&&r.classList.contains("ouvert")){ouvre(false);b.focus()}});
+var t=0;addEventListener("scroll",function(){if(!t){t=1;requestAnimationFrame(function(){t=0;fond()})}},{passive:true});
+function haut(){var h=document.querySelector("header.site, header.wrap, header");if(!h)return;var cm=5*96/2.54,y=Math.max(cm,h.getBoundingClientRect().bottom+2);r.style.setProperty("--psa-top",Math.round(y)+"px");if(r.classList.contains("ouvert"))place()}
+haut();addEventListener("scroll",haut,{passive:true});addEventListener("resize",haut);if(window.ResizeObserver){var hh=document.querySelector("header.site, header.wrap, header");if(hh)new ResizeObserver(haut).observe(hh)}
+var hi=setInterval(haut,400);setTimeout(function(){clearInterval(hi)},12000);if(window.ResizeObserver)new ResizeObserver(haut).observe(document.body);
+addEventListener("load",function(){haut();setTimeout(fond,600)});})();
+</script>
+<script>(function(){var v="chaos-ascendant"||(new URLSearchParams(location.search).get("serie")||"").toLowerCase();if(v==="mimiqui")v="special-mimiqui";var t=v?"cartes-psa10.html?serie="+v:"cartes-psa10.html";document.querySelectorAll("#psa-rub a,.psa-lien a").forEach(function(a){if(a.getAttribute("href")===t){a.classList.add("actif");a.setAttribute("aria-current","page")}});var a=document.querySelector("#psa-rub a.actif"),b=document.querySelector("#psa-rub>button");if(a&&b)b.lastElementChild.insertAdjacentHTML("beforebegin",' <span class="pr-cour">&middot; '+a.innerHTML+"</span>")})();</script>
+
 <div class="bar"><div class="wrap">
   <input id="q" type="search" placeholder="Chercher une carte ou un numéro…" aria-label="Rechercher">
   <select id="frar" aria-label="Filtrer par rareté"><option value="">Toutes les raretés</option></select>
@@ -312,4 +379,5 @@ vp.addEventListener("click",function(ev){if(ev.target===vp||ev.target.closest(".
 @media (max-width:520px){.cookie-info{flex-direction:column;align-items:stretch}}
 </style>
 <script>(function(){var b=document.getElementById("cookie-info");if(!b)return;var k="coin-mimiqui-info-cookies",vu=false;try{vu=localStorage.getItem(k)==="1"}catch(e){}if(!vu)b.hidden=false;document.getElementById("cookie-ok").addEventListener("click",function(){b.hidden=true;try{localStorage.setItem(k,"1")}catch(e){}});})();</script>
-<script src="site-commun.js" defer></script><p class="pied-legal">Site de fan non officiel &middot; <a href="mentions-legales.html#liens">Liens affili&eacute;s</a> &middot; <a href="mentions-legales.html">Mentions l&eacute;gales</a></p><style>.pied-legal{margin:1.2rem auto 1.4rem;text-align:center;font-size:.72rem;font-weight:300;color:#7a869a;letter-spacing:.02em}.pied-legal a{color:#7a869a;text-decoration:underline}</style></body></html>
+<script src="site-commun.js" defer></script><p class="pied-legal">Site de fan non officiel &middot; <a href="mentions-legales.html#liens">Liens affili&eacute;s</a> &middot; <a href="mentions-legales.html">Mentions l&eacute;gales</a></p><style>.pied-legal{margin:1.2rem auto 1.4rem;text-align:center;font-size:.72rem;font-weight:300;color:#7a869a;letter-spacing:.02em}.pied-legal a{color:#7a869a;text-decoration:underline}</style><script>(function(){var v=new URLSearchParams(location.search).get("q");if(!v)return;function go(){var i=document.getElementById("q");if(!i)return;i.value=v;i.dispatchEvent(new Event("input",{bubbles:true}));}if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",function(){setTimeout(go,50)});else setTimeout(go,50);})();</script>
+</body></html>

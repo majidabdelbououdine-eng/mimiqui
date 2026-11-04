@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://mimiqui.fr/accueil.html</loc><lastmod>2026-11-02</lastmod></url>
-  <url><loc>https://mimiqui.fr/adjuge.html</loc><lastmod>2026-11-02</lastmod></url>
   <url><loc>https://mimiqui.fr/blog.html</loc><lastmod>2026-11-02</lastmod></url>
   <url><loc>https://mimiqui.fr/boutique.html</loc><lastmod>2026-11-02</lastmod></url>
   <url><loc>https://mimiqui.fr/cartes-anglaises.html</loc><lastmod>2026-11-02</lastmod></url>
@@ -23,5 +22,6 @@
   <url><loc>https://mimiqui.fr/trentieme-anniversaire-ventes.html</loc><lastmod>2026-11-03</lastmod></url>
   <url><loc>https://mimiqui.fr/chaos-ascendant.html</loc><lastmod>2026-11-03</lastmod></url>
   <url><loc>https://mimiqui.fr/chaos-ascendant-ventes.html</loc><lastmod>2026-11-03</lastmod></url>
+  <url><loc>https://mimiqui.fr/nuit-noire-ventes.html</loc><lastmod>2026-11-04</lastmod></url>
   <url><loc>https://mimiqui.fr/cartes-psa10.html</loc><lastmod>2026-11-03</lastmod></url>
 </urlset>

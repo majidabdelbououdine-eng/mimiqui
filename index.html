@@ -399,6 +399,12 @@ fieldset.champ { border: 0; margin: 0; padding: 0 }
 @media (max-width: 860px) { .compte { grid-template-columns: 1fr } }
 </style>
 
+<style id="prix-droite">
+@media (min-width:800px){
+nav ul.menu-principal>li:has(>a[href="cotation.html"])>ul.sous-menu{top:-.4rem!important;left:calc(100% + 6px)!important;margin:0!important}
+nav ul.menu-principal>li:has(>a[href="cotation.html"])>ul.sous-menu::before{top:0!important;bottom:0!important;left:-14px!important;right:auto!important;width:14px!important;height:auto!important}
+}
+</style>
 <header class="wrap">
   <nav class="top" aria-label="Navigation principale">
     <a class="logo" href="#accueil"><img class="logo-img" src="img/logo-mimiqui.webp" alt="" width="95" height="120" style="width:auto;height:3.4rem;object-fit:contain;transform:none">Le Coin de Mimiqui<span>.</span></a>
@@ -406,9 +412,9 @@ fieldset.champ { border: 0; margin: 0; padding: 0 }
       <input id="site-q" type="search" aria-label="Rechercher sur le site" autocomplete="off" placeholder="Rechercher une carte, le film…" aria-controls="site-res" aria-expanded="false">
       <ul id="site-res" class="recherche-res" role="listbox" hidden></ul>
     </div>
-    <a class="cartes-btn" href="cartes.html">Voir les cartes</a>
+    <a class="cartes-btn" href="cartes-pokemon.html">Voir les cartes</a>
     <button type="button" class="aide-btn" id="aide-ouvrir" aria-haspopup="dialog">Aide</button>
-    <ul class="menu-principal" id="menu-principal"><li><a href="index.html">Accueil</a></li><li><a href="blog.html">Blog</a></li><li><a href="cartes.html">Cartes</a><button type="button" class="ouvre-sous" aria-expanded="false" aria-label="Sous-menu Cartes">&#9662;</button><ul class="sous-menu"><li class="sm-groupe"><button type="button" class="sm-tog" aria-expanded="false">Spécial Mimiqui <span class="sm-fl" aria-hidden="true">&#9656;</span></button><ul class="sm-sous"><li><a href="cartes.html">Cartes fran&ccedil;aises</a></li><li><a href="cartes-japonaises.html">Cartes japonaises</a></li><li><a href="cartes-anglaises.html">Cartes anglaises</a></li></ul></li><li><a href="cartes-pokemon.html">1025 Pok&eacute;mon</a></li><li><a href="equilibre-parfait-ventes.html">&Eacute;quilibre Parfait</a></li><li><a href="trentieme-anniversaire-ventes.html">30<sup>e</sup> Anniversaire</a></li><li><a href="chaos-ascendant-ventes.html">Chaos Ascendant</a></li></ul></li><li><a href="cotation.html">Prix</a><button type="button" class="ouvre-sous" aria-expanded="false" aria-label="Sous-menu Prix">&#9662;</button><ul class="sous-menu"><li><a href="cotation.html">Cotation</a></li><li><a href="registre.html">Registre des ventes pass&eacute;es</a></li><li><a href="registre-pokemon.html">Registre des cartes pass&eacute;es</a></li><li><a href="adjuge.html">Adjug&eacute;</a></li></ul></li><li><a href="boutique.html">Acheter</a><button type="button" class="ouvre-sous" aria-expanded="false" aria-label="Sous-menu Acheter">&#9662;</button><ul class="sous-menu"><li><a href="boutique.html">Boutique</a></li><li><a href="jeu.html#boosters">Boosters</a></li><li><a href="cartes-psa10.html">Cartes PSA 10</a></li></ul></li><li><a href="vendre.html">Vendre sur eBay</a></li></ul>
+    <ul class="menu-principal" id="menu-principal"><li><a href="index.html">Accueil</a></li><li><a href="blog.html">Blog</a></li><li><a href="cartes.html">Cartes</a><button type="button" class="ouvre-sous" aria-expanded="false" aria-label="Sous-menu Cartes">&#9662;</button><ul class="sous-menu"><li class="sm-groupe"><button type="button" class="sm-tog" aria-expanded="false">Spécial Mimiqui <span class="sm-fl" aria-hidden="true">&#9656;</span></button><ul class="sm-sous"><li><a href="cartes.html">Cartes fran&ccedil;aises</a></li><li><a href="cartes-japonaises.html">Cartes japonaises</a></li><li><a href="cartes-anglaises.html">Cartes anglaises</a></li></ul></li><li><a href="cartes-pokemon.html">1025 Pok&eacute;mon</a></li><li><a href="equilibre-parfait-ventes.html">&Eacute;quilibre Parfait</a></li><li><a href="trentieme-anniversaire-ventes.html">30<sup>e</sup> Anniversaire</a></li><li><a href="chaos-ascendant-ventes.html">Chaos Ascendant</a></li><li><a href="nuit-noire-ventes.html">Nuit Noire</a></li></ul></li><li><a href="cotation.html">Prix</a><button type="button" class="ouvre-sous" aria-expanded="false" aria-label="Sous-menu Prix">&#9662;</button><ul class="sous-menu"><li><a href="cotation.html">Cotation</a></li><li><a href="registre.html">Ventes pass&eacute;es Sp&eacute;cial Mimiqui</a></li><li><a href="registre-pokemon.html">Registre des cartes pass&eacute;es</a></li></ul></li><li><a href="boutique.html">Acheter</a><button type="button" class="ouvre-sous" aria-expanded="false" aria-label="Sous-menu Acheter">&#9662;</button><ul class="sous-menu"><li><a href="boutique.html">Boutique</a></li><li><a href="jeu.html#boosters">Boosters</a></li><li><a href="cartes-psa10.html">Cartes PSA 10</a></li></ul></li><li><a href="vendre.html">Vendre sur eBay</a></li></ul>
   </nav>
 </header>
 <section class="wrap accueil-recherche recherche-petite" aria-label="Recherche">
@@ -453,11 +459,38 @@ fieldset.champ { border: 0; margin: 0; padding: 0 }
 #psa-rub.pr-sombre>button,#psa-rub.pr-sombre ul a{color:#f2fbff;text-shadow:0 0 6px rgba(0,220,255,.8),0 1px 2px rgba(0,0,0,.8)}
 .psa-lien{display:none}
 @media (max-width:600px){#psa-rub{display:none}.psa-lien{display:block;margin-top:18px}
- .psa-lien a{display:block;text-align:center;padding:12px 16px;border-radius:14px;font-weight:800;color:#0b3d91;text-decoration:none;background:rgba(255,255,255,.9);background-image:repeating-linear-gradient(0deg,rgba(0,200,255,.06) 0 1px,transparent 1px 4px);border:1px solid rgba(0,210,255,.8);box-shadow:0 0 12px rgba(0,200,255,.35)}}
+ .psa-lien details{border-radius:14px;background:rgba(255,255,255,.9);background-image:repeating-linear-gradient(0deg,rgba(0,200,255,.06) 0 1px,transparent 1px 4px);border:1px solid rgba(0,210,255,.8);box-shadow:0 0 12px rgba(0,200,255,.35);overflow:hidden}
+ .psa-lien summary{list-style:none;cursor:pointer;text-align:center;padding:12px 16px;font-weight:800;color:#0b3d91;text-transform:uppercase;letter-spacing:.08em}
+ .psa-lien summary::-webkit-details-marker{display:none}
+ .psa-lien details[open] summary span{display:inline-block;transform:rotate(180deg)}
+ .psa-lien ul{list-style:none;margin:0;padding:0 0 6px;border-top:1px solid rgba(0,210,255,.5)}
+ .psa-lien ul a{display:block;text-align:center;padding:11px 16px;font-weight:800;color:#0b3d91;text-decoration:none}
+ .psa-lien ul a:hover,.psa-lien ul a:focus{background:rgba(0,200,255,.15);color:#0a58ca}}
+#vm-rub,#co-rub{position:fixed;top:calc(5cm + 44px);left:1.5cm;z-index:6999;display:inline-flex;align-items:center;gap:6px;border-radius:999px;padding:10px 16px;text-transform:uppercase;letter-spacing:.08em;font:800 13px/1 "Source Sans 3",Arial,sans-serif;color:#0b3d91;text-decoration:none;white-space:nowrap;background:rgba(255,255,255,.6);background-image:repeating-linear-gradient(0deg,rgba(0,200,255,.06) 0 1px,transparent 1px 4px);-webkit-backdrop-filter:blur(12px) saturate(1.3);backdrop-filter:blur(12px) saturate(1.3);border:1px solid rgba(0,210,255,.8);box-shadow:0 0 12px rgba(0,200,255,.45);transition:background .15s,box-shadow .15s,color .15s}
+#vm-rub:hover,#vm-rub:focus,#co-rub:hover,#co-rub:focus{box-shadow:0 0 18px rgba(0,200,255,.75);color:#0a58ca}
+#vm-rub.pr-sombre,#co-rub.pr-sombre{background-color:rgba(5,15,30,.6);color:#f2fbff;text-shadow:0 0 6px rgba(0,220,255,.8),0 1px 2px rgba(0,0,0,.8)}
+.vm-lien,.co-lien{display:block;margin-top:10px;border-radius:14px;background:rgba(255,255,255,.9);background-image:repeating-linear-gradient(0deg,rgba(0,200,255,.06) 0 1px,transparent 1px 4px);border:1px solid rgba(0,210,255,.8);box-shadow:0 0 12px rgba(0,200,255,.35);text-align:center;padding:12px 16px;font-weight:800;color:#0b3d91;text-transform:uppercase;letter-spacing:.08em;text-decoration:none}
+@media (max-width:600px){#vm-rub,#co-rub{display:none}}
+</style>
+<style id="holo-btn">
+#psa-rub>button,#vm-rub,#co-rub,.psa-lien summary,.vm-lien,.co-lien{position:relative;overflow:hidden;color:#fff!important;text-shadow:0 0 6px rgba(140,220,255,.9),0 1px 2px rgba(0,30,80,.6)!important;background-color:rgba(10,88,202,.62)!important;background-image:linear-gradient(115deg,rgba(255,255,255,.22) 0%,rgba(120,220,255,.10) 30%,rgba(10,88,202,0) 50%,rgba(160,200,255,.18) 75%,rgba(255,255,255,.08) 100%),repeating-linear-gradient(0deg,rgba(150,230,255,.10) 0 1px,transparent 1px 4px)!important;background-size:250% 100%,auto!important;-webkit-backdrop-filter:blur(12px) saturate(1.5);backdrop-filter:blur(12px) saturate(1.5);border:1px solid rgba(110,200,255,.85)!important;box-shadow:0 0 12px rgba(10,88,202,.55),inset 0 0 10px rgba(120,210,255,.35)!important;animation:holoBtn 6s linear infinite}
+.psa-lien details{background:transparent!important;border:0!important;box-shadow:none!important}
+.psa-lien details[open] summary{border-radius:14px 14px 0 0}
+.psa-lien summary{border-radius:14px}
+#psa-rub>button:hover,#psa-rub.ouvert>button,#vm-rub:hover,#vm-rub:focus,.psa-lien summary:hover,.vm-lien:hover,#co-rub:hover,#co-rub:focus,.co-lien:hover{color:#fff!important;box-shadow:0 0 22px rgba(60,170,255,.85),0 0 4px rgba(200,240,255,.9),inset 0 0 14px rgba(150,225,255,.5)!important;background-color:rgba(10,88,202,.75)!important}
+#psa-rub.pr-sombre>button,#vm-rub.pr-sombre,#co-rub.pr-sombre{background-color:rgba(10,88,202,.7)!important}
+#psa-rub>button *,#vm-rub *,#co-rub *{color:inherit!important}
+#psa-rub .pr-cour{opacity:.9}
+#vm-rub,#co-rub{position:fixed}
+@keyframes holoBtn{0%{background-position:0% 0,0 0}100%{background-position:250% 0,0 0}}
+@media (prefers-reduced-motion:reduce){#psa-rub>button,#vm-rub,#co-rub,.psa-lien summary,.vm-lien,.co-lien{animation:none}}
+.psa-lien ul{background:rgba(255,255,255,.95)!important}
 </style>
 <div id="psa-rub"><button type="button" aria-expanded="false" aria-controls="psa-rub-l">Cartes PSA 10 <span aria-hidden="true">&#9662;</span></button>
-<ul id="psa-rub-l"><li><a href="cartes-psa10.html">Toutes les PSA 10</a></li><li><a href="cartes-psa10.html?serie=equilibre-parfait">&Eacute;quilibre Parfait</a></li><li><a href="cartes-psa10.html?serie=chaos-ascendant">Chaos Ascendant</a></li><li><a href="cartes-psa10.html?serie=30e-anniversaire">30<sup>e</sup> Anniversaire</a></li><li><a href="cartes-psa10.html?serie=mimiqui">Mimiqui</a></li></ul></div>
-<section class="wrap psa-lien" aria-label="Cartes PSA 10"><a href="cartes-psa10.html">Cartes PSA 10 : records de vente et bonnes affaires &rarr;</a></section>
+<ul id="psa-rub-l"><li><a href="cartes-psa10.html">Toutes les PSA 10</a></li><li><a href="cartes-psa10.html?serie=special-mimiqui">Sp&eacute;cial Mimiqui</a></li><li><a href="cartes-psa10.html?serie=equilibre-parfait">&Eacute;quilibre Parfait</a></li><li><a href="cartes-psa10.html?serie=chaos-ascendant">Chaos Ascendant</a></li><li><a href="cartes-psa10.html?serie=30e-anniversaire">30<sup>e</sup> Anniversaire</a></li><li><a href="cartes-psa10.html?serie=nuit-noire">Nuit Noire</a></li></ul></div>
+<a id="vm-rub" href="registre.html">Ventes pass&eacute;es Sp&eacute;cial Mimiqui</a>
+<a id="co-rub" href="cotation.html">Cotation Mimiqui</a>
+<section class="wrap psa-lien" aria-label="Cartes PSA 10"><details><summary>Cartes PSA 10 <span aria-hidden="true">&#9662;</span></summary><ul><li><a href="cartes-psa10.html">Toutes les PSA 10</a></li><li><a href="cartes-psa10.html?serie=special-mimiqui">Sp&eacute;cial Mimiqui</a></li><li><a href="cartes-psa10.html?serie=equilibre-parfait">&Eacute;quilibre Parfait</a></li><li><a href="cartes-psa10.html?serie=chaos-ascendant">Chaos Ascendant</a></li><li><a href="cartes-psa10.html?serie=30e-anniversaire">30<sup>e</sup> Anniversaire</a></li><li><a href="cartes-psa10.html?serie=nuit-noire">Nuit Noire</a></li></ul></details><a class="vm-lien" href="registre.html">Ventes pass&eacute;es Sp&eacute;cial Mimiqui</a><a class="co-lien" href="cotation.html">Cotation Mimiqui</a></section>
 <script>
 (function(){var r=document.getElementById("psa-rub");if(!r)return;var b=r.querySelector("button"),u=r.querySelector("ul");
 function place(){r.classList.remove("droite");var c=document.getElementById("fen-com"),bb=b.getBoundingClientRect(),bas=bb.bottom+6+u.offsetHeight;
@@ -475,6 +508,7 @@ haut();addEventListener("scroll",haut,{passive:true});addEventListener("resize",
 var hi=setInterval(haut,400);setTimeout(function(){clearInterval(hi)},12000);if(window.ResizeObserver)new ResizeObserver(haut).observe(document.body);
 addEventListener("load",function(){haut();setTimeout(fond,600)});})();
 </script>
+<script>(function(){var v=document.getElementById("vm-rub"),r=document.getElementById("psa-rub");if(!v||!r)return;var b=r.querySelector("button");function s(){var x=b.getBoundingClientRect();if(!x.width)return;v.style.top=Math.round(x.bottom+8)+"px";v.style.left=Math.round(x.left)+"px";v.style.height=Math.round(x.height)+"px";v.classList.toggle("pr-sombre",r.classList.contains("pr-sombre"));var c=document.getElementById("co-rub");if(c){c.style.top=Math.round(x.bottom+8+x.height+8)+"px";c.style.left=Math.round(x.left)+"px";c.style.height=Math.round(x.height)+"px";c.classList.toggle("pr-sombre",r.classList.contains("pr-sombre"))}}s();addEventListener("scroll",s,{passive:true});addEventListener("resize",s);addEventListener("load",s);var k=setInterval(s,400);setTimeout(function(){clearInterval(k)},12000);if(window.MutationObserver)new MutationObserver(s).observe(r,{attributes:true})})();</script>
 
 <section class="wrap accueil-tuiles" aria-label="Rubriques principales">
   <a href="cartes.html"><span class="ico" aria-hidden="true">&#127183;</span><strong>Cartes</strong><span class="d">Cartes FR, JA, EN et les 1025 Pok&eacute;mon</span></a>
@@ -760,7 +794,6 @@ addEventListener("load",function(){haut();setTimeout(fond,600)});})();
     <div class="rubriques">
       <a class="rub" href="blog.html"><b>Blog</b><span>Des articles sur Mimiqui, et un assistant IA qui répond à vos commentaires.</span><em class="dispo">Disponible</em></a>
       <a class="rub" href="registre.html"><b>Registre</b><span>Chaque semaine, la cote Cardmarket et les ventes adjugées sur eBay de chaque carte Mimiqui : prix le plus vendu, plus bas, plus haut.</span><em class="dispo">Disponible</em></a>
-      <a class="rub" href="adjuge.html"><b>Adjugé</b><span>Les annonces eBay de Mimiqui comparées à leur cote, avec notre verdict : bonne affaire ou trop cher.</span><em class="dispo">Disponible</em></a>
       <a class="rub" href="vendre.html"><b>Vendre sur eBay</b><span>Le prix conseillé de ta carte Mimiqui selon son état, et une annonce eBay prête à copier.</span><em class="dispo">Disponible</em></a>
       <a class="rub" href="boutique.html"><b>Boutique</b><span>Des boutiques eBay de vendeurs de cartes Pokémon, pour trouver vos cartes Mimiqui.</span><em class="dispo">Disponible</em></a>
       <a class="rub" href="cartes.html"><b>Cartes</b><span>Les cartes Mimiqui du JCC, en français (33) et en japonais (30), avec photo, rareté et attaques.</span><em class="dispo">Disponible</em></a>
@@ -805,7 +838,6 @@ addEventListener("load",function(){haut();setTimeout(fond,600)});})();
     ["Jeu", "Joue avec Mimiqui : saute par-dessus les attaques", "jeu.html", "jeu jouer partie score fantomasque saut"],
     ["Cotation", "La cote des 61 cartes Mimiqui (Cardmarket et eBay)", "cotation.html", "cotation cote prix valeur combien vaut cardmarket ebay vente"],
     ["Registre", "Chaque semaine : cote Cardmarket et ventes eBay adjugées de chaque carte", "registre.html", "registre semaine hebdo historique cote cardmarket ventes vendues adjuge prix plus vendu"],
-    ["Adjugé", "Annonces eBay comparées à la cote, avec verdict", "adjuge.html", "adjuge bonnes affaires annonces ebay verdict prix offre trop cher"],
     ["Vendre sur eBay", "Prix conseillé et annonce prête pour vendre ta carte", "vendre.html", "vendre vente revendre annonce prix estimation ebay mettre en vente"],
     ["Boosters", "Acheter des boosters Pokémon sur Amazon", "jeu.html#boosters", "boosters booster acheter amazon display coffret dresseur elite etb tripack prix"],
     ["Instagram", "@lecoindemimiqui", "https://www.instagram.com/lecoindemimiqui/", "instagram réseaux sociaux suivre photos"],
@@ -822,6 +854,7 @@ addEventListener("load",function(){haut();setTimeout(fond,600)});})();
     var ok = function (txt) { var n = norm(txt); return mots.every(function (m) { return n.indexOf(m) !== -1; }); };
     var out = [];
     PARTIES.forEach(function (p) { if (ok(p[0] + " " + p[1] + " " + p[3])) out.push('<li><a href="' + p[2] + '"><b>' + esc(p[0]) + '</b><span class="tag">Site</span><small>' + esc(p[1]) + '</small></a></li>'); });
+    (window.RECH_SITE || []).forEach(function (p) { if (ok(p[0] + " " + p[1] + " " + p[3])) out.push('<li><a href="' + esc(p[2]) + '"><b>' + esc(p[0]) + '</b><span class="tag">' + esc(p[3]) + '</span><small>' + esc(p[1]) + '</small></a></li>'); });
     CARTES.forEach(function (c) {
       if (!ok(c[1] + " " + c[2] + " " + c[3] + " " + c[5] + (c[0] === "ja" ? " japonaise japon" : " francaise"))) return;
       var page = c[0] === "ja" ? "cartes-japonaises.html" : "cartes.html";
@@ -830,6 +863,8 @@ addEventListener("load",function(){haut();setTimeout(fond,600)});})();
     res.innerHTML = out.length ? out.slice(0, 40).join("") : '<li class="vide">Aucun résultat. Essayez « GX », « Team Rocket » ou « film ».</li>';
     show(true);
   }
+  var rs = 0; function chargeIdx() { if (rs || window.RECH_SITE) return; rs = 1; var s = document.createElement("script"); s.src = "recherche-index.js"; s.onload = function () { if (q.value) run(); }; document.head.appendChild(s); }
+  q.addEventListener("focus", chargeIdx); q.addEventListener("input", chargeIdx);
   q.addEventListener("input", run);
   q.addEventListener("focus", function () { if (q.value) run(); });
   q.addEventListener("keydown", function (e) {
