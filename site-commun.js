@@ -211,7 +211,10 @@ function go(){
  function estCarte(i){return i&&i.tagName==='IMG'&&((/^cartes(-japonaises|-anglaises)?\.html$/.test(page)&&!!i.closest('.card .frame'))||/(^|\/)img\/(?!logo)[\w-]+\.(webp|png|jpe?g)/i.test(i.getAttribute('src')||''))&&!i.closest('.h5-holo,header,#mini-teaser')&&i.offsetWidth>50}
  var P=document.createElement('div');P.id='h5-proj';document.body.appendChild(P);var cur=null;
  if(matchMedia('(hover:hover)').matches){
-  document.addEventListener('mouseover',function(e){var i=e.target;if(!estCarte(i)||i===cur)return;if(cur)cur.classList.remove('h5-on');cur=i;i.classList.add('h5-lift');void i.offsetWidth;i.classList.add('h5-on');P.innerHTML='';P.appendChild(holo(i.currentSrc||i.src,''));var r=i.getBoundingClientRect();P.style.left=Math.max(4,r.left+r.width/2-45)+'px';P.style.top=Math.max(4,r.top-140)+'px';P.classList.add('on')});
+  document.addEventListener('mouseover',function(e){var i=e.target;if(!estCarte(i)||i===cur)return;if(cur)cur.classList.remove('h5-on');cur=i;i.classList.add('h5-lift');void i.offsetWidth;i.classList.add('h5-on');P.innerHTML='';P.appendChild(holo(i.currentSrc||i.src,''));var r=i.getBoundingClientRect();P.style.left=Math.max(4,Math.min(innerWidth-(P.offsetWidth||90)-4,r.left+r.width/2-(P.offsetWidth||90)/2))+'px';P.style.top=Math.max(4,r.top-140)+'px';
+  var hw=/^cartes(-japonaises|-anglaises)?\.html$/.test(page)&&i.closest('.pic>div')&&i.closest('.pic>div').querySelector('.hi-win');
+  if(hw){P.classList.remove('on');var ii=i;clearTimeout(P._t);P._t=setTimeout(function(){if(cur!==ii)return;var q=hw.getBoundingClientRect();P.style.left=Math.round(q.left+q.width/2-(P.offsetWidth||90)/2)+'px';P.style.top=Math.round(q.top+10)+'px';P.classList.add('on')},480)}
+  else P.classList.add('on')});
   document.addEventListener('mouseout',function(e){if(cur&&e.target===cur){cur.classList.remove('h5-on');cur=null;P.classList.remove('on')}});
   addEventListener('scroll',function(){if(cur){cur.classList.remove('h5-on');cur=null;P.classList.remove('on')}},{passive:true})}
  // 5 socle bas de page

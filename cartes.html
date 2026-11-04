@@ -226,6 +226,14 @@ dl{font-size:13px}
 @keyframes hiFlotte{0%,100%{transform:translate(0,-50%) scale(1)}50%{transform:translate(0,-56%) scale(1.03)}}
 .hi-win.hi-g{left:auto;right:100%;margin-left:0;margin-right:6px;transform-origin:100% 50%}
 </style>
+<style id="holo-vers-texte">
+.frame .hi-holo,.frame:hover .hi-holo{opacity:0!important;animation:none!important}
+.hi-win{padding:10px 12px;border-radius:14px;overflow:hidden;isolation:isolate;border:1px solid rgba(255,255,255,.9)!important;box-shadow:0 0 0 1px rgba(120,230,255,.6),0 8px 26px rgba(80,120,255,.35)!important;background:linear-gradient(115deg,rgba(255,0,140,.38),rgba(255,210,0,.34),rgba(0,255,170,.38),rgba(0,190,255,.42),rgba(170,80,255,.38),rgba(255,0,140,.38))!important;background-size:300% 300%!important}
+@media (hover:hover){.pic>div:has(.frame:hover) .hi-win,.pic>div:has(.frame:focus-visible) .hi-win{animation:hiFlotte 2.6s ease-in-out .45s infinite,hiShim 3s linear infinite}}
+.hi-win::before{content:"";position:absolute;inset:0;z-index:-1;background:rgba(255,255,255,.55);border-radius:inherit}
+@media (prefers-reduced-motion:reduce){.hi-win{animation:none!important}}
+</style>
+<style id="holo-carte-sur-texte">@media (hover:hover){.hi-win{padding-top:150px!important}}#h5-proj{z-index:2147482000}</style>
 </head><body>
 <header class="wrap"><nav class="sitenav" aria-label="Navigation principale">
   <a class="logo" href="index.html"><img class="logo-img" src="img/logo-mimiqui.webp" alt="" width="95" height="120" style="width:auto;height:3.4rem;object-fit:contain;transform:none">Le Coin de Mimiqui<span>.</span></a>
@@ -474,4 +482,9 @@ el.textContent=vs.length?vs.length+" vente"+(vs.length>1?"s":"")+" · "+(vs.leng
 maj();new MutationObserver(maj).observe(document.getElementById("list"),{childList:true,subtree:true});})();</script>
 <style id="place-holo">@media (hover:hover) and (min-width:700px){.grid{grid-template-columns:repeat(auto-fill,minmax(336px,1fr))!important}.card .pic{justify-items:start;padding-right:192px}.card .pic .ebay{align-self:auto;justify-self:center;margin-left:0}}</style>
 <style id="prix-conseil-css">.prix-conseil{display:grid;grid-template-columns:1fr 1fr;gap:8px 12px;margin:0 0 12px;padding:10px 12px;border:1px solid var(--line,#ddd);border-radius:10px;background:#fff;color:#111;font-size:12px}.prix-conseil .pc-l{display:block;color:#5a5a5a;font-size:11px}.prix-conseil b{font-size:16px}.prix-conseil small{display:block;color:#5a5a5a;font-size:10px}.prix-conseil .pc-btn{grid-column:1/-1;text-align:center;padding:7px 10px;border-radius:999px;background:#111;color:#fff;font-weight:700;text-decoration:none}.prix-conseil .pc-btn:hover{background:var(--rouge,#d0021b)}.prix-conseil .pc-n{grid-column:1/-1}</style><style id="ebay-liens">.eb-sous,.eb-vendues{display:inline-block;margin-top:6px;font-size:11px;font-weight:700;color:#111;text-decoration:underline;text-underline-offset:2px}.eb-sous{width:132px;text-align:center}.eb-vendues{margin:0 0 10px;font-size:13px}.eb-sous:hover,.eb-vendues:hover{color:var(--rouge,#d0021b)}</style>
+<style id="holo-centre">@keyframes hiFlotteC{0%,100%{transform:translate(0,calc(-50% + var(--hi-dy,0px))) scale(1)}50%{transform:translate(0,calc(-50% + var(--hi-dy,0px))) scale(1.02)}}
+@media (hover:hover){.pic>div:has(.frame:hover) .hi-win,.pic>div:has(.frame:focus-visible) .hi-win{transform:translate(0,calc(-50% + var(--hi-dy,0px))) scale(1);animation:hiFlotteC 2.6s ease-in-out .45s infinite,hiShim 3s linear infinite!important}}
+@media (prefers-reduced-motion:reduce){.pic>div:has(.frame:hover) .hi-win{animation:none!important}}</style>
+<script id="holo-centre-js">(function(){function cale(f){var w=f.closest('.pic>div');w=w&&w.querySelector('.hi-win');if(!w)return;w.style.setProperty('--hi-dy','0px');var fr=f.getBoundingClientRect(),im=f.querySelector('img')||f,a=im.getBoundingClientRect(),h=w.offsetHeight,c=a.top+a.height/2,base=c-(fr.top+fr.height/2),hd=document.querySelector('header');var haut=(hd&&getComputedStyle(hd).position.match(/fixed|sticky/)?hd.getBoundingClientRect().bottom:0)+8,bas=innerHeight-8,dy=base;if(c-h/2<haut)dy+=haut-(c-h/2);else if(c+h/2>bas)dy+=bas-(c+h/2);w.style.setProperty('--hi-dy',Math.round(dy)+'px')}
+document.addEventListener('mouseover',function(e){var f=e.target.closest&&e.target.closest('.card .frame');if(f)cale(f)});document.addEventListener('focusin',function(e){var f=e.target.closest&&e.target.closest('.card .frame');if(f)cale(f)})})();</script>
 </body></html>
