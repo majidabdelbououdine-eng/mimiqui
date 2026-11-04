@@ -23,7 +23,7 @@
 .af-offre:hover{background:#f4f4f4}
 .af-offre.bon{border:2px solid var(--rouge,#d0021b)}
 .af-offre b{font-size:14px;font-variant-numeric:tabular-nums}
-.af-offre .af-l,.af-offre .af-ec{color:#5a5a5a;font-size:10px}
+.af-offre .af-l,.af-offre .af-ec{color:#5a5a5a;font-size:9px}
 .af-offre.bon .af-ec{color:var(--rouge,#d0021b);font-weight:700}
 .af-badge{justify-self:start;background:var(--rouge,#d0021b);color:#fff;font-weight:700;font-size:9px;letter-spacing:.08em;text-transform:uppercase;padding:1px 6px;border-radius:999px}
 .conseil-achat{display:grid;grid-template-columns:auto 1fr;gap:2px 10px;margin-top:10px;padding:10px 12px;border-left:3px solid #1d6b3a;background:#f2f7f3;font-size:.85rem}
@@ -209,10 +209,27 @@ dl{font-size:13px}
 .card details{font-size:13px}
 .card .hp{font-size:12px}
 </style>
-<style id="agrandi">html{font-size:118%}body{font-size:1.15rem}.wrap{max-width:1180px!important;margin-left:auto!important;margin-right:auto!important}.logo{font-size:calc(1.7rem * 1.15)!important}</style><link rel="stylesheet" href="site-commun.css"><meta name="referrer" content="strict-origin-when-cross-origin"></head><body>
+<style id="agrandi">html{font-size:118%}body{font-size:1.15rem}.wrap{max-width:1180px!important;margin-left:auto!important;margin-right:auto!important}.logo{font-size:calc(1.7rem * 1.15)!important}</style><link rel="stylesheet" href="site-commun.css"><meta name="referrer" content="strict-origin-when-cross-origin"><style id="holo-infos">
+.pic>div{position:relative}
+.card:has(.frame:hover),.card:has(.frame:focus-visible){overflow:visible!important;z-index:40;position:relative}
+.hi-win{position:absolute;left:100%;top:50%;margin-left:6px;width:180px;max-width:92vw;z-index:41;display:flex;flex-direction:column;align-items:center;gap:3px;text-align:center;pointer-events:none;opacity:0;transform:translate(-30%,-50%) scale(.2);transform-origin:0 50%;transition:opacity .35s ease,transform .45s cubic-bezier(.2,1.4,.4,1);background:none;border:0;box-shadow:none;color:#000;font:800 15px/1.25 "Source Sans 3",Arial,sans-serif;text-shadow:0 0 2px #fff,0 0 4px #fff,0 0 8px #fff,0 0 14px rgba(120,230,255,.95),0 0 22px rgba(255,120,220,.6)}
+.hi-nom{font:800 19px/1.15 "Bodoni Moda",Georgia,serif;color:#000;margin-bottom:3px}
+.hi-l{display:flex;flex-direction:column;align-items:center}
+.hi-l i{font-style:normal;text-transform:uppercase;letter-spacing:.08em;font-size:10px;font-weight:800}
+.hi-l b{font-weight:800}
+.frame .hi-holo{position:absolute;inset:0;z-index:5;pointer-events:none;opacity:0;border-radius:inherit;transition:opacity .25s ease;mix-blend-mode:color-dodge;background:linear-gradient(115deg,rgba(255,0,140,.55),rgba(255,210,0,.5),rgba(0,255,170,.55),rgba(0,190,255,.6),rgba(170,80,255,.55),rgba(255,0,140,.55));background-size:300% 300%}
+@media (hover:hover){.pic>div:has(.frame:hover) .hi-win,.pic>div:has(.frame:focus-visible) .hi-win{opacity:1;transform:translate(0,-50%) scale(1);animation:hiFlotte 2.6s ease-in-out .45s infinite}
+.frame:hover .hi-holo{opacity:.8;animation:hiShim 3s linear infinite}}
+@media (hover:none){.hi-win,.frame .hi-holo{display:none}}
+@media (prefers-reduced-motion:reduce){.frame:hover .hi-holo,.pic>div:has(.frame:hover) .hi-win{animation:none!important}}
+@keyframes hiShim{0%{background-position:0% 50%}100%{background-position:300% 50%}}
+@keyframes hiFlotte{0%,100%{transform:translate(0,-50%) scale(1)}50%{transform:translate(0,-56%) scale(1.03)}}
+.hi-win.hi-g{left:auto;right:100%;margin-left:0;margin-right:6px;transform-origin:100% 50%}
+</style>
+</head><body>
 <header class="wrap"><nav class="sitenav" aria-label="Navigation principale">
   <a class="logo" href="index.html"><img class="logo-img" src="img/logo-mimiqui.webp" alt="" width="95" height="120" style="width:auto;height:3.4rem;object-fit:contain;transform:none">Le Coin de Mimiqui<span>.</span></a>
-  <ul class="menu-principal" id="menu-principal"><li><a href="index.html">Accueil</a></li><li><a href="blog.html">Blog</a></li><li><a href="cartes.html">Cartes</a><button type="button" class="ouvre-sous" aria-expanded="false" aria-label="Sous-menu Cartes">&#9662;</button><ul class="sous-menu"><li class="sm-groupe"><button type="button" class="sm-tog" aria-expanded="false">Spécial Mimiqui <span class="sm-fl" aria-hidden="true">&#9656;</span></button><ul class="sm-sous"><li><a href="cartes.html">Cartes fran&ccedil;aises</a></li><li><a href="cartes-japonaises.html">Cartes japonaises</a></li><li><a href="cartes-anglaises.html">Cartes anglaises</a></li></ul></li><li><a href="cartes-pokemon.html">1025 Pok&eacute;mon</a></li><li><a href="equilibre-parfait-ventes.html">&Eacute;quilibre Parfait</a></li><li><a href="trentieme-anniversaire-ventes.html">30<sup>e</sup> Anniversaire</a></li><li><a href="chaos-ascendant-ventes.html">Chaos Ascendant</a></li><li><a href="nuit-noire-ventes.html">Nuit Noire</a></li></ul></li><li><a href="cotation.html">Prix</a><button type="button" class="ouvre-sous" aria-expanded="false" aria-label="Sous-menu Prix">&#9662;</button><ul class="sous-menu"><li><a href="cotation.html">Cotation</a></li><li><a href="registre.html">Ventes pass&eacute;es Sp&eacute;cial Mimiqui</a></li><li><a href="registre-pokemon.html">Registre des cartes pass&eacute;es</a></li></ul></li><li><a href="boutique.html">Acheter</a><button type="button" class="ouvre-sous" aria-expanded="false" aria-label="Sous-menu Acheter">&#9662;</button><ul class="sous-menu"><li><a href="boutique.html">Boutique</a></li><li><a href="jeu.html#boosters">Boosters</a></li><li><a href="cartes-psa10.html">Cartes PSA 10</a></li></ul></li><li><a href="vendre.html">Vendre sur eBay</a></li></ul>
+  <ul class="menu-principal" id="menu-principal"><li><a href="index.html">Accueil</a></li><li><a href="blog.html">Blog</a></li><li><a href="cartes.html">Cartes</a><button type="button" class="ouvre-sous" aria-expanded="false" aria-label="Sous-menu Cartes">&#9662;</button><ul class="sous-menu"><li class="sm-groupe"><button type="button" class="sm-tog" aria-expanded="false">Spécial Mimiqui <span class="sm-fl" aria-hidden="true">&#9656;</span></button><ul class="sm-sous"><li><a href="cartes.html">Cartes fran&ccedil;aises</a></li><li><a href="cartes-japonaises.html">Cartes japonaises</a></li><li><a href="cartes-anglaises.html">Cartes anglaises</a></li></ul></li><li><a href="cartes-pokemon.html">1025 Pok&eacute;mon</a></li><li><a href="equilibre-parfait-ventes.html">&Eacute;quilibre Parfait</a></li><li><a href="trentieme-anniversaire-ventes.html">30<sup>e</sup> Anniversaire</a></li><li><a href="chaos-ascendant-ventes.html">Chaos Ascendant</a></li><li><a href="nuit-noire-ventes.html">Nuit Noire</a></li></ul></li><li><a href="cotation.html">Prix</a><button type="button" class="ouvre-sous" aria-expanded="false" aria-label="Sous-menu Prix">&#9662;</button><ul class="sous-menu"><li><a href="cotation.html">Cotation</a></li><li><a href="registre.html">Ventes pass&eacute;es Sp&eacute;cial Mimiqui</a></li><li><a href="registre-pokemon.html">Registre des cartes pass&eacute;es</a></li></ul></li><li><a href="boutique.html">Acheter</a><button type="button" class="ouvre-sous" aria-expanded="false" aria-label="Sous-menu Acheter">&#9662;</button><ul class="sous-menu"><li><a href="boutique.html">Boutique</a></li><li><a href="jeu.html#boosters">Boosters</a></li><li><a href="cartes-psa10.html">Cartes PSA 10</a></li></ul></li><li><a href="vendre.html">Vendre sur eBay</a><button type="button" class="ouvre-sous" aria-expanded="false" aria-label="Sous-menu Vendre sur eBay">&#9662;</button><ul class="sous-menu"><li><a href="vendre.html">Vendre sur eBay</a></li><li><a href="estimer-ma-carte.html">Estimer ma carte</a></li><li><a href="guide-vendre-ebay.html">Guide pour vendre sur eBay</a></li></ul></li></ul>
 </nav></header>
 
 <header class="hero wrap">
@@ -278,20 +295,18 @@ function affaireHTML(c, k){
       ${bon?`<span class="af-badge">Bonne affaire</span>`:""}<span class="af-l">${o.type==="enchere"?"Enchère en cours sur eBay":"Moins cher sur eBay"+(o.offre?" · offre possible":"")}</span>
       <b>${e(o.prix)}</b>${ecart!=null?`<span class="af-ec">${ecart>0?ecart+" % sous la cote":ecart<0?(-ecart)+" % au-dessus de la cote":"au prix de la cote"}</span>`:""}</a>`;
   }
-  return `<div class="affaire">${haut}<span class="af-t">Chercher moins cher</span>
+  return `<div class="affaire"><span class="af-t">Chercher moins cher</span>
     <a href="${esc(tri)}" target="_blank" rel="sponsored noopener">eBay, achat immédiat, prix croissant ↗</a>${C.cm_url?`<a href="${esc(C.cm_url)}" target="_blank" rel="noopener">Cardmarket, offres ↗</a>`:""}</div>`;
 }
+function prixConseilHTML(c){if(c.serieId==="tcgp")return "";const C=(window.COTATION&&COTATION.cartes&&COTATION.cartes[key(c)])||{},t=C.tendance!=null?Number(C.tendance):null,q=encodeURIComponent(ebayRecherche(c)),e2=v=>v.toFixed(2).replace(".",",")+" €";
+const u="https://www.ebay.fr/sch/i.html?_nkw="+q+(t!=null?"&_udlo="+(t*0.7).toFixed(2)+"&_udhi="+(t*0.9).toFixed(2):"");
+return `<div class="prix-conseil"><div><span class="pc-l">Prix d'achat conseillé</span><b>${t!=null?e2(t*0.8):"cote indisponible"}</b><small>${t!=null?"cote − 20 %":""}</small></div><div><span class="pc-l">Prix de revente conseillé</span><b>${t!=null?e2(t*1.2):"cote indisponible"}</b><small>${t!=null?"cote + 20 %":""}</small></div><a class="pc-btn" href="${esc(epn(u,"rechercher"))}" target="_blank" rel="sponsored noopener">Rechercher la carte sur eBay ↗</a>${t!=null?`<small class="pc-n">Recherche entre ${e2(t*0.7)} et ${e2(t*0.9)} (cote − 30 % à − 10 %)</small>`:""}</div>`}
 function coteHTML(k){
-  const C = window.COTATION && window.COTATION.cartes && window.COTATION.cartes[k];
-  if (!C) return "";
+  const C = (window.COTATION && window.COTATION.cartes && window.COTATION.cartes[k]) || {};
   const e = v => v==null ? "–" : v.toLocaleString("fr-FR",{style:"currency",currency:"EUR"});
-  const j = d => { if(!d) return ""; const t=new Date(d+"T12:00:00"); return isNaN(t)?d:t.toLocaleDateString("fr-FR",{day:"numeric",month:"short"}); };
-  const eb = o => o && o.prix!=null ? `${e(o.prix)}<small>${j(o.date)}</small>` : `<span class="na">à venir</span>`;
   return `<a class="cote-mini" href="cotation.html#${k}" aria-label="Voir le graphique des prix de cette carte">
-    <span class="cm-l">Cote Cardmarket</span><span class="cm-v">${C.tendance!=null?e(C.tendance):"–"}</span>
-    <span class="cm-l">Plus haute vente eBay</span><span class="cm-v">${eb(C.ebay_max)}</span>
-    <span class="cm-l">Dernière vente la plus basse</span><span class="cm-v">${eb(C.ebay_min)}</span>
-    <span class="cm-d">Relevé du ${j(window.COTATION.releve)}</span></a>`;
+    <span class="cm-l">Cote Cardmarket</span><span class="cm-v">${e(C.tendance)}</span>
+    <span class="cm-l">Ventes ce mois</span><span class="cm-v vm" data-vm="${esc(k)}">…</span></a>${(()=>{const c=CARDS.find(x=>key(x)===k);if(!c||c.serieId==="tcgp")return "";const u="https://www.ebay.fr/sch/i.html?_nkw="+encodeURIComponent(ebayRecherche(c))+"&LH_BIN=1&_sop=15"+(C.tendance!=null?"&_udhi="+Math.ceil(C.tendance):"");return `<a class="eb-sous" href="${esc(epn(u,"souscote"))}" target="_blank" rel="sponsored noopener">${C.tendance!=null?"Achat immédiat sous la cote":"Achat immédiat, prix croissant"} ↗</a>`})()}`;
 }
 // Conseil d'achat, calculé comme le prix conseillé de la rubrique « Vendre sur eBay » (vendre.html)
 function conseilHTML(c, k){
@@ -310,11 +325,19 @@ function conseilHTML(c, k){
     <span class="ca-n">Prix de vente conseillé : ${e(vente)}. En achetant 40 % en dessous, tu gardes de la marge pour la revendre.</span>
     <a href="vendre.html?carte=${encodeURIComponent(k)}">Je veux la vendre →</a></div>`;
 }
+function holoInfo(c,k){
+  const C = (window.COTATION && window.COTATION.cartes && window.COTATION.cartes[k]) || {};
+  const e = v => v.toLocaleString("fr-FR",{style:"currency",currency:"EUR"});
+  const L = [["Numéro", esc(num(c))], ["Extension", esc(c.setFr||"")], ["Rareté", esc(RAR[c.rarity]||c.rarity||"")]];
+  if (c.hp) L.push(["PV", esc(c.hp)]);
+  if (C.tendance != null) L.push(["Cote", e(C.tendance)]);
+  return `<span class="hi-win" aria-hidden="true"><span class="hi-nom">${esc(c.name)}</span>${L.filter(x=>x[1]).map(x=>`<span class="hi-l"><i>${x[0]}</i><b>${x[1]}</b></span>`).join("")}</span>`;
+}
 function cardHTML(c){
   const k = key(c);
   const pic = IMAGES.includes(k)
-    ? `<button class="frame" type="button" data-zoom="${esc(srcImg(k))}" aria-label="Agrandir la carte ${esc(c.name)} ${esc(num(c))}"><img decoding="async" src="${esc(srcImg(k))}" alt="Carte ${esc(c.name)} ${esc(c.setFr)} ${esc(num(c))}" loading="lazy"></button>${EN_IMG.includes(k)?`<span class="img-note">Photo de la version anglaise</span>`:""}`
-    : `<div class="frame none"><div class="ph">${ghost}<span class="ph-name">Pas de photo</span><span class="ph-no">${esc(num(c))}</span></div></div>`;
+    ? `<button class="frame" type="button" data-zoom="${esc(srcImg(k))}" aria-label="Agrandir la carte ${esc(c.name)} ${esc(num(c))}"><img decoding="async" src="${esc(srcImg(k))}" alt="Carte ${esc(c.name)} ${esc(c.setFr)} ${esc(num(c))}" loading="lazy"><span class="hi-holo" aria-hidden="true"></span></button>${holoInfo(c,k)}${EN_IMG.includes(k)?`<span class="img-note">Photo de la version anglaise</span>`:""}`
+    : `<div class="frame none"><div class="ph">${ghost}<span class="ph-name">Pas de photo</span><span class="ph-no">${esc(num(c))}</span></div><span class="hi-holo" aria-hidden="true"></span></div>${holoInfo(c,k)}`;
   const types = (c.types||[]).map(t => `<span class="chip type" style="background:var(${(TYPES[t]||[,"--t-inc"])[1]})">${esc(typeName(t))}</span>`).join("");
   const rar = `<span class="chip rar">${esc(RAR[c.rarity]||c.rarity)}</span>`;
   const sfx = c.suffix ? `<span class="chip">${esc(c.suffix)}</span>` : "";
@@ -338,8 +361,10 @@ function cardHTML(c){
   const n = (c.abilities||[]).length + (c.attacks||[]).length;
   return `<article class="card" id="${esc(k)}">
     <div class="title title-haut"><h3>${esc(c.name)}</h3>${c.hp?`<span class="hp">${esc(c.hp)} PV</span>`:""}</div>
-    <div class="pic"><div>${pic}</div>${c.serieId==="tcgp"?"":`<a class="ebay" href="${esc(ebayURL(c))}" target="_blank" rel="sponsored noopener">Voir sur eBay</a><button class="btn-ventes" type="button" data-ventes>Ventes basses et hautes</button>`}${coteHTML(k)}${affaireHTML(c,k)}${conseilHTML(c,k)}</div>
+    <div class="pic"><div>${pic}</div>${c.serieId==="tcgp"?"":`<a class="ebay" href="${esc(ebayURL(c))}" target="_blank" rel="sponsored noopener">Voir sur eBay</a><button class="btn-ventes" type="button" data-ventes>Ventes basses et hautes</button>`}${coteHTML(k)}</div>
     <div class="body">
+      ${prixConseilHTML(c)}
+      ${c.serieId==="tcgp"?"":`<a class="eb-vendues" href="${esc(epn("https://www.ebay.fr/sch/i.html?_nkw="+encodeURIComponent(ebayRecherche(c))+"&LH_Sold=1&LH_Complete=1","dejavendues"))}" target="_blank" rel="sponsored noopener">Déjà vendues sur eBay ↗</a>`}
       <div class="chips">${types}${rar}${sfx}</div>
       <dl>${rows}</dl>
       ${n?`<details><summary>${(c.abilities||[]).length?"Talent et attaques":"Attaques"} (${n})</summary>${abil}${atks}</details>`:""}
@@ -435,4 +460,18 @@ if (window.claude && window.claude.use) window.claude.use("db").then(db => {
 @media (max-width:520px){.cookie-info{flex-direction:column;align-items:stretch}}
 </style>
 <script>(function(){var b=document.getElementById("cookie-info");if(!b)return;var k="coin-mimiqui-info-cookies",vu=false;try{vu=localStorage.getItem(k)==="1"}catch(e){}if(!vu)b.hidden=false;document.getElementById("cookie-ok").addEventListener("click",function(){b.hidden=true;try{localStorage.setItem(k,"1")}catch(e){}});})();</script>
-<script src="site-commun.js" defer></script><p class="pied-legal">Site de fan non officiel &middot; <a href="mentions-legales.html#liens">Liens affili&eacute;s</a> &middot; <a href="mentions-legales.html">Mentions l&eacute;gales</a></p><style>.pied-legal{margin:1.2rem auto 1.4rem;text-align:center;font-size:.72rem;font-weight:300;color:#7a869a;letter-spacing:.02em}.pied-legal a{color:#7a869a;text-decoration:underline}</style></body></html>
+<script src="site-commun.js" defer></script><p class="pied-legal">Site de fan non officiel &middot; <a href="mentions-legales.html#liens">Liens affili&eacute;s</a> &middot; <a href="mentions-legales.html">Mentions l&eacute;gales</a></p><style>.pied-legal{margin:1.2rem auto 1.4rem;text-align:center;font-size:.72rem;font-weight:300;color:#7a869a;letter-spacing:.02em}.pied-legal a{color:#7a869a;text-decoration:underline}</style><script id="hi-g-js">document.addEventListener("mouseover",e=>{const fr=e.target.closest&&e.target.closest(".frame");if(!fr)return;const w=fr.parentElement.querySelector(".hi-win");if(!w)return;const r=fr.getBoundingClientRect();w.classList.toggle("hi-g",r.right+196>document.documentElement.clientWidth)});</script>
+<style id="infos-clic">.card>.body{display:none}.card.infos-on>.body{display:block;animation:icIn .3s ease}@keyframes icIn{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}.card .frame[data-zoom]{cursor:pointer}</style>
+<script id="infos-clic-js">document.addEventListener("click",e=>{const fr=e.target.closest&&e.target.closest(".card .frame");if(fr){if(e.detail>1)return;e.preventDefault();e.stopImmediatePropagation();const c=fr.closest(".card");const on=!c.classList.contains("infos-on");document.querySelectorAll(".card.infos-on").forEach(x=>x.classList.remove("infos-on"));c.classList.toggle("infos-on",on);return}if(!(e.target.closest&&e.target.closest(".card.infos-on>.body")))document.querySelectorAll(".card.infos-on").forEach(x=>x.classList.remove("infos-on"))},true);</script>
+<script src="registre-ventes-data.js"></script>
+<script id="ventes-mois-js">(function(){
+function maj(){const R=window.REGISTRE_VENTES||[];const lim=new Date(Date.now()-30*864e5).toISOString().slice(0,10);
+const cn=x=>String(x||"").replace(/\s/g,"").split("/").map(p=>p.replace(/^0+(?=\d)/,"")).join("/").toLowerCase();
+const e=v=>v.toLocaleString("fr-FR",{style:"currency",currency:"EUR"});
+document.querySelectorAll("[data-vm]").forEach(el=>{if(el.dataset.ok)return;const c=CARDS.find(x=>key(x)===el.dataset.vm);if(!c)return;
+const vs=R.filter(v=>v.langue===LANGUE&&cn(v.numero)===cn(num(c))&&v.date>=lim);
+el.textContent=vs.length?vs.length+" vente"+(vs.length>1?"s":"")+" · "+(vs.length>3?(p=>e(Math.min(...p))+" à "+e(Math.max(...p)))(vs.map(v=>v.prix)):vs.map(v=>e(v.prix)).join(", ")):"Aucune vente ce mois";el.dataset.ok=1})}
+maj();new MutationObserver(maj).observe(document.getElementById("list"),{childList:true,subtree:true});})();</script>
+<style id="place-holo">@media (hover:hover) and (min-width:700px){.grid{grid-template-columns:repeat(auto-fill,minmax(336px,1fr))!important}.card .pic{justify-items:start;padding-right:192px}.card .pic .ebay{align-self:auto;justify-self:center;margin-left:0}}</style>
+<style id="prix-conseil-css">.prix-conseil{display:grid;grid-template-columns:1fr 1fr;gap:8px 12px;margin:0 0 12px;padding:10px 12px;border:1px solid var(--line,#ddd);border-radius:10px;background:#fff;color:#111;font-size:12px}.prix-conseil .pc-l{display:block;color:#5a5a5a;font-size:11px}.prix-conseil b{font-size:16px}.prix-conseil small{display:block;color:#5a5a5a;font-size:10px}.prix-conseil .pc-btn{grid-column:1/-1;text-align:center;padding:7px 10px;border-radius:999px;background:#111;color:#fff;font-weight:700;text-decoration:none}.prix-conseil .pc-btn:hover{background:var(--rouge,#d0021b)}.prix-conseil .pc-n{grid-column:1/-1}</style><style id="ebay-liens">.eb-sous,.eb-vendues{display:inline-block;margin-top:6px;font-size:11px;font-weight:700;color:#111;text-decoration:underline;text-underline-offset:2px}.eb-sous{width:132px;text-align:center}.eb-vendues{margin:0 0 10px;font-size:13px}.eb-sous:hover,.eb-vendues:hover{color:var(--rouge,#d0021b)}</style>
+</body></html>

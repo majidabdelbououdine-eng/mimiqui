@@ -11,7 +11,7 @@ var __acc=/(\/|\/index\.html?)$/i.test(location.pathname);
     {t:'Prix',h:'cotation.html',p:['cotation.html','registre.html','registre-pokemon.html','adjuge.html'],s:[
       ['Cotation','cotation.html'],['Ventes pass\u00e9es Sp\u00e9cial Mimiqui','registre.html'],['Registre des cartes pass\u00e9es','registre-pokemon.html']]},
     {t:'Acheter',h:'boutique.html',p:['boutique.html'],s:[['Boutique','boutique.html'],['Boosters','jeu.html#boosters']]},
-    {t:'Vendre sur eBay',h:'vendre.html',p:['vendre.html']}
+    {t:'Vendre sur eBay',h:'vendre.html',p:['vendre.html','estimer-ma-carte.html','guide-vendre-ebay.html'],s:[['Vendre sur eBay','vendre.html'],['Estimer ma carte','estimer-ma-carte.html'],['Guide pour vendre sur eBay','guide-vendre-ebay.html']]}
   ];
   var AUTRES={'blog.html':'Blog','jeu.html':'Jeu','confidentialite.html':'Cookies et vie priv\u00e9e','assistant-instagram.html':'Assistant Instagram','404.html':'Page introuvable'};
   function el(tag,attrs,txt){var e=document.createElement(tag);for(var k in attrs||{})e.setAttribute(k,attrs[k]);if(txt!=null)e.textContent=txt;return e;}
@@ -69,7 +69,7 @@ var __acc=/(\/|\/index\.html?)$/i.test(location.pathname);
     var groupes=[
       ['Cartes',[['Cartes FR','cartes.html'],['Cartes JA','cartes-japonaises.html'],['Cartes EN','cartes-anglaises.html'],['Cartes Pok\u00e9mon','cartes-pokemon.html']]],
       ['Prix',[['Cotation','cotation.html'],['Ventes pass\u00e9es Sp\u00e9cial Mimiqui','registre.html'],['Registre des cartes pass\u00e9es','registre-pokemon.html']]],
-      ['Acheter et vendre',[['Boutique','boutique.html'],['Boosters','jeu.html#boosters'],['Vendre sur eBay','vendre.html']]],
+      ['Acheter et vendre',[['Boutique','boutique.html'],['Boosters','jeu.html#boosters'],['Vendre sur eBay','vendre.html'],['Estimer ma carte','estimer-ma-carte.html'],['Guide pour vendre sur eBay','guide-vendre-ebay.html']]],
       ['D\u00e9couvrir',[['Blog','blog.html'],['Blog Instagram','https://www.instagram.com/lecoindemimiqui/'],['Jeu','jeu.html'],['Le film 2027','index.html#film'],['Le d\u00e9guisement','index.html#deguisement'],['Faiblesses','index.html#types'],['Rubriques','index.html#rubriques']]],
       ['Le site',[['Cr\u00e9er un compte','index.html#compte'],['Assistant Instagram','assistant-instagram.html'],['Cookies et vie priv\u00e9e','confidentialite.html']]]
     ];
@@ -208,7 +208,7 @@ function go(){
  // 4 aide
  document.querySelectorAll('dialog.aide').forEach(function(d){new MutationObserver(function(){if(d.open&&!d.querySelector('.h5-aide'))d.appendChild(holo(MIMI,'h5-aide'))}).observe(d,{attributes:true,attributeFilter:['open']})});
  // 2 cartes
- function estCarte(i){return i&&i.tagName==='IMG'&&/(^|\/)img\/(?!logo)[\w-]+\.(webp|png|jpe?g)/i.test(i.getAttribute('src')||'')&&!i.closest('.h5-holo,header,#mini-teaser')&&i.offsetWidth>50}
+ function estCarte(i){return i&&i.tagName==='IMG'&&((/^cartes(-japonaises|-anglaises)?\.html$/.test(page)&&!!i.closest('.card .frame'))||/(^|\/)img\/(?!logo)[\w-]+\.(webp|png|jpe?g)/i.test(i.getAttribute('src')||''))&&!i.closest('.h5-holo,header,#mini-teaser')&&i.offsetWidth>50}
  var P=document.createElement('div');P.id='h5-proj';document.body.appendChild(P);var cur=null;
  if(matchMedia('(hover:hover)').matches){
   document.addEventListener('mouseover',function(e){var i=e.target;if(!estCarte(i)||i===cur)return;if(cur)cur.classList.remove('h5-on');cur=i;i.classList.add('h5-lift');void i.offsetWidth;i.classList.add('h5-on');P.innerHTML='';P.appendChild(holo(i.currentSrc||i.src,''));var r=i.getBoundingClientRect();P.style.left=Math.max(4,r.left+r.width/2-45)+'px';P.style.top=Math.max(4,r.top-140)+'px';P.classList.add('on')});
@@ -237,3 +237,20 @@ g.addEventListener('mouseenter',cote);
 b.addEventListener('click',function(e){e.preventDefault();e.stopPropagation();cote();var o=g.classList.toggle('sm-ouvert');b.setAttribute('aria-expanded',o?'true':'false');});
 var li=g.closest('ul.menu-principal>li');if(li)li.addEventListener('mouseleave',function(){g.classList.remove('sm-ouvert');b.setAttribute('aria-expanded','false');});});}
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();})();
+
+/* menu-vendre : le sous-menu « Vendre sur eBay » s'ouvre dans l'espace libre, au-dessus de tout */
+(function(){
+ var css='@media (min-width:1000px){'+
+ 'nav ul.menu-principal>li.li-vendre{position:relative}'+
+ 'nav ul.menu-principal>li.li-vendre>ul.sous-menu{z-index:2147483000!important;background:#fff!important;background-image:none!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important;opacity:1!important;box-shadow:0 12px 32px rgba(0,0,0,.28)!important}nav ul.menu-principal>li.li-vendre>ul.sous-menu a{color:#111!important;text-shadow:none!important}nav ul.menu-principal>li.li-vendre>ul.sous-menu a:hover{color:#d0021b!important}'+
+ 'nav ul.menu-principal>li.li-vendre.v-droite>ul.sous-menu{left:auto!important;right:0!important}'+
+ 'header:has(li.li-vendre:hover),header:has(li.li-vendre:focus-within),header:has(li.li-vendre .ouvre-sous[aria-expanded=true]),nav:has(li.li-vendre:hover),nav:has(li.li-vendre:focus-within){z-index:2147483000!important}'+
+ '}';
+ var st=document.createElement('style');st.id='menu-vendre-css';st.textContent=css;document.head.appendChild(st);
+ function place(){var a=document.querySelector('nav ul.menu-principal>li>a[href="vendre.html"]');if(!a)return;var li=a.parentElement;li.classList.add('li-vendre');
+  li.classList.remove('v-droite');if(innerWidth<1000)return;
+  var r=li.getBoundingClientRect(),sm=li.querySelector('ul.sous-menu'),w=sm?Math.max(sm.scrollWidth,340):340;
+  if(r.left+w>innerWidth-16)li.classList.add('v-droite');}
+ if(document.readyState!=='loading')place();else document.addEventListener('DOMContentLoaded',place);
+ addEventListener('load',place);addEventListener('resize',place);
+})();
