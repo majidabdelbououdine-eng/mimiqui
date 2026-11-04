@@ -387,10 +387,29 @@ fieldset.champ { border: 0; margin: 0; padding: 0 }
 .annonce-btns a:hover{background:#111;color:#fff;border-color:#111}
 </style>
 
+<style id="cartes-droite">
+@media (min-width:800px){
+nav ul.menu-principal>li:has(>a[href="cartes.html"])>ul.sous-menu{left:-.8rem!important;right:auto!important;transform:none!important;margin:0!important;width:max-content!important;min-width:0!important;max-width:calc(100vw - 2rem)!important;overflow:visible!important}
+nav ul.menu-principal>li:has(>a[href="cartes.html"])>ul.sous-menu a,nav ul.menu-principal>li:has(>a[href="cartes.html"])>ul.sous-menu .sm-tog{white-space:nowrap!important;overflow:visible!important;text-overflow:clip!important}
+nav ul.menu-principal>li:has(>a[href="cartes.html"])>ul.sous-menu .sm-groupe>ul.sm-sous,nav ul.menu-principal>li:has(>a[href="cartes.html"])>ul.sous-menu .sm-groupe.sm-gauche>ul.sm-sous{left:100%!important;right:auto!important}
+nav ul.menu-principal>li:has(>a[href="cartes.html"])>ul.sous-menu .sm-groupe>ul.sm-sous::before{left:-12px!important;right:auto!important}
+nav ul.menu-principal>li:has(>a[href="cartes.html"])>ul.sous-menu .sm-groupe.sm-gauche .sm-fl{font-size:0!important}
+nav ul.menu-principal>li:has(>a[href="cartes.html"])>ul.sous-menu .sm-groupe.sm-gauche .sm-fl::after{content:"\25B8";font-size:13px}
+header.wrap:has(nav ul.menu-principal>li:is(:hover,:focus-within,.ouvert)>a[href="cartes.html"]){z-index:8000!important}
+}
+</style>
+<style id="acheter-droite">
+@media (min-width:800px){
+nav ul.menu-principal>li:has(>a[href="boutique.html"])>ul.sous-menu{left:-.8rem!important;right:auto!important;transform:none!important;margin:0!important;width:max-content!important;min-width:0!important;max-width:calc(100vw - 2rem)!important;overflow:visible!important}
+nav ul.menu-principal>li:has(>a[href="boutique.html"])>ul.sous-menu a{white-space:nowrap!important;overflow:visible!important;text-overflow:clip!important}
+header.wrap:has(nav ul.menu-principal>li:is(:hover,:focus-within,.ouvert)>a[href="boutique.html"]){z-index:8000!important}
+}
+</style>
 <style id="prix-droite">
 @media (min-width:800px){
-nav ul.menu-principal>li:has(>a[href="cotation.html"])>ul.sous-menu{top:-.4rem!important;left:calc(100% + 6px)!important;margin:0!important}
-nav ul.menu-principal>li:has(>a[href="cotation.html"])>ul.sous-menu::before{top:0!important;bottom:0!important;left:-14px!important;right:auto!important;width:14px!important;height:auto!important}
+nav ul.menu-principal>li:has(>a[href="cotation.html"])>ul.sous-menu{left:-.8rem!important;right:auto!important;transform:none!important;width:max-content!important;min-width:0!important;max-width:calc(100vw - 2rem)!important;overflow:visible!important}
+nav ul.menu-principal>li:has(>a[href="cotation.html"])>ul.sous-menu a{white-space:nowrap!important;overflow:visible!important;text-overflow:clip!important}
+header.wrap:has(nav ul.menu-principal>li:is(:hover,:focus-within,.ouvert)>a[href="cotation.html"]){z-index:8000!important}
 }
 </style>
 <header class="wrap"><link rel="preconnect" href="https://api.tcgdex.net" crossorigin><link rel="preconnect" href="https://assets.tcgdex.net"><link rel="preconnect" href="https://www.youtube.com"><link rel="preconnect" href="https://i.ytimg.com"><link rel="preload" href="fonts/source-sans-3-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
