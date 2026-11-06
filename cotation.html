@@ -134,6 +134,28 @@ article.billet{scroll-margin-top:96px}
 .prix-tend span{font:700 .68rem var(--f-body);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
 .prix-tend b{font:700 1.35rem/1 var(--f-display);font-variant-numeric:tabular-nums}
 .prix-tend b.na{font-size:1rem;color:var(--muted)}
+/* Chiffres des prix : 4 et 1 clairement distincts */
+.prix-tend b,
+.resume b,
+dl.chiffres dd,
+.af-offre b,
+.journal table,
+.journal td,
+.journal th,
+.gbox .tip,
+.carte-in .prix-tend b{
+  font-family:Arial,Helvetica,"Segoe UI",sans-serif !important;
+  font-variant-numeric:lining-nums tabular-nums;
+  font-feature-settings:"lnum" 1,"tnum" 1;
+  font-style:normal !important;
+}
+/* ~10% plus petit */
+.prix-tend b{font-size:1.215rem !important;}
+.resume b{font-weight:700 !important;font-size:clamp(1.35rem,3.15vw,1.89rem) !important;}
+dl.chiffres dd{font-size:0.756rem !important;} /* .84×0.9 */
+.af-offre b{font-size:0.945rem !important;} /* 1.05×0.9 */
+.gbox .tip{font-size:0.702rem !important;} /* .78×0.9 */
+
 dl.chiffres{margin:0;display:grid;grid-template-columns:1fr auto;gap:3px 10px;font-size:.84rem}
 dl.chiffres dt{color:var(--muted)}
 dl.chiffres dd{margin:0;text-align:right;font-weight:600;font-variant-numeric:tabular-nums}
@@ -181,7 +203,7 @@ dl.chiffres dd small{display:block;font-size:.7rem;color:var(--muted);font-weigh
 <style id="agrandi">html{font-size:118%}body{font-size:1.15rem}.wrap{max-width:1180px!important;margin-left:auto!important;margin-right:auto!important}.logo{font-size:calc(1.7rem * 1.15)!important}</style><link rel="stylesheet" href="site-commun.css"><meta name="referrer" content="strict-origin-when-cross-origin"></head><body>
 <header class="site wrap"><nav class="sitenav" aria-label="Navigation principale">
   <a class="logo" href="index.html"><img class="logo-img" src="img/logo-mimiqui.webp" alt="" width="95" height="120" style="width:auto;height:3.4rem;object-fit:contain;transform:none">Le Coin de Mimiqui<span>.</span></a>
-  <ul class="menu-principal" id="menu-principal"><li><a href="index.html">Accueil</a></li><li><a href="blog.html">Blog</a></li><li><a href="cartes.html">Cartes</a><button type="button" class="ouvre-sous" aria-expanded="false" aria-label="Sous-menu Cartes">&#9662;</button><ul class="sous-menu"><li class="sm-groupe"><button type="button" class="sm-tog" aria-expanded="false">Spécial Mimiqui <span class="sm-fl" aria-hidden="true">&#9656;</span></button><ul class="sm-sous"><li><a href="cartes.html">Cartes fran&ccedil;aises</a></li><li><a href="cartes-japonaises.html">Cartes japonaises</a></li><li><a href="cartes-anglaises.html">Cartes anglaises</a></li></ul></li><li><a href="cartes-pokemon.html">1025 Pok&eacute;mon</a></li><li><a href="equilibre-parfait-ventes.html">&Eacute;quilibre Parfait</a></li><li><a href="trentieme-anniversaire-ventes.html">30<sup>e</sup> Anniversaire</a></li><li><a href="chaos-ascendant-ventes.html">Chaos Ascendant</a></li><li><a href="nuit-noire-ventes.html">Nuit Noire</a></li></ul></li><li><a href="cotation.html">Prix</a><button type="button" class="ouvre-sous" aria-expanded="false" aria-label="Sous-menu Prix">&#9662;</button><ul class="sous-menu"><li><a href="cotation.html">Cotation</a></li><li><a href="registre.html">Ventes pass&eacute;es Sp&eacute;cial Mimiqui</a></li><li><a href="registre-pokemon.html">Registre des cartes pass&eacute;es</a></li></ul></li><li><a href="boutique.html">Acheter</a><button type="button" class="ouvre-sous" aria-expanded="false" aria-label="Sous-menu Acheter">&#9662;</button><ul class="sous-menu"><li><a href="boutique.html">Boutique</a></li><li><a href="jeu.html#boosters">Boosters</a></li><li><a href="cartes-psa10.html">Cartes PSA 10</a></li></ul></li><li><a href="vendre.html">Vendre sur eBay</a><button type="button" class="ouvre-sous" aria-expanded="false" aria-label="Sous-menu Vendre sur eBay">&#9662;</button><ul class="sous-menu"><li><a href="vendre.html">Vendre sur eBay</a></li><li><a href="estimer-ma-carte.html">Estimer ma carte</a></li><li><a href="guide-vendre-ebay.html">Guide pour vendre sur eBay</a></li></ul></li></ul>
+  <ul class="menu-principal" id="menu-principal"><li><a href="index.html">Accueil</a></li><li><a href="blog.html">Blog</a></li><li><a href="cartes.html">Cartes</a><button type="button" class="ouvre-sous" aria-expanded="false" aria-label="Sous-menu Cartes">&#9662;</button><ul class="sous-menu"><li class="sm-groupe"><button type="button" class="sm-tog" aria-expanded="false">Spécial Mimiqui <span class="sm-fl" aria-hidden="true">&#9656;</span></button><ul class="sm-sous"><li><a href="cartes.html">Cartes fran&ccedil;aises</a></li><li><a href="cartes-japonaises.html">Cartes japonaises</a></li><li><a href="cartes-anglaises.html">Cartes anglaises</a></li></ul></li><li><a href="cartes-pokemon.html">1025 Pok&eacute;mon</a></li><li class="sm-groupe"><button type="button" class="sm-tog" aria-expanded="false">Set M&eacute;ga-&Eacute;volution <span class="sm-fl" aria-hidden="true">&#9656;</span></button><ul class="sm-sous"><li><a href="regne-delta.html">R&egrave;gne Delta</a></li><li><a href="equilibre-parfait-ventes.html">&Eacute;quilibre Parfait</a></li><li><a href="trentieme-anniversaire-ventes.html">30<sup>e</sup> Anniversaire</a></li><li><a href="heros-transcendants.html">H&eacute;ros Transcendants</a></li><li><a href="nuit-noire-ventes.html">Nuit Noire</a></li><li><a href="mega-evolution-cartes.html">M&eacute;ga-&Eacute;volution</a></li><li><a href="heros-fantasmagoriques.html">Flammes Fantasmagoriques</a></li><li><a href="chaos-ascendant-ventes.html">Chaos Ascendant</a></li></ul></li></ul></li><li><a href="cotation.html">Prix</a><button type="button" class="ouvre-sous" aria-expanded="false" aria-label="Sous-menu Prix">&#9662;</button><ul class="sous-menu"><li><a href="cotation.html">Cotation</a></li><li><a href="registre.html">Ventes pass&eacute;es Sp&eacute;cial Mimiqui</a></li><li><a href="registre-pokemon.html">Registre des cartes pass&eacute;es</a></li></ul></li><li><a href="boutique.html">Acheter</a><button type="button" class="ouvre-sous" aria-expanded="false" aria-label="Sous-menu Acheter">&#9662;</button><ul class="sous-menu"><li><a href="boutique.html">Boutique</a></li><li><a href="jeu.html#boosters">Boosters</a></li><li><a href="cartes-psa10.html">Cartes PSA 10</a></li></ul></li><li><a href="vendre.html">Vendre sur eBay</a><button type="button" class="ouvre-sous" aria-expanded="false" aria-label="Sous-menu Vendre sur eBay">&#9662;</button><ul class="sous-menu"><li><a href="vendre.html">Vendre sur eBay</a></li><li><a href="estimer-ma-carte.html">Estimer ma carte</a></li><li><a href="guide-vendre-ebay.html">Guide pour vendre sur eBay</a></li></ul></li></ul>
 </nav></header>
 
 <main class="wrap">
@@ -286,11 +308,11 @@ dl.chiffres dd small{display:block;font-size:.7rem;color:var(--muted);font-weigh
     var el = function (n, at, txt) { var e = document.createElementNS(NS, n); for (var k in at) e.setAttribute(k, at[k]); if (txt != null) e.textContent = txt; svg.appendChild(e); return e; };
     for (var v = 0; v <= top + 1e-9; v += pas) {
       el("line", { x1: ml, x2: W - mr, y1: Y(v), y2: Y(v), stroke: v === 0 ? "#111111" : "rgba(17,17,17,.10)", "stroke-width": 1 });
-      el("text", { x: ml - 8, y: Y(v) + 4, "text-anchor": "end", "font-size": 11, fill: "#5a5a5a", "font-family": "Source Sans 3, Arial, sans-serif" }, euro(v).replace(",00", ""));
+      el("text", { x: ml - 8, y: Y(v) + 4, "text-anchor": "end", "font-size": 11, fill: "#5a5a5a", "font-family": "Arial, Helvetica, Segoe UI, sans-serif" }, euro(v).replace(",00", ""));
     }
     h.forEach(function (r, i) {
       if (h.length > 8 && i % Math.ceil(h.length / 8)) return;
-      el("text", { x: X(r.d), y: H - 8, "text-anchor": "middle", "font-size": 11, fill: "#5a5a5a", "font-family": "Source Sans 3, Arial, sans-serif" }, jour(r.d));
+      el("text", { x: X(r.d), y: H - 8, "text-anchor": "middle", "font-size": 11, fill: "#5a5a5a", "font-family": "Arial, Helvetica, Segoe UI, sans-serif" }, jour(r.d));
     });
     var fins = [];
     SERIES.forEach(function (sx) {
@@ -303,7 +325,7 @@ dl.chiffres dd small{display:block;font-size:.7rem;color:var(--muted);font-weigh
     // étiquettes de fin écartées pour ne pas se chevaucher
     fins.sort(function (a, b) { return a.y - b.y; });
     fins.forEach(function (f, i) { if (i && f.y - fins[i - 1].y < 14) f.y = fins[i - 1].y + 14; });
-    fins.forEach(function (f) { el("text", { x: f.x, y: f.y, "font-size": 12, "font-weight": 700, fill: "#111111", "font-family": "Source Sans 3, Arial, sans-serif" }, euro(f.v)); });
+    fins.forEach(function (f) { el("text", { x: f.x, y: f.y, "font-size": 12, "font-weight": 700, fill: "#111111", "font-family": "Arial, Helvetica, Segoe UI, sans-serif" }, euro(f.v)); });
     var box = document.createElement("div"); box.className = "gbox"; box.appendChild(svg);
     var tip = document.createElement("div"); tip.className = "tip"; tip.hidden = true; box.appendChild(tip);
     var cross = el("line", { y1: mt, y2: H - mb, stroke: "#111111", "stroke-width": 1, "stroke-dasharray": "3 3", visibility: "hidden" });

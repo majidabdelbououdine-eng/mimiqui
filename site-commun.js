@@ -6,7 +6,7 @@ var __acc=/(\/|\/index\.html?)$/i.test(location.pathname);
   if(page==='accueil.html')page='index.html';
   var SECTIONS=[
     {t:'Accueil',h:'index.html',p:['index.html']},
-    {t:'Cartes',h:'cartes.html',p:['cartes.html','cartes-japonaises.html','cartes-anglaises.html','cartes-pokemon.html','pokemon.html'],s:[
+    {t:'Cartes',h:'cartes.html',p:['cartes.html','cartes-japonaises.html','cartes-anglaises.html','cartes-pokemon.html','pokemon.html','regne-delta.html','heros-transcendants.html','heros-fantasmagoriques.html','mega-evolution-cartes.html','chaos-ascendant.html','chaos-ascendant-ventes.html','equilibre-parfait.html','equilibre-parfait-ventes.html','trentieme-anniversaire.html','trentieme-anniversaire-ventes.html','nuit-noire-ventes.html'],s:[
       ['Cartes FR','cartes.html'],['Cartes JA','cartes-japonaises.html'],['Cartes EN','cartes-anglaises.html'],['Cartes Pok\u00e9mon','cartes-pokemon.html']]},
     {t:'Prix',h:'cotation.html',p:['cotation.html','registre.html','registre-pokemon.html','adjuge.html'],s:[
       ['Cotation','cotation.html'],['Ventes pass\u00e9es Sp\u00e9cial Mimiqui','registre.html'],['Registre des cartes pass\u00e9es','registre-pokemon.html']]},
@@ -256,4 +256,29 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
   if(r.left+w>innerWidth-16)li.classList.add('v-droite');}
  if(document.readyState!=='loading')place();else document.addEventListener('DOMContentLoaded',place);
  addEventListener('load',place);addEventListener('resize',place);
+})();
+
+/* Bouton haut de page — bas gauche, au-dessus de #fen-com si présent */
+(function(){
+ if(document.getElementById('btn-haut'))return;
+ var css=
+ '#btn-haut-wrap{position:fixed;left:1rem;bottom:1.2rem;z-index:8500;display:flex;flex-direction:column;align-items:center;gap:4px;opacity:0;pointer-events:none;transform:translateY(8px);transition:opacity .2s,transform .2s,bottom .2s}'+
+ '#btn-haut-wrap.on{opacity:1;pointer-events:auto;transform:none}'+
+ '#btn-haut-lab{margin:0;padding:0;border:0;background:transparent!important;box-shadow:none!important;cursor:pointer;font:900 18px/1.15 "Source Sans 3",Arial,sans-serif;color:#0b3d91!important;-webkit-text-fill-color:#0b3d91!important;opacity:1!important;letter-spacing:.5px;white-space:nowrap;-webkit-text-stroke:1px #fff;paint-order:stroke fill;text-shadow:0 0 3px #fff,0 0 6px #fff,0 0 10px #fff,0 0 14px rgba(10,88,202,.55),0 0 22px rgba(11,61,145,.4)}'+
+ '#btn-haut-wrap #btn-haut{width:2.85rem;height:2.85rem;border:0;border-radius:999px;cursor:pointer;font:900 1.35rem/1 "Source Sans 3",Arial,sans-serif;color:#fff!important;-webkit-text-fill-color:#fff!important;background:linear-gradient(180deg,#0a58ca,#0b3d91)!important;box-shadow:0 4px 16px rgba(11,61,145,.5);display:flex;align-items:center;justify-content:center;padding:0}'+
+ '#btn-haut:hover,#btn-haut-lab:hover{filter:brightness(1.08)}'+
+ '@media(max-width:500px){#btn-haut-wrap{left:.7rem}#btn-haut-wrap #btn-haut{width:2.6rem;height:2.6rem}#btn-haut-lab{font-size:16px}}';
+ var st=document.createElement('style');st.id='btn-haut-css';st.textContent=css;document.head.appendChild(st);
+ var w=document.createElement('div');w.id='btn-haut-wrap';
+ var lab=document.createElement('button');lab.type='button';lab.id='btn-haut-lab';lab.textContent='Haut de page';lab.title='Haut de page';lab.setAttribute('aria-label','Haut de page');
+ var b=document.createElement('button');b.type='button';b.id='btn-haut';b.title='Haut de page';b.setAttribute('aria-label','Haut de page');b.textContent='\u2191';
+ w.appendChild(lab);w.appendChild(b);document.body.appendChild(w);
+ function go(){scrollTo({top:0,behavior:'smooth'})}
+ lab.addEventListener('click',go);b.addEventListener('click',go);
+ function place(){var bot=18,fc=document.getElementById('fen-com');
+  if(fc){var r=fc.getBoundingClientRect(),cs=getComputedStyle(fc);if(cs.display!=='none'&&cs.visibility!=='hidden'&&r.height>10)bot=Math.max(18,Math.round(innerHeight-r.top+10))}
+  w.style.bottom=bot+'px'}
+ function m(){w.classList.toggle('on',scrollY>120);place()}
+ addEventListener('scroll',m,{passive:true});addEventListener('resize',place);m();
+ new MutationObserver(place).observe(document.body,{childList:true,subtree:true,attributes:true,attributeFilter:['class','style','hidden']});
 })();
