@@ -1,12 +1,15 @@
 var __acc=/(\/|\/index\.html?)$/i.test(location.pathname);
 /* site-commun.js : menu, hamburger, fil d'Ariane, pied de page (Le Coin de Mimiqui) */
+
+/* echelle site ~90% cumulé v2 */
+(function(){if(document.getElementById('echelle-site'))return;var s=document.createElement('style');s.id='echelle-site';s.textContent='html{font-size:106%!important}';(document.head||document.documentElement).appendChild(s);})();
 (function(){
   "use strict";
   var page=(location.pathname.split('/').pop()||'index.html').toLowerCase();
   if(page==='accueil.html')page='index.html';
   var SECTIONS=[
     {t:'Accueil',h:'index.html',p:['index.html']},
-    {t:'Cartes',h:'cartes.html',p:['cartes.html','cartes-japonaises.html','cartes-anglaises.html','cartes-pokemon.html','pokemon.html','regne-delta.html','heros-transcendants.html','heros-fantasmagoriques.html','mega-evolution-cartes.html','chaos-ascendant.html','chaos-ascendant-ventes.html','equilibre-parfait.html','equilibre-parfait-ventes.html','trentieme-anniversaire.html','trentieme-anniversaire-ventes.html','nuit-noire-ventes.html'],s:[
+    {t:'Cartes',h:'cartes.html',p:['cartes.html','cartes-japonaises.html','cartes-anglaises.html','cartes-pokemon.html','pokemon.html','regne-delta.html','heros-transcendants.html','heros-fantasmagoriques.html','mega-evolution-cartes.html','regne-delta-ja.html','chaos-ascendant-ja.html','chaos-ascendant-en.html','flammes-fantasmagoriques-ja.html','flammes-fantasmagoriques-en.html','mega-evolution-en.html','nuit-noire-ja.html','nuit-noire-en.html','heros-transcendants-en.html','trentieme-anniversaire-en.html','equilibre-parfait-ja.html','equilibre-parfait-en.html','chaos-ascendant.html','chaos-ascendant-ventes.html','equilibre-parfait.html','equilibre-parfait-ventes.html','trentieme-anniversaire.html','trentieme-anniversaire-ventes.html','nuit-noire-ventes.html'],s:[
       ['Cartes FR','cartes.html'],['Cartes JA','cartes-japonaises.html'],['Cartes EN','cartes-anglaises.html'],['Cartes Pok\u00e9mon','cartes-pokemon.html']]},
     {t:'Prix',h:'cotation.html',p:['cotation.html','registre.html','registre-pokemon.html','adjuge.html'],s:[
       ['Cotation','cotation.html'],['Ventes pass\u00e9es Sp\u00e9cial Mimiqui','registre.html'],['Registre des cartes pass\u00e9es','registre-pokemon.html']]},
@@ -101,10 +104,21 @@ var __acc=/(\/|\/index\.html?)$/i.test(location.pathname);
 (function(){
   if(window.__miniTeaser)return;window.__miniTeaser=1;
   var SRC='videos/wild-card-bande-annonce.mp4',KT='mimiquiTeaserTemps',KR='mimiquiTeaserReduit';
+  var KS='mimiquiBrowseStart',KA='mimiquiTeaserAutoReduit',KO='mimiquiTeaserKeepOpen';
+  var AUTO_MS=60000; /* 1 minute de navigation (session) */
   function go(){
     if(/(^|\/)registre-pokemon\.html$/i.test(location.pathname))return;if(document.getElementById('mini-teaser'))return;window.__mtAuto=true;
     var t=0;try{t=parseFloat(localStorage.getItem(KT))||0}catch(e){}
     var red=false;try{red=localStorage.getItem(KR)==='1'}catch(e){}
+    var keepOpen=false,autoDone=false,browseStart=0,now=Date.now();
+    try{
+      browseStart=parseInt(sessionStorage.getItem(KS)||'0',10)||0;
+      if(!browseStart){browseStart=now;sessionStorage.setItem(KS,String(browseStart))}
+      keepOpen=sessionStorage.getItem(KO)==='1';
+      autoDone=sessionStorage.getItem(KA)==='1';
+    }catch(e){browseStart=now}
+    var elapsed=now-browseStart;
+    if(!keepOpen&&(autoDone||elapsed>=AUTO_MS))red=true;
     var box=document.createElement('div');box.id='mini-teaser';if(red)box.className='reduit';
     box.innerHTML='<div class="mt-barre"><span class="mt-titre">Pok\u00e9mon : Wild Card \u2013 teaser</span><button type="button" class="mt-taille" aria-label="R\u00e9duire ou agrandir"></button></div><div class="mt-video"><video id="mini-teaser-yt" src="'+SRC+'" muted autoplay loop playsinline preload="metadata"></video><button type="button" class="mt-play" aria-label="Lecture"></button></div>';
     document.body.appendChild(box);
@@ -117,7 +131,30 @@ var __acc=/(\/|\/index\.html?)$/i.test(location.pathname);
     new MutationObserver(function(){var g=box.classList.contains('mt-grand');v.controls=g;if(g){v.muted=false;v.volume=1;window.__mtPlayer.playVideo()}else{v.muted=true}}).observe(box,{attributes:true,attributeFilter:['class']});
     var b=box.querySelector('.mt-taille');
     function lab(){b.textContent=box.classList.contains('reduit')?'\u2922 Agrandir':'\u2013 R\u00e9duire'}lab();
-    b.addEventListener('click',function(){box.classList.toggle('reduit');try{localStorage.setItem(KR,box.classList.contains('reduit')?'1':'0')}catch(e){}lab()});
+    function applyReduit(on){
+      box.classList.toggle('reduit',!!on);
+      try{localStorage.setItem(KR,on?'1':'0')}catch(e){}
+      lab();
+    }
+    function autoReduire(){
+      try{if(sessionStorage.getItem(KO)==='1')return}catch(e){}
+      if(box.classList.contains('mt-grand'))return; /* ne pas casser le grand ecran */
+      applyReduit(true);
+      try{sessionStorage.setItem(KA,'1')}catch(e){}
+    }
+    b.addEventListener('click',function(){
+      var next=!box.classList.contains('reduit');
+      applyReduit(next);
+      try{
+        if(next){sessionStorage.removeItem(KO)}
+        else{sessionStorage.setItem(KO,'1')} /* utilisateur rouvre : on respecte */
+      }catch(e){}
+    });
+    if(!keepOpen&&!red&&elapsed<AUTO_MS){
+      setTimeout(autoReduire, Math.max(0, AUTO_MS-elapsed));
+    }else if(!keepOpen&&red){
+      try{sessionStorage.setItem(KA,'1')}catch(e){}
+    }
     function save(){try{localStorage.setItem(KT,String(v.currentTime||0))}catch(e){}}
     window.addEventListener('beforeunload',save);window.addEventListener('pagehide',save);setInterval(save,3000);
     document.body.classList.add('avec-mini-teaser');
@@ -233,13 +270,138 @@ document.addEventListener('click',function(e){if(e.defaultPrevented||e.button!==
  var u;try{u=new URL(a.href,location.href)}catch(x){return}if(u.origin!==location.origin||(u.pathname===location.pathname&&u.hash))return;if(u.href===location.href)return;
  e.preventDefault();H.classList.add('h5-out');setTimeout(function(){location.href=u.href},280)});
 })();
-/* Sous-rubrique « Cartes Mimiqui » : flyout a droite, a gauche si pas de place (t358u) */
-(function(){function init(){document.querySelectorAll('.sm-groupe').forEach(function(g){var b=g.querySelector('.sm-tog'),s=g.querySelector('.sm-sous');if(!b||!s)return;
-function cote(){var r=g.getBoundingClientRect(),d=window.innerWidth>600,gc=d&&r.left-s.offsetWidth-8>=0;if(d&&!gc&&r.right+s.offsetWidth+8>window.innerWidth)gc=true;g.classList.toggle('sm-gauche',gc);var f=g.querySelector('.sm-fl');if(f)f.textContent=gc?'\u25C2':'\u25B8';}cote();window.addEventListener('resize',cote);
-g.addEventListener('mouseenter',cote);
-b.addEventListener('click',function(e){e.preventDefault();e.stopPropagation();cote();var o=g.classList.toggle('sm-ouvert');b.setAttribute('aria-expanded',o?'true':'false');});
-var li=g.closest('ul.menu-principal>li');if(li)li.addEventListener('mouseleave',function(){g.classList.remove('sm-ouvert');b.setAttribute('aria-expanded','false');});});}
-if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();})();
+/* Sous-rubrique : flyout droite/gauche + hauteur viewport (menus compacts) */
+(function(){
+function fitSous(sm, anchorTop){
+  if(!sm) return;
+  /* Pas de max-height / scrollbar : menus compacts + colonnes côté CSS */
+  sm.classList.remove('sm-scroll');
+  sm.style.maxHeight = '';
+  sm.style.overflow = '';
+}
+function init(){
+  document.querySelectorAll('.sm-groupe').forEach(function(g){
+    var b=g.querySelector(':scope > .sm-tog') || g.querySelector('.sm-tog');
+    var s=g.querySelector(':scope > .sm-sous') || g.querySelector('.sm-sous');
+    if(!b||!s)return;
+                                function cote(){
+      var d=window.innerWidth>600;
+      var liC = g.closest('ul.menu-principal>li');
+      var inCartes = !!(liC && liC.querySelector(':scope > a[href="cartes.html"]'));
+      var gc=false;
+      if(d){
+        if(inCartes){ gc = true; }
+        else {
+          var rr=g.getBoundingClientRect();
+          var need = (s.offsetWidth||160)+8;
+          gc = (rr.right + need > window.innerWidth - 8) && (rr.left - 8 >= need);
+        }
+      }
+      g.classList.toggle('sm-gauche', gc);
+      var f=g.querySelector(':scope > .sm-tog .sm-fl') || g.querySelector('.sm-fl');
+      if(f){ var acc=document.body.classList.contains('page-accueil')||document.documentElement.classList.contains('page-accueil'); f.textContent = (acc && inCartes) ? '\u25B8' : (gc ? '\u25C2' : '\u25B8'); }
+      fitSous(s, b.getBoundingClientRect().top);
+      function clearPlace(){
+        ['position','left','right','top','bottom','transform','width','max-width','columns','visibility','opacity','pointer-events','display'].forEach(function(p){ s.style.removeProperty(p); });
+      }
+      function placeCartes(){
+        if(!(d && inCartes)) return;
+        var accueil = document.body.classList.contains('page-accueil') || document.documentElement.classList.contains('page-accueil');
+        clearPlace();
+        s.style.setProperty('visibility','hidden','important');
+        s.style.setProperty('display','block','important');
+        s.style.setProperty('position','absolute','important');
+        s.style.setProperty('left','0','important');
+        s.style.setProperty('top','0','important');
+        var w = Math.max(s.scrollWidth||0, s.offsetWidth||0, 140);
+        var h = Math.max(s.scrollHeight||0, s.offsetHeight||0, 40);
+        if(h > window.innerHeight - 16){
+          s.style.setProperty('columns','2','important');
+          s.style.setProperty('column-gap','0.25rem','important');
+          w = Math.max(s.scrollWidth||0, s.offsetWidth||0, Math.min(460, window.innerWidth-16));
+          h = Math.max(s.scrollHeight||0, s.offsetHeight||0, 40);
+        }
+        var anchor = b.getBoundingClientRect();
+        var wantLeft;
+        if(accueil){
+          wantLeft = Math.round(anchor.right - 6);
+          if(wantLeft + w > window.innerWidth - 4) wantLeft = Math.max(4, window.innerWidth - w - 4);
+          if(wantLeft < 4) wantLeft = 4;
+        } else {
+          wantLeft = Math.round(anchor.left - w + 6);
+          if(wantLeft < 4) wantLeft = 4;
+          if(wantLeft + w > window.innerWidth - 4) wantLeft = Math.max(4, window.innerWidth - w - 4);
+        }
+        var wantTop = Math.round(anchor.top);
+        if(wantTop + h > window.innerHeight - 4) wantTop = Math.max(4, window.innerHeight - h - 4);
+        if(wantTop < 4) wantTop = 4;
+        var op = s.offsetParent || g;
+        var obr = op.getBoundingClientRect();
+        var left = Math.round(wantLeft - obr.left);
+        var top = Math.round(wantTop - obr.top);
+        s.style.setProperty('position','absolute','important');
+        s.style.setProperty('left', left + 'px','important');
+        s.style.setProperty('right','auto','important');
+        s.style.setProperty('top', top + 'px','important');
+        s.style.setProperty('transform','none','important');
+        s.style.removeProperty('visibility');
+        s.style.removeProperty('display');
+      }
+      if(d && inCartes){
+        placeCartes();
+        requestAnimationFrame(function(){ placeCartes(); });
+      } else {
+        clearPlace();
+        if(d && gc) s.style.setProperty('transform','translateX(6px)','important');
+      }
+    }
+    cote();
+    window.addEventListener('resize', cote);
+    var closeTimer=null;
+    var CLOSE_MS=400;
+    function openG(){
+      if(closeTimer){ clearTimeout(closeTimer); closeTimer=null; }
+      g.classList.add('sm-ouvert');
+      b.setAttribute('aria-expanded','true');
+      cote();
+    }
+    function scheduleClose(){
+      if(closeTimer) clearTimeout(closeTimer);
+      closeTimer=setTimeout(function(){
+        /* ne ferme pas si le pointeur est encore sur le groupe ou son flyout */
+        if(g.matches(':hover') || s.matches(':hover')){ closeTimer=null; return; }
+        g.classList.remove('sm-ouvert');
+        b.setAttribute('aria-expanded','false');
+        closeTimer=null;
+      }, CLOSE_MS);
+    }
+    g.addEventListener('mouseenter', openG);
+    s.addEventListener('mouseenter', openG);
+    g.addEventListener('mouseleave', scheduleClose);
+    s.addEventListener('mouseleave', scheduleClose);
+    b.addEventListener('click', function(e){
+      e.preventDefault(); e.stopPropagation();
+      if(g.classList.contains('sm-ouvert')){
+        g.classList.remove('sm-ouvert'); b.setAttribute('aria-expanded','false');
+      } else {
+        openG();
+      }
+    });
+  });
+  function fitTop(){
+    document.querySelectorAll('nav ul.menu-principal>li>ul.sous-menu').forEach(function(sm){
+      var li=sm.parentElement, r=li.getBoundingClientRect();
+      fitSous(sm, r.bottom + 4);
+    });
+  }
+  fitTop();
+  window.addEventListener('resize', fitTop);
+  document.querySelectorAll('nav ul.menu-principal>li').forEach(function(li){
+    li.addEventListener('mouseenter', fitTop);
+  });
+}
+if(document.readyState==='loading') document.addEventListener('DOMContentLoaded', init); else init();
+})();
 
 /* menu-vendre : le sous-menu « Vendre sur eBay » s'ouvre dans l'espace libre, au-dessus de tout */
 (function(){

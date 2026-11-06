@@ -334,7 +334,7 @@ header.hero p{color:#333!important}
 html,body{max-width:100%}
 .wrap,main,section,header,footer{box-sizing:border-box!important;max-width:100vw!important}
 h1,h2,h3,p,.logo,a{overflow-wrap:anywhere;word-break:normal}
-.logo{font-size:1.45rem!important}
+.logo{font-size:1.9rem!important}
 input,select,textarea,button{box-sizing:border-box!important;max-width:100%!important}
 .promo-film h1,.promo-film h2{font-size:clamp(1.6rem,9vw,2.4rem)!important}
 #fenetre-defilante{top:auto!important;bottom:12px!important;transform:translateX(-50%)!important;height:30vh!important;width:80vw!important}
@@ -464,3 +464,324 @@ nav ul.menu-principal>li:has(>a[href="boutique.html"])>ul.sous-menu{left:auto!im
 html{overflow-x:hidden}
 body{overflow-x:hidden}
 @supports (overflow:clip){html,body{overflow-x:clip}}
+/* echelle site ~90% cumulé (2026-11-06 v2) */
+html{font-size:106%!important}
+/* logo +30% (2026-11-06) */
+header .logo, header.site .logo, header.wrap .logo, a.logo{
+  font-size:calc(1.7rem * 1.09 * 1.3)!important; /* ~+30% vs agrandi */
+  gap:.7rem!important;
+}
+header .logo .logo-img, header.site .logo .logo-img, header.wrap .logo .logo-img, a.logo .logo-img{
+  height:4.2rem!important; /* was ~3.4rem */
+  width:auto!important;
+  max-height:none!important;
+}
+@media (max-width:500px){
+  header .logo, header.site .logo, a.logo{font-size:calc(1.35rem * 1.3)!important}
+  header .logo .logo-img, a.logo .logo-img{height:3.4rem!important}
+}
+
+/* nested set languages */
+nav ul.menu-principal ul.sm-sous .sm-groupe{position:relative}
+nav ul.menu-principal ul.sm-sous .sm-groupe>ul.sm-sous{top:-.35rem}
+@media(max-width:600px){
+  nav ul.menu-principal ul.sm-sous .sm-groupe>ul.sm-sous{margin-left:.75rem}
+}
+
+/* Flyouts latéraux : taille réduite, overflow visible (pas de clip) */
+nav ul.menu-principal ul.sm-sous{
+  min-width:9.2rem!important;
+  max-width:min(15rem,92vw)!important;
+  padding:.22rem 0!important;
+  overflow:visible!important;
+  max-height:none!important;
+  z-index:13000!important;
+}
+/* Si un panneau est trop haut : scroll UNIQUEMENT sur les listes sans sous-groupe imbriqué */
+
+@media(max-width:600px){
+  nav ul.menu-principal ul.sm-sous{
+    max-height:none!important;
+    overflow:visible!important;
+    padding:.05rem 0!important;
+  }
+  nav ul.menu-principal>li>ul.sous-menu a,
+  nav ul.menu-principal .sm-tog,
+  nav ul.menu-principal ul.sm-sous a{font-size:.82rem!important;padding:.34rem .65rem!important}
+}
+/* Renforcer l'apparition au survol (au cas où une règle masque) */
+@media(hover:hover) and (min-width:601px){
+  nav ul.menu-principal>li:hover>ul.sous-menu,
+  nav ul.menu-principal>li:focus-within>ul.sous-menu,
+  nav ul.menu-principal>li.ouvert>ul.sous-menu{
+    visibility:visible!important;
+    opacity:1!important;
+    pointer-events:auto!important;
+    display:block!important;
+  }
+  nav ul.menu-principal .sm-groupe:hover>ul.sm-sous,
+  nav ul.menu-principal .sm-groupe.sm-ouvert>ul.sm-sous{
+    visibility:visible!important;
+    opacity:1!important;
+    pointer-events:auto!important;
+  }
+}
+
+
+/* === Menu Cartes compact SANS scrollbar (fix 2026-11-06) === */
+/* Cause : overflow/max-height sur .sous-menu/.sm-sous coupait les flyouts ou empêchait de voir le déploiement. */
+nav ul.menu-principal>li>ul.sous-menu,
+nav ul.menu-principal ul.sous-menu{
+  overflow:visible!important;
+  max-height:none!important;
+}
+nav ul.menu-principal>li>ul.sous-menu{
+  min-width:0!important;
+  width:max-content!important;
+  max-width:min(96vw, 26rem)!important;
+  padding:.18rem 0!important;
+  z-index:20000!important;
+}
+nav ul.menu-principal>li>ul.sous-menu a,
+nav ul.menu-principal .sm-tog,
+nav ul.menu-principal ul.sm-sous a{
+  font-size:.96rem!important;
+  line-height:1.22!important;
+  padding:.22rem .72rem!important;
+  font-weight:700!important;
+  letter-spacing:0!important;
+}
+nav ul.menu-principal .sm-tog{gap:.26rem!important}
+nav ul.menu-principal ul.sm-sous{
+  min-width:10rem!important;
+  max-width:min(15rem, 90vw)!important;
+  padding:.16rem 0!important;
+  overflow:visible!important;
+  max-height:none!important;
+  z-index:21000!important;
+}
+/* Si le flyout Méga (beaucoup d'items) déborde : 2 colonnes, sans scrollbar */
+nav ul.menu-principal .sm-groupe>ul.sm-sous:has(.sm-groupe){
+  columns:2;
+  column-gap:.2rem;
+  column-fill:balance;
+  width:max-content!important;
+  max-width:min(28rem, 92vw)!important;
+  min-width:18rem!important;
+}
+nav ul.menu-principal .sm-groupe>ul.sm-sous:has(.sm-groupe)>li{
+  break-inside:avoid;
+  -webkit-column-break-inside:avoid;
+}
+/* Assurer le survol desktop (sans toucher display:none mobile) */
+@media(hover:hover) and (min-width:800px){
+  nav ul.menu-principal>li:hover>ul.sous-menu,
+  nav ul.menu-principal>li:focus-within>ul.sous-menu,
+  nav ul.menu-principal>li.ouvert>ul.sous-menu{
+    visibility:visible!important;
+    opacity:1!important;
+    pointer-events:auto!important;
+  }
+  nav ul.menu-principal .sm-groupe:hover>ul.sm-sous,
+  nav ul.menu-principal .sm-groupe.sm-ouvert>ul.sm-sous{
+    visibility:visible!important;
+    opacity:1!important;
+    pointer-events:auto!important;
+  }
+}
+@media(max-width:799px){
+  nav.menu-ouvert ul.menu-principal>li.ouvert>ul.sous-menu,
+  nav ul.menu-principal>li.ouvert>ul.sous-menu{
+    display:block!important;
+    visibility:visible!important;
+    opacity:1!important;
+    position:static!important;
+    overflow:visible!important;
+    max-height:none!important;
+  }
+  nav ul.menu-principal ul.sm-sous{
+    max-height:none!important;
+    overflow:visible!important;
+  }
+}
+
+/* === Menu top bar ~+11% (v5 2026-11-06) — logo reste le plus grand === */
+@media(min-width:800px){
+  nav ul.menu-principal{
+    flex-wrap:nowrap!important;
+    gap:.2rem 1rem!important;
+  }
+  nav ul.menu-principal>li>a{
+    font-size:1.21em!important;
+    padding:.61rem 0!important;
+    line-height:1.2!important;
+    white-space:nowrap!important;
+  }
+  nav ul.menu-principal>li>button.ouvre-sous{
+    font-size:1.21em!important;
+    padding:.22rem .15rem!important;
+  }
+}
+@media(min-width:800px) and (max-width:1100px){
+  nav ul.menu-principal{gap:.15rem .7rem!important}
+  nav ul.menu-principal>li>a{font-size:1.12em!important}
+}
+
+/* === Cartes menus vers la GAUCHE (2026-11-06) — tailles v5 inchangées === */
+@media(min-width:800px){
+  nav ul.menu-principal>li:has(>a[href="cartes.html"])>ul.sous-menu{
+    left:auto!important;
+    right:0!important;
+  }
+  nav ul.menu-principal>li:has(>a[href="cartes.html"]) .sm-groupe>ul.sm-sous,
+  nav ul.menu-principal>li:has(>a[href="cartes.html"])>ul.sous-menu .sm-groupe>ul.sm-sous,
+  nav ul.menu-principal>li:has(>a[href="cartes.html"])>ul.sous-menu .sm-groupe.sm-gauche>ul.sm-sous{
+    left:auto!important;
+    right:100%!important;
+  }
+  nav ul.menu-principal>li:has(>a[href="cartes.html"]) .sm-groupe>ul.sm-sous::before{
+    left:auto!important;
+    right:-12px!important;
+  }
+  /* Annuler le transform:none du hover générique pour laisser le clamp JS */
+  nav ul.menu-principal>li:has(>a[href="cartes.html"]) .sm-groupe:hover>ul.sm-sous,
+  nav ul.menu-principal>li:has(>a[href="cartes.html"]) .sm-groupe.sm-ouvert>ul.sm-sous,
+  nav ul.menu-principal>li:has(>a[href="cartes.html"]) .sm-groupe.sm-gauche:hover>ul.sm-sous,
+  nav ul.menu-principal>li:has(>a[href="cartes.html"]) .sm-groupe.sm-gauche.sm-ouvert>ul.sm-sous{
+    left:auto!important;
+    right:100%!important;
+  }
+  nav ul.menu-principal>li:has(>a[href="cartes.html"]) .sm-groupe>ul.sm-sous:has(.sm-groupe){
+    columns:1!important;
+    width:max-content!important;
+    min-width:10rem!important;
+    max-width:min(15rem, 90vw)!important;
+  }
+}
+
+@media(min-width:800px){
+  nav ul.menu-principal>li:has(>a[href="cartes.html"]) .sm-groupe.sm-ouvert>ul.sm-sous,
+  nav ul.menu-principal>li:has(>a[href="cartes.html"]) .sm-groupe:hover>ul.sm-sous{
+    /* ne pas forcer transform:none — le JS clamp gère */
+    transform:translateX(6px);
+  }
+}
+
+/* === Maintien hover flyouts (pont + chevauchement, 2026-11-06) === */
+@media(min-width:800px){
+  /* Pont invisible large entre item et flyout (droite ET gauche) */
+  nav ul.menu-principal ul.sm-sous::before{
+    content:""!important;
+    display:block!important;
+    position:absolute!important;
+    top:-4px!important;
+    bottom:-4px!important;
+    left:-18px!important;
+    width:18px!important;
+    right:auto!important;
+    pointer-events:auto!important;
+    background:transparent!important;
+  }
+  nav ul.menu-principal .sm-groupe.sm-gauche>ul.sm-sous::before,
+  nav ul.menu-principal>li:has(>a[href="cartes.html"]) .sm-groupe>ul.sm-sous::before{
+    left:auto!important;
+    right:-18px!important;
+    width:18px!important;
+  }
+  /* Chevauchement de ~6px vers le parent */
+  nav ul.menu-principal .sm-groupe.sm-gauche>ul.sm-sous{
+    right:calc(100% - 6px)!important;
+    transform:none!important;
+  }
+  nav ul.menu-principal>li:has(>a[href="cartes.html"]) .sm-groupe>ul.sm-sous,
+  nav ul.menu-principal>li:has(>a[href="cartes.html"]) .sm-groupe:hover>ul.sm-sous,
+  nav ul.menu-principal>li:has(>a[href="cartes.html"]) .sm-groupe.sm-ouvert>ul.sm-sous{
+    right:calc(100% - 6px)!important;
+  }
+  /* Garder ouvert via classe même sans :hover pendant le délai */
+  nav ul.menu-principal .sm-groupe.sm-ouvert>ul.sm-sous{
+    visibility:visible!important;
+    opacity:1!important;
+    pointer-events:auto!important;
+  }
+}
+/* PSA 10 dropdown : même pont gauche */
+#psa-rub .psa-sous::before{
+  content:"";position:absolute;top:-4px;bottom:-4px;right:-18px;width:18px;left:auto;
+  pointer-events:auto;background:transparent;
+}
+#psa-rub .psa-sous{right:calc(100% - 6px)!important;margin-right:0!important}
+#psa-rub .psa-g.ouvert>.psa-sous,
+#psa-rub .psa-g:hover>.psa-sous,
+#psa-rub .psa-g:focus-within>.psa-sous{
+  visibility:visible!important;opacity:1!important;pointer-events:auto!important;
+}
+
+/* === Accueil seulement : Cartes flyouts à DROITE (2026-11-06) === */
+@media(min-width:800px){
+  body.page-accueil nav ul.menu-principal>li:has(>a[href="cartes.html"])>ul.sous-menu{
+    left:0!important;
+    right:auto!important;
+  }
+  body.page-accueil nav ul.menu-principal>li:has(>a[href="cartes.html"]) .sm-groupe>ul.sm-sous,
+  body.page-accueil nav ul.menu-principal>li:has(>a[href="cartes.html"])>ul.sous-menu .sm-groupe>ul.sm-sous,
+  body.page-accueil nav ul.menu-principal>li:has(>a[href="cartes.html"])>ul.sous-menu .sm-groupe.sm-gauche>ul.sm-sous,
+  body.page-accueil nav ul.menu-principal>li:has(>a[href="cartes.html"]) .sm-groupe:hover>ul.sm-sous,
+  body.page-accueil nav ul.menu-principal>li:has(>a[href="cartes.html"]) .sm-groupe.sm-ouvert>ul.sm-sous,
+  body.page-accueil nav ul.menu-principal>li:has(>a[href="cartes.html"]) .sm-groupe.sm-gauche:hover>ul.sm-sous,
+  body.page-accueil nav ul.menu-principal>li:has(>a[href="cartes.html"]) .sm-groupe.sm-gauche.sm-ouvert>ul.sm-sous{
+    left:calc(100% - 6px)!important;
+    right:auto!important;
+    transform:none!important;
+  }
+  body.page-accueil nav ul.menu-principal>li:has(>a[href="cartes.html"]) .sm-groupe>ul.sm-sous::before,
+  body.page-accueil nav ul.menu-principal>li:has(>a[href="cartes.html"]) .sm-groupe.sm-gauche>ul.sm-sous::before{
+    left:-18px!important;
+    right:auto!important;
+    width:18px!important;
+  }
+}
+
+/* html.page-accueil alias (accueil.html sans body historique) */
+@media(min-width:800px){
+  html.page-accueil nav ul.menu-principal>li:has(>a[href="cartes.html"])>ul.sous-menu{left:0!important;right:auto!important}
+  html.page-accueil nav ul.menu-principal>li:has(>a[href="cartes.html"]) .sm-groupe>ul.sm-sous,
+  html.page-accueil nav ul.menu-principal>li:has(>a[href="cartes.html"]) .sm-groupe.sm-gauche>ul.sm-sous,
+  html.page-accueil nav ul.menu-principal>li:has(>a[href="cartes.html"]) .sm-groupe.sm-ouvert>ul.sm-sous{
+    left:calc(100% - 6px)!important;right:auto!important;transform:none!important
+  }
+  html.page-accueil nav ul.menu-principal>li:has(>a[href="cartes.html"]) .sm-groupe>ul.sm-sous::before{
+    left:-18px!important;right:auto!important;width:18px!important
+  }
+}
+
+/* === PSA 10 langues à DROITE (visibles, 2026-11-06) === */
+#psa-rub .psa-sous{
+  left:calc(100% - 6px)!important;
+  right:auto!important;
+  margin:0 0 0 0!important;
+  overflow:visible!important;
+  max-height:none!important;
+  z-index:7300!important;
+}
+#psa-rub .psa-sous::before{
+  content:""!important;
+  display:block!important;
+  position:absolute!important;
+  top:-4px!important;bottom:-4px!important;
+  left:-18px!important;right:auto!important;width:18px!important;
+  pointer-events:auto!important;background:transparent!important;
+}
+#psa-rub .psa-sous a{
+  display:block!important;
+  visibility:visible!important;
+  opacity:1!important;
+  white-space:nowrap!important;
+}
+#psa-rub .psa-g.ouvert>.psa-sous,
+#psa-rub .psa-g:hover>.psa-sous,
+#psa-rub .psa-g:focus-within>.psa-sous{
+  visibility:visible!important;opacity:1!important;pointer-events:auto!important;
+  display:block!important;
+}
+
