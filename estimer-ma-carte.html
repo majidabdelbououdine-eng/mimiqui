@@ -191,7 +191,11 @@ var eur=function(v){return v.toLocaleString("fr-FR",{style:"currency",currency:"
 var cn=function(x){return String(x||"").replace(/\s/g,"").split("/").map(function(p){return p.replace(/^0+(?=\d)/,"")}).join("/").toLowerCase()};
 var C=window.ESTIMER_CARTES||[],R=window.REGISTRE_VENTES||[],COT=(window.COTATION&&window.COTATION.cartes)||{};
 function med(a){a=a.slice().sort(function(x,y){return x-y});var m=a.length>>1;return a.length%2?a[m]:(a[m-1]+a[m])/2}
-function remplir(){var l=$("e-lang").value;$("e-carte").innerHTML=C.filter(function(c){return c.l===l}).map(function(c){return '<option value="'+esc(c.k)+'">'+esc(c.nom+" "+c.num+" · "+c.ext)+'</option>'}).join("");var q=new URLSearchParams(location.search).get("carte");if(q&&C.some(function(c){return c.k===q&&c.l===l}))$("e-carte").value=q;calc()}
+function norm(s){return String(s||"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase()}
+function alias(s){return s.replace(/\bmimikyu\b/g,"mimiqui")}
+function meilleure(q,langue){var mots=alias(norm(q)).trim().split(/\s+/).filter(Boolean);if(!mots.length)return null;var best=null,bs=-1;C.forEach(function(c){if(langue&&c.l!==langue)return;var nom=alias(norm(c.nom+" "+c.num)),tout=alias(norm([c.nom,c.num,c.ext,c.q,c.k].join(" ")));if(!mots.every(function(m){return tout.indexOf(m)>=0}))return;var s=c.l==="fr"?0.5:0;mots.forEach(function(m){s+=nom.indexOf(m)>=0?3:1});if(alias(norm(c.nom))===mots.join(" "))s+=5;if(s>bs){bs=s;best=c}});return best}
+var qUneFois=false;
+function remplir(){var l=$("e-lang").value;$("e-carte").innerHTML=C.filter(function(c){return c.l===l}).map(function(c){return '<option value="'+esc(c.k)+'">'+esc(c.nom+" "+c.num+" · "+c.ext)+'</option>'}).join("");var params=new URLSearchParams(location.search),q=params.get("carte");if(q&&C.some(function(c){return c.k===q&&c.l===l}))$("e-carte").value=q;else if(!qUneFois){var qq=(params.get("q")||"").trim(),hit=qq?meilleure(qq,l):null;if(hit)$("e-carte").value=hit.k}qUneFois=true;calc()}
 function calc(){var l=$("e-lang").value,k=$("e-carte").value,et=$("e-etat").value,c=C.find(function(x){return x.k===k&&x.l===l});if(!c){$("e-res").innerHTML="";return}
  var co=COT[k]||{},t=co.tendance!=null?co.tendance:null;
  var vs=R.filter(function(v){return v.langue===l&&cn(v.numero)===cn(c.num)}).sort(function(a,b){return a.date<b.date?1:-1});
@@ -216,7 +220,7 @@ function calc(){var l=$("e-lang").value,k=$("e-carte").value,et=$("e-etat").valu
  (methA?'<p class="methode"><b>Prix d\'achat :</b> '+methA+'</p>':'')+'<p class="methode"><b>Méthode :</b> '+(meth||"Ni vente dans le registre ni cote Cardmarket pour cette carte : impossible d'estimer sans inventer. Regarde les ventes déjà conclues sur eBay.")+'</p>'+
  '<div class="est-btns"><a class="pri" href="'+esc(rech)+'" target="_blank" rel="sponsored noopener">Rechercher la carte sur eBay ↗</a><a class="pri" href="'+esc(sell)+'" target="_blank" rel="sponsored noopener">Mettre en vente sur eBay ↗</a><a href="'+esc(vend)+'" target="_blank" rel="sponsored noopener">Déjà vendues sur eBay ↗</a></div></div></div>';
  $("e-res").innerHTML=h}
-var ql=new URLSearchParams(location.search).get("langue");if(ql&&/^(fr|ja|en)$/.test(ql))$("e-lang").value=ql;
+var spQ=new URLSearchParams(location.search),ql=spQ.get("langue"),langueForcee=ql&&/^(fr|ja|en)$/.test(ql),carteParam=spQ.get("carte"),qq=(spQ.get("q")||"").trim();if(langueForcee)$("e-lang").value=ql;if(qq&&!(carteParam&&C.some(function(c){return c.k===carteParam&&c.l===$("e-lang").value}))){var hitQ=meilleure(qq,langueForcee?$("e-lang").value:"");if(hitQ)$("e-lang").value=hitQ.l}
 $("e-lang").addEventListener("change",remplir);$("e-carte").addEventListener("change",calc);$("e-etat").addEventListener("change",calc);remplir();
 })();
 </script>

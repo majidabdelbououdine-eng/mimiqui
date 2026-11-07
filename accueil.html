@@ -428,12 +428,11 @@ header.wrap:has(nav ul.menu-principal>li:is(:hover,:focus-within,.ouvert)>a[href
 <section class="ap-accueil" aria-label="Cote et dernières ventes">
   <div class="ap-cherche">
     <h2>Combien vaut ma carte ?</h2>
-    <form id="ap-form" action="registre.html" method="get" role="search">
+    <form id="ap-form" action="estimer-ma-carte.html" method="get" role="search">
       <label class="ap-sr" for="ap-q">Nom de la carte</label>
-      <input id="ap-q" name="q" type="search" placeholder="Nom, extension ou numéro" autocomplete="off" enterkeyhint="search" aria-autocomplete="list" aria-controls="ap-res" aria-expanded="false">
-      <button type="submit">Chercher</button>
+      <input id="ap-q" name="q" type="search" placeholder="Nom, extension ou numéro" autocomplete="off" enterkeyhint="search">
+      <button type="submit">Estimer</button>
     </form>
-    <ul id="ap-res" class="ap-res" role="listbox" hidden></ul>
   </div>
   <div class="ap-ventes" id="dernieres-ventes">
     <div class="ap-entete">

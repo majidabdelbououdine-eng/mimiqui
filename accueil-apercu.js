@@ -62,13 +62,6 @@
     var nom = norm(v.carte);
     return hits.filter(function (h) { return norm(h.nom) === nom; })[0] || hits[0];
   }
-  function pageDe(c) {
-    if (!c) return "registre.html";
-    if (c.page) return c.page;
-    if (c.langue === "ja") return "cartes-japonaises.html#" + encodeURIComponent(c.id);
-    if (c.langue === "en") return "cartes-anglaises.html#" + encodeURIComponent(String(c.id).replace(/^en-/, ""));
-    return "cartes.html#" + encodeURIComponent(c.id);
-  }
   function photoDe(v) {
     var dir = v.langue === "ja" ? "jp" : v.langue === "en" ? "en" : "fr";
     return "photos-ventes/" + dir + "/" + slug(v.carte, v.numero) + "_itm-" + v.itm + ".webp";
@@ -113,7 +106,7 @@
         a.target = "_blank";
         a.rel = "sponsored noopener";
       } else {
-        a.href = pageDe(c);
+        a.href = "registre.html";
       }
       var img = document.createElement("img");
       img.alt = v.carte + (v.numero ? " " + v.numero : "");
@@ -172,84 +165,8 @@
     });
   }
 
-  function renduRecherche(cartes) {
-    var input = document.getElementById("ap-q");
-    var ul = document.getElementById("ap-res");
-    var form = document.getElementById("ap-form");
-    if (!input || !ul || !form) return;
-    var lg = { fr: "FR", ja: "JP", en: "EN" };
-    function nomIndex(c) {
-      var n = norm(c.nom + " " + c.num);
-      if (n.indexOf("mimikyu") >= 0) n += " mimiqui";
-      else if (n.indexOf("mimiqui") >= 0) n += " mimikyu";
-      return n;
-    }
-    function chercher(q) {
-      var mots = norm(q).trim().split(/\s+/).filter(Boolean);
-      if (!mots.length || norm(q).trim().length < 2) return [];
-      function ok(c, champs) {
-        return mots.every(function (m) { return champs.indexOf(m) >= 0; });
-      }
-      var parNom = cartes.filter(function (c) { return ok(c, nomIndex(c)); });
-      var liste = parNom.length ? parNom : cartes.filter(function (c) {
-        return ok(c, norm([c.nom, c.ext, c.num, c.id].join(" ")));
-      });
-      return liste.slice(0, 8);
-    }
-    function fermer() {
-      ul.hidden = true;
-      input.setAttribute("aria-expanded", "false");
-    }
-    function afficher(list) {
-      ul.textContent = "";
-      if (!list.length) { fermer(); return; }
-      list.forEach(function (c) {
-        var li = document.createElement("li");
-        var a = document.createElement("a");
-        a.href = pageDe(c);
-        var b = document.createElement("b");
-        b.textContent = c.nom || c.id;
-        var s = document.createElement("small");
-        s.textContent = [c.ext, c.num, lg[c.langue]].filter(Boolean).join(" · ");
-        a.appendChild(b);
-        a.appendChild(s);
-        if (c.tendance != null) {
-          var p = document.createElement("span");
-          p.textContent = euros(c.tendance);
-          a.appendChild(p);
-        }
-        li.appendChild(a);
-        ul.appendChild(li);
-      });
-      ul.hidden = false;
-      input.setAttribute("aria-expanded", "true");
-    }
-    input.addEventListener("input", function () { afficher(chercher(input.value)); });
-    form.addEventListener("submit", function (e) {
-      var q = input.value.trim();
-      var list = chercher(q);
-      if (list.length === 1) {
-        e.preventDefault();
-        location.href = pageDe(list[0]);
-        return;
-      }
-      if (q) {
-        e.preventDefault();
-        location.href = "registre.html?q=" + encodeURIComponent(q);
-      }
-    });
-    document.addEventListener("click", function (e) {
-      if (!form.parentNode.contains(e.target)) fermer();
-    });
-    document.addEventListener("keydown", function (e) {
-      if (e.key === "Escape") fermer();
-    });
-  }
-
   function boot() {
-    var cartes = cartesCote();
-    renduVentes(cartes);
-    renduRecherche(cartes);
+    renduVentes(cartesCote());
   }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", boot);
   else boot();
