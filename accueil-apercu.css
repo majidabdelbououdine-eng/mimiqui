@@ -39,3 +39,30 @@
   .ap-pied{flex-direction:column}
   .ap-tout{display:block;text-align:center}
 }
+
+/* Champ #ap-q : le texte saisi restait illisible (site-commun.css impose un fond
+   hologramme quasi transparent, donc la couleur navy sur le bloc #0b3d91). */
+html body section.ap-accueil .ap-cherche form input#ap-q[type="search"][name="q"],
+html body section.ap-accueil .ap-cherche form input#ap-q[type="search"][name="q"]:focus{
+  background:#ffffff!important;
+  color:#0b3d91!important;
+  -webkit-text-fill-color:#0b3d91!important
+}
+html body section.ap-accueil .ap-cherche form input#ap-q[type="search"][name="q"]::placeholder,
+html body section.ap-accueil .ap-cherche form input#ap-q[type="search"][name="q"]:focus::placeholder,
+html body section.ap-accueil .ap-cherche form input#ap-q[type="search"][name="q"]::-webkit-input-placeholder,
+html body section.ap-accueil .ap-cherche form input#ap-q[type="search"][name="q"]:focus::-webkit-input-placeholder{
+  color:#8a94a6!important;
+  -webkit-text-fill-color:#8a94a6!important;
+  opacity:1!important
+}
+html body section.ap-accueil .ap-cherche form input#ap-q[type="search"][name="q"]:-webkit-autofill,
+html body section.ap-accueil .ap-cherche form input#ap-q[type="search"][name="q"]:-webkit-autofill:hover,
+html body section.ap-accueil .ap-cherche form input#ap-q[type="search"][name="q"]:-webkit-autofill:focus,
+html body section.ap-accueil .ap-cherche form input#ap-q[type="search"][name="q"]:-webkit-autofill:active{
+  -webkit-box-shadow:0 0 0 1000px #ffffff inset!important;
+  box-shadow:0 0 0 1000px #ffffff inset!important;
+  -webkit-text-fill-color:#0b3d91!important;
+  background:#ffffff!important;
+  color:#0b3d91!important
+}
