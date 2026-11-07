@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="fr"><head><link rel="preconnect" href="https://api.tcgdex.net" crossorigin><link rel="preconnect" href="https://assets.tcgdex.net"><link rel="preconnect" href="https://www.youtube.com"><link rel="preconnect" href="https://i.ytimg.com"><link rel="preload" href="fonts/source-sans-3-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin><meta charset="utf-8"><meta name="description" content="Registre des ventes de cartes Mimiqui : prix de vente constatés sur eBay."><link rel="icon" type="image/webp" href="img/logo-mimiqui.webp"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Ventes passées Spécial Mimiqui · Le Coin de Mimiqui</title><link rel="canonical" href="https://mimiqui.fr/registre.html"><meta property="og:url" content="https://mimiqui.fr/registre.html"><meta property="og:image" content="https://mimiqui.fr/img/sm9-53.webp"><meta name="twitter:image" content="https://mimiqui.fr/img/sm9-53.webp"><meta property="og:type" content="website"><meta property="og:title" content="Ventes passées Spécial Mimiqui · Le Coin de Mimiqui"><meta property="og:description" content="Registre des ventes de cartes Mimiqui : prix de vente constatés sur eBay."><meta property="og:locale" content="fr_FR"><meta property="og:site_name" content="Le Coin de Mimiqui"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Ventes passées Spécial Mimiqui · Le Coin de Mimiqui"><meta name="twitter:description" content="Registre des ventes de cartes Mimiqui : prix de vente constatés sur eBay.">
+<title>Registre des ventes des cartes Mimiqui – Le Coin de Mimiqui</title><link rel="canonical" href="https://mimiqui.fr/registre.html"><meta property="og:url" content="https://mimiqui.fr/registre.html"><meta property="og:image" content="https://mimiqui.fr/img/sm9-53.webp"><meta name="twitter:image" content="https://mimiqui.fr/img/sm9-53.webp"><meta property="og:type" content="website"><meta property="og:title" content="Registre des ventes des cartes Mimiqui – Le Coin de Mimiqui"><meta property="og:description" content="Registre des ventes de cartes Mimiqui : prix de vente constatés sur eBay."><meta property="og:locale" content="fr_FR"><meta property="og:site_name" content="Le Coin de Mimiqui"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Registre des ventes des cartes Mimiqui – Le Coin de Mimiqui"><meta name="twitter:description" content="Registre des ventes de cartes Mimiqui : prix de vente constatés sur eBay.">
 <script>/* Chaque page s'ouvre en haut, sauf si le lien vise une section (#...) */try{history.scrollRestoration="manual"}catch(e){}(function(){function haut(){if(!location.hash)window.scrollTo(0,0)}haut();document.addEventListener("DOMContentLoaded",haut);window.addEventListener("load",haut);window.addEventListener("pageshow",haut)})();</script>
 <meta name="claude:viewport-fit-sides" content="cover">
 <style>
@@ -542,6 +542,10 @@ Array.prototype.forEach.call(document.querySelectorAll("#par-pays .lp"),function
     var b = this; b.disabled = true;
     etat.db.collection("registre").doc("s-" + s.fin).set(s).then(function () { $("admin-note").textContent = "Semaine enregistrée."; }, function () { $("admin-note").textContent = "L'enregistrement a échoué."; }).then(function () { b.disabled = false; });
   });
+  (function () {
+    var qUrl = new URLSearchParams(location.search).get("q");
+    if (qUrl && $("cherche") && !$("cherche").value) $("cherche").value = qUrl;
+  })();
   rendre();
   if (window.claude && window.claude.use) {
     Promise.all([window.claude.use("db"), window.claude.use("user").catch(function () { return null; })]).then(function (r) {
