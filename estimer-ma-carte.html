@@ -1,6 +1,6 @@
 <!doctype html>
-<html lang="fr"><head><link rel="preconnect" href="https://api.tcgdex.net" crossorigin><link rel="preconnect" href="https://assets.tcgdex.net"><link rel="preconnect" href="https://www.youtube.com"><link rel="preconnect" href="https://i.ytimg.com"><link rel="preload" href="fonts/source-sans-3-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin><meta charset="utf-8"><meta name="description" content="Estime ta carte Pokémon Mimiqui (FR, JP, EN) avec la cote Cardmarket et les ventes eBay du registre, puis mets-la en vente sur eBay."><link rel="icon" type="image/webp" href="img/logo-mimiqui.webp"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Estimer et vendre ma carte sur eBay · Le Coin de Mimiqui</title><link rel="canonical" href="https://mimiqui.fr/estimer-ma-carte.html"><meta property="og:url" content="https://mimiqui.fr/estimer-ma-carte.html"><meta property="og:image" content="https://mimiqui.fr/img/sm9-53.webp"><meta name="twitter:image" content="https://mimiqui.fr/img/sm9-53.webp"><meta property="og:type" content="website"><meta property="og:title" content="Estimer et vendre ma carte sur eBay · Le Coin de Mimiqui"><meta property="og:description" content="Estime ta carte Pokémon Mimiqui (FR, JP, EN) avec la cote Cardmarket et les ventes eBay du registre, puis mets-la en vente sur eBay."><meta property="og:locale" content="fr_FR"><meta property="og:site_name" content="Le Coin de Mimiqui"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Estimer et vendre ma carte sur eBay · Le Coin de Mimiqui"><meta name="twitter:description" content="Estime ta carte Pokémon Mimiqui (FR, JP, EN) avec la cote Cardmarket et les ventes eBay du registre, puis mets-la en vente sur eBay.">
+<html lang="fr"><head><link rel="preconnect" href="https://api.tcgdex.net" crossorigin><link rel="preconnect" href="https://assets.tcgdex.net"><link rel="preconnect" href="https://www.youtube.com"><link rel="preconnect" href="https://i.ytimg.com"><link rel="preload" href="fonts/source-sans-3-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin><meta charset="utf-8"><meta name="description" content="Estime une carte Pokémon du Spécial Mimiqui ou des 8 sets Méga-Évolution (FR, JP, EN) : cote Cardmarket, achat conseillé et revente, puis ventes eBay."><link rel="icon" type="image/webp" href="img/logo-mimiqui.webp"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Estimer et vendre ma carte sur eBay · Le Coin de Mimiqui</title><link rel="canonical" href="https://mimiqui.fr/estimer-ma-carte.html"><meta property="og:url" content="https://mimiqui.fr/estimer-ma-carte.html"><meta property="og:image" content="https://mimiqui.fr/img/sm9-53.webp"><meta name="twitter:image" content="https://mimiqui.fr/img/sm9-53.webp"><meta property="og:type" content="website"><meta property="og:title" content="Estimer et vendre ma carte sur eBay · Le Coin de Mimiqui"><meta property="og:description" content="Estime une carte Pokémon du Spécial Mimiqui ou des 8 sets Méga-Évolution (FR, JP, EN) : cote Cardmarket, achat conseillé et revente, puis ventes eBay."><meta property="og:locale" content="fr_FR"><meta property="og:site_name" content="Le Coin de Mimiqui"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Estimer et vendre ma carte sur eBay · Le Coin de Mimiqui"><meta name="twitter:description" content="Estime une carte Pokémon du Spécial Mimiqui ou des 8 sets Méga-Évolution (FR, JP, EN) : cote Cardmarket, achat conseillé et revente, puis ventes eBay.">
 <script>/* Chaque page s'ouvre en haut, sauf si le lien vise une section (#...) */try{history.scrollRestoration="manual"}catch(e){}(function(){function haut(){if(!location.hash)window.scrollTo(0,0)}haut();document.addEventListener("DOMContentLoaded",haut);window.addEventListener("load",haut);window.addEventListener("pageshow",haut)})();</script>
 <meta name="claude:viewport-fit-sides" content="cover">
 <style>
@@ -159,19 +159,40 @@ a.btn{text-decoration:none;display:inline-block}
 .est-btns a.pri{background:#111;color:#fff}
 .methode{font-size:13px;color:var(--muted);margin-top:10px}
 .guide h2{margin-top:28px}.guide li{margin:4px 0}.guide .astuce{border-left:3px solid #111;padding:8px 12px;background:#f6f5f2;margin:12px 0}
+.set-pick{position:relative}
+#e-set-btn{position:relative;font:inherit;font-size:1rem;font-weight:600;color:var(--ink);background:#fff;border:1px solid var(--ink);padding:9px 34px 9px 10px;width:100%;text-align:left;cursor:pointer;line-height:1.3}
+#e-set-btn::after{content:"";position:absolute;right:12px;top:50%;margin-top:-3px;border:6px solid transparent;border-top-color:#111}
+#e-set-btn[aria-expanded="true"]::after{margin-top:-9px;border-top-color:transparent;border-bottom-color:#111}
+#e-set-list{position:absolute;z-index:30;left:0;right:0;margin:0;padding:0;background:#fff;border:1px solid #111;max-height:min(70vh,560px);overflow:auto;box-shadow:0 12px 28px rgba(17,17,17,.16)}
+#e-set-list button{display:flex;flex-direction:column;align-items:flex-start;gap:1px;width:100%;text-align:left;font:inherit;padding:8px 10px;border:0;border-bottom:1px solid rgba(17,17,17,.12);background:#fff;cursor:pointer;color:#111;line-height:1.25}
+#e-set-list button small{font-size:.78rem;font-weight:600;color:#5a5a5a}
+#e-set-list button[aria-selected="true"],#e-set-list button:hover{background:#111;color:#fff}
+#e-set-list button[aria-selected="true"] small,#e-set-list button:hover small{color:#fff}
+.est-grid,.bloc,.est-res,.champ,.set-pick{min-width:0;max-width:100%}
+.est-res h2,.est-res p,.est-prix,.methode{overflow-wrap:anywhere}
+@media (max-width:480px){.est-res img{width:min(150px,100%)}}
 </style>
 <main class="wrap">
   <section class="tete">
-    <p class="etiquette">Vendre sur eBay · spécial Mimiqui</p>
-    <h1>Estimer et vendre ma carte <em>Mimiqui</em></h1>
-    <p>Choisis la langue, la carte et son état. On t'affiche la cote Cardmarket et les ventes eBay réelles du registre « Ventes passées Spécial Mimiqui », puis un prix conseillé calculé uniquement à partir de ces données.</p>
+    <p class="etiquette">Vendre sur eBay</p>
+    <h1>Estimer ma <em>carte</em></h1>
+    <p>Choisis la série, puis la langue, puis la carte. Le Spécial Mimiqui garde la cote Cardmarket et les ventes du registre. Les huit sets Méga-Évolution reprennent les mêmes cartes : achat conseillé = cote × 0,80, revente = cote × 1,20. Sans cote, la page affiche « Cote non disponible ».</p>
   </section>
   <div class="est-grid">
     <div class="bloc">
-      <div class="champ"><label for="e-lang">Langue</label><select id="e-lang"><option value="fr">Cartes françaises</option><option value="ja">Cartes japonaises</option><option value="en">Cartes anglaises</option></select></div>
+      <div class="champ"><label id="e-set-lab" for="e-set-btn">Série</label>
+        <div class="set-pick" id="e-set">
+          <button type="button" id="e-set-btn" aria-haspopup="listbox" aria-expanded="false" aria-controls="e-set-list"></button>
+          <div id="e-set-list" role="listbox" aria-labelledby="e-set-lab" hidden></div>
+        </div>
+      </div>
+      <div class="champ"><label for="e-lang">Langue</label><select id="e-lang"></select></div>
       <div class="champ"><label for="e-carte">Carte</label><select id="e-carte"></select></div>
+      <p class="note" id="e-compte"></p>
+      <div id="e-etat-champ">
       <div class="champ"><label for="e-etat">État</label><select id="e-etat"><option value="nm">Quasi neuve (Near Mint)</option><option value="ex">Excellent / légèrement jouée</option><option value="bon">Bon état / jouée</option><option value="abimee">Très abîmée</option></select></div>
       <p class="note">Carte gradée (PSA, CGC…) ? Les prix sont très différents : regarde plutôt les <a href="cartes-psa10.html">records PSA 10</a>.</p>
+      </div>
     </div>
     <div class="bloc" id="e-res" aria-live="polite"></div>
   </div>
@@ -181,20 +202,95 @@ a.btn{text-decoration:none;display:inline-block}
 <script src="cotation-data.js"></script>
 <script src="registre-ventes-data.js"></script>
 <script src="estimer-cartes-data.js"></script>
+<script src="vendre-mega-donnees.js"></script>
 <script>
 (function(){"use strict";
-function epn(u,t){return u+(u.indexOf("?")>=0?"&":"?")+"mkcid=1&mkrid=709-53476-19255-0&siteid=71&campid=5339225196&customid="+t+"&toolid=10001&mkevt=1"};
+function epn(u,t){return u+(u.indexOf("?")>=0?"&":"?")+"mkcid=1&mkrid=709-53476-19255-0&siteid=71&campid=5339225196&customid="+t+"&toolid=10001&mkevt=1"}
 var COEF={nm:[1,"quasi neuve"],ex:[0.8,"légèrement jouée"],bon:[0.6,"jouée"],abimee:[0.35,"très abîmée"]};
+var LANGS=[["fr","Cartes françaises"],["ja","Cartes japonaises"],["en","Cartes anglaises"]];
+var LAB={fr:"FR",ja:"JA",en:"EN"};
+var LN={fr:"française",ja:"japonaise",en:"anglaise"};
+var SETS=[
+ {id:"mimiqui",nom:"Spécial Mimiqui"},
+ {id:"rd",nom:"Règne Delta"},
+ {id:"me03",nom:"Équilibre Parfait"},
+ {id:"30a",nom:"30e Anniversaire"},
+ {id:"ht",nom:"Héros Transcendants"},
+ {id:"me05",nom:"Nuit Noire"},
+ {id:"mep",nom:"Méga-Évolution"},
+ {id:"pfl",nom:"Flammes Fantasmagoriques"},
+ {id:"me04",nom:"Chaos Ascendant"}
+];
+var SETNOM={};SETS.forEach(function(s){SETNOM[s.id]=s.nom});
 var $=function(i){return document.getElementById(i)};
 var esc=function(x){return String(x==null?"":x).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})};
 var eur=function(v){return v.toLocaleString("fr-FR",{style:"currency",currency:"EUR"})};
 var cn=function(x){return String(x||"").replace(/\s/g,"").split("/").map(function(p){return p.replace(/^0+(?=\d)/,"")}).join("/").toLowerCase()};
+var fold=function(s){return String(s==null?"":s).normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/\s+/g," ").trim()};
 var C=window.ESTIMER_CARTES||[],R=window.REGISTRE_VENTES||[],COT=(window.COTATION&&window.COTATION.cartes)||{};
+var MEGA=(window.VENDRE_MEGA&&window.VENDRE_MEGA.cartes)||[];
+var ALL=[];
+C.forEach(function(c){ALL.push({set:"mimiqui",id:c.k,k:c.k,l:c.l,nom:c.nom,num:c.num,ext:c.ext,img:c.img,q:c.q,mega:false,raw:c})});
+MEGA.forEach(function(c){ALL.push({set:c.g,id:c.id,k:c.k,l:c.l,nom:c.nom,num:c.num,ext:c.ext,img:c.img,q:c.q,t:typeof c.t==="number"?c.t:null,mega:true})});
+var state={set:"mimiqui",open:false};
 function med(a){a=a.slice().sort(function(x,y){return x-y});var m=a.length>>1;return a.length%2?a[m]:(a[m-1]+a[m])/2}
-function remplir(){var l=$("e-lang").value;$("e-carte").innerHTML=C.filter(function(c){return c.l===l}).map(function(c){return '<option value="'+esc(c.k)+'">'+esc(c.nom+" "+c.num+" · "+c.ext)+'</option>'}).join("");var q=new URLSearchParams(location.search).get("carte");if(q&&C.some(function(c){return c.k===q&&c.l===l}))$("e-carte").value=q;calc()}
-function calc(){var l=$("e-lang").value,k=$("e-carte").value,et=$("e-etat").value,c=C.find(function(x){return x.k===k&&x.l===l});if(!c){$("e-res").innerHTML="";return}
- var co=COT[k]||{},t=co.tendance!=null?co.tendance:null;
- var vs=R.filter(function(v){return v.langue===l&&cn(v.numero)===cn(c.num)}).sort(function(a,b){return a.date<b.date?1:-1});
+function langsOf(set){return LANGS.map(function(L){return L[0]}).filter(function(l){return ALL.some(function(c){return c.set===set&&c.l===l})})}
+function compteTxt(set){var o={};ALL.forEach(function(c){if(c.set===set)o[c.l]=(o[c.l]||0)+1});return LANGS.filter(function(L){return o[L[0]]}).map(function(L){return LAB[L[0]]+" "+o[L[0]]}).join(" · ")}
+function score(c,n){
+ if(!n)return 0;
+ var nom=fold(c.nom),num=fold(c.num),ext=fold(c.ext),q=fold(c.q),id=fold(c.id),k=fold(c.k),setn=fold(SETNOM[c.set]||"");
+ if(id===n||(!c.mega&&k===n))return 1000;
+ if(nom===n)return 800;
+ if(num===n||k===n||cn(c.num)===cn(n))return 720;
+ if(q===n||setn===n)return 680;
+ if(n.length<3)return 0;
+ if(num.indexOf(n)===0||cn(c.num).indexOf(cn(n))===0)return 560;
+ if(nom.indexOf(n)>=0)return 420;
+ if(q.indexOf(n)>=0)return 340;
+ if(setn.indexOf(n)>=0||ext.indexOf(n)>=0)return 220;
+ return 0;
+}
+function matchCarte(carte,langue){
+ var mega=ALL.filter(function(c){return c.mega&&c.id===carte})[0];
+ if(mega)return mega;
+ var lang=langue||"fr";
+ return ALL.filter(function(c){return !c.mega&&c.k===carte&&c.l===lang})[0]||null;
+}
+function matchQ(q,langue){
+ var n=fold(q);if(!n)return null;
+ function best(pool){var smax=0,hit=null;for(var i=0;i<pool.length;i++){var s=score(pool[i],n);if(s>smax){smax=s;hit=pool[i]}}return hit}
+ if(langue){var h=best(ALL.filter(function(c){return c.l===langue}));if(h)return h}
+ return best(ALL);
+}
+function setOpen(on){state.open=!!on;$("e-set-btn").setAttribute("aria-expanded",on?"true":"false");$("e-set-list").hidden=!on}
+function renderSetBtn(){
+ var s=SETS.filter(function(x){return x.id===state.set})[0];
+ $("e-set-btn").textContent=s?s.nom:"";
+ $("e-set-list").innerHTML=SETS.map(function(x){
+  var sel=x.id===state.set;
+  return '<button type="button" role="option" data-set="'+esc(x.id)+'" aria-selected="'+(sel?"true":"false")+'">'+esc(x.nom)+'<small>'+esc(compteTxt(x.id))+'</small></button>';
+ }).join("");
+}
+function remplir(preferId){
+ var langs=langsOf(state.set), lang=$("e-lang").value;
+ if(langs.indexOf(lang)<0)lang=langs[0]||"fr";
+ $("e-lang").innerHTML=langs.map(function(l){var name=LANGS.filter(function(L){return L[0]===l})[0][1];return '<option value="'+l+'">'+esc(name)+'</option>'}).join("");
+ $("e-lang").value=lang;
+ var list=ALL.filter(function(c){return c.set===state.set&&c.l===lang});
+ $("e-carte").innerHTML=list.map(function(c){return '<option value="'+esc(c.id)+'">'+esc(c.nom+" "+c.num+(c.mega?"":" · "+c.ext))+'</option>'}).join("");
+ var urlC=new URLSearchParams(location.search).get("carte");
+ function pick(val){if(!val)return null;return list.filter(function(c){return c.id===val})[0]||list.filter(function(c){return !c.mega&&c.k===val})[0]||null}
+ var chosen=pick(urlC)||pick(preferId);
+ if(chosen)$("e-carte").value=chosen.id;
+ $("e-etat-champ").hidden=state.set!=="mimiqui";
+ if($("e-compte"))$("e-compte").textContent=list.length+" carte"+(list.length>1?"s":"")+" dans cette langue";
+ renderSetBtn();
+ calc();
+}
+function current(){var id=$("e-carte").value,lang=$("e-lang").value;return ALL.filter(function(c){return c.set===state.set&&c.l===lang&&c.id===id})[0]}
+function calcMimiqui(raw){
+ var l=raw.l,k=raw.k,et=$("e-etat").value,co=COT[k]||{},t=co.tendance!=null?co.tendance:null;
+ var vs=R.filter(function(v){return v.langue===l&&cn(v.numero)===cn(raw.num)}).sort(function(a,b){return a.date<b.date?1:-1});
  var brut=vs.filter(function(v){return !/^grad/i.test(v.etat||"")}),etv=brut.filter(function(v){return v.etat===et}),src=etv.length?etv:brut,base=null,meth="";
  if(src.length){base=med(src.map(function(v){return v.prix}));meth=etv.length?"Médiane des "+etv.length+" vente"+(etv.length>1?"s":"")+" eBay du registre dans cet état.":"Médiane des "+brut.length+" vente"+(brut.length>1?"s":"")+" eBay du registre (cartes non gradées, tous états).";}
  else if(t!=null){base=t;meth="Aucune vente dans le registre : on part de la cote Cardmarket (tendance).";}
@@ -206,18 +302,53 @@ function calc(){var l=$("e-lang").value,k=$("e-carte").value,et=$("e-etat").valu
  prix=t!=null?t*1.2:null;ach=t!=null?t*0.8:null;
  methA=t!=null?"Prix d'achat = cote Cardmarket − 20 % ("+eur(t)+" × 0,8). Le bouton « Rechercher la carte sur eBay » cherche entre "+eur(Math.round(t*70)/100)+" et "+eur(Math.round(t*90)/100)+" (cote − 30 % à − 10 %).":"";
  meth=t!=null?"Prix de revente = cote Cardmarket + 20 % ("+eur(t)+" × 1,2). Les ventes du registre sont données à titre indicatif.":"Cote Cardmarket indisponible pour cette carte : pas de prix conseillé (on n'invente rien). La recherche eBay se fait sans filtre de prix.";
- var rech=epn("https://www.ebay.fr/sch/i.html?_nkw="+encodeURIComponent(c.q)+(t!=null?"&_udlo="+(t*0.7).toFixed(2)+"&_udhi="+(t*0.9).toFixed(2):""),"rechercher");
- var vend=epn("https://www.ebay.fr/sch/i.html?_nkw="+encodeURIComponent(c.q)+"&LH_Sold=1&LH_Complete=1","estimer");
+ var rech=epn("https://www.ebay.fr/sch/i.html?_nkw="+encodeURIComponent(raw.q)+(t!=null?"&_udlo="+(t*0.7).toFixed(2)+"&_udhi="+(t*0.9).toFixed(2):""),"rechercher");
+ var vend=epn("https://www.ebay.fr/sch/i.html?_nkw="+encodeURIComponent(raw.q)+"&LH_Sold=1&LH_Complete=1","estimer");
  var sell=epn("https://www.ebay.fr/sl/sell","estimer");
- var h='<div class="est-res">'+(c.img?'<img src="'+esc(c.img)+'" alt="Carte '+esc(c.nom+" "+c.num)+'">':'<div></div>')+'<div><h2 style="margin:0">'+esc(c.nom)+' <small>'+esc(c.num)+'</small></h2><p class="note">'+esc(c.ext)+'</p>'+
+ var h='<div class="est-res">'+(raw.img?'<img src="'+esc(raw.img)+'" alt="Carte '+esc(raw.nom+" "+raw.num)+'">':'<div></div>')+'<div><h2 style="margin:0">'+esc(raw.nom)+' <small>'+esc(raw.num)+'</small></h2><p class="note">'+esc(raw.ext)+'</p>'+
  '<p class="etiquette">Prix de revente conseillé <small>(cote + 20 %)</small></p><div class="est-prix">'+(prix!=null?eur(Math.round(prix*100)/100):"cote indisponible")+'</div>'+
  '<p class="etiquette">Prix d\'achat conseillé <small>(cote − 20 %)</small></p><div class="est-prix">'+(ach!=null?eur(Math.round(ach*100)/100):"cote indisponible")+'</div>'+'<dl class="est-dl"><dt>Cote Cardmarket</dt><dd>'+(t!=null?eur(t):"non disponible")+'</dd><dt>Ventes du registre</dt><dd>'+(vs.length?vs.length+" vente"+(vs.length>1?"s":"")+" (du "+vs[vs.length-1].date.split("-").reverse().join("/")+" au "+vs[0].date.split("-").reverse().join("/")+")":"aucune")+'</dd></dl>'+
  (vs.length?'<ul class="est-ventes">'+vs.slice(0,6).map(function(v){return "<li><b>"+eur(v.prix)+"</b> · "+esc(v.etat)+" · "+v.date.split("-").reverse().join("/")+(v.itm?' · <a href="'+esc(epn("https://www.ebay.fr/itm/"+v.itm,"estimer"))+'" target="_blank" rel="sponsored noopener">voir</a>':"")+"</li>"}).join("")+"</ul>":"")+
  (methA?'<p class="methode"><b>Prix d\'achat :</b> '+methA+'</p>':'')+'<p class="methode"><b>Méthode :</b> '+(meth||"Ni vente dans le registre ni cote Cardmarket pour cette carte : impossible d'estimer sans inventer. Regarde les ventes déjà conclues sur eBay.")+'</p>'+
  '<div class="est-btns"><a class="pri" href="'+esc(rech)+'" target="_blank" rel="sponsored noopener">Rechercher la carte sur eBay ↗</a><a class="pri" href="'+esc(sell)+'" target="_blank" rel="sponsored noopener">Mettre en vente sur eBay ↗</a><a href="'+esc(vend)+'" target="_blank" rel="sponsored noopener">Déjà vendues sur eBay ↗</a></div></div></div>';
- $("e-res").innerHTML=h}
-var ql=new URLSearchParams(location.search).get("langue");if(ql&&/^(fr|ja|en)$/.test(ql))$("e-lang").value=ql;
-$("e-lang").addEventListener("change",remplir);$("e-carte").addEventListener("change",calc);$("e-etat").addEventListener("change",calc);remplir();
+ $("e-res").innerHTML=h;
+}
+function calcMega(c){
+ var t=typeof c.t==="number"?c.t:null, nd="Cote non disponible";
+ var prix=t!=null?Math.round(t*120)/100:null, ach=t!=null?Math.round(t*80)/100:null;
+ var kw=c.q||(c.nom+" "+c.num+" "+(c.ext||""));
+ var range=t!=null?"&_udlo="+(t*0.7).toFixed(2)+"&_udhi="+(t*0.9).toFixed(2):"";
+ var rech=epn("https://www.ebay.fr/sch/i.html?_nkw="+encodeURIComponent(kw)+range,"rechercher");
+ var vend=epn("https://www.ebay.fr/sch/i.html?_nkw="+encodeURIComponent(kw)+"&LH_Sold=1&LH_Complete=1"+range,"estimer");
+ var sell=epn("https://www.ebay.fr/sl/sell","estimer");
+ var meth=t!=null?"Prix d'achat conseillé = cote × 0,80 ("+eur(t)+" × 0,8). Prix de revente conseillé = cote × 1,20 ("+eur(t)+" × 1,2). Les liens eBay filtrent entre "+eur(Math.round(t*70)/100)+" et "+eur(Math.round(t*90)/100)+" (cote × 0,70 à × 0,90).":"Cote non disponible : aucun prix n'est proposé. La recherche eBay se fait sans filtre de prix.";
+ var img=c.img?'<img src="'+esc(c.img)+'" alt="Carte '+esc(c.nom+" "+c.num)+'" referrerpolicy="no-referrer">':'<div></div>';
+ var h='<div class="est-res">'+img+'<div><h2 style="margin:0">'+esc(c.nom)+' <small>'+esc(c.num)+'</small></h2><p class="note">'+esc((SETNOM[c.set]||c.ext)+" · "+(LN[c.l]||c.l))+'</p>'+
+ '<p class="etiquette">Prix de revente conseillé <small>(cote × 1,20)</small></p><div class="est-prix">'+(prix!=null?eur(prix):nd)+'</div>'+
+ '<p class="etiquette">Prix d\'achat conseillé <small>(cote × 0,80)</small></p><div class="est-prix">'+(ach!=null?eur(ach):nd)+'</div>'+
+ '<dl class="est-dl"><dt>Cote Cardmarket</dt><dd>'+(t!=null?eur(t):nd)+'</dd></dl>'+
+ '<p class="methode"><b>Méthode :</b> '+meth+'</p>'+
+ '<div class="est-btns"><a class="pri" href="'+esc(rech)+'" target="_blank" rel="sponsored noopener">Rechercher la carte sur eBay ↗</a><a class="pri" href="'+esc(sell)+'" target="_blank" rel="sponsored noopener">Mettre en vente sur eBay ↗</a><a href="'+esc(vend)+'" target="_blank" rel="sponsored noopener">Déjà vendues sur eBay ↗</a></div></div></div>';
+ $("e-res").innerHTML=h;
+}
+function calc(){var c=current();if(!c){$("e-res").innerHTML="";return}if(c.mega)calcMega(c);else calcMimiqui(c.raw)}
+var sp=new URLSearchParams(location.search);
+var ql=sp.get("langue");if(ql&&!/^(fr|ja|en)$/.test(ql))ql=null;
+var picked=sp.get("carte")?matchCarte(sp.get("carte"),ql):null;
+if(!picked&&sp.get("q"))picked=matchQ(sp.get("q"),ql);
+if(picked)state.set=picked.set;
+var langs0=langsOf(state.set);
+var lang0=picked?picked.l:(ql&&langs0.indexOf(ql)>=0?ql:(langs0[0]||"fr"));
+$("e-lang").innerHTML='<option value="'+lang0+'"></option>';
+$("e-lang").value=lang0;
+remplir(picked?picked.id:null);
+$("e-set-btn").addEventListener("click",function(){setOpen(!state.open)});
+$("e-set-list").addEventListener("click",function(e){var b=e.target.closest&&e.target.closest("button[data-set]");if(!b)return;state.set=b.getAttribute("data-set");setOpen(false);remplir(null);$("e-set-btn").focus()});
+document.addEventListener("click",function(e){if(!$("e-set").contains(e.target))setOpen(false)});
+document.addEventListener("keydown",function(e){if(e.key==="Escape")setOpen(false)});
+$("e-lang").addEventListener("change",function(){remplir(null)});
+$("e-carte").addEventListener("change",calc);
+$("e-etat").addEventListener("change",calc);
 })();
 </script>
 <script src="site-commun.js" defer></script><p class="pied-legal">Site de fan non officiel &middot; <a href="mentions-legales.html#liens">Liens affili&eacute;s</a> &middot; <a href="mentions-legales.html">Mentions l&eacute;gales</a></p><style>.pied-legal{margin:1.2rem auto 1.4rem;text-align:center;font-size:.72rem;font-weight:300;color:#7a869a;letter-spacing:.02em}.pied-legal a{color:#7a869a;text-decoration:underline}</style></body></html>
