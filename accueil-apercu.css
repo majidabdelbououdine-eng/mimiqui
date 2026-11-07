@@ -1,0 +1,40 @@
+/* Bloc d'accueil autonome : dernières ventes + recherche de cote.
+   Ne dépend pas de site-commun.css. */
+.ap-accueil{box-sizing:border-box;max-width:1080px;margin:16px auto 8px;padding:8px max(16px,env(safe-area-inset-right,0px)) 20px max(16px,env(safe-area-inset-left,0px));overflow:hidden}
+/* La fenêtre film fixe (haut droite) et les pastilles PSA (index) recouvrent le haut de page. */
+@media (min-width:1100px){
+  .ap-accueil{max-width:none;margin-left:16px;margin-right:410px}
+  .ap-accueil.ap-avec-pastilles{margin-left:420px}
+}
+.ap-accueil,.ap-accueil *{box-sizing:border-box}
+.ap-sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+.ap-cherche{background:#0b3d91;color:#fff;border-radius:16px;padding:18px 16px 16px;margin:0 0 16px}
+.ap-cherche h2{margin:0 0 10px;color:#fff;font:700 clamp(1.35rem,3.4vw,1.9rem)/1.15 "Bodoni Moda",Georgia,serif;letter-spacing:-.01em}
+.ap-cherche form{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.ap-cherche input{flex:1 1 12rem;min-width:0;width:100%;max-width:100%;border:0;border-radius:999px;padding:12px 16px;font:600 1rem/1.3 "Source Sans 3",Arial,sans-serif;color:#10233f;background:#fff}
+.ap-cherche button{flex:none;border:0;border-radius:999px;padding:12px 18px;background:#0a58ca;color:#fff;font:800 .82rem/1 "Source Sans 3",Arial,sans-serif;letter-spacing:.06em;text-transform:uppercase;cursor:pointer}
+.ap-cherche button:hover{background:#0848a8}
+.ap-ventes{border:1px solid rgba(11,61,145,.22);border-radius:16px;padding:16px;background:#fff}
+.ap-entete{display:flex;justify-content:space-between;align-items:baseline;gap:8px 16px;flex-wrap:wrap}
+.ap-entete h2{margin:0;color:#0b3d91;font:700 clamp(1.3rem,3.2vw,1.85rem)/1.15 "Bodoni Moda",Georgia,serif}
+.ap-compteur{margin:0;color:#0a58ca;font:700 .92rem/1.35 "Source Sans 3",Arial,sans-serif;max-width:none}
+.ap-liste{list-style:none;margin:14px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,240px),1fr));gap:10px}
+.ap-item{display:grid;grid-template-columns:54px minmax(0,1fr);gap:10px;align-items:center;min-width:0;text-decoration:none;color:#10233f;padding:8px;border-radius:12px;background:#f4f7fc}
+.ap-item:hover,.ap-item:focus-visible{background:#e7eefb}
+.ap-item img{width:54px;height:76px;max-width:54px;object-fit:cover;border-radius:6px;background:#e6eef8}
+.ap-txt{min-width:0;display:grid;gap:2px}
+.ap-txt b{color:#0b3d91;font-size:.98rem;overflow-wrap:anywhere}
+.ap-txt small{color:#3d4d66;overflow-wrap:anywhere}
+.ap-meta{display:flex;gap:8px;flex-wrap:wrap;align-items:baseline}
+.ap-meta strong{color:#0a58ca;font-variant-numeric:tabular-nums}
+.ap-meta time{color:#3d4d66;font-size:.86rem}
+.ap-pied{margin:14px 0 0}
+.ap-tout{display:inline-block;max-width:100%;background:#0b3d91;color:#fff;text-decoration:none;font:800 .8rem/1.2 "Source Sans 3",Arial,sans-serif;letter-spacing:.04em;text-transform:uppercase;padding:12px 16px;border-radius:999px;text-align:center}
+.ap-tout:hover{background:#0a58ca;color:#fff}
+
+@media (max-width:420px){
+  .ap-cherche{padding:14px 12px}
+  .ap-cherche button{width:100%}
+  .ap-tout{display:block}
+}
