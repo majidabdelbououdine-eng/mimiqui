@@ -226,7 +226,8 @@ var $=function(i){return document.getElementById(i)};
 var esc=function(x){return String(x==null?"":x).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})};
 var eur=function(v){return v.toLocaleString("fr-FR",{style:"currency",currency:"EUR"})};
 var cn=function(x){return String(x||"").replace(/\s/g,"").split("/").map(function(p){return p.replace(/^0+(?=\d)/,"")}).join("/").toLowerCase()};
-var fold=function(s){return String(s==null?"":s).normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/\s+/g," ").trim()};
+function norm(s){return String(s||"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase()}
+function alias(s){return s.replace(/\bmimikyu\b/g,"mimiqui")}
 var C=window.ESTIMER_CARTES||[],R=window.REGISTRE_VENTES||[],COT=(window.COTATION&&window.COTATION.cartes)||{};
 var MEGA=(window.VENDRE_MEGA&&window.VENDRE_MEGA.cartes)||[];
 var ALL=[];
@@ -236,32 +237,28 @@ var state={set:"mimiqui",open:false};
 function med(a){a=a.slice().sort(function(x,y){return x-y});var m=a.length>>1;return a.length%2?a[m]:(a[m-1]+a[m])/2}
 function langsOf(set){return LANGS.map(function(L){return L[0]}).filter(function(l){return ALL.some(function(c){return c.set===set&&c.l===l})})}
 function compteTxt(set){var o={};ALL.forEach(function(c){if(c.set===set)o[c.l]=(o[c.l]||0)+1});return LANGS.filter(function(L){return o[L[0]]}).map(function(L){return LAB[L[0]]+" "+o[L[0]]}).join(" · ")}
-function score(c,n){
- if(!n)return 0;
- var nom=fold(c.nom),num=fold(c.num),ext=fold(c.ext),q=fold(c.q),id=fold(c.id),k=fold(c.k),setn=fold(SETNOM[c.set]||"");
- if(id===n||(!c.mega&&k===n))return 1000;
- if(nom===n)return 800;
- if(num===n||k===n||cn(c.num)===cn(n))return 720;
- if(q===n||setn===n)return 680;
- if(n.length<3)return 0;
- if(num.indexOf(n)===0||cn(c.num).indexOf(cn(n))===0)return 560;
- if(nom.indexOf(n)>=0)return 420;
- if(q.indexOf(n)>=0)return 340;
- if(setn.indexOf(n)>=0||ext.indexOf(n)>=0)return 220;
- return 0;
-}
 function matchCarte(carte,langue){
  var mega=ALL.filter(function(c){return c.mega&&c.id===carte})[0];
  if(mega)return mega;
  var lang=langue||"fr";
  return ALL.filter(function(c){return !c.mega&&c.k===carte&&c.l===lang})[0]||null;
 }
-function matchQ(q,langue){
- var n=fold(q);if(!n)return null;
- function best(pool){var smax=0,hit=null;for(var i=0;i<pool.length;i++){var s=score(pool[i],n);if(s>smax){smax=s;hit=pool[i]}}return hit}
- if(langue){var h=best(ALL.filter(function(c){return c.l===langue}));if(h)return h}
- return best(ALL);
+function meilleure(q,langue){
+ var mots=alias(norm(q)).trim().split(/\s+/).filter(Boolean);if(!mots.length)return null;
+ var best=null,bs=-1;
+ ALL.forEach(function(c){
+  if(langue&&c.l!==langue)return;
+  var nom=alias(norm(c.nom+" "+c.num));
+  var tout=alias(norm([c.nom,c.num,c.ext,c.q,c.k,c.id,SETNOM[c.set]].join(" ")));
+  if(!mots.every(function(m){return tout.indexOf(m)>=0}))return;
+  var s=c.l==="fr"?0.5:0;
+  mots.forEach(function(m){s+=nom.indexOf(m)>=0?3:1});
+  if(alias(norm(c.nom))===mots.join(" "))s+=5;
+  if(s>bs){bs=s;best=c}
+ });
+ return best;
 }
+var qUneFois=false;
 function setOpen(on){state.open=!!on;$("e-set-btn").setAttribute("aria-expanded",on?"true":"false");$("e-set-list").hidden=!on}
 function renderSetBtn(){
  var s=SETS.filter(function(x){return x.id===state.set})[0];
@@ -278,9 +275,11 @@ function remplir(preferId){
  $("e-lang").value=lang;
  var list=ALL.filter(function(c){return c.set===state.set&&c.l===lang});
  $("e-carte").innerHTML=list.map(function(c){return '<option value="'+esc(c.id)+'">'+esc(c.nom+" "+c.num+(c.mega?"":" · "+c.ext))+'</option>'}).join("");
- var urlC=new URLSearchParams(location.search).get("carte");
+ var params=new URLSearchParams(location.search),urlC=params.get("carte");
  function pick(val){if(!val)return null;return list.filter(function(c){return c.id===val})[0]||list.filter(function(c){return !c.mega&&c.k===val})[0]||null}
  var chosen=pick(urlC)||pick(preferId);
+ if(!chosen&&!qUneFois){var qq=(params.get("q")||"").trim(),hit=qq?meilleure(qq,lang):null;if(hit&&hit.set===state.set&&hit.l===lang)chosen=hit}
+ qUneFois=true;
  if(chosen)$("e-carte").value=chosen.id;
  $("e-etat-champ").hidden=state.set!=="mimiqui";
  if($("e-compte"))$("e-compte").textContent=list.length+" carte"+(list.length>1?"s":"")+" dans cette langue";
@@ -334,8 +333,9 @@ function calcMega(c){
 function calc(){var c=current();if(!c){$("e-res").innerHTML="";return}if(c.mega)calcMega(c);else calcMimiqui(c.raw)}
 var sp=new URLSearchParams(location.search);
 var ql=sp.get("langue");if(ql&&!/^(fr|ja|en)$/.test(ql))ql=null;
-var picked=sp.get("carte")?matchCarte(sp.get("carte"),ql):null;
-if(!picked&&sp.get("q"))picked=matchQ(sp.get("q"),ql);
+var langueForcee=!!ql,carteParam=sp.get("carte"),qq=(sp.get("q")||"").trim();
+var picked=carteParam?matchCarte(carteParam,ql):null;
+if(!picked&&qq)picked=meilleure(qq,langueForcee?ql:"");
 if(picked)state.set=picked.set;
 var langs0=langsOf(state.set);
 var lang0=picked?picked.l:(ql&&langs0.indexOf(ql)>=0?ql:(langs0[0]||"fr"));

@@ -424,6 +424,28 @@ header.wrap:has(nav ul.menu-principal>li:is(:hover,:focus-within,.ouvert)>a[href
     <ul class="menu-principal" id="menu-principal"><li><a href="index.html">Accueil</a></li><li><a href="blog.html">Blog</a></li><li><a href="cartes.html">Cartes</a><button type="button" class="ouvre-sous" aria-expanded="false" aria-label="Sous-menu Cartes">&#9662;</button><ul class="sous-menu"><li class="sm-groupe"><button type="button" class="sm-tog" aria-expanded="false">Spécial Mimiqui <span class="sm-fl" aria-hidden="true">&#9656;</span></button><ul class="sm-sous"><li><a href="cartes.html">Cartes fran&ccedil;aises</a></li><li><a href="cartes-japonaises.html">Cartes japonaises</a></li><li><a href="cartes-anglaises.html">Cartes anglaises</a></li></ul></li><li><a href="cartes-pokemon.html">1025 Pok&eacute;mon</a></li><li class="sm-groupe"><button type="button" class="sm-tog" aria-expanded="false">M&eacute;ga-&Eacute;volution <span class="sm-fl" aria-hidden="true">&#9656;</span></button><ul class="sm-sous"><li class="sm-groupe"><button type="button" class="sm-tog" aria-expanded="false">R&egrave;gne Delta <span class="sm-fl" aria-hidden="true">&#9656;</span></button><ul class="sm-sous"><li><a href="regne-delta.html">Fran&ccedil;aise</a></li><li><a href="regne-delta-ja.html">Japonaise</a></li></ul></li><li class="sm-groupe"><button type="button" class="sm-tog" aria-expanded="false">&Eacute;quilibre Parfait <span class="sm-fl" aria-hidden="true">&#9656;</span></button><ul class="sm-sous"><li><a href="equilibre-parfait-ventes.html">Fran&ccedil;aise</a></li><li><a href="equilibre-parfait-ja.html">Japonaise</a></li><li><a href="equilibre-parfait-en.html">Anglaise</a></li></ul></li><li class="sm-groupe"><button type="button" class="sm-tog" aria-expanded="false">30<sup>e</sup> Anniversaire <span class="sm-fl" aria-hidden="true">&#9656;</span></button><ul class="sm-sous"><li><a href="trentieme-anniversaire-ventes.html">Fran&ccedil;aise</a></li><li><a href="trentieme-anniversaire-en.html">Anglaise</a></li></ul></li><li class="sm-groupe"><button type="button" class="sm-tog" aria-expanded="false">H&eacute;ros Transcendants <span class="sm-fl" aria-hidden="true">&#9656;</span></button><ul class="sm-sous"><li><a href="heros-transcendants.html">Fran&ccedil;aise</a></li><li><a href="heros-transcendants-en.html">Anglaise</a></li></ul></li><li class="sm-groupe"><button type="button" class="sm-tog" aria-expanded="false">Nuit Noire <span class="sm-fl" aria-hidden="true">&#9656;</span></button><ul class="sm-sous"><li><a href="nuit-noire-ventes.html">Fran&ccedil;aise</a></li><li><a href="nuit-noire-ja.html">Japonaise</a></li><li><a href="nuit-noire-en.html">Anglaise</a></li></ul></li><li class="sm-groupe"><button type="button" class="sm-tog" aria-expanded="false">M&eacute;ga-&Eacute;volution <span class="sm-fl" aria-hidden="true">&#9656;</span></button><ul class="sm-sous"><li><a href="mega-evolution-cartes.html">Fran&ccedil;aise</a></li><li><a href="mega-evolution-en.html">Anglaise</a></li></ul></li><li class="sm-groupe"><button type="button" class="sm-tog" aria-expanded="false">Flammes Fantasmagoriques <span class="sm-fl" aria-hidden="true">&#9656;</span></button><ul class="sm-sous"><li><a href="heros-fantasmagoriques.html">Fran&ccedil;aise</a></li><li><a href="flammes-fantasmagoriques-ja.html">Japonaise</a></li><li><a href="flammes-fantasmagoriques-en.html">Anglaise</a></li></ul></li><li class="sm-groupe"><button type="button" class="sm-tog" aria-expanded="false">Chaos Ascendant <span class="sm-fl" aria-hidden="true">&#9656;</span></button><ul class="sm-sous"><li><a href="chaos-ascendant-ventes.html">Fran&ccedil;aise</a></li><li><a href="chaos-ascendant-ja.html">Japonaise</a></li><li><a href="chaos-ascendant-en.html">Anglaise</a></li></ul></li></ul></li></ul></li><li><a href="cotation.html">Prix</a><button type="button" class="ouvre-sous" aria-expanded="false" aria-label="Sous-menu Prix">&#9662;</button><ul class="sous-menu"><li><a href="cotation.html">Cotation</a></li><li><a href="registre.html">Ventes pass&eacute;es Sp&eacute;cial Mimiqui</a></li><li><a href="registre-pokemon.html">Registre des cartes pass&eacute;es</a></li></ul></li><li><a href="boutique.html">Acheter</a><button type="button" class="ouvre-sous" aria-expanded="false" aria-label="Sous-menu Acheter">&#9662;</button><ul class="sous-menu"><li><a href="boutique.html">Boutique</a></li><li><a href="jeu.html#boosters">Boosters</a></li><li><a href="cartes-psa10.html">Cartes PSA 10</a></li></ul></li><li><a href="vendre.html">Vendre sur eBay</a><button type="button" class="ouvre-sous" aria-expanded="false" aria-label="Sous-menu Vendre sur eBay">&#9662;</button><ul class="sous-menu"><li><a href="vendre.html">Vendre sur eBay</a></li><li><a href="estimer-ma-carte.html">Estimer ma carte</a></li><li><a href="guide-vendre-ebay.html">Guide pour vendre sur eBay</a></li></ul></li></ul>
   </nav>
 </header>
+<link rel="stylesheet" href="accueil-apercu.css">
+<section class="ap-accueil" aria-label="Cote et dernières ventes">
+  <div class="ap-cherche">
+    <h2>Combien vaut ma carte ?</h2>
+    <form id="ap-form" action="estimer-ma-carte.html" method="get" role="search">
+      <label class="ap-sr" for="ap-q">Nom de la carte</label>
+      <input id="ap-q" name="q" type="search" placeholder="Nom, extension ou numéro" autocomplete="off" enterkeyhint="search">
+      <button type="submit">Estimer</button>
+    </form>
+  </div>
+  <div class="ap-ventes" id="dernieres-ventes">
+    <div class="ap-entete">
+      <h2 id="dv-titre">Dernières ventes réalisées</h2>
+      <p class="ap-compteur" id="ap-compteur"></p>
+    </div>
+    <ol class="ap-liste" id="ap-liste"></ol>
+    <p class="ap-pied"><a class="ap-tout" href="registre.html">Voir tout le registre des ventes</a><a class="ap-tout" href="archive-ventes.html">Archive des ventes</a></p>
+  </div>
+</section>
+<script src="registre-ventes-data.js" defer></script>
+<script src="cotation-data.js" defer></script>
+<script src="accueil-apercu.js" defer></script>
 
 <style id="holo-haut">
 #film.film-top{position:relative;isolation:isolate}
@@ -739,6 +761,7 @@ background-size:100% 100%,300% 300%;background-position:0 0,var(--hx,50%) var(--
     ["Jeu", "Joue avec Mimiqui : saute par-dessus les attaques", "jeu.html", "jeu jouer partie score fantomasque saut"],
     ["Cotation", "La cote des 61 cartes Mimiqui (Cardmarket et eBay)", "cotation.html", "cotation cote prix valeur combien vaut cardmarket ebay vente"],
     ["Registre", "Chaque semaine : cote Cardmarket et ventes eBay adjugées de chaque carte", "registre.html", "registre semaine hebdo historique cote cardmarket ventes vendues adjuge prix plus vendu"],
+    ["Archive des ventes", "Ventes eBay archivées un an, avec photo, recherche par Pokémon", "archive-ventes.html", "archive ventes historique prix pokemon dracaufeu"],
     ["Vendre sur eBay", "Prix conseillé et annonce prête pour vendre ta carte", "vendre.html", "vendre vente revendre annonce prix estimation ebay mettre en vente"],
     ["Boosters", "Acheter des boosters Pokémon sur Amazon", "jeu.html#boosters", "boosters booster acheter amazon display coffret dresseur elite etb tripack prix"],
     ["Instagram", "@lecoindemimiqui", "https://www.instagram.com/lecoindemimiqui/", "instagram réseaux sociaux suivre photos"],

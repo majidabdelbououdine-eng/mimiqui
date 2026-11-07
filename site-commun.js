@@ -11,8 +11,8 @@ var __acc=/(\/|\/index\.html?)$/i.test(location.pathname);
     {t:'Accueil',h:'index.html',p:['index.html']},
     {t:'Cartes',h:'cartes.html',p:['cartes.html','cartes-japonaises.html','cartes-anglaises.html','cartes-pokemon.html','pokemon.html','regne-delta.html','heros-transcendants.html','heros-fantasmagoriques.html','mega-evolution-cartes.html','regne-delta-ja.html','chaos-ascendant-ja.html','chaos-ascendant-en.html','flammes-fantasmagoriques-ja.html','flammes-fantasmagoriques-en.html','mega-evolution-en.html','nuit-noire-ja.html','nuit-noire-en.html','heros-transcendants-en.html','trentieme-anniversaire-en.html','equilibre-parfait-ja.html','equilibre-parfait-en.html','chaos-ascendant.html','chaos-ascendant-ventes.html','equilibre-parfait.html','equilibre-parfait-ventes.html','trentieme-anniversaire.html','trentieme-anniversaire-ventes.html','nuit-noire-ventes.html'],s:[
       ['Cartes FR','cartes.html'],['Cartes JA','cartes-japonaises.html'],['Cartes EN','cartes-anglaises.html'],['Cartes Pok\u00e9mon','cartes-pokemon.html']]},
-    {t:'Prix',h:'cotation.html',p:['cotation.html','registre.html','registre-pokemon.html','adjuge.html'],s:[
-      ['Cotation','cotation.html'],['Ventes pass\u00e9es Sp\u00e9cial Mimiqui','registre.html'],['Registre des cartes pass\u00e9es','registre-pokemon.html']]},
+    {t:'Prix',h:'cotation.html',p:['cotation.html','registre.html','archive-ventes.html','registre-pokemon.html','adjuge.html'],s:[
+      ['Cotation','cotation.html'],['Ventes pass\u00e9es Sp\u00e9cial Mimiqui','registre.html'],['Archive des ventes','archive-ventes.html'],['Registre des cartes pass\u00e9es','registre-pokemon.html']]},
     {t:'Acheter',h:'boutique.html',p:['boutique.html'],s:[['Boutique','boutique.html'],['Boosters','jeu.html#boosters']]},
     {t:'Vendre sur eBay',h:'vendre.html',p:['vendre.html','estimer-ma-carte.html','guide-vendre-ebay.html'],s:[['Vendre sur eBay','vendre.html'],['Estimer ma carte','estimer-ma-carte.html'],['Guide pour vendre sur eBay','guide-vendre-ebay.html']]}
   ];
@@ -21,10 +21,21 @@ var __acc=/(\/|\/index\.html?)$/i.test(location.pathname);
   function courante(){for(var i=0;i<SECTIONS.length;i++)if(SECTIONS[i].p.indexOf(page)>=0)return SECTIONS[i];return null;}
 
   /* Menu */
+  function ajouterArchive(){
+    document.querySelectorAll('ul.sous-menu > li > a[href="registre.html"]').forEach(function(a){
+      var li=a.parentElement;if(!li)return;
+      var next=li.nextElementSibling;
+      if(next&&next.querySelector('a[href="archive-ventes.html"]'))return;
+      var n=el('li');
+      n.appendChild(el('a',{href:'archive-ventes.html'},'Archive des ventes'));
+      li.insertAdjacentElement('afterend',n);
+    });
+  }
   function menu(){
     var nav=document.querySelector('nav.sitenav,header nav.top');if(!nav)return;
     var ul=nav.querySelector('ul.menu-principal');if(!ul)return;
     nav.classList.add('nav-commune');
+    ajouterArchive();
     var cur=courante();
     ul.querySelectorAll(':scope>li').forEach(function(li,i){
       var sec=SECTIONS[i];if(!sec)return;var a=li.querySelector(':scope>a');
@@ -71,7 +82,7 @@ var __acc=/(\/|\/index\.html?)$/i.test(location.pathname);
     if(document.querySelector('.pied-commun'))return;
     var groupes=[
       ['Cartes',[['Cartes FR','cartes.html'],['Cartes JA','cartes-japonaises.html'],['Cartes EN','cartes-anglaises.html'],['Cartes Pok\u00e9mon','cartes-pokemon.html']]],
-      ['Prix',[['Cotation','cotation.html'],['Ventes pass\u00e9es Sp\u00e9cial Mimiqui','registre.html'],['Registre des cartes pass\u00e9es','registre-pokemon.html']]],
+      ['Prix',[['Cotation','cotation.html'],['Ventes pass\u00e9es Sp\u00e9cial Mimiqui','registre.html'],['Archive des ventes','archive-ventes.html'],['Registre des cartes pass\u00e9es','registre-pokemon.html']]],
       ['Acheter et vendre',[['Boutique','boutique.html'],['Boosters','jeu.html#boosters'],['Vendre sur eBay','vendre.html'],['Estimer ma carte','estimer-ma-carte.html'],['Guide pour vendre sur eBay','guide-vendre-ebay.html']]],
       ['D\u00e9couvrir',[['Blog','blog.html'],['Blog Instagram','https://www.instagram.com/lecoindemimiqui/'],['Jeu','jeu.html'],['Le film 2027','index.html#film'],['Le d\u00e9guisement','index.html#deguisement'],['Faiblesses','index.html#types'],['Rubriques','index.html#rubriques']]],
       ['Le site',[['Cr\u00e9er un compte','index.html#compte'],['Assistant Instagram','assistant-instagram.html'],['Cookies et vie priv\u00e9e','confidentialite.html']]]
