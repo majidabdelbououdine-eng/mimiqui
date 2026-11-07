@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Archive des ventes eBay du Coin de Mimiqui : recherche par Pokémon, filtres par set, langue et mois. Photos et prix conservés un an.">
+<link rel="icon" type="image/webp" href="img/logo-mimiqui.webp">
+<title>Archive des ventes – Le Coin de Mimiqui</title>
+<link rel="canonical" href="https://mimiqui.fr/archive-ventes.html">
+<meta property="og:url" content="https://mimiqui.fr/archive-ventes.html">
+<meta property="og:image" content="https://mimiqui.fr/img/sm9-53.webp">
+<meta name="twitter:image" content="https://mimiqui.fr/img/sm9-53.webp">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Archive des ventes – Le Coin de Mimiqui">
+<meta property="og:description" content="Archive des ventes eBay du Coin de Mimiqui : recherche par Pokémon, filtres par set, langue et mois. Photos et prix conservés un an.">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="Le Coin de Mimiqui">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Archive des ventes – Le Coin de Mimiqui">
+<meta name="twitter:description" content="Archive des ventes eBay du Coin de Mimiqui : recherche par Pokémon, filtres par set, langue et mois. Photos et prix conservés un an.">
+<link rel="stylesheet" href="site-commun.css">
+<style>
+:root{--navy:#0b3d91;--navy-2:#0a58ca;--encre:#10233f;--muted:#3d4d66;--fond:#f4f7fc}
+*{box-sizing:border-box}
+html,body{max-width:100%;overflow-x:hidden}
+body{margin:0;background:#fff;color:var(--encre);font:17px/1.5 "Source Sans 3","Helvetica Neue",Arial,sans-serif}
+img{max-width:100%;height:auto}
+a{color:var(--navy)}
+:focus-visible{outline:3px solid var(--navy-2);outline-offset:2px}
+header.site{border-bottom:3px solid var(--navy)}
+.sitenav{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-block:18px}
+.sitenav .logo{font:700 1.55rem "Bodoni Moda",Georgia,serif;text-decoration:none;color:var(--navy);display:inline-flex;align-items:center;gap:.4rem}
+.sitenav .logo span{color:#d0021b}
+.wrap{max-width:1080px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.av-tete{padding:28px 0 8px}
+.av-tete h1{margin:0 0 8px;color:var(--navy);font:700 clamp(1.8rem,4.5vw,2.7rem)/1.1 "Bodoni Moda",Georgia,serif}
+.av-tete p{margin:0;max-width:68ch;color:var(--muted)}
+.av-note{margin:8px 0 0;font-size:.92rem;color:var(--navy)}
+.av-filtres{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:end}
+.av-filtres label{display:flex;flex-direction:column;gap:4px;font-size:.78rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--navy);min-width:0;flex:1 1 10rem}
+.av-filtres label.av-nom{flex:2 1 16rem}
+.av-filtres input,.av-filtres select{width:100%;min-width:0;max-width:100%;border:1px solid rgba(11,61,145,.35);border-radius:999px;padding:11px 14px;font:600 1rem/1.3 "Source Sans 3",Arial,sans-serif;color:var(--encre);background:#fff}
+.av-filtres button{flex:0 0 auto;border:0;border-radius:999px;padding:12px 16px;background:var(--navy);color:#fff;font:800 .78rem/1 "Source Sans 3",Arial,sans-serif;letter-spacing:.04em;text-transform:uppercase;cursor:pointer}
+.av-filtres button:hover{background:var(--navy-2)}
+.av-compte{margin:0 0 12px;font-weight:700;color:var(--navy-2)}
+.av-resume{border:1px solid rgba(11,61,145,.22);border-radius:16px;padding:16px;margin:0 0 16px;background:var(--fond);min-width:0}
+.av-resume h2{margin:0 0 10px;color:var(--navy);font:700 clamp(1.25rem,3vw,1.7rem)/1.2 "Bodoni Moda",Georgia,serif;overflow-wrap:anywhere}
+.av-stats{display:flex;flex-wrap:wrap;gap:8px;margin:0}
+.av-stats>div{background:#fff;border-radius:12px;padding:10px 12px;min-width:min(100%,8.5rem);flex:1 1 8.5rem}
+.av-stats dt{margin:0;font-size:.75rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--muted)}
+.av-stats dd{margin:2px 0 0;font:800 1.15rem/1.2 "Source Sans 3",Arial,sans-serif;color:var(--navy);font-variant-numeric:tabular-nums}
+.av-calc,.av-aucune{flex:1 1 100%;margin:4px 0 0;color:var(--muted);font-size:.92rem}
+.av-chart{width:100%;max-width:100%;height:auto;display:block;margin-top:12px;background:#fff;border-radius:12px}
+.av-hist-legende{margin:12px 0 6px;font-weight:800;color:var(--navy);font-size:.95rem}
+.av-hist{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,240px),1fr));gap:6px}
+.av-hist li{display:grid;grid-template-columns:minmax(0,1.1fr) auto;gap:2px 8px;background:#fff;border-radius:10px;padding:8px 10px;min-width:0}
+.av-hist time{color:var(--muted);font-size:.82rem}
+.av-hist b{color:var(--navy-2);font-variant-numeric:tabular-nums;text-align:right}
+.av-hist span{grid-column:1 / -1;overflow-wrap:anywhere;color:var(--encre);font-size:.9rem}
+.av-liste{list-style:none;margin:0;padding:0 0 28px;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,280px),1fr));gap:12px}
+.av-carte{display:grid;grid-template-columns:84px minmax(0,1fr);gap:12px;align-items:start;background:#fff;border:1px solid rgba(11,61,145,.18);border-radius:14px;padding:10px;min-width:0}
+.av-carte img{width:84px;height:118px;object-fit:cover;border-radius:8px;background:#e6eef8}
+.av-corps{min-width:0;display:grid;gap:4px;align-content:start}
+.av-corps h3{margin:0;color:var(--navy);font:700 1.02rem/1.25 "Source Sans 3",Arial,sans-serif;overflow-wrap:anywhere}
+.av-set{margin:0;color:var(--muted);overflow-wrap:anywhere}
+.av-meta{margin:0;display:flex;flex-wrap:wrap;gap:6px 10px;align-items:baseline}
+.av-meta strong{color:var(--navy-2);font-size:1.05rem;font-variant-numeric:tabular-nums}
+.av-meta time{color:var(--muted);font-size:.9rem}
+.av-extra{margin:0;font-size:.88rem;color:var(--encre)}
+.av-corps a{justify-self:start;display:inline-block;max-width:100%;margin-top:4px;background:var(--navy);color:#fff;text-decoration:none;font:800 .75rem/1.2 "Source Sans 3",Arial,sans-serif;letter-spacing:.04em;text-transform:uppercase;padding:8px 12px;border-radius:999px}
+.av-corps a:hover{background:var(--navy-2);color:#fff}
+.av-vide{margin:8px 0 24px;color:var(--muted)}
+.pied-legal{margin:1.2rem auto 1.4rem;text-align:center;font-size:.72rem;font-weight:300;color:#7a869a;letter-spacing:.02em}
+.pied-legal a{color:#7a869a;text-decoration:underline}
+/* La fenêtre film fixe (haut droite) et le teaser ne doivent pas couvrir les ventes. */
+@media (min-width:1100px){
+  main.wrap{max-width:none;margin-left:16px;margin-right:420px}
+}
+@media (max-width:600px){
+  main.wrap{padding-right:54px}
+}
+@media (max-width:420px){
+  .av-filtres button{flex:1 1 100%}
+  .av-carte{grid-template-columns:72px minmax(0,1fr)}
+  .av-carte img{width:72px;height:100px}
+}
+</style>
+</head>
+<body>
+<header class="site wrap"><nav class="sitenav" aria-label="Navigation principale">
+  <a class="logo" href="index.html"><img class="logo-img" src="img/logo-mimiqui.webp" alt="" width="95" height="120" style="width:auto;height:4.2rem;object-fit:contain;transform:none">Le Coin de Mimiqui<span>.</span></a>
+  <ul class="menu-principal" id="menu-principal"><li><a href="index.html">Accueil</a></li><li><a href="blog.html">Blog</a></li><li><a href="cartes.html">Cartes</a><button type="button" class="ouvre-sous" aria-expanded="false" aria-label="Sous-menu Cartes">&#9662;</button><ul class="sous-menu"><li class="sm-groupe"><button type="button" class="sm-tog" aria-expanded="false">Spécial Mimiqui <span class="sm-fl" aria-hidden="true">&#9656;</span></button><ul class="sm-sous"><li><a href="cartes.html">Cartes fran&ccedil;aises</a></li><li><a href="cartes-japonaises.html">Cartes japonaises</a></li><li><a href="cartes-anglaises.html">Cartes anglaises</a></li></ul></li><li><a href="cartes-pokemon.html">1025 Pok&eacute;mon</a></li><li class="sm-groupe"><button type="button" class="sm-tog" aria-expanded="false">M&eacute;ga-&Eacute;volution <span class="sm-fl" aria-hidden="true">&#9656;</span></button><ul class="sm-sous"><li class="sm-groupe"><button type="button" class="sm-tog" aria-expanded="false">R&egrave;gne Delta <span class="sm-fl" aria-hidden="true">&#9656;</span></button><ul class="sm-sous"><li><a href="regne-delta.html">Fran&ccedil;aise</a></li><li><a href="regne-delta-ja.html">Japonaise</a></li></ul></li><li class="sm-groupe"><button type="button" class="sm-tog" aria-expanded="false">&Eacute;quilibre Parfait <span class="sm-fl" aria-hidden="true">&#9656;</span></button><ul class="sm-sous"><li><a href="equilibre-parfait-ventes.html">Fran&ccedil;aise</a></li><li><a href="equilibre-parfait-ja.html">Japonaise</a></li><li><a href="equilibre-parfait-en.html">Anglaise</a></li></ul></li><li class="sm-groupe"><button type="button" class="sm-tog" aria-expanded="false">30<sup>e</sup> Anniversaire <span class="sm-fl" aria-hidden="true">&#9656;</span></button><ul class="sm-sous"><li><a href="trentieme-anniversaire-ventes.html">Fran&ccedil;aise</a></li><li><a href="trentieme-anniversaire-en.html">Anglaise</a></li></ul></li><li class="sm-groupe"><button type="button" class="sm-tog" aria-expanded="false">H&eacute;ros Transcendants <span class="sm-fl" aria-hidden="true">&#9656;</span></button><ul class="sm-sous"><li><a href="heros-transcendants.html">Fran&ccedil;aise</a></li><li><a href="heros-transcendants-en.html">Anglaise</a></li></ul></li><li class="sm-groupe"><button type="button" class="sm-tog" aria-expanded="false">Nuit Noire <span class="sm-fl" aria-hidden="true">&#9656;</span></button><ul class="sm-sous"><li><a href="nuit-noire-ventes.html">Fran&ccedil;aise</a></li><li><a href="nuit-noire-ja.html">Japonaise</a></li><li><a href="nuit-noire-en.html">Anglaise</a></li></ul></li><li class="sm-groupe"><button type="button" class="sm-tog" aria-expanded="false">M&eacute;ga-&Eacute;volution <span class="sm-fl" aria-hidden="true">&#9656;</span></button><ul class="sm-sous"><li><a href="mega-evolution-cartes.html">Fran&ccedil;aise</a></li><li><a href="mega-evolution-en.html">Anglaise</a></li></ul></li><li class="sm-groupe"><button type="button" class="sm-tog" aria-expanded="false">Flammes Fantasmagoriques <span class="sm-fl" aria-hidden="true">&#9656;</span></button><ul class="sm-sous"><li><a href="heros-fantasmagoriques.html">Fran&ccedil;aise</a></li><li><a href="flammes-fantasmagoriques-ja.html">Japonaise</a></li><li><a href="flammes-fantasmagoriques-en.html">Anglaise</a></li></ul></li><li class="sm-groupe"><button type="button" class="sm-tog" aria-expanded="false">Chaos Ascendant <span class="sm-fl" aria-hidden="true">&#9656;</span></button><ul class="sm-sous"><li><a href="chaos-ascendant-ventes.html">Fran&ccedil;aise</a></li><li><a href="chaos-ascendant-ja.html">Japonaise</a></li><li><a href="chaos-ascendant-en.html">Anglaise</a></li></ul></li></ul></li></ul></li><li><a href="cotation.html">Prix</a><button type="button" class="ouvre-sous" aria-expanded="false" aria-label="Sous-menu Prix">&#9662;</button><ul class="sous-menu"><li><a href="cotation.html">Cotation</a></li><li><a href="registre.html">Ventes pass&eacute;es Sp&eacute;cial Mimiqui</a></li><li><a href="archive-ventes.html">Archive des ventes</a></li><li><a href="registre-pokemon.html">Registre des cartes pass&eacute;es</a></li></ul></li><li><a href="boutique.html">Acheter</a><button type="button" class="ouvre-sous" aria-expanded="false" aria-label="Sous-menu Acheter">&#9662;</button><ul class="sous-menu"><li><a href="boutique.html">Boutique</a></li><li><a href="jeu.html#boosters">Boosters</a></li><li><a href="cartes-psa10.html">Cartes PSA 10</a></li></ul></li><li><a href="vendre.html">Vendre sur eBay</a><button type="button" class="ouvre-sous" aria-expanded="false" aria-label="Sous-menu Vendre sur eBay">&#9662;</button><ul class="sous-menu"><li><a href="vendre.html">Vendre sur eBay</a></li><li><a href="estimer-ma-carte.html">Estimer ma carte</a></li><li><a href="guide-vendre-ebay.html">Guide pour vendre sur eBay</a></li></ul></li></ul>
+</nav></header>
+<main class="wrap" id="contenu">
+  <header class="av-tete">
+    <h1>Archive des ventes</h1>
+    <p>Ventes relevées dans le registre, conservées ici avec leur photo locale. Seules celles des 365 derniers jours sont affichées.</p>
+    <p class="av-note" id="av-note"></p>
+  </header>
+  <form class="av-filtres" id="av-form" role="search">
+    <label class="av-nom">Pokémon
+      <input id="av-q" type="search" name="q" placeholder="Nom, ex. Dracaufeu" autocomplete="off" enterkeyhint="search">
+    </label>
+    <label>Set
+      <select id="av-set" name="set"><option value="">Tous les sets</option></select>
+    </label>
+    <label>Langue
+      <select id="av-langue" name="langue"><option value="">Toutes</option></select>
+    </label>
+    <label>Mois
+      <select id="av-mois" name="mois"><option value="">Tous les mois</option></select>
+    </label>
+    <button type="button" id="av-reset">Effacer</button>
+  </form>
+  <section class="av-resume" id="av-resume" hidden aria-live="polite">
+    <h2 id="av-resume-titre"></h2>
+    <dl class="av-stats" id="av-stats"></dl>
+    <svg class="av-chart" id="av-chart" viewBox="0 0 640 188" role="img" aria-label="Historique des prix" hidden></svg>
+    <p class="av-hist-legende" id="av-hist-legende" hidden>Historique des prix</p>
+    <ol class="av-hist" id="av-hist"></ol>
+  </section>
+  <p class="av-compte" id="av-compte" aria-live="polite"></p>
+  <p class="av-vide" id="av-vide" hidden></p>
+  <ol class="av-liste" id="av-liste"></ol>
+</main>
+<script src="archive-ventes-data.js" defer></script>
+<script src="archive-ventes.js" defer></script>
+<script src="site-commun.js" defer></script>
+<p class="pied-legal">Site de fan non officiel &middot; <a href="mentions-legales.html#liens">Liens affiliés</a> &middot; <a href="mentions-legales.html">Mentions légales</a></p>
+</body>
+</html>

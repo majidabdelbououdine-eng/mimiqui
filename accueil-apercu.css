@@ -29,12 +29,13 @@
 .ap-meta{display:flex;gap:8px;flex-wrap:wrap;align-items:baseline}
 .ap-meta strong{color:#0a58ca;font-variant-numeric:tabular-nums}
 .ap-meta time{color:#3d4d66;font-size:.86rem}
-.ap-pied{margin:14px 0 0}
+.ap-pied{margin:14px 0 0;display:flex;flex-wrap:wrap;gap:8px}
 .ap-tout{display:inline-block;max-width:100%;background:#0b3d91;color:#fff;text-decoration:none;font:800 .8rem/1.2 "Source Sans 3",Arial,sans-serif;letter-spacing:.04em;text-transform:uppercase;padding:12px 16px;border-radius:999px;text-align:center}
 .ap-tout:hover{background:#0a58ca;color:#fff}
 
 @media (max-width:420px){
   .ap-cherche{padding:14px 12px}
   .ap-cherche button{width:100%}
-  .ap-tout{display:block}
+  .ap-pied{flex-direction:column}
+  .ap-tout{display:block;text-align:center}
 }
