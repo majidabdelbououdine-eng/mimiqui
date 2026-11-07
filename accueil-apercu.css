@@ -39,3 +39,32 @@
   .ap-pied{flex-direction:column}
   .ap-tout{display:block;text-align:center}
 }
+
+/* Champ #ap-q : fond navy et texte blanc, pour rester lisible par-dessus
+   le fond hologramme quasi transparent de site-commun.css. */
+html body section.ap-accueil .ap-cherche form input#ap-q[type="search"][name="q"],
+html body section.ap-accueil .ap-cherche form input#ap-q[type="search"][name="q"]:focus{
+  background:#0b3d91!important;
+  color:#ffffff!important;
+  -webkit-text-fill-color:#ffffff!important;
+  caret-color:#ffffff!important
+}
+html body section.ap-accueil .ap-cherche form input#ap-q[type="search"][name="q"]::placeholder,
+html body section.ap-accueil .ap-cherche form input#ap-q[type="search"][name="q"]:focus::placeholder,
+html body section.ap-accueil .ap-cherche form input#ap-q[type="search"][name="q"]::-webkit-input-placeholder,
+html body section.ap-accueil .ap-cherche form input#ap-q[type="search"][name="q"]:focus::-webkit-input-placeholder{
+  color:#b8c9ff!important;
+  -webkit-text-fill-color:#b8c9ff!important;
+  opacity:1!important
+}
+html body section.ap-accueil .ap-cherche form input#ap-q[type="search"][name="q"]:-webkit-autofill,
+html body section.ap-accueil .ap-cherche form input#ap-q[type="search"][name="q"]:-webkit-autofill:hover,
+html body section.ap-accueil .ap-cherche form input#ap-q[type="search"][name="q"]:-webkit-autofill:focus,
+html body section.ap-accueil .ap-cherche form input#ap-q[type="search"][name="q"]:-webkit-autofill:active{
+  -webkit-box-shadow:0 0 0 1000px #0b3d91 inset!important;
+  box-shadow:0 0 0 1000px #0b3d91 inset!important;
+  -webkit-text-fill-color:#ffffff!important;
+  background:#0b3d91!important;
+  color:#ffffff!important;
+  caret-color:#ffffff!important
+}
