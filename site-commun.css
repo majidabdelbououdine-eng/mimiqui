@@ -148,8 +148,8 @@ main h2::after,body>section h2::after,section.wrap h2::after{content:"";display:
 main img:not(.logo-img){transition:filter .25s ease,transform .25s ease}
 main a:hover>img:not(.logo-img),.t10-img:hover img,.accueil-tuiles a:hover img{filter:drop-shadow(0 0 10px rgba(34,211,238,.6))}
 /* Boutons : liseré lumineux, texte inchangé */
-.btn,.pf-b1,.pf-b2,.insta-btn,.t10-ebay,.btn-ia,button[type=submit]{box-shadow:0 0 0 1px rgba(34,211,238,.6),0 0 12px rgba(34,211,238,.3)!important;transition:box-shadow .2s ease,transform .2s ease}
-.btn:hover,.pf-b1:hover,.pf-b2:hover,.insta-btn:hover,.t10-ebay:hover,.btn-ia:hover,button[type=submit]:hover{box-shadow:0 0 0 2px rgba(34,211,238,.9),0 0 20px rgba(34,211,238,.55)!important;transform:translateY(-1px)}
+.btn,.pf-b1,.pf-b2,.insta-btn,.t10-ebay,.btn-ia,.btn-encours,button[type=submit]{box-shadow:0 0 0 1px rgba(34,211,238,.6),0 0 12px rgba(34,211,238,.3)!important;transition:box-shadow .2s ease,transform .2s ease}
+.btn:hover,.pf-b1:hover,.pf-b2:hover,.insta-btn:hover,.t10-ebay:hover,.btn-ia:hover,.btn-encours:hover,button[type=submit]:hover{box-shadow:0 0 0 2px rgba(34,211,238,.9),0 0 20px rgba(34,211,238,.55)!important;transform:translateY(-1px)}
 /* Fenetres / popups */
 dialog,.popup,.modal,[role=dialog]{box-shadow:0 0 0 1px rgba(34,211,238,.7),0 0 26px rgba(34,211,238,.35),0 20px 50px rgba(0,0,0,.35)!important;border-radius:16px}
 /* Zones de lecture : fond plein, texte net */
@@ -285,8 +285,8 @@ header.site,header.wrap:first-of-type{z-index:6000!important}header.wrap:not(:fi
 .cartes-btn { color: #fff7c2 !important; background: rgba(243,210,59,.14) !important; border: 1px solid rgba(243,210,59,.75); box-shadow: 0 0 10px rgba(243,210,59,.45), inset 0 0 10px rgba(0,229,255,.18); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); text-shadow: 0 0 6px rgba(243,210,59,.9), 0 1px 2px rgba(0,0,0,.8); transition: background .25s, box-shadow .25s, color .25s }
 .cartes-btn:hover, .cartes-btn:focus-visible { color: #ffffff !important; background: rgba(243,210,59,.28) !important; box-shadow: 0 0 18px rgba(243,210,59,.7), inset 0 0 14px rgba(0,229,255,.3) }
 /* === Ameliorations 2026-11-02 : boutons hologramme harmonises === */
-.btn:not(.cartes-btn),.t10-ebay,a.ebay,.btn-ventes,.insta-btn,.aide-btn,.annonce-btns a,.pf-btns a,.boutons a{color:#0b3d91!important;background:rgba(0,200,255,.12)!important;border:1px solid rgba(0,190,255,.7)!important;box-shadow:0 0 10px rgba(0,200,255,.35),inset 0 0 10px rgba(0,229,255,.15)!important;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);font-weight:800!important;text-shadow:none!important;transition:background .25s,box-shadow .25s,color .25s}
-.btn:not(.cartes-btn):hover,.t10-ebay:hover,a.ebay:hover,.btn-ventes:hover,.insta-btn:hover,.aide-btn:hover,.annonce-btns a:hover,.pf-btns a:hover,.boutons a:hover{background:rgba(0,200,255,.24)!important;box-shadow:0 0 18px rgba(0,200,255,.6),inset 0 0 14px rgba(0,229,255,.3)!important;color:#062a66!important}
+.btn:not(.cartes-btn),.t10-ebay,a.ebay,.btn-ventes,.btn-encours,.insta-btn,.aide-btn,.annonce-btns a,.pf-btns a,.boutons a{color:#0b3d91!important;background:rgba(0,200,255,.12)!important;border:1px solid rgba(0,190,255,.7)!important;box-shadow:0 0 10px rgba(0,200,255,.35),inset 0 0 10px rgba(0,229,255,.15)!important;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);font-weight:800!important;text-shadow:none!important;transition:background .25s,box-shadow .25s,color .25s}
+.btn:not(.cartes-btn):hover,.t10-ebay:hover,a.ebay:hover,.btn-ventes:hover,.btn-encours:hover,.insta-btn:hover,.aide-btn:hover,.annonce-btns a:hover,.pf-btns a:hover,.boutons a:hover{background:rgba(0,200,255,.24)!important;box-shadow:0 0 18px rgba(0,200,255,.6),inset 0 0 14px rgba(0,229,255,.3)!important;color:#062a66!important}
 .promo-film .btn,.fond-sombre .btn,header .btn,#fenetre-defilante .btn,.sm-sombre .btn{color:#e8fbff!important;text-shadow:0 0 6px rgba(0,220,255,.8),0 1px 2px rgba(0,0,0,.8)!important}
 .fond-clair .cartes-btn,.sm-clair .cartes-btn{color:#0b3d91!important;text-shadow:none!important}
 /* Video hologramme du combat (jeu.html) */
@@ -785,3 +785,9 @@ nav ul.menu-principal .sm-groupe>ul.sm-sous:has(.sm-groupe)>li{
   display:block!important;
 }
 
+/* Bouton affilié « annonces en cours » (pages ventes / fiche carte) */
+.tuile-bloc{display:flex;flex-direction:column;min-width:0;border:1px solid var(--ink,#111);background:#fff;padding:12px;gap:8px}
+.tuile-bloc>a.tuile{border:0;padding:0;flex:1;min-width:0}
+a.btn-encours{display:inline-flex;align-items:center;justify-content:center;text-align:center;text-decoration:none;font:700 .78rem/1.25 var(--f-body,inherit);letter-spacing:.03em;padding:10px 14px;border-radius:999px;cursor:pointer;width:100%;box-sizing:border-box}
+.fiche-info a.btn-encours,.fiche-info .btn-ventes{width:auto;max-width:100%;margin:10px 10px 0 0;padding:12px 22px;font-size:.85rem;letter-spacing:.08em;text-transform:uppercase}
+.liste-ventes a.btn-encours{width:auto;max-width:100%;margin-top:6px;padding:7px 12px;font-size:.72rem}

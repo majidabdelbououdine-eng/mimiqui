@@ -164,7 +164,7 @@ dl.chiffres dd small{display:block;font-size:.7rem;color:var(--muted);font-weigh
   "use strict";
   /* Fiche réutilisable.
      URL : carte-pikachu.html?pkmn=<slug>&lang=<fr|ja|en>&id=<card-id>
-     slug : pikachu (défaut) | dracaufeu | evoli | mewtwo
+     slug : pikachu (défaut) ou tout autre Pokémon (dracaufeu, evoli, mewtwo, psykokwak, …).
      Charge data-<slug>-ventes.js (même dossier, compatible file://).
      Le fichier JS doit définir window.PKMN_VENTES et/ou window.<SLUG>_VENTES
      (ex. window.DRACAUFEU_VENTES) avec le format décrit plus bas.
@@ -178,7 +178,7 @@ dl.chiffres dd small{display:block;font-size:.7rem;color:var(--muted);font-weigh
   };
   var params = new URLSearchParams(location.search);
   var pkmn = (params.get("pkmn") || "pikachu").toLowerCase().replace(/[^a-z0-9-]/g, "");
-  if (!PKMN_NOMS[pkmn]) pkmn = "pikachu";
+  if (!pkmn) pkmn = "pikachu";
   var lang = (params.get("lang") || "fr").toLowerCase();
   var id = params.get("id") || "";
   if (lang !== "fr" && lang !== "ja" && lang !== "en") lang = "fr";
@@ -189,7 +189,8 @@ dl.chiffres dd small{display:block;font-size:.7rem;color:var(--muted);font-weigh
   }
   function nomPokemon(data) {
     if (data && data.pokemon && data.pokemon.noms && data.pokemon.noms.fr) return data.pokemon.noms.fr;
-    return PKMN_NOMS[pkmn].fr;
+    if (PKMN_NOMS[pkmn] && PKMN_NOMS[pkmn].fr) return PKMN_NOMS[pkmn].fr;
+    return pkmn;
   }
   function hrefListe(lg) {
     var u = "cartes-" + pkmn + "-ventes.html";

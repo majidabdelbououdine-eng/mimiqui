@@ -668,3 +668,166 @@ if(document.readyState==='loading') document.addEventListener('DOMContentLoaded'
   if(document.readyState==="loading") document.addEventListener("DOMContentLoaded", go);
   else go();
 })();
+
+/* Affiliation eBay Partner Network (campid 5339225196) : liens des ventes et bouton annonces en cours */
+(function(){
+  "use strict";
+  var CAMPID = "5339225196";
+  var PAGE = (location.pathname.split("/").pop() || "").toLowerCase();
+
+  function estPageVentes(){
+    return /^cartes-[a-z0-9-]+-ventes\.html$/.test(PAGE) || PAGE === "carte-pikachu.html";
+  }
+
+  function slugPage(){
+    try {
+      var q = new URLSearchParams(location.search).get("pkmn");
+      if (q) return String(q).toLowerCase().replace(/[^a-z0-9-]/g, "");
+    } catch (e) {}
+    var m = PAGE.match(/^cartes-([a-z0-9-]+)-ventes\.html$/);
+    return m ? m[1] : "";
+  }
+
+  function estEbayFr(host){
+    host = String(host || "").toLowerCase().replace(/^www\./, "");
+    return host === "ebay.fr";
+  }
+
+  function estEbay(host){
+    host = String(host || "").toLowerCase().replace(/^www\./, "");
+    return host === "ebay.com" || host === "ebay.fr" || /\.ebay\.(com|fr)$/.test(host);
+  }
+
+  function paramsAffilie(isFr, customid){
+    var mkrid = isFr ? "709-53476-19255-0" : "711-53200-19255-0";
+    var siteid = isFr ? "71" : "0";
+    var cid = encodeURIComponent(customid || "");
+    return "mkcid=1&mkrid=" + mkrid + "&siteid=" + siteid + "&campid=" + CAMPID + "&customid=" + cid + "&toolid=10001&mkevt=1";
+  }
+
+  function affilier(url, customid){
+    if (!url) return url;
+    var u;
+    try { u = new URL(url, location.href); }
+    catch (e) { return url; }
+    if (!estEbay(u.hostname)) return url;
+    var isFr = estEbayFr(u.hostname);
+    ["mkcid","mkrid","siteid","campid","customid","toolid","mkevt"].forEach(function(k){ u.searchParams.delete(k); });
+    var parts = paramsAffilie(isFr, customid).split("&");
+    parts.forEach(function(p){
+      var i = p.indexOf("=");
+      if (i > 0) u.searchParams.set(p.slice(0, i), decodeURIComponent(p.slice(i + 1)));
+    });
+    return u.toString();
+  }
+
+  function rechercheEnCours(query, customid){
+    var nkw = encodeURIComponent(String(query || "").trim()).replace(/%2F/gi, "/");
+    return "https://www.ebay.fr/sch/i.html?_nkw=" + nkw + "&" + paramsAffilie(true, customid);
+  }
+
+  window.mimiquiEbaySlug = slugPage;
+  window.mimiquiEbayAffilier = affilier;
+  window.mimiquiEbayRecherche = rechercheEnCours;
+
+  function requeteNomNumero(texte){
+    var t = String(texte || "").replace(/\s+/g, " ").trim();
+    if (!t) return "";
+    var nom = t.split("·")[0].trim();
+    var m = t.match(/n°\s*(\S+)/i);
+    return (nom + (m ? " " + m[1] : "")).trim();
+  }
+
+  function boutonEnCours(query, slug){
+    var a = document.createElement("a");
+    a.className = "btn-encours";
+    a.textContent = "Voir les annonces en cours sur eBay";
+    a.href = rechercheEnCours(query, "encours-" + slug);
+    a.target = "_blank";
+    a.rel = "sponsored noopener";
+    return a;
+  }
+
+  var enCours = false;
+  function enrichir(){
+    if (!estPageVentes() || enCours) return;
+    var slug = slugPage();
+    if (!slug) return;
+    enCours = true;
+    try {
+      document.querySelectorAll("a.lv-lien").forEach(function(a){
+        var raw = a.getAttribute("href") || a.href;
+        if (!raw) return;
+        var deja = raw.indexOf("campid=" + CAMPID) !== -1;
+        if (a.dataset.affilie === "1" && deja) return;
+        a.href = affilier(raw, "ventes-" + slug);
+        a.target = "_blank";
+        a.rel = "sponsored noopener";
+        a.dataset.affilie = "1";
+      });
+
+      document.querySelectorAll(".liste-ventes li").forEach(function(li){
+        if (li.querySelector("a.btn-encours")) return;
+        if (li.closest("#ventes")) return;
+        var tit = li.querySelector(".lv-titre");
+        if (!tit) return;
+        if (!/n°\s*\S+/i.test(tit.textContent || "")) return;
+        var q = requeteNomNumero(tit.textContent);
+        if (!q) return;
+        var mid = tit.parentElement || li;
+        mid.appendChild(boutonEnCours(q, slug));
+      });
+
+      document.querySelectorAll("a.tuile").forEach(function(a){
+        if (a.parentElement && a.parentElement.classList.contains("tuile-bloc")) return;
+        var h = a.querySelector("h3");
+        var meta = a.querySelector(".meta");
+        var nom = h ? h.textContent.trim() : "";
+        var num = "";
+        if (meta) {
+          var m = meta.textContent.match(/n°\s*(\S+)/i);
+          if (m) num = m[1];
+        }
+        var q = (nom + (num ? " " + num : "")).trim();
+        if (!q) return;
+        var wrap = document.createElement("div");
+        wrap.className = "tuile-bloc";
+        a.parentNode.insertBefore(wrap, a);
+        wrap.appendChild(a);
+        wrap.appendChild(boutonEnCours(q, slug));
+      });
+
+      var btnVentes = document.getElementById("btn-ventes");
+      if (btnVentes && !document.getElementById("btn-encours")) {
+        var h1 = document.querySelector(".fiche-info h1");
+        var meta = document.querySelector(".fiche-info .meta");
+        var nom = h1 ? h1.textContent.trim() : "";
+        var num = "";
+        if (meta) {
+          var m = meta.textContent.match(/n°\s*(\S+)/i);
+          if (m) num = m[1];
+        }
+        var q = (nom + (num ? " " + num : "")).trim();
+        if (q) {
+          var b = boutonEnCours(q, slug);
+          b.id = "btn-encours";
+          btnVentes.insertAdjacentElement("afterend", b);
+        }
+      }
+    } finally {
+      enCours = false;
+    }
+  }
+
+  function demarrer(){
+    if (!estPageVentes()) return;
+    enrichir();
+    if (window.MutationObserver && document.body) {
+      var obs = new MutationObserver(function(){ enrichir(); });
+      obs.observe(document.body, { childList: true, subtree: true });
+    }
+  }
+
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", demarrer);
+  else demarrer();
+})();
