@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="fr"><head>
+<meta charset="utf-8">
+<link rel="icon" type="image/webp" href="img/logo-mimiqui.webp">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<link rel="stylesheet" href="site-commun.css">
+<style>
+@font-face{font-family:"Bodoni Moda";font-style:normal;font-weight:500;font-display:swap;src:url(fonts/bodoni-moda-latin-500-normal.woff2) format("woff2")}
+@font-face{font-family:"Bodoni Moda";font-style:italic;font-weight:500;font-display:swap;src:url(fonts/bodoni-moda-latin-500-italic.woff2) format("woff2")}
+@font-face{font-family:"Bodoni Moda";font-style:normal;font-weight:700;font-display:swap;src:url(fonts/bodoni-moda-latin-700-normal.woff2) format("woff2")}
+@font-face{font-family:"Source Sans 3";font-style:normal;font-weight:400;font-display:swap;src:url(fonts/source-sans-3-latin-400-normal.woff2) format("woff2")}
+@font-face{font-family:"Source Sans 3";font-style:normal;font-weight:600;font-display:swap;src:url(fonts/source-sans-3-latin-600-normal.woff2) format("woff2")}
+@font-face{font-family:"Source Sans 3";font-style:normal;font-weight:700;font-display:swap;src:url(fonts/source-sans-3-latin-700-normal.woff2) format("woff2")}
+</style>
+<meta name="description" content="Les ventes eBay de cartes Pokémon les plus chères de la semaine, d’après les archives du Coin de Mimiqui, avec date, prix et lien.">
+<title>Top ventes de la semaine – Le Coin de Mimiqui</title>
+<link rel="canonical" href="https://mimiqui.fr/top-ventes-semaine.html">
+
+<style>
+
+:root{--bg:#ffffff;--ink:#111111;--muted:#5a5a5a;--line:rgba(17,17,17,.16);--soft:#f6f5f2;--rouge:#d0021b;--f-display:"Bodoni Moda","Didot",Georgia,serif;--f-body:"Source Sans 3","Helvetica Neue",Arial,sans-serif}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 var(--f-body)}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.etiquette{font-weight:700;font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--rouge);margin:0}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;line-height:1.1;margin:0}
+.tete{padding-block:36px 8px;display:grid;gap:12px}
+.tete h1{font-size:clamp(2.2rem,6vw,3.6rem);font-weight:500;letter-spacing:-.02em}
+.tete h1 em{color:var(--rouge)}
+.tete p{color:var(--muted);max-width:68ch;margin:0}
+.page-corps{padding:12px 0 48px;max-width:76ch}
+.page-corps h2{font-size:clamp(1.4rem,3vw,1.9rem);margin:32px 0 10px}
+.page-corps p,.page-corps li{margin:0 0 12px}
+.page-corps ul,.page-corps ol{padding-left:1.2rem}
+.astuce{border-left:3px solid var(--ink);padding:8px 12px;background:var(--soft);margin:16px 0}
+.pied-legal{margin:1.2rem auto 1.4rem;text-align:center;font-size:.72rem;font-weight:300;color:#7a869a}
+.pied-legal a{color:#7a869a;text-decoration:underline}
+.cookie-info{position:fixed;left:16px;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:60;max-width:620px;margin:0 auto;background:#111;color:#fff;display:flex;gap:14px;align-items:center;padding:12px 16px;border-radius:14px;box-shadow:0 8px 30px rgba(0,0,0,.25);font:14px/1.45 var(--f-body)}
+.cookie-info[hidden]{display:none}
+.cookie-info p{margin:0;flex:1}
+.cookie-info a{color:#fff;text-decoration:underline}
+.cookie-info button{flex:none;font:700 12px var(--f-body);letter-spacing:.08em;text-transform:uppercase;background:#fff;color:#111;border:0;border-radius:999px;padding:8px 16px;cursor:pointer}
+
+
+.liste-ventes{list-style:none;margin:16px 0 0;padding:0;display:grid;gap:10px;max-width:none}
+.liste-ventes li{display:grid;grid-template-columns:72px 1fr auto;gap:12px;align-items:center;border:1px solid var(--line);padding:8px 10px;background:#fff}
+.liste-ventes li img,.liste-ventes .no-vig{width:72px;height:72px;object-fit:cover;border-radius:4px;background:var(--soft)}
+.liste-ventes .lv-titre{font-weight:600;font-size:.95rem;line-height:1.3;text-decoration:none}
+.liste-ventes .lv-meta{font-size:.78rem;color:var(--muted)}
+.liste-ventes a.lv-lien,.liste-ventes a.btn-encours{font-size:.75rem;font-weight:700;color:var(--rouge);margin-right:8px}
+.date-vente{font:700 1.02rem/1.3 var(--f-body);color:var(--ink);display:block}
+.prix-vente{font:800 1.7rem/1.05 Arial,Helvetica,sans-serif;font-variant-numeric:tabular-nums;color:var(--ink);display:block}
+.lv-prix-bloc{text-align:right;min-width:8.5rem}
+.rang{font:700 .72rem var(--f-body);letter-spacing:.08em;color:var(--rouge);text-transform:uppercase}
+@media (max-width:560px){.liste-ventes li{grid-template-columns:64px 1fr}.lv-prix-bloc{grid-column:2;text-align:left}}
+
+</style>
+</head>
+<body>
+<header class="site wrap"><nav class="sitenav" aria-label="Navigation principale">
+  <a class="logo" href="index.html"><img class="logo-img" src="img/logo-mimiqui.webp" alt="" width="95" height="120" style="width:auto;height:4.2rem;object-fit:contain;transform:none">Le Coin de Mimiqui<span>.</span></a>
+  <ul class="menu-principal" id="menu-principal">
+<li><a href="index.html">Accueil</a></li>
+<li><a href="cartes.html">Cartes</a><button type="button" class="ouvre-sous" aria-expanded="false" aria-label="Sous-menu Cartes">&#9662;</button>
+<ul class="sous-menu">
+<li><a href="cartes.html">Cartes françaises</a></li>
+<li><a href="cartes-japonaises.html">Cartes japonaises</a></li>
+<li><a href="cartes-anglaises.html">Cartes anglaises</a></li>
+<li><a href="cartes-pokemon.html">Cartes Pokémon / séries</a></li>
+</ul></li>
+<li><a href="cartes-generation-1.html">Pokémon</a><button type="button" class="ouvre-sous" aria-expanded="false" aria-label="Sous-menu Pokémon">&#9662;</button>
+<ul class="sous-menu">
+<li><a href="cartes-pikachu-ventes.html">Pikachu</a></li>
+<li><a href="cartes-dracaufeu-ventes.html">Dracaufeu</a></li>
+<li><a href="cartes-evoli-ventes.html">Évoli</a></li>
+<li><a href="cartes-mewtwo-ventes.html">Mewtwo</a></li>
+<li><a href="cartes-generation-1.html">Génération 1</a></li>
+<li><a href="cartes-pokemon.html">1025 Pokémon</a></li>
+</ul></li>
+<li><a href="cotation.html">Prix</a><button type="button" class="ouvre-sous" aria-expanded="false" aria-label="Sous-menu Prix">&#9662;</button>
+<ul class="sous-menu">
+<li><a href="cotation.html">Cotation</a></li>
+<li><a href="top-ventes-semaine.html">Top ventes de la semaine</a></li>
+<li><a href="registre.html">Ventes passées Spécial Mimiqui</a></li>
+<li><a href="archive-ventes.html">Archive des ventes</a></li>
+<li><a href="registre-pokemon.html">Registre des cartes passées</a></li>
+</ul></li>
+<li><a href="boutique.html">Acheter</a><button type="button" class="ouvre-sous" aria-expanded="false" aria-label="Sous-menu Acheter">&#9662;</button>
+<ul class="sous-menu">
+<li><a href="boutique.html">Boutique</a></li>
+<li><a href="jeu.html#boosters">Boosters</a></li>
+<li><a href="https://www.ebay.fr/sch/i.html?_nkw=carte%20Pok%C3%A9mon&amp;mkcid=1&amp;mkrid=709-53476-19255-0&amp;siteid=71&amp;campid=5339225196&amp;customid=encours-menu&amp;toolid=10001&amp;mkevt=1" target="_blank" rel="sponsored noopener">Annonces eBay en cours</a></li>
+<li><a href="cartes-psa10.html">Cartes PSA 10</a></li>
+<li><a href="guide-acheteur.html">Guide de l’acheteur</a></li>
+</ul></li>
+<li><a href="vendre.html">Vendre</a><button type="button" class="ouvre-sous" aria-expanded="false" aria-label="Sous-menu Vendre">&#9662;</button>
+<ul class="sous-menu">
+<li><a href="estimer-ma-carte.html">Estimer ma carte</a></li>
+<li><a href="guide-vendre-ebay.html">Guide pour vendre sur eBay</a></li>
+<li><a href="vendre.html">Vendre sur eBay</a></li>
+</ul></li>
+<li><a href="nouveautes.html">Nouveautés</a></li>
+<li><a href="blog.html">Blog</a></li>
+</ul>
+</nav></header>
+
+<main class="wrap">
+  <section class="tete">
+    <p class="etiquette">Prix · semaine du 3 au 10 novembre 2026</p>
+    <h1>Top ventes de la <em>semaine</em></h1>
+    <p>Les 30 ventes à l’unité les plus chères, parmi les archives eBay du site, du 3 au 10 novembre 2026 (Europe/Paris). Lots exclus. Les prix sont ceux de l’annonce, dans leur devise d’origine, sans conversion. Aucun prix n’a été inventé.</p>
+    <p class="notes-periode" id="resume" style="color:var(--muted);font-size:.9rem;margin:0"></p>
+  </section>
+  <div id="liste"></div>
+</main>
+<script src="data-top-ventes-semaine.js"></script>
+<script>
+(function(){
+  "use strict";
+  var DATA=window.TOP_VENTES_SEMAINE||{};
+  function money(v,c){
+    if(v==null) return "–";
+    try{return Number(v).toLocaleString("fr-FR",{style:"currency",currency:c||"USD"});}
+    catch(e){return Number(v).toLocaleString("fr-FR")+" "+(c||"");}
+  }
+  function jour(d){
+    if(!d) return "";
+    var t=new Date(d+"T12:00:00");
+    return isNaN(t)?d:t.toLocaleDateString("fr-FR",{day:"numeric",month:"long",year:"numeric",timeZone:"Europe/Paris"});
+  }
+  var box=document.getElementById("resume");
+  if(box){
+    var dev=DATA.devises||{};
+    var bits=Object.keys(dev).map(function(k){return dev[k]+" vente"+(dev[k]>1?"s":"")+" en "+k;});
+    box.textContent=(DATA.totalPeriode||0)+" ventes à l’unité sur la période"+(bits.length? " ("+bits.join(", ")+")":"")+". Classement : les 30 prix les plus élevés, devise indiquée à côté de chaque montant.";
+  }
+  var list=document.getElementById("liste");
+  var ventes=DATA.ventes||[];
+  if(!ventes.length){
+    list.innerHTML="<p>Aucune vente à l’unité n’est archivée pour cette période.</p>";
+    return;
+  }
+  var ul=document.createElement("ul"); ul.className="liste-ventes";
+  ventes.forEach(function(v,i){
+    var li=document.createElement("li");
+    if(v.vignette){
+      var im=document.createElement("img"); im.src=v.vignette; im.alt=""; im.loading="lazy"; li.appendChild(im);
+    } else {
+      var sp=document.createElement("span"); sp.className="no-vig"; li.appendChild(sp);
+    }
+    var mid=document.createElement("div");
+    var rang=document.createElement("div"); rang.className="rang"; rang.textContent="n° " + (i+1);
+    var a=document.createElement("a"); a.className="lv-titre"; a.href=v.href;
+    a.textContent=v.nom+(v.serie?" · "+v.serie:"")+(v.num?" n° "+v.num:"");
+    var meta=document.createElement("div"); meta.className="lv-meta";
+    meta.textContent=v.titre||"";
+    mid.append(rang,a,meta);
+    if(v.url){
+      var eb=document.createElement("a"); eb.className="lv-lien"; eb.href=v.url; eb.target="_blank"; eb.rel="sponsored noopener";
+      eb.textContent="Annonce eBay";
+      mid.appendChild(eb);
+    }
+    if(v.encours){
+      var en=document.createElement("a"); en.className="btn-encours"; en.href=v.encours; en.target="_blank"; en.rel="sponsored noopener";
+      en.textContent="Voir les annonces en cours sur eBay";
+      mid.appendChild(en);
+    }
+    var pr=document.createElement("div"); pr.className="lv-prix-bloc";
+    var dt=document.createElement("time"); dt.className="date-vente"; dt.dateTime=v.date; dt.textContent=jour(v.date);
+    var px=document.createElement("b"); px.className="prix-vente"; px.textContent=money(v.prix,v.devise);
+    pr.append(dt,px);
+    li.append(mid,pr);
+    ul.appendChild(li);
+  });
+  list.appendChild(ul);
+})();
+</script>
+
+<footer class="wrap">Le Coin de Mimiqui · site de fan non officiel, sans lien avec Nintendo, Game Freak ou The Pokémon Company. · <a href="confidentialite.html">Cookies et vie privée</a> · <a href="a-propos.html">À propos / Contact</a></footer>
+<script>(function(){var h=document.querySelector("header.wrap, header.site");if(!h)return;function m(){document.documentElement.style.setProperty("--hh",h.offsetHeight+"px")}m();if(window.ResizeObserver)new ResizeObserver(m).observe(h);})();</script>
+<div class="cookie-info" id="cookie-info" hidden role="region" aria-label="Cookies">
+  <p>Ce site ne dépose aucun cookie publicitaire ni de mesure d’audience. Les liens eBay, Amazon et Instagram mènent vers des sites qui ont leurs propres cookies. <a href="confidentialite.html">En savoir plus</a></p>
+  <button type="button" id="cookie-ok">D’accord</button>
+</div>
+<script>(function(){var b=document.getElementById("cookie-info");if(!b)return;var k="coin-mimiqui-info-cookies",vu=false;try{vu=localStorage.getItem(k)==="1"}catch(e){}if(!vu)b.hidden=false;document.getElementById("cookie-ok").addEventListener("click",function(){b.hidden=true;try{localStorage.setItem(k,"1")}catch(e){}});})();</script>
+<script src="site-commun.js" defer></script>
+<p class="pied-legal">Site de fan non officiel &middot; <a href="mentions-legales.html#liens">Liens affiliés</a> &middot; <a href="mentions-legales.html">Mentions légales</a> &middot; <a href="a-propos.html">À propos / Contact</a></p>
+
+</body></html>

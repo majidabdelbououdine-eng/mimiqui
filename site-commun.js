@@ -7,136 +7,178 @@ var __acc=/(\/|\/index\.html?)$/i.test(location.pathname);
   "use strict";
   var page=(location.pathname.split('/').pop()||'index.html').toLowerCase();
   if(page==='accueil.html')page='index.html';
-  var SECTIONS=[
-    {t:'Accueil',h:'index.html',p:['index.html']},
-    {t:'Cartes',h:'cartes.html',p:['cartes.html','cartes-japonaises.html','cartes-anglaises.html','cartes-pokemon.html','pokemon.html','regne-delta.html','heros-transcendants.html','heros-fantasmagoriques.html','mega-evolution-cartes.html','regne-delta-ja.html','chaos-ascendant-ja.html','chaos-ascendant-en.html','flammes-fantasmagoriques-ja.html','flammes-fantasmagoriques-en.html','mega-evolution-en.html','nuit-noire-ja.html','nuit-noire-en.html','heros-transcendants-en.html','trentieme-anniversaire-en.html','equilibre-parfait-ja.html','equilibre-parfait-en.html','chaos-ascendant.html','chaos-ascendant-ventes.html','equilibre-parfait.html','equilibre-parfait-ventes.html','trentieme-anniversaire.html','trentieme-anniversaire-ventes.html','nuit-noire-ventes.html','cartes-pikachu-ventes.html','cartes-dracaufeu-ventes.html','cartes-evoli-ventes.html','cartes-mewtwo-ventes.html','cartes-generation-1.html','carte-pikachu.html'],s:[
-      ['Cartes FR','cartes.html'],['Cartes JA','cartes-japonaises.html'],['Cartes EN','cartes-anglaises.html'],['Cartes Pok\u00e9mon','cartes-pokemon.html'],['Cartes Pikachu','cartes-pikachu-ventes.html'],['Cartes Dracaufeu','cartes-dracaufeu-ventes.html'],['Cartes Évoli','cartes-evoli-ventes.html'],['Cartes Mewtwo','cartes-mewtwo-ventes.html'],['Génération 1','cartes-generation-1.html']]},
-    {t:'Prix',h:'cotation.html',p:['cotation.html','registre.html','archive-ventes.html','registre-pokemon.html','adjuge.html','cartes-pikachu-ventes.html','cartes-dracaufeu-ventes.html','cartes-evoli-ventes.html','cartes-mewtwo-ventes.html','cartes-generation-1.html'],s:[
-      ['Cotation','cotation.html'],['Ventes pass\u00e9es Sp\u00e9cial Mimiqui','registre.html'],['Archive des ventes','archive-ventes.html'],['Registre des cartes pass\u00e9es','registre-pokemon.html'],['Ventes par Pok\u00e9mon \u00b7 Pikachu','cartes-pikachu-ventes.html'],['Ventes par Pok\u00e9mon \u00b7 Dracaufeu','cartes-dracaufeu-ventes.html'],['Ventes par Pok\u00e9mon \u00b7 Évoli','cartes-evoli-ventes.html'],['Ventes par Pok\u00e9mon \u00b7 Mewtwo','cartes-mewtwo-ventes.html'],['Ventes par Pok\u00e9mon \u00b7 Génération 1','cartes-generation-1.html']]},
-    {t:'Acheter',h:'boutique.html',p:['boutique.html'],s:[['Boutique','boutique.html'],['Boosters','jeu.html#boosters']]},
-    {t:'Vendre sur eBay',h:'vendre.html',p:['vendre.html','estimer-ma-carte.html','guide-vendre-ebay.html'],s:[['Vendre sur eBay','vendre.html'],['Estimer ma carte','estimer-ma-carte.html'],['Guide pour vendre sur eBay','guide-vendre-ebay.html']]}
-  ];
-  var AUTRES={'blog.html':'Blog','jeu.html':'Jeu','confidentialite.html':'Cookies et vie priv\u00e9e','assistant-instagram.html':'Assistant Instagram','404.html':'Page introuvable'};
-  function el(tag,attrs,txt){var e=document.createElement(tag);for(var k in attrs||{})e.setAttribute(k,attrs[k]);if(txt!=null)e.textContent=txt;return e;}
-  function courante(){for(var i=0;i<SECTIONS.length;i++)if(SECTIONS[i].p.indexOf(page)>=0)return SECTIONS[i];return null;}
 
-  /* Menu */
-  function ajouterArchive(){
-    document.querySelectorAll('ul.sous-menu > li > a[href="registre.html"]').forEach(function(a){
-      var li=a.parentElement;if(!li)return;
-      var next=li.nextElementSibling;
-      if(next&&next.querySelector('a[href="archive-ventes.html"]'))return;
-      var n=el('li');
-      n.appendChild(el('a',{href:'archive-ventes.html'},'Archive des ventes'));
-      li.insertAdjacentElement('afterend',n);
-    });
-  }
-  function ajouterLien(apresHref, href, label){
-    document.querySelectorAll('ul.sous-menu a[href="'+apresHref+'"]').forEach(function(a){
-      var li=a.parentElement;if(!li)return;
-      var sm=li.parentElement;
-      if(sm&&sm.querySelector('a[href="'+href+'"]'))return;
-      var n=el('li');
-      n.appendChild(el('a',{href:href},label));
-      li.insertAdjacentElement('afterend',n);
-    });
-  }
-  var VENTES_PKMN=[
-    {slug:'pikachu',nom:'Pikachu',liste:'cartes-pikachu-ventes.html'},
-    {slug:'dracaufeu',nom:'Dracaufeu',liste:'cartes-dracaufeu-ventes.html'},
-    {slug:'evoli',nom:'\u00c9voli',liste:'cartes-evoli-ventes.html'},
-    {slug:'mewtwo',nom:'Mewtwo',liste:'cartes-mewtwo-ventes.html'},
-    {slug:'generation-1',nom:'Génération 1',liste:'cartes-generation-1.html'}
+  var EBAY_ENCOURS="https://www.ebay.fr/sch/i.html?_nkw=carte%20Pok%C3%A9mon&mkcid=1&mkrid=709-53476-19255-0&siteid=71&campid=5339225196&customid=encours-menu&toolid=10001&mkevt=1";
+  var SERIES_MEGA=[
+    {t:"Règne Delta",s:[["Française","regne-delta.html"],["Japonaise","regne-delta-ja.html"]]},
+    {t:"Équilibre Parfait",s:[["Française","equilibre-parfait-ventes.html"],["Japonaise","equilibre-parfait-ja.html"],["Anglaise","equilibre-parfait-en.html"]]},
+    {t:"30ᵉ Anniversaire",s:[["Française","trentieme-anniversaire-ventes.html"],["Anglaise","trentieme-anniversaire-en.html"]]},
+    {t:"Héros Transcendants",s:[["Française","heros-transcendants.html"],["Anglaise","heros-transcendants-en.html"]]},
+    {t:"Nuit Noire",s:[["Française","nuit-noire-ventes.html"],["Japonaise","nuit-noire-ja.html"],["Anglaise","nuit-noire-en.html"]]},
+    {t:"Méga-Évolution",s:[["Française","mega-evolution-cartes.html"],["Anglaise","mega-evolution-en.html"]]},
+    {t:"Flammes Fantasmagoriques",s:[["Française","heros-fantasmagoriques.html"],["Japonaise","flammes-fantasmagoriques-ja.html"],["Anglaise","flammes-fantasmagoriques-en.html"]]},
+    {t:"Chaos Ascendant",s:[["Française","chaos-ascendant-ventes.html"],["Japonaise","chaos-ascendant-ja.html"],["Anglaise","chaos-ascendant-en.html"]]}
   ];
-  function ajouterLienSiTexte(apresHref, href, label, doitCommencer){
-    document.querySelectorAll('ul.sous-menu a[href="'+apresHref+'"]').forEach(function(a){
-      if(doitCommencer && a.textContent.indexOf(doitCommencer)!==0) return;
-      var li=a.parentElement;if(!li)return;
-      var sm=li.parentElement;
-      if(sm&&sm.querySelector('a[href="'+href+'"]'))return;
-      var n=el('li');
-      n.appendChild(el('a',{href:href},label));
-      li.insertAdjacentElement('afterend',n);
-    });
+  var PAGES_SERIES=["regne-delta.html","regne-delta-ja.html","equilibre-parfait-ventes.html","equilibre-parfait-ja.html","equilibre-parfait-en.html","equilibre-parfait.html","trentieme-anniversaire-ventes.html","trentieme-anniversaire-en.html","trentieme-anniversaire.html","heros-transcendants.html","heros-transcendants-en.html","nuit-noire-ventes.html","nuit-noire-ja.html","nuit-noire-en.html","mega-evolution-cartes.html","mega-evolution-en.html","heros-fantasmagoriques.html","flammes-fantasmagoriques-ja.html","flammes-fantasmagoriques-en.html","chaos-ascendant-ventes.html","chaos-ascendant-ja.html","chaos-ascendant-en.html","chaos-ascendant.html"];
+  var SECTIONS=[
+    {t:"Accueil",h:"index.html",p:["index.html"]},
+    {t:"Cartes",h:"cartes.html",p:["cartes.html","cartes-japonaises.html","cartes-anglaises.html","cartes-pokemon.html","pokemon.html"].concat(PAGES_SERIES),s:[
+      ["Cartes FR","cartes.html"],["Cartes JA","cartes-japonaises.html"],["Cartes EN","cartes-anglaises.html"],["Cartes Pokémon / séries","cartes-pokemon.html"]
+    ]},
+    {t:"Pokémon",h:"cartes-generation-1.html",p:["cartes-generation-1.html","cartes-pikachu-ventes.html","cartes-dracaufeu-ventes.html","cartes-evoli-ventes.html","cartes-mewtwo-ventes.html","carte-pikachu.html"],s:[
+      ["Pikachu","cartes-pikachu-ventes.html"],["Dracaufeu","cartes-dracaufeu-ventes.html"],["Évoli","cartes-evoli-ventes.html"],["Mewtwo","cartes-mewtwo-ventes.html"],["Génération 1","cartes-generation-1.html"],["1025 Pokémon","cartes-pokemon.html"]
+    ]},
+    {t:"Prix",h:"cotation.html",p:["cotation.html","top-ventes-semaine.html","registre.html","archive-ventes.html","registre-pokemon.html","adjuge.html"],s:[
+      ["Cotation","cotation.html"],["Top ventes de la semaine","top-ventes-semaine.html"],["Ventes passées Spécial Mimiqui","registre.html"],["Archive des ventes","archive-ventes.html"],["Registre des cartes passées","registre-pokemon.html"]
+    ]},
+    {t:"Acheter",h:"boutique.html",p:["boutique.html","cartes-psa10.html","guide-acheteur.html"],s:[
+      ["Boutique","boutique.html"],["Boosters","jeu.html#boosters"],["Annonces eBay en cours",EBAY_ENCOURS],["Cartes PSA 10","cartes-psa10.html"],["Guide de l’acheteur","guide-acheteur.html"]
+    ]},
+    {t:"Vendre",h:"vendre.html",p:["vendre.html","estimer-ma-carte.html","guide-vendre-ebay.html"],s:[
+      ["Estimer ma carte","estimer-ma-carte.html"],["Guide pour vendre sur eBay","guide-vendre-ebay.html"],["Vendre sur eBay","vendre.html"]
+    ]},
+    {t:"Nouveautés",h:"nouveautes.html",p:["nouveautes.html"]},
+    {t:"Blog",h:"blog.html",p:["blog.html"]}
+  ];
+  var AUTRES={"confidentialite.html":"Cookies et vie privée","assistant-instagram.html":"Assistant Instagram","404.html":"Page introuvable","mentions-legales.html":"Mentions légales","a-propos.html":"À propos / Contact","jeu.html":"Jeu"};
+  function el(tag,attrs,txt){var e=document.createElement(tag);for(var k in attrs||{})e.setAttribute(k,attrs[k]);if(txt!=null)e.textContent=txt;return e;}
+  function estPagePkmn(){
+    return page==="carte-pikachu.html" || page==="cartes-generation-1.html" || /^cartes-[a-z0-9-]+-ventes\.html$/.test(page);
   }
-  function ajouterPikachu(){
-    var prevC='cartes-pokemon.html', prevP='registre-pokemon.html';
-    VENTES_PKMN.forEach(function(p){
-      var apresC=prevC, apresP=prevP;
-      ajouterLienSiTexte(apresC, p.liste, 'Cartes '+p.nom, apresC==='cartes-pokemon.html'?null:'Cartes ');
-      ajouterLienSiTexte(apresP, p.liste, 'Ventes par Pok\u00e9mon \u00b7 '+p.nom, apresP==='registre-pokemon.html'?null:'Ventes par');
-      prevC=p.liste; prevP=p.liste;
+  function courante(){
+    if(estPagePkmn()){
+      for(var i=0;i<SECTIONS.length;i++) if(SECTIONS[i].t==="Pokémon") return SECTIONS[i];
+    }
+    for(var j=0;j<SECTIONS.length;j++) if(SECTIONS[j].p.indexOf(page)>=0) return SECTIONS[j];
+    return null;
+  }
+  function lienEbay(href,label){
+    var a=el("a",{href:href},label);
+    if(/^https?:/.test(href)){
+      a.target="_blank";
+      a.rel = href.indexOf("campid=")!=-1 ? "sponsored noopener" : "noopener";
+    }
+    return a;
+  }
+  function groupeSeries(parentUl){
+    var li=el("li",{"class":"sm-groupe"});
+    var b=el("button",{type:"button","class":"sm-tog","aria-expanded":"false"});
+    b.appendChild(document.createTextNode("Cartes Pokémon / séries "));
+    b.appendChild(el("span",{"class":"sm-fl","aria-hidden":"true"},"\u25B8"));
+    var sous=el("ul",{"class":"sm-sous"});
+    var l0=el("li"); l0.appendChild(el("a",{href:"cartes-pokemon.html"},"Toutes les séries")); sous.appendChild(l0);
+    var mega=el("li",{"class":"sm-groupe"});
+    var bm=el("button",{type:"button","class":"sm-tog","aria-expanded":"false"});
+    bm.appendChild(document.createTextNode("Méga-Évolution "));
+    bm.appendChild(el("span",{"class":"sm-fl","aria-hidden":"true"},"\u25B8"));
+    var sousM=el("ul",{"class":"sm-sous"});
+    SERIES_MEGA.forEach(function(set){
+      var g=el("li",{"class":"sm-groupe"});
+      var bt=el("button",{type:"button","class":"sm-tog","aria-expanded":"false"});
+      bt.appendChild(document.createTextNode(set.t+" "));
+      bt.appendChild(el("span",{"class":"sm-fl","aria-hidden":"true"},"\u25B8"));
+      var u=el("ul",{"class":"sm-sous"});
+      set.s.forEach(function(it){ var x=el("li"); x.appendChild(el("a",{href:it[1]},it[0])); u.appendChild(x); });
+      g.append(bt,u); sousM.appendChild(g);
     });
+    mega.append(bm,sousM); sous.appendChild(mega);
+    li.append(b,sous); parentUl.appendChild(li);
   }
   function menu(){
-    var nav=document.querySelector('nav.sitenav,header nav.top');if(!nav)return;
-    var ul=nav.querySelector('ul.menu-principal');if(!ul)return;
-    nav.classList.add('nav-commune');
-    ajouterArchive();
-    ajouterPikachu();
+    var nav=document.querySelector("nav.sitenav,header nav.top"); if(!nav)return;
+    var ul=nav.querySelector("ul.menu-principal"); if(!ul)return;
+    nav.classList.add("nav-commune");
+    ul.id=ul.id||"menu-principal";
+    ul.textContent="";
     var cur=courante();
-    ul.querySelectorAll(':scope>li').forEach(function(li,i){
-      var sec=SECTIONS[i];if(!sec)return;var a=li.querySelector(':scope>a');
-      if(sec===cur){li.classList.add('actif');a.setAttribute('aria-current',sec.p.length===1?'page':'true');}
-      li.querySelectorAll('.sous-menu a').forEach(function(s){if(s.getAttribute('href').toLowerCase()===page)s.setAttribute('aria-current','page');});
-      var btn=li.querySelector(':scope>button.ouvre-sous');
-      if(btn)btn.addEventListener('click',function(e){e.preventDefault();var o=li.classList.toggle('ouvert');btn.setAttribute('aria-expanded',o?'true':'false');});
+    SECTIONS.forEach(function(sec){
+      var li=el("li");
+      if(sec.t==="Vendre") li.classList.add("li-vendre");
+      var a=el("a",{href:sec.h},sec.t);
+      if(sec===cur){ li.classList.add("actif"); a.setAttribute("aria-current", (sec.s&&sec.s.length)?"true":"page"); }
+      li.appendChild(a);
+      if(sec.s && sec.s.length){
+        var btn=el("button",{type:"button","class":"ouvre-sous","aria-expanded":"false","aria-label":"Sous-menu "+sec.t});
+        btn.innerHTML="&#9662;";
+        var sm=el("ul",{"class":"sous-menu"});
+        sec.s.forEach(function(it){
+          if(sec.t==="Cartes" && it[1]==="cartes-pokemon.html"){
+            groupeSeries(sm);
+            return;
+          }
+          var x=el("li");
+          x.appendChild(lienEbay(it[1], it[0]));
+          sm.appendChild(x);
+        });
+        sm.querySelectorAll("a").forEach(function(s){
+          var href=(s.getAttribute("href")||"").split("#")[0].toLowerCase();
+          if(href===page) s.setAttribute("aria-current","page");
+        });
+        btn.addEventListener("click",function(e){e.preventDefault();var o=li.classList.toggle("ouvert");btn.setAttribute("aria-expanded",o?"true":"false");});
+        li.append(btn,sm);
+      }
+      ul.appendChild(li);
     });
-    if(!nav.querySelector('.hamburger')){
-      var h=el('button',{type:'button','class':'hamburger','aria-label':'Ouvrir le menu','aria-expanded':'false','aria-controls':'menu-principal'});
-      h.innerHTML='<span></span><span></span><span></span>';
-      ul.id=ul.id||'menu-principal';
+    if(!nav.querySelector(".hamburger")){
+      var h=el("button",{type:"button","class":"hamburger","aria-label":"Ouvrir le menu","aria-expanded":"false","aria-controls":"menu-principal"});
+      h.innerHTML="<span></span><span></span><span></span>";
       ul.parentNode.insertBefore(h,ul);
-      h.addEventListener('click',function(){var o=nav.classList.toggle('menu-ouvert');h.setAttribute('aria-expanded',o?'true':'false');h.setAttribute('aria-label',o?'Fermer le menu':'Ouvrir le menu');});
+      h.addEventListener("click",function(){var o=nav.classList.toggle("menu-ouvert");h.setAttribute("aria-expanded",o?"true":"false");h.setAttribute("aria-label",o?"Fermer le menu":"Ouvrir le menu");});
     }
-    document.addEventListener('click',function(e){if(!nav.contains(e.target)){nav.classList.remove('menu-ouvert');ul.querySelectorAll('li.ouvert').forEach(function(l){l.classList.remove('ouvert');});}});
-    document.addEventListener('keydown',function(e){if(e.key==='Escape'){nav.classList.remove('menu-ouvert');ul.querySelectorAll('li.ouvert').forEach(function(l){l.classList.remove('ouvert');});}});
+    document.addEventListener("click",function(e){if(!nav.contains(e.target)){nav.classList.remove("menu-ouvert");ul.querySelectorAll("li.ouvert").forEach(function(l){l.classList.remove("ouvert");});}});
+    document.addEventListener("keydown",function(e){if(e.key==="Escape"){nav.classList.remove("menu-ouvert");ul.querySelectorAll("li.ouvert").forEach(function(l){l.classList.remove("ouvert");});}});
   }
 
   /* Fil d'Ariane */
   function ariane(){
-    if(page==='index.html'||document.querySelector('.fil-ariane'))return;
-    var items=[['Accueil','index.html']],cur=courante();
+    if(page==="index.html"||document.querySelector(".fil-ariane"))return;
+    var items=[["Accueil","index.html"]],cur=courante();
     if(cur){
       if(cur.s){items.push([cur.t,cur.h]);
-        var sp=cur.s.filter(function(s){return s[1].toLowerCase()===page;})[0];
+        var sp=cur.s.filter(function(s){return (s[1]||"").split("#")[0].toLowerCase()===page;})[0];
         if(sp)items.push([sp[0],null]);
-        else if(page==='pokemon.html'){items.push(['Cartes Pok\u00e9mon','cartes-pokemon.html']);
-          var n=new URLSearchParams(location.search).get('n');items.push([n?decodeURIComponent(n):'Pok\u00e9mon',null]);}
+        else if(page==="pokemon.html"){items.push(["Cartes Pokémon","cartes-pokemon.html"]);
+          var n=new URLSearchParams(location.search).get("n");items.push([n?decodeURIComponent(n):"Pokémon",null]);}
+        else if(page==="carte-pikachu.html"){
+          var slug=(new URLSearchParams(location.search).get("pkmn")||"").toLowerCase();
+          var nomCarte=document.querySelector("h1");
+          items.push([nomCarte&&nomCarte.textContent?nomCarte.textContent.trim(): (slug||"Fiche carte"), null]);
+        }
         if(items[items.length-1][1]===cur.h&&!sp)items[items.length-1][1]=null;
       }else items.push([cur.t,null]);
     }else items.push([AUTRES[page]||document.title.split(/[\u2013\u2014|\u00b7-]/)[0].trim(),null]);
-    var nav=el('nav',{'class':'fil-ariane wrap','aria-label':"Fil d'Ariane"}),ol=el('ol');
-    items.forEach(function(it,i){var li=el('li');
-      if(it[1]&&i<items.length-1)li.appendChild(el('a',{href:it[1]},it[0]));else li.appendChild(el('span',{'aria-current':'page'},it[0]));
+    var navA=el("nav",{"class":"fil-ariane wrap","aria-label":"Fil d'Ariane"}),ol=el("ol");
+    items.forEach(function(it,i){var li=el("li");
+      if(it[1]&&i<items.length-1)li.appendChild(el("a",{href:it[1]},it[0]));else li.appendChild(el("span",{"aria-current":"page"},it[0]));
       ol.appendChild(li);});
-    nav.appendChild(ol);
-    var header=document.querySelector('header.site,header.wrap,body>header');
-    if(header&&header.parentNode)header.parentNode.insertBefore(nav,header.nextSibling);else document.body.insertBefore(nav,document.body.firstChild);
+    navA.appendChild(ol);
+    var header=document.querySelector("header.site,header.wrap,body>header");
+    if(header&&header.parentNode)header.parentNode.insertBefore(navA,header.nextSibling);else document.body.insertBefore(navA,document.body.firstChild);
   }
 
   /* Pied de page */
   function pied(){
-    if(document.querySelector('.pied-commun'))return;
+    if(document.querySelector(".pied-commun"))return;
     var groupes=[
-      ['Cartes',[['Cartes FR','cartes.html'],['Cartes JA','cartes-japonaises.html'],['Cartes EN','cartes-anglaises.html'],['Cartes Pok\u00e9mon','cartes-pokemon.html'],['Cartes Pikachu','cartes-pikachu-ventes.html'],['Cartes Dracaufeu','cartes-dracaufeu-ventes.html'],['Cartes Évoli','cartes-evoli-ventes.html'],['Cartes Mewtwo','cartes-mewtwo-ventes.html'],['Génération 1','cartes-generation-1.html']]],
-      ['Prix',[['Cotation','cotation.html'],['Ventes pass\u00e9es Sp\u00e9cial Mimiqui','registre.html'],['Archive des ventes','archive-ventes.html'],['Registre des cartes pass\u00e9es','registre-pokemon.html'],['Ventes par Pok\u00e9mon \u00b7 Pikachu','cartes-pikachu-ventes.html'],['Ventes par Pok\u00e9mon \u00b7 Dracaufeu','cartes-dracaufeu-ventes.html'],['Ventes par Pok\u00e9mon \u00b7 Évoli','cartes-evoli-ventes.html'],['Ventes par Pok\u00e9mon \u00b7 Mewtwo','cartes-mewtwo-ventes.html'],['Ventes par Pok\u00e9mon \u00b7 Génération 1','cartes-generation-1.html']]],
-      ['Acheter et vendre',[['Boutique','boutique.html'],['Boosters','jeu.html#boosters'],['Vendre sur eBay','vendre.html'],['Estimer ma carte','estimer-ma-carte.html'],['Guide pour vendre sur eBay','guide-vendre-ebay.html']]],
-      ['D\u00e9couvrir',[['Blog','blog.html'],['Blog Instagram','https://www.instagram.com/lecoindemimiqui/'],['Jeu','jeu.html'],['Le film 2027','index.html#film'],['Le d\u00e9guisement','index.html#deguisement'],['Faiblesses','index.html#types'],['Rubriques','index.html#rubriques']]],
-      ['Le site',[['Cr\u00e9er un compte','index.html#compte'],['Assistant Instagram','assistant-instagram.html'],['Cookies et vie priv\u00e9e','confidentialite.html']]]
+      ["Cartes",[["Cartes FR","cartes.html"],["Cartes JA","cartes-japonaises.html"],["Cartes EN","cartes-anglaises.html"],["Cartes Pokémon / séries","cartes-pokemon.html"],["Génération 1","cartes-generation-1.html"]]],
+      ["Pokémon",[["Pikachu","cartes-pikachu-ventes.html"],["Dracaufeu","cartes-dracaufeu-ventes.html"],["Évoli","cartes-evoli-ventes.html"],["Mewtwo","cartes-mewtwo-ventes.html"],["Génération 1","cartes-generation-1.html"],["1025 Pokémon","cartes-pokemon.html"]]],
+      ["Prix",[["Cotation","cotation.html"],["Top ventes de la semaine","top-ventes-semaine.html"],["Ventes passées Spécial Mimiqui","registre.html"],["Archive des ventes","archive-ventes.html"],["Registre des cartes passées","registre-pokemon.html"]]],
+      ["Acheter et vendre",[["Boutique","boutique.html"],["Boosters","jeu.html#boosters"],["Annonces eBay en cours",EBAY_ENCOURS],["Cartes PSA 10","cartes-psa10.html"],["Guide de l’acheteur","guide-acheteur.html"],["Estimer ma carte","estimer-ma-carte.html"],["Guide pour vendre sur eBay","guide-vendre-ebay.html"],["Vendre sur eBay","vendre.html"]]],
+      ["Découvrir",[["Nouveautés","nouveautes.html"],["Blog","blog.html"],["Blog Instagram","https://www.instagram.com/lecoindemimiqui/"],["Jeu","jeu.html"],["Le film 2027","index.html#film"],["Le déguisement","index.html#deguisement"],["Faiblesses","index.html#types"]]],
+      ["Le site",[["À propos / Contact","a-propos.html"],["Créer un compte","index.html#compte"],["Assistant Instagram","assistant-instagram.html"],["Cookies et vie privée","confidentialite.html"],["Mentions légales","mentions-legales.html"],["Liens affiliés","mentions-legales.html#liens"]]]
     ];
-    var box=el('div',{'class':'pied-commun wrap'}),grid=el('div',{'class':'pied-groupes'});
-    groupes.forEach(function(g){var c=el('div');c.appendChild(el('h3',null,g[0]));var u=el('ul');
-      g[1].forEach(function(l){var li=el('li'),a=el('a',{href:l[1]},l[0]);if(/^https?:/.test(l[1])){a.target='_blank';a.rel='noopener';}li.appendChild(a);u.appendChild(li);});
+    var box=el("div",{"class":"pied-commun wrap"}),grid=el("div",{"class":"pied-groupes"});
+    groupes.forEach(function(g){var c=el("div");c.appendChild(el("h3",null,g[0]));var u=el("ul");
+      g[1].forEach(function(l){var li=el("li"),a=lienEbay(l[1],l[0]);li.appendChild(a);u.appendChild(li);});
       c.appendChild(u);grid.appendChild(c);});
     box.appendChild(grid);
-    box.appendChild(el('p',{'class':'mention-affiliation'},'Certains liens eBay sont des liens affili\u00e9s : le site peut toucher une commission, sans surco\u00fbt pour vous.'));
-    var f=document.querySelector('body>footer')||document.querySelector('footer');
+    box.appendChild(el("p",{"class":"mention-affiliation"},"Certains liens eBay sont des liens affiliés : le site peut toucher une commission, sans surcoût pour vous."));
+    var f=document.querySelector("body>footer")||document.querySelector("footer");
     if(f)f.insertBefore(box,f.firstChild);
-    else{f=el('footer',{'class':'pied-site'});f.appendChild(box);var s=document.querySelector('body>script');document.body.appendChild(f);}
+    else{f=el("footer",{"class":"pied-site"});f.appendChild(box);var s=document.querySelector("body>script");document.body.appendChild(f);}
   }
 
-  /* Recherche ?q= sur cartes-pokemon.html */
+    /* Recherche ?q= sur cartes-pokemon.html */
   function rechercheQ(){
     if(page!=='cartes-pokemon.html')return;
     var q=new URLSearchParams(location.search).get('q');if(!q)return;

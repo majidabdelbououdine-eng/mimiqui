@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="fr"><head>
+<meta charset="utf-8">
+<link rel="icon" type="image/webp" href="img/logo-mimiqui.webp">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<link rel="stylesheet" href="site-commun.css">
+<style>
+@font-face{font-family:"Bodoni Moda";font-style:normal;font-weight:500;font-display:swap;src:url(fonts/bodoni-moda-latin-500-normal.woff2) format("woff2")}
+@font-face{font-family:"Bodoni Moda";font-style:italic;font-weight:500;font-display:swap;src:url(fonts/bodoni-moda-latin-500-italic.woff2) format("woff2")}
+@font-face{font-family:"Bodoni Moda";font-style:normal;font-weight:700;font-display:swap;src:url(fonts/bodoni-moda-latin-700-normal.woff2) format("woff2")}
+@font-face{font-family:"Source Sans 3";font-style:normal;font-weight:400;font-display:swap;src:url(fonts/source-sans-3-latin-400-normal.woff2) format("woff2")}
+@font-face{font-family:"Source Sans 3";font-style:normal;font-weight:600;font-display:swap;src:url(fonts/source-sans-3-latin-600-normal.woff2) format("woff2")}
+@font-face{font-family:"Source Sans 3";font-style:normal;font-weight:700;font-display:swap;src:url(fonts/source-sans-3-latin-700-normal.woff2) format("woff2")}
+</style>
+<meta name="description" content="Comment repérer une carte Pokémon douteuse, comprendre les notes PSA, CGC et PCA, lire l’état (NM, EX, LP…) et acheter plus sereinement sur eBay.">
+<title>Guide de l’acheteur : fausses cartes, notes et eBay – Le Coin de Mimiqui</title>
+<link rel="canonical" href="https://mimiqui.fr/guide-acheteur.html">
+
+<style>
+
+:root{--bg:#ffffff;--ink:#111111;--muted:#5a5a5a;--line:rgba(17,17,17,.16);--soft:#f6f5f2;--rouge:#d0021b;--f-display:"Bodoni Moda","Didot",Georgia,serif;--f-body:"Source Sans 3","Helvetica Neue",Arial,sans-serif}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 var(--f-body)}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.etiquette{font-weight:700;font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--rouge);margin:0}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;line-height:1.1;margin:0}
+.tete{padding-block:36px 8px;display:grid;gap:12px}
+.tete h1{font-size:clamp(2.2rem,6vw,3.6rem);font-weight:500;letter-spacing:-.02em}
+.tete h1 em{color:var(--rouge)}
+.tete p{color:var(--muted);max-width:68ch;margin:0}
+.page-corps{padding:12px 0 48px;max-width:76ch}
+.page-corps h2{font-size:clamp(1.4rem,3vw,1.9rem);margin:32px 0 10px}
+.page-corps p,.page-corps li{margin:0 0 12px}
+.page-corps ul,.page-corps ol{padding-left:1.2rem}
+.astuce{border-left:3px solid var(--ink);padding:8px 12px;background:var(--soft);margin:16px 0}
+.pied-legal{margin:1.2rem auto 1.4rem;text-align:center;font-size:.72rem;font-weight:300;color:#7a869a}
+.pied-legal a{color:#7a869a;text-decoration:underline}
+.cookie-info{position:fixed;left:16px;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:60;max-width:620px;margin:0 auto;background:#111;color:#fff;display:flex;gap:14px;align-items:center;padding:12px 16px;border-radius:14px;box-shadow:0 8px 30px rgba(0,0,0,.25);font:14px/1.45 var(--f-body)}
+.cookie-info[hidden]{display:none}
+.cookie-info p{margin:0;flex:1}
+.cookie-info a{color:#fff;text-decoration:underline}
+.cookie-info button{flex:none;font:700 12px var(--f-body);letter-spacing:.08em;text-transform:uppercase;background:#fff;color:#111;border:0;border-radius:999px;padding:8px 16px;cursor:pointer}
+
+
+</style>
+</head>
+<body>
+<header class="site wrap"><nav class="sitenav" aria-label="Navigation principale">
+  <a class="logo" href="index.html"><img class="logo-img" src="img/logo-mimiqui.webp" alt="" width="95" height="120" style="width:auto;height:4.2rem;object-fit:contain;transform:none">Le Coin de Mimiqui<span>.</span></a>
+  <ul class="menu-principal" id="menu-principal">
+<li><a href="index.html">Accueil</a></li>
+<li><a href="cartes.html">Cartes</a><button type="button" class="ouvre-sous" aria-expanded="false" aria-label="Sous-menu Cartes">&#9662;</button>
+<ul class="sous-menu">
+<li><a href="cartes.html">Cartes françaises</a></li>
+<li><a href="cartes-japonaises.html">Cartes japonaises</a></li>
+<li><a href="cartes-anglaises.html">Cartes anglaises</a></li>
+<li><a href="cartes-pokemon.html">Cartes Pokémon / séries</a></li>
+</ul></li>
+<li><a href="cartes-generation-1.html">Pokémon</a><button type="button" class="ouvre-sous" aria-expanded="false" aria-label="Sous-menu Pokémon">&#9662;</button>
+<ul class="sous-menu">
+<li><a href="cartes-pikachu-ventes.html">Pikachu</a></li>
+<li><a href="cartes-dracaufeu-ventes.html">Dracaufeu</a></li>
+<li><a href="cartes-evoli-ventes.html">Évoli</a></li>
+<li><a href="cartes-mewtwo-ventes.html">Mewtwo</a></li>
+<li><a href="cartes-generation-1.html">Génération 1</a></li>
+<li><a href="cartes-pokemon.html">1025 Pokémon</a></li>
+</ul></li>
+<li><a href="cotation.html">Prix</a><button type="button" class="ouvre-sous" aria-expanded="false" aria-label="Sous-menu Prix">&#9662;</button>
+<ul class="sous-menu">
+<li><a href="cotation.html">Cotation</a></li>
+<li><a href="top-ventes-semaine.html">Top ventes de la semaine</a></li>
+<li><a href="registre.html">Ventes passées Spécial Mimiqui</a></li>
+<li><a href="archive-ventes.html">Archive des ventes</a></li>
+<li><a href="registre-pokemon.html">Registre des cartes passées</a></li>
+</ul></li>
+<li><a href="boutique.html">Acheter</a><button type="button" class="ouvre-sous" aria-expanded="false" aria-label="Sous-menu Acheter">&#9662;</button>
+<ul class="sous-menu">
+<li><a href="boutique.html">Boutique</a></li>
+<li><a href="jeu.html#boosters">Boosters</a></li>
+<li><a href="https://www.ebay.fr/sch/i.html?_nkw=carte%20Pok%C3%A9mon&amp;mkcid=1&amp;mkrid=709-53476-19255-0&amp;siteid=71&amp;campid=5339225196&amp;customid=encours-menu&amp;toolid=10001&amp;mkevt=1" target="_blank" rel="sponsored noopener">Annonces eBay en cours</a></li>
+<li><a href="cartes-psa10.html">Cartes PSA 10</a></li>
+<li><a href="guide-acheteur.html">Guide de l’acheteur</a></li>
+</ul></li>
+<li><a href="vendre.html">Vendre</a><button type="button" class="ouvre-sous" aria-expanded="false" aria-label="Sous-menu Vendre">&#9662;</button>
+<ul class="sous-menu">
+<li><a href="estimer-ma-carte.html">Estimer ma carte</a></li>
+<li><a href="guide-vendre-ebay.html">Guide pour vendre sur eBay</a></li>
+<li><a href="vendre.html">Vendre sur eBay</a></li>
+</ul></li>
+<li><a href="nouveautes.html">Nouveautés</a></li>
+<li><a href="blog.html">Blog</a></li>
+</ul>
+</nav></header>
+
+<main class="wrap">
+  <section class="tete">
+    <p class="etiquette">Acheter · conseils</p>
+    <h1>Guide de l’<em>acheteur</em></h1>
+    <p>Repérer une carte douteuse, comprendre les notes PSA, CGC et PCA, lire l’état d’une carte, et acheter plus sereinement sur eBay. Des repères généraux, pas un avis d’expert sur une carte en particulier.</p>
+  </section>
+  <div class="page-corps guide">
+    <h2>Repérer une carte suspecte</h2>
+    <p>Aucune liste n’est exhaustive : les contrefaçons évoluent. En cas de doute, comparez avec une carte authentique du même set, ou avec une photo officielle (même typographie, mêmes couleurs, même holographie).</p>
+    <ul>
+      <li><b>Le carton et le toucher</b> : une carte officielle a un certain poids, une coupe nette et souvent un noyau noir visible sur la tranche. Un carton trop souple, trop brillant, ou une tranche blanche sur toute l’épaisseur, doit faire regarder de plus près.</li>
+      <li><b>L’impression</b> : texte flou, couleurs trop saturées ou trop ternes, point de trame irrégulier, énergie ou symbole de set mal alignés sont des signes fréquents.</li>
+      <li><b>L’holographie</b> : le motif holo d’une vraie carte (éclats, vagues, texture) doit correspondre au set et à la rareté. Un simple film arc-en-ciel collé, ou un holo qui ne «&nbsp;bouge&nbsp;» pas comme l’original, est suspect.</li>
+      <li><b>Les mentions légales</b> : ligne de copyright, logo Pokémon et typographie du nom doivent être nets et conformes à l’époque du set.</li>
+      <li><b>Le prix trop beau</b> : une carte rare proposée très en dessous du marché, surtout par un vendeur nouveau ou sans photos nettes du recto, du verso et de la tranche, mérite la prudence.</li>
+    </ul>
+    <p>Ces indices ne suffisent pas à eux seuls à conclure. En cas d’enjeu important, un passage par un service de notation reconnu, ou l’avis d’un vendeur établi, reste plus sûr.</p>
+
+    <h2>Les notes PSA, CGC et PCA</h2>
+    <p>PSA (Professional Sports Authenticator), CGC (Certified Guaranty Company) et PCA (Professional Card Authenticator, société française) sont des prestataires de <b>notation</b> : ils examinent la carte, lui attribuent une note, et la scellent dans une coque (souvent appelée «&nbsp;slab&nbsp;»). Ce ne sont pas les éditeurs du JCC, et une note n’est pas une garantie officielle de Nintendo ou de The Pokémon Company.</p>
+    <p>La note la plus courante va de 1 à 10. Un <b>10</b> désigne, selon le barème de chaque société, une carte considérée comme pratiquement parfaite (centrage, angles, surface, bords). Les notes inférieures reflètent des défauts plus visibles. Les critères exacts (tolérance de centrage, traitement des défauts d’usine, etc.) varient d’un prestataire à l’autre : une même carte peut recevoir des notes légèrement différentes.</p>
+    <p>Sur une coque, vérifiez que le label (nom de la carte, set, numéro, note, éventuel numéro de certificat) correspond à la carte visible, et que le scellé n’a pas l’air ouvert ou recollé. Les sites des sociétés proposent en général une vérification du certificat. Méfiez-vous des coques visiblement bricolées ou des labels flous sur les photos d’une annonce.</p>
+
+    <h2>L’état d’une carte non notée</h2>
+    <p>Dans le marché du JCC, on décrit souvent l’état avec ces abréviations, de la plus belle à la plus fatiguée :</p>
+    <ul>
+      <li><b>NM</b> (Near Mint, proche du neuf) : presque pas de défaut visible, angles et bords nets.</li>
+      <li><b>EX</b> (Excellent) : de légers signes d’usage, par exemple un angle un peu émoussé ou de micro-rayures.</li>
+      <li><b>LP</b> (Lightly Played, légèrement jouée) : usure visible mais carte encore propre, bords ou surface un peu marqués.</li>
+      <li><b>MP</b> (Moderately Played) : usure nette, blanchiment des bords, plis légers possibles.</li>
+      <li><b>HP</b> (Heavily Played) et <b>DMG</b> (Damaged) : forte usure, plis, taches, coins abîmés ou défauts importants.</li>
+    </ul>
+    <p>Ces mentions ne sont pas une norme unique : un vendeur peut être plus ou moins sévère. Les photos (recto, verso, angles, sous plusieurs lumières) restent le meilleur juge. «&nbsp;Neuve&nbsp;» sans photo des bords n’est pas une preuve.</p>
+
+    <h2>Acheter plus sereinement sur eBay</h2>
+    <ul>
+      <li>Lisez le titre <b>et</b> la description : langue de la carte, édition (1re édition, shadowless, promo), état, présence d’un lot.</li>
+      <li>Regardez l’historique du vendeur, les évaluations récentes, et si les photos sont bien celles de l’exemplaire vendu (pas seulement une image d’archive).</li>
+      <li>Comparez avec des ventes déjà terminées de la même carte, dans le même état et la même langue — c’est un meilleur repère qu’une annonce isolée.</li>
+      <li>Vérifiez les frais de port, les douanes éventuelles, les retours, et le moyen de paiement. Le programme de protection des achats d’eBay a des conditions : lisez-les avant d’enchérir.</li>
+      <li>En cas de problème (carte très différente des photos, soupçon de contrefaçon), ouvrez un litige dans les délais prévus par eBay plutôt que de transiger uniquement en dehors de la plateforme.</li>
+    </ul>
+    <div class="astuce">Sur ce site, les liens «&nbsp;Voir les annonces en cours sur eBay&nbsp;» et certains liens vers des ventes passées sont des <a href="mentions-legales.html#liens">liens affiliés</a> : le site peut toucher une commission, sans surcoût pour vous. Cela ne change pas le prix affiché par le vendeur.</div>
+    <p>Pour vendre plutôt qu’acheter, voir aussi le <a href="guide-vendre-ebay.html">guide pour vendre sur eBay</a> et la page <a href="estimer-ma-carte.html">Estimer ma carte</a>.</p>
+  </div>
+</main>
+
+<footer class="wrap">Le Coin de Mimiqui · site de fan non officiel, sans lien avec Nintendo, Game Freak ou The Pokémon Company. · <a href="confidentialite.html">Cookies et vie privée</a> · <a href="a-propos.html">À propos / Contact</a></footer>
+<script>(function(){var h=document.querySelector("header.wrap, header.site");if(!h)return;function m(){document.documentElement.style.setProperty("--hh",h.offsetHeight+"px")}m();if(window.ResizeObserver)new ResizeObserver(m).observe(h);})();</script>
+<div class="cookie-info" id="cookie-info" hidden role="region" aria-label="Cookies">
+  <p>Ce site ne dépose aucun cookie publicitaire ni de mesure d’audience. Les liens eBay, Amazon et Instagram mènent vers des sites qui ont leurs propres cookies. <a href="confidentialite.html">En savoir plus</a></p>
+  <button type="button" id="cookie-ok">D’accord</button>
+</div>
+<script>(function(){var b=document.getElementById("cookie-info");if(!b)return;var k="coin-mimiqui-info-cookies",vu=false;try{vu=localStorage.getItem(k)==="1"}catch(e){}if(!vu)b.hidden=false;document.getElementById("cookie-ok").addEventListener("click",function(){b.hidden=true;try{localStorage.setItem(k,"1")}catch(e){}});})();</script>
+<script src="site-commun.js" defer></script>
+<p class="pied-legal">Site de fan non officiel &middot; <a href="mentions-legales.html#liens">Liens affiliés</a> &middot; <a href="mentions-legales.html">Mentions légales</a> &middot; <a href="a-propos.html">À propos / Contact</a></p>
+
+</body></html>
