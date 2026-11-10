@@ -1,0 +1,30 @@
+{
+  "pokemon": "Kadabra",
+  "slug": "kadabra",
+  "maj": "2026-11-10T11:26:17+01:00",
+  "source": "eBay (ebaysoldlistings.com)",
+  "periode": {
+    "depuis": "2026-10-06",
+    "note": "Ventes eBay des 5 dernières semaines, cartes françaises uniquement."
+  },
+  "cartes": [
+    {
+      "langue": "fr",
+      "id": "base1-32",
+      "nom": "Kadabra",
+      "serie": "Set de Base",
+      "num": "32",
+      "nb": 4,
+      "fichier": "archives-ventes-kadabra/fr/base1-32.json"
+    },
+    {
+      "langue": "fr",
+      "id": "base5-39",
+      "nom": "Kadabra obscur",
+      "serie": "Team Rocket",
+      "num": "39",
+      "nb": 1,
+      "fichier": "archives-ventes-kadabra/fr/base5-39.json"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "id": "g1-13",
+  "langue": "fr",
+  "nom": "Feunard-EX",
+  "serie": "Générations",
+  "num": "13",
+  "maj": "2026-11-10T11:22:29+0100",
+  "ventes": [
+    {
+      "id": "117192393647",
+      "date": "2026-10-12",
+      "prix": 14.99,
+      "devise": "USD",
+      "titre": "Feunard (Ninetales) EX 13/83 - French Generations - Light Play",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/117192393647",
+      "vignette": "archives-ventes-feunard/vignettes/117192393647.webp",
+      "etat": "",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/00/s/MTUxMlgxMDk2/z/V0IAAeSwO6VqA9PF/$_1.JPG?set_id=8800005007"
+    }
+  ]
+}

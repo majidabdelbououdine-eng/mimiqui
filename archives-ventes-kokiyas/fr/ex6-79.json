@@ -1,0 +1,23 @@
+{
+  "id": "ex6-79",
+  "langue": "fr",
+  "nom": "Kokiyas",
+  "serie": "EX Rouge Feu & Vert Feuille",
+  "num": "79",
+  "maj": "2026-11-10T11:34:02+0100",
+  "ventes": [
+    {
+      "id": "198472074820",
+      "date": "2026-10-07",
+      "prix": 3.37,
+      "devise": "USD",
+      "titre": "Pokemon Card COMMON Kokiyas 79/112 EX Red Fire Green Leaf Block EX FR",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/198472074820",
+      "vignette": "archives-ventes-kokiyas/vignettes/198472074820.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/AaYAAeSwwHJqMWyC/s-l140.webp"
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "pokemon": "Psykokwak",
+  "slug": "psykokwak",
+  "maj": "2026-11-10T11:25:05+01:00",
+  "source": "eBay (ebaysoldlistings.com)",
+  "periode": {
+    "depuis": "2026-10-06",
+    "note": "Ventes eBay des 5 dernières semaines, cartes françaises uniquement."
+  },
+  "cartes": [
+    {
+      "langue": "fr",
+      "id": "2018sm-fr-10",
+      "nom": "Psykokwak",
+      "serie": "Collection McDonald's 2018",
+      "num": "10",
+      "nb": 2,
+      "fichier": "archives-ventes-psykokwak/fr/2018sm-fr-10.json"
+    },
+    {
+      "langue": "fr",
+      "id": "base3-53",
+      "nom": "Psykokwak",
+      "serie": "Fossile",
+      "num": "53",
+      "nb": 13,
+      "fichier": "archives-ventes-psykokwak/fr/base3-53.json"
+    },
+    {
+      "langue": "fr",
+      "id": "sv03.5-054",
+      "nom": "Psykokwak",
+      "serie": "151",
+      "num": "054",
+      "nb": 1,
+      "fichier": "archives-ventes-psykokwak/fr/sv03.5-054.json"
+    },
+    {
+      "langue": "fr",
+      "id": "base5-65",
+      "nom": "Psykokwak",
+      "serie": "Team Rocket",
+      "num": "65",
+      "nb": 6,
+      "fichier": "archives-ventes-psykokwak/fr/base5-65.json"
+    },
+    {
+      "langue": "fr",
+      "id": "ex13-81",
+      "nom": "Psykokwak δ",
+      "serie": "EX Fantômes Holon",
+      "num": "81",
+      "nb": 1,
+      "fichier": "archives-ventes-psykokwak/fr/ex13-81.json"
+    }
+  ]
+}

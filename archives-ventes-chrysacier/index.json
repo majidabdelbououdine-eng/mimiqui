@@ -1,0 +1,21 @@
+{
+  "pokemon": "Chrysacier",
+  "slug": "chrysacier",
+  "maj": "2026-11-10T11:17:12+01:00",
+  "source": "eBay (ebaysoldlistings.com)",
+  "periode": {
+    "depuis": "2026-10-06",
+    "note": "Ventes eBay des 5 dernières semaines, cartes françaises uniquement."
+  },
+  "cartes": [
+    {
+      "langue": "fr",
+      "id": "base1-54",
+      "nom": "Chrysacier",
+      "serie": "Set de Base",
+      "num": "54",
+      "nb": 1,
+      "fichier": "archives-ventes-chrysacier/fr/base1-54.json"
+    }
+  ]
+}

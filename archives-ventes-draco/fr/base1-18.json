@@ -1,0 +1,62 @@
+{
+  "id": "base1-18",
+  "langue": "fr",
+  "nom": "Draco",
+  "serie": "Set de Base",
+  "num": "18",
+  "maj": "2026-11-10T11:57:28+0100",
+  "ventes": [
+    {
+      "id": "198737581827",
+      "date": "2026-10-29",
+      "prix": 74.0,
+      "devise": "USD",
+      "titre": "Pokemon TCG Base Set 1st Ed Rare CGC 9 Draco 18/102 FR 1999",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/198737581827",
+      "vignette": "archives-ventes-draco/vignettes/198737581827.webp",
+      "etat": "CGC 9",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/3l0AAeSwvqxq0Vr1/s-l500.webp"
+    },
+    {
+      "id": "117064238551",
+      "date": "2026-10-29",
+      "prix": 672.26,
+      "devise": "USD",
+      "titre": "1999 Pokemon FRENCH 1st Edition Base Set Draco-Dragonair 18/102 PSA 10 GEM MINT",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/117064238551",
+      "vignette": "archives-ventes-draco/vignettes/117064238551.webp",
+      "etat": "PSA 10",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/zOUAAeSw4VVqWBJA/s-l140.webp"
+    },
+    {
+      "id": "307210284346",
+      "date": "2026-10-21",
+      "prix": 55.0,
+      "devise": "USD",
+      "titre": "Draco (Dragonair) FR (French) 018/102 Set De Base Set Rare  Excellent Shape",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/307210284346",
+      "vignette": "archives-ventes-draco/vignettes/307210284346.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/0AQAAeSwbHBqv60b/s-l140.webp"
+    },
+    {
+      "id": "840041078028",
+      "date": "2026-10-20",
+      "prix": 19.99,
+      "devise": "USD",
+      "titre": "(FRENCH) Pokémon TCG Draco (Dragonair) 18/102 Unlimited Base Set",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/840041078028",
+      "vignette": "archives-ventes-draco/vignettes/840041078028.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/FjcAAeSwPppq12Ds/s-l140.webp"
+    }
+  ]
+}

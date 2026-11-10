@@ -1,0 +1,36 @@
+{
+  "id": "sv03.5-007",
+  "langue": "fr",
+  "nom": "Carapuce",
+  "serie": "151",
+  "num": "007",
+  "maj": "2026-11-10T11:17:12+0100",
+  "ventes": [
+    {
+      "id": "256234582296",
+      "date": "2026-11-06",
+      "prix": 3.25,
+      "devise": "USD",
+      "titre": "Pokemon Card CARAPUCE 007/165 REVERSE EV3.5 MEW 151 FR NEW",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/256234582296",
+      "vignette": "archives-ventes-carapuce/vignettes/256234582296.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/auEAAOSwK~BlFDgI/s-l140.webp"
+    },
+    {
+      "id": "358679171269",
+      "date": "2026-10-30",
+      "prix": 0.91,
+      "devise": "USD",
+      "titre": "Carapuce 151 007 FR NM",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/358679171269",
+      "vignette": "archives-ventes-carapuce/vignettes/358679171269.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/riYAAeSwf-hqLtmR/s-l140.webp"
+    }
+  ]
+}

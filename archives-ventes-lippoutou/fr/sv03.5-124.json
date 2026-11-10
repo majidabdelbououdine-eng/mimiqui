@@ -1,0 +1,23 @@
+{
+  "id": "sv03.5-124",
+  "langue": "fr",
+  "nom": "Lippoutou-ex",
+  "serie": "151",
+  "num": "124",
+  "maj": "2026-11-10T11:51:49+0100",
+  "ventes": [
+    {
+      "id": "920018716842",
+      "date": "2026-11-01",
+      "prix": 3.37,
+      "devise": "USD",
+      "titre": "Pokemon Card Lippoutou ex 124/165 🇫🇷 FR 🇫🇷 151",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/920018716842",
+      "vignette": "archives-ventes-lippoutou/vignettes/920018716842.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/i3wAAeSw0LNqxsMo/s-l140.webp"
+    }
+  ]
+}

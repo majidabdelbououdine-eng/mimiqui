@@ -1,0 +1,21 @@
+{
+  "pokemon": "Fantominus",
+  "slug": "fantominus",
+  "maj": "2026-11-10T11:34:32+01:00",
+  "source": "eBay (ebaysoldlistings.com)",
+  "periode": {
+    "depuis": "2026-10-06",
+    "note": "Ventes eBay des 5 dernières semaines, cartes françaises uniquement."
+  },
+  "cartes": [
+    {
+      "langue": "fr",
+      "id": "base1-50",
+      "nom": "Fantominus",
+      "serie": "Set de Base",
+      "num": "50",
+      "nb": 3,
+      "fichier": "archives-ventes-fantominus/fr/base1-50.json"
+    }
+  ]
+}

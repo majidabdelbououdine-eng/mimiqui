@@ -1,0 +1,30 @@
+{
+  "pokemon": "Mimitoss",
+  "slug": "mimitoss",
+  "maj": "2026-11-10T11:24:39+01:00",
+  "source": "eBay (ebaysoldlistings.com)",
+  "periode": {
+    "depuis": "2026-10-06",
+    "note": "Ventes eBay des 5 dernières semaines, cartes françaises uniquement."
+  },
+  "cartes": [
+    {
+      "langue": "fr",
+      "id": "sm10-10",
+      "nom": "Mimitoss",
+      "serie": "Alliance Infaillible",
+      "num": "10",
+      "nb": 1,
+      "fichier": "archives-ventes-mimitoss/fr/sm10-10.json"
+    },
+    {
+      "langue": "fr",
+      "id": "neo4-90",
+      "nom": "Mimitoss",
+      "serie": "Neo Destiny",
+      "num": "90",
+      "nb": 3,
+      "fichier": "archives-ventes-mimitoss/fr/neo4-90.json"
+    }
+  ]
+}

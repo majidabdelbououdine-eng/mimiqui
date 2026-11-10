@@ -1,0 +1,36 @@
+{
+  "id": "base5-20",
+  "langue": "fr",
+  "nom": "Tortank obscur",
+  "serie": "Team Rocket",
+  "num": "20",
+  "maj": "2026-11-10T11:17:12+0100",
+  "ventes": [
+    {
+      "id": "840111425364",
+      "date": "2026-11-09",
+      "prix": 55.0,
+      "devise": "USD",
+      "titre": "Pokemon TCG Tortank Obscur Team Rocket 20/82 Rare Dark Blastoise French 1st ED",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/840111425364",
+      "vignette": "archives-ventes-tortank/vignettes/840111425364.webp",
+      "etat": "",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/00/s/MTYwMFgxMjAw/z/BEIAAeSwU8Rq8f8o/$_1.JPG?set_id=8800005007"
+    },
+    {
+      "id": "840050389258",
+      "date": "2026-10-23",
+      "prix": 59.99,
+      "devise": "USD",
+      "titre": "Pokemon Dark Blastoise 20/82 1st Edition Team Rocket Rare French",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/840050389258",
+      "vignette": "archives-ventes-tortank/vignettes/840050389258.webp",
+      "etat": "",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/00/s/MTYwMFgxMjAw/z/3E8AAeSwSBxq2uXA/$_57.JPG?set_id=880000500F"
+    }
+  ]
+}

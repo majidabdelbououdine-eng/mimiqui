@@ -1,0 +1,23 @@
+{
+  "id": "neo3-44",
+  "langue": "fr",
+  "nom": "Racaillou",
+  "serie": "Neo Revelation",
+  "num": "44",
+  "maj": "2026-11-10T11:28:04+0100",
+  "ventes": [
+    {
+      "id": "128150766264",
+      "date": "2026-10-29",
+      "prix": 6.5,
+      "devise": "USD",
+      "titre": "Geodude (Racaillou) Common French Card Neo Revelation 44/64 LP-MP",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/128150766264",
+      "vignette": "archives-ventes-racaillou/vignettes/128150766264.webp",
+      "etat": "",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/00/s/MTYwMFgxMjAw/z/~NgAAeSw4S1q2lNy/$_1.JPG?set_id=8800005007"
+    }
+  ]
+}

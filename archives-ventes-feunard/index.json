@@ -1,0 +1,30 @@
+{
+  "pokemon": "Feunard",
+  "slug": "feunard",
+  "maj": "2026-11-10T11:22:29+01:00",
+  "source": "eBay (ebaysoldlistings.com)",
+  "periode": {
+    "depuis": "2026-10-06",
+    "note": "Ventes eBay des 5 dernières semaines, cartes françaises uniquement."
+  },
+  "cartes": [
+    {
+      "langue": "fr",
+      "id": "base1-12",
+      "nom": "Feunard",
+      "serie": "Set de Base",
+      "num": "12",
+      "nb": 1,
+      "fichier": "archives-ventes-feunard/fr/base1-12.json"
+    },
+    {
+      "langue": "fr",
+      "id": "g1-13",
+      "nom": "Feunard-EX",
+      "serie": "Générations",
+      "num": "13",
+      "nb": 1,
+      "fichier": "archives-ventes-feunard/fr/g1-13.json"
+    }
+  ]
+}

@@ -1,0 +1,138 @@
+{
+  "pokemon": "Mew",
+  "slug": "mew",
+  "maj": "2026-11-10T11:57:34+01:00",
+  "source": "eBay (ebaysoldlistings.com)",
+  "periode": {
+    "depuis": "2026-10-06",
+    "note": "Ventes eBay des 5 dernières semaines, cartes françaises uniquement."
+  },
+  "cartes": [
+    {
+      "langue": "fr",
+      "id": "sm3.5-40",
+      "nom": "Mew Brillant",
+      "serie": "Légendes Brillantes",
+      "num": "40",
+      "nb": 3,
+      "fichier": "archives-ventes-mew/fr/sm3.5-40.json"
+    },
+    {
+      "langue": "fr",
+      "id": "30th-065",
+      "nom": "Mew",
+      "serie": "30ᵉ Anniversaire",
+      "num": "065",
+      "nb": 1,
+      "fichier": "archives-ventes-mew/fr/30th-065.json"
+    },
+    {
+      "langue": "fr",
+      "id": "30th-066",
+      "nom": "Mew-ex",
+      "serie": "30ᵉ Anniversaire",
+      "num": "066",
+      "nb": 3,
+      "fichier": "archives-ventes-mew/fr/30th-066.json"
+    },
+    {
+      "langue": "fr",
+      "id": "sm10-76",
+      "nom": "Mew",
+      "serie": "Alliance Infaillible",
+      "num": "76",
+      "nb": 1,
+      "fichier": "archives-ventes-mew/fr/sm10-76.json"
+    },
+    {
+      "langue": "fr",
+      "id": "hgss4-97",
+      "nom": "Mew",
+      "serie": "Triomphant",
+      "num": "97",
+      "nb": 1,
+      "fichier": "archives-ventes-mew/fr/hgss4-97.json"
+    },
+    {
+      "langue": "fr",
+      "id": "ex13-100",
+      "nom": "Mew ex",
+      "serie": "EX Fantômes Holon",
+      "num": "100",
+      "nb": 1,
+      "fichier": "archives-ventes-mew/fr/ex13-100.json"
+    },
+    {
+      "langue": "fr",
+      "id": "ex15-101",
+      "nom": "Mew ☆ δ",
+      "serie": "EX Île des Dragons",
+      "num": "101",
+      "nb": 1,
+      "fichier": "archives-ventes-mew/fr/ex15-101.json"
+    },
+    {
+      "langue": "fr",
+      "id": "swsh8-114",
+      "nom": "Mew VMAX",
+      "serie": "Poing de Fusion",
+      "num": "114",
+      "nb": 2,
+      "fichier": "archives-ventes-mew/fr/swsh8-114.json"
+    },
+    {
+      "langue": "fr",
+      "id": "sv03.5-151",
+      "nom": "Mew-ex",
+      "serie": "151",
+      "num": "151",
+      "nb": 2,
+      "fichier": "archives-ventes-mew/fr/sv03.5-151.json"
+    },
+    {
+      "langue": "fr",
+      "id": "30th-152",
+      "nom": "Mew-ex",
+      "serie": "30ᵉ Anniversaire",
+      "num": "152",
+      "nb": 1,
+      "fichier": "archives-ventes-mew/fr/30th-152.json"
+    },
+    {
+      "langue": "fr",
+      "id": "30th-158",
+      "nom": "Mew-ex",
+      "serie": "30ᵉ Anniversaire",
+      "num": "158",
+      "nb": 3,
+      "fichier": "archives-ventes-mew/fr/30th-158.json"
+    },
+    {
+      "langue": "fr",
+      "id": "sv03.5-193",
+      "nom": "Mew-ex",
+      "serie": "151",
+      "num": "193",
+      "nb": 1,
+      "fichier": "archives-ventes-mew/fr/sv03.5-193.json"
+    },
+    {
+      "langue": "fr",
+      "id": "sv03.5-205",
+      "nom": "Mew-ex",
+      "serie": "151",
+      "num": "205",
+      "nb": 1,
+      "fichier": "archives-ventes-mew/fr/sv03.5-205.json"
+    },
+    {
+      "langue": "fr",
+      "id": "xyp-XY110",
+      "nom": "Mew",
+      "serie": "Promo XY",
+      "num": "XY110",
+      "nb": 2,
+      "fichier": "archives-ventes-mew/fr/xyp-XY110.json"
+    }
+  ]
+}

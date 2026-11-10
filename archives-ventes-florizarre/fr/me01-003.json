@@ -1,0 +1,49 @@
+{
+  "id": "me01-003",
+  "langue": "fr",
+  "nom": "Méga-Florizarre-ex",
+  "serie": "Méga-Évolution",
+  "num": "003",
+  "maj": "2026-11-10T11:17:12+0100",
+  "ventes": [
+    {
+      "id": "267437173449",
+      "date": "2026-11-07",
+      "prix": 5.5,
+      "devise": "USD",
+      "titre": "Pokemon Card MEGA-FLORIZARRE 003/132 EX Mega-Evolution MEG FR NEW",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/267437173449",
+      "vignette": "archives-ventes-florizarre/vignettes/267437173449.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/xVQAAeSwjIZo7oT7/s-l140.webp"
+    },
+    {
+      "id": "227319951143",
+      "date": "2026-10-18",
+      "prix": 3.93,
+      "devise": "USD",
+      "titre": "Pokemon Card Mega-Florizarre EX 003/132 - ME1 - Mega Evolution - MEG FR",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/227319951143",
+      "vignette": "archives-ventes-florizarre/vignettes/227319951143.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/WJQAAeSw~7pqlhIA/s-l140.webp"
+    },
+    {
+      "id": "920018992910",
+      "date": "2026-10-12",
+      "prix": 2.24,
+      "devise": "USD",
+      "titre": "Pokemon Card Mega-Florizarre ex 003/132 🇫🇷 FR 🇫🇷 Mega-Evolution",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/920018992910",
+      "vignette": "archives-ventes-florizarre/vignettes/920018992910.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/PHwAAeSwiy9qxuDC/s-l140.webp"
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "id": "2018sm-fr-10",
+  "langue": "fr",
+  "nom": "Psykokwak",
+  "serie": "Collection McDonald's 2018",
+  "num": "10",
+  "maj": "2026-11-10T11:25:05+0100",
+  "ventes": [
+    {
+      "id": "168795240162",
+      "date": "2026-10-16",
+      "prix": 95.38,
+      "devise": "USD",
+      "titre": "\"Psykokwak/Psyduck\" 10/40 *Reverse Holo* McDonalds 2018 - French - Light Played",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/168795240162",
+      "vignette": "archives-ventes-psykokwak/vignettes/168795240162.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/vp4AAeSw78Jq0dsg/s-l140.webp"
+    },
+    {
+      "id": "168769879080",
+      "date": "2026-10-08",
+      "prix": 99.31,
+      "devise": "USD",
+      "titre": "Pokemon \"Psykokwak/Psyduck\" 10/40 *Reverse Holo* McD 2018 - French - Good",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/168769879080",
+      "vignette": "archives-ventes-psykokwak/vignettes/168769879080.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/kXMAAeSwQ-Fqx1Bz/s-l140.webp"
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "pokemon": "Machopeur",
+  "slug": "machopeur",
+  "maj": "2026-11-10T11:26:29+01:00",
+  "source": "eBay (ebaysoldlistings.com)",
+  "periode": {
+    "depuis": "2026-10-06",
+    "note": "Ventes eBay des 5 dernières semaines, cartes françaises uniquement."
+  },
+  "cartes": [
+    {
+      "langue": "fr",
+      "id": "base1-34",
+      "nom": "Machopeur",
+      "serie": "Set de Base",
+      "num": "34",
+      "nb": 2,
+      "fichier": "archives-ventes-machopeur/fr/base1-34.json"
+    },
+    {
+      "langue": "fr",
+      "id": "ex12-39",
+      "nom": "Machopeur",
+      "serie": "EX Créateurs de légendes",
+      "num": "39",
+      "nb": 1,
+      "fichier": "archives-ventes-machopeur/fr/ex12-39.json"
+    },
+    {
+      "langue": "fr",
+      "id": "base5-40",
+      "nom": "Machopeur obscur",
+      "serie": "Team Rocket",
+      "num": "40",
+      "nb": 1,
+      "fichier": "archives-ventes-machopeur/fr/base5-40.json"
+    }
+  ]
+}

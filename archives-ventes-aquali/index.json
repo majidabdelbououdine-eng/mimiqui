@@ -1,0 +1,66 @@
+{
+  "pokemon": "Aquali",
+  "slug": "aquali",
+  "maj": "2026-11-10T11:54:13+01:00",
+  "source": "eBay (ebaysoldlistings.com)",
+  "periode": {
+    "depuis": "2026-10-06",
+    "note": "Ventes eBay des 5 dernières semaines, cartes françaises uniquement."
+  },
+  "cartes": [
+    {
+      "langue": "fr",
+      "id": "2013bw-3",
+      "nom": "Aquali",
+      "serie": "Collection McDonald's 2013",
+      "num": "3",
+      "nb": 4,
+      "fichier": "archives-ventes-aquali/fr/2013bw-3.json"
+    },
+    {
+      "langue": "fr",
+      "id": "sv08.5-023",
+      "nom": "Aquali-ex",
+      "serie": "Évolutions Prismatiques",
+      "num": "023",
+      "nb": 1,
+      "fichier": "archives-ventes-aquali/fr/sv08.5-023.json"
+    },
+    {
+      "langue": "fr",
+      "id": "base2-28",
+      "nom": "Aquali",
+      "serie": "Jungle",
+      "num": "28",
+      "nb": 1,
+      "fichier": "archives-ventes-aquali/fr/base2-28.json"
+    },
+    {
+      "langue": "fr",
+      "id": "base5-45",
+      "nom": "Aquali obscur",
+      "serie": "Team Rocket",
+      "num": "45",
+      "nb": 1,
+      "fichier": "archives-ventes-aquali/fr/base5-45.json"
+    },
+    {
+      "langue": "fr",
+      "id": "sv03.5-134",
+      "nom": "Aquali",
+      "serie": "151",
+      "num": "134",
+      "nb": 1,
+      "fichier": "archives-ventes-aquali/fr/sv03.5-134.json"
+    },
+    {
+      "langue": "fr",
+      "id": "swshp-SWSH150",
+      "nom": "Aquali V",
+      "serie": "Promo SWSH",
+      "num": "SWSH150",
+      "nb": 1,
+      "fichier": "archives-ventes-aquali/fr/swshp-SWSH150.json"
+    }
+  ]
+}

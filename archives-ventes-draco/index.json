@@ -1,0 +1,30 @@
+{
+  "pokemon": "Draco",
+  "slug": "draco",
+  "maj": "2026-11-10T11:57:28+01:00",
+  "source": "eBay (ebaysoldlistings.com)",
+  "periode": {
+    "depuis": "2026-10-06",
+    "note": "Ventes eBay des 5 dernières semaines, cartes françaises uniquement."
+  },
+  "cartes": [
+    {
+      "langue": "fr",
+      "id": "base1-18",
+      "nom": "Draco",
+      "serie": "Set de Base",
+      "num": "18",
+      "nb": 4,
+      "fichier": "archives-ventes-draco/fr/base1-18.json"
+    },
+    {
+      "langue": "fr",
+      "id": "base5-33",
+      "nom": "Draco obscur",
+      "serie": "Team Rocket",
+      "num": "33",
+      "nb": 1,
+      "fichier": "archives-ventes-draco/fr/base5-33.json"
+    }
+  ]
+}

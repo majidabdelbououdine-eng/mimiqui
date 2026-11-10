@@ -1,0 +1,49 @@
+{
+  "id": "base1-44",
+  "langue": "fr",
+  "nom": "Bulbizarre",
+  "serie": "Set de Base",
+  "num": "44",
+  "maj": "2026-11-10T11:17:12+0100",
+  "ventes": [
+    {
+      "id": "407310336140",
+      "date": "2026-11-02",
+      "prix": 36.0,
+      "devise": "USD",
+      "titre": "Pokemon 1999 Bulbizarre 44/102 1st Edition Base Set French PSA 7",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/407310336140",
+      "vignette": "archives-ventes-bulbizarre/vignettes/407310336140.webp",
+      "etat": "PSA 7",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/00/s/MTYwMFg4ODM=/z/ZI0AAeSwEUpq2tUp/$_1.JPG?set_id=8800005007"
+    },
+    {
+      "id": "307216286464",
+      "date": "2026-10-15",
+      "prix": 34.6,
+      "devise": "USD",
+      "titre": "Pokemon Bulbizarre 1st Edition 44/102 Base Set French Bulbasaur Heavily Played",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/307216286464",
+      "vignette": "archives-ventes-bulbizarre/vignettes/307216286464.webp",
+      "etat": "",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/00/s/MTU5OVgxMTk5/z/I1IAAeSwHmBqxES3/$_1.JPG?set_id=8800005007"
+    },
+    {
+      "id": "267751149631",
+      "date": "2026-10-09",
+      "prix": 10.0,
+      "devise": "USD",
+      "titre": "Bulbizarre 44/102 Base Set French Pokémon Card 1999 See Pics",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/267751149631",
+      "vignette": "archives-ventes-bulbizarre/vignettes/267751149631.webp",
+      "etat": "",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/00/s/MTYwMFgxMjAw/z/if8AAeSwE-hqdxtq/$_1.JPG?set_id=8800005007"
+    }
+  ]
+}

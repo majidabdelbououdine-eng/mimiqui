@@ -1,0 +1,21 @@
+{
+  "pokemon": "Herbizarre",
+  "slug": "herbizarre",
+  "maj": "2026-11-10T11:17:12+01:00",
+  "source": "eBay (ebaysoldlistings.com)",
+  "periode": {
+    "depuis": "2026-10-06",
+    "note": "Ventes eBay des 5 dernières semaines, cartes françaises uniquement."
+  },
+  "cartes": [
+    {
+      "langue": "fr",
+      "id": "base1-30",
+      "nom": "Herbizarre",
+      "serie": "Set de Base",
+      "num": "30",
+      "nb": 2,
+      "fichier": "archives-ventes-herbizarre/fr/base1-30.json"
+    }
+  ]
+}

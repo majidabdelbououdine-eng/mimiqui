@@ -1,0 +1,21 @@
+{
+  "pokemon": "Osselait",
+  "slug": "osselait",
+  "maj": "2026-11-10T11:41:27+01:00",
+  "source": "eBay (ebaysoldlistings.com)",
+  "periode": {
+    "depuis": "2026-10-06",
+    "note": "Ventes eBay des 5 dernières semaines, cartes françaises uniquement."
+  },
+  "cartes": [
+    {
+      "langue": "fr",
+      "id": "base2-50",
+      "nom": "Osselait",
+      "serie": "Jungle",
+      "num": "50",
+      "nb": 3,
+      "fichier": "archives-ventes-osselait/fr/base2-50.json"
+    }
+  ]
+}

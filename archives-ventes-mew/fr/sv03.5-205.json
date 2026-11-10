@@ -1,0 +1,23 @@
+{
+  "id": "sv03.5-205",
+  "langue": "fr",
+  "nom": "Mew-ex",
+  "serie": "151",
+  "num": "205",
+  "maj": "2026-11-10T11:57:34+0100",
+  "ventes": [
+    {
+      "id": "307239179190",
+      "date": "2026-10-21",
+      "prix": 27.95,
+      "devise": "USD",
+      "titre": "Mew ex 205/165 Metal Pokemon EV3.5 : 151 French",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/307239179190",
+      "vignette": "archives-ventes-mew/vignettes/307239179190.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/LSYAAeSwCGZq1hdl/s-l140.webp"
+    }
+  ]
+}

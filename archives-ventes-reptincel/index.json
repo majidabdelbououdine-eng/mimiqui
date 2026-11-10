@@ -1,0 +1,48 @@
+{
+  "pokemon": "Reptincel",
+  "slug": "reptincel",
+  "maj": "2026-11-10T11:17:12+01:00",
+  "source": "eBay (ebaysoldlistings.com)",
+  "periode": {
+    "depuis": "2026-10-06",
+    "note": "Ventes eBay des 5 dernières semaines, cartes françaises uniquement."
+  },
+  "cartes": [
+    {
+      "langue": "fr",
+      "id": "sv03.5-005",
+      "nom": "Reptincel",
+      "serie": "151",
+      "num": "005",
+      "nb": 1,
+      "fichier": "archives-ventes-reptincel/fr/sv03.5-005.json"
+    },
+    {
+      "langue": "fr",
+      "id": "sv03-027",
+      "nom": "Reptincel",
+      "serie": "Flammes Obsidiennes",
+      "num": "027",
+      "nb": 1,
+      "fichier": "archives-ventes-reptincel/fr/sv03-027.json"
+    },
+    {
+      "langue": "fr",
+      "id": "ex14-30",
+      "nom": "Reptincel δ",
+      "serie": "EX Gardiens de Cristal",
+      "num": "30",
+      "nb": 1,
+      "fichier": "archives-ventes-reptincel/fr/ex14-30.json"
+    },
+    {
+      "langue": "fr",
+      "id": "base5-32",
+      "nom": "Reptincel Obscur",
+      "serie": "Team Rocket",
+      "num": "32",
+      "nb": 3,
+      "fichier": "archives-ventes-reptincel/fr/base5-32.json"
+    }
+  ]
+}

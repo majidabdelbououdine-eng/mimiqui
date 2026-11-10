@@ -1,0 +1,21 @@
+{
+  "pokemon": "Voltorbe",
+  "slug": "voltorbe",
+  "maj": "2026-11-10T11:39:25+01:00",
+  "source": "eBay (ebaysoldlistings.com)",
+  "periode": {
+    "depuis": "2026-10-06",
+    "note": "Ventes eBay des 5 dernières semaines, cartes françaises uniquement."
+  },
+  "cartes": [
+    {
+      "langue": "fr",
+      "id": "base5-69",
+      "nom": "Voltorbe",
+      "serie": "Team Rocket",
+      "num": "69",
+      "nb": 1,
+      "fichier": "archives-ventes-voltorbe/fr/base5-69.json"
+    }
+  ]
+}

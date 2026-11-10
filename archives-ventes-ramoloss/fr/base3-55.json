@@ -1,0 +1,36 @@
+{
+  "id": "base3-55",
+  "langue": "fr",
+  "nom": "Ramoloss",
+  "serie": "Fossile",
+  "num": "55",
+  "maj": "2026-11-10T11:29:40+0100",
+  "ventes": [
+    {
+      "id": "257826307243",
+      "date": "2026-11-07",
+      "prix": 2.94,
+      "devise": "USD",
+      "titre": "Vintage Rare Pokemon TCG Ramoloss #55/62 FRENCH 1st Edition Fossil Slowpoke",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/257826307243",
+      "vignette": "archives-ventes-ramoloss/vignettes/257826307243.webp",
+      "etat": "",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/00/s/MTYwMFgxNjAw/z/LTAAAeSwsZJq5WfU/$_1.JPG?set_id=8800005007"
+    },
+    {
+      "id": "188258436277",
+      "date": "2026-10-15",
+      "prix": 5.0,
+      "devise": "USD",
+      "titre": "Slowpoke Ramoloss 55/62 - Fossil French - Pokemon Card",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/188258436277",
+      "vignette": "archives-ventes-ramoloss/vignettes/188258436277.webp",
+      "etat": "",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/00/s/MTYwMFgxNjAw/z/3LIAAeSwZ81p1wxV/$_57.JPG?set_id=880000500F"
+    }
+  ]
+}

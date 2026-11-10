@@ -1,0 +1,23 @@
+{
+  "id": "base5-44",
+  "langue": "fr",
+  "nom": "Galopa obscur",
+  "serie": "Team Rocket",
+  "num": "44",
+  "maj": "2026-11-10T11:29:37+0100",
+  "ventes": [
+    {
+      "id": "267836195388",
+      "date": "2026-11-10",
+      "prix": 10.0,
+      "devise": "USD",
+      "titre": "Wizards of the Coast Dark Rapidash Team Rocket 1999 French 44/82 Rare",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/267836195388",
+      "vignette": "archives-ventes-galopa/vignettes/267836195388.webp",
+      "etat": "",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/00/s/MTYwMFgxMjAw/z/Wx4AAeSwuQtq7spV/$_1.JPG?set_id=8800005007"
+    }
+  ]
+}

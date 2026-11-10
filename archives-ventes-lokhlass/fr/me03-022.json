@@ -1,0 +1,49 @@
+{
+  "id": "me03-022",
+  "langue": "fr",
+  "nom": "Lokhlass-ex",
+  "serie": "Équilibre Parfait",
+  "num": "022",
+  "maj": "2026-11-10T11:53:19+0100",
+  "ventes": [
+    {
+      "id": "800633470937",
+      "date": "2026-10-22",
+      "prix": 1.45,
+      "devise": "USD",
+      "titre": "Lapras ex 022/088 Me: Perfect Order Double Rare French Pokemon Holo NM",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/800633470937",
+      "vignette": "archives-ventes-lokhlass/vignettes/800633470937.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/8GgAAeSwjkZqoLgT/s-l140.webp"
+    },
+    {
+      "id": "267658002991",
+      "date": "2026-10-17",
+      "prix": 5.5,
+      "devise": "USD",
+      "titre": "Pokemon Card LOKHLASS 022/088 EX ME03 Perfect Balance POR FR NEW",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/267658002991",
+      "vignette": "archives-ventes-lokhlass/vignettes/267658002991.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/02kAAeSwCmBp9wBr/s-l140.webp"
+    },
+    {
+      "id": "227386926806",
+      "date": "2026-10-12",
+      "prix": 4.38,
+      "devise": "USD",
+      "titre": "Pokemon Card Lokhlass EX 022/088 - POR ME3 Perfect Balance FR",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/227386926806",
+      "vignette": "archives-ventes-lokhlass/vignettes/227386926806.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/NgoAAeSwiuJqfdbH/s-l140.webp"
+    }
+  ]
+}

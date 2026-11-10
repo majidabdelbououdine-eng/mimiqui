@@ -1,0 +1,23 @@
+{
+  "id": "ex15-101",
+  "langue": "fr",
+  "nom": "Mew ☆ δ",
+  "serie": "EX Île des Dragons",
+  "num": "101",
+  "maj": "2026-11-10T11:57:34+0100",
+  "ventes": [
+    {
+      "id": "327416273411",
+      "date": "2026-10-23",
+      "prix": 871.76,
+      "devise": "USD",
+      "titre": "POKEMON Mew 101/101 GOLD STAR P-Good Ex Dragon Islands 2007 FR 🇫🇷",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/327416273411",
+      "vignette": "archives-ventes-mew/vignettes/327416273411.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/KloAAeSwRQpq2LuQ/s-l140.webp"
+    }
+  ]
+}

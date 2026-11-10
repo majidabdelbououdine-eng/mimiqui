@@ -1,0 +1,23 @@
+{
+  "id": "ex6-82",
+  "langue": "fr",
+  "nom": "Carapuce",
+  "serie": "EX Rouge Feu & Vert Feuille",
+  "num": "82",
+  "maj": "2026-11-10T11:17:12+0100",
+  "ventes": [
+    {
+      "id": "198472074821",
+      "date": "2026-11-02",
+      "prix": 10.66,
+      "devise": "USD",
+      "titre": "Pokemon Card COMMON Carapuce 82/112 EX Red Fire Green Leaf Block EX FR NM",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/198472074821",
+      "vignette": "archives-ventes-carapuce/vignettes/198472074821.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/~GsAAeSwXCJqNns3/s-l140.webp"
+    }
+  ]
+}

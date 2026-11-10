@@ -1,0 +1,21 @@
+{
+  "pokemon": "Racaillou",
+  "slug": "racaillou",
+  "maj": "2026-11-10T11:28:04+01:00",
+  "source": "eBay (ebaysoldlistings.com)",
+  "periode": {
+    "depuis": "2026-10-06",
+    "note": "Ventes eBay des 5 dernières semaines, cartes françaises uniquement."
+  },
+  "cartes": [
+    {
+      "langue": "fr",
+      "id": "neo3-44",
+      "nom": "Racaillou",
+      "serie": "Neo Revelation",
+      "num": "44",
+      "nb": 1,
+      "fichier": "archives-ventes-racaillou/fr/neo3-44.json"
+    }
+  ]
+}

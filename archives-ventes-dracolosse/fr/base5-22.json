@@ -1,0 +1,23 @@
+{
+  "id": "base5-22",
+  "langue": "fr",
+  "nom": "Dracolosse obscur",
+  "serie": "Team Rocket",
+  "num": "22",
+  "maj": "2026-11-10T11:57:38+0100",
+  "ventes": [
+    {
+      "id": "377607228968",
+      "date": "2026-10-30",
+      "prix": 110.0,
+      "devise": "USD",
+      "titre": "Dark Dragonite 1st Edition Team Rocket 22/82 French 1999 Rare Regular",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/377607228968",
+      "vignette": "archives-ventes-dracolosse/vignettes/377607228968.webp",
+      "etat": "",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/5TQAAeSwqNZq5AaL/s-l1600.jpg"
+    }
+  ]
+}

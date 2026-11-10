@@ -1,0 +1,23 @@
+{
+  "id": "neo4-73",
+  "langue": "fr",
+  "nom": "Machoc",
+  "serie": "Neo Destiny",
+  "num": "73",
+  "maj": "2026-11-10T11:26:36+0100",
+  "ventes": [
+    {
+      "id": "257805008057",
+      "date": "2026-10-25",
+      "prix": 1.95,
+      "devise": "USD",
+      "titre": "Pokemon MACHOC 73/105 Non Holo FRENCH (2000 Neo Destiny) LP/Light Play",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/257805008057",
+      "vignette": "archives-ventes-machoc/vignettes/257805008057.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/cyUAAeSwQ7dqcmRq/s-l140.webp"
+    }
+  ]
+}

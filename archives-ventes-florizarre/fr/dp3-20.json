@@ -1,0 +1,23 @@
+{
+  "id": "dp3-20",
+  "langue": "fr",
+  "nom": "Florizarre",
+  "serie": "Merveilles Secrètes",
+  "num": "20",
+  "maj": "2026-11-10T11:17:12+0100",
+  "ventes": [
+    {
+      "id": "265331140513",
+      "date": "2026-10-25",
+      "prix": 12.23,
+      "devise": "USD",
+      "titre": "FLORIZARRE HOLO - POKEMON 20/132 DP SECRET WONDERS CORRECT CONDITION FR",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/265331140513",
+      "vignette": "archives-ventes-florizarre/vignettes/265331140513.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/DMYAAOSwWslhUJfs/s-l500.webp"
+    }
+  ]
+}

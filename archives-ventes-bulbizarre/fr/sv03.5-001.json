@@ -1,0 +1,23 @@
+{
+  "id": "sv03.5-001",
+  "langue": "fr",
+  "nom": "Bulbizarre",
+  "serie": "151",
+  "num": "001",
+  "maj": "2026-11-10T11:17:12+0100",
+  "ventes": [
+    {
+      "id": "307242584769",
+      "date": "2026-10-31",
+      "prix": 2.13,
+      "devise": "USD",
+      "titre": "Bulbizarre 001/165 Reverse Pokemon EV3.5 : 151 French",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/307242584769",
+      "vignette": "archives-ventes-bulbizarre/vignettes/307242584769.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/qswAAeSw46Vq2N~g/s-l500.webp"
+    }
+  ]
+}

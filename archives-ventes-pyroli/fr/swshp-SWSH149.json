@@ -1,0 +1,23 @@
+{
+  "id": "swshp-SWSH149",
+  "langue": "fr",
+  "nom": "Pyroli V",
+  "serie": "Promo SWSH",
+  "num": "SWSH149",
+  "maj": "2026-11-10T11:54:54+0100",
+  "ventes": [
+    {
+      "id": "137489543753",
+      "date": "2026-10-11",
+      "prix": 5.82,
+      "devise": "USD",
+      "titre": "Pokemon Card Pyroli V Holo Promo SWSH149 FR Near Mint",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/137489543753",
+      "vignette": "archives-ventes-pyroli/vignettes/137489543753.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/oAQAAeSwJrVqTCp-/s-l140.webp"
+    }
+  ]
+}

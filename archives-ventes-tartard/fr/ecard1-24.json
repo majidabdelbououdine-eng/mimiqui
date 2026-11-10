@@ -1,0 +1,23 @@
+{
+  "id": "ecard1-24",
+  "langue": "fr",
+  "nom": "Tartard",
+  "serie": "Expedition",
+  "num": "24",
+  "maj": "2026-11-10T11:26:07+0100",
+  "ventes": [
+    {
+      "id": "267533822619",
+      "date": "2026-10-19",
+      "prix": 185.18,
+      "devise": "USD",
+      "titre": "TARTARD HOLO - POKÉMON 24/165 EXPEDITION FR",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/267533822619",
+      "vignette": "archives-ventes-tartard/vignettes/267533822619.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/q28AAeSwu5RpWqVD/s-l140.webp"
+    }
+  ]
+}

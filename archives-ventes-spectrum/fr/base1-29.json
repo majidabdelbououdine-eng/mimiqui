@@ -1,0 +1,36 @@
+{
+  "id": "base1-29",
+  "langue": "fr",
+  "nom": "Spectrum",
+  "serie": "Set de Base",
+  "num": "29",
+  "maj": "2026-11-10T11:35:17+0100",
+  "ventes": [
+    {
+      "id": "366769984707",
+      "date": "2026-10-31",
+      "prix": 15.99,
+      "devise": "USD",
+      "titre": "FRENCH - Haunter - 29/102 Base Set - 1st Edition - Uncommon - MP - Pokemon",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/366769984707",
+      "vignette": "archives-ventes-spectrum/vignettes/366769984707.webp",
+      "etat": "",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/00/s/MTYwMFgxMTg2/z/wlYAAeSw7Vdq493F/$_1.JPG?set_id=8800005007"
+    },
+    {
+      "id": "407104675946",
+      "date": "2026-10-07",
+      "prix": 40.0,
+      "devise": "USD",
+      "titre": "Pokemon 1999 Haunter 29/102 1st Edition Base Set French PSA 7",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/407104675946",
+      "vignette": "archives-ventes-spectrum/vignettes/407104675946.webp",
+      "etat": "PSA 7",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/00/s/MTYwMFg4ODM=/z/16AAAeSwDhxqaRPL/$_1.JPG?set_id=8800005007"
+    }
+  ]
+}

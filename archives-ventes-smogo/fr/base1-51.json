@@ -1,0 +1,23 @@
+{
+  "id": "base1-51",
+  "langue": "fr",
+  "nom": "Smogo",
+  "serie": "Set de Base",
+  "num": "51",
+  "maj": "2026-11-10T11:43:29+0100",
+  "ventes": [
+    {
+      "id": "377603174448",
+      "date": "2026-11-01",
+      "prix": 5.0,
+      "devise": "USD",
+      "titre": "1st Edition FRENCH Pokemon Smogo 51/102 Base Set French 1999 50HP Koffing",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/377603174448",
+      "vignette": "archives-ventes-smogo/vignettes/377603174448.webp",
+      "etat": "",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/ee8AAeSwYmBq4bko/s-l1600.jpg"
+    }
+  ]
+}

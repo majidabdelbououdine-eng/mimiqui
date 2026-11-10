@@ -1,0 +1,23 @@
+{
+  "id": "g1-36",
+  "langue": "fr",
+  "nom": "Lippoutou",
+  "serie": "Générations",
+  "num": "36",
+  "maj": "2026-11-10T11:51:49+0100",
+  "ventes": [
+    {
+      "id": "255467474886",
+      "date": "2026-10-28",
+      "prix": 2.13,
+      "devise": "USD",
+      "titre": "Pokemon Card LIPPOUTOU 36/83 Rare XY GENERATIONS FR",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/255467474886",
+      "vignette": "archives-ventes-lippoutou/vignettes/255467474886.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/N6MAAOSw-I1iSBYa/s-l140.webp"
+    }
+  ]
+}

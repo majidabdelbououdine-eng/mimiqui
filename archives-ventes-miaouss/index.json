@@ -1,0 +1,48 @@
+{
+  "pokemon": "Miaouss",
+  "slug": "miaouss",
+  "maj": "2026-11-10T11:24:58+01:00",
+  "source": "eBay (ebaysoldlistings.com)",
+  "periode": {
+    "depuis": "2026-10-06",
+    "note": "Ventes eBay des 5 dernières semaines, cartes françaises uniquement."
+  },
+  "cartes": [
+    {
+      "langue": "fr",
+      "id": "base2-56",
+      "nom": "Miaouss",
+      "serie": "Jungle",
+      "num": "56",
+      "nb": 1,
+      "fichier": "archives-ventes-miaouss/fr/base2-56.json"
+    },
+    {
+      "langue": "fr",
+      "id": "base5-62",
+      "nom": "Miaouss",
+      "serie": "Team Rocket",
+      "num": "62",
+      "nb": 3,
+      "fichier": "archives-ventes-miaouss/fr/base5-62.json"
+    },
+    {
+      "langue": "fr",
+      "id": "swsh2-126",
+      "nom": "Miaouss de Galar",
+      "serie": "Clash des Rebelles",
+      "num": "126",
+      "nb": 1,
+      "fichier": "archives-ventes-miaouss/fr/swsh2-126.json"
+    },
+    {
+      "langue": "fr",
+      "id": "30th-139",
+      "nom": "Miaouss d'Alola",
+      "serie": "30ᵉ Anniversaire",
+      "num": "139",
+      "nb": 1,
+      "fichier": "archives-ventes-miaouss/fr/30th-139.json"
+    }
+  ]
+}

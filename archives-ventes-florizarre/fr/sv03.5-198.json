@@ -1,0 +1,36 @@
+{
+  "id": "sv03.5-198",
+  "langue": "fr",
+  "nom": "Florizarre-ex",
+  "serie": "151",
+  "num": "198",
+  "maj": "2026-11-10T11:17:12+0100",
+  "ventes": [
+    {
+      "id": "188650601840",
+      "date": "2026-11-08",
+      "prix": 151.5,
+      "devise": "USD",
+      "titre": "French Pokemon Card - Florizarre EX ALT 198/165 - EV3.5 151",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/188650601840",
+      "vignette": "archives-ventes-florizarre/vignettes/188650601840.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/m04AAeSwRT1qWRst/s-l140.webp"
+    },
+    {
+      "id": "188909168058",
+      "date": "2026-10-09",
+      "prix": 168.33,
+      "devise": "USD",
+      "titre": "French Pokemon Card - Florizarre EX 198/165 - CCC 9",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/188909168058",
+      "vignette": "archives-ventes-florizarre/vignettes/188909168058.webp",
+      "etat": "New (Other)",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/CAwAAeSww5ZqoZf2/s-l140.webp"
+    }
+  ]
+}

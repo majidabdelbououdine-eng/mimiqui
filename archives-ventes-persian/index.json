@@ -1,0 +1,30 @@
+{
+  "pokemon": "Persian",
+  "slug": "persian",
+  "maj": "2026-11-10T11:25:05+01:00",
+  "source": "eBay (ebaysoldlistings.com)",
+  "periode": {
+    "depuis": "2026-10-06",
+    "note": "Ventes eBay des 5 dernières semaines, cartes françaises uniquement."
+  },
+  "cartes": [
+    {
+      "langue": "fr",
+      "id": "base2-42",
+      "nom": "Persian",
+      "serie": "Jungle",
+      "num": "42",
+      "nb": 2,
+      "fichier": "archives-ventes-persian/fr/base2-42.json"
+    },
+    {
+      "langue": "fr",
+      "id": "base5-42",
+      "nom": "Persian obscur",
+      "serie": "Team Rocket",
+      "num": "42",
+      "nb": 2,
+      "fichier": "archives-ventes-persian/fr/base5-42.json"
+    }
+  ]
+}

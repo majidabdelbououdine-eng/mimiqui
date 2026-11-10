@@ -1,0 +1,21 @@
+{
+  "pokemon": "Électhor",
+  "slug": "electhor",
+  "maj": "2026-11-10T11:56:27+01:00",
+  "source": "eBay (ebaysoldlistings.com)",
+  "periode": {
+    "depuis": "2026-10-06",
+    "note": "Ventes eBay des 5 dernières semaines, cartes françaises uniquement."
+  },
+  "cartes": [
+    {
+      "langue": "fr",
+      "id": "base1-16",
+      "nom": "Électhor",
+      "serie": "Set de Base",
+      "num": "16",
+      "nb": 1,
+      "fichier": "archives-ventes-electhor/fr/base1-16.json"
+    }
+  ]
+}

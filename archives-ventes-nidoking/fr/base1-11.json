@@ -1,0 +1,49 @@
+{
+  "id": "base1-11",
+  "langue": "fr",
+  "nom": "Nidoking",
+  "serie": "Set de Base",
+  "num": "11",
+  "maj": "2026-11-10T11:21:09+0100",
+  "ventes": [
+    {
+      "id": "840058409195",
+      "date": "2026-11-01",
+      "prix": 214.01,
+      "devise": "USD",
+      "titre": "Nidoking 11/102 French 1st Edition Holo Base Set Pokemon WOTC Vintage",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/840058409195",
+      "vignette": "archives-ventes-nidoking/vignettes/840058409195.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/vioAAeSw0VRq28Xb/s-l500.webp"
+    },
+    {
+      "id": "840052758642",
+      "date": "2026-10-24",
+      "prix": 420.0,
+      "devise": "USD",
+      "titre": "Nidoking 11/102 French 1st Edition Holo Base Set Pokemon WOTC Vintage",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/840052758642",
+      "vignette": "archives-ventes-nidoking/vignettes/840052758642.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/vioAAeSw0VRq28Xb/s-l500.webp"
+    },
+    {
+      "id": "237070294563",
+      "date": "2026-10-15",
+      "prix": 250.0,
+      "devise": "USD",
+      "titre": "Nidoking 11/102 French 1st Edition Holo Base Set Pokemon WOTC Vintage",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/237070294563",
+      "vignette": "archives-ventes-nidoking/vignettes/237070294563.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/~SQAAeSwj0lqqeXZ/s-l140.webp"
+    }
+  ]
+}

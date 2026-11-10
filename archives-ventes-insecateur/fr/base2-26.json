@@ -1,0 +1,23 @@
+{
+  "id": "base2-26",
+  "langue": "fr",
+  "nom": "Insécateur",
+  "serie": "Jungle",
+  "num": "26",
+  "maj": "2026-11-10T11:51:29+0100",
+  "ventes": [
+    {
+      "id": "800784794901",
+      "date": "2026-10-12",
+      "prix": 4.49,
+      "devise": "USD",
+      "titre": "Scyther (Insecteur) 26/64 Jungle Rare Regular FR 70HP (1999)",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/800784794901",
+      "vignette": "archives-ventes-insecateur/vignettes/800784794901.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/33cAAeSw8wZqzC2m/s-l140.webp"
+    }
+  ]
+}

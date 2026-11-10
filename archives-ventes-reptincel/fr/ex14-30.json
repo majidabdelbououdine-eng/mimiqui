@@ -1,0 +1,23 @@
+{
+  "id": "ex14-30",
+  "langue": "fr",
+  "nom": "Reptincel δ",
+  "serie": "EX Gardiens de Cristal",
+  "num": "30",
+  "maj": "2026-11-10T11:17:12+0100",
+  "ventes": [
+    {
+      "id": "327419645973",
+      "date": "2026-11-01",
+      "prix": 3.03,
+      "devise": "USD",
+      "titre": "POKEMON Reptincel 30/100 P-Good Ex Guardians of Crystal 2007 Unco FR 🇫🇷",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/327419645973",
+      "vignette": "archives-ventes-reptincel/vignettes/327419645973.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/CKMAAeSw8oNq2039/s-l140.webp"
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "pokemon": "Carapuce",
+  "slug": "carapuce",
+  "maj": "2026-11-10T11:17:12+01:00",
+  "source": "eBay (ebaysoldlistings.com)",
+  "periode": {
+    "depuis": "2026-10-06",
+    "note": "Ventes eBay des 5 dernières semaines, cartes françaises uniquement."
+  },
+  "cartes": [
+    {
+      "langue": "fr",
+      "id": "sv03.5-007",
+      "nom": "Carapuce",
+      "serie": "151",
+      "num": "007",
+      "nb": 2,
+      "fichier": "archives-ventes-carapuce/fr/sv03.5-007.json"
+    },
+    {
+      "langue": "fr",
+      "id": "hgss2-63",
+      "nom": "Carapuce",
+      "serie": "Déchaînement",
+      "num": "63",
+      "nb": 1,
+      "fichier": "archives-ventes-carapuce/fr/hgss2-63.json"
+    },
+    {
+      "langue": "fr",
+      "id": "base5-68",
+      "nom": "Carapuce",
+      "serie": "Team Rocket",
+      "num": "68",
+      "nb": 6,
+      "fichier": "archives-ventes-carapuce/fr/base5-68.json"
+    },
+    {
+      "langue": "fr",
+      "id": "ex6-82",
+      "nom": "Carapuce",
+      "serie": "EX Rouge Feu & Vert Feuille",
+      "num": "82",
+      "nb": 1,
+      "fichier": "archives-ventes-carapuce/fr/ex6-82.json"
+    }
+  ]
+}

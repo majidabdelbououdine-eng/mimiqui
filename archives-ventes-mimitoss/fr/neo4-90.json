@@ -1,0 +1,49 @@
+{
+  "id": "neo4-90",
+  "langue": "fr",
+  "nom": "Mimitoss",
+  "serie": "Neo Destiny",
+  "num": "90",
+  "maj": "2026-11-10T11:24:39+0100",
+  "ventes": [
+    {
+      "id": "960123270200",
+      "date": "2026-11-06",
+      "prix": 0.99,
+      "devise": "USD",
+      "titre": "2000 Poemon Mimitoss Neo Destiny French - 90/105 Top Shelf 7.5",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/960123270200",
+      "vignette": "archives-ventes-mimitoss/vignettes/960123270200.webp",
+      "etat": "New (Other)",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/vCkAAeSwQPhq4OJF/s-l500.webp"
+    },
+    {
+      "id": "257812443890",
+      "date": "2026-10-29",
+      "prix": 6.5,
+      "devise": "USD",
+      "titre": "Pokemon French No. 90/105 - Mimitoss - 40HP  LP",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/257812443890",
+      "vignette": "archives-ventes-mimitoss/vignettes/257812443890.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/eEUAAeSwPTBqoybC/s-l500.webp"
+    },
+    {
+      "id": "196430227286",
+      "date": "2026-10-26",
+      "prix": 3.37,
+      "devise": "USD",
+      "titre": "Carte Pokemon MIMITOSS 90/105 Commune Néo Destiny Wizard FR",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/196430227286",
+      "vignette": "archives-ventes-mimitoss/vignettes/196430227286.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/kfAAAOSw9r9ktwaP/s-l140.webp"
+    }
+  ]
+}

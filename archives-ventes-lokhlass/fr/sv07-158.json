@@ -1,0 +1,23 @@
+{
+  "id": "sv07-158",
+  "langue": "fr",
+  "nom": "Lokhlass-ex",
+  "serie": "Couronne Stellaire",
+  "num": "158",
+  "maj": "2026-11-10T11:53:19+0100",
+  "ventes": [
+    {
+      "id": "256663736197",
+      "date": "2026-10-21",
+      "prix": 16.72,
+      "devise": "USD",
+      "titre": "Pokemon Card LOKHLASS 158/142 EX FA Full Art EV7 SCR FR NEW",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/256663736197",
+      "vignette": "archives-ventes-lokhlass/vignettes/256663736197.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/ZH4AAOSwx69m~q1W/s-l140.webp"
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "id": "xyp-XY110",
+  "langue": "fr",
+  "nom": "Mew",
+  "serie": "Promo XY",
+  "num": "XY110",
+  "maj": "2026-11-10T11:57:34+0100",
+  "ventes": [
+    {
+      "id": "237000276585",
+      "date": "2026-11-04",
+      "prix": 399.0,
+      "devise": "USD",
+      "titre": "Mew XY110 XY Holo - French - Pop. 2",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/237000276585",
+      "vignette": "archives-ventes-mew/vignettes/237000276585.webp",
+      "etat": "New (Other)",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/ZM4AAeSwCz5qe6nq/s-l500.webp"
+    },
+    {
+      "id": "188393888954",
+      "date": "2026-10-18",
+      "prix": 399.99,
+      "devise": "USD",
+      "titre": "Mew XY110 XY Holo - French - Pop. 2",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/188393888954",
+      "vignette": "archives-ventes-mew/vignettes/188393888954.webp",
+      "etat": "New (Other)",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/LnQAAeSwQW9qCjYP/s-l140.webp"
+    }
+  ]
+}

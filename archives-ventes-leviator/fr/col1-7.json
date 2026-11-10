@@ -1,0 +1,23 @@
+{
+  "id": "col1-7",
+  "langue": "fr",
+  "nom": "Léviator",
+  "serie": "L'appel des Légendes",
+  "num": "7",
+  "maj": "2026-11-10T11:53:22+0100",
+  "ventes": [
+    {
+      "id": "820092332117",
+      "date": "2026-10-09",
+      "prix": 50.0,
+      "devise": "USD",
+      "titre": "Gyarados 7/95 Holo Rare Call of Legends Pokemon Near Mint French",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/820092332117",
+      "vignette": "archives-ventes-leviator/vignettes/820092332117.webp",
+      "etat": "",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/00/s/MTYwMFgxMTc1/z/qowAAeSwT-hqnJzS/$_1.JPG?set_id=8800005007"
+    }
+  ]
+}

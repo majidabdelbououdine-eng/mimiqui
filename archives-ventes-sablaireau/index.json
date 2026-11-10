@@ -1,0 +1,21 @@
+{
+  "pokemon": "Sablaireau",
+  "slug": "sablaireau",
+  "maj": "2026-11-10T11:19:21+01:00",
+  "source": "eBay (ebaysoldlistings.com)",
+  "periode": {
+    "depuis": "2026-10-06",
+    "note": "Ventes eBay des 5 dernières semaines, cartes françaises uniquement."
+  },
+  "cartes": [
+    {
+      "langue": "fr",
+      "id": "base3-41",
+      "nom": "Sablaireau",
+      "serie": "Fossile",
+      "num": "41",
+      "nb": 2,
+      "fichier": "archives-ventes-sablaireau/fr/base3-41.json"
+    }
+  ]
+}

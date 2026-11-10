@@ -1,0 +1,23 @@
+{
+  "id": "hgss4-97",
+  "langue": "fr",
+  "nom": "Mew",
+  "serie": "Triomphant",
+  "num": "97",
+  "maj": "2026-11-10T11:57:34+0100",
+  "ventes": [
+    {
+      "id": "227572068264",
+      "date": "2026-10-25",
+      "prix": 700.0,
+      "devise": "USD",
+      "titre": "Mew Prime Triumphant French 97/102, Pop 1, No Higher, CGC Slab",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/227572068264",
+      "vignette": "archives-ventes-mew/vignettes/227572068264.webp",
+      "etat": "New (Other)",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/1SUAAeSwHIpq1Buz/s-l140.webp"
+    }
+  ]
+}

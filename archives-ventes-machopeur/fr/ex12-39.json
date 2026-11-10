@@ -1,0 +1,23 @@
+{
+  "id": "ex12-39",
+  "langue": "fr",
+  "nom": "Machopeur",
+  "serie": "EX Créateurs de légendes",
+  "num": "39",
+  "maj": "2026-11-10T11:26:29+0100",
+  "ventes": [
+    {
+      "id": "227470159521",
+      "date": "2026-10-27",
+      "prix": 4.37,
+      "devise": "USD",
+      "titre": "Pokemon Card Machopeur 39/92 Ex Creators Of Legends Block EX FR 1",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/227470159521",
+      "vignette": "archives-ventes-machopeur/vignettes/227470159521.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/qj4AAeSwMJRo0UPO/s-l140.webp"
+    }
+  ]
+}

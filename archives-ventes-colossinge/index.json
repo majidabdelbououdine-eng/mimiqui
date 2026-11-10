@@ -1,0 +1,39 @@
+{
+  "pokemon": "Colossinge",
+  "slug": "colossinge",
+  "maj": "2026-11-10T11:25:25+01:00",
+  "source": "eBay (ebaysoldlistings.com)",
+  "periode": {
+    "depuis": "2026-10-06",
+    "note": "Ventes eBay des 5 dernières semaines, cartes françaises uniquement."
+  },
+  "cartes": [
+    {
+      "langue": "fr",
+      "id": "base2-43",
+      "nom": "Colossinge",
+      "serie": "Jungle",
+      "num": "43",
+      "nb": 1,
+      "fichier": "archives-ventes-colossinge/fr/base2-43.json"
+    },
+    {
+      "langue": "fr",
+      "id": "base5-43",
+      "nom": "Colossinge obscur",
+      "serie": "Team Rocket",
+      "num": "43",
+      "nb": 3,
+      "fichier": "archives-ventes-colossinge/fr/base5-43.json"
+    },
+    {
+      "langue": "fr",
+      "id": "sm4-51",
+      "nom": "Colossinge",
+      "serie": "Invasion Carmin",
+      "num": "51",
+      "nb": 1,
+      "fichier": "archives-ventes-colossinge/fr/sm4-51.json"
+    }
+  ]
+}

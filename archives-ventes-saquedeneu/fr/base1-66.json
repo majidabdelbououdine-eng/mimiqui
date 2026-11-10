@@ -1,0 +1,36 @@
+{
+  "id": "base1-66",
+  "langue": "fr",
+  "nom": "Saquedeneu",
+  "serie": "Set de Base",
+  "num": "66",
+  "maj": "2026-11-10T11:47:02+0100",
+  "ventes": [
+    {
+      "id": "407310340465",
+      "date": "2026-11-02",
+      "prix": 32.0,
+      "devise": "USD",
+      "titre": "Pokemon 1999 Saquedeneu 66/102 1st Edition Base Set French PSA 9",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/407310340465",
+      "vignette": "archives-ventes-saquedeneu/vignettes/407310340465.webp",
+      "etat": "PSA 9",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/00/s/MTYwMFg4ODM=/z/ZokAAeSwoUlq2tXW/$_1.JPG?set_id=8800005007"
+    },
+    {
+      "id": "128138863876",
+      "date": "2026-10-29",
+      "prix": 1.85,
+      "devise": "USD",
+      "titre": "Tangela Saquedeneu French 66/102 Base Set Unlimited Pokemon TCG NM",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/128138863876",
+      "vignette": "archives-ventes-saquedeneu/vignettes/128138863876.webp",
+      "etat": "",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/00/s/MTYwMFgxMjAw/z/i~8AAeSwsm5q0g~d/$_1.JPG?set_id=8800005007"
+    }
+  ]
+}

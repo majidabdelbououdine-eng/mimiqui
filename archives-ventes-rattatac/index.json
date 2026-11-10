@@ -1,0 +1,30 @@
+{
+  "pokemon": "Rattatac",
+  "slug": "rattatac",
+  "maj": "2026-11-10T11:18:01+01:00",
+  "source": "eBay (ebaysoldlistings.com)",
+  "periode": {
+    "depuis": "2026-10-06",
+    "note": "Ventes eBay des 5 dernières semaines, cartes françaises uniquement."
+  },
+  "cartes": [
+    {
+      "langue": "fr",
+      "id": "base1-40",
+      "nom": "Rattatac",
+      "serie": "Set de Base",
+      "num": "40",
+      "nb": 2,
+      "fichier": "archives-ventes-rattatac/fr/base1-40.json"
+    },
+    {
+      "langue": "fr",
+      "id": "base5-51",
+      "nom": "Rattatac obscur",
+      "serie": "Team Rocket",
+      "num": "51",
+      "nb": 4,
+      "fichier": "archives-ventes-rattatac/fr/base5-51.json"
+    }
+  ]
+}

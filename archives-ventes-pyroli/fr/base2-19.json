@@ -1,0 +1,23 @@
+{
+  "id": "base2-19",
+  "langue": "fr",
+  "nom": "Pyroli",
+  "serie": "Jungle",
+  "num": "19",
+  "maj": "2026-11-10T11:54:54+0100",
+  "ventes": [
+    {
+      "id": "227482643134",
+      "date": "2026-10-08",
+      "prix": 70.0,
+      "devise": "USD",
+      "titre": "1999 Pokémon Flareon - Pryoli Jungle Rare 70 HP Unlimited French  19/64 PSA 1",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/227482643134",
+      "vignette": "archives-ventes-pyroli/vignettes/227482643134.webp",
+      "etat": "PSA 1",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/00/s/MTYwMFgxMjAw/z/jNIAAeSwrj5qhb65/$_1.JPG?set_id=8800005007"
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "id": "base1-64",
+  "langue": "fr",
+  "nom": "Staross",
+  "serie": "Set de Base",
+  "num": "64",
+  "maj": "2026-11-10T11:50:27+0100",
+  "ventes": [
+    {
+      "id": "840043581765",
+      "date": "2026-10-29",
+      "prix": 1.89,
+      "devise": "USD",
+      "titre": "Pokemon TCG Base Set 1st Ed Staross Starmie 64/102 FR 1999",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/840043581765",
+      "vignette": "archives-ventes-staross/vignettes/840043581765.webp",
+      "etat": "",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/2MAAAeSwJflq2Foq/s-l1600.jpg"
+    },
+    {
+      "id": "158299848816",
+      "date": "2026-10-29",
+      "prix": 2.99,
+      "devise": "USD",
+      "titre": "Starmie \"Staross\" 64/102 Base Set Unlimited Pokemon TCG French LP",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/158299848816",
+      "vignette": "archives-ventes-staross/vignettes/158299848816.webp",
+      "etat": "",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/00/s/MTYwMFgxMTQ1/z/hVQAAeSwD91qqxuW/$_57.JPG?set_id=880000500F"
+    },
+    {
+      "id": "377547248853",
+      "date": "2026-10-13",
+      "prix": 1.0,
+      "devise": "USD",
+      "titre": "Wizards of the Coast Staross Base Set 64/102 Common Regular French",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/377547248853",
+      "vignette": "archives-ventes-staross/vignettes/377547248853.webp",
+      "etat": "",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/-G4AAeSwOJdqxGDo/s-l1600.jpg"
+    }
+  ]
+}

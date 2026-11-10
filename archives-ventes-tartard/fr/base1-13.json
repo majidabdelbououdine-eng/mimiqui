@@ -1,0 +1,62 @@
+{
+  "id": "base1-13",
+  "langue": "fr",
+  "nom": "Tartard",
+  "serie": "Set de Base",
+  "num": "13",
+  "maj": "2026-11-10T11:26:07+0100",
+  "ventes": [
+    {
+      "id": "397476803566",
+      "date": "2026-11-08",
+      "prix": 83.99,
+      "devise": "USD",
+      "titre": "Poliwrath (French) 13/102 Base Set Holo Unlimited CGC 8.5 NM/Mint+ 5149",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/397476803566",
+      "vignette": "archives-ventes-tartard/vignettes/397476803566.webp",
+      "etat": "CGC 8.5",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/L4UAAeSwOYppYBEs/s-l500.webp"
+    },
+    {
+      "id": "940014405085",
+      "date": "2026-10-21",
+      "prix": 282.68,
+      "devise": "USD",
+      "titre": "POLIWRATH 1999 POKEMON BASE SET FRENCH 1ST EDITION 13/102 RARE HOLO PSA 8 Q2371",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/940014405085",
+      "vignette": "archives-ventes-tartard/vignettes/940014405085.webp",
+      "etat": "PSA 8",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/nhgAAeSwAmVqz92R/s-l140.webp"
+    },
+    {
+      "id": "287622537451",
+      "date": "2026-10-11",
+      "prix": 728.0,
+      "devise": "USD",
+      "titre": "Pokemon Poliwrath Base Set 1st Edition 13/102 Holo French CGC 10 Gem Mint",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/287622537451",
+      "vignette": "archives-ventes-tartard/vignettes/287622537451.webp",
+      "etat": "CGC 10",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/GDgAAeSw4mRqwAlw/s-l140.webp"
+    },
+    {
+      "id": "336834594945",
+      "date": "2026-10-08",
+      "prix": 200.0,
+      "devise": "USD",
+      "titre": "Pokemon 1st Edition French Basic “Tartard”, Holo 13/102",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/336834594945",
+      "vignette": "archives-ventes-tartard/vignettes/336834594945.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/oxUAAeSwjdRqxw-m/s-l140.webp"
+    }
+  ]
+}

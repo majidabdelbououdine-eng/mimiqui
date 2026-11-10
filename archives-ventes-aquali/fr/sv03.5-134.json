@@ -1,0 +1,23 @@
+{
+  "id": "sv03.5-134",
+  "langue": "fr",
+  "nom": "Aquali",
+  "serie": "151",
+  "num": "134",
+  "maj": "2026-11-10T11:54:13+0100",
+  "ventes": [
+    {
+      "id": "256234674102",
+      "date": "2026-11-06",
+      "prix": 3.25,
+      "devise": "USD",
+      "titre": "Pokemon Card AQUALI 134/165 HOLO EV3.5 Scarlet and Purple MEW 151 FR NEW",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/256234674102",
+      "vignette": "archives-ventes-aquali/vignettes/256234674102.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/~2MAAOSwui1lFFJg/s-l140.webp"
+    }
+  ]
+}

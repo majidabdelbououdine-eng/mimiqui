@@ -1,0 +1,23 @@
+{
+  "id": "sm9-31",
+  "langue": "fr",
+  "nom": "Lokhlass",
+  "serie": "Duo de Choc",
+  "num": "31",
+  "maj": "2026-11-10T11:53:19+0100",
+  "ventes": [
+    {
+      "id": "254225688570",
+      "date": "2026-10-23",
+      "prix": 2.13,
+      "devise": "USD",
+      "titre": "Pokemon Card LOKHLASS 31/181 RARE Sun and Moon 9 SL9 Shock Duo FR NEW",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/254225688570",
+      "vignette": "archives-ventes-lokhlass/vignettes/254225688570.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/9ugAAOSwjr5c1FJE/s-l140.webp"
+    }
+  ]
+}

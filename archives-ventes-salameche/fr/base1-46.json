@@ -1,0 +1,49 @@
+{
+  "id": "base1-46",
+  "langue": "fr",
+  "nom": "Salamèche",
+  "serie": "Set de Base",
+  "num": "46",
+  "maj": "2026-11-10T11:17:12+0100",
+  "ventes": [
+    {
+      "id": "900009727024",
+      "date": "2026-10-15",
+      "prix": 25.0,
+      "devise": "USD",
+      "titre": "French : Wizards of the Coast Salameche 46/102 Base Set FR 50HP 1999 1st",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/900009727024",
+      "vignette": "archives-ventes-salameche/vignettes/900009727024.webp",
+      "etat": "",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/2c0AAeSwLb5qzabD/s-l1600.jpg"
+    },
+    {
+      "id": "237056328100",
+      "date": "2026-10-12",
+      "prix": 30.0,
+      "devise": "USD",
+      "titre": "Pokemon Salamèche 46/102 Base Set 1st Edition French 1999 Charmander",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/237056328100",
+      "vignette": "archives-ventes-salameche/vignettes/237056328100.webp",
+      "etat": "",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/xWIAAeSwPlBqnz~l/s-l1600.jpg"
+    },
+    {
+      "id": "920001020071",
+      "date": "2026-10-10",
+      "prix": 8.0,
+      "devise": "USD",
+      "titre": "Pokemon TCG Base Set Salameche (Charmander) 46/102 French 1999 Unlimited",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/920001020071",
+      "vignette": "archives-ventes-salameche/vignettes/920001020071.webp",
+      "etat": "",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/ZLgAAeSwSEpqv6~C/s-l1600.jpg"
+    }
+  ]
+}

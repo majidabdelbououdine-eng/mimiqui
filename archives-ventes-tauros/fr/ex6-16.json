@@ -1,0 +1,23 @@
+{
+  "id": "ex6-16",
+  "langue": "fr",
+  "nom": "Tauros",
+  "serie": "EX Rouge Feu & Vert Feuille",
+  "num": "16",
+  "maj": "2026-11-10T11:53:11+0100",
+  "ventes": [
+    {
+      "id": "128168588514",
+      "date": "2026-11-01",
+      "prix": 12.76,
+      "devise": "USD",
+      "titre": "Tauros 16/112 - French Pokemon TCG EX FireRed & LeafGreen Rare Holo (NM)",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/128168588514",
+      "vignette": "archives-ventes-tauros/vignettes/128168588514.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/LMMAAeSwiAVq5fR3/s-l500.webp"
+    }
+  ]
+}

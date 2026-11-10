@@ -1,0 +1,49 @@
+{
+  "id": "base5-67",
+  "langue": "fr",
+  "nom": "Ramoloss",
+  "serie": "Team Rocket",
+  "num": "67",
+  "maj": "2026-11-10T11:29:40+0100",
+  "ventes": [
+    {
+      "id": "158307104253",
+      "date": "2026-11-03",
+      "prix": 5.94,
+      "devise": "USD",
+      "titre": "Ramoloss (Slowpoke) #67/82 French Team Rocket 1st Edition MP",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/158307104253",
+      "vignette": "archives-ventes-ramoloss/vignettes/158307104253.webp",
+      "etat": "",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/00/s/MTYwMFgxMjYw/z/OcQAAeSwZBRqp~k3/$_57.JPG?set_id=880000500F"
+    },
+    {
+      "id": "377609647417",
+      "date": "2026-10-31",
+      "prix": 7.99,
+      "devise": "USD",
+      "titre": "Wizards of the Coast Pokemon TCG Team Rocket 1st Ed Ramoloss 67/82 French 50 HP",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/377609647417",
+      "vignette": "archives-ventes-ramoloss/vignettes/377609647417.webp",
+      "etat": "",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/7PoAAeSwMrNq5VbT/s-l1600.jpg"
+    },
+    {
+      "id": "227556023823",
+      "date": "2026-10-14",
+      "prix": 4.25,
+      "devise": "USD",
+      "titre": "Slowpoke - 67/82 - Team Rocket - 1st Edition - French -",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/227556023823",
+      "vignette": "archives-ventes-ramoloss/vignettes/227556023823.webp",
+      "etat": "",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/00/s/MTQxOFgxMjE5/z/pEMAAeSwoL5qxY2W/$_1.JPG?set_id=8800005007"
+    }
+  ]
+}

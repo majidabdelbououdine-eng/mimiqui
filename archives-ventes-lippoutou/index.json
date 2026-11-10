@@ -1,0 +1,111 @@
+{
+  "pokemon": "Lippoutou",
+  "slug": "lippoutou",
+  "maj": "2026-11-10T11:51:49+01:00",
+  "source": "eBay (ebaysoldlistings.com)",
+  "periode": {
+    "depuis": "2026-10-06",
+    "note": "Ventes eBay des 5 dernières semaines, cartes françaises uniquement."
+  },
+  "cartes": [
+    {
+      "langue": "fr",
+      "id": "ex15-17",
+      "nom": "Lippoutou δ",
+      "serie": "EX Île des Dragons",
+      "num": "17",
+      "nb": 1,
+      "fichier": "archives-ventes-lippoutou/fr/ex15-17.json"
+    },
+    {
+      "langue": "fr",
+      "id": "neo3-31",
+      "nom": "Lippoutou",
+      "serie": "Neo Revelation",
+      "num": "31",
+      "nb": 1,
+      "fichier": "archives-ventes-lippoutou/fr/neo3-31.json"
+    },
+    {
+      "langue": "fr",
+      "id": "base1-31",
+      "nom": "Lippoutou",
+      "serie": "Set de Base",
+      "num": "31",
+      "nb": 1,
+      "fichier": "archives-ventes-lippoutou/fr/base1-31.json"
+    },
+    {
+      "langue": "fr",
+      "id": "g1-36",
+      "nom": "Lippoutou",
+      "serie": "Générations",
+      "num": "36",
+      "nb": 1,
+      "fichier": "archives-ventes-lippoutou/fr/g1-36.json"
+    },
+    {
+      "langue": "fr",
+      "id": "xy3-37",
+      "nom": "Lippoutou",
+      "serie": "Poings Furieux",
+      "num": "37",
+      "nb": 1,
+      "fichier": "archives-ventes-lippoutou/fr/xy3-37.json"
+    },
+    {
+      "langue": "fr",
+      "id": "sm3.5-38",
+      "nom": "Lippoutou",
+      "serie": "Légendes Brillantes",
+      "num": "38",
+      "nb": 1,
+      "fichier": "archives-ventes-lippoutou/fr/sm3.5-38.json"
+    },
+    {
+      "langue": "fr",
+      "id": "me01-057",
+      "nom": "Lippoutou",
+      "serie": "Méga-Évolution",
+      "num": "057",
+      "nb": 1,
+      "fichier": "archives-ventes-lippoutou/fr/me01-057.json"
+    },
+    {
+      "langue": "fr",
+      "id": "swsh12-062",
+      "nom": "Lippoutou",
+      "serie": "Tempête Argentée",
+      "num": "062",
+      "nb": 1,
+      "fichier": "archives-ventes-lippoutou/fr/swsh12-062.json"
+    },
+    {
+      "langue": "fr",
+      "id": "swsh8-112",
+      "nom": "Lippoutou",
+      "serie": "Poing de Fusion",
+      "num": "112",
+      "nb": 1,
+      "fichier": "archives-ventes-lippoutou/fr/swsh8-112.json"
+    },
+    {
+      "langue": "fr",
+      "id": "sv03.5-124",
+      "nom": "Lippoutou-ex",
+      "serie": "151",
+      "num": "124",
+      "nb": 1,
+      "fichier": "archives-ventes-lippoutou/fr/sv03.5-124.json"
+    },
+    {
+      "langue": "fr",
+      "id": "sv03.5-191",
+      "nom": "Lippoutou-ex",
+      "serie": "151",
+      "num": "191",
+      "nb": 1,
+      "fichier": "archives-ventes-lippoutou/fr/sv03.5-191.json"
+    }
+  ]
+}

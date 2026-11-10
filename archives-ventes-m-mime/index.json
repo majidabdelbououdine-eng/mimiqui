@@ -1,0 +1,30 @@
+{
+  "pokemon": "M. Mime",
+  "slug": "m-mime",
+  "maj": "2026-11-10T11:51:14+01:00",
+  "source": "eBay (ebaysoldlistings.com)",
+  "periode": {
+    "depuis": "2026-10-06",
+    "note": "Ventes eBay des 5 dernières semaines, cartes françaises uniquement."
+  },
+  "cartes": [
+    {
+      "langue": "fr",
+      "id": "base2-6",
+      "nom": "M. Mime",
+      "serie": "Jungle",
+      "num": "6",
+      "nb": 1,
+      "fichier": "archives-ventes-m-mime/fr/base2-6.json"
+    },
+    {
+      "langue": "fr",
+      "id": "sv03.5-122",
+      "nom": "M. Mime",
+      "serie": "151",
+      "num": "122",
+      "nb": 1,
+      "fichier": "archives-ventes-m-mime/fr/sv03.5-122.json"
+    }
+  ]
+}

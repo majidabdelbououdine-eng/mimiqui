@@ -1,0 +1,23 @@
+{
+  "id": "bw9-12",
+  "langue": "fr",
+  "nom": "Pyroli",
+  "serie": "Glaciation Plasma",
+  "num": "12",
+  "maj": "2026-11-10T11:54:54+0100",
+  "ventes": [
+    {
+      "id": "146749526168",
+      "date": "2026-10-10",
+      "prix": 116.87,
+      "devise": "USD",
+      "titre": "Pokemon CGC 9 Flareon Pyroli 12/116 French Plasma Freeze Reverse Holo Pop. 1",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/146749526168",
+      "vignette": "archives-ventes-pyroli/vignettes/146749526168.webp",
+      "etat": "CGC 9",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/FpIAAeSwVdJoj6MA/s-l140.webp"
+    }
+  ]
+}

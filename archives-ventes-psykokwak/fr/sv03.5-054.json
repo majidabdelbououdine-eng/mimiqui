@@ -1,0 +1,23 @@
+{
+  "id": "sv03.5-054",
+  "langue": "fr",
+  "nom": "Psykokwak",
+  "serie": "151",
+  "num": "054",
+  "maj": "2026-11-10T11:25:05+0100",
+  "ventes": [
+    {
+      "id": "168769852857",
+      "date": "2026-10-08",
+      "prix": 12.29,
+      "devise": "USD",
+      "titre": "Pokemon \"Psyduck/Psykokwak\" 054/165 *Reverse Holo* French - Nearmint/NM(-)",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/168769852857",
+      "vignette": "archives-ventes-psykokwak/vignettes/168769852857.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/PIAAAeSwfKJqxUga/s-l140.webp"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "id": "neo3-37",
+  "langue": "fr",
+  "nom": "Poissoroy",
+  "serie": "Neo Revelation",
+  "num": "37",
+  "maj": "2026-11-10T11:49:59+0100",
+  "ventes": [
+    {
+      "id": "128013020917",
+      "date": "2026-10-29",
+      "prix": 11.0,
+      "devise": "USD",
+      "titre": "1st Edition Seaking 37/64 - Neo Revelation - FRENCH Pokemon - Uncommon - LP",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/128013020917",
+      "vignette": "archives-ventes-poissoroy/vignettes/128013020917.webp",
+      "etat": "",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/00/s/MTU3N1gxMTg0/z/OVgAAeSwsehqc9zL/$_57.PNG?set_id=880000500F"
+    }
+  ]
+}

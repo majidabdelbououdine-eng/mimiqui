@@ -1,0 +1,23 @@
+{
+  "id": "base2-1",
+  "langue": "fr",
+  "nom": "Mélodelfe",
+  "serie": "Jungle",
+  "num": "1",
+  "maj": "2026-11-10T11:21:36+0100",
+  "ventes": [
+    {
+      "id": "860076853805",
+      "date": "2026-10-23",
+      "prix": 17.0,
+      "devise": "USD",
+      "titre": "Pokemon TCG Jungle Melodelfe Clefable 1/64 French Holo Rare 1999 WOTC",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/860076853805",
+      "vignette": "archives-ventes-melodelfe/vignettes/860076853805.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/~2QAAeSwO3Rgg/s-l140.webp"
+    }
+  ]
+}

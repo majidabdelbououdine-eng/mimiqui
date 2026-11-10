@@ -1,0 +1,49 @@
+{
+  "id": "base3-8",
+  "langue": "fr",
+  "nom": "Hypnomade",
+  "serie": "Fossile",
+  "num": "8",
+  "maj": "2026-11-10T11:38:36+0100",
+  "ventes": [
+    {
+      "id": "336866409054",
+      "date": "2026-10-29",
+      "prix": 32.0,
+      "devise": "USD",
+      "titre": "Wizards of the Coast Pokemon TCG Hypnomade 8/62 French Holo 1999 HP 90",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/336866409054",
+      "vignette": "archives-ventes-hypnomade/vignettes/336866409054.webp",
+      "etat": "",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/7JMAAeSwV0xq4Tbi/s-l140.webp"
+    },
+    {
+      "id": "840024937959",
+      "date": "2026-10-15",
+      "prix": 100.0,
+      "devise": "USD",
+      "titre": "Hypnomade Fossil 8/62 French Holo Rare Pokemon TCG",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/840024937959",
+      "vignette": "archives-ventes-hypnomade/vignettes/840024937959.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/MIAAAeSwFwBq0UmG/s-l140.webp"
+    },
+    {
+      "id": "840021691202",
+      "date": "2026-10-14",
+      "prix": 32.97,
+      "devise": "USD",
+      "titre": "Hypnomade (Hypno) 8/62 Fossil Holo Rare French 2000 WOTC Pokemon TCG",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/840021691202",
+      "vignette": "archives-ventes-hypnomade/vignettes/840021691202.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/Y9gAAeSwFUNqz7~9/s-l140.webp"
+    }
+  ]
+}

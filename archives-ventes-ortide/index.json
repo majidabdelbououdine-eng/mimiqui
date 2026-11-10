@@ -1,0 +1,39 @@
+{
+  "pokemon": "Ortide",
+  "slug": "ortide",
+  "maj": "2026-11-10T11:24:11+01:00",
+  "source": "eBay (ebaysoldlistings.com)",
+  "periode": {
+    "depuis": "2026-10-06",
+    "note": "Ventes eBay des 5 dernières semaines, cartes françaises uniquement."
+  },
+  "cartes": [
+    {
+      "langue": "fr",
+      "id": "neo1-36",
+      "nom": "Ortide",
+      "serie": "Neo Genesis",
+      "num": "36",
+      "nb": 2,
+      "fichier": "archives-ventes-ortide/fr/neo1-36.json"
+    },
+    {
+      "langue": "fr",
+      "id": "base5-36",
+      "nom": "Ortide obscur",
+      "serie": "Team Rocket",
+      "num": "36",
+      "nb": 1,
+      "fichier": "archives-ventes-ortide/fr/base5-36.json"
+    },
+    {
+      "langue": "fr",
+      "id": "base2-37",
+      "nom": "Ortide",
+      "serie": "Jungle",
+      "num": "37",
+      "nb": 1,
+      "fichier": "archives-ventes-ortide/fr/base2-37.json"
+    }
+  ]
+}

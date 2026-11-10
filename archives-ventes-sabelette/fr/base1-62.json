@@ -1,0 +1,75 @@
+{
+  "id": "base1-62",
+  "langue": "fr",
+  "nom": "Sabelette",
+  "serie": "Set de Base",
+  "num": "62",
+  "maj": "2026-11-10T11:19:03+0100",
+  "ventes": [
+    {
+      "id": "397945374237",
+      "date": "2026-11-09",
+      "prix": 5.79,
+      "devise": "USD",
+      "titre": "Pokemon SABLETTE (Sandshrew) 62/102 - FRENCH Base Set",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/397945374237",
+      "vignette": "archives-ventes-sabelette/vignettes/397945374237.webp",
+      "etat": "",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/00/s/MTQ0MFgxMDgw/z/exYAAeSwvnlqBQ2D/$_1.JPG?set_id=8800005007"
+    },
+    {
+      "id": "137893816723",
+      "date": "2026-11-09",
+      "prix": 3.76,
+      "devise": "USD",
+      "titre": "Pokemon TCG Sabelette (Sandshrew) Base Set 62/102 French 1st Ed Common LP",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/137893816723",
+      "vignette": "archives-ventes-sabelette/vignettes/137893816723.webp",
+      "etat": "",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/QcsAAeSw5Wlq3oG6/s-l140.webp"
+    },
+    {
+      "id": "137893816722",
+      "date": "2026-11-09",
+      "prix": 2.0,
+      "devise": "USD",
+      "titre": "Pokemon TCG Sabelette (Sandshrew) Base Set 62/102 French 1st Ed Common LP",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/137893816722",
+      "vignette": "archives-ventes-sabelette/vignettes/137893816722.webp",
+      "etat": "",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/cDwAAeSwvjpq3oIp/s-l140.webp"
+    },
+    {
+      "id": "128135379778",
+      "date": "2026-10-30",
+      "prix": 8.5,
+      "devise": "USD",
+      "titre": "SANDSHREW FRENCH SABELETTE  1ST EDITION 1999 POKEMON 62/102 COMMON",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/128135379778",
+      "vignette": "archives-ventes-sabelette/vignettes/128135379778.webp",
+      "etat": "",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/E-8AAeSwJcVqz6Zy/s-l140.webp"
+    },
+    {
+      "id": "188876824775",
+      "date": "2026-10-11",
+      "prix": 25.0,
+      "devise": "USD",
+      "titre": "Pokemon - Sandshrew Sabelette #062/102 Pokemon Base Set 1st Edition NM - FRENCH",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/188876824775",
+      "vignette": "archives-ventes-sabelette/vignettes/188876824775.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/NAgAAeSwXm5qmHD3/s-l140.webp"
+    }
+  ]
+}

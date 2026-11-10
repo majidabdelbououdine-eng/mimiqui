@@ -1,0 +1,23 @@
+{
+  "id": "base2-13",
+  "langue": "fr",
+  "nom": "Aéromite",
+  "serie": "Jungle",
+  "num": "13",
+  "maj": "2026-11-10T11:24:51+0100",
+  "ventes": [
+    {
+      "id": "326929473233",
+      "date": "2026-10-20",
+      "prix": 150.0,
+      "devise": "USD",
+      "titre": "CGC 9 FRENCH Venomoth 2000 Jungle 13/64 Holo Pokemon Card",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/326929473233",
+      "vignette": "archives-ventes-aeromite/vignettes/326929473233.webp",
+      "etat": "CGC 9",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/6wwAAeSwCDlpTvJ3/s-l500.webp"
+    }
+  ]
+}

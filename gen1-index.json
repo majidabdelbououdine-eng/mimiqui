@@ -1,0 +1,1219 @@
+{
+  "maj": "2026-11-10T11:57:39+01:00",
+  "nb_pokemon": 151,
+  "nb_nouveaux": 147,
+  "nb_cartes": 5069,
+  "nb_ventes": 1341,
+  "date_min": "2026-03-27",
+  "date_max": "2026-11-10",
+  "pokemon": [
+    {
+      "dex": 1,
+      "slug": "bulbizarre",
+      "fr": "Bulbizarre",
+      "n_cartes": 30,
+      "n_ventes": 4,
+      "deja": false
+    },
+    {
+      "dex": 2,
+      "slug": "herbizarre",
+      "fr": "Herbizarre",
+      "n_cartes": 18,
+      "n_ventes": 2,
+      "deja": false
+    },
+    {
+      "dex": 3,
+      "slug": "florizarre",
+      "fr": "Florizarre",
+      "n_cartes": 50,
+      "n_ventes": 16,
+      "deja": false
+    },
+    {
+      "dex": 4,
+      "slug": "salameche",
+      "fr": "Salamèche",
+      "n_cartes": 46,
+      "n_ventes": 6,
+      "deja": false
+    },
+    {
+      "dex": 5,
+      "slug": "reptincel",
+      "fr": "Reptincel",
+      "n_cartes": 32,
+      "n_ventes": 6,
+      "deja": false
+    },
+    {
+      "dex": 6,
+      "slug": "dracaufeu",
+      "fr": "Dracaufeu",
+      "n_cartes": 113,
+      "n_ventes": 182,
+      "deja": true
+    },
+    {
+      "dex": 7,
+      "slug": "carapuce",
+      "fr": "Carapuce",
+      "n_cartes": 32,
+      "n_ventes": 10,
+      "deja": false
+    },
+    {
+      "dex": 8,
+      "slug": "carabaffe",
+      "fr": "Carabaffe",
+      "n_cartes": 18,
+      "n_ventes": 0,
+      "deja": false
+    },
+    {
+      "dex": 9,
+      "slug": "tortank",
+      "fr": "Tortank",
+      "n_cartes": 50,
+      "n_ventes": 2,
+      "deja": false
+    },
+    {
+      "dex": 10,
+      "slug": "chenipan",
+      "fr": "Chenipan",
+      "n_cartes": 21,
+      "n_ventes": 2,
+      "deja": false
+    },
+    {
+      "dex": 11,
+      "slug": "chrysacier",
+      "fr": "Chrysacier",
+      "n_cartes": 18,
+      "n_ventes": 1,
+      "deja": false
+    },
+    {
+      "dex": 12,
+      "slug": "papilusion",
+      "fr": "Papilusion",
+      "n_cartes": 24,
+      "n_ventes": 0,
+      "deja": false
+    },
+    {
+      "dex": 13,
+      "slug": "aspicot",
+      "fr": "Aspicot",
+      "n_cartes": 24,
+      "n_ventes": 0,
+      "deja": false
+    },
+    {
+      "dex": 14,
+      "slug": "coconfort",
+      "fr": "Coconfort",
+      "n_cartes": 21,
+      "n_ventes": 1,
+      "deja": false
+    },
+    {
+      "dex": 15,
+      "slug": "dardargnan",
+      "fr": "Dardargnan",
+      "n_cartes": 29,
+      "n_ventes": 0,
+      "deja": false
+    },
+    {
+      "dex": 16,
+      "slug": "roucool",
+      "fr": "Roucool",
+      "n_cartes": 21,
+      "n_ventes": 0,
+      "deja": false
+    },
+    {
+      "dex": 17,
+      "slug": "roucoups",
+      "fr": "Roucoups",
+      "n_cartes": 19,
+      "n_ventes": 0,
+      "deja": false
+    },
+    {
+      "dex": 18,
+      "slug": "roucarnage",
+      "fr": "Roucarnage",
+      "n_cartes": 31,
+      "n_ventes": 0,
+      "deja": false
+    },
+    {
+      "dex": 19,
+      "slug": "rattata",
+      "fr": "Rattata",
+      "n_cartes": 21,
+      "n_ventes": 3,
+      "deja": false
+    },
+    {
+      "dex": 20,
+      "slug": "rattatac",
+      "fr": "Rattatac",
+      "n_cartes": 24,
+      "n_ventes": 6,
+      "deja": false
+    },
+    {
+      "dex": 21,
+      "slug": "piafabec",
+      "fr": "Piafabec",
+      "n_cartes": 18,
+      "n_ventes": 1,
+      "deja": false
+    },
+    {
+      "dex": 22,
+      "slug": "rapasdepic",
+      "fr": "Rapasdepic",
+      "n_cartes": 18,
+      "n_ventes": 0,
+      "deja": false
+    },
+    {
+      "dex": 23,
+      "slug": "abo",
+      "fr": "Abo",
+      "n_cartes": 20,
+      "n_ventes": 2,
+      "deja": false
+    },
+    {
+      "dex": 24,
+      "slug": "arbok",
+      "fr": "Arbok",
+      "n_cartes": 22,
+      "n_ventes": 1,
+      "deja": false
+    },
+    {
+      "dex": 25,
+      "slug": "pikachu",
+      "fr": "Pikachu",
+      "n_cartes": 527,
+      "n_ventes": 685,
+      "deja": true
+    },
+    {
+      "dex": 26,
+      "slug": "raichu",
+      "fr": "Raichu",
+      "n_cartes": 76,
+      "n_ventes": 0,
+      "deja": false
+    },
+    {
+      "dex": 27,
+      "slug": "sabelette",
+      "fr": "Sabelette",
+      "n_cartes": 23,
+      "n_ventes": 5,
+      "deja": false
+    },
+    {
+      "dex": 28,
+      "slug": "sablaireau",
+      "fr": "Sablaireau",
+      "n_cartes": 23,
+      "n_ventes": 2,
+      "deja": false
+    },
+    {
+      "dex": 29,
+      "slug": "nidoran-f",
+      "fr": "Nidoran♀",
+      "n_cartes": 15,
+      "n_ventes": 1,
+      "deja": false
+    },
+    {
+      "dex": 30,
+      "slug": "nidorina",
+      "fr": "Nidorina",
+      "n_cartes": 16,
+      "n_ventes": 0,
+      "deja": false
+    },
+    {
+      "dex": 31,
+      "slug": "nidoqueen",
+      "fr": "Nidoqueen",
+      "n_cartes": 18,
+      "n_ventes": 1,
+      "deja": false
+    },
+    {
+      "dex": 32,
+      "slug": "nidoran-m",
+      "fr": "Nidoran♂",
+      "n_cartes": 15,
+      "n_ventes": 0,
+      "deja": false
+    },
+    {
+      "dex": 33,
+      "slug": "nidorino",
+      "fr": "Nidorino",
+      "n_cartes": 15,
+      "n_ventes": 0,
+      "deja": false
+    },
+    {
+      "dex": 34,
+      "slug": "nidoking",
+      "fr": "Nidoking",
+      "n_cartes": 23,
+      "n_ventes": 3,
+      "deja": false
+    },
+    {
+      "dex": 35,
+      "slug": "melofee",
+      "fr": "Mélofée",
+      "n_cartes": 44,
+      "n_ventes": 0,
+      "deja": false
+    },
+    {
+      "dex": 36,
+      "slug": "melodelfe",
+      "fr": "Mélodelfe",
+      "n_cartes": 33,
+      "n_ventes": 1,
+      "deja": false
+    },
+    {
+      "dex": 37,
+      "slug": "goupix",
+      "fr": "Goupix",
+      "n_cartes": 50,
+      "n_ventes": 1,
+      "deja": false
+    },
+    {
+      "dex": 38,
+      "slug": "feunard",
+      "fr": "Feunard",
+      "n_cartes": 54,
+      "n_ventes": 2,
+      "deja": false
+    },
+    {
+      "dex": 39,
+      "slug": "rondoudou",
+      "fr": "Rondoudou",
+      "n_cartes": 38,
+      "n_ventes": 0,
+      "deja": false
+    },
+    {
+      "dex": 40,
+      "slug": "grodoudou",
+      "fr": "Grodoudou",
+      "n_cartes": 36,
+      "n_ventes": 0,
+      "deja": false
+    },
+    {
+      "dex": 41,
+      "slug": "nosferapti",
+      "fr": "Nosferapti",
+      "n_cartes": 26,
+      "n_ventes": 1,
+      "deja": false
+    },
+    {
+      "dex": 42,
+      "slug": "nosferalto",
+      "fr": "Nosferalto",
+      "n_cartes": 26,
+      "n_ventes": 2,
+      "deja": false
+    },
+    {
+      "dex": 43,
+      "slug": "mystherbe",
+      "fr": "Mystherbe",
+      "n_cartes": 27,
+      "n_ventes": 2,
+      "deja": false
+    },
+    {
+      "dex": 44,
+      "slug": "ortide",
+      "fr": "Ortide",
+      "n_cartes": 28,
+      "n_ventes": 4,
+      "deja": false
+    },
+    {
+      "dex": 45,
+      "slug": "rafflesia",
+      "fr": "Rafflesia",
+      "n_cartes": 21,
+      "n_ventes": 7,
+      "deja": false
+    },
+    {
+      "dex": 46,
+      "slug": "paras",
+      "fr": "Paras",
+      "n_cartes": 19,
+      "n_ventes": 0,
+      "deja": false
+    },
+    {
+      "dex": 47,
+      "slug": "parasect",
+      "fr": "Parasect",
+      "n_cartes": 17,
+      "n_ventes": 0,
+      "deja": false
+    },
+    {
+      "dex": 48,
+      "slug": "mimitoss",
+      "fr": "Mimitoss",
+      "n_cartes": 11,
+      "n_ventes": 4,
+      "deja": false
+    },
+    {
+      "dex": 49,
+      "slug": "aeromite",
+      "fr": "Aéromite",
+      "n_cartes": 14,
+      "n_ventes": 2,
+      "deja": false
+    },
+    {
+      "dex": 50,
+      "slug": "taupiqueur",
+      "fr": "Taupiqueur",
+      "n_cartes": 32,
+      "n_ventes": 3,
+      "deja": false
+    },
+    {
+      "dex": 51,
+      "slug": "triopikeur",
+      "fr": "Triopikeur",
+      "n_cartes": 35,
+      "n_ventes": 7,
+      "deja": false
+    },
+    {
+      "dex": 52,
+      "slug": "miaouss",
+      "fr": "Miaouss",
+      "n_cartes": 66,
+      "n_ventes": 6,
+      "deja": false
+    },
+    {
+      "dex": 53,
+      "slug": "persian",
+      "fr": "Persian",
+      "n_cartes": 35,
+      "n_ventes": 4,
+      "deja": false
+    },
+    {
+      "dex": 54,
+      "slug": "psykokwak",
+      "fr": "Psykokwak",
+      "n_cartes": 37,
+      "n_ventes": 23,
+      "deja": false
+    },
+    {
+      "dex": 55,
+      "slug": "akwakwak",
+      "fr": "Akwakwak",
+      "n_cartes": 25,
+      "n_ventes": 5,
+      "deja": false
+    },
+    {
+      "dex": 56,
+      "slug": "ferosinge",
+      "fr": "Férosinge",
+      "n_cartes": 28,
+      "n_ventes": 2,
+      "deja": false
+    },
+    {
+      "dex": 57,
+      "slug": "colossinge",
+      "fr": "Colossinge",
+      "n_cartes": 26,
+      "n_ventes": 5,
+      "deja": false
+    },
+    {
+      "dex": 58,
+      "slug": "caninos",
+      "fr": "Caninos",
+      "n_cartes": 39,
+      "n_ventes": 2,
+      "deja": false
+    },
+    {
+      "dex": 59,
+      "slug": "arcanin",
+      "fr": "Arcanin",
+      "n_cartes": 44,
+      "n_ventes": 6,
+      "deja": false
+    },
+    {
+      "dex": 60,
+      "slug": "ptitard",
+      "fr": "Ptitard",
+      "n_cartes": 20,
+      "n_ventes": 0,
+      "deja": false
+    },
+    {
+      "dex": 61,
+      "slug": "tetarte",
+      "fr": "Têtarte",
+      "n_cartes": 16,
+      "n_ventes": 0,
+      "deja": false
+    },
+    {
+      "dex": 62,
+      "slug": "tartard",
+      "fr": "Tartard",
+      "n_cartes": 21,
+      "n_ventes": 6,
+      "deja": false
+    },
+    {
+      "dex": 63,
+      "slug": "abra",
+      "fr": "Abra",
+      "n_cartes": 10,
+      "n_ventes": 9,
+      "deja": false
+    },
+    {
+      "dex": 64,
+      "slug": "kadabra",
+      "fr": "Kadabra",
+      "n_cartes": 9,
+      "n_ventes": 5,
+      "deja": false
+    },
+    {
+      "dex": 65,
+      "slug": "alakazam",
+      "fr": "Alakazam",
+      "n_cartes": 30,
+      "n_ventes": 2,
+      "deja": false
+    },
+    {
+      "dex": 66,
+      "slug": "machoc",
+      "fr": "Machoc",
+      "n_cartes": 26,
+      "n_ventes": 10,
+      "deja": false
+    },
+    {
+      "dex": 67,
+      "slug": "machopeur",
+      "fr": "Machopeur",
+      "n_cartes": 25,
+      "n_ventes": 4,
+      "deja": false
+    },
+    {
+      "dex": 68,
+      "slug": "mackogneur",
+      "fr": "Mackogneur",
+      "n_cartes": 52,
+      "n_ventes": 11,
+      "deja": false
+    },
+    {
+      "dex": 69,
+      "slug": "chetiflor",
+      "fr": "Chétiflor",
+      "n_cartes": 16,
+      "n_ventes": 0,
+      "deja": false
+    },
+    {
+      "dex": 70,
+      "slug": "boustiflor",
+      "fr": "Boustiflor",
+      "n_cartes": 15,
+      "n_ventes": 1,
+      "deja": false
+    },
+    {
+      "dex": 71,
+      "slug": "empiflor",
+      "fr": "Empiflor",
+      "n_cartes": 17,
+      "n_ventes": 4,
+      "deja": false
+    },
+    {
+      "dex": 72,
+      "slug": "tentacool",
+      "fr": "Tentacool",
+      "n_cartes": 16,
+      "n_ventes": 1,
+      "deja": false
+    },
+    {
+      "dex": 73,
+      "slug": "tentacruel",
+      "fr": "Tentacruel",
+      "n_cartes": 16,
+      "n_ventes": 0,
+      "deja": false
+    },
+    {
+      "dex": 74,
+      "slug": "racaillou",
+      "fr": "Racaillou",
+      "n_cartes": 26,
+      "n_ventes": 1,
+      "deja": false
+    },
+    {
+      "dex": 75,
+      "slug": "gravalanch",
+      "fr": "Gravalanch",
+      "n_cartes": 23,
+      "n_ventes": 0,
+      "deja": false
+    },
+    {
+      "dex": 76,
+      "slug": "grolem",
+      "fr": "Grolem",
+      "n_cartes": 26,
+      "n_ventes": 0,
+      "deja": false
+    },
+    {
+      "dex": 77,
+      "slug": "ponyta",
+      "fr": "Ponyta",
+      "n_cartes": 27,
+      "n_ventes": 0,
+      "deja": false
+    },
+    {
+      "dex": 78,
+      "slug": "galopa",
+      "fr": "Galopa",
+      "n_cartes": 35,
+      "n_ventes": 1,
+      "deja": false
+    },
+    {
+      "dex": 79,
+      "slug": "ramoloss",
+      "fr": "Ramoloss",
+      "n_cartes": 39,
+      "n_ventes": 5,
+      "deja": false
+    },
+    {
+      "dex": 80,
+      "slug": "flagadoss",
+      "fr": "Flagadoss",
+      "n_cartes": 28,
+      "n_ventes": 0,
+      "deja": false
+    },
+    {
+      "dex": 81,
+      "slug": "magneti",
+      "fr": "Magnéti",
+      "n_cartes": 45,
+      "n_ventes": 0,
+      "deja": false
+    },
+    {
+      "dex": 82,
+      "slug": "magneton",
+      "fr": "Magnéton",
+      "n_cartes": 38,
+      "n_ventes": 2,
+      "deja": false
+    },
+    {
+      "dex": 83,
+      "slug": "canarticho",
+      "fr": "Canarticho",
+      "n_cartes": 22,
+      "n_ventes": 0,
+      "deja": false
+    },
+    {
+      "dex": 84,
+      "slug": "doduo",
+      "fr": "Doduo",
+      "n_cartes": 20,
+      "n_ventes": 1,
+      "deja": false
+    },
+    {
+      "dex": 85,
+      "slug": "dodrio",
+      "fr": "Dodrio",
+      "n_cartes": 18,
+      "n_ventes": 0,
+      "deja": false
+    },
+    {
+      "dex": 86,
+      "slug": "otaria",
+      "fr": "Otaria",
+      "n_cartes": 15,
+      "n_ventes": 3,
+      "deja": false
+    },
+    {
+      "dex": 87,
+      "slug": "lamantine",
+      "fr": "Lamantine",
+      "n_cartes": 15,
+      "n_ventes": 1,
+      "deja": false
+    },
+    {
+      "dex": 88,
+      "slug": "tadmorv",
+      "fr": "Tadmorv",
+      "n_cartes": 25,
+      "n_ventes": 6,
+      "deja": false
+    },
+    {
+      "dex": 89,
+      "slug": "grotadmorv",
+      "fr": "Grotadmorv",
+      "n_cartes": 33,
+      "n_ventes": 0,
+      "deja": false
+    },
+    {
+      "dex": 90,
+      "slug": "kokiyas",
+      "fr": "Kokiyas",
+      "n_cartes": 15,
+      "n_ventes": 2,
+      "deja": false
+    },
+    {
+      "dex": 91,
+      "slug": "crustabri",
+      "fr": "Crustabri",
+      "n_cartes": 15,
+      "n_ventes": 0,
+      "deja": false
+    },
+    {
+      "dex": 92,
+      "slug": "fantominus",
+      "fr": "Fantominus",
+      "n_cartes": 30,
+      "n_ventes": 3,
+      "deja": false
+    },
+    {
+      "dex": 93,
+      "slug": "spectrum",
+      "fr": "Spectrum",
+      "n_cartes": 29,
+      "n_ventes": 5,
+      "deja": false
+    },
+    {
+      "dex": 94,
+      "slug": "ectoplasma",
+      "fr": "Ectoplasma",
+      "n_cartes": 54,
+      "n_ventes": 3,
+      "deja": false
+    },
+    {
+      "dex": 95,
+      "slug": "onix",
+      "fr": "Onix",
+      "n_cartes": 28,
+      "n_ventes": 1,
+      "deja": false
+    },
+    {
+      "dex": 96,
+      "slug": "soporifik",
+      "fr": "Soporifik",
+      "n_cartes": 24,
+      "n_ventes": 0,
+      "deja": false
+    },
+    {
+      "dex": 97,
+      "slug": "hypnomade",
+      "fr": "Hypnomade",
+      "n_cartes": 23,
+      "n_ventes": 4,
+      "deja": false
+    },
+    {
+      "dex": 98,
+      "slug": "krabby",
+      "fr": "Krabby",
+      "n_cartes": 13,
+      "n_ventes": 4,
+      "deja": false
+    },
+    {
+      "dex": 99,
+      "slug": "krabboss",
+      "fr": "Krabboss",
+      "n_cartes": 14,
+      "n_ventes": 3,
+      "deja": false
+    },
+    {
+      "dex": 100,
+      "slug": "voltorbe",
+      "fr": "Voltorbe",
+      "n_cartes": 39,
+      "n_ventes": 1,
+      "deja": false
+    },
+    {
+      "dex": 101,
+      "slug": "electrode",
+      "fr": "Électrode",
+      "n_cartes": 43,
+      "n_ventes": 2,
+      "deja": false
+    },
+    {
+      "dex": 102,
+      "slug": "noeunoeuf",
+      "fr": "Noeunoeuf",
+      "n_cartes": 30,
+      "n_ventes": 0,
+      "deja": false
+    },
+    {
+      "dex": 103,
+      "slug": "noadkoko",
+      "fr": "Noadkoko",
+      "n_cartes": 56,
+      "n_ventes": 0,
+      "deja": false
+    },
+    {
+      "dex": 104,
+      "slug": "osselait",
+      "fr": "Osselait",
+      "n_cartes": 24,
+      "n_ventes": 3,
+      "deja": false
+    },
+    {
+      "dex": 105,
+      "slug": "ossatueur",
+      "fr": "Ossatueur",
+      "n_cartes": 27,
+      "n_ventes": 0,
+      "deja": false
+    },
+    {
+      "dex": 106,
+      "slug": "kicklee",
+      "fr": "Kicklee",
+      "n_cartes": 16,
+      "n_ventes": 1,
+      "deja": false
+    },
+    {
+      "dex": 107,
+      "slug": "tygnon",
+      "fr": "Tygnon",
+      "n_cartes": 22,
+      "n_ventes": 1,
+      "deja": false
+    },
+    {
+      "dex": 108,
+      "slug": "excelangue",
+      "fr": "Excelangue",
+      "n_cartes": 24,
+      "n_ventes": 0,
+      "deja": false
+    },
+    {
+      "dex": 109,
+      "slug": "smogo",
+      "fr": "Smogo",
+      "n_cartes": 28,
+      "n_ventes": 1,
+      "deja": false
+    },
+    {
+      "dex": 110,
+      "slug": "smogogo",
+      "fr": "Smogogo",
+      "n_cartes": 30,
+      "n_ventes": 5,
+      "deja": false
+    },
+    {
+      "dex": 111,
+      "slug": "rhinocorne",
+      "fr": "Rhinocorne",
+      "n_cartes": 25,
+      "n_ventes": 0,
+      "deja": false
+    },
+    {
+      "dex": 112,
+      "slug": "rhinoferos",
+      "fr": "Rhinoféros",
+      "n_cartes": 19,
+      "n_ventes": 0,
+      "deja": false
+    },
+    {
+      "dex": 113,
+      "slug": "leveinard",
+      "fr": "Leveinard",
+      "n_cartes": 28,
+      "n_ventes": 0,
+      "deja": false
+    },
+    {
+      "dex": 114,
+      "slug": "saquedeneu",
+      "fr": "Saquedeneu",
+      "n_cartes": 29,
+      "n_ventes": 2,
+      "deja": false
+    },
+    {
+      "dex": 115,
+      "slug": "kangourex",
+      "fr": "Kangourex",
+      "n_cartes": 37,
+      "n_ventes": 3,
+      "deja": false
+    },
+    {
+      "dex": 116,
+      "slug": "hypotrempe",
+      "fr": "Hypotrempe",
+      "n_cartes": 27,
+      "n_ventes": 0,
+      "deja": false
+    },
+    {
+      "dex": 117,
+      "slug": "hypocean",
+      "fr": "Hypocéan",
+      "n_cartes": 19,
+      "n_ventes": 0,
+      "deja": false
+    },
+    {
+      "dex": 118,
+      "slug": "poissirene",
+      "fr": "Poissirène",
+      "n_cartes": 21,
+      "n_ventes": 0,
+      "deja": false
+    },
+    {
+      "dex": 119,
+      "slug": "poissoroy",
+      "fr": "Poissoroy",
+      "n_cartes": 18,
+      "n_ventes": 1,
+      "deja": false
+    },
+    {
+      "dex": 120,
+      "slug": "stari",
+      "fr": "Stari",
+      "n_cartes": 28,
+      "n_ventes": 1,
+      "deja": false
+    },
+    {
+      "dex": 121,
+      "slug": "staross",
+      "fr": "Staross",
+      "n_cartes": 33,
+      "n_ventes": 3,
+      "deja": false
+    },
+    {
+      "dex": 122,
+      "slug": "m-mime",
+      "fr": "M. Mime",
+      "n_cartes": 34,
+      "n_ventes": 2,
+      "deja": false
+    },
+    {
+      "dex": 123,
+      "slug": "insecateur",
+      "fr": "Insécateur",
+      "n_cartes": 29,
+      "n_ventes": 3,
+      "deja": false
+    },
+    {
+      "dex": 124,
+      "slug": "lippoutou",
+      "fr": "Lippoutou",
+      "n_cartes": 27,
+      "n_ventes": 11,
+      "deja": false
+    },
+    {
+      "dex": 125,
+      "slug": "elektek",
+      "fr": "Élektek",
+      "n_cartes": 25,
+      "n_ventes": 0,
+      "deja": false
+    },
+    {
+      "dex": 126,
+      "slug": "magmar",
+      "fr": "Magmar",
+      "n_cartes": 30,
+      "n_ventes": 3,
+      "deja": false
+    },
+    {
+      "dex": 127,
+      "slug": "scarabrute",
+      "fr": "Scarabrute",
+      "n_cartes": 32,
+      "n_ventes": 2,
+      "deja": false
+    },
+    {
+      "dex": 128,
+      "slug": "tauros",
+      "fr": "Tauros",
+      "n_cartes": 43,
+      "n_ventes": 5,
+      "deja": false
+    },
+    {
+      "dex": 129,
+      "slug": "magicarpe",
+      "fr": "Magicarpe",
+      "n_cartes": 47,
+      "n_ventes": 1,
+      "deja": false
+    },
+    {
+      "dex": 130,
+      "slug": "leviator",
+      "fr": "Léviator",
+      "n_cartes": 59,
+      "n_ventes": 4,
+      "deja": false
+    },
+    {
+      "dex": 131,
+      "slug": "lokhlass",
+      "fr": "Lokhlass",
+      "n_cartes": 53,
+      "n_ventes": 9,
+      "deja": false
+    },
+    {
+      "dex": 132,
+      "slug": "metamorph",
+      "fr": "Métamorph",
+      "n_cartes": 33,
+      "n_ventes": 9,
+      "deja": false
+    },
+    {
+      "dex": 133,
+      "slug": "evoli",
+      "fr": "Évoli",
+      "n_cartes": 95,
+      "n_ventes": 5,
+      "deja": true
+    },
+    {
+      "dex": 134,
+      "slug": "aquali",
+      "fr": "Aquali",
+      "n_cartes": 42,
+      "n_ventes": 9,
+      "deja": false
+    },
+    {
+      "dex": 135,
+      "slug": "voltali",
+      "fr": "Voltali",
+      "n_cartes": 46,
+      "n_ventes": 3,
+      "deja": false
+    },
+    {
+      "dex": 136,
+      "slug": "pyroli",
+      "fr": "Pyroli",
+      "n_cartes": 45,
+      "n_ventes": 14,
+      "deja": false
+    },
+    {
+      "dex": 137,
+      "slug": "porygon",
+      "fr": "Porygon",
+      "n_cartes": 26,
+      "n_ventes": 0,
+      "deja": false
+    },
+    {
+      "dex": 138,
+      "slug": "amonita",
+      "fr": "Amonita",
+      "n_cartes": 14,
+      "n_ventes": 2,
+      "deja": false
+    },
+    {
+      "dex": 139,
+      "slug": "amonistar",
+      "fr": "Amonistar",
+      "n_cartes": 15,
+      "n_ventes": 4,
+      "deja": false
+    },
+    {
+      "dex": 140,
+      "slug": "kabuto",
+      "fr": "Kabuto",
+      "n_cartes": 12,
+      "n_ventes": 0,
+      "deja": false
+    },
+    {
+      "dex": 141,
+      "slug": "kabutops",
+      "fr": "Kabutops",
+      "n_cartes": 14,
+      "n_ventes": 1,
+      "deja": false
+    },
+    {
+      "dex": 142,
+      "slug": "ptera",
+      "fr": "Ptéra",
+      "n_cartes": 28,
+      "n_ventes": 0,
+      "deja": false
+    },
+    {
+      "dex": 143,
+      "slug": "ronflex",
+      "fr": "Ronflex",
+      "n_cartes": 59,
+      "n_ventes": 3,
+      "deja": false
+    },
+    {
+      "dex": 144,
+      "slug": "artikodin",
+      "fr": "Artikodin",
+      "n_cartes": 48,
+      "n_ventes": 2,
+      "deja": false
+    },
+    {
+      "dex": 145,
+      "slug": "electhor",
+      "fr": "Électhor",
+      "n_cartes": 39,
+      "n_ventes": 1,
+      "deja": false
+    },
+    {
+      "dex": 146,
+      "slug": "sulfura",
+      "fr": "Sulfura",
+      "n_cartes": 42,
+      "n_ventes": 1,
+      "deja": false
+    },
+    {
+      "dex": 147,
+      "slug": "minidraco",
+      "fr": "Minidraco",
+      "n_cartes": 29,
+      "n_ventes": 1,
+      "deja": false
+    },
+    {
+      "dex": 148,
+      "slug": "draco",
+      "fr": "Draco",
+      "n_cartes": 26,
+      "n_ventes": 5,
+      "deja": false
+    },
+    {
+      "dex": 149,
+      "slug": "dracolosse",
+      "fr": "Dracolosse",
+      "n_cartes": 54,
+      "n_ventes": 2,
+      "deja": false
+    },
+    {
+      "dex": 150,
+      "slug": "mewtwo",
+      "fr": "Mewtwo",
+      "n_cartes": 90,
+      "n_ventes": 63,
+      "deja": true
+    },
+    {
+      "dex": 151,
+      "slug": "mew",
+      "fr": "Mew",
+      "n_cartes": 59,
+      "n_ventes": 23,
+      "deja": false
+    }
+  ]
+}

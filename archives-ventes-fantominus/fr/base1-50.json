@@ -1,0 +1,49 @@
+{
+  "id": "base1-50",
+  "langue": "fr",
+  "nom": "Fantominus",
+  "serie": "Set de Base",
+  "num": "50",
+  "maj": "2026-11-10T11:34:32+0100",
+  "ventes": [
+    {
+      "id": "128149500709",
+      "date": "2026-10-29",
+      "prix": 5.99,
+      "devise": "USD",
+      "titre": "Fantominus (Gastly) 1st Edition French Pokémon Base Set 50/102",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/128149500709",
+      "vignette": "archives-ventes-fantominus/vignettes/128149500709.webp",
+      "etat": "",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/00/s/MTYwMFgxNjAw/z/sm0AAeSwWUJqz5Gb/$_1.JPG?set_id=8800005007"
+    },
+    {
+      "id": "406906564527",
+      "date": "2026-10-09",
+      "prix": 3.0,
+      "devise": "USD",
+      "titre": "French Gastly 50/102 Common Base Set Unlimited Pokemon Lightly Played",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/406906564527",
+      "vignette": "archives-ventes-fantominus/vignettes/406906564527.webp",
+      "etat": "",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/00/s/MTYwMFgxMTkz/z/TKQAAeSwkJNp-i73/$_1.JPG?set_id=8800005007"
+    },
+    {
+      "id": "158299848800",
+      "date": "2026-10-08",
+      "prix": 3.99,
+      "devise": "USD",
+      "titre": "Gastly \"Fantominus\" 50/102 Base Set Unlimited Pokemon TCG French LP",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/158299848800",
+      "vignette": "archives-ventes-fantominus/vignettes/158299848800.webp",
+      "etat": "",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/00/s/MTYwMFgxMTUw/z/EosAAeSwuvJqqyX3/$_1.JPG?set_id=8800005007"
+    }
+  ]
+}

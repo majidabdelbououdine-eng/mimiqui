@@ -1,0 +1,62 @@
+{
+  "id": "base5-30",
+  "langue": "fr",
+  "nom": "Rafflesia obscur",
+  "serie": "Team Rocket",
+  "num": "30",
+  "maj": "2026-11-10T11:24:25+0100",
+  "ventes": [
+    {
+      "id": "198778773298",
+      "date": "2026-11-08",
+      "prix": 19.99,
+      "devise": "USD",
+      "titre": "Nintendo Rafflesia obscur Team Rocket 30/82 French Regular Rare 2000 60 HP",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/198778773298",
+      "vignette": "archives-ventes-rafflesia/vignettes/198778773298.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/IHYAAeSwbehq7qt3/s-l140.webp"
+    },
+    {
+      "id": "377609819679",
+      "date": "2026-10-30",
+      "prix": 9.99,
+      "devise": "USD",
+      "titre": "Nintendo Team Rocket 1st Ed Dark Vileplume 30/82 Rare FR 2000 60 HP",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/377609819679",
+      "vignette": "archives-ventes-rafflesia/vignettes/377609819679.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/LUAAAeSweZpq5W6E/s-l500.webp"
+    },
+    {
+      "id": "188600496617",
+      "date": "2026-10-30",
+      "prix": 15.0,
+      "devise": "USD",
+      "titre": "Rafflesia Obscur (Dark Vileplume) FR (French) 30/82 Team Rocket Edition 2",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/188600496617",
+      "vignette": "archives-ventes-rafflesia/vignettes/188600496617.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/PMMAAeSwsUZqSZNB/s-l140.webp"
+    },
+    {
+      "id": "198748530186",
+      "date": "2026-10-26",
+      "prix": 6.99,
+      "devise": "USD",
+      "titre": "Wizards of the Coast Dark Vileplume Team Rocket 30/82 French 1999",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/198748530186",
+      "vignette": "archives-ventes-rafflesia/vignettes/198748530186.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/xasAAeSwAe9q4B1W/s-l140.webp"
+    }
+  ]
+}

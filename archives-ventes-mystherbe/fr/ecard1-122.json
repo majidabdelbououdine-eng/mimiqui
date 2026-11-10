@@ -1,0 +1,23 @@
+{
+  "id": "ecard1-122",
+  "langue": "fr",
+  "nom": "Mystherbe",
+  "serie": "Expedition",
+  "num": "122",
+  "maj": "2026-11-10T11:24:13+0100",
+  "ventes": [
+    {
+      "id": "198447080606",
+      "date": "2026-11-09",
+      "prix": 7.86,
+      "devise": "USD",
+      "titre": "Pokemon Card Mystherbe 122/165 Expedition Wizards FR",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/198447080606",
+      "vignette": "archives-ventes-mystherbe/vignettes/198447080606.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/9dwAAeSwPdVqOdE~/s-l140.webp"
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "id": "base3-11",
+  "langue": "fr",
+  "nom": "Magnéton",
+  "serie": "Fossile",
+  "num": "11",
+  "maj": "2026-11-10T11:31:06+0100",
+  "ventes": [
+    {
+      "id": "407309882794",
+      "date": "2026-10-22",
+      "prix": 40.0,
+      "devise": "USD",
+      "titre": "Swirl French Magneton 11/62 Fossil Holo Pokemon",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/407309882794",
+      "vignette": "archives-ventes-magneton/vignettes/407309882794.webp",
+      "etat": "",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/00/s/MTYwMFgxNjAw/z/rbcAAeSwe4RqcoWV/$_1.JPG?set_id=8800005007"
+    },
+    {
+      "id": "366718410471",
+      "date": "2026-10-07",
+      "prix": 65.0,
+      "devise": "USD",
+      "titre": "CGC 8.5 Magneton #11/62 French 2000 Pokemon Fossil",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/366718410471",
+      "vignette": "archives-ventes-magneton/vignettes/366718410471.webp",
+      "etat": "CGC 8.5",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/00/s/MTYwMFg5OTA=/z/z4MAAeSwq-Jqxmda/$_1.JPG?set_id=8800005007"
+    }
+  ]
+}

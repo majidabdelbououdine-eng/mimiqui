@@ -1,0 +1,30 @@
+{
+  "pokemon": "Insécateur",
+  "slug": "insecateur",
+  "maj": "2026-11-10T11:51:29+01:00",
+  "source": "eBay (ebaysoldlistings.com)",
+  "periode": {
+    "depuis": "2026-10-06",
+    "note": "Ventes eBay des 5 dernières semaines, cartes françaises uniquement."
+  },
+  "cartes": [
+    {
+      "langue": "fr",
+      "id": "base2-10",
+      "nom": "Insécateur",
+      "serie": "Jungle",
+      "num": "10",
+      "nb": 2,
+      "fichier": "archives-ventes-insecateur/fr/base2-10.json"
+    },
+    {
+      "langue": "fr",
+      "id": "base2-26",
+      "nom": "Insécateur",
+      "serie": "Jungle",
+      "num": "26",
+      "nb": 1,
+      "fichier": "archives-ventes-insecateur/fr/base2-26.json"
+    }
+  ]
+}

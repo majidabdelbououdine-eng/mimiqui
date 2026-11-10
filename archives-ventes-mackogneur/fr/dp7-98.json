@@ -1,0 +1,23 @@
+{
+  "id": "dp7-98",
+  "langue": "fr",
+  "nom": "Mackogneur",
+  "serie": "Tempête",
+  "num": "98",
+  "maj": "2026-11-10T11:26:45+0100",
+  "ventes": [
+    {
+      "id": "206615179569",
+      "date": "2026-10-17",
+      "prix": 46.75,
+      "devise": "USD",
+      "titre": "2008 POKEMON FRENCH DIAMOND & PEARL STORMFRONT #98/100 MACHAMP LV.X ULTRA RARE",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/206615179569",
+      "vignette": "archives-ventes-mackogneur/vignettes/206615179569.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/9jcAAeSwxg5qyYFv/s-l140.webp"
+    }
+  ]
+}

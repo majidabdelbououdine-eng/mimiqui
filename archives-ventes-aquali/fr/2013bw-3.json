@@ -1,0 +1,62 @@
+{
+  "id": "2013bw-3",
+  "langue": "fr",
+  "nom": "Aquali",
+  "serie": "Collection McDonald's 2013",
+  "num": "3",
+  "maj": "2026-11-10T11:54:13+0100",
+  "ventes": [
+    {
+      "id": "168761498919",
+      "date": "2026-11-03",
+      "prix": 41.51,
+      "devise": "USD",
+      "titre": "Pokemon \"Aquali/Vaporeon\" 3/12 *Holo* McDonalds 2013 - French - Light Played",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/168761498919",
+      "vignette": "archives-ventes-aquali/vignettes/168761498919.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/XBUAAeSw6rdqx9O4/s-l500.webp"
+    },
+    {
+      "id": "168799583448",
+      "date": "2026-10-23",
+      "prix": 46.0,
+      "devise": "USD",
+      "titre": "Pokemon \"Aquali/Vaporeon\" 3/12 *Holo* McDonalds 2013 - French - Good/Excellent",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/168799583448",
+      "vignette": "archives-ventes-aquali/vignettes/168799583448.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/XtUAAeSwduNq08zF/s-l140.webp"
+    },
+    {
+      "id": "168781376185",
+      "date": "2026-10-15",
+      "prix": 48.25,
+      "devise": "USD",
+      "titre": "Pokemon \"Aquali/Vaporeon\" 3/12 *Holo* McDonalds 2013 - French - Good [Holobleed]",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/168781376185",
+      "vignette": "archives-ventes-aquali/vignettes/168781376185.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/aC0AAeSwc9hqzeF8/s-l140.webp"
+    },
+    {
+      "id": "168695055559",
+      "date": "2026-10-06",
+      "prix": 32.54,
+      "devise": "USD",
+      "titre": "Pokemon \"Aquali / Vaporeon\" 3/12 *Holo* McDonalds 2013 - French - Good",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/168695055559",
+      "vignette": "archives-ventes-aquali/vignettes/168695055559.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/3i4AAeSw-mZqu8wt/s-l140.webp"
+    }
+  ]
+}

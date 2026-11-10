@@ -1,0 +1,30 @@
+{
+  "pokemon": "Kokiyas",
+  "slug": "kokiyas",
+  "maj": "2026-11-10T11:34:02+01:00",
+  "source": "eBay (ebaysoldlistings.com)",
+  "periode": {
+    "depuis": "2026-10-06",
+    "note": "Ventes eBay des 5 dernières semaines, cartes françaises uniquement."
+  },
+  "cartes": [
+    {
+      "langue": "fr",
+      "id": "ex6-79",
+      "nom": "Kokiyas",
+      "serie": "EX Rouge Feu & Vert Feuille",
+      "num": "79",
+      "nb": 1,
+      "fichier": "archives-ventes-kokiyas/fr/ex6-79.json"
+    },
+    {
+      "langue": "fr",
+      "id": "ecard1-129",
+      "nom": "Kokiyas",
+      "serie": "Expedition",
+      "num": "129",
+      "nb": 1,
+      "fichier": "archives-ventes-kokiyas/fr/ecard1-129.json"
+    }
+  ]
+}

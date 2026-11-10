@@ -1,0 +1,23 @@
+{
+  "id": "sv03.5-095",
+  "langue": "fr",
+  "nom": "Onix",
+  "serie": "151",
+  "num": "095",
+  "maj": "2026-11-10T11:35:16+0100",
+  "ventes": [
+    {
+      "id": "136153365393",
+      "date": "2026-10-29",
+      "prix": 9.99,
+      "devise": "USD",
+      "titre": "Pokemon Card - 1st Edition Onix - (95/102) French Base Set TCG 1999 NM",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/136153365393",
+      "vignette": "archives-ventes-onix/vignettes/136153365393.webp",
+      "etat": "",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/00/s/MTU1N1gxMjA0/z/WDYAAeSwyetqzDzZ/$_57.PNG?set_id=880000500F"
+    }
+  ]
+}

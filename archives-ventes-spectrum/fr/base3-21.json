@@ -1,0 +1,23 @@
+{
+  "id": "base3-21",
+  "langue": "fr",
+  "nom": "Spectrum",
+  "serie": "Fossile",
+  "num": "21",
+  "maj": "2026-11-10T11:35:17+0100",
+  "ventes": [
+    {
+      "id": "147638951893",
+      "date": "2026-10-16",
+      "prix": 12.88,
+      "devise": "USD",
+      "titre": "French Haunter Spectrum 1st Ed 21/62 Fossil Non-Holo 1999-2000 Wizards MP",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/147638951893",
+      "vignette": "archives-ventes-spectrum/vignettes/147638951893.webp",
+      "etat": "",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/00/s/MTYwMFgxNjAw/z/dMwAAeSwojpq0oxc/$_12.JPG?set_id=880000500F"
+    }
+  ]
+}

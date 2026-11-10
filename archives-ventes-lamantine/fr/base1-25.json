@@ -1,0 +1,23 @@
+{
+  "id": "base1-25",
+  "langue": "fr",
+  "nom": "Lamantine",
+  "serie": "Set de Base",
+  "num": "25",
+  "maj": "2026-11-10T11:33:11+0100",
+  "ventes": [
+    {
+      "id": "168610964014",
+      "date": "2026-11-02",
+      "prix": 12.93,
+      "devise": "USD",
+      "titre": "Lamantine (25) Uncommon Base 1st Edition (25/102) MP FRENCH",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/168610964014",
+      "vignette": "archives-ventes-lamantine/vignettes/168610964014.webp",
+      "etat": "",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/00/s/MTEzOFg4MTA=/z/kRoAAeSwCQJqfccv/$_57.PNG?set_id=880000500F"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "id": "base2-6",
+  "langue": "fr",
+  "nom": "M. Mime",
+  "serie": "Jungle",
+  "num": "6",
+  "maj": "2026-11-10T11:51:14+0100",
+  "ventes": [
+    {
+      "id": "336876055213",
+      "date": "2026-11-03",
+      "prix": 18.0,
+      "devise": "USD",
+      "titre": "Wizards of the Coast Pokemon TCG Mr. Mime 6/64 Holo 1999 Basic HP 40 French",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/336876055213",
+      "vignette": "archives-ventes-m-mime/vignettes/336876055213.webp",
+      "etat": "",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/s6AAAeSwkJ1q6TB0/s-l1600.jpg"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "id": "base2-57",
+  "langue": "fr",
+  "nom": "Nidoran ♀",
+  "serie": "Jungle",
+  "num": "57",
+  "maj": "2026-11-10T11:19:21+0100",
+  "ventes": [
+    {
+      "id": "117486439882",
+      "date": "2026-11-01",
+      "prix": 2.25,
+      "devise": "USD",
+      "titre": "Nidoran F Jungle Unlimited 57/64 French Regular Common Pokemon 1999 60 HP",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/117486439882",
+      "vignette": "archives-ventes-nidoran-f/vignettes/117486439882.webp",
+      "etat": "",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/00/s/MTYwMFgxNjAw/z/Z1cAAeSwfYdq3fgD/$_1.JPG?set_id=8800005007"
+    }
+  ]
+}

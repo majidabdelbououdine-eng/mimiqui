@@ -1,0 +1,23 @@
+{
+  "id": "base5-45",
+  "langue": "fr",
+  "nom": "Aquali obscur",
+  "serie": "Team Rocket",
+  "num": "45",
+  "maj": "2026-11-10T11:54:13+0100",
+  "ventes": [
+    {
+      "id": "287638271298",
+      "date": "2026-10-09",
+      "prix": 14.99,
+      "devise": "USD",
+      "titre": "Dark Vaporeon Aquali Obscur 45/82 French 1st Edition Pokemon Team Rocket",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/287638271298",
+      "vignette": "archives-ventes-aquali/vignettes/287638271298.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/LpUAAeSwK8dqyWs3/s-l140.webp"
+    }
+  ]
+}

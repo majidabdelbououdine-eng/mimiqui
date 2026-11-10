@@ -1,0 +1,62 @@
+{
+  "id": "base1-32",
+  "langue": "fr",
+  "nom": "Kadabra",
+  "serie": "Set de Base",
+  "num": "32",
+  "maj": "2026-11-10T11:26:17+0100",
+  "ventes": [
+    {
+      "id": "147379488345",
+      "date": "2026-10-22",
+      "prix": 14.99,
+      "devise": "USD",
+      "titre": "Pokémon Kadabra French 1st Edition Base Set Uncommon 32/102 Mp+/LP",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/147379488345",
+      "vignette": "archives-ventes-kadabra/vignettes/147379488345.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/DUsAAeSwt81qMd23/s-l500.webp"
+    },
+    {
+      "id": "407283921594",
+      "date": "2026-10-21",
+      "prix": 23.5,
+      "devise": "USD",
+      "titre": "Pokemon 1999 Kadabra 32/102 Base Set 1st Edition French PSA 6",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/407283921594",
+      "vignette": "archives-ventes-kadabra/vignettes/407283921594.webp",
+      "etat": "PSA 6",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/taEAAeSwo4RqzEk~/s-l140.webp"
+    },
+    {
+      "id": "306795574367",
+      "date": "2026-10-14",
+      "prix": 42.59,
+      "devise": "USD",
+      "titre": "Pokemon Card Kadabra 32/102 Edition 1 Base Set French Wizards VF - SDB",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/306795574367",
+      "vignette": "archives-ventes-kadabra/vignettes/306795574367.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/EnUAAeSwrOlpoyMl/s-l140.webp"
+    },
+    {
+      "id": "227557250318",
+      "date": "2026-10-12",
+      "prix": 19.99,
+      "devise": "USD",
+      "titre": "Kadabra 032/102 Set de Base (Base Set) 1st Edition (French)",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/227557250318",
+      "vignette": "archives-ventes-kadabra/vignettes/227557250318.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/y5oAAeSwButqxqgz/s-l140.webp"
+    }
+  ]
+}

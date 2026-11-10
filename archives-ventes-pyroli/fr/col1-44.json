@@ -1,0 +1,23 @@
+{
+  "id": "col1-44",
+  "langue": "fr",
+  "nom": "Pyroli",
+  "serie": "L'appel des Légendes",
+  "num": "44",
+  "maj": "2026-11-10T11:54:54+0100",
+  "ventes": [
+    {
+      "id": "196430222183",
+      "date": "2026-10-23",
+      "prix": 6.17,
+      "devise": "USD",
+      "titre": "Pokemon Card PYROLI 44/95 Call of Legends FR NM",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/196430222183",
+      "vignette": "archives-ventes-pyroli/vignettes/196430222183.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/hKQAAOSwQgVlczn6/s-l140.webp"
+    }
+  ]
+}

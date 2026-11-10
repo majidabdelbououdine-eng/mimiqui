@@ -1,0 +1,23 @@
+{
+  "id": "sm10-2",
+  "langue": "fr",
+  "nom": "Chenipan",
+  "serie": "Alliance Infaillible",
+  "num": "2",
+  "maj": "2026-11-10T11:17:12+0100",
+  "ventes": [
+    {
+      "id": "163838254886",
+      "date": "2026-10-11",
+      "prix": 2.13,
+      "devise": "USD",
+      "titre": "Chenipan Reverse-SL10: Infallible Alliance- 2/214-French Pokemon Card",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/163838254886",
+      "vignette": "archives-ventes-chenipan/vignettes/163838254886.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/AdkAAOSw4kZdZ47W/s-l140.webp"
+    }
+  ]
+}

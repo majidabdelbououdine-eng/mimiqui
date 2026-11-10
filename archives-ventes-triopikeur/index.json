@@ -1,0 +1,75 @@
+{
+  "pokemon": "Triopikeur",
+  "slug": "triopikeur",
+  "maj": "2026-11-10T11:25:10+01:00",
+  "source": "eBay (ebaysoldlistings.com)",
+  "periode": {
+    "depuis": "2026-10-06",
+    "note": "Ventes eBay des 5 dernières semaines, cartes françaises uniquement."
+  },
+  "cartes": [
+    {
+      "langue": "fr",
+      "id": "base5-6",
+      "nom": "Triopikeur obscur",
+      "serie": "Team Rocket",
+      "num": "6",
+      "nb": 1,
+      "fichier": "archives-ventes-triopikeur/fr/base5-6.json"
+    },
+    {
+      "langue": "fr",
+      "id": "base5-23",
+      "nom": "Triopikeur obscur",
+      "serie": "Team Rocket",
+      "num": "23",
+      "nb": 1,
+      "fichier": "archives-ventes-triopikeur/fr/base5-23.json"
+    },
+    {
+      "langue": "fr",
+      "id": "g1-39",
+      "nom": "Triopikeur",
+      "serie": "Générations",
+      "num": "39",
+      "nb": 1,
+      "fichier": "archives-ventes-triopikeur/fr/g1-39.json"
+    },
+    {
+      "langue": "fr",
+      "id": "sv03.5-051",
+      "nom": "Triopikeur",
+      "serie": "151",
+      "num": "051",
+      "nb": 1,
+      "fichier": "archives-ventes-triopikeur/fr/sv03.5-051.json"
+    },
+    {
+      "langue": "fr",
+      "id": "xy12-56",
+      "nom": "Triopikeur",
+      "serie": "Évolutions",
+      "num": "56",
+      "nb": 1,
+      "fichier": "archives-ventes-triopikeur/fr/xy12-56.json"
+    },
+    {
+      "langue": "fr",
+      "id": "xy1-59",
+      "nom": "Triopikeur",
+      "serie": "XY",
+      "num": "59",
+      "nb": 1,
+      "fichier": "archives-ventes-triopikeur/fr/xy1-59.json"
+    },
+    {
+      "langue": "fr",
+      "id": "swsh6-77",
+      "nom": "Triopikeur",
+      "serie": "Règne de Glace",
+      "num": "77",
+      "nb": 1,
+      "fichier": "archives-ventes-triopikeur/fr/swsh6-77.json"
+    }
+  ]
+}

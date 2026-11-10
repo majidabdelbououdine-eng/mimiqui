@@ -1,0 +1,36 @@
+{
+  "id": "swsh8-114",
+  "langue": "fr",
+  "nom": "Mew VMAX",
+  "serie": "Poing de Fusion",
+  "num": "114",
+  "maj": "2026-11-10T11:57:34+0100",
+  "ventes": [
+    {
+      "id": "205811392806",
+      "date": "2026-10-23",
+      "prix": 15.75,
+      "devise": "USD",
+      "titre": "Mew VMAX (WCD22 FST 114)●FRENCH●WCD 2022●POKEMON●2023●NM●A467",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/205811392806",
+      "vignette": "archives-ventes-mew/vignettes/205811392806.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/7KYAAeSwCgdpAAe9/s-l140.webp"
+    },
+    {
+      "id": "800799700422",
+      "date": "2026-10-17",
+      "prix": 28.33,
+      "devise": "USD",
+      "titre": "Mew VMAX 114/264 ME: 30th Celebration Double Glitters Holo Pokemon FR NM",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/800799700422",
+      "vignette": "archives-ventes-mew/vignettes/800799700422.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/s~sAAeSwQDxq0X31/s-l140.webp"
+    }
+  ]
+}

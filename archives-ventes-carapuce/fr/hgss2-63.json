@@ -1,0 +1,23 @@
+{
+  "id": "hgss2-63",
+  "langue": "fr",
+  "nom": "Carapuce",
+  "serie": "Déchaînement",
+  "num": "63",
+  "maj": "2026-11-10T11:17:12+0100",
+  "ventes": [
+    {
+      "id": "407207946756",
+      "date": "2026-10-06",
+      "prix": 10.62,
+      "devise": "USD",
+      "titre": "Pokemon Card: Carapuce 63/95 HGSS Déchaînement FR French",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/407207946756",
+      "vignette": "archives-ventes-carapuce/vignettes/407207946756.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/7UwAAeSwbR9qoyRe/s-l140.webp"
+    }
+  ]
+}

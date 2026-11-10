@@ -1,0 +1,36 @@
+{
+  "id": "base3-20",
+  "langue": "fr",
+  "nom": "Ectoplasma",
+  "serie": "Fossile",
+  "num": "20",
+  "maj": "2026-11-10T11:34:32+0100",
+  "ventes": [
+    {
+      "id": "257816331103",
+      "date": "2026-11-01",
+      "prix": 42.0,
+      "devise": "USD",
+      "titre": "Gengar 20/62 Fossil Regular FRENCH Ectoplasma",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/257816331103",
+      "vignette": "archives-ventes-ectoplasma/vignettes/257816331103.webp",
+      "etat": "",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/00/s/MTYwMFgxNjAw/z/BkAAAeSwYNlq3XHV/$_1.JPG?set_id=8800005007"
+    },
+    {
+      "id": "377533721650",
+      "date": "2026-10-07",
+      "prix": 60.0,
+      "devise": "USD",
+      "titre": "Gengar 1st Edition Fossil 20/62 FRENCH (Ectoplasma) Rare Pokemon Card",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/377533721650",
+      "vignette": "archives-ventes-ectoplasma/vignettes/377533721650.webp",
+      "etat": "",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/00/s/MTU5OVgxMTk5/z/7AUAAeSwGNRqvPNS/$_1.JPG?set_id=8800005007"
+    }
+  ]
+}

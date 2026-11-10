@@ -1,0 +1,23 @@
+{
+  "id": "swshp-SWSH150",
+  "langue": "fr",
+  "nom": "Aquali V",
+  "serie": "Promo SWSH",
+  "num": "SWSH150",
+  "maj": "2026-11-10T11:54:13+0100",
+  "ventes": [
+    {
+      "id": "137474957243",
+      "date": "2026-10-11",
+      "prix": 7.29,
+      "devise": "USD",
+      "titre": "Pokemon Card Aquali V Ultra Rare Promo SWSH150 FR New",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/137474957243",
+      "vignette": "archives-ventes-aquali/vignettes/137474957243.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/EX0AAeSwIDZqRnDk/s-l140.webp"
+    }
+  ]
+}

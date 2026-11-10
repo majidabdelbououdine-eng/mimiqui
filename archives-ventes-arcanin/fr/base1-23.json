@@ -1,0 +1,75 @@
+{
+  "id": "base1-23",
+  "langue": "fr",
+  "nom": "Arcanin",
+  "serie": "Set de Base",
+  "num": "23",
+  "maj": "2026-11-10T11:25:39+0100",
+  "ventes": [
+    {
+      "id": "137842741063",
+      "date": "2026-11-08",
+      "prix": 29.95,
+      "devise": "USD",
+      "titre": "1999 Pokemon FRENCH 1st Edition Base Set Arcanin-Arcanine 23/102 CGC 8",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/137842741063",
+      "vignette": "archives-ventes-arcanin/vignettes/137842741063.webp",
+      "etat": "CGC 8",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/V9AAAeSwx19qzyJ6/s-l500.webp"
+    },
+    {
+      "id": "137787425450",
+      "date": "2026-10-29",
+      "prix": 50.0,
+      "devise": "USD",
+      "titre": "1999 Pokemon FRENCH 1st Edition Base Set Arcanin-Arcanine 23/102- NM",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/137787425450",
+      "vignette": "archives-ventes-arcanin/vignettes/137787425450.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/sbkAAeSwLmFqucNX/s-l140.webp"
+    },
+    {
+      "id": "900021445556",
+      "date": "2026-10-24",
+      "prix": 17.5,
+      "devise": "USD",
+      "titre": "Pokemon 1st Edition French Base Set Arcanin #23/102 WOTC 1999 Vintage Card",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/900021445556",
+      "vignette": "archives-ventes-arcanin/vignettes/900021445556.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/gNsAAeSwAz9q1DWo/s-l140.webp"
+    },
+    {
+      "id": "237131008199",
+      "date": "2026-10-18",
+      "prix": 20.0,
+      "devise": "USD",
+      "titre": "Pokemon TCG Arcanin 23/102 Base Regular 1st Ed French Stage 1 100HP Rare 1999",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/237131008199",
+      "vignette": "archives-ventes-arcanin/vignettes/237131008199.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/DSIAAeSwAoxq1SQk/s-l140.webp"
+    },
+    {
+      "id": "189043309728",
+      "date": "2026-10-11",
+      "prix": 29.0,
+      "devise": "USD",
+      "titre": "1999 Pokemon FRENCH 1st Edition Base Set Arcanin-Arcanine 23/102 LP",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/189043309728",
+      "vignette": "archives-ventes-arcanin/vignettes/189043309728.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/UikAAeSw7plqwyRR/s-l140.webp"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "id": "sm3.5-38",
+  "langue": "fr",
+  "nom": "Lippoutou",
+  "serie": "Légendes Brillantes",
+  "num": "38",
+  "maj": "2026-11-10T11:51:49+0100",
+  "ventes": [
+    {
+      "id": "263952223000",
+      "date": "2026-10-28",
+      "prix": 2.13,
+      "devise": "USD",
+      "titre": "Pokemon Card LIPPOUTOU 38/73 REVERSE Sun and Moon 3.5 SL3.5 FR NEW",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/263952223000",
+      "vignette": "archives-ventes-lippoutou/vignettes/263952223000.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/LnUAAOSwtspbpmlj/s-l140.webp"
+    }
+  ]
+}

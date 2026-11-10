@@ -1,0 +1,23 @@
+{
+  "id": "base5-10",
+  "langue": "fr",
+  "nom": "Mackogneur obscur",
+  "serie": "Team Rocket",
+  "num": "10",
+  "maj": "2026-11-10T11:26:45+0100",
+  "ventes": [
+    {
+      "id": "307259019796",
+      "date": "2026-11-03",
+      "prix": 202.5,
+      "devise": "USD",
+      "titre": "Pokemon Card Team Rocket Dark Machamp 10/82 Holo FRENCH Mackogneur Obscur",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/307259019796",
+      "vignette": "archives-ventes-mackogneur/vignettes/307259019796.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/Cb0AAeSwAeRq5iAB/s-l140.webp"
+    }
+  ]
+}

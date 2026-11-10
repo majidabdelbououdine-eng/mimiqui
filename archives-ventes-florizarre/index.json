@@ -1,0 +1,75 @@
+{
+  "pokemon": "Florizarre",
+  "slug": "florizarre",
+  "maj": "2026-11-10T11:17:12+01:00",
+  "source": "eBay (ebaysoldlistings.com)",
+  "periode": {
+    "depuis": "2026-10-06",
+    "note": "Ventes eBay des 5 dernières semaines, cartes françaises uniquement."
+  },
+  "cartes": [
+    {
+      "langue": "fr",
+      "id": "swsh3.5-1",
+      "nom": "Florizarre V",
+      "serie": "La Voie du Maître",
+      "num": "1",
+      "nb": 1,
+      "fichier": "archives-ventes-florizarre/fr/swsh3.5-1.json"
+    },
+    {
+      "langue": "fr",
+      "id": "me01-003",
+      "nom": "Méga-Florizarre-ex",
+      "serie": "Méga-Évolution",
+      "num": "003",
+      "nb": 3,
+      "fichier": "archives-ventes-florizarre/fr/me01-003.json"
+    },
+    {
+      "langue": "fr",
+      "id": "sv03.5-003",
+      "nom": "Florizarre-ex",
+      "serie": "151",
+      "num": "003",
+      "nb": 1,
+      "fichier": "archives-ventes-florizarre/fr/sv03.5-003.json"
+    },
+    {
+      "langue": "fr",
+      "id": "base1-15",
+      "nom": "Florizarre",
+      "serie": "Set de Base",
+      "num": "15",
+      "nb": 7,
+      "fichier": "archives-ventes-florizarre/fr/base1-15.json"
+    },
+    {
+      "langue": "fr",
+      "id": "dp3-20",
+      "nom": "Florizarre",
+      "serie": "Merveilles Secrètes",
+      "num": "20",
+      "nb": 1,
+      "fichier": "archives-ventes-florizarre/fr/dp3-20.json"
+    },
+    {
+      "langue": "fr",
+      "id": "me01-155",
+      "nom": "Méga-Florizarre-ex",
+      "serie": "Méga-Évolution",
+      "num": "155",
+      "nb": 1,
+      "fichier": "archives-ventes-florizarre/fr/me01-155.json"
+    },
+    {
+      "langue": "fr",
+      "id": "sv03.5-198",
+      "nom": "Florizarre-ex",
+      "serie": "151",
+      "num": "198",
+      "nb": 2,
+      "fichier": "archives-ventes-florizarre/fr/sv03.5-198.json"
+    }
+  ]
+}

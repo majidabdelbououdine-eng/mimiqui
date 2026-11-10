@@ -1,0 +1,48 @@
+{
+  "pokemon": "Tauros",
+  "slug": "tauros",
+  "maj": "2026-11-10T11:53:11+01:00",
+  "source": "eBay (ebaysoldlistings.com)",
+  "periode": {
+    "depuis": "2026-10-06",
+    "note": "Ventes eBay des 5 dernières semaines, cartes françaises uniquement."
+  },
+  "cartes": [
+    {
+      "langue": "fr",
+      "id": "ex6-16",
+      "nom": "Tauros",
+      "serie": "EX Rouge Feu & Vert Feuille",
+      "num": "16",
+      "nb": 1,
+      "fichier": "archives-ventes-tauros/fr/ex6-16.json"
+    },
+    {
+      "langue": "fr",
+      "id": "base2-47",
+      "nom": "Tauros",
+      "serie": "Jungle",
+      "num": "47",
+      "nb": 1,
+      "fichier": "archives-ventes-tauros/fr/base2-47.json"
+    },
+    {
+      "langue": "fr",
+      "id": "me02-048",
+      "nom": "Tauros de Paldea",
+      "serie": "Flammes Fantasmagoriques",
+      "num": "048",
+      "nb": 1,
+      "fichier": "archives-ventes-tauros/fr/me02-048.json"
+    },
+    {
+      "langue": "fr",
+      "id": "swsh6-115",
+      "nom": "Tauros",
+      "serie": "Règne de Glace",
+      "num": "115",
+      "nb": 2,
+      "fichier": "archives-ventes-tauros/fr/swsh6-115.json"
+    }
+  ]
+}

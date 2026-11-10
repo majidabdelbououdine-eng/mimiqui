@@ -1,0 +1,23 @@
+{
+  "id": "xy10-77",
+  "langue": "fr",
+  "nom": "Ronflex",
+  "serie": "Impact des Destins",
+  "num": "77",
+  "maj": "2026-11-10T11:56:18+0100",
+  "ventes": [
+    {
+      "id": "287636101217",
+      "date": "2026-10-09",
+      "prix": 5.0,
+      "devise": "USD",
+      "titre": "~FR~ FRENCH Ronflex Snorlax 77/124 Fates Collide Regular Pokemon Card (G5)",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/287636101217",
+      "vignette": "archives-ventes-ronflex/vignettes/287636101217.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/OoEAAeSwdSxqyAds/s-l140.webp"
+    }
+  ]
+}

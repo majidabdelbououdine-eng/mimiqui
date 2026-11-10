@@ -1,0 +1,30 @@
+{
+  "pokemon": "Férosinge",
+  "slug": "ferosinge",
+  "maj": "2026-11-10T11:25:22+01:00",
+  "source": "eBay (ebaysoldlistings.com)",
+  "periode": {
+    "depuis": "2026-10-06",
+    "note": "Ventes eBay des 5 dernières semaines, cartes françaises uniquement."
+  },
+  "cartes": [
+    {
+      "langue": "fr",
+      "id": "base2-55",
+      "nom": "Férosinge",
+      "serie": "Jungle",
+      "num": "55",
+      "nb": 1,
+      "fichier": "archives-ventes-ferosinge/fr/base2-55.json"
+    },
+    {
+      "langue": "fr",
+      "id": "base5-61",
+      "nom": "Férosinge",
+      "serie": "Team Rocket",
+      "num": "61",
+      "nb": 1,
+      "fichier": "archives-ventes-ferosinge/fr/base5-61.json"
+    }
+  ]
+}

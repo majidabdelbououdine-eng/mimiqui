@@ -1,0 +1,36 @@
+{
+  "id": "base5-57",
+  "langue": "fr",
+  "nom": "Tadmorv",
+  "serie": "Team Rocket",
+  "num": "57",
+  "maj": "2026-11-10T11:33:10+0100",
+  "ventes": [
+    {
+      "id": "117438097726",
+      "date": "2026-10-21",
+      "prix": 16.82,
+      "devise": "USD",
+      "titre": "2001 Pokemon FRENCH 1st Edition Rocket Tadmorv-Grrimer 57/82 EX-MT",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/117438097726",
+      "vignette": "archives-ventes-tadmorv/vignettes/117438097726.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/XaQAAeSwG3Jqu~oS/s-l140.webp"
+    },
+    {
+      "id": "366698026550",
+      "date": "2026-10-18",
+      "prix": 3.0,
+      "devise": "USD",
+      "titre": "Pokémon TCG Team Rocket French 1st Edition Tadmorv 57/82",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/366698026550",
+      "vignette": "archives-ventes-tadmorv/vignettes/366698026550.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/dIcAAeSwJOtqutHk/s-l140.webp"
+    }
+  ]
+}

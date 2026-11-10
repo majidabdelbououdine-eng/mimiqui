@@ -1,0 +1,30 @@
+{
+  "pokemon": "Ectoplasma",
+  "slug": "ectoplasma",
+  "maj": "2026-11-10T11:34:32+01:00",
+  "source": "eBay (ebaysoldlistings.com)",
+  "periode": {
+    "depuis": "2026-10-06",
+    "note": "Ventes eBay des 5 dernières semaines, cartes françaises uniquement."
+  },
+  "cartes": [
+    {
+      "langue": "fr",
+      "id": "base3-20",
+      "nom": "Ectoplasma",
+      "serie": "Fossile",
+      "num": "20",
+      "nb": 2,
+      "fichier": "archives-ventes-ectoplasma/fr/base3-20.json"
+    },
+    {
+      "langue": "fr",
+      "id": "me03-050",
+      "nom": "Ectoplasma",
+      "serie": "Équilibre Parfait",
+      "num": "050",
+      "nb": 1,
+      "fichier": "archives-ventes-ectoplasma/fr/me03-050.json"
+    }
+  ]
+}

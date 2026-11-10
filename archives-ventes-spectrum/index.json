@@ -1,0 +1,48 @@
+{
+  "pokemon": "Spectrum",
+  "slug": "spectrum",
+  "maj": "2026-11-10T11:35:17+01:00",
+  "source": "eBay (ebaysoldlistings.com)",
+  "periode": {
+    "depuis": "2026-10-06",
+    "note": "Ventes eBay des 5 dernières semaines, cartes françaises uniquement."
+  },
+  "cartes": [
+    {
+      "langue": "fr",
+      "id": "base3-6",
+      "nom": "Spectrum",
+      "serie": "Fossile",
+      "num": "6",
+      "nb": 1,
+      "fichier": "archives-ventes-spectrum/fr/base3-6.json"
+    },
+    {
+      "langue": "fr",
+      "id": "base3-21",
+      "nom": "Spectrum",
+      "serie": "Fossile",
+      "num": "21",
+      "nb": 1,
+      "fichier": "archives-ventes-spectrum/fr/base3-21.json"
+    },
+    {
+      "langue": "fr",
+      "id": "base1-29",
+      "nom": "Spectrum",
+      "serie": "Set de Base",
+      "num": "29",
+      "nb": 2,
+      "fichier": "archives-ventes-spectrum/fr/base1-29.json"
+    },
+    {
+      "langue": "fr",
+      "id": "neo4-36",
+      "nom": "Spectrum obscur",
+      "serie": "Neo Destiny",
+      "num": "36",
+      "nb": 1,
+      "fichier": "archives-ventes-spectrum/fr/neo4-36.json"
+    }
+  ]
+}

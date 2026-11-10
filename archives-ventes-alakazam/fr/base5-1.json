@@ -1,0 +1,36 @@
+{
+  "id": "base5-1",
+  "langue": "fr",
+  "nom": "Alakazam obscur",
+  "serie": "Team Rocket",
+  "num": "1",
+  "maj": "2026-11-10T11:26:19+0100",
+  "ventes": [
+    {
+      "id": "287485539680",
+      "date": "2026-11-07",
+      "prix": 49.0,
+      "devise": "USD",
+      "titre": "Dark Alakazam 1/82 Team Rocket Holo French NM",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/287485539680",
+      "vignette": "archives-ventes-alakazam/vignettes/287485539680.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/pvAAAeSwZB9qZkoS/s-l500.webp"
+    },
+    {
+      "id": "820215135788",
+      "date": "2026-10-07",
+      "prix": 129.99,
+      "devise": "USD",
+      "titre": "Pokemon TCG Dark Alakazam Obscur 1/82 HOLO Team Rocket French 🇫🇷 US SELLER NM",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/820215135788",
+      "vignette": "archives-ventes-alakazam/vignettes/820215135788.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/JGwAAeSwYa5qxrtd/s-l140.webp"
+    }
+  ]
+}

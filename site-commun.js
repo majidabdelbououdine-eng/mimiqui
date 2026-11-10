@@ -9,10 +9,10 @@ var __acc=/(\/|\/index\.html?)$/i.test(location.pathname);
   if(page==='accueil.html')page='index.html';
   var SECTIONS=[
     {t:'Accueil',h:'index.html',p:['index.html']},
-    {t:'Cartes',h:'cartes.html',p:['cartes.html','cartes-japonaises.html','cartes-anglaises.html','cartes-pokemon.html','pokemon.html','regne-delta.html','heros-transcendants.html','heros-fantasmagoriques.html','mega-evolution-cartes.html','regne-delta-ja.html','chaos-ascendant-ja.html','chaos-ascendant-en.html','flammes-fantasmagoriques-ja.html','flammes-fantasmagoriques-en.html','mega-evolution-en.html','nuit-noire-ja.html','nuit-noire-en.html','heros-transcendants-en.html','trentieme-anniversaire-en.html','equilibre-parfait-ja.html','equilibre-parfait-en.html','chaos-ascendant.html','chaos-ascendant-ventes.html','equilibre-parfait.html','equilibre-parfait-ventes.html','trentieme-anniversaire.html','trentieme-anniversaire-ventes.html','nuit-noire-ventes.html'],s:[
-      ['Cartes FR','cartes.html'],['Cartes JA','cartes-japonaises.html'],['Cartes EN','cartes-anglaises.html'],['Cartes Pok\u00e9mon','cartes-pokemon.html']]},
-    {t:'Prix',h:'cotation.html',p:['cotation.html','registre.html','archive-ventes.html','registre-pokemon.html','adjuge.html'],s:[
-      ['Cotation','cotation.html'],['Ventes pass\u00e9es Sp\u00e9cial Mimiqui','registre.html'],['Archive des ventes','archive-ventes.html'],['Registre des cartes pass\u00e9es','registre-pokemon.html']]},
+    {t:'Cartes',h:'cartes.html',p:['cartes.html','cartes-japonaises.html','cartes-anglaises.html','cartes-pokemon.html','pokemon.html','regne-delta.html','heros-transcendants.html','heros-fantasmagoriques.html','mega-evolution-cartes.html','regne-delta-ja.html','chaos-ascendant-ja.html','chaos-ascendant-en.html','flammes-fantasmagoriques-ja.html','flammes-fantasmagoriques-en.html','mega-evolution-en.html','nuit-noire-ja.html','nuit-noire-en.html','heros-transcendants-en.html','trentieme-anniversaire-en.html','equilibre-parfait-ja.html','equilibre-parfait-en.html','chaos-ascendant.html','chaos-ascendant-ventes.html','equilibre-parfait.html','equilibre-parfait-ventes.html','trentieme-anniversaire.html','trentieme-anniversaire-ventes.html','nuit-noire-ventes.html','cartes-pikachu-ventes.html','cartes-dracaufeu-ventes.html','cartes-evoli-ventes.html','cartes-mewtwo-ventes.html','cartes-generation-1.html','carte-pikachu.html'],s:[
+      ['Cartes FR','cartes.html'],['Cartes JA','cartes-japonaises.html'],['Cartes EN','cartes-anglaises.html'],['Cartes Pok\u00e9mon','cartes-pokemon.html'],['Cartes Pikachu','cartes-pikachu-ventes.html'],['Cartes Dracaufeu','cartes-dracaufeu-ventes.html'],['Cartes Évoli','cartes-evoli-ventes.html'],['Cartes Mewtwo','cartes-mewtwo-ventes.html'],['Génération 1','cartes-generation-1.html']]},
+    {t:'Prix',h:'cotation.html',p:['cotation.html','registre.html','archive-ventes.html','registre-pokemon.html','adjuge.html','cartes-pikachu-ventes.html','cartes-dracaufeu-ventes.html','cartes-evoli-ventes.html','cartes-mewtwo-ventes.html','cartes-generation-1.html'],s:[
+      ['Cotation','cotation.html'],['Ventes pass\u00e9es Sp\u00e9cial Mimiqui','registre.html'],['Archive des ventes','archive-ventes.html'],['Registre des cartes pass\u00e9es','registre-pokemon.html'],['Ventes par Pok\u00e9mon \u00b7 Pikachu','cartes-pikachu-ventes.html'],['Ventes par Pok\u00e9mon \u00b7 Dracaufeu','cartes-dracaufeu-ventes.html'],['Ventes par Pok\u00e9mon \u00b7 Évoli','cartes-evoli-ventes.html'],['Ventes par Pok\u00e9mon \u00b7 Mewtwo','cartes-mewtwo-ventes.html'],['Ventes par Pok\u00e9mon \u00b7 Génération 1','cartes-generation-1.html']]},
     {t:'Acheter',h:'boutique.html',p:['boutique.html'],s:[['Boutique','boutique.html'],['Boosters','jeu.html#boosters']]},
     {t:'Vendre sur eBay',h:'vendre.html',p:['vendre.html','estimer-ma-carte.html','guide-vendre-ebay.html'],s:[['Vendre sur eBay','vendre.html'],['Estimer ma carte','estimer-ma-carte.html'],['Guide pour vendre sur eBay','guide-vendre-ebay.html']]}
   ];
@@ -31,11 +31,49 @@ var __acc=/(\/|\/index\.html?)$/i.test(location.pathname);
       li.insertAdjacentElement('afterend',n);
     });
   }
+  function ajouterLien(apresHref, href, label){
+    document.querySelectorAll('ul.sous-menu a[href="'+apresHref+'"]').forEach(function(a){
+      var li=a.parentElement;if(!li)return;
+      var sm=li.parentElement;
+      if(sm&&sm.querySelector('a[href="'+href+'"]'))return;
+      var n=el('li');
+      n.appendChild(el('a',{href:href},label));
+      li.insertAdjacentElement('afterend',n);
+    });
+  }
+  var VENTES_PKMN=[
+    {slug:'pikachu',nom:'Pikachu',liste:'cartes-pikachu-ventes.html'},
+    {slug:'dracaufeu',nom:'Dracaufeu',liste:'cartes-dracaufeu-ventes.html'},
+    {slug:'evoli',nom:'\u00c9voli',liste:'cartes-evoli-ventes.html'},
+    {slug:'mewtwo',nom:'Mewtwo',liste:'cartes-mewtwo-ventes.html'},
+    {slug:'generation-1',nom:'Génération 1',liste:'cartes-generation-1.html'}
+  ];
+  function ajouterLienSiTexte(apresHref, href, label, doitCommencer){
+    document.querySelectorAll('ul.sous-menu a[href="'+apresHref+'"]').forEach(function(a){
+      if(doitCommencer && a.textContent.indexOf(doitCommencer)!==0) return;
+      var li=a.parentElement;if(!li)return;
+      var sm=li.parentElement;
+      if(sm&&sm.querySelector('a[href="'+href+'"]'))return;
+      var n=el('li');
+      n.appendChild(el('a',{href:href},label));
+      li.insertAdjacentElement('afterend',n);
+    });
+  }
+  function ajouterPikachu(){
+    var prevC='cartes-pokemon.html', prevP='registre-pokemon.html';
+    VENTES_PKMN.forEach(function(p){
+      var apresC=prevC, apresP=prevP;
+      ajouterLienSiTexte(apresC, p.liste, 'Cartes '+p.nom, apresC==='cartes-pokemon.html'?null:'Cartes ');
+      ajouterLienSiTexte(apresP, p.liste, 'Ventes par Pok\u00e9mon \u00b7 '+p.nom, apresP==='registre-pokemon.html'?null:'Ventes par');
+      prevC=p.liste; prevP=p.liste;
+    });
+  }
   function menu(){
     var nav=document.querySelector('nav.sitenav,header nav.top');if(!nav)return;
     var ul=nav.querySelector('ul.menu-principal');if(!ul)return;
     nav.classList.add('nav-commune');
     ajouterArchive();
+    ajouterPikachu();
     var cur=courante();
     ul.querySelectorAll(':scope>li').forEach(function(li,i){
       var sec=SECTIONS[i];if(!sec)return;var a=li.querySelector(':scope>a');
@@ -81,8 +119,8 @@ var __acc=/(\/|\/index\.html?)$/i.test(location.pathname);
   function pied(){
     if(document.querySelector('.pied-commun'))return;
     var groupes=[
-      ['Cartes',[['Cartes FR','cartes.html'],['Cartes JA','cartes-japonaises.html'],['Cartes EN','cartes-anglaises.html'],['Cartes Pok\u00e9mon','cartes-pokemon.html']]],
-      ['Prix',[['Cotation','cotation.html'],['Ventes pass\u00e9es Sp\u00e9cial Mimiqui','registre.html'],['Archive des ventes','archive-ventes.html'],['Registre des cartes pass\u00e9es','registre-pokemon.html']]],
+      ['Cartes',[['Cartes FR','cartes.html'],['Cartes JA','cartes-japonaises.html'],['Cartes EN','cartes-anglaises.html'],['Cartes Pok\u00e9mon','cartes-pokemon.html'],['Cartes Pikachu','cartes-pikachu-ventes.html'],['Cartes Dracaufeu','cartes-dracaufeu-ventes.html'],['Cartes Évoli','cartes-evoli-ventes.html'],['Cartes Mewtwo','cartes-mewtwo-ventes.html'],['Génération 1','cartes-generation-1.html']]],
+      ['Prix',[['Cotation','cotation.html'],['Ventes pass\u00e9es Sp\u00e9cial Mimiqui','registre.html'],['Archive des ventes','archive-ventes.html'],['Registre des cartes pass\u00e9es','registre-pokemon.html'],['Ventes par Pok\u00e9mon \u00b7 Pikachu','cartes-pikachu-ventes.html'],['Ventes par Pok\u00e9mon \u00b7 Dracaufeu','cartes-dracaufeu-ventes.html'],['Ventes par Pok\u00e9mon \u00b7 Évoli','cartes-evoli-ventes.html'],['Ventes par Pok\u00e9mon \u00b7 Mewtwo','cartes-mewtwo-ventes.html'],['Ventes par Pok\u00e9mon \u00b7 Génération 1','cartes-generation-1.html']]],
       ['Acheter et vendre',[['Boutique','boutique.html'],['Boosters','jeu.html#boosters'],['Vendre sur eBay','vendre.html'],['Estimer ma carte','estimer-ma-carte.html'],['Guide pour vendre sur eBay','guide-vendre-ebay.html']]],
       ['D\u00e9couvrir',[['Blog','blog.html'],['Blog Instagram','https://www.instagram.com/lecoindemimiqui/'],['Jeu','jeu.html'],['Le film 2027','index.html#film'],['Le d\u00e9guisement','index.html#deguisement'],['Faiblesses','index.html#types'],['Rubriques','index.html#rubriques']]],
       ['Le site',[['Cr\u00e9er un compte','index.html#compte'],['Assistant Instagram','assistant-instagram.html'],['Cookies et vie priv\u00e9e','confidentialite.html']]]
@@ -454,4 +492,179 @@ if(document.readyState==='loading') document.addEventListener('DOMContentLoaded'
  function m(){w.classList.toggle('on',scrollY>120);place()}
  addEventListener('scroll',m,{passive:true});addEventListener('resize',place);m();
  new MutationObserver(place).observe(document.body,{childList:true,subtree:true,attributes:true,attributeFilter:['class','style','hidden']});
+})();
+
+
+/* Grande barre de recherche dans l'en-tête (Génération 1 incluse). Le menu n'est pas réorganisé, seul un lien Génération 1 est ajouté à côté de Mewtwo. */
+(function(){
+  "use strict";
+  if (window.__barreRechercheSite) return;
+  window.__barreRechercheSite = 1;
+
+  var CSS = ''
+    + 'form.barre-recherche-site{flex:1 1 360px;max-width:740px;min-width:min(100%,260px);position:relative;margin:0;}'
+    + 'form.barre-recherche-site .brs-ligne{display:flex;align-items:stretch;width:100%;}'
+    + 'form.barre-recherche-site input[type="search"]{flex:1 1 auto;width:100%;font:600 1.05rem/1.3 "Source Sans 3","Helvetica Neue",Arial,sans-serif;color:#111;padding:12px 18px;border:2px solid #111;border-right:0;border-radius:999px 0 0 999px;background:#fff;min-height:48px;-webkit-appearance:none;appearance:none;}'
+    + 'form.barre-recherche-site input[type="search"]:focus{outline:none;box-shadow:0 0 0 3px rgba(208,2,27,.2);}'
+    + 'form.barre-recherche-site button[type="submit"]{flex:none;font:700 .75rem "Source Sans 3",Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase;padding:0 18px;border:2px solid #111;border-radius:0 999px 999px 0;background:#111;color:#fff;cursor:pointer;min-height:48px;}'
+    + 'form.barre-recherche-site button[type="submit"]:hover{background:#d0021b;border-color:#d0021b;}'
+    + 'form.barre-recherche-site .brs-liste{position:absolute;left:0;right:0;top:calc(100% + 6px);z-index:2147483002;background:#fff;border:1px solid #111;border-radius:14px;box-shadow:0 12px 32px rgba(0,0,0,.18);max-height:min(70vh,420px);overflow:auto;padding:6px;}'
+    + 'form.barre-recherche-site .brs-liste[hidden]{display:none!important;}'
+    + 'form.barre-recherche-site .brs-liste a{display:block;padding:8px 10px;border-radius:10px;text-decoration:none;color:#111;}'
+    + 'form.barre-recherche-site .brs-liste a:hover,form.barre-recherche-site .brs-liste a[aria-selected="true"]{background:#f6f5f2;}'
+    + 'form.barre-recherche-site .brs-liste a b{display:block;font:700 1rem "Bodoni Moda",Georgia,serif;}'
+    + 'form.barre-recherche-site .brs-liste a span{display:block;font-size:.78rem;color:#5a5a5a;}'
+    + 'form.barre-recherche-site .brs-vide{padding:10px 12px;color:#5a5a5a;font-size:.9rem;}'
+    + 'form.barre-recherche-site .brs-lg{display:inline-block;font:700 .62rem "Source Sans 3",Arial,sans-serif;letter-spacing:.08em;border:1px solid #111;padding:0 5px;margin-right:6px;}'
+    + '@media (max-width:800px){form.barre-recherche-site{flex:1 1 100%;max-width:none;order:3;}}';
+
+  function el(tag, attrs, txt){
+    var e=document.createElement(tag);
+    for (var k in attrs||{}) e.setAttribute(k, attrs[k]);
+    if (txt!=null) e.textContent=txt;
+    return e;
+  }
+  function norm(s){
+    return String(s||"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase();
+  }
+  function hrefCarte(c){
+    return "carte-pikachu.html?pkmn="+encodeURIComponent(c.pkmn||"pikachu")+"&lang="+encodeURIComponent(c.l||"fr")+"&id="+encodeURIComponent(c.id);
+  }
+  function filtrer(q){
+    q=norm(q);
+    if(!q||q.length<1) return [];
+    var src=window.RECH_CARTES||[];
+    var out=[];
+    for(var i=0;i<src.length;i++){
+      var c=src[i];
+      var blob=[c.nom,c.serie,c.num,c.r,c.id,c.l].concat(c.al||[]).join(" ");
+      if(norm(blob).indexOf(q)!==-1) out.push(c);
+      if(out.length>=12) break;
+    }
+    return out;
+  }
+
+  function chargerIndex(cb){
+    if(window.RECH_CARTES && window.RECH_CARTES.length && window.__rechCartesPret){ cb(); return; }
+    if(window.__barreRechercheChargement){ window.__barreRechercheChargement.push(cb); return; }
+    window.__barreRechercheChargement=[cb];
+    function fini(){
+      window.__rechCartesPret=1;
+      var q=window.__barreRechercheChargement||[];
+      window.__barreRechercheChargement=null;
+      q.forEach(function(fn){ try{fn();}catch(e){} });
+    }
+    var s=document.createElement("script");
+    s.src="recherche-cartes-pkmn.js";
+    s.onload=function(){
+      if(window.RECH_CARTES && window.RECH_CARTES.length){ fini(); return; }
+      var s2=document.createElement("script");
+      s2.src="recherche-cartes-pikachu.js";
+      s2.onload=fini;
+      s2.onerror=fini;
+      document.head.appendChild(s2);
+    };
+    s.onerror=function(){
+      var s2=document.createElement("script");
+      s2.src="recherche-cartes-pikachu.js";
+      s2.onload=fini;
+      s2.onerror=fini;
+      document.head.appendChild(s2);
+    };
+    document.head.appendChild(s);
+  }
+
+  function monter(){
+    if(document.getElementById("barre-recherche-site")) return;
+    var nav=document.querySelector("nav.sitenav, header nav.top, header.site nav");
+    if(!nav) return;
+    if(!document.getElementById("barre-recherche-css")){
+      var st=document.createElement("style");
+      st.id="barre-recherche-css";
+      st.textContent=CSS;
+      document.head.appendChild(st);
+    }
+    var form=el("form",{id:"barre-recherche-site","class":"barre-recherche-site",role:"search",action:"cartes-generation-1.html",method:"get"});
+    var ligne=el("div",{"class":"brs-ligne"});
+    var input=el("input",{type:"search",name:"q",placeholder:"Rechercher une carte (Génération 1)…","aria-label":"Rechercher une carte de la première génération",autocomplete:"off","aria-autocomplete":"list","aria-controls":"barre-recherche-liste"});
+    var btn=el("button",{type:"submit"},"Rechercher");
+    var liste=el("div",{id:"barre-recherche-liste","class":"brs-liste",role:"listbox",hidden:"hidden"});
+    ligne.append(input, btn);
+    form.append(ligne, liste);
+
+    var logo=nav.querySelector("a.logo");
+    if(logo&&logo.nextSibling) nav.insertBefore(form, logo.nextSibling);
+    else nav.insertBefore(form, nav.querySelector("ul.menu-principal")||nav.firstChild);
+
+    var actif=-1;
+    function fermer(){ liste.hidden=true; liste.innerHTML=""; actif=-1; }
+    function rendre(){
+      var q=input.value;
+      if(!String(q).trim()){ fermer(); return; }
+      chargerIndex(function(){
+        if(input.value!==q) return;
+        var res=filtrer(q);
+        liste.innerHTML="";
+        if(!res.length){
+          var v=el("div",{"class":"brs-vide"},"Aucune carte ne correspond. Essayez un nom, une extension ou un numéro.");
+          liste.appendChild(v);
+        } else {
+          res.forEach(function(c,i){
+            var a=el("a",{href:hrefCarte(c),role:"option",id:"brs-opt-"+i});
+            a.setAttribute("aria-selected","false");
+            var b=el("b");
+            b.appendChild(el("span",{"class":"brs-lg"},String(c.l||"").toUpperCase()));
+            b.appendChild(document.createTextNode(c.nom||c.pkmn||"Carte"));
+            var sp=el("span",null, [c.serie, c.num?("n° "+c.num):""].filter(Boolean).join(" · "));
+            a.append(b,sp);
+            liste.appendChild(a);
+          });
+        }
+        liste.hidden=false;
+        actif=-1;
+      });
+    }
+    input.addEventListener("input", rendre);
+    input.addEventListener("focus", function(){ if(input.value) rendre(); });
+    form.addEventListener("submit", function(e){
+      var q=input.value;
+      var res=(window.RECH_CARTES && String(q).trim()) ? filtrer(q) : [];
+      if(res.length===1){
+        e.preventDefault();
+        location.href=hrefCarte(res[0]);
+        return;
+      }
+      if(res.length>1){
+        var slug=res[0].pkmn||"pikachu";
+        var meme=res.every(function(c){ return (c.pkmn||"pikachu")===slug; });
+        if(meme) form.action="cartes-"+slug+"-ventes.html";
+        else {
+          e.preventDefault();
+          rendre();
+        }
+      }
+    });
+    input.addEventListener("keydown", function(e){
+      var opts=liste.querySelectorAll("a[href]");
+      if(e.key==="Escape"){ fermer(); return; }
+      if(e.key==="ArrowDown" && opts.length){
+        e.preventDefault();
+        actif=Math.min(opts.length-1, actif+1);
+        opts.forEach(function(o,i){ o.setAttribute("aria-selected", i===actif?"true":"false"); });
+        if(opts[actif]) opts[actif].scrollIntoView({block:"nearest"});
+      } else if(e.key==="ArrowUp" && opts.length){
+        e.preventDefault();
+        actif=Math.max(0, actif-1);
+        opts.forEach(function(o,i){ o.setAttribute("aria-selected", i===actif?"true":"false"); });
+      } else if(e.key==="Enter" && actif>=0 && opts[actif]){
+        e.preventDefault();
+        location.href=opts[actif].href;
+      }
+    });
+    document.addEventListener("click", function(e){ if(!form.contains(e.target)) fermer(); });
+  }
+
+  function go(){ try{ monter(); }catch(e){ console.error(e); } }
+  if(document.readyState==="loading") document.addEventListener("DOMContentLoaded", go);
+  else go();
 })();

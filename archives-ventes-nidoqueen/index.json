@@ -1,0 +1,21 @@
+{
+  "pokemon": "Nidoqueen",
+  "slug": "nidoqueen",
+  "maj": "2026-11-10T11:20:03+01:00",
+  "source": "eBay (ebaysoldlistings.com)",
+  "periode": {
+    "depuis": "2026-10-06",
+    "note": "Ventes eBay des 5 dernières semaines, cartes françaises uniquement."
+  },
+  "cartes": [
+    {
+      "langue": "fr",
+      "id": "base2-7",
+      "nom": "Nidoqueen",
+      "serie": "Jungle",
+      "num": "7",
+      "nb": 1,
+      "fichier": "archives-ventes-nidoqueen/fr/base2-7.json"
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "id": "sv03.5-139",
+  "langue": "fr",
+  "nom": "Amonistar",
+  "serie": "151",
+  "num": "139",
+  "maj": "2026-11-10T11:56:05+0100",
+  "ventes": [
+    {
+      "id": "266489393862",
+      "date": "2026-11-02",
+      "prix": 6.57,
+      "devise": "USD",
+      "titre": "AMONISTAR REVERSE - POKEMON 139/165 EV3.5 SCARLET AND PURPLE MEW 151 NEW FR",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/266489393862",
+      "vignette": "archives-ventes-amonistar/vignettes/266489393862.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/rLcAAOSwOi9lRjHI/s-l140.webp"
+    },
+    {
+      "id": "256234674551",
+      "date": "2026-10-23",
+      "prix": 2.13,
+      "devise": "USD",
+      "titre": "Pokemon Card AMONISTAR 139/165 HOLO EV3.5 Scarlet and Purple MEW 151 FR NEW",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/256234674551",
+      "vignette": "archives-ventes-amonistar/vignettes/256234674551.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/a-QAAOSw82tlFFJ9/s-l140.webp"
+    },
+    {
+      "id": "256234660619",
+      "date": "2026-10-21",
+      "prix": 5.5,
+      "devise": "USD",
+      "titre": "Pokemon Card AMONISTAR 139/165 HOLO REVERSE EV3.5 MEW 151 FR NEW",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/256234660619",
+      "vignette": "archives-ventes-amonistar/vignettes/256234660619.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/t-QAAOSw2IdlFE1h/s-l140.webp"
+    }
+  ]
+}

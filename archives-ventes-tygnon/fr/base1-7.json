@@ -1,0 +1,23 @@
+{
+  "id": "base1-7",
+  "langue": "fr",
+  "nom": "Tygnon",
+  "serie": "Set de Base",
+  "num": "7",
+  "maj": "2026-11-10T11:42:14+0100",
+  "ventes": [
+    {
+      "id": "840052629339",
+      "date": "2026-10-30",
+      "prix": 133.5,
+      "devise": "USD",
+      "titre": "1st Edition FRENCH Holo TYGNON Hitmonchan EX Condition 7/102 1999",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/840052629339",
+      "vignette": "archives-ventes-tygnon/vignettes/840052629339.webp",
+      "etat": "",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/00/s/MTYwMFgxMjAw/z/5jAAAeSwRR5q29l9/$_1.JPG?set_id=8800005007"
+    }
+  ]
+}

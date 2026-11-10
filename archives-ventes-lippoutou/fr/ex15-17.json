@@ -1,0 +1,23 @@
+{
+  "id": "ex15-17",
+  "langue": "fr",
+  "nom": "Lippoutou δ",
+  "serie": "EX Île des Dragons",
+  "num": "17",
+  "maj": "2026-11-10T11:51:49+0100",
+  "ventes": [
+    {
+      "id": "255604715506",
+      "date": "2026-10-28",
+      "prix": 21.21,
+      "devise": "USD",
+      "titre": "Pokemon Card LIPPOUTOU 17/101 Rare Reverse Block EX Dragon Island FR",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/255604715506",
+      "vignette": "archives-ventes-lippoutou/vignettes/255604715506.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/XRsAAOSwTLhiuylb/s-l140.webp"
+    }
+  ]
+}

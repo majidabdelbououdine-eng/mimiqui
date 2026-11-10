@@ -1,0 +1,23 @@
+{
+  "id": "swsh12-062",
+  "langue": "fr",
+  "nom": "Lippoutou",
+  "serie": "Tempête Argentée",
+  "num": "062",
+  "maj": "2026-11-10T11:51:49+0100",
+  "ventes": [
+    {
+      "id": "255832521510",
+      "date": "2026-10-28",
+      "prix": 2.13,
+      "devise": "USD",
+      "titre": "Pokemon Card LIPPOUTOU 062/195 REVERSE Sword and Shield 12 EB12 FR NEW",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/255832521510",
+      "vignette": "archives-ventes-lippoutou/vignettes/255832521510.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/U8IAAOSwJitjdjq7/s-l140.webp"
+    }
+  ]
+}

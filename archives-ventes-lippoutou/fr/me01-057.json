@@ -1,0 +1,23 @@
+{
+  "id": "me01-057",
+  "langue": "fr",
+  "nom": "Lippoutou",
+  "serie": "Méga-Évolution",
+  "num": "057",
+  "maj": "2026-11-10T11:51:49+0100",
+  "ventes": [
+    {
+      "id": "257159703434",
+      "date": "2026-10-30",
+      "prix": 2.13,
+      "devise": "USD",
+      "titre": "Pokemon Card LIPPOUTOU 057/132 REVERSE ME01 Mega-Evolution MEG FR NEW",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/257159703434",
+      "vignette": "archives-ventes-lippoutou/vignettes/257159703434.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/yjYAAeSwfH1o8P23/s-l500.webp"
+    }
+  ]
+}

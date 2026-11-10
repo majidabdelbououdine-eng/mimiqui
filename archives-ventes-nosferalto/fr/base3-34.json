@@ -1,0 +1,36 @@
+{
+  "id": "base3-34",
+  "langue": "fr",
+  "nom": "Nosferalto",
+  "serie": "Fossile",
+  "num": "34",
+  "maj": "2026-11-10T11:23:57+0100",
+  "ventes": [
+    {
+      "id": "257822688013",
+      "date": "2026-11-05",
+      "prix": 1.0,
+      "devise": "USD",
+      "titre": "Nosferalto (Golbat) 34 / 62 Pokemon Fossil 1st ED 1999 Near Mint Non Holo FRENCH",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/257822688013",
+      "vignette": "archives-ventes-nosferalto/vignettes/257822688013.webp",
+      "etat": "",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/66sAAeSw3FFq4pkZ/s-l140.webp"
+    },
+    {
+      "id": "336709899647",
+      "date": "2026-10-14",
+      "prix": 7.19,
+      "devise": "USD",
+      "titre": "Nosferalto Golbat 34/62 - French Fossil 1st Edition - Pokemon Card",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/336709899647",
+      "vignette": "archives-ventes-nosferalto/vignettes/336709899647.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/gngAAeSwgPtqZqKv/s-l140.webp"
+    }
+  ]
+}

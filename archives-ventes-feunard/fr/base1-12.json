@@ -1,0 +1,23 @@
+{
+  "id": "base1-12",
+  "langue": "fr",
+  "nom": "Feunard",
+  "serie": "Set de Base",
+  "num": "12",
+  "maj": "2026-11-10T11:22:29+0100",
+  "ventes": [
+    {
+      "id": "880070262953",
+      "date": "2026-11-08",
+      "prix": 20.5,
+      "devise": "USD",
+      "titre": "Pokemon Feunard 12/102 1999 BASE SET Rare French USED/Played No Reserve!",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/880070262953",
+      "vignette": "archives-ventes-feunard/vignettes/880070262953.webp",
+      "etat": "",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/00/s/MTQ2M1gxMjAw/z/uTYAAeSwjclq5sK3/$_57.PNG?set_id=880000500F"
+    }
+  ]
+}

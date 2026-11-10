@@ -1,0 +1,23 @@
+{
+  "id": "xy12-56",
+  "langue": "fr",
+  "nom": "Triopikeur",
+  "serie": "Évolutions",
+  "num": "56",
+  "maj": "2026-11-10T11:25:10+0100",
+  "ventes": [
+    {
+      "id": "265621363111",
+      "date": "2026-11-02",
+      "prix": 2.13,
+      "devise": "USD",
+      "titre": "Pokemon Card TRIOPIKEUR 56/108 Rare XY12 EVOLUTIONS FR",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/265621363111",
+      "vignette": "archives-ventes-triopikeur/vignettes/265621363111.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/n08AAOSwgz9iRFwX/s-l140.webp"
+    }
+  ]
+}

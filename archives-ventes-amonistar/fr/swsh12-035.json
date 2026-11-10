@@ -1,0 +1,23 @@
+{
+  "id": "swsh12-035",
+  "langue": "fr",
+  "nom": "Amonistar V",
+  "serie": "Tempête Argentée",
+  "num": "035",
+  "maj": "2026-11-10T11:56:05+0100",
+  "ventes": [
+    {
+      "id": "255836043971",
+      "date": "2026-10-30",
+      "prix": 5.5,
+      "devise": "USD",
+      "titre": "Pokemon Card AMONISTAR 035/195 Ultra Rare V Sword and Shield 12 EB12 FR NEW",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/255836043971",
+      "vignette": "archives-ventes-amonistar/vignettes/255836043971.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/8fkAAOSwgl5jeQ00/s-l140.webp"
+    }
+  ]
+}

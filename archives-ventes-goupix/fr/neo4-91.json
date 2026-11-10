@@ -1,0 +1,23 @@
+{
+  "id": "neo4-91",
+  "langue": "fr",
+  "nom": "Goupix",
+  "serie": "Neo Destiny",
+  "num": "91",
+  "maj": "2026-11-10T11:22:34+0100",
+  "ventes": [
+    {
+      "id": "188830426165",
+      "date": "2026-11-09",
+      "prix": 4.25,
+      "devise": "USD",
+      "titre": "Vulpix Goupix 91/105 - Neo Destiny French - Pokemon Card",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/188830426165",
+      "vignette": "archives-ventes-goupix/vignettes/188830426165.webp",
+      "etat": "",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/00/s/MTYwMFgxNjAw/z/n70AAeSw2o5qimG9/$_57.JPG?set_id=880000500F"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "id": "sv03.5-122",
+  "langue": "fr",
+  "nom": "M. Mime",
+  "serie": "151",
+  "num": "122",
+  "maj": "2026-11-10T11:51:14+0100",
+  "ventes": [
+    {
+      "id": "820123598333",
+      "date": "2026-10-12",
+      "prix": 13.75,
+      "devise": "USD",
+      "titre": "Mr Mime 122 Edibas Lamincards French 2005 Laminated Plastic Pokemon Card MP",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/820123598333",
+      "vignette": "archives-ventes-m-mime/vignettes/820123598333.webp",
+      "etat": "",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/rjQAAeSwtLZqpzVK/s-l1600.jpg"
+    }
+  ]
+}

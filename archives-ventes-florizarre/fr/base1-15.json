@@ -1,0 +1,101 @@
+{
+  "id": "base1-15",
+  "langue": "fr",
+  "nom": "Florizarre",
+  "serie": "Set de Base",
+  "num": "15",
+  "maj": "2026-11-10T11:17:12+0100",
+  "ventes": [
+    {
+      "id": "128183830341",
+      "date": "2026-11-09",
+      "prix": 650.0,
+      "devise": "USD",
+      "titre": "Pokemon 1st Edition Holo 15/102 French Basic Florizarre Venusaur",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/128183830341",
+      "vignette": "archives-ventes-florizarre/vignettes/128183830341.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/00/s/MTYwMFgxMTk5/z/zAoAAeSwHD5q8SAM/$_1.JPG?set_id=8800005007"
+    },
+    {
+      "id": "327416445613",
+      "date": "2026-11-06",
+      "prix": 735.0,
+      "devise": "USD",
+      "titre": "CGC 8.5 Venusaur 15/102 Base Set - 1st Edition Holo French Pokemon Card",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/327416445613",
+      "vignette": "archives-ventes-florizarre/vignettes/327416445613.webp",
+      "etat": "CGC 8.5",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/00/s/MTYwMFg5NzU=/z/eSUAAeSwtP9q2NxS/$_1.JPG?set_id=8800005007"
+    },
+    {
+      "id": "128163311931",
+      "date": "2026-10-30",
+      "prix": 70.0,
+      "devise": "USD",
+      "titre": "Pokemon Base Set Florizarre Venusaur 15/102 French Unlimited Rare Holo 1999 MP",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/128163311931",
+      "vignette": "archives-ventes-florizarre/vignettes/128163311931.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/WvwAAeSwBK9q49Se/s-l140.webp"
+    },
+    {
+      "id": "840069324286",
+      "date": "2026-10-28",
+      "prix": 415.0,
+      "devise": "USD",
+      "titre": "Pokemon 1st Edition Holo 15/102 French Basic “Florizarre”",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/840069324286",
+      "vignette": "archives-ventes-florizarre/vignettes/840069324286.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/FNgAAeSwDPdq4k2j/s-l140.webp"
+    },
+    {
+      "id": "307161003047",
+      "date": "2026-10-27",
+      "prix": 2243.48,
+      "devise": "USD",
+      "titre": "Florizarre Holo 15/102 Edition 1 Pokemon French Base Set PSA 9",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/307161003047",
+      "vignette": "archives-ventes-florizarre/vignettes/307161003047.webp",
+      "etat": "PSA 9",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/aC0AAeSwHJRq1gL-/s-l140.webp"
+    },
+    {
+      "id": "237113781989",
+      "date": "2026-10-07",
+      "prix": 750.0,
+      "devise": "USD",
+      "titre": "Pokemon 1st Edition Holo 15/102 French Basic “Florizarre”",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/237113781989",
+      "vignette": "archives-ventes-florizarre/vignettes/237113781989.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/mn8AAeSwmGtqxxKj/s-l140.webp"
+    },
+    {
+      "id": "227556141039",
+      "date": "2026-10-06",
+      "prix": 87.0,
+      "devise": "USD",
+      "titre": "Wizards of the Coast Venusaur Florizarre 15/102 Base Set Holo Rare French 1999",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/227556141039",
+      "vignette": "archives-ventes-florizarre/vignettes/227556141039.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/82IAAeSwXUBqxa5t/s-l1600.jpg"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "id": "base5-14",
+  "langue": "fr",
+  "nom": "Smogogo obscur",
+  "serie": "Team Rocket",
+  "num": "14",
+  "maj": "2026-11-10T11:44:20+0100",
+  "ventes": [
+    {
+      "id": "227557245992",
+      "date": "2026-10-07",
+      "prix": 39.99,
+      "devise": "USD",
+      "titre": "1st Edition Smogogo Obscur 14/82 Holo Team Rocket FRENCH Pokemon TCG",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/227557245992",
+      "vignette": "archives-ventes-smogogo/vignettes/227557245992.webp",
+      "etat": "",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/00/s/MTYwMFgxMjAw/z/glwAAeSw4tZqxqaR/$_1.JPG?set_id=8800005007"
+    }
+  ]
+}

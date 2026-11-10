@@ -1,0 +1,23 @@
+{
+  "id": "sv01-225",
+  "langue": "fr",
+  "nom": "Léviator-ex",
+  "serie": "Écarlate et Violet",
+  "num": "225",
+  "maj": "2026-11-10T11:53:22+0100",
+  "ventes": [
+    {
+      "id": "366707031878",
+      "date": "2026-10-09",
+      "prix": 11.5,
+      "devise": "USD",
+      "titre": "Pokémon TCG Léviator (Gyarados) EX from SV Base 225/198 - French Language",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/366707031878",
+      "vignette": "archives-ventes-leviator/vignettes/366707031878.webp",
+      "etat": "",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/00/s/MTYwMFgxMjAw/z/fvQAAeSwJHBqwCpw/$_1.JPG?set_id=8800005007"
+    }
+  ]
+}

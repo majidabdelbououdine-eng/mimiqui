@@ -1,0 +1,23 @@
+{
+  "id": "sv08.5-023",
+  "langue": "fr",
+  "nom": "Aquali-ex",
+  "serie": "Évolutions Prismatiques",
+  "num": "023",
+  "maj": "2026-11-10T11:54:13+0100",
+  "ventes": [
+    {
+      "id": "920018877161",
+      "date": "2026-10-22",
+      "prix": 5.05,
+      "devise": "USD",
+      "titre": "Pokemon Card Aquali ex 023/131 🇫🇷 FR 🇫🇷 Prismatic Evolutions",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/920018877161",
+      "vignette": "archives-ventes-aquali/vignettes/920018877161.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/dRMAAeSw2FhqxtVP/s-l140.webp"
+    }
+  ]
+}

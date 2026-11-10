@@ -1,0 +1,21 @@
+{
+  "pokemon": "Poissoroy",
+  "slug": "poissoroy",
+  "maj": "2026-11-10T11:49:59+01:00",
+  "source": "eBay (ebaysoldlistings.com)",
+  "periode": {
+    "depuis": "2026-10-06",
+    "note": "Ventes eBay des 5 dernières semaines, cartes françaises uniquement."
+  },
+  "cartes": [
+    {
+      "langue": "fr",
+      "id": "neo3-37",
+      "nom": "Poissoroy",
+      "serie": "Neo Revelation",
+      "num": "37",
+      "nb": 1,
+      "fichier": "archives-ventes-poissoroy/fr/neo3-37.json"
+    }
+  ]
+}

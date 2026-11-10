@@ -1,0 +1,21 @@
+{
+  "pokemon": "Abra",
+  "slug": "abra",
+  "maj": "2026-11-10T11:26:04+01:00",
+  "source": "eBay (ebaysoldlistings.com)",
+  "periode": {
+    "depuis": "2026-10-06",
+    "note": "Ventes eBay des 5 dernières semaines, cartes françaises uniquement."
+  },
+  "cartes": [
+    {
+      "langue": "fr",
+      "id": "base1-43",
+      "nom": "Abra",
+      "serie": "Set de Base",
+      "num": "43",
+      "nb": 9,
+      "fichier": "archives-ventes-abra/fr/base1-43.json"
+    }
+  ]
+}

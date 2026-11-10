@@ -1,0 +1,49 @@
+{
+  "id": "30th-066",
+  "langue": "fr",
+  "nom": "Mew-ex",
+  "serie": "30ᵉ Anniversaire",
+  "num": "066",
+  "maj": "2026-11-10T11:57:34+0100",
+  "ventes": [
+    {
+      "id": "267789850179",
+      "date": "2026-11-03",
+      "prix": 11.11,
+      "devise": "USD",
+      "titre": "Pokemon Card MEW 066/128 EX 30 years 30C FR NEW",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/267789850179",
+      "vignette": "archives-ventes-mew/vignettes/267789850179.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/kKEAAeSw6Blqrm3R/s-l140.webp"
+    },
+    {
+      "id": "840038245674",
+      "date": "2026-10-25",
+      "prix": 3.36,
+      "devise": "USD",
+      "titre": "French Pokemon Card - Mew EX 066/128 - 30th Anniversary (30C)",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/840038245674",
+      "vignette": "archives-ventes-mew/vignettes/840038245674.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/MJoAAeSwm-xqvSWe/s-l140.webp"
+    },
+    {
+      "id": "267808325364",
+      "date": "2026-10-10",
+      "prix": 10.09,
+      "devise": "USD",
+      "titre": "Mew ex 066/128 ME: 30th Celebration French Francais 30 éme Anniversaire",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/267808325364",
+      "vignette": "archives-ventes-mew/vignettes/267808325364.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/W9oAAeSwzU1qsemx/s-l140.webp"
+    }
+  ]
+}

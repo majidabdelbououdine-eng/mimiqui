@@ -1,0 +1,23 @@
+{
+  "id": "sv03.5-059",
+  "langue": "fr",
+  "nom": "Arcanin",
+  "serie": "151",
+  "num": "059",
+  "maj": "2026-11-10T11:25:39+0100",
+  "ventes": [
+    {
+      "id": "358679148580",
+      "date": "2026-10-30",
+      "prix": 0.91,
+      "devise": "USD",
+      "titre": "Arcanin 151 059 FR NM",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/358679148580",
+      "vignette": "archives-ventes-arcanin/vignettes/358679148580.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/oNQAAeSwBP1qLtbi/s-l140.webp"
+    }
+  ]
+}

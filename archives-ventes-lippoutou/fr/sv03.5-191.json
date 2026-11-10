@@ -1,0 +1,23 @@
+{
+  "id": "sv03.5-191",
+  "langue": "fr",
+  "nom": "Lippoutou-ex",
+  "serie": "151",
+  "num": "191",
+  "maj": "2026-11-10T11:51:49+0100",
+  "ventes": [
+    {
+      "id": "287611332283",
+      "date": "2026-10-08",
+      "prix": 22.33,
+      "devise": "USD",
+      "titre": "Pokemon Card Lippoutou Ex 191/165 EV3.5 Mew 151 French",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/287611332283",
+      "vignette": "archives-ventes-lippoutou/vignettes/287611332283.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/ZbMAAeSwT59quIuj/s-l140.webp"
+    }
+  ]
+}

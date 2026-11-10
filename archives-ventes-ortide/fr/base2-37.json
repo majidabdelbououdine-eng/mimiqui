@@ -1,0 +1,23 @@
+{
+  "id": "base2-37",
+  "langue": "fr",
+  "nom": "Ortide",
+  "serie": "Jungle",
+  "num": "37",
+  "maj": "2026-11-10T11:24:11+0100",
+  "ventes": [
+    {
+      "id": "187471013526",
+      "date": "2026-10-19",
+      "prix": 2.99,
+      "devise": "USD",
+      "titre": "GLOOM (ORTIDE) 37/64 - FRENCH Jungle Set - WoTC Pokemon Card - UNLIMITED - NM/M",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/187471013526",
+      "vignette": "archives-ventes-ortide/vignettes/187471013526.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/howAAeSwmtFolOhu/s-l140.webp"
+    }
+  ]
+}

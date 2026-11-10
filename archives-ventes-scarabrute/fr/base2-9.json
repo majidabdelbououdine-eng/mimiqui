@@ -1,0 +1,23 @@
+{
+  "id": "base2-9",
+  "langue": "fr",
+  "nom": "Scarabrute",
+  "serie": "Jungle",
+  "num": "9",
+  "maj": "2026-11-10T11:53:10+0100",
+  "ventes": [
+    {
+      "id": "336869823042",
+      "date": "2026-11-04",
+      "prix": 33.0,
+      "devise": "USD",
+      "titre": "Pokémon Jungle Scarabrute 9/64 Holo Rare French Vintage 1999 LP",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/336869823042",
+      "vignette": "archives-ventes-scarabrute/vignettes/336869823042.webp",
+      "etat": "",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/00/s/MTYwMFgxMjAz/z/eqgAAeSwwnNq4~DJ/$_57.JPG?set_id=880000500F"
+    }
+  ]
+}

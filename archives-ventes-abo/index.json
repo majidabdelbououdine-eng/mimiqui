@@ -1,0 +1,30 @@
+{
+  "pokemon": "Abo",
+  "slug": "abo",
+  "maj": "2026-11-10T11:18:20+01:00",
+  "source": "eBay (ebaysoldlistings.com)",
+  "periode": {
+    "depuis": "2026-10-06",
+    "note": "Ventes eBay des 5 dernières semaines, cartes françaises uniquement."
+  },
+  "cartes": [
+    {
+      "langue": "fr",
+      "id": "base3-46",
+      "nom": "Abo",
+      "serie": "Fossile",
+      "num": "46",
+      "nb": 1,
+      "fichier": "archives-ventes-abo/fr/base3-46.json"
+    },
+    {
+      "langue": "fr",
+      "id": "base5-56",
+      "nom": "Abo",
+      "serie": "Team Rocket",
+      "num": "56",
+      "nb": 1,
+      "fichier": "archives-ventes-abo/fr/base5-56.json"
+    }
+  ]
+}

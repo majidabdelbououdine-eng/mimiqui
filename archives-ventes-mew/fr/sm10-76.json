@@ -1,0 +1,23 @@
+{
+  "id": "sm10-76",
+  "langue": "fr",
+  "nom": "Mew",
+  "serie": "Alliance Infaillible",
+  "num": "76",
+  "maj": "2026-11-10T11:57:34+0100",
+  "ventes": [
+    {
+      "id": "237108848292",
+      "date": "2026-10-23",
+      "prix": 9.88,
+      "devise": "USD",
+      "titre": "FRENCH MEW 76/214 UNBROKEN BONDS DECK EXCLUSIVES POKEMON MP NON-HOLO 2018",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/237108848292",
+      "vignette": "archives-ventes-mew/vignettes/237108848292.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/~owAAeSwT1BpxxPA/s-l140.webp"
+    }
+  ]
+}

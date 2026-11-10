@@ -1,0 +1,30 @@
+{
+  "pokemon": "Bulbizarre",
+  "slug": "bulbizarre",
+  "maj": "2026-11-10T11:17:12+01:00",
+  "source": "eBay (ebaysoldlistings.com)",
+  "periode": {
+    "depuis": "2026-10-06",
+    "note": "Ventes eBay des 5 dernières semaines, cartes françaises uniquement."
+  },
+  "cartes": [
+    {
+      "langue": "fr",
+      "id": "sv03.5-001",
+      "nom": "Bulbizarre",
+      "serie": "151",
+      "num": "001",
+      "nb": 1,
+      "fichier": "archives-ventes-bulbizarre/fr/sv03.5-001.json"
+    },
+    {
+      "langue": "fr",
+      "id": "base1-44",
+      "nom": "Bulbizarre",
+      "serie": "Set de Base",
+      "num": "44",
+      "nb": 3,
+      "fichier": "archives-ventes-bulbizarre/fr/base1-44.json"
+    }
+  ]
+}

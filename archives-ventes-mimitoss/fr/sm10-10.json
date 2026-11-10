@@ -1,0 +1,23 @@
+{
+  "id": "sm10-10",
+  "langue": "fr",
+  "nom": "Mimitoss",
+  "serie": "Alliance Infaillible",
+  "num": "10",
+  "maj": "2026-11-10T11:24:39+0100",
+  "ventes": [
+    {
+      "id": "264539759791",
+      "date": "2026-10-31",
+      "prix": 2.13,
+      "devise": "USD",
+      "titre": "Pokemon Card MIMITOSS 10/214 REVERSE Sun and Moon 10 SL10 FR NEW",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/264539759791",
+      "vignette": "archives-ventes-mimitoss/vignettes/264539759791.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/Fv4AAOSwNd5d1Wp~/s-l140.webp"
+    }
+  ]
+}

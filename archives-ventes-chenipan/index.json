@@ -1,0 +1,30 @@
+{
+  "pokemon": "Chenipan",
+  "slug": "chenipan",
+  "maj": "2026-11-10T11:17:12+01:00",
+  "source": "eBay (ebaysoldlistings.com)",
+  "periode": {
+    "depuis": "2026-10-06",
+    "note": "Ventes eBay des 5 dernières semaines, cartes françaises uniquement."
+  },
+  "cartes": [
+    {
+      "langue": "fr",
+      "id": "sm10-2",
+      "nom": "Chenipan",
+      "serie": "Alliance Infaillible",
+      "num": "2",
+      "nb": 1,
+      "fichier": "archives-ventes-chenipan/fr/sm10-2.json"
+    },
+    {
+      "langue": "fr",
+      "id": "base1-45",
+      "nom": "Chenipan",
+      "serie": "Set de Base",
+      "num": "45",
+      "nb": 1,
+      "fichier": "archives-ventes-chenipan/fr/base1-45.json"
+    }
+  ]
+}

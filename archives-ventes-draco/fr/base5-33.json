@@ -1,0 +1,23 @@
+{
+  "id": "base5-33",
+  "langue": "fr",
+  "nom": "Draco obscur",
+  "serie": "Team Rocket",
+  "num": "33",
+  "maj": "2026-11-10T11:57:28+0100",
+  "ventes": [
+    {
+      "id": "840063397680",
+      "date": "2026-10-27",
+      "prix": 14.99,
+      "devise": "USD",
+      "titre": "Pokemon Card Team Rocket Dark Dragonair 33/82 1st Edition FRENCH Draco Obscur",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/840063397680",
+      "vignette": "archives-ventes-draco/vignettes/840063397680.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/G24AAeSwkf9q3-Kk/s-l140.webp"
+    }
+  ]
+}

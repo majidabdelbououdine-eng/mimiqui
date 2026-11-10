@@ -1,0 +1,36 @@
+{
+  "id": "neo1-36",
+  "langue": "fr",
+  "nom": "Ortide",
+  "serie": "Neo Genesis",
+  "num": "36",
+  "maj": "2026-11-10T11:24:11+0100",
+  "ventes": [
+    {
+      "id": "267830218282",
+      "date": "2026-11-08",
+      "prix": 10.0,
+      "devise": "USD",
+      "titre": "Nintendo Ortide (Gloom) 36/111 Neo Genesis Regular 60HP French 2001 Uncommon",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/267830218282",
+      "vignette": "archives-ventes-ortide/vignettes/267830218282.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/pDgAAeSwAzNqy72K/s-l140.webp"
+    },
+    {
+      "id": "158204494959",
+      "date": "2026-10-11",
+      "prix": 3.99,
+      "devise": "USD",
+      "titre": "Pokemon Card 2001 Vintage Neo Genesis French Gloom 36/111 Ortide",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/158204494959",
+      "vignette": "archives-ventes-ortide/vignettes/158204494959.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/BvgAAeSwKVxqhUgk/s-l140.webp"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "id": "base5-13",
+  "langue": "fr",
+  "nom": "Rafflesia obscur",
+  "serie": "Team Rocket",
+  "num": "13",
+  "maj": "2026-11-10T11:24:25+0100",
+  "ventes": [
+    {
+      "id": "128133412398",
+      "date": "2026-10-13",
+      "prix": 99.99,
+      "devise": "USD",
+      "titre": "Rafflesia obscur Dark Vileplume 13/82 French 1st Edition Holo Team Rocket MP",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/128133412398",
+      "vignette": "archives-ventes-rafflesia/vignettes/128133412398.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/TgkAAeSwMGVqzk9z/s-l140.webp"
+    }
+  ]
+}

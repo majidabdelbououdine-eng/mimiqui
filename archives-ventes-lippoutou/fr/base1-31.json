@@ -1,0 +1,23 @@
+{
+  "id": "base1-31",
+  "langue": "fr",
+  "nom": "Lippoutou",
+  "serie": "Set de Base",
+  "num": "31",
+  "maj": "2026-11-10T11:51:49+0100",
+  "ventes": [
+    {
+      "id": "257611027791",
+      "date": "2026-10-23",
+      "prix": 1.0,
+      "devise": "USD",
+      "titre": "Lippoutou 31/102 - Pokemon TCG Set de Base FRENCH",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/257611027791",
+      "vignette": "archives-ventes-lippoutou/vignettes/257611027791.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/heUAAeSwvCNqTWhO/s-l140.webp"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "id": "swsh2-27",
+  "langue": "fr",
+  "nom": "Caninos",
+  "serie": "Clash des Rebelles",
+  "num": "27",
+  "maj": "2026-11-10T11:25:40+0100",
+  "ventes": [
+    {
+      "id": "227494099937",
+      "date": "2026-10-10",
+      "prix": 1.66,
+      "devise": "USD",
+      "titre": "Caninos / Growlithe 27/192 Rebel Clash Pokémon French",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/227494099937",
+      "vignette": "archives-ventes-caninos/vignettes/227494099937.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/aHwAAeSwGFpqkGlB/s-l140.webp"
+    }
+  ]
+}

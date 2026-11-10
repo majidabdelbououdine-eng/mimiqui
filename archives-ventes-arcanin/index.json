@@ -1,0 +1,30 @@
+{
+  "pokemon": "Arcanin",
+  "slug": "arcanin",
+  "maj": "2026-11-10T11:25:39+01:00",
+  "source": "eBay (ebaysoldlistings.com)",
+  "periode": {
+    "depuis": "2026-10-06",
+    "note": "Ventes eBay des 5 dernières semaines, cartes françaises uniquement."
+  },
+  "cartes": [
+    {
+      "langue": "fr",
+      "id": "base1-23",
+      "nom": "Arcanin",
+      "serie": "Set de Base",
+      "num": "23",
+      "nb": 5,
+      "fichier": "archives-ventes-arcanin/fr/base1-23.json"
+    },
+    {
+      "langue": "fr",
+      "id": "sv03.5-059",
+      "nom": "Arcanin",
+      "serie": "151",
+      "num": "059",
+      "nb": 1,
+      "fichier": "archives-ventes-arcanin/fr/sv03.5-059.json"
+    }
+  ]
+}

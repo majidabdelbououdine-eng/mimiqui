@@ -1,0 +1,21 @@
+{
+  "pokemon": "Onix",
+  "slug": "onix",
+  "maj": "2026-11-10T11:35:16+01:00",
+  "source": "eBay (ebaysoldlistings.com)",
+  "periode": {
+    "depuis": "2026-10-06",
+    "note": "Ventes eBay des 5 dernières semaines, cartes françaises uniquement."
+  },
+  "cartes": [
+    {
+      "langue": "fr",
+      "id": "sv03.5-095",
+      "nom": "Onix",
+      "serie": "151",
+      "num": "095",
+      "nb": 1,
+      "fichier": "archives-ventes-onix/fr/sv03.5-095.json"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "id": "2013bw-2",
+  "langue": "fr",
+  "nom": "Pyroli",
+  "serie": "Collection McDonald's 2013",
+  "num": "2",
+  "maj": "2026-11-10T11:54:54+0100",
+  "ventes": [
+    {
+      "id": "168756473968",
+      "date": "2026-10-06",
+      "prix": 48.25,
+      "devise": "USD",
+      "titre": "Pokemon \"Pyroli / Flareon\" 2/12 *Holo* McDonalds 2013 - French - Good(+)",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/168756473968",
+      "vignette": "archives-ventes-pyroli/vignettes/168756473968.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/lIgAAeSwRydqamD1/s-l140.webp"
+    }
+  ]
+}

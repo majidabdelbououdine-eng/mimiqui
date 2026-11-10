@@ -1,0 +1,30 @@
+{
+  "pokemon": "Ramoloss",
+  "slug": "ramoloss",
+  "maj": "2026-11-10T11:29:40+01:00",
+  "source": "eBay (ebaysoldlistings.com)",
+  "periode": {
+    "depuis": "2026-10-06",
+    "note": "Ventes eBay des 5 dernières semaines, cartes françaises uniquement."
+  },
+  "cartes": [
+    {
+      "langue": "fr",
+      "id": "base3-55",
+      "nom": "Ramoloss",
+      "serie": "Fossile",
+      "num": "55",
+      "nb": 2,
+      "fichier": "archives-ventes-ramoloss/fr/base3-55.json"
+    },
+    {
+      "langue": "fr",
+      "id": "base5-67",
+      "nom": "Ramoloss",
+      "serie": "Team Rocket",
+      "num": "67",
+      "nb": 3,
+      "fichier": "archives-ventes-ramoloss/fr/base5-67.json"
+    }
+  ]
+}

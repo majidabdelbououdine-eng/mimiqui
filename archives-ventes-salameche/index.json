@@ -1,0 +1,30 @@
+{
+  "pokemon": "Salamèche",
+  "slug": "salameche",
+  "maj": "2026-11-10T11:17:12+01:00",
+  "source": "eBay (ebaysoldlistings.com)",
+  "periode": {
+    "depuis": "2026-10-06",
+    "note": "Ventes eBay des 5 dernières semaines, cartes françaises uniquement."
+  },
+  "cartes": [
+    {
+      "langue": "fr",
+      "id": "base1-46",
+      "nom": "Salamèche",
+      "serie": "Set de Base",
+      "num": "46",
+      "nb": 3,
+      "fichier": "archives-ventes-salameche/fr/base1-46.json"
+    },
+    {
+      "langue": "fr",
+      "id": "base5-50",
+      "nom": "Salamèche",
+      "serie": "Team Rocket",
+      "num": "50",
+      "nb": 3,
+      "fichier": "archives-ventes-salameche/fr/base5-50.json"
+    }
+  ]
+}

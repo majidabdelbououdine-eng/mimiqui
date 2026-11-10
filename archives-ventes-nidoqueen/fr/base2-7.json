@@ -1,0 +1,23 @@
+{
+  "id": "base2-7",
+  "langue": "fr",
+  "nom": "Nidoqueen",
+  "serie": "Jungle",
+  "num": "7",
+  "maj": "2026-11-10T11:20:03+0100",
+  "ventes": [
+    {
+      "id": "206608425139",
+      "date": "2026-10-07",
+      "prix": 32.0,
+      "devise": "USD",
+      "titre": "Pokemon TCG Nidoqueen 7/64 Jungle Unlimited Holo Rare French Near Mint",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/206608425139",
+      "vignette": "archives-ventes-nidoqueen/vignettes/206608425139.webp",
+      "etat": "",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/00/s/MTYwMFgxMjAw/z/9fQAAeSwHVJqxaj5/$_1.JPG?set_id=8800005007"
+    }
+  ]
+}

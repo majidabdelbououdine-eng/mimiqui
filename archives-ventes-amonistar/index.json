@@ -1,0 +1,30 @@
+{
+  "pokemon": "Amonistar",
+  "slug": "amonistar",
+  "maj": "2026-11-10T11:56:05+01:00",
+  "source": "eBay (ebaysoldlistings.com)",
+  "periode": {
+    "depuis": "2026-10-06",
+    "note": "Ventes eBay des 5 dernières semaines, cartes françaises uniquement."
+  },
+  "cartes": [
+    {
+      "langue": "fr",
+      "id": "swsh12-035",
+      "nom": "Amonistar V",
+      "serie": "Tempête Argentée",
+      "num": "035",
+      "nb": 1,
+      "fichier": "archives-ventes-amonistar/fr/swsh12-035.json"
+    },
+    {
+      "langue": "fr",
+      "id": "sv03.5-139",
+      "nom": "Amonistar",
+      "serie": "151",
+      "num": "139",
+      "nb": 3,
+      "fichier": "archives-ventes-amonistar/fr/sv03.5-139.json"
+    }
+  ]
+}

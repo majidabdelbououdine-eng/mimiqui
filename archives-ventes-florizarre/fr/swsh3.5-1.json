@@ -1,0 +1,23 @@
+{
+  "id": "swsh3.5-1",
+  "langue": "fr",
+  "nom": "Florizarre V",
+  "serie": "La Voie du Maître",
+  "num": "1",
+  "maj": "2026-11-10T11:17:12+0100",
+  "ventes": [
+    {
+      "id": "188551755455",
+      "date": "2026-10-24",
+      "prix": 6.72,
+      "devise": "USD",
+      "titre": "French Pokemon Card - Florizarre V 001/073 - La Voie du Maître",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/188551755455",
+      "vignette": "archives-ventes-florizarre/vignettes/188551755455.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/opoAAeSwnCNqOtxm/s-l140.webp"
+    }
+  ]
+}

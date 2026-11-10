@@ -1,0 +1,23 @@
+{
+  "id": "g1-39",
+  "langue": "fr",
+  "nom": "Triopikeur",
+  "serie": "Générations",
+  "num": "39",
+  "maj": "2026-11-10T11:25:10+0100",
+  "ventes": [
+    {
+      "id": "255467475059",
+      "date": "2026-11-05",
+      "prix": 2.13,
+      "devise": "USD",
+      "titre": "Pokemon Card TRIOPIKEUR 39/83 Rare XY GENERATIONS FR",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/255467475059",
+      "vignette": "archives-ventes-triopikeur/vignettes/255467475059.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/oMIAAOSwFrNiSBZd/s-l140.webp"
+    }
+  ]
+}

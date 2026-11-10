@@ -1,0 +1,23 @@
+{
+  "id": "base5-69",
+  "langue": "fr",
+  "nom": "Voltorbe",
+  "serie": "Team Rocket",
+  "num": "69",
+  "maj": "2026-11-10T11:39:25+0100",
+  "ventes": [
+    {
+      "id": "377609655705",
+      "date": "2026-10-31",
+      "prix": 2.0,
+      "devise": "USD",
+      "titre": "Wizards of the Coast Pokemon TCG Team Rocket 1st Ed Voltorb 69/82 French",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/377609655705",
+      "vignette": "archives-ventes-voltorbe/vignettes/377609655705.webp",
+      "etat": "",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/dRsAAeSwWuJq5VhX/s-l1600.jpg"
+    }
+  ]
+}

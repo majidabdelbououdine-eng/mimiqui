@@ -1,0 +1,23 @@
+{
+  "id": "base3-46",
+  "langue": "fr",
+  "nom": "Abo",
+  "serie": "Fossile",
+  "num": "46",
+  "maj": "2026-11-10T11:18:20+0100",
+  "ventes": [
+    {
+      "id": "366635860459",
+      "date": "2026-10-29",
+      "prix": 4.64,
+      "devise": "USD",
+      "titre": "1999 Pokémon Abo 46/62 Ekans French 1st Edition Common Fossil",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/366635860459",
+      "vignette": "archives-ventes-abo/vignettes/366635860459.webp",
+      "etat": "",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/00/s/MTYwMFgxMjAw/z/0E8AAeSwgwRqkqu~/$_1.JPG?set_id=8800005007"
+    }
+  ]
+}

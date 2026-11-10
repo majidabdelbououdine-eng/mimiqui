@@ -1,0 +1,23 @@
+{
+  "id": "ex3-57",
+  "langue": "fr",
+  "nom": "Tadmorv",
+  "serie": "EX Dragon",
+  "num": "57",
+  "maj": "2026-11-10T11:33:10+0100",
+  "ventes": [
+    {
+      "id": "255703448226",
+      "date": "2026-10-31",
+      "prix": 3.25,
+      "devise": "USD",
+      "titre": "Pokemon Card TADMORV 57/97 Block EX DRAGON FR NEW",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/255703448226",
+      "vignette": "archives-ventes-tadmorv/vignettes/255703448226.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/lNMAAOSwx2ZjD3tN/s-l500.webp"
+    }
+  ]
+}

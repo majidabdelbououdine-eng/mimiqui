@@ -1,0 +1,21 @@
+{
+  "pokemon": "Magicarpe",
+  "slug": "magicarpe",
+  "maj": "2026-11-10T11:53:19+01:00",
+  "source": "eBay (ebaysoldlistings.com)",
+  "periode": {
+    "depuis": "2026-10-06",
+    "note": "Ventes eBay des 5 dernières semaines, cartes françaises uniquement."
+  },
+  "cartes": [
+    {
+      "langue": "fr",
+      "id": "2019sm-fr-17",
+      "nom": "Magicarpe",
+      "serie": "Collection McDonald's 2019",
+      "num": "17",
+      "nb": 1,
+      "fichier": "archives-ventes-magicarpe/fr/2019sm-fr-17.json"
+    }
+  ]
+}

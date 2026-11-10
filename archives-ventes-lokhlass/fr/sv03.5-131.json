@@ -1,0 +1,23 @@
+{
+  "id": "sv03.5-131",
+  "langue": "fr",
+  "nom": "Lokhlass",
+  "serie": "151",
+  "num": "131",
+  "maj": "2026-11-10T11:53:19+0100",
+  "ventes": [
+    {
+      "id": "266770392224",
+      "date": "2026-10-25",
+      "prix": 6.57,
+      "devise": "USD",
+      "titre": "LOKHLASS REVERSE - POKEMON 131/165 EV3.5 SCARLET AND PURPLE MEW 151 NEW FR",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/266770392224",
+      "vignette": "archives-ventes-lokhlass/vignettes/266770392224.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/uSwAAOSwhWRmHS~b/s-l140.webp"
+    }
+  ]
+}

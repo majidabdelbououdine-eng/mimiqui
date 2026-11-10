@@ -1,0 +1,23 @@
+{
+  "id": "base5-23",
+  "langue": "fr",
+  "nom": "Triopikeur obscur",
+  "serie": "Team Rocket",
+  "num": "23",
+  "maj": "2026-11-10T11:25:10+0100",
+  "ventes": [
+    {
+      "id": "128136958746",
+      "date": "2026-10-28",
+      "prix": 49.99,
+      "devise": "USD",
+      "titre": "Dark Dugtrio 23/82 French 1st Edition Team Rocket Non-Holo LP",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/128136958746",
+      "vignette": "archives-ventes-triopikeur/vignettes/128136958746.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/NtUAAeSwJHdq0N4Z/s-l140.webp"
+    }
+  ]
+}

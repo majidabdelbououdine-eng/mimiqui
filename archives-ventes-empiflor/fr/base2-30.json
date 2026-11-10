@@ -1,0 +1,36 @@
+{
+  "id": "base2-30",
+  "langue": "fr",
+  "nom": "Empiflor",
+  "serie": "Jungle",
+  "num": "30",
+  "maj": "2026-11-10T11:27:01+0100",
+  "ventes": [
+    {
+      "id": "168790593268",
+      "date": "2026-10-13",
+      "prix": 8.0,
+      "devise": "USD",
+      "titre": "Pokemon Empiflor 30/64 Rare Jungle French Victreebel WOTC",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/168790593268",
+      "vignette": "archives-ventes-empiflor/vignettes/168790593268.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/Ff0AAeSwNx5qzpE1/s-l140.webp"
+    },
+    {
+      "id": "267812004102",
+      "date": "2026-10-12",
+      "prix": 2.99,
+      "devise": "USD",
+      "titre": "VICTREEBEL 30/64 JUNGLE FRENCH - FR UNLIMITED DMG",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/267812004102",
+      "vignette": "archives-ventes-empiflor/vignettes/267812004102.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/en4AAeSwTVlqzWuo/s-l500.webp"
+    }
+  ]
+}

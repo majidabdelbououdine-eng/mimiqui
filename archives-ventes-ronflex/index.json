@@ -1,0 +1,39 @@
+{
+  "pokemon": "Ronflex",
+  "slug": "ronflex",
+  "maj": "2026-11-10T11:56:18+01:00",
+  "source": "eBay (ebaysoldlistings.com)",
+  "periode": {
+    "depuis": "2026-10-06",
+    "note": "Ventes eBay des 5 dernières semaines, cartes françaises uniquement."
+  },
+  "cartes": [
+    {
+      "langue": "fr",
+      "id": "base2-27",
+      "nom": "Ronflex",
+      "serie": "Jungle",
+      "num": "27",
+      "nb": 1,
+      "fichier": "archives-ventes-ronflex/fr/base2-27.json"
+    },
+    {
+      "langue": "fr",
+      "id": "xy10-77",
+      "nom": "Ronflex",
+      "serie": "Impact des Destins",
+      "num": "77",
+      "nb": 1,
+      "fichier": "archives-ventes-ronflex/fr/xy10-77.json"
+    },
+    {
+      "langue": "fr",
+      "id": "xy2-80",
+      "nom": "Ronflex",
+      "serie": "Étincelles",
+      "num": "80",
+      "nb": 1,
+      "fichier": "archives-ventes-ronflex/fr/xy2-80.json"
+    }
+  ]
+}

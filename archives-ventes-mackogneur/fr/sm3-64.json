@@ -1,0 +1,23 @@
+{
+  "id": "sm3-64",
+  "langue": "fr",
+  "nom": "Mackogneur GX",
+  "serie": "Ombres Ardentes",
+  "num": "64",
+  "maj": "2026-11-10T11:26:45+0100",
+  "ventes": [
+    {
+      "id": "287309767540",
+      "date": "2026-10-15",
+      "prix": 3.68,
+      "devise": "USD",
+      "titre": "Mackogneur (Machamp) GX FR 64/147 SM - Burning Shadows VLP FRENCH",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/287309767540",
+      "vignette": "archives-ventes-mackogneur/vignettes/287309767540.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/2DYAAeSwur5p94le/s-l140.webp"
+    }
+  ]
+}

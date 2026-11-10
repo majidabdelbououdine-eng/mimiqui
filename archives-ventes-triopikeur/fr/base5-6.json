@@ -1,0 +1,23 @@
+{
+  "id": "base5-6",
+  "langue": "fr",
+  "nom": "Triopikeur obscur",
+  "serie": "Team Rocket",
+  "num": "6",
+  "maj": "2026-11-10T11:25:10+0100",
+  "ventes": [
+    {
+      "id": "820285599197",
+      "date": "2026-11-02",
+      "prix": 189.99,
+      "devise": "USD",
+      "titre": "Pokemon - Team Rocket - Dark Dugtrio 6/82 - French 1st Edition -SWIRL- MP",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/820285599197",
+      "vignette": "archives-ventes-triopikeur/vignettes/820285599197.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/5~MAAeSwqpJq4Tyl/s-l140.webp"
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "pokemon": "Magmar",
+  "slug": "magmar",
+  "maj": "2026-11-10T11:52:18+01:00",
+  "source": "eBay (ebaysoldlistings.com)",
+  "periode": {
+    "depuis": "2026-10-06",
+    "note": "Ventes eBay des 5 dernières semaines, cartes françaises uniquement."
+  },
+  "cartes": [
+    {
+      "langue": "fr",
+      "id": "2019sm-fr-10",
+      "nom": "Magmar",
+      "serie": "Collection McDonald's 2019",
+      "num": "10",
+      "nb": 1,
+      "fichier": "archives-ventes-magmar/fr/2019sm-fr-10.json"
+    },
+    {
+      "langue": "fr",
+      "id": "base1-36",
+      "nom": "Magmar",
+      "serie": "Set de Base",
+      "num": "36",
+      "nb": 1,
+      "fichier": "archives-ventes-magmar/fr/base1-36.json"
+    },
+    {
+      "langue": "fr",
+      "id": "base3-39",
+      "nom": "Magmar",
+      "serie": "Fossile",
+      "num": "39",
+      "nb": 1,
+      "fichier": "archives-ventes-magmar/fr/base3-39.json"
+    }
+  ]
+}

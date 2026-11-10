@@ -1,0 +1,23 @@
+{
+  "id": "base1-36",
+  "langue": "fr",
+  "nom": "Magmar",
+  "serie": "Set de Base",
+  "num": "36",
+  "maj": "2026-11-10T11:52:18+0100",
+  "ventes": [
+    {
+      "id": "800819027768",
+      "date": "2026-10-20",
+      "prix": 5.95,
+      "devise": "USD",
+      "titre": "Wizards Pokemon TCG Base Set Magmar 36/102 Regular 1st Edition 1999 50 HP FR",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/800819027768",
+      "vignette": "archives-ventes-magmar/vignettes/800819027768.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/XfAAAeSwzvtq2Avn/s-l500.webp"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "pokemon": "Mystherbe",
+  "slug": "mystherbe",
+  "maj": "2026-11-10T11:24:13+01:00",
+  "source": "eBay (ebaysoldlistings.com)",
+  "periode": {
+    "depuis": "2026-10-06",
+    "note": "Ventes eBay des 5 dernières semaines, cartes françaises uniquement."
+  },
+  "cartes": [
+    {
+      "langue": "fr",
+      "id": "base5-63",
+      "nom": "Mystherbe",
+      "serie": "Team Rocket",
+      "num": "63",
+      "nb": 1,
+      "fichier": "archives-ventes-mystherbe/fr/base5-63.json"
+    },
+    {
+      "langue": "fr",
+      "id": "ecard1-122",
+      "nom": "Mystherbe",
+      "serie": "Expedition",
+      "num": "122",
+      "nb": 1,
+      "fichier": "archives-ventes-mystherbe/fr/ecard1-122.json"
+    }
+  ]
+}

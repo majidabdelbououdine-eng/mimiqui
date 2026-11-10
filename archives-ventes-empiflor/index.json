@@ -1,0 +1,39 @@
+{
+  "pokemon": "Empiflor",
+  "slug": "empiflor",
+  "maj": "2026-11-10T11:27:01+01:00",
+  "source": "eBay (ebaysoldlistings.com)",
+  "periode": {
+    "depuis": "2026-10-06",
+    "note": "Ventes eBay des 5 dernières semaines, cartes françaises uniquement."
+  },
+  "cartes": [
+    {
+      "langue": "fr",
+      "id": "base2-14",
+      "nom": "Empiflor",
+      "serie": "Jungle",
+      "num": "14",
+      "nb": 1,
+      "fichier": "archives-ventes-empiflor/fr/base2-14.json"
+    },
+    {
+      "langue": "fr",
+      "id": "base2-30",
+      "nom": "Empiflor",
+      "serie": "Jungle",
+      "num": "30",
+      "nb": 2,
+      "fichier": "archives-ventes-empiflor/fr/base2-30.json"
+    },
+    {
+      "langue": "fr",
+      "id": "sv03.5-071",
+      "nom": "Empiflor",
+      "serie": "151",
+      "num": "071",
+      "nb": 1,
+      "fichier": "archives-ventes-empiflor/fr/sv03.5-071.json"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "id": "ecard1-129",
+  "langue": "fr",
+  "nom": "Kokiyas",
+  "serie": "Expedition",
+  "num": "129",
+  "maj": "2026-11-10T11:34:02+0100",
+  "ventes": [
+    {
+      "id": "178477348090",
+      "date": "2026-10-13",
+      "prix": 16.72,
+      "devise": "USD",
+      "titre": "Pokemon Card Kokiyas 129/165 Expedition Wizards FR - NM / Mint",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/178477348090",
+      "vignette": "archives-ventes-kokiyas/vignettes/178477348090.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/HWEAAeSwXfNqnz7D/s-l140.webp"
+    }
+  ]
+}

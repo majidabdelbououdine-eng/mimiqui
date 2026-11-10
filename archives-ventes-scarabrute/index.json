@@ -1,0 +1,30 @@
+{
+  "pokemon": "Scarabrute",
+  "slug": "scarabrute",
+  "maj": "2026-11-10T11:53:10+01:00",
+  "source": "eBay (ebaysoldlistings.com)",
+  "periode": {
+    "depuis": "2026-10-06",
+    "note": "Ventes eBay des 5 dernières semaines, cartes françaises uniquement."
+  },
+  "cartes": [
+    {
+      "langue": "fr",
+      "id": "base2-9",
+      "nom": "Scarabrute",
+      "serie": "Jungle",
+      "num": "9",
+      "nb": 1,
+      "fichier": "archives-ventes-scarabrute/fr/base2-9.json"
+    },
+    {
+      "langue": "fr",
+      "id": "base2-25",
+      "nom": "Scarabrute",
+      "serie": "Jungle",
+      "num": "25",
+      "nb": 1,
+      "fichier": "archives-ventes-scarabrute/fr/base2-25.json"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "id": "swshp-SWSH180",
+  "langue": "fr",
+  "nom": "Pyroli VMAX",
+  "serie": "Promo SWSH",
+  "num": "SWSH180",
+  "maj": "2026-11-10T11:54:54+0100",
+  "ventes": [
+    {
+      "id": "255356724862",
+      "date": "2026-11-04",
+      "prix": 112.12,
+      "devise": "USD",
+      "titre": "Pokemon Card PYROLI SWSH180 PROMO Ultra Rare Vmax Sword and Shield FR NEW",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/255356724862",
+      "vignette": "archives-ventes-pyroli/vignettes/255356724862.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/85cAAOSwtvxh8~ad/s-l140.webp"
+    }
+  ]
+}

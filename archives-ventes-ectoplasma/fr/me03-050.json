@@ -1,0 +1,23 @@
+{
+  "id": "me03-050",
+  "langue": "fr",
+  "nom": "Ectoplasma",
+  "serie": "Équilibre Parfait",
+  "num": "050",
+  "maj": "2026-11-10T11:34:32+0100",
+  "ventes": [
+    {
+      "id": "800120064933",
+      "date": "2026-10-09",
+      "prix": 80.0,
+      "devise": "USD",
+      "titre": "Ectoplasma 050/088 EB Games SEALED FR - Pokemon TCG Equilibre Parfait FRENCH",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/800120064933",
+      "vignette": "archives-ventes-ectoplasma/vignettes/800120064933.webp",
+      "etat": "",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/00/s/OTYwWDQ0NA==/z/OAAAAeSwePZqIOyX/$_57.JPG?set_id=880000500F"
+    }
+  ]
+}

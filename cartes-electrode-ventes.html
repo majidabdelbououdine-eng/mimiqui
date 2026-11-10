@@ -1,0 +1,596 @@
+<!doctype html>
+<html lang="fr"><head>
+<meta charset="utf-8">
+<link rel="icon" type="image/webp" href="img/logo-mimiqui.webp">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<link rel="stylesheet" href="site-commun.css">
+<script>try{history.scrollRestoration="manual"}catch(e){}(function(){function haut(){if(!location.hash)window.scrollTo(0,0)}haut();document.addEventListener("DOMContentLoaded",haut);window.addEventListener("load",haut);window.addEventListener("pageshow",haut)})();</script>
+<style>
+/* Polices hébergées sur le site (SIL OFL) : aucune requête vers Google */
+@font-face{font-family:"Bodoni Moda";font-style:normal;font-weight:500;font-display:swap;src:url(fonts/bodoni-moda-latin-500-normal.woff2) format("woff2")}
+@font-face{font-family:"Bodoni Moda";font-style:italic;font-weight:500;font-display:swap;src:url(fonts/bodoni-moda-latin-500-italic.woff2) format("woff2")}
+@font-face{font-family:"Bodoni Moda";font-style:normal;font-weight:700;font-display:swap;src:url(fonts/bodoni-moda-latin-700-normal.woff2) format("woff2")}
+@font-face{font-family:"Bodoni Moda";font-style:italic;font-weight:700;font-display:swap;src:url(fonts/bodoni-moda-latin-700-italic.woff2) format("woff2")}
+@font-face{font-family:"Bodoni Moda";font-style:normal;font-weight:500;font-display:swap;src:url(fonts/source-sans-3-latin-600-normal.woff2) format("woff2");unicode-range:U+0030-0039}
+@font-face{font-family:"Bodoni Moda";font-style:normal;font-weight:700;font-display:swap;src:url(fonts/source-sans-3-latin-700-normal.woff2) format("woff2");unicode-range:U+0030-0039}
+@font-face{font-family:"Bodoni Moda";font-style:italic;font-weight:500;font-display:swap;src:url(fonts/source-sans-3-latin-600-normal.woff2) format("woff2");unicode-range:U+0030-0039}
+@font-face{font-family:"Bodoni Moda";font-style:italic;font-weight:700;font-display:swap;src:url(fonts/source-sans-3-latin-700-normal.woff2) format("woff2");unicode-range:U+0030-0039}
+@font-face{font-family:"Source Sans 3";font-style:normal;font-weight:400;font-display:swap;src:url(fonts/source-sans-3-latin-400-normal.woff2) format("woff2")}
+@font-face{font-family:"Source Sans 3";font-style:normal;font-weight:600;font-display:swap;src:url(fonts/source-sans-3-latin-600-normal.woff2) format("woff2")}
+@font-face{font-family:"Source Sans 3";font-style:normal;font-weight:700;font-display:swap;src:url(fonts/source-sans-3-latin-700-normal.woff2) format("woff2")}
+</style>
+<meta name="description" content="Toutes les cartes Électrode en français : fiche détaillée, moyennes Cardmarket et ventes eBay réalisées, avec dates.">
+<title>Cartes Électrode, ventes réalisées – Le Coin de Mimiqui</title>
+<link rel="canonical" href="https://mimiqui.fr/cartes-electrode-ventes.html">
+<style>
+:root{
+  --bg:#ffffff; --ink:#111111; --muted:#5a5a5a; --line:rgba(17,17,17,.16); --soft:#f6f5f2;
+  --rouge:#d0021b; --ok:#1f7a3a; color-scheme:light;
+  --f-display:"Bodoni Moda","Didot","Bodoni 72","Yu Gothic","Yu Gothic UI","Hiragino Sans","Noto Sans JP",Georgia,serif;
+  --f-body:"Source Sans 3","Helvetica Neue","Yu Gothic","Yu Gothic UI","Meiryo","Hiragino Sans","Noto Sans JP",Arial,sans-serif;
+  padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 var(--f-body)}
+img{max-width:100%}
+[hidden]{display:none!important}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--rouge);outline-offset:2px}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.etiquette{font-weight:700;font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--rouge);margin:0}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;line-height:1.1;margin:0}
+header.site{border-bottom:3px solid var(--ink)}
+.sitenav{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-block:18px}
+.sitenav .logo{font:700 1.7rem var(--f-display);text-decoration:none}
+.sitenav .logo span{color:var(--rouge)}
+.sitenav ul{list-style:none;display:flex;gap:20px;margin:0;padding:0;flex-wrap:wrap;font-weight:700;font-size:.8rem;text-transform:uppercase;letter-spacing:.1em}
+.sitenav ul a{text-decoration:none;border-bottom:2px solid transparent}
+.sitenav ul a:hover,.sitenav ul a[aria-current]{border-color:var(--rouge)}
+.tete{padding-block:36px 8px;display:grid;gap:12px}
+.tete h1{font-size:clamp(2.2rem,6vw,3.6rem);font-weight:500;letter-spacing:-.02em}
+.tete h1 em{color:var(--rouge)}
+.tete p{color:var(--muted);max-width:68ch;margin:0}
+.resume{display:flex;flex-wrap:wrap;gap:12px 36px;margin-top:22px;padding-top:14px;border-top:3px solid var(--ink)}
+.resume div{display:grid;gap:2px;min-width:0}
+.resume b{font-weight:700;font-size:clamp(1.35rem,3.15vw,1.89rem);line-height:1.1;font-family:Arial,Helvetica,sans-serif;font-variant-numeric:tabular-nums}
+.resume span{font-size:.82rem;color:var(--muted)}
+.outils{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:26px 0 14px}
+.langs{display:flex;gap:6px;flex-wrap:wrap}
+.langs button{font:600 .88rem var(--f-body);border:1px solid var(--ink);background:#fff;color:var(--ink);border-radius:999px;padding:6px 14px;cursor:pointer}
+.langs button[aria-pressed="true"]{background:var(--ink);color:#fff}
+#cq{flex:0 1 300px;min-width:0;font:inherit;font-size:14px;color:var(--ink);padding:7px 16px 7px 36px;border:2px solid var(--ink);border-radius:999px;background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23111111' stroke-width='2.6' stroke-linecap='round'%3E%3Ccircle cx='10.5' cy='10.5' r='6.5'/%3E%3Cpath d='M16 16l5 5'/%3E%3C/svg%3E") no-repeat 13px 50%/15px 15px}
+#cq:focus{outline:none;border-color:var(--rouge);box-shadow:0 0 0 3px rgba(208,2,27,.18)}
+#ctri{font:inherit;font-size:14px;border:1px solid var(--ink);border-radius:999px;padding:6px 12px;background:#fff;color:var(--ink)}
+.nb{margin-left:auto;font-size:.85rem;color:var(--muted)}
+.tuiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:16px}
+.tuile{border:1px solid var(--ink);background:#fff;padding:12px;display:flex;flex-direction:column;gap:8px;min-width:0;scroll-margin-top:calc(var(--hh,78px) + 80px);text-decoration:none;color:inherit}
+a.tuile:hover{outline:2px solid var(--rouge);outline-offset:-2px}
+.tuile .visuel{margin:0 auto;width:100%;max-width:200px}
+.tuile .visuel img{width:100%;height:auto;display:block;border-radius:6px;background:var(--soft)}
+.tuile .vide-img{display:flex;align-items:center;justify-content:center;aspect-ratio:63/88;background:var(--soft);border-radius:6px;color:var(--muted);font-size:.8rem;text-align:center;padding:8px}
+.tuile h3{font:700 1.05rem/1.2 var(--f-display)}
+.tuile .meta{color:var(--muted);font-size:.8rem}
+.lg{display:inline-block;font:700 .62rem var(--f-body);letter-spacing:.08em;border:1px solid var(--ink);padding:0 5px;margin-right:6px;vertical-align:1px;color:var(--ink)}
+.img-note{display:block;margin-top:2px;font-size:.72rem;color:#a86f00}
+.prix-tend{display:flex;align-items:baseline;justify-content:space-between;gap:8px;border-top:1px solid var(--ink);padding-top:8px;margin-top:2px}
+.prix-tend span{font:700 .68rem var(--f-body);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.prix-tend b{font:700 1.215rem/1 Arial,Helvetica,sans-serif;font-variant-numeric:tabular-nums}
+.prix-tend b.na{font-size:1rem;color:var(--muted);font-weight:600}
+.teaser-vente{font-size:.78rem;color:var(--muted);margin:0}
+.ouvrir{margin-top:auto;font:700 .78rem var(--f-body);color:var(--rouge)}
+.notes{margin-top:28px;display:grid;gap:8px;font-size:.9rem;color:var(--muted);max-width:76ch;padding-bottom:24px}
+.notes p{margin:0}
+.dernieres{margin:10px 0 28px}
+.dernieres h2{font:700 1.4rem var(--f-display);margin-bottom:10px}
+.liste-ventes{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.liste-ventes li{display:grid;grid-template-columns:72px 1fr auto;gap:12px;align-items:center;border:1px solid var(--line);padding:8px 10px;background:#fff}
+.liste-ventes li img,.liste-ventes .no-vig{width:72px;height:72px;object-fit:cover;border-radius:4px;background:var(--soft)}
+.liste-ventes .no-vig{display:block}
+.liste-ventes .lv-titre{font-weight:600;font-size:.92rem;line-height:1.3}
+.liste-ventes .lv-meta{font-size:.78rem;color:var(--muted)}
+.liste-ventes .lv-prix{font:700 1.05rem Arial,Helvetica,sans-serif;font-variant-numeric:tabular-nums;white-space:nowrap}
+.liste-ventes a.lv-lien{font-size:.78rem;font-weight:700;color:var(--rouge)}
+.cookie-info{position:fixed;left:16px;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:60;max-width:620px;margin:0 auto;background:#111;color:#fff;display:flex;gap:14px;align-items:center;padding:12px 16px;border-radius:14px;box-shadow:0 8px 30px rgba(0,0,0,.25);font:14px/1.45 var(--f-body)}
+.cookie-info[hidden]{display:none}
+.cookie-info p{margin:0;flex:1}
+.cookie-info a{color:#fff;text-decoration:underline}
+.cookie-info button{flex:none;font:700 12px var(--f-body);letter-spacing:.08em;text-transform:uppercase;background:#fff;color:#111;border:0;border-radius:999px;padding:8px 16px;cursor:pointer}
+.pied-legal{margin:1.2rem auto 1.4rem;text-align:center;font-size:.72rem;font-weight:300;color:#7a869a}
+.pied-legal a{color:#7a869a;text-decoration:underline}
+@media (max-width:560px){#cq{flex:1 1 100%}.nb{margin-left:0}.liste-ventes li{grid-template-columns:64px 1fr;}.liste-ventes .lv-prix{grid-column:2}}
+
+
+.date-vente{font:700 1.02rem/1.3 var(--f-body);color:var(--ink);letter-spacing:0;text-transform:none}
+.prix-vente{font:800 1.7rem/1.05 Arial,Helvetica,"Segoe UI",sans-serif!important;font-variant-numeric:tabular-nums lining-nums;color:var(--ink);display:block}
+.derniere-vente{margin-top:4px;padding:10px 10px 8px;border:2px solid var(--ink);background:var(--soft);display:grid;gap:2px}
+.derniere-vente .etiquette-vente{font:700 .68rem var(--f-body);letter-spacing:.1em;text-transform:uppercase;color:var(--rouge)}
+.derniere-vente .prix-vente{font-size:1.85rem!important;margin-top:2px}
+.derniere-vente.vide{border-style:dashed;background:#fff}
+.derniere-vente.vide .prix-vente{font-size:1.05rem!important;color:var(--muted);font-weight:700}
+.liste-ventes li{grid-template-columns:72px 1fr auto;align-items:center}
+.liste-ventes .lv-prix-bloc{text-align:right;min-width:8.5rem}
+.liste-ventes .lv-prix-bloc .date-vente{display:block;margin-bottom:2px}
+.liste-ventes .lv-prix-bloc .prix-vente{font-size:1.85rem!important}
+.badge-lot{display:inline-block;font:700 .62rem var(--f-body);letter-spacing:.08em;text-transform:uppercase;background:#111;color:#fff;padding:1px 7px;margin-left:6px;vertical-align:middle;border-radius:999px}
+.lots-bloc{margin-top:16px;border:1px solid var(--ink);padding:8px 12px 12px;background:#fff}
+.lots-bloc summary{cursor:pointer;font-weight:700;font-size:1.05rem;padding:6px 0}
+.lots-bloc summary:hover{color:var(--rouge)}
+.serie-bloc{margin-top:26px}
+.serie-tete{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;border-bottom:3px solid var(--ink);padding-bottom:6px;margin-bottom:14px}
+.serie-tete h2{font:700 clamp(1.15rem,2.4vw,1.5rem)/1.15 var(--f-display);margin:0}
+.serie-tete span{font-size:.82rem;color:var(--muted)}
+#crare{font:inherit;font-size:14px;border:1px solid var(--ink);border-radius:999px;padding:6px 12px;background:#fff;color:var(--ink);max-width:100%}
+.moy-unit{font:700 1.35rem/1.1 Arial,Helvetica,sans-serif;font-variant-numeric:tabular-nums;margin:0 0 8px}
+.moy-unit small{display:block;font-size:.75rem;font-weight:600;color:var(--muted);margin-top:2px}
+</style>
+</head>
+<body>
+<header class="site wrap"><nav class="sitenav" aria-label="Navigation principale">
+  <a class="logo" href="index.html"><img class="logo-img" src="img/logo-mimiqui.webp" alt="" width="95" height="120" style="width:auto;height:4.2rem;object-fit:contain;transform:none">Le Coin de Mimiqui<span>.</span></a>
+  <ul class="menu-principal" id="menu-principal"><li><a href="index.html">Accueil</a></li><li><a href="blog.html">Blog</a></li><li><a href="cartes.html">Cartes</a><button type="button" class="ouvre-sous" aria-expanded="false" aria-label="Sous-menu Cartes">&#9662;</button><ul class="sous-menu"><li class="sm-groupe"><button type="button" class="sm-tog" aria-expanded="false">Spécial Mimiqui <span class="sm-fl" aria-hidden="true">&#9656;</span></button><ul class="sm-sous"><li><a href="cartes.html">Cartes fran&ccedil;aises</a></li><li><a href="cartes-japonaises.html">Cartes japonaises</a></li><li><a href="cartes-anglaises.html">Cartes anglaises</a></li></ul></li><li><a href="cartes-pokemon.html">1025 Pok&eacute;mon</a></li><li class="sm-groupe"><button type="button" class="sm-tog" aria-expanded="false">M&eacute;ga-&Eacute;volution <span class="sm-fl" aria-hidden="true">&#9656;</span></button><ul class="sm-sous"><li class="sm-groupe"><button type="button" class="sm-tog" aria-expanded="false">R&egrave;gne Delta <span class="sm-fl" aria-hidden="true">&#9656;</span></button><ul class="sm-sous"><li><a href="regne-delta.html">Fran&ccedil;aise</a></li><li><a href="regne-delta-ja.html">Japonaise</a></li></ul></li><li class="sm-groupe"><button type="button" class="sm-tog" aria-expanded="false">&Eacute;quilibre Parfait <span class="sm-fl" aria-hidden="true">&#9656;</span></button><ul class="sm-sous"><li><a href="equilibre-parfait-ventes.html">Fran&ccedil;aise</a></li><li><a href="equilibre-parfait-ja.html">Japonaise</a></li><li><a href="equilibre-parfait-en.html">Anglaise</a></li></ul></li><li class="sm-groupe"><button type="button" class="sm-tog" aria-expanded="false">30<sup>e</sup> Anniversaire <span class="sm-fl" aria-hidden="true">&#9656;</span></button><ul class="sm-sous"><li><a href="trentieme-anniversaire-ventes.html">Fran&ccedil;aise</a></li><li><a href="trentieme-anniversaire-en.html">Anglaise</a></li></ul></li><li class="sm-groupe"><button type="button" class="sm-tog" aria-expanded="false">H&eacute;ros Transcendants <span class="sm-fl" aria-hidden="true">&#9656;</span></button><ul class="sm-sous"><li><a href="heros-transcendants.html">Fran&ccedil;aise</a></li><li><a href="heros-transcendants-en.html">Anglaise</a></li></ul></li><li class="sm-groupe"><button type="button" class="sm-tog" aria-expanded="false">Nuit Noire <span class="sm-fl" aria-hidden="true">&#9656;</span></button><ul class="sm-sous"><li><a href="nuit-noire-ventes.html">Fran&ccedil;aise</a></li><li><a href="nuit-noire-ja.html">Japonaise</a></li><li><a href="nuit-noire-en.html">Anglaise</a></li></ul></li><li class="sm-groupe"><button type="button" class="sm-tog" aria-expanded="false">M&eacute;ga-&Eacute;volution <span class="sm-fl" aria-hidden="true">&#9656;</span></button><ul class="sm-sous"><li><a href="mega-evolution-cartes.html">Fran&ccedil;aise</a></li><li><a href="mega-evolution-en.html">Anglaise</a></li></ul></li><li class="sm-groupe"><button type="button" class="sm-tog" aria-expanded="false">Flammes Fantasmagoriques <span class="sm-fl" aria-hidden="true">&#9656;</span></button><ul class="sm-sous"><li><a href="heros-fantasmagoriques.html">Fran&ccedil;aise</a></li><li><a href="flammes-fantasmagoriques-ja.html">Japonaise</a></li><li><a href="flammes-fantasmagoriques-en.html">Anglaise</a></li></ul></li><li class="sm-groupe"><button type="button" class="sm-tog" aria-expanded="false">Chaos Ascendant <span class="sm-fl" aria-hidden="true">&#9656;</span></button><ul class="sm-sous"><li><a href="chaos-ascendant-ventes.html">Fran&ccedil;aise</a></li><li><a href="chaos-ascendant-ja.html">Japonaise</a></li><li><a href="chaos-ascendant-en.html">Anglaise</a></li></ul></li></ul></li></ul></li><li><a href="cotation.html">Prix</a><button type="button" class="ouvre-sous" aria-expanded="false" aria-label="Sous-menu Prix">&#9662;</button><ul class="sous-menu"><li><a href="cotation.html">Cotation</a></li><li><a href="registre.html">Ventes pass&eacute;es Sp&eacute;cial Mimiqui</a></li><li><a href="registre-pokemon.html">Registre des cartes pass&eacute;es</a></li></ul></li><li><a href="boutique.html">Acheter</a><button type="button" class="ouvre-sous" aria-expanded="false" aria-label="Sous-menu Acheter">&#9662;</button><ul class="sous-menu"><li><a href="boutique.html">Boutique</a></li><li><a href="jeu.html#boosters">Boosters</a></li><li><a href="cartes-psa10.html">Cartes PSA 10</a></li></ul></li><li><a href="vendre.html">Vendre sur eBay</a><button type="button" class="ouvre-sous" aria-expanded="false" aria-label="Sous-menu Vendre sur eBay">&#9662;</button><ul class="sous-menu"><li><a href="vendre.html">Vendre sur eBay</a></li><li><a href="estimer-ma-carte.html">Estimer ma carte</a></li><li><a href="guide-vendre-ebay.html">Guide pour vendre sur eBay</a></li></ul></li></ul>
+</nav></header>
+<main class="wrap">
+  <section class="tete">
+    <p class="etiquette">Ventes par Pokémon · Électrode</p>
+    <h1>Les cartes <em>Électrode</em>, avec leurs ventes</h1>
+    <p>Toutes les cartes Électrode en français. Recherchez une carte, puis ouvrez sa fiche pour voir la grande photo, les prix, et le bouton «&nbsp;Voir les ventes réalisées&nbsp;» (liste datée, plus récente d’abord, et graphique d’évolution). Les moyennes Cardmarket et les prix TCGPlayer sont des relevés réels, clairement datés. Les ventes individuelles eBay archivées ici datent des 5 dernières semaines (depuis le 6 octobre 2026). Aucun prix n’a été inventé.</p>
+    <div class="resume" id="resume"></div>
+  </section>
+  <section class="dernieres" id="dernieres-ventes">
+    <h2>Dernières ventes réalisées</h2>
+    <div id="dernieres-liste"></div>
+  </section>
+  <div class="outils">
+    <div class="langs" role="tablist" aria-label="Langue">
+      <button type="button" data-l="fr" aria-pressed="true">Françaises</button>
+    </div>
+    <input id="cq" type="search" placeholder="Chercher un nom, une extension, un numéro…" aria-label="Chercher une carte">
+    <select id="ctri" aria-label="Trier">
+      <option value="set-rarete" selected>Par set puis rareté</option>
+      <option value="rarete">Par rareté</option>
+      <option value="serie">Par extension (A–Z)</option>
+      <option value="tendance-desc">Cote la plus haute</option>
+      <option value="tendance-asc">Cote la plus basse</option>
+      <option value="nom">Nom</option>
+    </select>
+    <select id="crare" aria-label="Filtrer par rareté">
+      <option value="">Toutes les raretés</option>
+    </select>
+    <span class="nb" id="cnb"></span>
+  </div>
+  <div id="cgr"></div>
+  <div class="notes">
+    <p><b>Ouvrir une fiche</b> : cliquez sur une carte, ou appuyez sur Entrée s’il ne reste qu’un résultat. Sur la fiche, le bouton «&nbsp;Voir les ventes réalisées&nbsp;» affiche la liste et le graphique.</p>
+    <p><b>Cardmarket</b> : moyennes de ventes (tendance, 1 / 7 / 30 jours) en euros, avec la date du relevé (Europe/Paris). <b>TCGPlayer</b> : prix du marché en dollars, sans conversion inventée.</p>
+    <p><b>eBay</b> : ventes réellement archivées depuis le 6 octobre 2026 (titre, prix, date, source, lien, vignette locale), pour les cartes françaises uniquement. Si aucune vente n’a été trouvée, la fiche indique «&nbsp;Pas de vente trouvée&nbsp;».</p>
+  </div>
+</main>
+<script src="data-electrode-ventes.js"></script>
+<script>
+
+(function () {
+  "use strict";
+  var DATA = window.ELECTRODE_VENTES || {};
+  var LANGS = DATA.langues || {};
+  var etat = { l: "fr", q: "", tri: "set-rarete", rare: "" };
+  var $ = function (id) { return document.getElementById(id); };
+  function euro(v) { return v == null ? null : Number(v).toLocaleString("fr-FR", { style: "currency", currency: "EUR" }); }
+  function money(v, c) {
+    if (v == null) return null;
+    try { return Number(v).toLocaleString("fr-FR", { style: "currency", currency: c || "EUR" }); }
+    catch (e) { return Number(v).toLocaleString("fr-FR") + " " + (c || ""); }
+  }
+  function jour(d) {
+    if (!d) return "";
+    var t = new Date(d + (d.length === 10 ? "T12:00:00" : ""));
+    return isNaN(t) ? d : t.toLocaleDateString("fr-FR", { day: "numeric", month: "short", year: "numeric", timeZone: "Europe/Paris" });
+  }
+  function norm(s) { return String(s || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase(); }
+  function numKey(s) { var m = String(s || "").match(/(\d+)/); return m ? parseInt(m[1], 10) : 0; }
+  function tendance(c) { return c.cm && (c.cm.trend != null ? c.cm.trend : (c.cm.avg1 != null ? c.cm.avg1 : c.cm.avg)); }
+  function imgSrc(c) { return c.imgLocal || c.img || ""; }
+  function hrefCarte(lang, id) {
+    return "carte-pikachu.html?pkmn=electrode&lang=" + encodeURIComponent(lang || "fr") + "&id=" + encodeURIComponent(id);
+  }
+  function estLot(v) { return !!(v && v.lot); }
+  function lastSale(c) {
+    var list = (c.ventes || []).filter(function (v) { return !estLot(v); });
+    return list[0] || null;
+  }
+  function toutesVentes(inclLots) {
+    var out = [];
+    ["fr"].forEach(function (lang) {
+      (LANGS[lang] || []).forEach(function (c) {
+        (c.ventes || []).forEach(function (v) {
+          if (!inclLots && estLot(v)) return;
+          out.push({ v: v, c: c, lang: lang });
+        });
+      });
+    });
+    out.sort(function (a, b) {
+      return (b.v.date || "").localeCompare(a.v.date || "") || String(b.v.id || "").localeCompare(String(a.v.id || ""));
+    });
+    return out;
+  }
+  function libelleRarete(r) {
+    if (!r || /^none$/i.test(String(r))) return "Sans rareté";
+    return r;
+  }
+  function rareteCle(c) { return libelleRarete(c && c.rarete); }
+    function rangRarete(r) {
+    var n = norm(r);
+    if (!n || n === "none" || n.indexOf("sans rarete") !== -1) return 5;
+    if (/couronne|\bcrown\b/.test(n)) return 100;
+    if (/mega hyper/.test(n)) return 98;
+    if (/illustration sp|special illustration|\bsir\b/.test(n)) return 96;
+    if (/hyper rare/.test(n)) return 94;
+    if (/secrete|secret rare/.test(n)) return 92;
+    if (/illustration rare/.test(n)) return 90;
+    if (/trois etoiles|three star/.test(n)) return 88;
+    if (/deux chromatiques|two shiny|shiny rare/.test(n)) return 86;
+    if (/deux etoiles|two star/.test(n)) return 84;
+    if (/ultra rare|triple rare/.test(n)) return 82;
+    if (/double rare/.test(n)) return 80;
+    if (/character super rare|\bcsr\b/.test(n)) return 78;
+    if (/holo rare vmax|rare holo vmax/.test(n)) return 76;
+    if (/holo rare v\b|rare holo v\b/.test(n)) return 74;
+    if (/character rare/.test(n)) return 72;
+    if (/quatre diamants|four diamond/.test(n)) return 70;
+    if (/magnifique rare|amazing rare/.test(n)) return 68;
+    if (/holo rare|rare holo/.test(n)) return 66;
+    if (/pikachu rare/.test(n)) return 60;
+    if (/collection classique|classic collection/.test(n)) return 55;
+    if (n === "rare") return 50;
+    if (/promo/.test(n)) return 40;
+    if (/un diamant|one diamond/.test(n)) return 25;
+    if (/peu commune|uncommon/.test(n)) return 20;
+    if (/^commune$|^common$/.test(n)) return 10;
+    return 15;
+  }
+  function estMega(c) {
+    var sid = c.serieId || "";
+    if (sid === "me" || sid === "M") return true;
+    var n = norm((c.serie || "") + " " + (c.setId || ""));
+    return /mega.?evol|mega|m[eé]ga|メガ/.test(n) && !/start\s*deck|スタートデッキ|mega.?ascension|mega rising/.test(n);
+  }
+  function cmpSetPuisRarete(a, b) {
+    var ma = estMega(a) ? 0 : 1, mb = estMega(b) ? 0 : 1;
+    if (ma !== mb) return ma - mb;
+    var da = a.sortie || "", db = b.sortie || "";
+    if (da !== db) return db.localeCompare(da);
+    var s = norm(a.serie).localeCompare(norm(b.serie), "fr");
+    if (s) return s;
+    var r = rangRarete(b.rarete) - rangRarete(a.rarete);
+    if (r) return r;
+    return numKey(a.num) - numKey(b.num) || String(a.num).localeCompare(String(b.num), "fr", { numeric: true });
+  }
+  function cmpRarete(a, b) {
+    var r = rangRarete(b.rarete) - rangRarete(a.rarete);
+    if (r) return r;
+    return cmpSetPuisRarete(a, b);
+  }
+  function remplirRaretes() {
+    var sel = $("crare");
+    if (!sel) return;
+    var cur = etat.rare;
+    var seen = {};
+    (LANGS[etat.l] || []).forEach(function (c) {
+      var r = rareteCle(c);
+      seen[r] = true;
+    });
+    var labs = Object.keys(seen).sort(function (a, b) { return rangRarete(b) - rangRarete(a) || norm(a).localeCompare(norm(b), "fr"); });
+    sel.innerHTML = "";
+    var o0 = document.createElement("option"); o0.value = ""; o0.textContent = "Toutes les raretés"; sel.appendChild(o0);
+    labs.forEach(function (r) {
+      var o = document.createElement("option"); o.value = r; o.textContent = r; sel.appendChild(o);
+    });
+    if (cur && seen[cur]) sel.value = cur; else { sel.value = ""; etat.rare = ""; }
+  }
+    function vignetteImg(v) {
+    if (!v) return null;
+    var local = v.vignette || "";
+    var remote = v.vignetteRemote || v.image_url || "";
+    if (!local && !remote) return null;
+    var im = document.createElement("img");
+    im.alt = "";
+    im.loading = "lazy";
+    if (local) {
+      im.src = local;
+      if (remote && remote !== local) {
+        im.onerror = function () {
+          if (this.dataset.fb) { this.onerror = null; return; }
+          this.dataset.fb = "1";
+          this.src = remote;
+        };
+      }
+    } else {
+      im.src = remote;
+    }
+    return im;
+  }
+  function ligneVente(it, opts) {
+    opts = opts || {};
+    var li = document.createElement("li");
+    var imV = vignetteImg(it.v);
+    if (imV) {
+      li.appendChild(imV);
+    } else {
+      var sp = document.createElement("span"); sp.className = "no-vig"; li.appendChild(sp);
+    }
+    var mid = document.createElement("div");
+    var a = document.createElement("a");
+    a.className = "lv-titre"; a.href = hrefCarte(it.lang, it.c.id);
+    a.textContent = it.c.nom + " · " + (it.c.serie || "") + (it.c.num ? " n° " + it.c.num : "");
+    if (estLot(it.v)) {
+      var bdg = document.createElement("span"); bdg.className = "badge-lot"; bdg.textContent = "Lot";
+      a.appendChild(bdg);
+    }
+    var meta = document.createElement("div"); meta.className = "lv-meta";
+    meta.textContent = (it.v.source || "") + (it.v.etat ? " · " + it.v.etat : "") + (it.v.lotRaison ? " · " + it.v.lotRaison : "");
+    mid.append(a, meta);
+    if (it.v.url) {
+      var eb = document.createElement("a"); eb.className = "lv-lien"; eb.href = it.v.url; eb.target = "_blank"; eb.rel = "noopener";
+      eb.textContent = "Annonce eBay";
+      mid.appendChild(eb);
+    }
+    var pr = document.createElement("div"); pr.className = "lv-prix-bloc";
+    var dt = document.createElement("time"); dt.className = "date-vente"; dt.dateTime = it.v.date || ""; dt.textContent = jour(it.v.date);
+    var px = document.createElement("b"); px.className = "prix-vente"; px.textContent = money(it.v.prix, it.v.devise);
+    pr.append(dt, px);
+    li.append(mid, pr);
+    return li;
+  }
+
+  function rendreResume() {
+    var box = $("resume");
+    box.textContent = "";
+    var tot = 0, withV = 0, nV = 0, nLots = 0;
+    ["fr"].forEach(function (l) {
+      (LANGS[l] || []).forEach(function (c) {
+        tot++;
+        var unit = (c.ventes || []).filter(function (v) { return !estLot(v); });
+        var lots = (c.ventes || []).filter(estLot);
+        if (unit.length) { withV++; nV += unit.length; }
+        nLots += lots.length;
+      });
+    });
+    var arch = DATA.archives || {};
+    [
+      [String(tot), "cartes Électrode françaises"],
+      [nV ? (nV + " / " + withV + " cartes") : "Pas encore", nV ? "ventes eBay à l’unité (hors lots)" : "ventes eBay à l’unité (en cours d’archivage)"],
+      [arch.date_min && arch.date_max ? jour(arch.date_min) + " – " + jour(arch.date_max) : "–", "période des ventes eBay (Europe/Paris)" + (nLots ? " · " + nLots + " lots listés à part" : "")]
+    ].forEach(function (x) {
+      var d = document.createElement("div");
+      var b = document.createElement("b"); b.textContent = x[0];
+      var s = document.createElement("span"); s.textContent = x[1];
+      d.append(b, s); box.appendChild(d);
+    });
+  }
+
+  function rendreDernieres() {
+    var box = $("dernieres-liste");
+    if (!box) return;
+    box.textContent = "";
+    var list = toutesVentes(false).slice(0, 24);
+    var lots = toutesVentes(true).filter(function (it) { return estLot(it.v); }).slice(0, 16);
+    if (!list.length) {
+      var p = document.createElement("p");
+      p.className = "notes";
+      p.style.padding = "0";
+      p.textContent = "Aucune vente à l’unité n’est encore archivée pour Électrode (période : depuis le 6 octobre 2026). Les moyennes Cardmarket restent visibles sur chaque fiche.";
+      box.appendChild(p);
+    } else {
+      var ul = document.createElement("ul"); ul.className = "liste-ventes";
+      list.forEach(function (it) { ul.appendChild(ligneVente(it)); });
+      box.appendChild(ul);
+    }
+    if (lots.length) {
+      var det = document.createElement("details"); det.className = "lots-bloc";
+      var sm = document.createElement("summary");
+      sm.textContent = "Lots et ventes groupées (" + lots.length + (lots.length >= 16 ? "+" : "") + ")";
+      det.appendChild(sm);
+      var note = document.createElement("p"); note.className = "notes"; note.style.padding = "8px 0";
+      note.textContent = "Ces ventes portent sur plusieurs cartes ou un produit scellé. Elles ne sont pas incluses dans les totaux ni dans les graphiques d’évolution.";
+      var ul2 = document.createElement("ul"); ul2.className = "liste-ventes";
+      lots.forEach(function (it) { ul2.appendChild(ligneVente(it)); });
+      det.append(note, ul2);
+      box.appendChild(det);
+    }
+  }
+
+  function renderCard(c, lang) {
+    var a = document.createElement("a");
+    a.className = "tuile";
+    a.href = hrefCarte(lang, c.id);
+    var vis = document.createElement("div"); vis.className = "visuel";
+    var src = imgSrc(c);
+    if (src) {
+      var im = document.createElement("img");
+      im.loading = "lazy"; im.decoding = "async"; im.referrerPolicy = "no-referrer";
+      im.src = src;
+      if (c.imgLocal && c.img && c.img !== src) {
+        im.onerror = function(){ this.onerror=null; this.src=c.img; };
+      }
+      im.alt = c.nom + (c.serie ? " — " + c.serie : "") + (c.num ? " n° " + c.num : "");
+      vis.appendChild(im);
+    } else {
+      var v = document.createElement("div"); v.className = "vide-img"; v.textContent = "Pas d'image";
+      vis.appendChild(v);
+    }
+    a.appendChild(vis);
+    var h = document.createElement("h3"); h.textContent = c.nom; a.appendChild(h);
+    var meta = document.createElement("div"); meta.className = "meta";
+    var lg = document.createElement("span"); lg.className = "lg"; lg.textContent = lang.toUpperCase();
+    meta.appendChild(lg);
+    var bits = [];
+    if (c.serie) bits.push(c.serie);
+    if (c.num) bits.push("n° " + c.num);
+    bits.push(libelleRarete(c.rarete));
+    meta.appendChild(document.createTextNode(bits.join(" · ")));
+    if (c.imgNote && !c.imgLocal) {
+      var n = document.createElement("span"); n.className = "img-note"; n.textContent = "Photo : " + c.imgNote;
+      meta.appendChild(n);
+    }
+    a.appendChild(meta);
+    var tend = tendance(c);
+    var pt = document.createElement("div"); pt.className = "prix-tend";
+    var lab = document.createElement("span"); lab.textContent = "Tendance";
+    var b = document.createElement("b");
+    if (tend != null) b.textContent = euro(tend);
+    else { b.textContent = "–"; b.className = "na"; }
+    pt.append(lab, b);
+    a.appendChild(pt);
+    var sale = lastSale(c);
+    var te = document.createElement("div");
+    te.className = "derniere-vente" + (sale ? "" : " vide");
+    var etq = document.createElement("span"); etq.className = "etiquette-vente";
+    etq.textContent = sale ? "Dernière vente" : "Dernière vente";
+    var dt = document.createElement("time"); dt.className = "date-vente";
+    var px = document.createElement("b"); px.className = "prix-vente";
+    if (sale) {
+      dt.dateTime = sale.date || "";
+      dt.textContent = jour(sale.date);
+      px.textContent = money(sale.prix, sale.devise);
+    } else {
+      dt.textContent = "Pas encore de vente à l’unité";
+      px.textContent = tendance(c) != null ? "Cote " + euro(tendance(c)) : "—";
+    }
+    te.append(etq, dt, px);
+    a.appendChild(te);
+    var ou = document.createElement("span"); ou.className = "ouvrir"; ou.textContent = "Ouvrir la fiche →";
+    a.appendChild(ou);
+    return a;
+  }
+
+  function listeFiltrees() {
+    var list = (LANGS[etat.l] || []).slice();
+    var q = norm(etat.q);
+    if (q) {
+      list = list.filter(function (c) {
+        var blob = [c.nom, c.serie, c.num, c.rarete, c.illustrateur, c.id]
+          .concat(c.noms ? Object.keys(c.noms).map(function (k) { return c.noms[k]; }) : [])
+          .join(" ");
+        return norm(blob).indexOf(q) !== -1;
+      });
+    }
+    if (etat.rare) {
+      list = list.filter(function (c) { return rareteCle(c) === etat.rare; });
+    }
+    if (etat.tri === "set-rarete") list.sort(cmpSetPuisRarete);
+    else if (etat.tri === "rarete") list.sort(cmpRarete);
+    else if (etat.tri === "nom") list.sort(function (a, b) { return norm(a.nom).localeCompare(norm(b.nom), "fr"); });
+    else if (etat.tri === "tendance-desc") list.sort(function (a, b) { return (tendance(b) || -1) - (tendance(a) || -1); });
+    else if (etat.tri === "tendance-asc") {
+      list.sort(function (a, b) {
+        var av = tendance(a), bv = tendance(b);
+        if (av == null && bv == null) return 0;
+        if (av == null) return 1;
+        if (bv == null) return -1;
+        return av - bv;
+      });
+    } else {
+      list.sort(function (a, b) {
+        var s = norm(a.serie).localeCompare(norm(b.serie), "fr");
+        if (s) return s;
+        return numKey(a.num) - numKey(b.num) || String(a.num).localeCompare(String(b.num), "fr", { numeric: true });
+      });
+    }
+    return list;
+  }
+
+  function rendre() {
+    var list = listeFiltrees();
+    var box = $("cgr");
+    box.textContent = "";
+    if (etat.tri === "set-rarete") {
+      var i = 0;
+      while (i < list.length) {
+        var setName = list[i].serie || "Sans extension";
+        var j = i + 1;
+        while (j < list.length && (list[j].serie || "Sans extension") === setName) j++;
+        var bloc = document.createElement("section"); bloc.className = "serie-bloc";
+        var tete = document.createElement("div"); tete.className = "serie-tete";
+        var h = document.createElement("h2"); h.textContent = setName;
+        var meta = document.createElement("span");
+        var d0 = list[i].sortie ? jour(list[i].sortie) : "";
+        meta.textContent = (j - i) + " carte" + (j - i > 1 ? "s" : "") + (d0 ? " · sortie " + d0 : "") + (estMega(list[i]) ? " · Méga-Évolution" : "");
+        tete.append(h, meta);
+        var grid = document.createElement("div"); grid.className = "tuiles";
+        for (var k = i; k < j; k++) grid.appendChild(renderCard(list[k], etat.l));
+        bloc.append(tete, grid);
+        box.appendChild(bloc);
+        i = j;
+      }
+    } else {
+      var grid = document.createElement("div"); grid.className = "tuiles";
+      list.forEach(function (c) { grid.appendChild(renderCard(c, etat.l)); });
+      box.appendChild(grid);
+    }
+    var total = (LANGS[etat.l] || []).length;
+    var withP = list.filter(function (c) { return c.cm || c.tp || lastSale(c); }).length;
+    $("cnb").textContent = list.length + " / " + total + " cartes · " + withP + " avec un prix ou une vente à l’unité";
+  }
+
+  remplirRaretes();
+  rendreResume();
+  rendreDernieres();
+  document.querySelectorAll(".langs button").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      etat.l = btn.getAttribute("data-l");
+      document.querySelectorAll(".langs button").forEach(function (b) {
+        b.setAttribute("aria-pressed", b === btn ? "true" : "false");
+      });
+      remplirRaretes();
+      rendre();
+    });
+  });
+  $("cq").addEventListener("input", function () { etat.q = this.value; rendre(); });
+  $("cq").addEventListener("keydown", function (e) {
+    if (e.key !== "Enter") return;
+    var list = listeFiltrees();
+    if (list.length === 1) {
+      e.preventDefault();
+      location.href = hrefCarte(etat.l, list[0].id);
+    }
+  });
+  $("ctri").addEventListener("change", function () { etat.tri = this.value; rendre(); });
+  $("crare").addEventListener("change", function () { etat.rare = this.value; rendre(); });
+  var params = new URLSearchParams(location.search);
+  if (params.get("q")) {
+    etat.q = params.get("q");
+    $("cq").value = etat.q;
+  }
+  if (params.get("lang") && /^(fr|ja|en)$/.test(params.get("lang"))) {
+    etat.l = params.get("lang");
+    document.querySelectorAll(".langs button").forEach(function (b) {
+      b.setAttribute("aria-pressed", b.getAttribute("data-l") === etat.l ? "true" : "false");
+    });
+  }
+  var hash = (location.hash || "").replace("#", "").toLowerCase();
+  if (hash === "ja" || hash === "en" || hash === "fr") {
+    etat.l = hash;
+    document.querySelectorAll(".langs button").forEach(function (b) {
+      b.setAttribute("aria-pressed", b.getAttribute("data-l") === etat.l ? "true" : "false");
+    });
+  }
+  remplirRaretes();
+  rendre();
+  if (hash === "dernieres-ventes") {
+    var t = document.getElementById("dernieres-ventes");
+    if (t) t.scrollIntoView();
+  }
+})();
+
+</script>
+
+<footer class="wrap">Le Coin de Mimiqui · site de fan non officiel, sans lien avec Nintendo, Game Freak ou The Pokémon Company. · <a href="confidentialite.html">Cookies et vie privée</a></footer>
+<script>(function(){var h=document.querySelector("header.wrap, header.site");if(!h)return;function m(){document.documentElement.style.setProperty("--hh",h.offsetHeight+"px")}m();if(window.ResizeObserver)new ResizeObserver(m).observe(h);})();</script>
+<div class="cookie-info" id="cookie-info" hidden role="region" aria-label="Cookies">
+  <p>Ce site ne dépose aucun cookie publicitaire ni de mesure d’audience. Les liens eBay, Amazon et Instagram mènent vers des sites qui ont leurs propres cookies. <a href="confidentialite.html">En savoir plus</a></p>
+  <button type="button" id="cookie-ok">D’accord</button>
+</div>
+<script>(function(){var b=document.getElementById("cookie-info");if(!b)return;var k="coin-mimiqui-info-cookies",vu=false;try{vu=localStorage.getItem(k)==="1"}catch(e){}if(!vu)b.hidden=false;document.getElementById("cookie-ok").addEventListener("click",function(){b.hidden=true;try{localStorage.setItem(k,"1")}catch(e){}});})();</script>
+<script src="site-commun.js" defer></script>
+<p class="pied-legal">Site de fan non officiel &middot; <a href="mentions-legales.html#liens">Liens affiliés</a> &middot; <a href="mentions-legales.html">Mentions légales</a></p>
+
+</body></html>

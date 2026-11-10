@@ -1,0 +1,23 @@
+{
+  "id": "base2-28",
+  "langue": "fr",
+  "nom": "Aquali",
+  "serie": "Jungle",
+  "num": "28",
+  "maj": "2026-11-10T11:54:13+0100",
+  "ventes": [
+    {
+      "id": "117453473247",
+      "date": "2026-10-07",
+      "prix": 8.99,
+      "devise": "USD",
+      "titre": "VAPOREON (AQUALI) 28/64 - FRENCH Jungle Set - Pokemon Card",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/117453473247",
+      "vignette": "archives-ventes-aquali/vignettes/117453473247.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/00/s/MTU5OVgxMTk5/z/QQUAAeSwueVqxoaj/$_1.JPG?set_id=8800005007"
+    }
+  ]
+}

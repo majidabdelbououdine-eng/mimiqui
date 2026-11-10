@@ -1,0 +1,23 @@
+{
+  "id": "xy3-37",
+  "langue": "fr",
+  "nom": "Lippoutou",
+  "serie": "Poings Furieux",
+  "num": "37",
+  "maj": "2026-11-10T11:51:49+0100",
+  "ventes": [
+    {
+      "id": "255465467756",
+      "date": "2026-10-28",
+      "prix": 2.13,
+      "devise": "USD",
+      "titre": "Pokemon Card LIPPOUTOU 37/111 Rare XY3 FISTS FURIOUS FR",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/255465467756",
+      "vignette": "archives-ventes-lippoutou/vignettes/255465467756.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/F3AAAOSwY5ZiRqek/s-l140.webp"
+    }
+  ]
+}

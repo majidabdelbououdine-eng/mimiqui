@@ -1,0 +1,62 @@
+{
+  "id": "base3-51",
+  "langue": "fr",
+  "nom": "Krabby",
+  "serie": "Fossile",
+  "num": "51",
+  "maj": "2026-11-10T11:38:54+0100",
+  "ventes": [
+    {
+      "id": "800567433649",
+      "date": "2026-10-14",
+      "prix": 5.98,
+      "devise": "USD",
+      "titre": "Pokémon Krabby 51/62 French 1st Edition Fossil Set 2000 Water Type Common Card",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/800567433649",
+      "vignette": "archives-ventes-krabby/vignettes/800567433649.webp",
+      "etat": "",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/00/s/MTA4MFgxMDgw/z/GToAAeSwUaRpd-A7/$_57.PNG?set_id=880000500F"
+    },
+    {
+      "id": "336428018291",
+      "date": "2026-10-08",
+      "prix": 3.99,
+      "devise": "USD",
+      "titre": "Fossil #51/62 Krabby 1st Edition French Common",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/336428018291",
+      "vignette": "archives-ventes-krabby/vignettes/336428018291.webp",
+      "etat": "",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/00/s/MTA4N1g4Mzg=/z/ZJUAAeSw8nNpig6Q/$_1.JPG?set_id=8800005007"
+    },
+    {
+      "id": "277701278649",
+      "date": "2026-10-08",
+      "prix": 2.5,
+      "devise": "USD",
+      "titre": "Pokémon Krabby Fossil French Common Card 51/62 Regular HP50 1999 TCG",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/277701278649",
+      "vignette": "archives-ventes-krabby/vignettes/277701278649.webp",
+      "etat": "",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/00/s/MTQ2OFgxNDY4/z/CskAAeSw8WBpg~u9/$_1.JPG?set_id=8800005007"
+    },
+    {
+      "id": "366697991412",
+      "date": "2026-10-07",
+      "prix": 1.99,
+      "devise": "USD",
+      "titre": "Krabby (MP) FO: Fossil 51/62 (1st Edition) Common (French)",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/366697991412",
+      "vignette": "archives-ventes-krabby/vignettes/366697991412.webp",
+      "etat": "",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/E~UAAeSwnNlquLfX/s-l1600.jpg"
+    }
+  ]
+}

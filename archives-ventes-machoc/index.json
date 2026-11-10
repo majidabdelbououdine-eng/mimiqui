@@ -1,0 +1,39 @@
+{
+  "pokemon": "Machoc",
+  "slug": "machoc",
+  "maj": "2026-11-10T11:26:36+01:00",
+  "source": "eBay (ebaysoldlistings.com)",
+  "periode": {
+    "depuis": "2026-10-06",
+    "note": "Ventes eBay des 5 dernières semaines, cartes françaises uniquement."
+  },
+  "cartes": [
+    {
+      "langue": "fr",
+      "id": "base1-52",
+      "nom": "Machoc",
+      "serie": "Set de Base",
+      "num": "52",
+      "nb": 7,
+      "fichier": "archives-ventes-machoc/fr/base1-52.json"
+    },
+    {
+      "langue": "fr",
+      "id": "base5-59",
+      "nom": "Machoc",
+      "serie": "Team Rocket",
+      "num": "59",
+      "nb": 2,
+      "fichier": "archives-ventes-machoc/fr/base5-59.json"
+    },
+    {
+      "langue": "fr",
+      "id": "neo4-73",
+      "nom": "Machoc",
+      "serie": "Neo Destiny",
+      "num": "73",
+      "nb": 1,
+      "fichier": "archives-ventes-machoc/fr/neo4-73.json"
+    }
+  ]
+}

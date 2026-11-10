@@ -1,0 +1,88 @@
+{
+  "id": "base5-68",
+  "langue": "fr",
+  "nom": "Carapuce",
+  "serie": "Team Rocket",
+  "num": "68",
+  "maj": "2026-11-10T11:17:12+0100",
+  "ventes": [
+    {
+      "id": "377609576980",
+      "date": "2026-10-30",
+      "prix": 19.0,
+      "devise": "USD",
+      "titre": "Pokemon TCG Team Rocket 1st Edition Carapuce 68/82 French 2000 Rare 50 HP",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/377609576980",
+      "vignette": "archives-ventes-carapuce/vignettes/377609576980.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/gI8AAeSw0X9q5U3~/s-l1600.jpg"
+    },
+    {
+      "id": "198748404094",
+      "date": "2026-10-28",
+      "prix": 6.99,
+      "devise": "USD",
+      "titre": "Nintendo Carapuce Pokemon TCG 68/82 French Regular Basic 2000 50 HP",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/198748404094",
+      "vignette": "archives-ventes-carapuce/vignettes/198748404094.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/l68AAeSwuU9q4BRJ/s-l500.webp"
+    },
+    {
+      "id": "267797369138",
+      "date": "2026-10-25",
+      "prix": 9.0,
+      "devise": "USD",
+      "titre": "The Pokémon Company Carapuce (Squirtle) 68/82 Team Rocket Reg Com FR 50 HP",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/267797369138",
+      "vignette": "archives-ventes-carapuce/vignettes/267797369138.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/UiUAAeSwJsNquYtm/s-l140.webp"
+    },
+    {
+      "id": "189039236314",
+      "date": "2026-10-25",
+      "prix": 19.0,
+      "devise": "USD",
+      "titre": "Wizards of the Coast Carapuce (Squirtle) 68/82 Team Rocket-1st Ed Regular FR",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/189039236314",
+      "vignette": "archives-ventes-carapuce/vignettes/189039236314.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/jlIAAeSwOoxqwZfw/s-l140.webp"
+    },
+    {
+      "id": "188688338494",
+      "date": "2026-10-23",
+      "prix": 9.99,
+      "devise": "USD",
+      "titre": "Carapuce French (Squirtle) Team Rocket 1st Edition 68/82",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/188688338494",
+      "vignette": "archives-ventes-carapuce/vignettes/188688338494.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/j-YAAeSwxMpqYsqn/s-l140.webp"
+    },
+    {
+      "id": "198431677116",
+      "date": "2026-10-14",
+      "prix": 5.05,
+      "devise": "USD",
+      "titre": "Pokemon Card COMMON Carapuce 68/82 Team Rocket Edition 2 French Wizards",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/198431677116",
+      "vignette": "archives-ventes-carapuce/vignettes/198431677116.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/PTEAAeSwOUVqMXbz/s-l500.webp"
+    }
+  ]
+}

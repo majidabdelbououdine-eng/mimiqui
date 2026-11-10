@@ -1,0 +1,23 @@
+{
+  "id": "neo3-65",
+  "langue": "fr",
+  "nom": "Léviator Brillant",
+  "serie": "Neo Revelation",
+  "num": "65",
+  "maj": "2026-11-10T11:53:22+0100",
+  "ventes": [
+    {
+      "id": "206669016405",
+      "date": "2026-11-09",
+      "prix": 149.99,
+      "devise": "USD",
+      "titre": "Pokemon Shining Gyarados Neo Revelation 65/64 PSA French",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/206669016405",
+      "vignette": "archives-ventes-leviator/vignettes/206669016405.webp",
+      "etat": "",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/00/s/MTU5OVgxMTk5/z/edsAAeSwJqxq2A-X/$_1.JPG?set_id=8800005007"
+    }
+  ]
+}

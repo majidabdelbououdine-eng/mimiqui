@@ -1,0 +1,49 @@
+{
+  "id": "base3-48",
+  "langue": "fr",
+  "nom": "Tadmorv",
+  "serie": "Fossile",
+  "num": "48",
+  "maj": "2026-11-10T11:33:10+0100",
+  "ventes": [
+    {
+      "id": "116224724854",
+      "date": "2026-10-17",
+      "prix": 39.27,
+      "devise": "USD",
+      "titre": "2000 Pokemon FRENCH 1st Edition Fossil Tadmorv-Grrimer 48/62 CGC 9 MINT",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/116224724854",
+      "vignette": "archives-ventes-tadmorv/vignettes/116224724854.webp",
+      "etat": "CGC 9",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/xNoAAOSwINZmh-kJ/s-l140.webp"
+    },
+    {
+      "id": "115957807171",
+      "date": "2026-10-14",
+      "prix": 2.02,
+      "devise": "USD",
+      "titre": "TADMORV 50 PV 48/62 - FOSSIL - WIZARDS - POKEMON - EXCELLENT CONDITION - FRENCH",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/115957807171",
+      "vignette": "archives-ventes-tadmorv/vignettes/115957807171.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/GccAAOSwYABlPpWQ/s-l500.webp"
+    },
+    {
+      "id": "389989327549",
+      "date": "2026-10-11",
+      "prix": 2.69,
+      "devise": "USD",
+      "titre": "Pokemon Tadmorv Grimer #48/62 French Fossil Set 2000 NM",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/389989327549",
+      "vignette": "archives-ventes-tadmorv/vignettes/389989327549.webp",
+      "etat": "",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/00/s/MTA4MVg3ODU=/z/QtUAAeSwPRtpofwK/$_1.JPG?set_id=8800005007"
+    }
+  ]
+}

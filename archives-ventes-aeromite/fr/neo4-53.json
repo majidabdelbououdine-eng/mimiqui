@@ -1,0 +1,23 @@
+{
+  "id": "neo4-53",
+  "langue": "fr",
+  "nom": "Aéromite lumineux",
+  "serie": "Neo Destiny",
+  "num": "53",
+  "maj": "2026-11-10T11:24:51+0100",
+  "ventes": [
+    {
+      "id": "178494252203",
+      "date": "2026-10-13",
+      "prix": 19.99,
+      "devise": "USD",
+      "titre": "Light Venomoth FRENCH Neo Destiny 53/105 Aeromite Lumineux Pokemon Rare 1st Edit",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/178494252203",
+      "vignette": "archives-ventes-aeromite/vignettes/178494252203.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/9ewAAeSw5nNqpzL7/s-l140.webp"
+    }
+  ]
+}

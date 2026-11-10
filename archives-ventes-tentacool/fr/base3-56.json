@@ -1,0 +1,23 @@
+{
+  "id": "base3-56",
+  "langue": "fr",
+  "nom": "Tentacool",
+  "serie": "Fossile",
+  "num": "56",
+  "maj": "2026-11-10T11:27:17+0100",
+  "ventes": [
+    {
+      "id": "257524896444",
+      "date": "2026-11-09",
+      "prix": 2.75,
+      "devise": "USD",
+      "titre": "*FRENCH* 1999-2000 Pokémon TCG Fossil Tentacool 1st Edition Regular Base 56/62",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/257524896444",
+      "vignette": "archives-ventes-tentacool/vignettes/257524896444.webp",
+      "etat": "",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/00/s/MTYwMFgxNjAw/z/5BgAAeSwo2lqE66C/$_1.JPG?set_id=8800005007"
+    }
+  ]
+}

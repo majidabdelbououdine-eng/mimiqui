@@ -1,0 +1,21 @@
+{
+  "pokemon": "Smogo",
+  "slug": "smogo",
+  "maj": "2026-11-10T11:43:29+01:00",
+  "source": "eBay (ebaysoldlistings.com)",
+  "periode": {
+    "depuis": "2026-10-06",
+    "note": "Ventes eBay des 5 dernières semaines, cartes françaises uniquement."
+  },
+  "cartes": [
+    {
+      "langue": "fr",
+      "id": "base1-51",
+      "nom": "Smogo",
+      "serie": "Set de Base",
+      "num": "51",
+      "nb": 1,
+      "fichier": "archives-ventes-smogo/fr/base1-51.json"
+    }
+  ]
+}

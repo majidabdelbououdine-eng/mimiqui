@@ -1,0 +1,23 @@
+{
+  "id": "base3-22",
+  "langue": "fr",
+  "nom": "Kicklee",
+  "serie": "Fossile",
+  "num": "22",
+  "maj": "2026-11-10T11:42:21+0100",
+  "ventes": [
+    {
+      "id": "227592964922",
+      "date": "2026-11-08",
+      "prix": 6.75,
+      "devise": "USD",
+      "titre": "Pokémon Card Hitmonlee (Kicklee) 22/62 French Fossil",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/227592964922",
+      "vignette": "archives-ventes-kicklee/vignettes/227592964922.webp",
+      "etat": "",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/P14AAeSw3E1q3U2B/s-l1600.jpg"
+    }
+  ]
+}

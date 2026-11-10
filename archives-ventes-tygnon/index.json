@@ -1,0 +1,21 @@
+{
+  "pokemon": "Tygnon",
+  "slug": "tygnon",
+  "maj": "2026-11-10T11:42:14+01:00",
+  "source": "eBay (ebaysoldlistings.com)",
+  "periode": {
+    "depuis": "2026-10-06",
+    "note": "Ventes eBay des 5 dernières semaines, cartes françaises uniquement."
+  },
+  "cartes": [
+    {
+      "langue": "fr",
+      "id": "base1-7",
+      "nom": "Tygnon",
+      "serie": "Set de Base",
+      "num": "7",
+      "nb": 1,
+      "fichier": "archives-ventes-tygnon/fr/base1-7.json"
+    }
+  ]
+}

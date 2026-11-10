@@ -1,0 +1,23 @@
+{
+  "id": "base3-19",
+  "langue": "fr",
+  "nom": "Dracolosse",
+  "serie": "Fossile",
+  "num": "19",
+  "maj": "2026-11-10T11:57:38+0100",
+  "ventes": [
+    {
+      "id": "840032370852",
+      "date": "2026-10-29",
+      "prix": 35.0,
+      "devise": "USD",
+      "titre": "Dracolosse (Dragonite) 19/62 Fossil Holo Rare 100HP Stage 2 French 1999",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/840032370852",
+      "vignette": "archives-ventes-dracolosse/vignettes/840032370852.webp",
+      "etat": "",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/ZoAAAeSwUdBq1Clm/s-l1600.jpg"
+    }
+  ]
+}

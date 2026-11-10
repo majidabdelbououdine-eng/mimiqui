@@ -1,0 +1,23 @@
+{
+  "id": "base1-47",
+  "langue": "fr",
+  "nom": "Taupiqueur",
+  "serie": "Set de Base",
+  "num": "47",
+  "maj": "2026-11-10T11:24:58+0100",
+  "ventes": [
+    {
+      "id": "137893816744",
+      "date": "2026-11-08",
+      "prix": 4.26,
+      "devise": "USD",
+      "titre": "Pokémon TCG DIGLETT 1ST EDITION FRENCH TAUPIQUEUR Base Set 47/102 NM",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/137893816744",
+      "vignette": "archives-ventes-taupiqueur/vignettes/137893816744.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/LZwAAeSwRzJqzD7e/s-l500.webp"
+    }
+  ]
+}

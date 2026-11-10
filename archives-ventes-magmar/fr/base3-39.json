@@ -1,0 +1,23 @@
+{
+  "id": "base3-39",
+  "langue": "fr",
+  "nom": "Magmar",
+  "serie": "Fossile",
+  "num": "39",
+  "maj": "2026-11-10T11:52:18+0100",
+  "ventes": [
+    {
+      "id": "398278922338",
+      "date": "2026-10-16",
+      "prix": 7.0,
+      "devise": "USD",
+      "titre": "Magmar 39/62 French 1st EDITION Non-Holo NEAR MINT",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/398278922338",
+      "vignette": "archives-ventes-magmar/vignettes/398278922338.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/-tUAAeSwuKZqfOQP/s-l500.webp"
+    }
+  ]
+}

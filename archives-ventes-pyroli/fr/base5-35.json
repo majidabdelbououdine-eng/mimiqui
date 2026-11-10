@@ -1,0 +1,23 @@
+{
+  "id": "base5-35",
+  "langue": "fr",
+  "nom": "Pyroli obscur",
+  "serie": "Team Rocket",
+  "num": "35",
+  "maj": "2026-11-10T11:54:54+0100",
+  "ventes": [
+    {
+      "id": "377631025252",
+      "date": "2026-11-08",
+      "prix": 12.0,
+      "devise": "USD",
+      "titre": "Flareon Pyroli obscur 35/82 Team Rocket French 2000 50 HP Uncommon",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/377631025252",
+      "vignette": "archives-ventes-pyroli/vignettes/377631025252.webp",
+      "etat": "",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/7Q8AAeSwneBq8Kjn/s-l140.webp"
+    }
+  ]
+}

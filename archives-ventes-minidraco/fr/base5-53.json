@@ -1,0 +1,23 @@
+{
+  "id": "base5-53",
+  "langue": "fr",
+  "nom": "Minidraco",
+  "serie": "Team Rocket",
+  "num": "53",
+  "maj": "2026-11-10T11:57:34+0100",
+  "ventes": [
+    {
+      "id": "377609627908",
+      "date": "2026-10-31",
+      "prix": 9.99,
+      "devise": "USD",
+      "titre": "Wizards of the Coast Pokemon TCG Team Rocket 1st Ed Minidraco 53/82 French 40 HP",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/377609627908",
+      "vignette": "archives-ventes-minidraco/vignettes/377609627908.webp",
+      "etat": "",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/5J0AAeSwm6lq5VMn/s-l1600.jpg"
+    }
+  ]
+}

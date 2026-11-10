@@ -1,0 +1,49 @@
+{
+  "id": "base5-32",
+  "langue": "fr",
+  "nom": "Reptincel Obscur",
+  "serie": "Team Rocket",
+  "num": "32",
+  "maj": "2026-11-10T11:17:12+0100",
+  "ventes": [
+    {
+      "id": "800838603674",
+      "date": "2026-11-02",
+      "prix": 36.0,
+      "devise": "USD",
+      "titre": "Reptincel Obscur 32/82 Team Rocket 2000 French Regular Uncommon 1st Ed WOTC",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/800838603674",
+      "vignette": "archives-ventes-reptincel/vignettes/800838603674.webp",
+      "etat": "",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/IFsAAeSwqQFq3pl2/s-l1600.jpg"
+    },
+    {
+      "id": "840081817762",
+      "date": "2026-11-01",
+      "prix": 12.33,
+      "devise": "USD",
+      "titre": "French Pokemon Card - Reptincel Obscur Edition 1 32/82 - Team Rocket",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/840081817762",
+      "vignette": "archives-ventes-reptincel/vignettes/840081817762.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/DQ8AAeSwzDVq509Z/s-l140.webp"
+    },
+    {
+      "id": "900033910497",
+      "date": "2026-10-28",
+      "prix": 20.37,
+      "devise": "USD",
+      "titre": "🔥 Pokemon Dark Charmeleon 32/82 French Edition Team Rocket Reptincel Obscur",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/900033910497",
+      "vignette": "archives-ventes-reptincel/vignettes/900033910497.webp",
+      "etat": "",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/00/s/MTYwMFgxMjQz/z/dz8AAeSwfrlq2sIy/$_57.JPG?set_id=880000500F"
+    }
+  ]
+}

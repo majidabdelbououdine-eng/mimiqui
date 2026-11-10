@@ -1,0 +1,23 @@
+{
+  "id": "base2-25",
+  "langue": "fr",
+  "nom": "Scarabrute",
+  "serie": "Jungle",
+  "num": "25",
+  "maj": "2026-11-10T11:53:10+0100",
+  "ventes": [
+    {
+      "id": "398248980939",
+      "date": "2026-10-11",
+      "prix": 5.12,
+      "devise": "USD",
+      "titre": "Pokemon TCG Scarabrute #25/64 FRENCH Unlimited Rare Jungle Pinsir",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/398248980939",
+      "vignette": "archives-ventes-scarabrute/vignettes/398248980939.webp",
+      "etat": "",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/00/s/MTYwMFgxMjAw/z/ZOAAAeSwZlJqceVm/$_1.JPG?set_id=8800005007"
+    }
+  ]
+}

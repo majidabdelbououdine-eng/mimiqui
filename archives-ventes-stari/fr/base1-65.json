@@ -1,0 +1,23 @@
+{
+  "id": "base1-65",
+  "langue": "fr",
+  "nom": "Stari",
+  "serie": "Set de Base",
+  "num": "65",
+  "maj": "2026-11-10T11:50:21+0100",
+  "ventes": [
+    {
+      "id": "134218547375",
+      "date": "2026-10-29",
+      "prix": 9.99,
+      "devise": "USD",
+      "titre": "Pokemon TCG French Stari (Staryu) 65/102 1st Edition Base Set 1999 ***NM***",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/134218547375",
+      "vignette": "archives-ventes-stari/vignettes/134218547375.webp",
+      "etat": "",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/00/s/MTU3OFgxMjIw/z/9dcAAeSwnMhqzD86/$_57.PNG?set_id=880000500F"
+    }
+  ]
+}

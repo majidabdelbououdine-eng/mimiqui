@@ -1,0 +1,23 @@
+{
+  "id": "sm12-211",
+  "langue": "fr",
+  "nom": "Rafflesia GX",
+  "serie": "Éclipse Cosmique",
+  "num": "211",
+  "maj": "2026-11-10T11:24:25+0100",
+  "ventes": [
+    {
+      "id": "267636827448",
+      "date": "2026-10-26",
+      "prix": 224.29,
+      "devise": "USD",
+      "titre": "RAFFLESIA GX FULL ART - POKÉMON 211/236 SL12 COSMIC ECLIPSE FR",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/267636827448",
+      "vignette": "archives-ventes-rafflesia/vignettes/267636827448.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/NPwAAeSwcVtp25wn/s-l140.webp"
+    }
+  ]
+}

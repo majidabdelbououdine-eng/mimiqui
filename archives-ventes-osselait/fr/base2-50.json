@@ -1,0 +1,49 @@
+{
+  "id": "base2-50",
+  "langue": "fr",
+  "nom": "Osselait",
+  "serie": "Jungle",
+  "num": "50",
+  "maj": "2026-11-10T11:41:27+0100",
+  "ventes": [
+    {
+      "id": "237146947274",
+      "date": "2026-11-03",
+      "prix": 1.25,
+      "devise": "USD",
+      "titre": "Osselait (Cubone) 50/64 Fossil French",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/237146947274",
+      "vignette": "archives-ventes-osselait/vignettes/237146947274.webp",
+      "etat": "",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/00/s/MTU5OVgxMTk5/z/encAAeSwv6pq13hF/$_1.JPG?set_id=8800005007"
+    },
+    {
+      "id": "407286039982",
+      "date": "2026-11-01",
+      "prix": 4.0,
+      "devise": "USD",
+      "titre": "Osselait (French Cubone) 50/64 Non Holo Common Jungle Pokemon LP",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/407286039982",
+      "vignette": "archives-ventes-osselait/vignettes/407286039982.webp",
+      "etat": "",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/00/s/MTYwMFgxNjAw/z/v0UAAeSwcKBqzXvp/$_57.JPG?set_id=880000500F"
+    },
+    {
+      "id": "366718790073",
+      "date": "2026-10-09",
+      "prix": 2.86,
+      "devise": "USD",
+      "titre": "Pokémon TCG French Jungle Cubone 50/64 LP",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/366718790073",
+      "vignette": "archives-ventes-osselait/vignettes/366718790073.webp",
+      "etat": "",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/00/s/MTYwMFgxMzEy/z/YokAAeSwRbVqxqDB/$_1.JPG?set_id=8800005007"
+    }
+  ]
+}

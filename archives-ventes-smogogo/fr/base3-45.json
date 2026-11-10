@@ -1,0 +1,23 @@
+{
+  "id": "base3-45",
+  "langue": "fr",
+  "nom": "Smogogo",
+  "serie": "Fossile",
+  "num": "45",
+  "maj": "2026-11-10T11:44:20+0100",
+  "ventes": [
+    {
+      "id": "257822702441",
+      "date": "2026-11-05",
+      "prix": 1.0,
+      "devise": "USD",
+      "titre": "Weezing Smogogo 45/62 - 1st Edition French Fossil - Pokemon Card",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/257822702441",
+      "vignette": "archives-ventes-smogogo/vignettes/257822702441.webp",
+      "etat": "",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/00/s/MTYwMFgxNjAw/z/Tp4AAeSwUNhq4p2x/$_1.JPG?set_id=8800005007"
+    }
+  ]
+}

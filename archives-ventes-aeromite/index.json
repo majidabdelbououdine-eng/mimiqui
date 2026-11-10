@@ -1,0 +1,30 @@
+{
+  "pokemon": "Aéromite",
+  "slug": "aeromite",
+  "maj": "2026-11-10T11:24:51+01:00",
+  "source": "eBay (ebaysoldlistings.com)",
+  "periode": {
+    "depuis": "2026-10-06",
+    "note": "Ventes eBay des 5 dernières semaines, cartes françaises uniquement."
+  },
+  "cartes": [
+    {
+      "langue": "fr",
+      "id": "base2-13",
+      "nom": "Aéromite",
+      "serie": "Jungle",
+      "num": "13",
+      "nb": 1,
+      "fichier": "archives-ventes-aeromite/fr/base2-13.json"
+    },
+    {
+      "langue": "fr",
+      "id": "neo4-53",
+      "nom": "Aéromite lumineux",
+      "serie": "Neo Destiny",
+      "num": "53",
+      "nb": 1,
+      "fichier": "archives-ventes-aeromite/fr/neo4-53.json"
+    }
+  ]
+}

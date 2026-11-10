@@ -1,0 +1,23 @@
+{
+  "id": "base5-36",
+  "langue": "fr",
+  "nom": "Ortide obscur",
+  "serie": "Team Rocket",
+  "num": "36",
+  "maj": "2026-11-10T11:24:11+0100",
+  "ventes": [
+    {
+      "id": "206396251224",
+      "date": "2026-10-19",
+      "prix": 7.0,
+      "devise": "USD",
+      "titre": "Ortide obscur (Dark Gloom) 36/82 Team Rocket Edition French Pokemon",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/206396251224",
+      "vignette": "archives-ventes-ortide/vignettes/206396251224.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/C9oAAeSw8z5qStDg/s-l140.webp"
+    }
+  ]
+}

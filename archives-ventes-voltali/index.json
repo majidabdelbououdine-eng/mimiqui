@@ -1,0 +1,30 @@
+{
+  "pokemon": "Voltali",
+  "slug": "voltali",
+  "maj": "2026-11-10T11:54:26+01:00",
+  "source": "eBay (ebaysoldlistings.com)",
+  "periode": {
+    "depuis": "2026-10-06",
+    "note": "Ventes eBay des 5 dernières semaines, cartes françaises uniquement."
+  },
+  "cartes": [
+    {
+      "langue": "fr",
+      "id": "base2-20",
+      "nom": "Voltali",
+      "serie": "Jungle",
+      "num": "20",
+      "nb": 1,
+      "fichier": "archives-ventes-voltali/fr/base2-20.json"
+    },
+    {
+      "langue": "fr",
+      "id": "base5-38",
+      "nom": "Voltali obscur",
+      "serie": "Team Rocket",
+      "num": "38",
+      "nb": 2,
+      "fichier": "archives-ventes-voltali/fr/base5-38.json"
+    }
+  ]
+}

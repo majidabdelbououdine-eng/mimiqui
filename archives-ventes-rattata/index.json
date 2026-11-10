@@ -1,0 +1,30 @@
+{
+  "pokemon": "Rattata",
+  "slug": "rattata",
+  "maj": "2026-11-10T11:18:00+01:00",
+  "source": "eBay (ebaysoldlistings.com)",
+  "periode": {
+    "depuis": "2026-10-06",
+    "note": "Ventes eBay des 5 dernières semaines, cartes françaises uniquement."
+  },
+  "cartes": [
+    {
+      "langue": "fr",
+      "id": "base1-61",
+      "nom": "Rattata",
+      "serie": "Set de Base",
+      "num": "61",
+      "nb": 2,
+      "fichier": "archives-ventes-rattata/fr/base1-61.json"
+    },
+    {
+      "langue": "fr",
+      "id": "base5-66",
+      "nom": "Rattata",
+      "serie": "Team Rocket",
+      "num": "66",
+      "nb": 1,
+      "fichier": "archives-ventes-rattata/fr/base5-66.json"
+    }
+  ]
+}

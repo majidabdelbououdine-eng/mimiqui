@@ -1,0 +1,21 @@
+{
+  "pokemon": "Goupix",
+  "slug": "goupix",
+  "maj": "2026-11-10T11:22:34+01:00",
+  "source": "eBay (ebaysoldlistings.com)",
+  "periode": {
+    "depuis": "2026-10-06",
+    "note": "Ventes eBay des 5 dernières semaines, cartes françaises uniquement."
+  },
+  "cartes": [
+    {
+      "langue": "fr",
+      "id": "neo4-91",
+      "nom": "Goupix",
+      "serie": "Neo Destiny",
+      "num": "91",
+      "nb": 1,
+      "fichier": "archives-ventes-goupix/fr/neo4-91.json"
+    }
+  ]
+}

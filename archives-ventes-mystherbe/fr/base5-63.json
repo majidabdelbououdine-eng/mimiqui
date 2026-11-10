@@ -1,0 +1,23 @@
+{
+  "id": "base5-63",
+  "langue": "fr",
+  "nom": "Mystherbe",
+  "serie": "Team Rocket",
+  "num": "63",
+  "maj": "2026-11-10T11:24:13+0100",
+  "ventes": [
+    {
+      "id": "227556031758",
+      "date": "2026-10-13",
+      "prix": 4.25,
+      "devise": "USD",
+      "titre": "Mystherbe - 63/82 - Rocket - 1st Edition - French -",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/227556031758",
+      "vignette": "archives-ventes-mystherbe/vignettes/227556031758.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/k9YAAeSw0jZqxY6O/s-l500.webp"
+    }
+  ]
+}

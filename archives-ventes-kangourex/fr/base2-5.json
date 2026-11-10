@@ -1,0 +1,23 @@
+{
+  "id": "base2-5",
+  "langue": "fr",
+  "nom": "Kangourex",
+  "serie": "Jungle",
+  "num": "5",
+  "maj": "2026-11-10T11:47:01+0100",
+  "ventes": [
+    {
+      "id": "318399424200",
+      "date": "2026-10-25",
+      "prix": 23.99,
+      "devise": "USD",
+      "titre": "French Pokemon Kangourex Kangaskhan 5/64 1999 Jungle WOTC Holo",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/318399424200",
+      "vignette": "archives-ventes-kangourex/vignettes/318399424200.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/Gv8AAeSw-9FqHtqu/s-l140.webp"
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "id": "base2-3",
+  "langue": "fr",
+  "nom": "Pyroli",
+  "serie": "Jungle",
+  "num": "3",
+  "maj": "2026-11-10T11:54:54+0100",
+  "ventes": [
+    {
+      "id": "336870885645",
+      "date": "2026-11-08",
+      "prix": 57.0,
+      "devise": "USD",
+      "titre": "1999 POKEMON JUNGLE FRENCH #3/64 PYROLI HOLO",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/336870885645",
+      "vignette": "archives-ventes-pyroli/vignettes/336870885645.webp",
+      "etat": "",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/Rh4AAeSwRD5q5M15/s-l140.webp"
+    },
+    {
+      "id": "800808347811",
+      "date": "2026-10-20",
+      "prix": 28.2,
+      "devise": "USD",
+      "titre": "Pokemon Card TCG Pyroli Fire Level 1 70 PV 3/64 FR 1999",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/800808347811",
+      "vignette": "archives-ventes-pyroli/vignettes/800808347811.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/-LkAAeSwNXtq1IhT/s-l140.webp"
+    },
+    {
+      "id": "257808624297",
+      "date": "2026-10-20",
+      "prix": 24.84,
+      "devise": "USD",
+      "titre": "WOTC Pyroli (Flareon) Jungle 3/64 Holo Rare 70 HP Stage 1 French 1999",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/257808624297",
+      "vignette": "archives-ventes-pyroli/vignettes/257808624297.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/tH4AAeSw3JNq17tQ/s-l140.webp"
+    },
+    {
+      "id": "178477466393",
+      "date": "2026-10-17",
+      "prix": 89.67,
+      "devise": "USD",
+      "titre": "Pokemon Card Pyroli Holo 3/64 Wizards Jungle FR - Graded PCA A",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/178477466393",
+      "vignette": "archives-ventes-pyroli/vignettes/178477466393.webp",
+      "etat": "New (Other)",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/~PgAAeSwQotqn05g/s-l140.webp"
+    },
+    {
+      "id": "117369918742",
+      "date": "2026-10-07",
+      "prix": 189.67,
+      "devise": "USD",
+      "titre": "2000 Pokemon FRENCH Unlimited Jungle Pyroli-Flareon Holo 3/64 EX-MT",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/117369918742",
+      "vignette": "archives-ventes-pyroli/vignettes/117369918742.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/TNkAAeSwsDVqhw4S/s-l140.webp"
+    }
+  ]
+}

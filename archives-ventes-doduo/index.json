@@ -1,0 +1,21 @@
+{
+  "pokemon": "Doduo",
+  "slug": "doduo",
+  "maj": "2026-11-10T11:31:25+01:00",
+  "source": "eBay (ebaysoldlistings.com)",
+  "periode": {
+    "depuis": "2026-10-06",
+    "note": "Ventes eBay des 5 dernières semaines, cartes françaises uniquement."
+  },
+  "cartes": [
+    {
+      "langue": "fr",
+      "id": "base1-48",
+      "nom": "Doduo",
+      "serie": "Set de Base",
+      "num": "48",
+      "nb": 1,
+      "fichier": "archives-ventes-doduo/fr/base1-48.json"
+    }
+  ]
+}

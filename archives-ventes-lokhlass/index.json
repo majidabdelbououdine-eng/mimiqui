@@ -1,0 +1,75 @@
+{
+  "pokemon": "Lokhlass",
+  "slug": "lokhlass",
+  "maj": "2026-11-10T11:53:19+01:00",
+  "source": "eBay (ebaysoldlistings.com)",
+  "periode": {
+    "depuis": "2026-10-06",
+    "note": "Ventes eBay des 5 dernières semaines, cartes françaises uniquement."
+  },
+  "cartes": [
+    {
+      "langue": "fr",
+      "id": "me03-022",
+      "nom": "Lokhlass-ex",
+      "serie": "Équilibre Parfait",
+      "num": "022",
+      "nb": 3,
+      "fichier": "archives-ventes-lokhlass/fr/me03-022.json"
+    },
+    {
+      "langue": "fr",
+      "id": "swsh10.5-023",
+      "nom": "Lokhlass",
+      "serie": "Pokémon GO",
+      "num": "023",
+      "nb": 1,
+      "fichier": "archives-ventes-lokhlass/fr/swsh10.5-023.json"
+    },
+    {
+      "langue": "fr",
+      "id": "sm9-31",
+      "nom": "Lokhlass",
+      "serie": "Duo de Choc",
+      "num": "31",
+      "nb": 1,
+      "fichier": "archives-ventes-lokhlass/fr/sm9-31.json"
+    },
+    {
+      "langue": "fr",
+      "id": "sv07-032",
+      "nom": "Lokhlass-ex",
+      "serie": "Couronne Stellaire",
+      "num": "032",
+      "nb": 1,
+      "fichier": "archives-ventes-lokhlass/fr/sv07-032.json"
+    },
+    {
+      "langue": "fr",
+      "id": "swsh1-50",
+      "nom": "Lokhlass VMAX",
+      "serie": "Épée et Bouclier",
+      "num": "50",
+      "nb": 1,
+      "fichier": "archives-ventes-lokhlass/fr/swsh1-50.json"
+    },
+    {
+      "langue": "fr",
+      "id": "sv03.5-131",
+      "nom": "Lokhlass",
+      "serie": "151",
+      "num": "131",
+      "nb": 1,
+      "fichier": "archives-ventes-lokhlass/fr/sv03.5-131.json"
+    },
+    {
+      "langue": "fr",
+      "id": "sv07-158",
+      "nom": "Lokhlass-ex",
+      "serie": "Couronne Stellaire",
+      "num": "158",
+      "nb": 1,
+      "fichier": "archives-ventes-lokhlass/fr/sv07-158.json"
+    }
+  ]
+}

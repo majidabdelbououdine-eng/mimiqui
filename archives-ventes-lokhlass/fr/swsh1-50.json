@@ -1,0 +1,23 @@
+{
+  "id": "swsh1-50",
+  "langue": "fr",
+  "nom": "Lokhlass VMAX",
+  "serie": "Épée et Bouclier",
+  "num": "50",
+  "maj": "2026-11-10T11:53:19+0100",
+  "ventes": [
+    {
+      "id": "188675827477",
+      "date": "2026-11-06",
+      "prix": 8.97,
+      "devise": "USD",
+      "titre": "French Pokemon Card - Lokhlass VMAX 050/202 - EB01 Sword and Shield",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/188675827477",
+      "vignette": "archives-ventes-lokhlass/vignettes/188675827477.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/lBcAAeSwHflqX4Vi/s-l140.webp"
+    }
+  ]
+}

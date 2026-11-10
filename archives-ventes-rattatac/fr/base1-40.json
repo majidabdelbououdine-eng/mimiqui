@@ -1,0 +1,36 @@
+{
+  "id": "base1-40",
+  "langue": "fr",
+  "nom": "Rattatac",
+  "serie": "Set de Base",
+  "num": "40",
+  "maj": "2026-11-10T11:18:01+0100",
+  "ventes": [
+    {
+      "id": "117270679188",
+      "date": "2026-10-26",
+      "prix": 335.57,
+      "devise": "USD",
+      "titre": "1999 Pokemon FRENCH 1st Edition Base Set Rattatac-Raticate 40/102 PSA 10 GEM",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/117270679188",
+      "vignette": "archives-ventes-rattatac/vignettes/117270679188.webp",
+      "etat": "PSA 10",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/D~8AAeSwDKtq500Z/s-l140.webp"
+    },
+    {
+      "id": "168793107161",
+      "date": "2026-10-24",
+      "prix": 45.0,
+      "devise": "USD",
+      "titre": "Pokemon 1st Edition Base Set French Raticate (Rattatac) 40/102 PSA 9 MINT",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/168793107161",
+      "vignette": "archives-ventes-rattatac/vignettes/168793107161.webp",
+      "etat": "PSA 9",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/pt4AAeSwJGtqz~iL/s-l140.webp"
+    }
+  ]
+}

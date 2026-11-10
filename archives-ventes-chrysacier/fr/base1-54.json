@@ -1,0 +1,23 @@
+{
+  "id": "base1-54",
+  "langue": "fr",
+  "nom": "Chrysacier",
+  "serie": "Set de Base",
+  "num": "54",
+  "maj": "2026-11-10T11:17:12+0100",
+  "ventes": [
+    {
+      "id": "407285566931",
+      "date": "2026-11-05",
+      "prix": 13.0,
+      "devise": "USD",
+      "titre": "Metapod - 1st Edition - 54/102 Base Set FR - Pokémon TCG - 1999",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/407285566931",
+      "vignette": "archives-ventes-chrysacier/vignettes/407285566931.webp",
+      "etat": "",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/00/s/MTYwMFgxMjQz/z/pUIAAeSw9cJqzTIK/$_1.JPG?set_id=8800005007"
+    }
+  ]
+}

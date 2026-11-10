@@ -1,0 +1,23 @@
+{
+  "id": "base3-57",
+  "langue": "fr",
+  "nom": "Nosferapti",
+  "serie": "Fossile",
+  "num": "57",
+  "maj": "2026-11-10T11:23:27+0100",
+  "ventes": [
+    {
+      "id": "257524873276",
+      "date": "2026-11-04",
+      "prix": 1.81,
+      "devise": "USD",
+      "titre": "2000 Pokemon FRENCH 1st  Fossil Nosferapti (Zubat) 57/62",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/257524873276",
+      "vignette": "archives-ventes-nosferapti/vignettes/257524873276.webp",
+      "etat": "",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/00/s/MTYwMFgxNjAw/z/fdUAAeSwwRFqE6om/$_1.JPG?set_id=8800005007"
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "id": "sv03.5-110",
+  "langue": "fr",
+  "nom": "Smogogo",
+  "serie": "151",
+  "num": "110",
+  "maj": "2026-11-10T11:44:20+0100",
+  "ventes": [
+    {
+      "id": "266527445934",
+      "date": "2026-11-02",
+      "prix": 6.57,
+      "devise": "USD",
+      "titre": "SMOGOGO REVERSE - POKEMON 110/165 EV3.5 SCARLET AND PURPLE MEW 151 NEW FR",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/266527445934",
+      "vignette": "archives-ventes-smogogo/vignettes/266527445934.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/BEIAAOSwrnllX1oQ/s-l140.webp"
+    },
+    {
+      "id": "307243981965",
+      "date": "2026-10-26",
+      "prix": 5.5,
+      "devise": "USD",
+      "titre": "Smogogo 110/165 Reverse Pokemon EV3.5 : 151 French",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/307243981965",
+      "vignette": "archives-ventes-smogogo/vignettes/307243981965.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/5ckAAeSwfYdq3HUz/s-l140.webp"
+    },
+    {
+      "id": "266428852432",
+      "date": "2026-10-23",
+      "prix": 2.13,
+      "devise": "USD",
+      "titre": "Pokemon Card SMOGOGO 110/165 HOLO EV3.5 Scarlet and Purple MEW 151 FR NEW",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/266428852432",
+      "vignette": "archives-ventes-smogogo/vignettes/266428852432.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/JHAAAOSwedVlFFQh/s-l140.webp"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "id": "base2-20",
+  "langue": "fr",
+  "nom": "Voltali",
+  "serie": "Jungle",
+  "num": "20",
+  "maj": "2026-11-10T11:54:26+0100",
+  "ventes": [
+    {
+      "id": "940035668604",
+      "date": "2026-10-31",
+      "prix": 15.0,
+      "devise": "USD",
+      "titre": "Pokemon Jolteon Voltali 20/64 Jungle French Unlimited Rare WOTC 2000 Non-Holo LP",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/940035668604",
+      "vignette": "archives-ventes-voltali/vignettes/940035668604.webp",
+      "etat": "",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/00/s/MTYwMFgxNjAw/z/4O0AAeSw-~dqyrQ6/$_1.JPG?set_id=8800005007"
+    }
+  ]
+}

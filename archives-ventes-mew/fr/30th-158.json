@@ -1,0 +1,49 @@
+{
+  "id": "30th-158",
+  "langue": "fr",
+  "nom": "Mew-ex",
+  "serie": "30ᵉ Anniversaire",
+  "num": "158",
+  "maj": "2026-11-10T11:57:34+0100",
+  "ventes": [
+    {
+      "id": "257752679380",
+      "date": "2026-10-30",
+      "prix": 112.12,
+      "devise": "USD",
+      "titre": "Pokemon Card MEW 158/128 EX Full Art FA 30 years 30C FR NEW",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/257752679380",
+      "vignette": "archives-ventes-mew/vignettes/257752679380.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/smMAAeSwQIlqtUSx/s-l140.webp"
+    },
+    {
+      "id": "860091662041",
+      "date": "2026-10-29",
+      "prix": 49.58,
+      "devise": "USD",
+      "titre": "Mew ex Holo Futuristic Rare ME: 30th Celebration 158/128 NM (FRENCH)",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/860091662041",
+      "vignette": "archives-ventes-mew/vignettes/860091662041.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/4cIAAeSw1Apq3~MI/s-l140.webp"
+    },
+    {
+      "id": "860087069823",
+      "date": "2026-10-27",
+      "prix": 49.58,
+      "devise": "USD",
+      "titre": "Mew ex Holo Futuristic Rare ME: 30th Celebration 158/128 NM (FRENCH)",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/860087069823",
+      "vignette": "archives-ventes-mew/vignettes/860087069823.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/4cIAAeSw1Apq3~MI/s-l140.webp"
+    }
+  ]
+}

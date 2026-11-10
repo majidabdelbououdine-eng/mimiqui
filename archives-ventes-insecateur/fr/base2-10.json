@@ -1,0 +1,36 @@
+{
+  "id": "base2-10",
+  "langue": "fr",
+  "nom": "Insécateur",
+  "serie": "Jungle",
+  "num": "10",
+  "maj": "2026-11-10T11:51:29+0100",
+  "ventes": [
+    {
+      "id": "287702930260",
+      "date": "2026-11-08",
+      "prix": 42.0,
+      "devise": "USD",
+      "titre": "Pokemon Jungle Scyther Holo 10/64 French Swirl",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/287702930260",
+      "vignette": "archives-ventes-insecateur/vignettes/287702930260.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/wcAAAeSwbnpq6mxd/s-l500.webp"
+    },
+    {
+      "id": "128143133576",
+      "date": "2026-10-26",
+      "prix": 86.03,
+      "devise": "USD",
+      "titre": "Pokemon TCG 1st Edition Holo Insecateur (Scyther) 10/64 French Jungle, WOTC",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/128143133576",
+      "vignette": "archives-ventes-insecateur/vignettes/128143133576.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/7eIAAeSwV65q1TRK/s-l140.webp"
+    }
+  ]
+}

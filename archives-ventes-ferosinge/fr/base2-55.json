@@ -1,0 +1,23 @@
+{
+  "id": "base2-55",
+  "langue": "fr",
+  "nom": "Férosinge",
+  "serie": "Jungle",
+  "num": "55",
+  "maj": "2026-11-10T11:25:22+0100",
+  "ventes": [
+    {
+      "id": "276475635989",
+      "date": "2026-10-20",
+      "prix": 7.39,
+      "devise": "USD",
+      "titre": "Mankey (Ferosinge) - French WOTC 1st Edition Jungle 55/64 - MP - Pokemon",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/276475635989",
+      "vignette": "archives-ventes-ferosinge/vignettes/276475635989.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/svEAAOSwGFhmTJIE/s-l140.webp"
+    }
+  ]
+}

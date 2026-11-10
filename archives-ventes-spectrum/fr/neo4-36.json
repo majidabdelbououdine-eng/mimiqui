@@ -1,0 +1,23 @@
+{
+  "id": "neo4-36",
+  "langue": "fr",
+  "nom": "Spectrum obscur",
+  "serie": "Neo Destiny",
+  "num": "36",
+  "maj": "2026-11-10T11:35:17+0100",
+  "ventes": [
+    {
+      "id": "920088583390",
+      "date": "2026-11-07",
+      "prix": 33.51,
+      "devise": "USD",
+      "titre": "Pokemon Neo Destiny Dark Haunter 36/105 French Unlimited WOTC 2002",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/920088583390",
+      "vignette": "archives-ventes-spectrum/vignettes/920088583390.webp",
+      "etat": "",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/00/s/MTMyNVg5OTE=/z/K3YAAeSwCHlq5OoK/$_57.PNG?set_id=880000500F"
+    }
+  ]
+}

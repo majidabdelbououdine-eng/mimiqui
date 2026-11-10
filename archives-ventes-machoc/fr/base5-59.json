@@ -1,0 +1,36 @@
+{
+  "id": "base5-59",
+  "langue": "fr",
+  "nom": "Machoc",
+  "serie": "Team Rocket",
+  "num": "59",
+  "maj": "2026-11-10T11:26:36+0100",
+  "ventes": [
+    {
+      "id": "307197149484",
+      "date": "2026-10-28",
+      "prix": 27.95,
+      "devise": "USD",
+      "titre": "Machoc 59/82 Edition 1 Pokemon Team Rocket Francais",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/307197149484",
+      "vignette": "archives-ventes-machoc/vignettes/307197149484.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/LJcAAeSwhcFqtX3f/s-l140.webp"
+    },
+    {
+      "id": "366743506324",
+      "date": "2026-10-25",
+      "prix": 1.25,
+      "devise": "USD",
+      "titre": "Machoc 59/82 1st Edition French Pokemon Team Rocket Machop",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/366743506324",
+      "vignette": "archives-ventes-machoc/vignettes/366743506324.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/anQAAeSw3Txqq8Xe/s-l140.webp"
+    }
+  ]
+}

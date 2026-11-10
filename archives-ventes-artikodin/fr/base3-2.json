@@ -1,0 +1,36 @@
+{
+  "id": "base3-2",
+  "langue": "fr",
+  "nom": "Artikodin",
+  "serie": "Fossile",
+  "num": "2",
+  "maj": "2026-11-10T11:56:27+0100",
+  "ventes": [
+    {
+      "id": "227594754653",
+      "date": "2026-11-03",
+      "prix": 59.99,
+      "devise": "USD",
+      "titre": "Pokemon TCG Fossil French Unlimited Holo Articodin Articuno 2/62 VINTAGE WOTC LP",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/227594754653",
+      "vignette": "archives-ventes-artikodin/vignettes/227594754653.webp",
+      "etat": "",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/00/s/MTU5OVgxMTk5/z/g5UAAeSwQ2Rq6RrT/$_1.JPG?set_id=8800005007"
+    },
+    {
+      "id": "820242611862",
+      "date": "2026-10-15",
+      "prix": 50.0,
+      "devise": "USD",
+      "titre": "Artikodin (Arcticuno) Fossil 2/62 Holo Rare French 1999",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/820242611862",
+      "vignette": "archives-ventes-artikodin/vignettes/820242611862.webp",
+      "etat": "",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/00/s/MTYwMFgxNjAw/z/zVMAAeSwvmdq0R1H/$_1.JPG?set_id=8800005007"
+    }
+  ]
+}

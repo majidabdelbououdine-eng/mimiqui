@@ -1,0 +1,23 @@
+{
+  "id": "sv03.5-180",
+  "langue": "fr",
+  "nom": "Amonita",
+  "serie": "151",
+  "num": "180",
+  "maj": "2026-11-10T11:55:24+0100",
+  "ventes": [
+    {
+      "id": "880036130353",
+      "date": "2026-10-28",
+      "prix": 10.0,
+      "devise": "USD",
+      "titre": "Amonita 180/165 Scarlet & Violet 151 Illustration Rare Holo Pokémon TCG French",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/880036130353",
+      "vignette": "archives-ventes-amonita/vignettes/880036130353.webp",
+      "etat": "",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/YV8AAeSwOQhq2A5p/s-l1600.jpg"
+    }
+  ]
+}

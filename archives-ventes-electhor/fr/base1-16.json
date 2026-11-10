@@ -1,0 +1,23 @@
+{
+  "id": "base1-16",
+  "langue": "fr",
+  "nom": "Électhor",
+  "serie": "Set de Base",
+  "num": "16",
+  "maj": "2026-11-10T11:56:27+0100",
+  "ventes": [
+    {
+      "id": "206620345271",
+      "date": "2026-10-12",
+      "prix": 20.0,
+      "devise": "USD",
+      "titre": "French Pokémon Card Electhor (Zapdos) 1st Edition 16/102 Damage Card",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/206620345271",
+      "vignette": "archives-ventes-electhor/vignettes/206620345271.webp",
+      "etat": "",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/00/s/MTYwMFgxMjAw/z/CugAAeSwyExqzDDd/$_1.JPG?set_id=8800005007"
+    }
+  ]
+}

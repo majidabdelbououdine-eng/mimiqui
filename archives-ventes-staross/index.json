@@ -1,0 +1,21 @@
+{
+  "pokemon": "Staross",
+  "slug": "staross",
+  "maj": "2026-11-10T11:50:27+01:00",
+  "source": "eBay (ebaysoldlistings.com)",
+  "periode": {
+    "depuis": "2026-10-06",
+    "note": "Ventes eBay des 5 dernières semaines, cartes françaises uniquement."
+  },
+  "cartes": [
+    {
+      "langue": "fr",
+      "id": "base1-64",
+      "nom": "Staross",
+      "serie": "Set de Base",
+      "num": "64",
+      "nb": 3,
+      "fichier": "archives-ventes-staross/fr/base1-64.json"
+    }
+  ]
+}

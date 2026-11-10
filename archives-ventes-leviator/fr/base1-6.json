@@ -1,0 +1,23 @@
+{
+  "id": "base1-6",
+  "langue": "fr",
+  "nom": "Léviator",
+  "serie": "Set de Base",
+  "num": "6",
+  "maj": "2026-11-10T11:53:22+0100",
+  "ventes": [
+    {
+      "id": "137910108064",
+      "date": "2026-11-07",
+      "prix": 65.0,
+      "devise": "USD",
+      "titre": "Pokemon TCG Leviator (Gyarados) Base Set 1st Edition Holo French 6/102 1999 WOTC",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/137910108064",
+      "vignette": "archives-ventes-leviator/vignettes/137910108064.webp",
+      "etat": "",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/d8oAAeSwFgtq7uMM/s-l1600.jpg"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "id": "base3-27",
+  "langue": "fr",
+  "nom": "Sulfura",
+  "serie": "Fossile",
+  "num": "27",
+  "maj": "2026-11-10T11:56:27+0100",
+  "ventes": [
+    {
+      "id": "227516357626",
+      "date": "2026-10-21",
+      "prix": 18.99,
+      "devise": "USD",
+      "titre": "Moltres (Sulfura) 27/62 Fossil Regular 1st Edition French",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/227516357626",
+      "vignette": "archives-ventes-sulfura/vignettes/227516357626.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/05YAAeSw7~tqo4M~/s-l140.webp"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "id": "base2-47",
+  "langue": "fr",
+  "nom": "Tauros",
+  "serie": "Jungle",
+  "num": "47",
+  "maj": "2026-11-10T11:53:11+0100",
+  "ventes": [
+    {
+      "id": "189033557773",
+      "date": "2026-10-09",
+      "prix": 1.49,
+      "devise": "USD",
+      "titre": "Tauros 47/64 Unlimited Jungle Pokemon TCG French LP",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/189033557773",
+      "vignette": "archives-ventes-tauros/vignettes/189033557773.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/xIUAAeSwDhRqv-bk/s-l140.webp"
+    }
+  ]
+}

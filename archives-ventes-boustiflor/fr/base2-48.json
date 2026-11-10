@@ -1,0 +1,23 @@
+{
+  "id": "base2-48",
+  "langue": "fr",
+  "nom": "Boustiflor",
+  "serie": "Jungle",
+  "num": "48",
+  "maj": "2026-11-10T11:26:59+0100",
+  "ventes": [
+    {
+      "id": "355400373023",
+      "date": "2026-10-12",
+      "prix": 4.99,
+      "devise": "USD",
+      "titre": "BOUSTIFLOR 1st EDITION 48/64 Jungle Uncommon WOTC 1999 French Pokemon Card -LP",
+      "source": "eBay (ebaysoldlistings.com)",
+      "url": "https://www.ebay.com/itm/355400373023",
+      "vignette": "archives-ventes-boustiflor/vignettes/355400373023.webp",
+      "etat": "Pre-Owned",
+      "lot": false,
+      "vignetteRemote": "https://i.ebayimg.com/images/g/IOkAAOSwmoBlrFQj/s-l500.webp"
+    }
+  ]
+}

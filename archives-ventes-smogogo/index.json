@@ -1,0 +1,39 @@
+{
+  "pokemon": "Smogogo",
+  "slug": "smogogo",
+  "maj": "2026-11-10T11:44:20+01:00",
+  "source": "eBay (ebaysoldlistings.com)",
+  "periode": {
+    "depuis": "2026-10-06",
+    "note": "Ventes eBay des 5 dernières semaines, cartes françaises uniquement."
+  },
+  "cartes": [
+    {
+      "langue": "fr",
+      "id": "base5-14",
+      "nom": "Smogogo obscur",
+      "serie": "Team Rocket",
+      "num": "14",
+      "nb": 1,
+      "fichier": "archives-ventes-smogogo/fr/base5-14.json"
+    },
+    {
+      "langue": "fr",
+      "id": "base3-45",
+      "nom": "Smogogo",
+      "serie": "Fossile",
+      "num": "45",
+      "nb": 1,
+      "fichier": "archives-ventes-smogogo/fr/base3-45.json"
+    },
+    {
+      "langue": "fr",
+      "id": "sv03.5-110",
+      "nom": "Smogogo",
+      "serie": "151",
+      "num": "110",
+      "nb": 3,
+      "fichier": "archives-ventes-smogogo/fr/sv03.5-110.json"
+    }
+  ]
+}

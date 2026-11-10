@@ -1,0 +1,30 @@
+{
+  "pokemon": "Taupiqueur",
+  "slug": "taupiqueur",
+  "maj": "2026-11-10T11:24:58+01:00",
+  "source": "eBay (ebaysoldlistings.com)",
+  "periode": {
+    "depuis": "2026-10-06",
+    "note": "Ventes eBay des 5 dernières semaines, cartes françaises uniquement."
+  },
+  "cartes": [
+    {
+      "langue": "fr",
+      "id": "base1-47",
+      "nom": "Taupiqueur",
+      "serie": "Set de Base",
+      "num": "47",
+      "nb": 1,
+      "fichier": "archives-ventes-taupiqueur/fr/base1-47.json"
+    },
+    {
+      "langue": "fr",
+      "id": "base5-52",
+      "nom": "Taupiqueur",
+      "serie": "Team Rocket",
+      "num": "52",
+      "nb": 2,
+      "fichier": "archives-ventes-taupiqueur/fr/base5-52.json"
+    }
+  ]
+}
