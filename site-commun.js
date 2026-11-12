@@ -14,7 +14,7 @@ var __acc=/(\/|\/index\.html?)$/i.test(location.pathname);
   var page=(location.pathname.split('/').pop()||'index.html').toLowerCase();
   if(page==='accueil.html')page='index.html';
 
-  var SITE_CACHE="20261112u";
+  var SITE_CACHE="20261112v";
   var EBAY_ENCOURS="https://www.ebay.fr/sch/i.html?_nkw=carte%20Pok%C3%A9mon&mkcid=1&mkrid=709-53476-19255-0&siteid=71&campid=5339225196&customid=encours-menu&toolid=10001&mkevt=1";
   var SERIES_MEGA=[
     {t:"Règne Delta",n:141,s:[["Française","regne-delta.html",141],["Japonaise","regne-delta-ja.html",113]]},
@@ -27,13 +27,20 @@ var __acc=/(\/|\/index\.html?)$/i.test(location.pathname);
     {t:"Méga-Évolution",n:88,s:[["Française","mega-evolution-cartes.html",88],["Anglaise","mega-evolution-en.html",89]]}
   ];
   var SERIES_EV=[
+    {t:"Flamme Blanche",n:173,s:[["Française","flamme-blanche.html",173],["Japonaise","flamme-blanche-ja.html",174],["Anglaise","flamme-blanche-en.html",173]]},
+    {t:"Rivalités Destinées",n:244,s:[["Française","rivalites-destinees.html",244],["Japonaise","rivalites-destinees-ja.html",132],["Anglaise","rivalites-destinees-en.html",244]]},
+    {t:"Aventures Ensemble",n:190,s:[["Française","aventures-ensemble.html",190],["Japonaise","aventures-ensemble-ja.html",132],["Anglaise","aventures-ensemble-en.html",190]]},
+    {t:"Évolutions Prismatiques",n:180,s:[["Française","evolutions-prismatiques.html",180],["Japonaise","evolutions-prismatiques-ja.html",237],["Anglaise","evolutions-prismatiques-en.html",180]]},
+    {t:"Étincelles Déferlantes",n:252,s:[["Française","etincelles-deferlantes.html",252],["Japonaise","etincelles-deferlantes-ja.html",138],["Anglaise","etincelles-deferlantes-en.html",252]]},
+    {t:"Couronne Stellaire",n:175,s:[["Française","couronne-stellaire.html",175],["Japonaise","couronne-stellaire-ja.html",135],["Anglaise","couronne-stellaire-en.html",175]]},
     {t:"Destinées de Paldea",n:245,s:[["Française","destinees-de-paldea.html",245],["Japonaise","destinees-de-paldea-ja.html",320],["Anglaise","destinees-de-paldea-en.html",245]]},
+    {t:"Faille Paradoxe",n:266,s:[["Française","faille-paradoxe.html",266],["Japonaise","faille-paradoxe-ja.html",190],["Anglaise","faille-paradoxe-en.html",266]]},
     {t:"151",n:207,s:[["Française","ecarlate-violet-151.html",207],["Japonaise","ecarlate-violet-151-ja.html",210],["Anglaise","ecarlate-violet-151-en.html",207]]},
     {t:"Flammes Obsidiennes",n:230,s:[["Française","flammes-obsidiennes.html",230],["Japonaise","flammes-obsidiennes-ja.html",141],["Anglaise","flammes-obsidiennes-en.html",230]]},
     {t:"Évolutions à Paldea",n:279,s:[["Française","evolutions-paldea.html",279],["Japonaise","evolutions-paldea-ja.html",198],["Anglaise","evolutions-paldea-en.html",279]]},
     {t:"Écarlate et Violet",n:258,s:[["Française","ecarlate-violet.html",258],["Japonaise","ecarlate-violet-ja.html",216],["Anglaise","ecarlate-violet-en.html",258]]}
   ];
-  var PAGES_SERIES=["regne-delta.html","regne-delta-ja.html","equilibre-parfait-ventes.html","equilibre-parfait-ja.html","equilibre-parfait-en.html","equilibre-parfait.html","trentieme-anniversaire-ventes.html","trentieme-anniversaire-en.html","trentieme-anniversaire.html","heros-transcendants.html","heros-transcendants-en.html","nuit-noire-ventes.html","nuit-noire-ja.html","nuit-noire-en.html","mega-evolution-cartes.html","mega-evolution-en.html","heros-fantasmagoriques.html","flammes-fantasmagoriques-ja.html","flammes-fantasmagoriques-en.html","chaos-ascendant-ventes.html","chaos-ascendant-ja.html","chaos-ascendant-en.html","chaos-ascendant.html","ecarlate-violet.html","evolutions-paldea.html","flammes-obsidiennes.html","ecarlate-violet-151.html","destinees-de-paldea.html","destinees-de-paldea-en.html","destinees-de-paldea-ja.html","ecarlate-violet-151-en.html","ecarlate-violet-151-ja.html","flammes-obsidiennes-en.html","flammes-obsidiennes-ja.html","evolutions-paldea-en.html","evolutions-paldea-ja.html","ecarlate-violet-en.html","ecarlate-violet-ja.html"];
+  var PAGES_SERIES=["regne-delta.html","regne-delta-ja.html","equilibre-parfait-ventes.html","equilibre-parfait-ja.html","equilibre-parfait-en.html","equilibre-parfait.html","trentieme-anniversaire-ventes.html","trentieme-anniversaire-en.html","trentieme-anniversaire.html","heros-transcendants.html","heros-transcendants-en.html","nuit-noire-ventes.html","nuit-noire-ja.html","nuit-noire-en.html","mega-evolution-cartes.html","mega-evolution-en.html","heros-fantasmagoriques.html","flammes-fantasmagoriques-ja.html","flammes-fantasmagoriques-en.html","chaos-ascendant-ventes.html","chaos-ascendant-ja.html","chaos-ascendant-en.html","chaos-ascendant.html","ecarlate-violet.html","evolutions-paldea.html","flammes-obsidiennes.html","ecarlate-violet-151.html","destinees-de-paldea.html","destinees-de-paldea-en.html","destinees-de-paldea-ja.html","ecarlate-violet-151-en.html","ecarlate-violet-151-ja.html","flammes-obsidiennes-en.html","flammes-obsidiennes-ja.html","evolutions-paldea-en.html","evolutions-paldea-ja.html","ecarlate-violet-en.html","ecarlate-violet-ja.html","couronne-stellaire.html","couronne-stellaire-en.html","couronne-stellaire-ja.html","etincelles-deferlantes.html","etincelles-deferlantes-en.html","etincelles-deferlantes-ja.html","faille-paradoxe.html","faille-paradoxe-en.html","faille-paradoxe-ja.html","flamme-blanche.html","flamme-blanche-en.html","flamme-blanche-ja.html","aventures-ensemble.html","aventures-ensemble-en.html","aventures-ensemble-ja.html","evolutions-prismatiques.html","evolutions-prismatiques-en.html","evolutions-prismatiques-ja.html","rivalites-destinees.html","rivalites-destinees-en.html","rivalites-destinees-ja.html"];
   var SECTIONS=[
     {t:"Accueil",h:"index.html",p:["index.html"]},
     {t:"Cartes",h:"cartes.html",p:["cartes.html","cartes-japonaises.html","cartes-anglaises.html","cartes-pokemon.html","pokemon.html"].concat(PAGES_SERIES),s:[
@@ -247,7 +254,7 @@ var __acc=/(\/|\/index\.html?)$/i.test(location.pathname);
     if(window.__rechChargement){ window.__rechChargement.push(cb); return; }
     window.__rechChargement=[cb];
     var s=document.createElement("script");
-    s.src="recherche-cartes-data.js?v="+(typeof SITE_CACHE==="string"?SITE_CACHE:"20261112u");
+    s.src="recherche-cartes-data.js?v="+(typeof SITE_CACHE==="string"?SITE_CACHE:"20261112v");
     s.onload=function(){
       var fns=window.__rechChargement||[]; window.__rechChargement=null;
       fns.forEach(function(fn){ try{fn(window.RECHERCHE_CARTES||{sets:[]});}catch(e){} });

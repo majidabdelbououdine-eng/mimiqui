@@ -1116,3 +1116,84 @@ html body header.wrap nav.top ul.sm-sous a:hover{
   html body nav.menu-ouvert .nav-recherche{width:100%;margin:.4rem 0}
   html body nav.menu-ouvert .nav-rech-panneau{position:static;width:100%;box-shadow:none}
 }
+/* === Boutons eBay de la fiche carte (2026-11-12) : texte blanc lisible, deux boutons cote a cote === */
+.vp .vp-pied,
+.vp-pied{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  align-items:stretch;
+  justify-content:center;
+  margin-top:8px;
+}
+.vp .vp-pied a.btn-ebay,
+.vp-pied a.btn-ebay,
+.vp .vp-pied a[href*="ebay"],
+.vp-pied a[href*="ebay"]{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  flex:1 1 220px;
+  margin:0;
+  padding:8px 16px;
+  min-height:36px;
+  background:#0b3d91 !important;
+  color:#fff !important;
+  -webkit-text-fill-color:#fff !important;
+  border:0 !important;
+  border-radius:999px;
+  font:700 12px/1.2 "Source Sans 3",Arial,sans-serif !important;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  text-decoration:none !important;
+  text-shadow:none !important;
+  box-shadow:0 2px 6px rgba(11,61,145,.25);
+  transition:background .15s,transform .15s,color .15s;
+  max-width:100%;
+  box-sizing:border-box;
+  white-space:normal;
+  text-align:center;
+}
+.vp .vp-pied a.btn-ebay-recherche,
+.vp-pied a.btn-ebay-recherche,
+.vp .vp-pied a[href*="ebay"]:not(.btn-ebay),
+.vp-pied a[href*="ebay"]:not(.btn-ebay){
+  background:#0064d2 !important;
+  color:#fff !important;
+  -webkit-text-fill-color:#fff !important;
+}
+.vp .vp-pied a.btn-ebay:hover,
+.vp-pied a.btn-ebay:hover,
+.vp .vp-pied a.btn-ebay:focus-visible,
+.vp-pied a.btn-ebay:focus-visible,
+.vp .vp-pied a[href*="ebay"]:hover,
+.vp-pied a[href*="ebay"]:hover,
+.vp .vp-pied a[href*="ebay"]:focus-visible,
+.vp-pied a[href*="ebay"]:focus-visible{
+  background:#072e6e !important;
+  color:#fff !important;
+  -webkit-text-fill-color:#fff !important;
+}
+.vp .vp-pied a:not([href*="ebay"]):not(.btn-ebay){
+  color:#0a58ca;
+  font-weight:700;
+  background:none !important;
+  box-shadow:none !important;
+  border:0 !important;
+  flex:1 1 100%;
+  min-height:0;
+  padding:4px 0;
+  text-transform:none;
+  letter-spacing:0;
+  font-size:14px !important;
+  text-decoration:underline !important;
+  -webkit-text-fill-color:currentColor !important;
+}
+@media (max-width:600px){
+  .vp .vp-pied a.btn-ebay,
+  .vp-pied a.btn-ebay,
+  .vp .vp-pied a[href*="ebay"],
+  .vp-pied a[href*="ebay"]{
+    flex:1 1 100%;
+  }
+}

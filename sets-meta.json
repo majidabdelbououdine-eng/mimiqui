@@ -1,0 +1,1122 @@
+{
+  "2021swsh": {
+    "id": "2021swsh",
+    "name": "McDonald's Collection 2021",
+    "releaseDate": "2021-02-09",
+    "serieId": "mc",
+    "serieName": "McDonald's Collection",
+    "err": null
+  },
+  "2018sm": {
+    "id": "2018sm",
+    "name": "McDonald's Collection 2018",
+    "releaseDate": "2018-10-19",
+    "serieId": "mc",
+    "serieName": "McDonald's Collection",
+    "err": null
+  },
+  "2019sm": {
+    "id": "2019sm",
+    "name": "McDonald's Collection 2019",
+    "releaseDate": "2019-10-15",
+    "serieId": "mc",
+    "serieName": "McDonald's Collection",
+    "err": null
+  },
+  "2014xy": {
+    "id": "2014xy",
+    "name": "McDonald's Collection 2014",
+    "releaseDate": "2014-05-23",
+    "serieId": "mc",
+    "serieName": "McDonald's Collection",
+    "err": null
+  },
+  "2016xy": {
+    "id": "2016xy",
+    "name": "McDonald's Collection 2016",
+    "releaseDate": "2016-08-20",
+    "serieId": "mc",
+    "serieName": "McDonald's Collection",
+    "err": null
+  },
+  "2015xy": {
+    "id": "2015xy",
+    "name": "McDonald's Collection 2015",
+    "releaseDate": "2015-11-27",
+    "serieId": "mc",
+    "serieName": "McDonald's Collection",
+    "err": null
+  },
+  "2017sm": {
+    "id": "2017sm",
+    "name": "McDonald's Collection 2017",
+    "releaseDate": "2017-08-03",
+    "serieId": "mc",
+    "serieName": "McDonald's Collection",
+    "err": null
+  },
+  "2022swsh": {
+    "id": "2022swsh",
+    "name": "McDonald's Collection 2022",
+    "releaseDate": "2022-08-03",
+    "serieId": "mc",
+    "serieName": "McDonald's Collection",
+    "err": null
+  },
+  "30th-c": {
+    "id": "30th-c",
+    "name": "30th Classic Collection",
+    "releaseDate": "2026-09-16",
+    "serieId": "me",
+    "serieName": "Mega Evolution",
+    "err": null
+  },
+  "30th": {
+    "id": "30th",
+    "name": "30th Celebration",
+    "releaseDate": "2026-09-16",
+    "serieId": "me",
+    "serieName": "Mega Evolution",
+    "err": null
+  },
+  "2024sv": {
+    "id": "2024sv",
+    "name": "McDonald's Collection 2024",
+    "releaseDate": "2024-12-04",
+    "serieId": "mc",
+    "serieName": "McDonald's Collection",
+    "err": null
+  },
+  "2023sv": {
+    "id": "2023sv",
+    "name": "McDonald's Collection 2023",
+    "releaseDate": "2023-08-01",
+    "serieId": "mc",
+    "serieName": "McDonald's Collection",
+    "err": null
+  },
+  "2013bw": {
+    "id": "2013bw",
+    "name": "Collection McDonald's 2013",
+    "releaseDate": "2013-11-01",
+    "serieId": "mc",
+    "serieName": "Collection McDonald's",
+    "err": null
+  },
+  "2019sm-fr": {
+    "id": "2019sm-fr",
+    "name": "Collection McDonald's 2019",
+    "releaseDate": "2019-10-30",
+    "serieId": "mc",
+    "serieName": "Collection McDonald's",
+    "err": null
+  },
+  "2018sm-fr": {
+    "id": "2018sm-fr",
+    "name": "Collection McDonald's 2018",
+    "releaseDate": "2018-06-13",
+    "serieId": "mc",
+    "serieName": "Collection McDonald's",
+    "err": null
+  },
+  "A1a": {
+    "id": "A1a",
+    "name": "Mythical Island",
+    "releaseDate": "2024-12-17",
+    "serieId": "tcgp",
+    "serieName": "Pokémon TCG Pocket",
+    "err": null
+  },
+  "A1": {
+    "id": "A1",
+    "name": "Genetic Apex",
+    "releaseDate": "2024-10-30",
+    "serieId": "tcgp",
+    "serieName": "Pokémon TCG Pocket",
+    "err": null
+  },
+  "A3": {
+    "id": "A3",
+    "name": "Celestial Guardians",
+    "releaseDate": "2025-04-30",
+    "serieId": "tcgp",
+    "serieName": "Pokémon TCG Pocket",
+    "err": null
+  },
+  "A2a": {
+    "id": "A2a",
+    "name": "Triumphant Light",
+    "releaseDate": "2025-02-28",
+    "serieId": "tcgp",
+    "serieName": "Pokémon TCG Pocket",
+    "err": null
+  },
+  "A2b": {
+    "id": "A2b",
+    "name": "Shining Revelry",
+    "releaseDate": "2025-03-27",
+    "serieId": "tcgp",
+    "serieName": "Pokémon TCG Pocket",
+    "err": null
+  },
+  "B1": {
+    "id": "B1",
+    "name": "Mega Rising",
+    "releaseDate": "2025-10-30",
+    "serieId": "tcgp",
+    "serieName": "Pokémon TCG Pocket",
+    "err": null
+  },
+  "B2": {
+    "id": "B2",
+    "name": "Fantastical Parade",
+    "releaseDate": "2026-01-29",
+    "serieId": "tcgp",
+    "serieName": "Pokémon TCG Pocket",
+    "err": null
+  },
+  "P-A": {
+    "id": "P-A",
+    "name": "Promos-A",
+    "releaseDate": "2024-10-30",
+    "serieId": "tcgp",
+    "serieName": "Pokémon TCG Pocket",
+    "err": null
+  },
+  "CP2": {
+    "id": "CP2",
+    "name": "伝説キラコレクション",
+    "releaseDate": "2015-07-18",
+    "serieId": "XY",
+    "serieName": "XY",
+    "err": null
+  },
+  "E1": {
+    "id": "E1",
+    "name": "基本拡張パック",
+    "releaseDate": "2001-12-01",
+    "serieId": "e",
+    "serieName": "ポケモンカードe",
+    "err": null
+  },
+  "M-P": {
+    "id": "M-P",
+    "name": "メガ プロモカード",
+    "releaseDate": "2025-07-28",
+    "serieId": "M",
+    "serieName": "ポケモンカードゲーム MEGA",
+    "err": null
+  },
+  "E4": {
+    "id": "E4",
+    "name": "裂けた大地",
+    "releaseDate": "2002-08-23",
+    "serieId": "e",
+    "serieName": "ポケモンカードe",
+    "err": null
+  },
+  "MC": {
+    "id": "MC",
+    "name": "スタートデッキ100 バトルコレクション",
+    "releaseDate": "2025-12-19",
+    "serieId": "M",
+    "serieName": "ポケモンカードゲーム MEGA",
+    "err": null
+  },
+  "PCG1": {
+    "id": "PCG1",
+    "name": "伝説の飛翔",
+    "releaseDate": "2004-04-09",
+    "serieId": "PCG",
+    "serieName": "PCG",
+    "err": null
+  },
+  "M2a": {
+    "id": "M2a",
+    "name": "MEGAドリームex",
+    "releaseDate": "2025-11-28",
+    "serieId": "M",
+    "serieName": "ポケモンカードゲーム MEGA",
+    "err": null
+  },
+  "PCG7": {
+    "id": "PCG7",
+    "name": "ホロンの幻影",
+    "releaseDate": "2006-01-27",
+    "serieId": "PCG",
+    "serieName": "PCG",
+    "err": null
+  },
+  "PMCG1": {
+    "id": "PMCG1",
+    "name": "拡張パック",
+    "releaseDate": "1996-10-20",
+    "serieId": "PMCG",
+    "serieName": "ポケットモンスターカードゲーム",
+    "err": null
+  },
+  "PMCG2": {
+    "id": "PMCG2",
+    "name": "ポケモンジャングル",
+    "releaseDate": "1997-03-05",
+    "serieId": "PMCG",
+    "serieName": "ポケットモンスターカードゲーム",
+    "err": null
+  },
+  "PMCG5": {
+    "id": "PMCG5",
+    "name": "リーダーズスタジアム",
+    "releaseDate": "1998-10-24",
+    "serieId": "PMCG",
+    "serieName": "ポケットモンスターカードゲーム",
+    "err": null
+  },
+  "SM10a": {
+    "id": "SM10a",
+    "name": "ジージーエンド",
+    "releaseDate": "2019-04-05",
+    "serieId": "SM",
+    "serieName": "サン＆ムーン",
+    "err": null
+  },
+  "S10a": {
+    "id": "S10a",
+    "name": "ダークファンタズマ",
+    "releaseDate": "2022-05-13",
+    "serieId": "S",
+    "serieName": "剣と盾",
+    "err": null
+  },
+  "SM11b": {
+    "id": "SM11b",
+    "name": "ドリームリーグ",
+    "releaseDate": "2019-08-02",
+    "serieId": "SM",
+    "serieName": "サン＆ムーン",
+    "err": null
+  },
+  "S12a": {
+    "id": "S12a",
+    "name": "VSTARユニバース",
+    "releaseDate": "2022-12-02",
+    "serieId": "S",
+    "serieName": "剣と盾",
+    "err": null
+  },
+  "S12": {
+    "id": "S12",
+    "name": "パラダイムトリガー",
+    "releaseDate": "2022-10-21",
+    "serieId": "S",
+    "serieName": "剣と盾",
+    "err": null
+  },
+  "S8b": {
+    "id": "S8b",
+    "name": "VMAXクライマックス",
+    "releaseDate": "2021-12-03",
+    "serieId": "S",
+    "serieName": "剣と盾",
+    "err": null
+  },
+  "SM3N": {
+    "id": "SM3N",
+    "name": "光を喰らう闇",
+    "releaseDate": "2017-06-16",
+    "serieId": "SM",
+    "serieName": "サン＆ムーン",
+    "err": null
+  },
+  "SM12a": {
+    "id": "SM12a",
+    "name": "TAG TEAM GX タッグオールスターズ",
+    "releaseDate": "2019-10-04",
+    "serieId": "SM",
+    "serieName": "サン＆ムーン",
+    "err": null
+  },
+  "SM9": {
+    "id": "SM9",
+    "name": "Team Up",
+    "releaseDate": "2019-01-31",
+    "serieId": "sm",
+    "serieName": "Sun & Moon",
+    "err": null
+  },
+  "SM3p": {
+    "id": "SM3p",
+    "name": "ひかる伝説",
+    "releaseDate": "2017-07-15",
+    "serieId": "SM",
+    "serieName": "サン＆ムーン",
+    "err": null
+  },
+  "SM4A": {
+    "id": "SM4A",
+    "name": "超次元の暴獣",
+    "releaseDate": "2017-09-15",
+    "serieId": "SM",
+    "serieName": "サン＆ムーン",
+    "err": null
+  },
+  "SM4p": {
+    "id": "SM4p",
+    "name": "GXバトルブースト",
+    "releaseDate": "2017-10-20",
+    "serieId": "SM",
+    "serieName": "サン＆ムーン",
+    "err": null
+  },
+  "SM9a": {
+    "id": "SM9a",
+    "name": "ナイトユニゾン",
+    "releaseDate": "2019-01-11",
+    "serieId": "SM",
+    "serieName": "サン＆ムーン",
+    "err": null
+  },
+  "base1": {
+    "id": "base1",
+    "name": "Base Set",
+    "releaseDate": "1999-01-09",
+    "serieId": "base",
+    "serieName": "Base",
+    "err": null
+  },
+  "SV2D": {
+    "id": "SV2D",
+    "name": "クレイバースト",
+    "releaseDate": "2023-04-14",
+    "serieId": "SV",
+    "serieName": "ポケモンカードゲーム スカーレット&バイオレット",
+    "err": null
+  },
+  "SV-P": {
+    "id": "SV-P",
+    "name": "スカーレット&バイオレット プロモカード",
+    "releaseDate": "2022-11-29",
+    "serieId": "SV",
+    "serieName": "ポケモンカードゲーム スカーレット&バイオレット",
+    "err": null
+  },
+  "SV2a": {
+    "id": "SV2a",
+    "name": "ポケモンカード151",
+    "releaseDate": "2023-06-16",
+    "serieId": "SV",
+    "serieName": "ポケモンカードゲーム スカーレット&バイオレット",
+    "err": null
+  },
+  "base2": {
+    "id": "base2",
+    "name": "Jungle",
+    "releaseDate": "1999-06-16",
+    "serieId": "base",
+    "serieName": "Base",
+    "err": null
+  },
+  "SV4a": {
+    "id": "SV4a",
+    "name": "シャイニートレジャーex",
+    "releaseDate": "2023-12-01",
+    "serieId": "SV",
+    "serieName": "ポケモンカードゲーム スカーレット&バイオレット",
+    "err": null
+  },
+  "basep": {
+    "id": "basep",
+    "name": "Wizards Black Star Promos",
+    "releaseDate": "1999-07-01",
+    "serieId": "base",
+    "serieName": "Base",
+    "err": null
+  },
+  "SV5M": {
+    "id": "SV5M",
+    "name": "サイバージャッジ",
+    "releaseDate": "2024-01-26",
+    "serieId": "SV",
+    "serieName": "ポケモンカードゲーム スカーレット&バイオレット",
+    "err": null
+  },
+  "base4": {
+    "id": "base4",
+    "name": "Base Set 2",
+    "releaseDate": "2000-02-24",
+    "serieId": "base",
+    "serieName": "Base",
+    "err": null
+  },
+  "bw1": {
+    "id": "bw1",
+    "name": "Black & White",
+    "releaseDate": "2011-04-25",
+    "serieId": "bw",
+    "serieName": "Black & White",
+    "err": null
+  },
+  "bw11": {
+    "id": "bw11",
+    "name": "Legendary Treasures",
+    "releaseDate": "2013-11-06",
+    "serieId": "bw",
+    "serieName": "Black & White",
+    "err": null
+  },
+  "bw4": {
+    "id": "bw4",
+    "name": "Next Destinies",
+    "releaseDate": "2012-02-08",
+    "serieId": "bw",
+    "serieName": "Black & White",
+    "err": null
+  },
+  "SV8": {
+    "id": "SV8",
+    "name": "超電ブレイカー",
+    "releaseDate": "2024-10-18",
+    "serieId": "SV",
+    "serieName": "ポケモンカードゲーム スカーレット&バイオレット",
+    "err": null
+  },
+  "bw7": {
+    "id": "bw7",
+    "name": "Boundaries Crossed",
+    "releaseDate": "2012-11-07",
+    "serieId": "bw",
+    "serieName": "Black & White",
+    "err": null
+  },
+  "dp5": {
+    "id": "dp5",
+    "name": "Majestic Dawn",
+    "releaseDate": "2008-05-01",
+    "serieId": "dp",
+    "serieName": "Diamond & Pearl",
+    "err": null
+  },
+  "dp7": {
+    "id": "dp7",
+    "name": "Stormfront",
+    "releaseDate": "2008-11-01",
+    "serieId": "dp",
+    "serieName": "Diamond & Pearl",
+    "err": null
+  },
+  "cel25": {
+    "id": "cel25",
+    "name": "Celebrations",
+    "releaseDate": "2021-10-08",
+    "serieId": "swsh",
+    "serieName": "Sword & Shield",
+    "err": null
+  },
+  "cel25cc": {
+    "id": "cel25cc",
+    "name": "Celebrations Classic Collection",
+    "releaseDate": "2021-10-08",
+    "serieId": "swsh",
+    "serieName": "Sword & Shield",
+    "err": null
+  },
+  "bwp": {
+    "id": "bwp",
+    "name": "BW Black Star Promos",
+    "releaseDate": "2011-04-26",
+    "serieId": "bw",
+    "serieName": "Black & White",
+    "err": null
+  },
+  "SV8a": {
+    "id": "SV8a",
+    "name": "テラスタルフェスex",
+    "releaseDate": "2024-12-06",
+    "serieId": "SV",
+    "serieName": "ポケモンカードゲーム スカーレット&バイオレット",
+    "err": null
+  },
+  "det1": {
+    "id": "det1",
+    "name": "Detective Pikachu",
+    "releaseDate": "2019-03-29",
+    "serieId": "sm",
+    "serieName": "Sun & Moon",
+    "err": null
+  },
+  "dp2": {
+    "id": "dp2",
+    "name": "Mysterious Treasures",
+    "releaseDate": "2007-08-01",
+    "serieId": "dp",
+    "serieName": "Diamond & Pearl",
+    "err": null
+  },
+  "ecard3": {
+    "id": "ecard3",
+    "name": "Skyridge",
+    "releaseDate": "2003-05-12",
+    "serieId": "ecard",
+    "serieName": "E-Card",
+    "err": null
+  },
+  "ex5.5": {
+    "id": "ex5.5",
+    "name": "Poké Card Creator Pack",
+    "releaseDate": "2004-07-01",
+    "serieId": "ex",
+    "serieName": "EX",
+    "err": null
+  },
+  "dpp": {
+    "id": "dpp",
+    "name": "DP Black Star Promos",
+    "releaseDate": "2007-05-01",
+    "serieId": "dp",
+    "serieName": "Diamond & Pearl",
+    "err": null
+  },
+  "ex12": {
+    "id": "ex12",
+    "name": "Legend Maker",
+    "releaseDate": "2006-02-13",
+    "serieId": "ex",
+    "serieName": "EX",
+    "err": null
+  },
+  "ex6": {
+    "id": "ex6",
+    "name": "FireRed & LeafGreen",
+    "releaseDate": "2004-09-01",
+    "serieId": "ex",
+    "serieName": "EX",
+    "err": null
+  },
+  "ecard1": {
+    "id": "ecard1",
+    "name": "Expedition Base Set",
+    "releaseDate": "2002-09-15",
+    "serieId": "ecard",
+    "serieName": "E-Card",
+    "err": null
+  },
+  "ex16": {
+    "id": "ex16",
+    "name": "Power Keepers",
+    "releaseDate": "2007-02-17",
+    "serieId": "ex",
+    "serieName": "EX",
+    "err": null
+  },
+  "ex4": {
+    "id": "ex4",
+    "name": "Team Magma vs Team Aqua",
+    "releaseDate": "2004-03-01",
+    "serieId": "ex",
+    "serieName": "EX",
+    "err": null
+  },
+  "ex2": {
+    "id": "ex2",
+    "name": "Sandstorm",
+    "releaseDate": "2003-09-18",
+    "serieId": "ex",
+    "serieName": "EX",
+    "err": null
+  },
+  "ex13": {
+    "id": "ex13",
+    "name": "Holon Phantoms",
+    "releaseDate": "2006-05-03",
+    "serieId": "ex",
+    "serieName": "EX",
+    "err": null
+  },
+  "fut2020": {
+    "id": "fut2020",
+    "name": "Pokémon Futsal 2020",
+    "releaseDate": "2020-09-11",
+    "serieId": "swsh",
+    "serieName": "Sword & Shield",
+    "err": null
+  },
+  "gym1": {
+    "id": "gym1",
+    "name": "Gym Heroes",
+    "releaseDate": "2000-08-14",
+    "serieId": "gym",
+    "serieName": "Gym",
+    "err": null
+  },
+  "ex9": {
+    "id": "ex9",
+    "name": "Emerald",
+    "releaseDate": "2005-05-09",
+    "serieId": "ex",
+    "serieName": "EX",
+    "err": null
+  },
+  "g1": {
+    "id": "g1",
+    "name": "Generations",
+    "releaseDate": "2016-02-22",
+    "serieId": "xy",
+    "serieName": "XY",
+    "err": null
+  },
+  "hgss1": {
+    "id": "hgss1",
+    "name": "HeartGold SoulSilver",
+    "releaseDate": "2010-02-10",
+    "serieId": "hgss",
+    "serieName": "HeartGold & SoulSilver",
+    "err": null
+  },
+  "hgssp": {
+    "id": "hgssp",
+    "name": "HGSS Black Star Promos",
+    "releaseDate": "2010-02-11",
+    "serieId": "hgss",
+    "serieName": "HeartGold & SoulSilver",
+    "err": null
+  },
+  "hgss3": {
+    "id": "hgss3",
+    "name": "Undaunted",
+    "releaseDate": "2010-08-18",
+    "serieId": "hgss",
+    "serieName": "HeartGold & SoulSilver",
+    "err": null
+  },
+  "lc": {
+    "id": "lc",
+    "name": "Legendary Collection",
+    "releaseDate": "2002-05-24",
+    "serieId": "lc",
+    "serieName": "Legendary Collection",
+    "err": null
+  },
+  "gym2": {
+    "id": "gym2",
+    "name": "Gym Challenge",
+    "releaseDate": "2000-10-16",
+    "serieId": "gym",
+    "serieName": "Gym",
+    "err": null
+  },
+  "me02.5": {
+    "id": "me02.5",
+    "name": "Ascended Heroes",
+    "releaseDate": "2026-01-30",
+    "serieId": "me",
+    "serieName": "Mega Evolution",
+    "err": null
+  },
+  "mep": {
+    "id": "mep",
+    "name": "MEP Black Star Promos",
+    "releaseDate": "2025-09-26",
+    "serieId": "me",
+    "serieName": "Mega Evolution",
+    "err": null
+  },
+  "mfb": {
+    "id": "mfb",
+    "name": "My First Battle",
+    "releaseDate": "2023-09-29",
+    "serieId": "sv",
+    "serieName": "Scarlet & Violet",
+    "err": null
+  },
+  "np": {
+    "id": "np",
+    "name": "Nintendo Black Star Promos",
+    "releaseDate": "2003-10-01",
+    "serieId": "pop",
+    "serieName": "POP",
+    "err": null
+  },
+  "pop5": {
+    "id": "pop5",
+    "name": "POP Series 5",
+    "releaseDate": "2007-03-01",
+    "serieId": "pop",
+    "serieName": "POP",
+    "err": null
+  },
+  "neo1": {
+    "id": "neo1",
+    "name": "Neo Genesis",
+    "releaseDate": "2000-12-16",
+    "serieId": "neo",
+    "serieName": "Neo",
+    "err": null
+  },
+  "pop2": {
+    "id": "pop2",
+    "name": "POP Series 2",
+    "releaseDate": "2005-08-01",
+    "serieId": "pop",
+    "serieName": "POP",
+    "err": null
+  },
+  "pl2": {
+    "id": "pl2",
+    "name": "Rising Rivals",
+    "releaseDate": "2009-05-16",
+    "serieId": "pl",
+    "serieName": "Platinum",
+    "err": null
+  },
+  "pl3": {
+    "id": "pl3",
+    "name": "Supreme Victors",
+    "releaseDate": "2009-08-19",
+    "serieId": "pl",
+    "serieName": "Platinum",
+    "err": null
+  },
+  "pl4": {
+    "id": "pl4",
+    "name": "Arceus",
+    "releaseDate": "2009-11-04",
+    "serieId": "pl",
+    "serieName": "Platinum",
+    "err": null
+  },
+  "pop4": {
+    "id": "pop4",
+    "name": "POP Series 4",
+    "releaseDate": "2006-08-01",
+    "serieId": "pop",
+    "serieName": "POP",
+    "err": null
+  },
+  "pop6": {
+    "id": "pop6",
+    "name": "POP Series 6",
+    "releaseDate": "2007-09-01",
+    "serieId": "pop",
+    "serieName": "POP",
+    "err": null
+  },
+  "pop9": {
+    "id": "pop9",
+    "name": "POP Series 9",
+    "releaseDate": "2009-03-01",
+    "serieId": "pop",
+    "serieName": "POP",
+    "err": null
+  },
+  "sm12": {
+    "id": "sm12",
+    "name": "Cosmic Eclipse",
+    "releaseDate": "2019-11-01",
+    "serieId": "sm",
+    "serieName": "Sun & Moon",
+    "err": null
+  },
+  "ru1": {
+    "id": "ru1",
+    "name": "Pokémon Rumble",
+    "releaseDate": "2009-12-02",
+    "serieId": "pl",
+    "serieName": "Platinum",
+    "err": null
+  },
+  "sm10": {
+    "id": "sm10",
+    "name": "Unbroken Bonds",
+    "releaseDate": "2019-05-03",
+    "serieId": "sm",
+    "serieName": "Sun & Moon",
+    "err": null
+  },
+  "sm115": {
+    "id": "sm115",
+    "name": "Hidden Fates",
+    "releaseDate": "2019-08-23",
+    "serieId": "sm",
+    "serieName": "Sun & Moon",
+    "err": null
+  },
+  "sm11": {
+    "id": "sm11",
+    "name": "Unified Minds",
+    "releaseDate": "2019-08-02",
+    "serieId": "sm",
+    "serieName": "Sun & Moon",
+    "err": null
+  },
+  "sm3.5": {
+    "id": "sm3.5",
+    "name": "Shining Legends",
+    "releaseDate": "2017-10-06",
+    "serieId": "sm",
+    "serieName": "Sun & Moon",
+    "err": null
+  },
+  "sm3": {
+    "id": "sm3",
+    "name": "Burning Shadows",
+    "releaseDate": "2017-08-04",
+    "serieId": "sm",
+    "serieName": "Sun & Moon",
+    "err": null
+  },
+  "sm9": {
+    "id": "sm9",
+    "name": "Team Up",
+    "releaseDate": "2019-01-31",
+    "serieId": "sm",
+    "serieName": "Sun & Moon",
+    "err": null
+  },
+  "smp": {
+    "id": "smp",
+    "name": "SM Black Star Promos",
+    "releaseDate": "2017-02-03",
+    "serieId": "sm",
+    "serieName": "Sun & Moon",
+    "err": null
+  },
+  "sm4": {
+    "id": "sm4",
+    "name": "Crimson Invasion",
+    "releaseDate": "2017-11-03",
+    "serieId": "sm",
+    "serieName": "Sun & Moon",
+    "err": null
+  },
+  "sv08": {
+    "id": "sv08",
+    "name": "Surging Sparks",
+    "releaseDate": "2024-11-08",
+    "serieId": "sv",
+    "serieName": "Scarlet & Violet",
+    "err": null
+  },
+  "sv03.5": {
+    "id": "sv03.5",
+    "name": "151",
+    "releaseDate": "2023-09-22",
+    "serieId": "sv",
+    "serieName": "Scarlet & Violet",
+    "err": null
+  },
+  "sv04.5": {
+    "id": "sv04.5",
+    "name": "Paldean Fates",
+    "releaseDate": "2024-01-26",
+    "serieId": "sv",
+    "serieName": "Scarlet & Violet",
+    "err": null
+  },
+  "sv02": {
+    "id": "sv02",
+    "name": "Paldea Evolved",
+    "releaseDate": "2023-06-09",
+    "serieId": "sv",
+    "serieName": "Scarlet & Violet",
+    "err": null
+  },
+  "sv05": {
+    "id": "sv05",
+    "name": "Temporal Forces",
+    "releaseDate": "2024-03-22",
+    "serieId": "sv",
+    "serieName": "Scarlet & Violet",
+    "err": null
+  },
+  "sv08.5": {
+    "id": "sv08.5",
+    "name": "Prismatic Evolutions",
+    "releaseDate": "2025-01-17",
+    "serieId": "sv",
+    "serieName": "Scarlet & Violet",
+    "err": null
+  },
+  "svp": {
+    "id": "svp",
+    "name": "SVP Black Star Promos",
+    "releaseDate": "2023-03-31",
+    "serieId": "sv",
+    "serieName": "Scarlet & Violet",
+    "err": null
+  },
+  "swsh11tg": {
+    "id": "swsh11tg",
+    "name": "Lost Origin Trainer Gallery",
+    "releaseDate": "2022-09-09",
+    "serieId": "swsh",
+    "serieName": "Sword & Shield",
+    "err": null
+  },
+  "swsh12.5gg": {
+    "id": "swsh12.5gg",
+    "name": "Crown Zenith Galarian Gallery",
+    "releaseDate": "2023-01-20",
+    "serieId": "swsh",
+    "serieName": "Sword & Shield",
+    "err": null
+  },
+  "swsh12": {
+    "id": "swsh12",
+    "name": "Silver Tempest",
+    "releaseDate": "2022-11-11",
+    "serieId": "swsh",
+    "serieName": "Sword & Shield",
+    "err": null
+  },
+  "swsh10.5": {
+    "id": "swsh10.5",
+    "name": "Pokémon GO",
+    "releaseDate": "2022-07-01",
+    "serieId": "swsh",
+    "serieName": "Sword & Shield",
+    "err": null
+  },
+  "swsh1": {
+    "id": "swsh1",
+    "name": "Sword & Shield",
+    "releaseDate": "2020-02-07",
+    "serieId": "swsh",
+    "serieName": "Sword & Shield",
+    "err": null
+  },
+  "swsh11": {
+    "id": "swsh11",
+    "name": "Lost Origin",
+    "releaseDate": "2022-09-09",
+    "serieId": "swsh",
+    "serieName": "Sword & Shield",
+    "err": null
+  },
+  "swsh12.5": {
+    "id": "swsh12.5",
+    "name": "Crown Zenith",
+    "releaseDate": "2023-01-20",
+    "serieId": "swsh",
+    "serieName": "Sword & Shield",
+    "err": null
+  },
+  "swsh7": {
+    "id": "swsh7",
+    "name": "Evolving Skies",
+    "releaseDate": "2021-08-27",
+    "serieId": "swsh",
+    "serieName": "Sword & Shield",
+    "err": null
+  },
+  "swsh4": {
+    "id": "swsh4",
+    "name": "Vivid Voltage",
+    "releaseDate": "2020-11-13",
+    "serieId": "swsh",
+    "serieName": "Sword & Shield",
+    "err": null
+  },
+  "tk-sm-r": {
+    "id": "tk-sm-r",
+    "name": "SM trainer Kit (Alolan Raichu)",
+    "releaseDate": "2017-04-21",
+    "serieId": "tk",
+    "serieName": "Trainer kits",
+    "err": null
+  },
+  "swsh8": {
+    "id": "swsh8",
+    "name": "Fusion Strike",
+    "releaseDate": "2021-11-12",
+    "serieId": "swsh",
+    "serieName": "Sword & Shield",
+    "err": null
+  },
+  "swsh9": {
+    "id": "swsh9",
+    "name": "Brilliant Stars",
+    "releaseDate": "2022-02-25",
+    "serieId": "swsh",
+    "serieName": "Sword & Shield",
+    "err": null
+  },
+  "swshp": {
+    "id": "swshp",
+    "name": "SWSH Black Star Promos",
+    "releaseDate": "2019-11-15",
+    "serieId": "swsh",
+    "serieName": "Sword & Shield",
+    "err": null
+  },
+  "tk-ex-latio": {
+    "id": "tk-ex-latio",
+    "name": "EX trainer Kit (Latios)",
+    "releaseDate": "2004-07-01",
+    "serieId": "tk",
+    "serieName": "Trainer kits",
+    "err": null
+  },
+  "tk-hs-r": {
+    "id": "tk-hs-r",
+    "name": "HS trainer Kit (Raichu)",
+    "releaseDate": "2010-05-01",
+    "serieId": "tk",
+    "serieName": "Trainer kits",
+    "err": null
+  },
+  "tk-xy-p": {
+    "id": "tk-xy-p",
+    "name": "XY trainer Kit (Pikachu Libre)",
+    "releaseDate": "2016-04-27",
+    "serieId": "tk",
+    "serieName": "Trainer kits",
+    "err": null
+  },
+  "xy1": {
+    "id": "xy1",
+    "name": "XY",
+    "releaseDate": "2014-02-05",
+    "serieId": "xy",
+    "serieName": "XY",
+    "err": null
+  },
+  "xy3": {
+    "id": "xy3",
+    "name": "Furious Fists",
+    "releaseDate": "2014-08-13",
+    "serieId": "xy",
+    "serieName": "XY",
+    "err": null
+  },
+  "xy12": {
+    "id": "xy12",
+    "name": "Evolutions",
+    "releaseDate": "2016-11-02",
+    "serieId": "xy",
+    "serieName": "XY",
+    "err": null
+  },
+  "xy6": {
+    "id": "xy6",
+    "name": "Roaring Skies",
+    "releaseDate": "2015-05-06",
+    "serieId": "xy",
+    "serieName": "XY",
+    "err": null
+  },
+  "xyp": {
+    "id": "xyp",
+    "name": "XY Black Star Promos",
+    "releaseDate": "2013-10-12",
+    "serieId": "xy",
+    "serieName": "XY",
+    "err": null
+  },
+  "xy8": {
+    "id": "xy8",
+    "name": "BREAKthrough",
+    "releaseDate": "2015-11-04",
+    "serieId": "xy",
+    "serieName": "XY",
+    "err": null
+  }
+}
