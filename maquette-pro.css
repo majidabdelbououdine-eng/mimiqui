@@ -1,0 +1,915 @@
+/* maquette-pro.css
+   Proposition de style plus professionnel (copie /workspace/maquette-pro uniquement).
+   Feuille de surcharge : le HTML, les liens eBay, la recherche, le paywall,
+   le menu Spécial mimiqui et les boutons sous les cartes restent inchangés. */
+
+@font-face{
+  font-family:"Inter";
+  font-style:normal;
+  font-weight:100 900;
+  font-display:swap;
+  src:url("fonts/InterVariable.woff2") format("woff2");
+}
+
+:root{
+  --mq-bg:#f3f1ee;
+  --mq-surface:#ffffff;
+  --mq-ink:#161616;
+  --mq-muted:#5c5c5c;
+  --mq-line:#e4e0da;
+  --mq-line-strong:#d4cfc7;
+  --mq-accent:#c41e3a;
+  --mq-navy:#0b3d91;
+  --mq-ebay:#0064d2;
+  --mq-shadow:0 1px 2px rgba(16,16,16,.06), 0 10px 28px rgba(16,16,16,.07);
+  --mq-shadow-hover:0 2px 6px rgba(16,16,16,.08), 0 16px 36px rgba(16,16,16,.10);
+  --mq-radius:16px;
+  --mq-radius-sm:10px;
+  --mq-font:"Inter",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --bg:var(--mq-bg);
+  --surface:var(--mq-surface);
+  --ink:var(--mq-ink);
+  --muted:var(--mq-muted);
+  --line:var(--mq-line);
+  --encre:var(--mq-ink);
+  --rouge:var(--mq-accent);
+  --rag:var(--mq-accent);
+  --ghost:var(--mq-accent);
+  --ghost-soft:#f7f6f3;
+  --f-display:var(--mq-font);
+  --f-body:var(--mq-font);
+  --f-data:var(--mq-font);
+  --titre-font:var(--mq-font);
+  --texte-font:var(--mq-font);
+}
+
+html,body{
+  background:var(--mq-bg)!important;
+  color:var(--mq-ink)!important;
+  font-family:var(--mq-font)!important;
+  letter-spacing:-0.011em;
+}
+body{
+  font-size:16px;
+  line-height:1.55;
+  font-weight:400;
+}
+
+/* Typographie : Inter partout, titres plus nets */
+html body h1,html body h2,html body h3,html body h4,
+html body .logo,html body .title h3,html body .eyebrow,
+html body .vp h3,html body .lb-v h4,html body .fd-titre,html body .fd-date{
+  font-family:var(--mq-font)!important;
+  letter-spacing:-0.02em;
+  text-shadow:none!important;
+}
+html body h1{
+  font-weight:700!important;
+  font-size:clamp(1.85rem, 4.2vw, 2.65rem)!important;
+  line-height:1.15!important;
+  color:var(--mq-ink)!important;
+  margin:12px 0 14px!important;
+}
+html body h2{
+  font-weight:650!important;
+  font-size:clamp(1.25rem, 2.2vw, 1.55rem)!important;
+  line-height:1.25!important;
+  color:var(--mq-ink)!important;
+}
+html body h3{
+  font-weight:650!important;
+  color:var(--mq-ink)!important;
+}
+html body p,html body li,html body td,html body th,html body label,html body summary{
+  text-shadow:none!important;
+  font-family:var(--mq-font)!important;
+}
+html body a{color:var(--mq-navy)}
+html body em{font-style:italic;font-weight:550;color:var(--mq-accent)}
+
+/* ========== En-tête : barre claire, sans hologramme ========== */
+html body header.wrap:first-of-type::before,
+html body header.site::before,
+html body > header.wrap::before{
+  content:none!important;
+  display:none!important;
+  background:none!important;
+  animation:none!important;
+  box-shadow:none!important;
+  border:0!important;
+  -webkit-backdrop-filter:none!important;
+  backdrop-filter:none!important;
+}
+html body header.wrap:first-of-type,
+html body header.site,
+html body > header.wrap{
+  background:#fff!important;
+  color:var(--mq-ink)!important;
+  border-bottom:1px solid var(--mq-line)!important;
+  box-shadow:0 1px 0 rgba(255,255,255,.8), 0 8px 24px rgba(16,16,16,.04)!important;
+  clip-path:none!important;
+  backdrop-filter:none!important;
+  -webkit-backdrop-filter:none!important;
+  z-index:6000!important;
+}
+html body header.wrap:first-of-type .logo,
+html body header.wrap:first-of-type nav>ul>li>a,
+html body header.site .logo,
+html body header.site nav>ul>li>a,
+html body header .logo,
+html body header nav ul.menu-principal>li>a,
+html body header a.logo{
+  color:var(--mq-ink)!important;
+  text-shadow:none!important;
+  -webkit-text-fill-color:currentColor!important;
+}
+html body header .logo,
+html body header.site .logo,
+html body header.wrap .logo,
+html body a.logo{
+  font-family:var(--mq-font)!important;
+  font-weight:700!important;
+  font-size:1.15rem!important;
+  letter-spacing:-0.03em!important;
+  display:flex!important;
+  align-items:center!important;
+  gap:.7rem!important;
+  text-decoration:none!important;
+  color:var(--mq-ink)!important;
+}
+html body header .logo .logo-img,
+html body a.logo .logo-img{
+  height:3.15rem!important;
+  width:auto!important;
+}
+html body header .logo span{color:var(--mq-accent)!important}
+
+/* Menu plus net */
+html body nav ul.menu-principal{
+  font-family:var(--mq-font)!important;
+  gap:.1rem 1.05rem!important;
+}
+html body nav ul.menu-principal>li>a{
+  font-weight:600!important;
+  font-size:.92rem!important;
+  letter-spacing:-0.01em!important;
+  padding:.65rem 0!important;
+  text-transform:none!important;
+  color:var(--mq-ink)!important;
+}
+html body nav ul.menu-principal>li.actif>a,
+html body nav ul.menu-principal>li>a[aria-current],
+html body nav ul.menu-principal>li>a:hover{
+  color:var(--mq-accent)!important;
+  box-shadow:inset 0 -2px 0 var(--mq-accent)!important;
+}
+html body nav .ouvre-sous,
+html body nav .sm-tog,
+html body header .hamburger{
+  color:var(--mq-ink)!important;
+}
+
+/* Sous-menus : fond blanc, ombre douce, plus de cyan */
+html body nav ul.menu-principal ul.sous-menu,
+html body nav ul.menu-principal ul.sm-sous,
+html body nav ul.menu-principal ul.sous-menu.sm-clair,
+html body nav ul.menu-principal ul.sous-menu.sm-sombre{
+  background:#fff!important;
+  background-image:none!important;
+  border:1px solid var(--mq-line)!important;
+  border-radius:12px!important;
+  box-shadow:var(--mq-shadow)!important;
+  backdrop-filter:none!important;
+  -webkit-backdrop-filter:none!important;
+  padding:.4rem 0!important;
+}
+html body nav ul.menu-principal ul.sous-menu a,
+html body nav ul.menu-principal ul.sm-sous a,
+html body nav ul.menu-principal ul.sous-menu.sm-clair a,
+html body nav ul.menu-principal ul.sous-menu.sm-sombre a,
+html body header.wrap nav.top ul.sous-menu a{
+  color:var(--mq-ink)!important;
+  font-weight:550!important;
+  font-size:.9rem!important;
+  text-shadow:none!important;
+  -webkit-text-fill-color:currentColor!important;
+  background:transparent!important;
+  padding:.48rem 1rem!important;
+}
+html body nav ul.menu-principal ul.sous-menu a:hover,
+html body nav ul.menu-principal ul.sm-sous a:hover,
+html body nav ul.menu-principal ul.sous-menu a[aria-current],
+html body header.wrap nav.top ul.sous-menu a:hover{
+  background:#f6f4f1!important;
+  color:var(--mq-accent)!important;
+}
+
+/* Recherche dans le menu */
+html body header .recherche-box input,
+html body header input[type=search],
+html body #site-q{
+  background:#f6f4f1!important;
+  border:1px solid var(--mq-line)!important;
+  box-shadow:none!important;
+  color:var(--mq-ink)!important;
+  -webkit-text-fill-color:var(--mq-ink)!important;
+  text-shadow:none!important;
+  border-radius:999px!important;
+  font-family:var(--mq-font)!important;
+  font-weight:500!important;
+}
+html body header .recherche-box input:focus,
+html body #site-q:focus{
+  background:#fff!important;
+  border-color:#b9c5d8!important;
+  box-shadow:0 0 0 3px rgba(11,61,145,.14)!important;
+}
+
+/* Boutons d'en-tête (Voir les cartes, Aide) */
+html body header .cartes-btn,
+html body header a.cartes-btn,
+html body .cartes-btn{
+  background:var(--mq-navy)!important;
+  color:#fff!important;
+  -webkit-text-fill-color:#fff!important;
+  border:1px solid var(--mq-navy)!important;
+  border-radius:999px!important;
+  box-shadow:none!important;
+  text-shadow:none!important;
+  font-family:var(--mq-font)!important;
+  font-weight:650!important;
+  letter-spacing:.01em!important;
+  text-transform:none!important;
+  padding:.55rem 1.15rem!important;
+  text-decoration:none!important;
+  filter:none!important;
+}
+html body header .cartes-btn:hover,
+html body .cartes-btn:hover{background:#082c6b!important;border-color:#082c6b!important;color:#fff!important}
+html body header .aide-btn,
+html body .aide-btn{
+  background:#fff!important;
+  color:var(--mq-ink)!important;
+  -webkit-text-fill-color:var(--mq-ink)!important;
+  border:1px solid var(--mq-line-strong)!important;
+  border-radius:999px!important;
+  box-shadow:none!important;
+  text-shadow:none!important;
+  font-family:var(--mq-font)!important;
+  font-weight:600!important;
+  padding:.5rem 1rem!important;
+}
+html body header .aide-btn:hover{background:#f6f4f1!important}
+
+/* ========== Champs de recherche / filtres : sobres ========== */
+html body #q,html body #cq,html body #v-cherche,html body #cherche,
+html body input[type=search]:not(header *):not(nav *),
+html body #fserie,html body #frar,html body #gen,html body #tri,
+html body #ctri,html body #tri-ventes,html body #lp-tri,
+html body .bar input,html body .bar select,
+html body .recherche-petite input{
+  color:var(--mq-ink)!important;
+  background:#fff!important;
+  border:1px solid var(--mq-line-strong)!important;
+  border-radius:10px!important;
+  box-shadow:none!important;
+  -webkit-backdrop-filter:none!important;
+  backdrop-filter:none!important;
+  font-family:var(--mq-font)!important;
+  font-weight:500!important;
+  text-shadow:none!important;
+}
+html body #q:focus,html body #cq:focus,html body #v-cherche:focus,html body #cherche:focus,
+html body input[type=search]:focus,html body .bar input:focus,html body .bar select:focus{
+  background:#fff!important;
+  border-color:#9eb1cf!important;
+  box-shadow:0 0 0 3px rgba(11,61,145,.14)!important;
+}
+html body #q::placeholder,html body #cq::placeholder,html body #cherche::placeholder,
+html body input[type=search]::placeholder{
+  color:#8a867f!important;
+  text-shadow:none!important;
+}
+
+/* Barre de filtres des pages séries */
+html body .bar{
+  background:rgba(243,241,238,.92)!important;
+  border-bottom:1px solid var(--mq-line)!important;
+  backdrop-filter:blur(10px);
+}
+html body header.hero{
+  padding-block:28px 32px!important;
+}
+html body header.hero h1{color:var(--mq-ink)!important;text-shadow:none!important}
+html body header.hero p,html body .lede{color:var(--mq-muted)!important}
+html body .eyebrow{
+  color:var(--mq-accent)!important;
+  font-weight:650!important;
+  letter-spacing:.14em!important;
+}
+
+/* ========== Cartes de la grille ========== */
+html body .grid{
+  gap:22px!important;
+  margin-top:22px!important;
+}
+html body article.card,
+html body .card{
+  background:var(--mq-surface)!important;
+  border:1px solid var(--mq-line)!important;
+  border-top:1px solid var(--mq-line)!important;
+  border-radius:var(--mq-radius)!important;
+  overflow:hidden!important;
+  box-shadow:var(--mq-shadow)!important;
+  transition:transform .18s ease, box-shadow .18s ease!important;
+}
+html body article.card:hover,
+html body .card:hover{
+  transform:translateY(-3px)!important;
+  box-shadow:var(--mq-shadow-hover)!important;
+}
+html body .title-haut,
+html body .title{
+  padding:14px 14px 10px!important;
+  background:var(--mq-surface)!important;
+}
+html body .title h3{
+  font-size:15px!important;
+  font-weight:650!important;
+  line-height:1.25!important;
+  color:var(--mq-ink)!important;
+}
+html body .pic{
+  background:#f7f6f3!important;
+  padding:14px 12px 8px!important;
+}
+html body .frame{
+  border-radius:10px!important;
+  box-shadow:0 6px 16px rgba(30,20,40,.14)!important;
+}
+html body .vb{
+  box-shadow:none!important;
+  border-radius:999px!important;
+  font-family:var(--mq-font)!important;
+}
+html body .cote,
+html body .cote-mini{
+  font-family:var(--mq-font)!important;
+  font-variant-numeric:tabular-nums;
+  color:var(--mq-ink)!important;
+}
+html body .vs-hint{
+  color:var(--mq-navy)!important;
+  font-weight:600!important;
+  letter-spacing:.04em!important;
+}
+
+/* Halo cyan retiré des images */
+html body main img:not(.logo-img),
+html body main a:hover>img:not(.logo-img),
+html body .t10-img,html body .t10-img img,html body .eventail img{
+  filter:none!important;
+  animation:none!important;
+  box-shadow:none;
+}
+html body .t10-img::before,
+html body .t10-img::after{display:none!important}
+html body .t10-img{box-shadow:var(--mq-shadow)!important;border-radius:12px!important}
+
+/* Boutons eBay sous les cartes : inchangés fonctionnellement, un peu plus soignés */
+html body .mq-btns-grille{padding:8px 10px 12px!important;gap:8px!important}
+html body .mq-btns-grille>a.btn-ebay.btn-ebay-grille{
+  border-radius:10px!important;
+  font-family:var(--mq-font)!important;
+  font-weight:650!important;
+  letter-spacing:.02em!important;
+  min-height:38px!important;
+  box-shadow:none!important;
+}
+
+/* ========== Boutons homogènes ========== */
+html body .btn-pill,html body .pill,html body .btn,
+html body a.btn,html body button.btn{
+  font-family:var(--mq-font)!important;
+  font-weight:650!important;
+  letter-spacing:.01em!important;
+  text-transform:none!important;
+  border-radius:999px!important;
+  box-shadow:none!important;
+  text-shadow:none!important;
+  filter:none!important;
+}
+html body .btn-pill,html body .pill{
+  border:1px solid var(--mq-ink)!important;
+  color:var(--mq-ink)!important;
+  background:#fff!important;
+  padding:.55rem 1.15rem!important;
+}
+html body .btn-pill:hover,html body .pill:hover{
+  background:var(--mq-ink)!important;
+  color:#fff!important;
+}
+html body .btn-pill.rouge,html body .pill.rouge{
+  background:var(--mq-accent)!important;
+  border-color:var(--mq-accent)!important;
+  color:#fff!important;
+}
+html body a.btn-ebay,html body .btn-ebay{
+  font-family:var(--mq-font)!important;
+  text-shadow:none!important;
+  box-shadow:none!important;
+}
+
+/* Fiche ventes (popup) : fond blanc lisible */
+html body .vp{background:rgba(22,22,22,.45)!important}
+html body .vp-in{
+  background:#fff!important;
+  background-image:none!important;
+  border:1px solid var(--mq-line)!important;
+  box-shadow:var(--mq-shadow-hover)!important;
+  border-radius:16px!important;
+  color:var(--mq-ink)!important;
+}
+html body .vp h3{color:var(--mq-ink)!important}
+html body .vp .vp-hb div{
+  border:1px solid var(--mq-line)!important;
+  background:#f7f6f3!important;
+  border-radius:10px!important;
+}
+
+/* Paywall : typo alignée, carte plus nette */
+html body .mq-abo-fen{
+  font-family:var(--mq-font)!important;
+  border-radius:16px!important;
+  box-shadow:var(--mq-shadow-hover)!important;
+  border:1px solid var(--mq-line);
+}
+html body .mq-abo-msg,html body .mq-abo-btn{
+  font-family:var(--mq-font)!important;
+}
+html body .mq-paywall-veil{
+  background:rgba(255,255,255,.82)!important;
+  border-radius:14px!important;
+}
+
+/* ========== Tableaux de ventes ========== */
+html body .table-wrap,
+html body .table-ventes,
+html body .table-grades{
+  border:1px solid var(--mq-line)!important;
+  border-radius:14px!important;
+  background:#fff!important;
+  box-shadow:var(--mq-shadow)!important;
+  overflow:auto;
+}
+html body table.ventes,
+html body table{
+  font-family:var(--mq-font)!important;
+  font-size:.95rem!important;
+  border-collapse:collapse!important;
+  width:100%;
+}
+html body table.ventes th,
+html body table.ventes td,
+html body table th,
+html body table td{
+  padding:12px 14px!important;
+  text-align:left;
+  vertical-align:middle;
+  border-bottom:1px solid var(--mq-line)!important;
+  font-family:var(--mq-font)!important;
+}
+html body table.ventes th,
+html body table thead th{
+  font-size:.72rem!important;
+  font-weight:650!important;
+  letter-spacing:.08em!important;
+  text-transform:uppercase!important;
+  color:#6b675f!important;
+  background:#f6f4f1!important;
+  position:sticky;
+  top:0;
+}
+html body table.ventes tbody tr:hover,
+html body table tbody tr:hover{background:#faf8f5!important}
+html body table.ventes .prix,
+html body table .prix{
+  font-family:var(--mq-font)!important;
+  font-weight:700!important;
+  font-variant-numeric:tabular-nums;
+  color:var(--mq-ink)!important;
+}
+html body table.ventes a.ebay{color:var(--mq-navy)!important}
+
+/* Accueil : dernières ventes, tuiles */
+html body #dernieres-ventes,
+html body .accueil-apercu,
+html body .apercu-ventes,
+html body .fiche{
+  font-family:var(--mq-font)!important;
+}
+html body .accueil-tuiles a,
+html body .rub,
+html body .pf-card{
+  background:#fff!important;
+  border:1px solid var(--mq-line)!important;
+  border-radius:var(--mq-radius)!important;
+  box-shadow:var(--mq-shadow)!important;
+}
+
+/* Sections accueil plus aérées */
+html body main section,
+html body .wrap > section,
+html body body > section{
+  margin-block:0;
+}
+html body .recherche-petite{
+  padding:22px 0 8px!important;
+  margin:8px auto 0!important;
+}
+
+/* ========== Pied de page ========== */
+html body footer{
+  border-top:1px solid var(--mq-line)!important;
+  background:#fff!important;
+  color:var(--mq-muted)!important;
+  font-family:var(--mq-font)!important;
+  font-size:.9rem!important;
+  padding-block:36px 28px!important;
+  margin-top:48px;
+  box-shadow:none!important;
+}
+html body footer a{color:var(--mq-ink)!important;text-decoration:none}
+html body footer a:hover{color:var(--mq-accent)!important;text-decoration:underline}
+html body .pied-legal{
+  color:#8a867f!important;
+  font-family:var(--mq-font)!important;
+  font-weight:450!important;
+  font-size:.75rem!important;
+  letter-spacing:0!important;
+  margin:0 auto 2rem!important;
+}
+html body .pied-legal a{color:#8a867f!important}
+
+/* Widgets décoratifs un peu plus discrets (conservés) */
+html body #fenetre-defilante{
+  background:rgba(255,255,255,.94)!important;
+  border:1px solid var(--mq-line)!important;
+  box-shadow:var(--mq-shadow)!important;
+  backdrop-filter:blur(8px)!important;
+  color:var(--mq-ink)!important;
+}
+html body #fenetre-defilante p{text-shadow:none!important;color:var(--mq-ink)!important}
+html body #fd-rouvrir{
+  background:#fff!important;
+  color:var(--mq-ink)!important;
+  border:1px solid var(--mq-line)!important;
+  box-shadow:var(--mq-shadow)!important;
+  writing-mode:vertical-rl;
+}
+
+/* Mobile */
+@media (max-width:799px){
+  html body header .logo{font-size:1rem!important}
+  html body header .logo .logo-img{height:2.6rem!important}
+  html body .grid{gap:14px!important}
+  html body article.card{border-radius:14px!important}
+  html body h1{font-size:1.7rem!important}
+}
+
+/* ----- Ajustements après revue visuelle de l'existant ----- */
+
+/* Wordmark : on garde le dégradé de marque, mais figé et sans lueur cyan */
+html body .holo-titre,
+html body a.logo .holo-titre,
+html body header .logo .holo-titre{
+  font-family:"Bodoni Moda",Didot,Georgia,serif!important;
+  font-weight:700!important;
+  font-size:clamp(1.55rem, 2.4vw, 2.05rem)!important;
+  letter-spacing:-0.02em!important;
+  line-height:1.1!important;
+  background:linear-gradient(110deg,#ff4ecd 0%,#ffd76a 22%,#5cffc8 44%,#4da3ff 66%,#c86bff 88%,#ff4ecd 100%)!important;
+  background-size:100% 100%!important;
+  -webkit-background-clip:text!important;
+  background-clip:text!important;
+  color:transparent!important;
+  -webkit-text-fill-color:transparent!important;
+  animation:none!important;
+  filter:none!important;
+  text-shadow:none!important;
+}
+
+/* Ne pas écraser le wordmark avec la couleur encre du logo */
+html body header .logo,
+html body header.site .logo,
+html body a.logo{
+  font-size:inherit!important;
+  color:inherit!important;
+}
+
+/* En-tête un peu plus compact */
+html body header.wrap:first-of-type,
+html body header.site,
+html body > header.wrap{
+  padding-top:10px!important;
+  padding-bottom:8px!important;
+}
+html body header .logo .logo-img,
+html body a.logo .logo-img{
+  height:3.35rem!important;
+}
+
+/* Grande barre de recherche (injectée par JS) */
+html body form.barre-recherche-site input[type="search"]{
+  font-family:var(--mq-font)!important;
+  font-weight:500!important;
+  font-size:1rem!important;
+  color:var(--mq-ink)!important;
+  background:#fff!important;
+  border:1px solid var(--mq-line-strong)!important;
+  border-right:0!important;
+  box-shadow:none!important;
+  min-height:44px!important;
+  padding:10px 16px!important;
+}
+html body form.barre-recherche-site input[type="search"]:focus{
+  box-shadow:0 0 0 3px rgba(11,61,145,.14)!important;
+  border-color:#9eb1cf!important;
+}
+html body form.barre-recherche-site button[type="submit"]{
+  font-family:var(--mq-font)!important;
+  font-weight:650!important;
+  letter-spacing:.04em!important;
+  background:var(--mq-ink)!important;
+  border:1px solid var(--mq-ink)!important;
+  color:#fff!important;
+  min-height:44px!important;
+  padding:0 18px!important;
+}
+html body form.barre-recherche-site button[type="submit"]:hover{
+  background:var(--mq-accent)!important;
+  border-color:var(--mq-accent)!important;
+}
+html body form.barre-recherche-site .brs-liste a b{
+  font-family:var(--mq-font)!important;
+}
+
+/* Sélecteur de langue */
+html body .langues a,
+html body .lang-switch a,
+html body nav .lang a,
+html body a[hreflang]{
+  font-family:var(--mq-font)!important;
+  font-weight:600!important;
+}
+
+/* Boîte « Combien vaut ma carte ? » : typo plus nette, coins réguliers */
+html body .estimer,
+html body #estimer,
+html body .bloc-estimer,
+html body .dv-estimer,
+html body [class*="estimer"]{
+  font-family:var(--mq-font)!important;
+}
+html body h2{
+  letter-spacing:-0.025em!important;
+}
+
+/* Boutons navy de l'accueil (PSA 10, ventes, cotation) : plus de lueur */
+html body a[href*="psa10"],
+html body a[href*="cartes-psa"],
+html body .btn-navy,
+html body .cta-navy{
+  box-shadow:none!important;
+  text-shadow:none!important;
+  filter:none!important;
+}
+
+/* Cartes rares : un liseré or discret à la place du halo néon */
+html body article.card:has(.holo-rare),
+html body article.card.holo-rare-wrap,
+html body .holo-rare{
+  box-shadow:var(--mq-shadow)!important;
+  animation:none!important;
+}
+html body article.card:has(.holo-rare),
+html body article.card.holo-rare-wrap{
+  box-shadow:0 0 0 1px rgba(196,150,40,.35), var(--mq-shadow)!important;
+}
+html body .holo-fx::after,
+html body .holo-fx.holo-rare::before{
+  display:none!important;
+}
+html body .holo-fx{
+  transform:none!important;
+}
+
+/* Accueil : dernières ventes dans une carte blanche */
+html body #dernieres-ventes,
+html body .apercu,
+html body #apercu-ventes{
+  background:#fff;
+  border:1px solid var(--mq-line);
+  border-radius:16px;
+  box-shadow:var(--mq-shadow);
+}
+
+/* Bouton « Haut de page » plus discret */
+html body #haut-de-page,
+html body .haut-page,
+html body a[href="#top"],
+html body button.haut{
+  box-shadow:var(--mq-shadow)!important;
+}
+
+/* En-tête accueil : supprimer le voile arc-en-ciel (header::after) et fond blanc pleine largeur */
+html body header.wrap:first-of-type::after,
+html body header.site::after,
+html body.page-accueil header.wrap:first-of-type::after,
+html body.page-accueil header.site::after,
+html body .holo-hero::before,
+html body.page-accueil .wrap.hero::before,
+html body.page-accueil header.wrap::after{
+  content:none!important;
+  display:none!important;
+  background:none!important;
+  animation:none!important;
+  opacity:0!important;
+  mix-blend-mode:normal!important;
+}
+html body header.wrap:first-of-type::before,
+html body header.site::before,
+html body > header.wrap::before{
+  content:""!important;
+  display:block!important;
+  position:absolute!important;
+  top:0!important;bottom:0!important;
+  left:-100vmax!important;right:-100vmax!important;
+  background:#fff!important;
+  z-index:-1!important;
+  pointer-events:none!important;
+  animation:none!important;
+  box-shadow:0 1px 0 var(--mq-line)!important;
+  border:0!important;
+  -webkit-backdrop-filter:none!important;
+  backdrop-filter:none!important;
+}
+
+/* Boutons PSA 10 / Ventes passées / Cotation : sans lueur cyan */
+html body #psa-rub>button,
+html body #vm-rub,
+html body #co-rub,
+html body .psa-lien summary,
+html body a.vm-lien,
+html body .vm-lien,
+html body a.co-lien,
+html body .co-lien{
+  background:var(--mq-navy)!important;
+  background-image:none!important;
+  color:#fff!important;
+  -webkit-text-fill-color:#fff!important;
+  border:1px solid var(--mq-navy)!important;
+  box-shadow:none!important;
+  text-shadow:none!important;
+  font-family:var(--mq-font)!important;
+  font-weight:650!important;
+  border-radius:999px!important;
+  animation:none!important;
+}
+html body #psa-rub>button:hover,
+html body #psa-rub.ouvert>button,
+html body #vm-rub:hover,
+html body #co-rub:hover,
+html body .vm-lien:hover,
+html body .co-lien:hover{
+  background:#082c6b!important;
+  box-shadow:none!important;
+}
+
+/* Deuxième recherche du menu : bord visible */
+html body header .recherche-box input,
+html body header #site-q,
+html body .recherche-box input{
+  border:1px solid var(--mq-line-strong)!important;
+  background:#fff!important;
+}
+
+/* ========== Encart Bonnes affaires (accueil, postérieur à la maquette) ========== */
+html body .promo-ba{
+  background:transparent!important;
+  border-top:0!important;
+  border-bottom:0!important;
+  padding:1.6rem 0 2rem!important;
+}
+html body .promo-ba-entete .etiquette{
+  font-family:var(--mq-font)!important;
+  font-weight:700!important;
+  color:var(--mq-accent)!important;
+  letter-spacing:.12em!important;
+}
+html body .promo-ba-entete h2{
+  font-family:var(--mq-font)!important;
+  font-weight:700!important;
+  letter-spacing:-0.025em!important;
+  color:var(--mq-ink)!important;
+}
+html body .promo-ba-entete p{
+  font-family:var(--mq-font)!important;
+  color:var(--mq-muted)!important;
+}
+html body .promo-ba-card{
+  background:#fff!important;
+  border:1px solid var(--mq-line)!important;
+  border-radius:var(--mq-radius)!important;
+  box-shadow:var(--mq-shadow)!important;
+  color:var(--mq-ink)!important;
+}
+html body .promo-ba-card:hover{
+  box-shadow:var(--mq-shadow-hover)!important;
+}
+html body .promo-ba-info h3,
+html body .promo-ba-meta,
+html body .promo-ba-port,
+html body .promo-ba-prix,
+html body .promo-ba-lien,
+html body .promo-ba-prix b,
+html body .promo-ba-badge{
+  font-family:var(--mq-font)!important;
+}
+html body .promo-ba-info h3{
+  font-weight:650!important;
+  color:var(--mq-ink)!important;
+}
+html body .promo-ba-meta,
+html body .promo-ba-port,
+html body .promo-ba-prix span{
+  color:var(--mq-muted)!important;
+}
+html body .promo-ba-prix b{
+  font-weight:700!important;
+  color:var(--mq-ink)!important;
+}
+html body .promo-ba-badge{
+  background:var(--mq-accent)!important;
+  color:#fff!important;
+}
+html body .promo-ba-lien{
+  color:var(--mq-navy)!important;
+}
+html body .promo-ba-visuel img{
+  border-radius:8px;
+  background:var(--mq-bg)!important;
+}
+
+/* ========== Page Mon compte ========== */
+html body .mq-compte,
+html body .mq-compte h1,
+html body .mq-compte h2,
+html body .mq-compte p,
+html body .mq-compte label,
+html body .mq-compte button,
+html body .mq-compte input,
+html body .mq-compte .mq-note,
+html body .mq-compte .mq-msg,
+html body .mq-compte .btn-pill,
+html body .mq-etat,
+html body .mq-etat-label,
+html body .mq-etat-valeur{
+  font-family:var(--mq-font)!important;
+}
+html body .mq-compte h1,
+html body .mq-compte h2{
+  font-weight:700!important;
+  letter-spacing:-0.025em!important;
+  color:var(--mq-ink)!important;
+}
+html body .mq-etat{
+  background:#fff!important;
+  border:1px solid var(--mq-line)!important;
+  border-radius:var(--mq-radius)!important;
+  box-shadow:var(--mq-shadow)!important;
+}
+html body .mq-etat .mq-etat-label{
+  color:var(--mq-muted)!important;
+  letter-spacing:.12em!important;
+}
+html body .mq-etat[data-etat="off"] .mq-etat-valeur{
+  color:var(--mq-accent)!important;
+}
+html body .mq-etat[data-etat="ok"] .mq-etat-valeur{
+  color:#0a7a32!important;
+}
+html body .mq-compte input[type=email]{
+  border:1px solid var(--mq-line-strong)!important;
+  border-radius:var(--mq-radius-sm)!important;
+  background:#fff!important;
+}
+html body .mq-compte button[type=submit]{
+  background:var(--mq-accent)!important;
+  font-weight:650!important;
+  border-radius:999px!important;
+  box-shadow:none!important;
+}
+html body .mq-compte .mq-note{
+  color:var(--mq-muted)!important;
+}
