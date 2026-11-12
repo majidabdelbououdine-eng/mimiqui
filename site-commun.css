@@ -1197,5 +1197,68 @@ html body header.wrap nav.top ul.sm-sous a:hover{
     flex:1 1 100%;
   }
 }
+/* cadenas sur le bouton des ventes eBay (pas le bouton Rechercher) */
+.vp .vp-pied a.btn-ebay[href*="LH_Sold"]::before,
+.vp-pied a.btn-ebay[href*="LH_Sold"]::before,
+a.btn-ebay[href*="LH_Sold"]:not(.btn-ebay-recherche)::before{
+  content:"\1F512";
+  display:inline-block;
+  flex:0 0 auto;
+  margin-right:.45em;
+  font-size:1.05em;
+  font-weight:400;
+  font-style:normal;
+  line-height:1;
+  letter-spacing:0;
+  text-transform:none;
+}
 /* menu-rapide 2026-11-12 */
 @media (hover:hover){nav ul.menu-principal>li>ul.sous-menu{transition:opacity .05s linear,visibility 0s linear .12s!important}nav ul.menu-principal>li:hover>ul.sous-menu,nav ul.menu-principal>li:focus-within>ul.sous-menu,nav ul.menu-principal>li.ouvert>ul.sous-menu{transition:opacity .05s linear,visibility 0s!important}nav ul.menu-principal>li>a,nav ul.menu-principal ul.sous-menu a,nav ul.menu-principal .sm-tog{transition-duration:.05s!important}nav ul.menu-principal ul.sm-sous,nav ul.menu-principal .sm-groupe>ul{transition-duration:.05s!important;transition-delay:0s!important}}
+
+/* acces ventes abonnement */
+.mq-abo-fond{position:fixed;inset:0;z-index:12000;display:flex;align-items:center;justify-content:center;padding:20px;background:rgba(17,17,17,.45)}
+.mq-abo-fond[hidden]{display:none!important}
+.mq-abo-fen{position:relative;width:100%;max-width:22rem;background:#fff;color:#111;border-radius:18px;padding:28px 22px 22px;box-shadow:0 16px 40px rgba(0,0,0,.28);text-align:center}
+.mq-abo-msg{margin:0 0 16px;font:600 1.05rem/1.4 "Source Sans 3",Arial,sans-serif}
+.mq-abo-btn{display:inline-flex;align-items:center;justify-content:center;padding:10px 22px;min-height:40px;background:#0b3d91;color:#fff!important;-webkit-text-fill-color:#fff;border-radius:999px;font:700 14px/1.2 "Source Sans 3",Arial,sans-serif;text-decoration:none!important;letter-spacing:.04em}
+.mq-abo-btn:hover,.mq-abo-btn:focus-visible{background:#072e6e;color:#fff!important}
+.mq-abo-x{position:absolute;top:6px;right:10px;border:0;background:none;font-size:28px;line-height:1;cursor:pointer;color:#111;padding:4px}
+.mq-paywall{position:relative;margin-top:10px;min-height:200px}
+.mq-paywall>:not(.mq-paywall-veil){filter:blur(11px);opacity:.32;user-select:none;pointer-events:none}
+.mq-paywall-veil{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:20px 16px;text-align:center;background:rgba(255,255,255,.78);border:1px solid rgba(17,17,17,.14);border-radius:14px}
+.mq-paywall-veil .mq-abo-msg{margin:0;max-width:22rem}
+
+/* boutons eBay sous les vignettes de la grille */
+.mq-btns-grille{display:flex;flex-direction:row;align-items:stretch;gap:6px;width:100%;padding:8px;box-sizing:border-box;margin:0;background:transparent}
+article.card>.mq-btns-grille{margin-top:auto}
+.mq-btns-grille>a.btn-ebay.btn-ebay-grille{
+  display:flex!important;
+  align-items:center;
+  justify-content:center;
+  flex:1 1 0!important;
+  width:auto!important;
+  max-width:none!important;
+  min-height:36px!important;
+  margin:0!important;
+  padding:7px 8px!important;
+  border-radius:10px!important;
+  font:700 10.5px/1.25 "Source Sans 3",Arial,sans-serif!important;
+  letter-spacing:.04em;
+  text-transform:uppercase;
+  text-align:center;
+  text-decoration:none!important;
+  white-space:normal;
+  box-sizing:border-box;
+  color:#fff!important;
+  -webkit-text-fill-color:#fff!important;
+  box-shadow:none!important;
+}
+.mq-btns-grille>a.btn-ebay.btn-ebay-recherche{
+  background:#0064d2!important;
+  flex:1.25 1 0!important;
+}
+.mq-btns-grille>a.btn-ebay.btn-ebay-recherche:hover,
+.mq-btns-grille>a.btn-ebay.btn-ebay-recherche:focus-visible{background:#0054b0!important}
+.mq-btns-grille>a.btn-ebay.btn-ebay-grille:not(.btn-ebay-recherche){background:#0b3d91!important}
+.mq-btns-grille>a.btn-ebay.btn-ebay-grille:not(.btn-ebay-recherche):hover,
+.mq-btns-grille>a.btn-ebay.btn-ebay-grille:not(.btn-ebay-recherche):focus-visible{background:#072e6e!important}

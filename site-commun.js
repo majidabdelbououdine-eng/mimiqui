@@ -14,7 +14,7 @@ var __acc=/(\/|\/index\.html?)$/i.test(location.pathname);
   var page=(location.pathname.split('/').pop()||'index.html').toLowerCase();
   if(page==='accueil.html')page='index.html';
 
-  var SITE_CACHE="20261112y";
+  var SITE_CACHE="20261112z";
   var EBAY_ENCOURS="https://www.ebay.fr/sch/i.html?_nkw=carte%20Pok%C3%A9mon&mkcid=1&mkrid=709-53476-19255-0&siteid=71&campid=5339225196&customid=encours-menu&toolid=10001&mkevt=1";
   var SERIES_MEGA=[
     {t:"Règne Delta",n:141,s:[["Française","regne-delta.html",141],["Japonaise","regne-delta-ja.html",113]]},
@@ -47,8 +47,11 @@ var __acc=/(\/|\/index\.html?)$/i.test(location.pathname);
   var PAGES_SERIES=["regne-delta.html","regne-delta-ja.html","equilibre-parfait-ventes.html","equilibre-parfait-ja.html","equilibre-parfait-en.html","equilibre-parfait.html","trentieme-anniversaire-ventes.html","trentieme-anniversaire-en.html","trentieme-anniversaire.html","heros-transcendants.html","heros-transcendants-en.html","nuit-noire-ventes.html","nuit-noire-ja.html","nuit-noire-en.html","mega-evolution-cartes.html","mega-evolution-en.html","heros-fantasmagoriques.html","flammes-fantasmagoriques-ja.html","flammes-fantasmagoriques-en.html","chaos-ascendant-ventes.html","chaos-ascendant-ja.html","chaos-ascendant-en.html","chaos-ascendant.html","ecarlate-violet.html","evolutions-paldea.html","flammes-obsidiennes.html","ecarlate-violet-151.html","destinees-de-paldea.html","destinees-de-paldea-en.html","destinees-de-paldea-ja.html","ecarlate-violet-151-en.html","ecarlate-violet-151-ja.html","flammes-obsidiennes-en.html","flammes-obsidiennes-ja.html","evolutions-paldea-en.html","evolutions-paldea-ja.html","ecarlate-violet-en.html","ecarlate-violet-ja.html","couronne-stellaire.html","couronne-stellaire-en.html","couronne-stellaire-ja.html","etincelles-deferlantes.html","etincelles-deferlantes-en.html","etincelles-deferlantes-ja.html","faille-paradoxe.html","faille-paradoxe-en.html","faille-paradoxe-ja.html","flamme-blanche.html","flamme-blanche-en.html","flamme-blanche-ja.html","aventures-ensemble.html","aventures-ensemble-en.html","aventures-ensemble-ja.html","evolutions-prismatiques.html","evolutions-prismatiques-en.html","evolutions-prismatiques-ja.html","rivalites-destinees.html","rivalites-destinees-en.html","rivalites-destinees-ja.html","forces-temporelles.html","forces-temporelles-en.html","forces-temporelles-ja.html","mascarade-crepusculaire.html","mascarade-crepusculaire-en.html","mascarade-crepusculaire-ja.html","fable-nebuleuse.html","fable-nebuleuse-en.html","fable-nebuleuse-ja.html","foudre-noire.html","foudre-noire-en.html","foudre-noire-ja.html"];
   var SECTIONS=[
     {t:"Accueil",h:"index.html",p:["index.html"]},
-    {t:"Cartes",h:"cartes.html",p:["cartes.html","cartes-japonaises.html","cartes-anglaises.html","cartes-pokemon.html","pokemon.html"].concat(PAGES_SERIES),s:[
-      ["Cartes FR","cartes.html"],["Cartes JA","cartes-japonaises.html"],["Cartes EN","cartes-anglaises.html"],["Cartes Pokémon / séries","cartes-pokemon.html"]
+    {t:"Spécial mimiqui",h:"cartes.html",p:["cartes.html","cartes-anglaises.html","cartes-japonaises.html"],s:[
+      ["Cartes FR","cartes.html"],["Cartes EN","cartes-anglaises.html"],["Cartes JA","cartes-japonaises.html"]
+    ]},
+    {t:"Cartes",h:"cartes-pokemon.html",p:["cartes-pokemon.html","pokemon.html"].concat(PAGES_SERIES),s:[
+      ["Cartes Pokémon / séries","cartes-pokemon.html"]
     ]},
     {t:"Pokémon",h:"cartes-generation-1.html",p:["cartes-generation-1.html","cartes-pikachu-ventes.html","cartes-dracaufeu-ventes.html","cartes-evoli-ventes.html","cartes-mewtwo-ventes.html","carte-pikachu.html"],s:[
       ["Pikachu","cartes-pikachu-ventes.html"],["Dracaufeu","cartes-dracaufeu-ventes.html"],["Évoli","cartes-evoli-ventes.html"],["Mewtwo","cartes-mewtwo-ventes.html"],["Génération 1","cartes-generation-1.html"],["1025 Pokémon","cartes-pokemon.html"]
@@ -219,7 +222,8 @@ var __acc=/(\/|\/index\.html?)$/i.test(location.pathname);
   function pied(){
     if(document.querySelector(".pied-commun"))return;
     var groupes=[
-      ["Cartes",[["Cartes FR","cartes.html"],["Cartes JA","cartes-japonaises.html"],["Cartes EN","cartes-anglaises.html"],["Cartes Pokémon / séries","cartes-pokemon.html"],["Génération 1","cartes-generation-1.html"]]],
+      ["Spécial mimiqui",[["Cartes FR","cartes.html"],["Cartes EN","cartes-anglaises.html"],["Cartes JA","cartes-japonaises.html"]]],
+      ["Cartes",[["Cartes Pokémon / séries","cartes-pokemon.html"],["Génération 1","cartes-generation-1.html"]]],
       ["Pokémon",[["Pikachu","cartes-pikachu-ventes.html"],["Dracaufeu","cartes-dracaufeu-ventes.html"],["Évoli","cartes-evoli-ventes.html"],["Mewtwo","cartes-mewtwo-ventes.html"],["Génération 1","cartes-generation-1.html"],["1025 Pokémon","cartes-pokemon.html"]]],
       ["Prix",[["Top ventes","top-ventes.html"],["Cartes gradées PSA","cartes-gradees.html"],["Ventes passées Mimiqui","registre.html"],["Cartes Pokémon passées, par type","registre-pokemon.html"]]],
       ["Acheter et vendre",[["Boutique","boutique.html"],["Bonnes affaires eBay","bonnes-affaires.html"],["Acheter par série","acheter-par-serie.html"],["Displays et ETB","displays-etb.html"],["Boosters","jeu.html#boosters"],["Précommandes","precommandes.html"],["Annonces eBay en cours",EBAY_ENCOURS],["Cartes PSA 10","cartes-psa10.html"],["Guide de l’acheteur","guide-acheteur.html"],["Estimer ma carte","estimer-ma-carte.html"],["Guide pour vendre sur eBay","guide-vendre-ebay.html"],["Vendre sur eBay","vendre.html"]]],
@@ -258,26 +262,180 @@ var __acc=/(\/|\/index\.html?)$/i.test(location.pathname);
     if(window.__rechChargement){ window.__rechChargement.push(cb); return; }
     window.__rechChargement=[cb];
     var s=document.createElement("script");
-    s.src="recherche-cartes-data.js?v="+(typeof SITE_CACHE==="string"?SITE_CACHE:"20261112y");
+    s.src="recherche-cartes-data.js?v="+(typeof SITE_CACHE==="string"?SITE_CACHE:"20261112z");
     s.onload=function(){
       var fns=window.__rechChargement||[]; window.__rechChargement=null;
+      try{ if(window.mimiquiPreparerRecherche) window.mimiquiPreparerRecherche(); }catch(e){}
       fns.forEach(function(fn){ try{fn(window.RECHERCHE_CARTES||{sets:[]});}catch(e){} });
     };
     s.onerror=function(){ window.__rechChargement=null; cb({sets:[]}); };
     document.head.appendChild(s);
   }
-  function normRech(s){
+
+function normRech(s){
     return String(s||"").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/œ/g,"oe").replace(/æ/g,"ae");
   }
-  function ancreId(k){ return "carte-"+String(k||"").replace(/[^A-Za-z0-9_-]+/g,"-"); }
+  function rechMots(s){
+    return normRech(s).split(/[^a-z0-9\u3040-\u30ff\u4e00-\u9fff]+/).filter(Boolean);
+  }
+  function rechDist(a,b,max){
+    max=max||1;
+    var n=a.length,m=b.length,d=n-m; if(d<0)d=-d; if(d>max) return max+1;
+    if(!n) return m; if(!m) return n;
+    var prev=new Array(m+1), cur=new Array(m+1), i,j,k,minv,tmp;
+    for(j=0;j<=m;j++) prev[j]=j;
+    for(i=1;i<=n;i++){
+      cur[0]=i; minv=cur[0];
+      for(j=1;j<=m;j++){
+        k=prev[j-1]+(a.charAt(i-1)===b.charAt(j-1)?0:1);
+        if(prev[j]+1<k)k=prev[j]+1;
+        if(cur[j-1]+1<k)k=cur[j-1]+1;
+        cur[j]=k; if(k<minv)minv=k;
+      }
+      if(minv>max) return max+1;
+      tmp=prev; prev=cur; cur=tmp;
+    }
+    return prev[m];
+  }
+  function rechTokenDans(tok, mots, blob, fuzzy){
+    if(!tok) return 0;
+    if(blob.indexOf(tok)!==-1){
+      for(var i=0;i<mots.length;i++){
+        if(mots[i]===tok) return 100;
+        if(mots[i].indexOf(tok)===0) return 86;
+      }
+      return 70;
+    }
+    if(!fuzzy || tok.length<4 || /^\d/.test(tok)) return 0;
+    var max=tok.length>=7?2:1, best=0, i,w,d, first=tok.charAt(0);
+    for(i=0;i<mots.length;i++){
+      w=mots[i];
+      if(!w||w.charAt(0)!==first||Math.abs(w.length-tok.length)>max) continue;
+      d=rechDist(tok,w,max);
+      if(d===0) return 100;
+      if(d===1 && best<58) best=58;
+      else if(d===2 && tok.length>=7 && best<42) best=42;
+    }
+    return best;
+  }
+  var SET_CODE={"ecarlate-violet":"SVI","evolutions-paldea":"PAL","flammes-obsidiennes":"OBF","ecarlate-violet-151":"MEW","destinees-de-paldea":"PAF","forces-temporelles":"TEF","mascarade-crepusculaire":"TWM","fable-nebuleuse":"SFA","couronne-stellaire":"SCR","etincelles-deferlantes":"SSP","faille-paradoxe":"PAR","flamme-blanche":"WHT","foudre-noire":"BLK","aventures-ensemble":"JTG","rivalites-destinees":"DRI","evolutions-prismatiques":"PRE"};
+  function rechCodePage(p){
+    var b=String(p||"").replace(/-en\.html$|-ja\.html$|\.html$/i,"");
+    return SET_CODE[b]||"";
+  }
+  function rechPreparer(){
+    var data=window.RECHERCHE_CARTES||{sets:[]};
+    var src=window.RECH_CARTES||[];
+    var key=((data.sets||[]).length)+":"+src.length;
+    if(window.__rechPrep && window.__rechPrep.key===key) return window.__rechPrep;
+    var items=[], setList=[], st, c, k, n, nom, al, nameParts, setParts, code, i;
+    (data.sets||[]).forEach(function(st){
+      code=st.g||rechCodePage(st.p);
+      setParts=[st.s,code].concat(st.al||[]);
+      var setBlob=normRech(setParts.join(" ")), setMots=rechMots(setParts.join(" "));
+      setList.push({type:"set",nom:st.s,n:"",set:st.s,page:st.p,lang:st.l||"",k:"",href:st.p,setBlob:setBlob,setMots:setMots});
+      (st.c||[]).forEach(function(c){
+        k=c[0]; n=c[1]; nom=c[2]; al=c[3]||[];
+        if(!Array.isArray(al)) al=al?[al]:[];
+        nameParts=[nom,n,k].concat(al);
+        items.push({type:"carte",nom:nom,n:n||"",set:st.s,page:st.p,lang:st.l||"",k:k,
+          href:st.p+"?k="+encodeURIComponent(k)+"#carte-"+String(k).replace(/[^A-Za-z0-9_-]+/g,"-"),
+          nameBlob:normRech(nameParts.join(" ")), nameMots:rechMots(nameParts.join(" ")),
+          setBlob:setBlob, setMots:setMots, fr:st.l==="FR"});
+      });
+    });
+    for(i=0;i<src.length;i++){
+      c=src[i]; al=c.al||[];
+      nameParts=[c.nom,c.num,c.id,c.pkmn].concat(al);
+      setParts=[c.serie,c.r,c.l];
+      items.push({type:"carte",nom:c.nom||c.pkmn||"Carte",n:c.num||"",set:c.serie||"",page:"",lang:String(c.l||"").toUpperCase(),k:c.id,
+        href:"carte-pikachu.html?pkmn="+encodeURIComponent(c.pkmn||"pikachu")+"&lang="+encodeURIComponent(c.l||"fr")+"&id="+encodeURIComponent(c.id),
+        nameBlob:normRech(nameParts.join(" ")), nameMots:rechMots(nameParts.join(" ")),
+        setBlob:normRech(setParts.join(" ")), setMots:rechMots(setParts.join(" ")), fr:String(c.l||"").toLowerCase()==="fr", pkmn:c.pkmn});
+    }
+    window.__rechPrep={key:key,items:items,sets:setList};
+    return window.__rechPrep;
+  }
+  function mimiquiChercherCartes(q,max){
+    max=max||16;
+    q=normRech(q).trim();
+    if(q.length<2) return [];
+    var toks=q.split(/\s+/).filter(Boolean);
+    if(!toks.length) return [];
+    var alias=window.RECHERCHE_ALIAS||{};
+    var prep=rechPreparer();
+    var forms=toks.map(function(tok){
+      var f=[tok], a=alias[tok]||[], i,n;
+      for(i=0;i<a.length && f.length<8;i++){ n=normRech(a[i]); if(n&&f.indexOf(n)<0) f.push(n); }
+      return f;
+    });
+    function scoreTok(ti, mots, blob, fuzzy){
+      var tf=forms[ti], tok=toks[ti], best=0, i, sc;
+      for(i=0;i<tf.length;i++){
+        sc=rechTokenDans(tf[i], mots, blob, fuzzy && i===0);
+        if(sc>best) best=sc;
+      }
+      if(/^\d+[a-z]?$/.test(tok) || /^\d+\/\d+$/.test(tok)){
+        for(i=0;i<mots.length;i++){
+          if(mots[i]===tok || mots[i].indexOf(tok)===0) { if(best<88) best=88; }
+          else if(/^\d+$/.test(tok) && /^\d+$/.test(mots[i]) && String(parseInt(mots[i],10))===String(parseInt(tok,10))) { if(best<88) best=88; }
+        }
+      }
+      return best;
+    }
+    function scoreParts(mots, blob, fuzzy){
+      var score=0, ti, sc;
+      for(ti=0;ti<toks.length;ti++){
+        sc=scoreTok(ti, mots, blob, fuzzy);
+        if(sc<=0) return 0;
+        score+=sc;
+      }
+      return Math.round(score/toks.length);
+    }
+    var hits=[], i, it, sn, sc, setSc;
+    for(i=0;i<prep.sets.length;i++){
+      it=prep.sets[i];
+      sn=scoreParts(it.setMots, it.setBlob, false);
+      if(sn>=70) hits.push({type:it.type,nom:it.nom,n:"",set:it.set,page:it.page,lang:it.lang,k:"",href:it.href,score:sn+24});
+    }
+    for(i=0;i<prep.items.length;i++){
+      it=prep.items[i];
+      sc=scoreParts(it.nameMots, it.nameBlob, true);
+      setSc=0;
+      if(sc<=0){
+        sc=scoreParts(it.nameMots.concat(it.setMots), it.nameBlob+" "+it.setBlob, true);
+        if(sc<=0) continue;
+      } else {
+        setSc=scoreParts(it.setMots, it.setBlob, false);
+        if(setSc>=70) sc+=5;
+      }
+      if(it.fr) sc+=2;
+      if(it.page) sc+=3;
+      hits.push({type:it.type,nom:it.nom,n:it.n,set:it.set,page:it.page,lang:it.lang,k:it.k,href:it.href,score:sc,pkmn:it.pkmn});
+    }
+    hits.sort(function(a,b){
+      if(b.score!==a.score) return b.score-a.score;
+      if((a.type==="set")!==(b.type==="set")) return a.type==="set"?-1:1;
+      if((a.lang==="FR")!==(b.lang==="FR")) return a.lang==="FR"?-1:1;
+      return String(a.n).localeCompare(String(b.n),"fr");
+    });
+    var out=[], seen={};
+    for(i=0;i<hits.length;i++){
+      it=hits[i]; if(!it.href||seen[it.href]) continue;
+      seen[it.href]=1; out.push(it); if(out.length>=max) break;
+    }
+    return out;
+  }
+  window.mimiquiChercherCartes=mimiquiChercherCartes;
+  window.mimiquiPreparerRecherche=rechPreparer;
   function ajouterRecherche(nav){
     if(!nav||nav.querySelector(".nav-recherche"))return;
     var box=el("div",{"class":"nav-recherche"});
     var btn=el("button",{type:"button","class":"nav-rech-btn","aria-expanded":"false","aria-label":"Rechercher une carte","title":"Rechercher une carte"});
     btn.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.5-3.5"></path></svg>';
     var pan=el("div",{"class":"nav-rech-panneau","role":"search"});
-    var inp=el("input",{type:"search",placeholder:"Nom ou numéro d’une carte…","aria-label":"Rechercher une carte par nom","autocomplete":"off"});
-    var aide=el("p",{"class":"nav-rech-aide"},"Parmi les cartes des pages de sets déjà en ligne.");
+    var inp=el("input",{type:"search",placeholder:"Nom, n° ou série (FR, EN, JA)…","aria-label":"Rechercher une carte par nom","autocomplete":"off"});
+    var aide=el("p",{"class":"nav-rech-aide"},"Nom, numéro ou série, en français, anglais ou japonais.");
     var liste=el("ul",{"class":"nav-rech-liste",id:"nav-rech-liste"});
     var vide=el("p",{"class":"nav-rech-vide",hidden:"hidden"},"Aucune carte trouvée.");
     pan.append(inp,aide,liste,vide);
@@ -292,33 +450,29 @@ var __acc=/(\/|\/index\.html?)$/i.test(location.pathname);
       else fermerRecherche();
     });
     pan.addEventListener("click",function(ev){ ev.stopPropagation(); });
+
     var tmr=null;
     function render(){
-      var q=normRech(inp.value).trim();
-      liste.textContent=""; vide.hidden=true; aide.hidden=!!q;
-      if(q.length<2){ if(q) vide.hidden=false, vide.textContent="Saisir au moins 2 caractères."; return; }
-      var data=window.RECHERCHE_CARTES||{sets:[]};
-      var hits=[], max=30;
-      data.sets.forEach(function(st){
-        (st.c||[]).forEach(function(c){
-          if(hits.length>=max) return;
-          var k=c[0], n=c[1], nom=c[2];
-          var blob=normRech(nom+" "+n+" "+k);
-          if(blob.indexOf(q)<0) return;
-          hits.push({k:k,n:n,nom:nom,set:st.s,page:st.p,lang:st.l});
+      var q=inp.value;
+      liste.textContent=""; vide.hidden=true; aide.hidden=!!String(q).trim();
+      if(normRech(q).trim().length<2){ if(String(q).trim()){ vide.hidden=false; vide.textContent="Saisir au moins 2 caractères."; } return; }
+      chargerIndexRecherche(function(){
+        if(inp.value!==q) return;
+        var hits=mimiquiChercherCartes(q,20);
+        if(!hits.length){ vide.hidden=false; vide.textContent="Aucune carte trouvée."; return; }
+        hits.forEach(function(h){
+          var li=el("li");
+          var a=el("a",{href:h.href});
+          a.appendChild(document.createTextNode(h.nom));
+          var sm=el("small");
+          if(h.type==="set") sm.textContent="Série"+(h.lang?" · "+h.lang:"");
+          else sm.textContent=(h.n?h.n+" · ":"")+h.set+(h.lang?" · "+h.lang:"");
+          a.appendChild(sm);
+          li.appendChild(a); liste.appendChild(li);
         });
       });
-      if(!hits.length){ vide.hidden=false; vide.textContent="Aucune carte trouvée."; return; }
-      hits.forEach(function(h){
-        var li=el("li");
-        var a=el("a",{href:h.page+"?k="+encodeURIComponent(h.k)+"#"+ancreId(h.k)});
-        a.appendChild(document.createTextNode(h.nom));
-        var sm=el("small",null,(h.n?h.n+" · ":"")+h.set+(h.lang?" · "+h.lang:""));
-        a.appendChild(sm);
-        li.appendChild(a); liste.appendChild(li);
-      });
     }
-    inp.addEventListener("input",function(){ if(tmr)clearTimeout(tmr); tmr=setTimeout(render,80); });
+    inp.addEventListener("input",function(){ if(tmr)clearTimeout(tmr); tmr=setTimeout(render,40); });
     inp.addEventListener("keydown",function(ev){ if(ev.key==="Escape"){ fermerRecherche(); btn.focus(); } });
   }
   function ongletsRegistre(){
@@ -728,6 +882,7 @@ if(document.readyState==='loading') document.addEventListener('DOMContentLoaded'
     return "carte-pikachu.html?pkmn="+encodeURIComponent(c.pkmn||"pikachu")+"&lang="+encodeURIComponent(c.l||"fr")+"&id="+encodeURIComponent(c.id);
   }
   function filtrer(q){
+    if(typeof window.mimiquiChercherCartes==="function") return window.mimiquiChercherCartes(q,16);
     q=norm(q);
     if(!q||q.length<1) return [];
     var src=window.RECH_CARTES||[];
@@ -742,33 +897,35 @@ if(document.readyState==='loading') document.addEventListener('DOMContentLoaded'
   }
 
   function chargerIndex(cb){
-    if(window.RECH_CARTES && window.RECH_CARTES.length && window.__rechCartesPret){ cb(); return; }
+    if(window.__rechCartesPret && window.RECHERCHE_CARTES){ cb(); return; }
     if(window.__barreRechercheChargement){ window.__barreRechercheChargement.push(cb); return; }
     window.__barreRechercheChargement=[cb];
     function fini(){
       window.__rechCartesPret=1;
+      try{ if(window.mimiquiPreparerRecherche) window.mimiquiPreparerRecherche(); }catch(e){}
       var q=window.__barreRechercheChargement||[];
       window.__barreRechercheChargement=null;
       q.forEach(function(fn){ try{fn();}catch(e){} });
     }
-    var s=document.createElement("script");
-    s.src="recherche-cartes-pkmn.js";
-    s.onload=function(){
-      if(window.RECH_CARTES && window.RECH_CARTES.length){ fini(); return; }
-      var s2=document.createElement("script");
-      s2.src="recherche-cartes-pikachu.js";
-      s2.onload=fini;
-      s2.onerror=fini;
-      document.head.appendChild(s2);
-    };
-    s.onerror=function(){
-      var s2=document.createElement("script");
-      s2.src="recherche-cartes-pikachu.js";
-      s2.onload=fini;
-      s2.onerror=fini;
-      document.head.appendChild(s2);
-    };
-    document.head.appendChild(s);
+    var left=2;
+    function one(){ if(--left<=0) fini(); }
+    function load(src, next){
+      var s=document.createElement("script");
+      s.src=src;
+      s.onload=next; s.onerror=next;
+      document.head.appendChild(s);
+    }
+    if(window.RECHERCHE_CARTES){ one(); }
+    else {
+      load("recherche-cartes-data.js?v="+(typeof SITE_CACHE==="string"?SITE_CACHE:"20261112z"), one);
+    }
+    if(window.RECH_CARTES && window.RECH_CARTES.length){ one(); }
+    else {
+      load("recherche-cartes-pkmn.js", function(){
+        if(window.RECH_CARTES && window.RECH_CARTES.length){ one(); return; }
+        load("recherche-cartes-pikachu.js", one);
+      });
+    }
   }
 
   function monter(){
@@ -781,9 +938,9 @@ if(document.readyState==='loading') document.addEventListener('DOMContentLoaded'
       st.textContent=CSS;
       document.head.appendChild(st);
     }
-    var form=el("form",{id:"barre-recherche-site","class":"barre-recherche-site",role:"search",action:"cartes-generation-1.html",method:"get"});
+    var form=el("form",{id:"barre-recherche-site","class":"barre-recherche-site",role:"search",action:"cartes-pokemon.html",method:"get"});
     var ligne=el("div",{"class":"brs-ligne"});
-    var input=el("input",{type:"search",name:"q",placeholder:"Rechercher une carte (Génération 1)…","aria-label":"Rechercher une carte de la première génération",autocomplete:"off","aria-autocomplete":"list","aria-controls":"barre-recherche-liste"});
+    var input=el("input",{type:"search",name:"q",placeholder:"Rechercher une carte (nom, n°, série)…","aria-label":"Rechercher une carte par nom, numéro ou série",autocomplete:"off","aria-autocomplete":"list","aria-controls":"barre-recherche-liste"});
     var btn=el("button",{type:"submit"},"Rechercher");
     var liste=el("div",{id:"barre-recherche-liste","class":"brs-liste",role:"listbox",hidden:"hidden"});
     ligne.append(input, btn);
@@ -803,16 +960,17 @@ if(document.readyState==='loading') document.addEventListener('DOMContentLoaded'
         var res=filtrer(q);
         liste.innerHTML="";
         if(!res.length){
-          var v=el("div",{"class":"brs-vide"},"Aucune carte ne correspond. Essayez un nom, une extension ou un numéro.");
+          var v=el("div",{"class":"brs-vide"},"Aucune carte ne correspond. Essayez un nom, une série ou un numéro.");
           liste.appendChild(v);
         } else {
           res.forEach(function(c,i){
-            var a=el("a",{href:hrefCarte(c),role:"option",id:"brs-opt-"+i});
+            var href=c.href||hrefCarte(c);
+            var a=el("a",{href:href,role:"option",id:"brs-opt-"+i});
             a.setAttribute("aria-selected","false");
             var b=el("b");
-            b.appendChild(el("span",{"class":"brs-lg"},String(c.l||"").toUpperCase()));
+            b.appendChild(el("span",{"class":"brs-lg"},String(c.lang||c.l||(c.type==="set"?"SET":"")).toUpperCase()));
             b.appendChild(document.createTextNode(c.nom||c.pkmn||"Carte"));
-            var sp=el("span",null, [c.serie, c.num?("n° "+c.num):""].filter(Boolean).join(" · "));
+            var sp=el("span",null, (c.type==="set"?["Série", c.set||c.serie]:[c.set||c.serie, (c.n||c.num)?("n° "+(c.n||c.num)):""]).filter(Boolean).join(" · "));
             a.append(b,sp);
             liste.appendChild(a);
           });
@@ -825,20 +983,14 @@ if(document.readyState==='loading') document.addEventListener('DOMContentLoaded'
     input.addEventListener("focus", function(){ if(input.value) rendre(); });
     form.addEventListener("submit", function(e){
       var q=input.value;
-      var res=(window.RECH_CARTES && String(q).trim()) ? filtrer(q) : [];
-      if(res.length===1){
+      var res=String(q).trim() ? filtrer(q) : [];
+      if(res.length){
         e.preventDefault();
-        location.href=hrefCarte(res[0]);
+        var opts=liste.querySelectorAll("a[href]");
+        if(actif>=0 && opts[actif]){ location.href=opts[actif].href; return; }
+        if(res.length===1){ location.href=res[0].href||hrefCarte(res[0]); return; }
+        rendre();
         return;
-      }
-      if(res.length>1){
-        var slug=res[0].pkmn||"pikachu";
-        var meme=res.every(function(c){ return (c.pkmn||"pikachu")===slug; });
-        if(meme) form.action="cartes-"+slug+"-ventes.html";
-        else {
-          e.preventDefault();
-          rendre();
-        }
       }
     });
     input.addEventListener("keydown", function(e){
@@ -1026,5 +1178,279 @@ if(document.readyState==='loading') document.addEventListener('DOMContentLoaded'
   }
 
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", demarrer);
+  else demarrer();
+})();
+
+(function(){
+  "use strict";
+  var KEY="mimiqui_acces";
+  var STRIPE="https://buy.stripe.com/aFa9AVcwYdTOgDcdez67S00";
+  var MSG="Données de vente réservées aux abonnés – 2,99 €/semaine";
+  var BTN="S’abonner";
+  var ARIA="Abonnement aux données de vente";
+
+  function aAcces(){
+    try{ return localStorage.getItem(KEY)==="ok"; }catch(e){ return false; }
+  }
+  function tr(s){
+    try{
+      if(window.MIMIQUI_I18N && typeof window.MIMIQUI_I18N.t==="function"){
+        var x=window.MIMIQUI_I18N.t(s);
+        if(x) return x;
+      }
+    }catch(e){}
+    return s;
+  }
+  function estLienVentes(a){
+    if(!a || !a.getAttribute) return false;
+    if(a.classList && a.classList.contains("btn-ebay-recherche")) return false;
+    var href=(a.getAttribute("href")||"");
+    return a.classList && a.classList.contains("btn-ebay") && href.indexOf("LH_Sold")!==-1;
+  }
+  function boutonAbonner(){
+    var a=document.createElement("a");
+    a.className="mq-abo-btn";
+    a.href=STRIPE;
+    a.target="_blank";
+    a.rel="noopener";
+    a.textContent=tr(BTN);
+    return a;
+  }
+  function message(){
+    var p=document.createElement("p");
+    p.className="mq-abo-msg";
+    p.textContent=tr(MSG);
+    return p;
+  }
+  function ouvrirFenetre(){
+    var fond=document.getElementById("mq-abo-fond");
+    if(!fond){
+      fond=document.createElement("div");
+      fond.id="mq-abo-fond";
+      fond.className="mq-abo-fond";
+      fond.setAttribute("hidden","");
+      fond.innerHTML="";
+      var fen=document.createElement("div");
+      fen.className="mq-abo-fen";
+      fen.setAttribute("role","dialog");
+      fen.setAttribute("aria-modal","true");
+      fen.setAttribute("aria-labelledby","mq-abo-titre");
+      var titre=document.createElement("p");
+      titre.id="mq-abo-titre";
+      titre.className="mq-abo-msg";
+      titre.textContent=tr(MSG);
+      var x=document.createElement("button");
+      x.type="button";
+      x.className="mq-abo-x";
+      x.setAttribute("aria-label",tr("Fermer"));
+      x.innerHTML="&times;";
+      fen.appendChild(x);
+      fen.appendChild(titre);
+      fen.appendChild(boutonAbonner());
+      fond.appendChild(fen);
+      (document.body||document.documentElement).appendChild(fond);
+      function fermer(){
+        fond.setAttribute("hidden","");
+        fond.setAttribute("aria-hidden","true");
+      }
+      fond.addEventListener("click",function(ev){ if(ev.target===fond) fermer(); });
+      x.addEventListener("click",fermer);
+      document.addEventListener("keydown",function(ev){
+        if(ev.key==="Escape" && !fond.hasAttribute("hidden")){
+          ev.preventDefault();
+          ev.stopPropagation();
+          fermer();
+        }
+      }, true);
+    }else{
+      var t=fond.querySelector("#mq-abo-titre, .mq-abo-msg");
+      if(t) t.textContent=tr(MSG);
+      var b=fond.querySelector(".mq-abo-btn");
+      if(b){ b.textContent=tr(BTN); b.href=STRIPE; }
+    }
+    fond.removeAttribute("hidden");
+    fond.removeAttribute("aria-hidden");
+    var focus=fond.querySelector(".mq-abo-btn");
+    if(focus) focus.focus();
+  }
+  function masquerDansFiche(vin){
+    if(!vin || aAcces() || vin.querySelector(".mq-paywall")) return;
+    var nodes=[], seen={};
+    function add(n){
+      if(!n || seen[n] || (n.classList && n.classList.contains("vp-pied"))) return;
+      seen[n]=1; nodes.push(n);
+    }
+    add(vin.querySelector(".vp-hb"));
+    var hs=vin.querySelectorAll("h4");
+    for(var i=0;i<hs.length;i++){
+      var tx=(hs[i].textContent||"");
+      if(/ventes/i.test(tx)){
+        add(hs[i]);
+        var nxt=hs[i].nextElementSibling;
+        if(nxt && !nxt.classList.contains("vp-pied") && !nxt.classList.contains("vp-note")) add(nxt);
+      }
+    }
+    add(vin.querySelector(".vp-cs"));
+    if(!nodes.length) return;
+    var wrap=document.createElement("div");
+    wrap.className="mq-paywall";
+    nodes[0].parentNode.insertBefore(wrap, nodes[0]);
+    for(var j=0;j<nodes.length;j++) wrap.appendChild(nodes[j]);
+    var veil=document.createElement("div");
+    veil.className="mq-paywall-veil";
+    veil.appendChild(message());
+    veil.appendChild(boutonAbonner());
+    wrap.appendChild(veil);
+  }
+  function scruter(){
+    if(aAcces()) return;
+    var vin=document.getElementById("vp-in");
+    if(vin) masquerDansFiche(vin);
+    var autres=document.querySelectorAll(".vp-in");
+    for(var i=0;i<autres.length;i++) masquerDansFiche(autres[i]);
+  }
+
+  document.addEventListener("click",function(ev){
+    if(aAcces()) return;
+    var a=ev.target.closest && ev.target.closest("a");
+    if(!estLienVentes(a)) return;
+    ev.preventDefault();
+    ev.stopPropagation();
+    ouvrirFenetre();
+  }, true);
+
+  function demarrer(){
+    if(aAcces()) return;
+    scruter();
+    if(window.MutationObserver && document.body){
+      var t=0;
+      var obs=new MutationObserver(function(){
+        if(t) return;
+        t=1;
+        setTimeout(function(){ t=0; scruter(); }, 30);
+      });
+      obs.observe(document.body,{childList:true,subtree:true});
+    }
+  }
+  if(document.readyState==="loading") document.addEventListener("DOMContentLoaded", demarrer);
+  else demarrer();
+})();
+
+(function(){
+  "use strict";
+  var LABEL_RECH="🔎 Rechercher sur eBay";
+  var LABEL_VEND="Ventes réalisées";
+  var CAMP="5339225196";
+  var cachedC=null, triedC=false;
+
+  function tr(s){
+    try{
+      if(window.MIMIQUI_I18N && typeof window.MIMIQUI_I18N.t==="function"){
+        var x=window.MIMIQUI_I18N.t(s);
+        if(x) return x;
+      }
+    }catch(e){}
+    return s;
+  }
+  function extraireC(){
+    if(triedC) return cachedC;
+    triedC=true;
+    var scripts=document.getElementsByTagName("script");
+    for(var i=0;i<scripts.length;i++){
+      var txt=scripts[i].textContent||"";
+      var idx=txt.indexOf("var C=");
+      if(idx<0) idx=txt.indexOf("var C =");
+      if(idx<0 || txt.indexOf("vend")<0) continue;
+      var start=txt.indexOf("[", idx);
+      if(start<0) continue;
+      var depth=0, inS=false, quote="", esc=false;
+      for(var j=start;j<txt.length;j++){
+        var ch=txt.charAt(j);
+        if(inS){
+          if(esc){ esc=false; continue; }
+          if(ch==="\\"){ esc=true; continue; }
+          if(ch===quote){ inS=false; quote=""; }
+          continue;
+        }
+        if(ch==="\""||ch==="'"){ inS=true; quote=ch; continue; }
+        if(ch==="[") depth++;
+        else if(ch==="]"){
+          depth--;
+          if(depth===0){
+            var raw=txt.slice(start,j+1);
+            try{ cachedC=JSON.parse(raw); }
+            catch(e){
+              try{ cachedC=(new Function("return "+raw))(); }
+              catch(e2){ cachedC=null; }
+            }
+            return cachedC;
+          }
+        }
+      }
+    }
+    return null;
+  }
+  function enc(s){ return encodeURIComponent(String(s||"")); }
+  function urlRecherche(c){
+    var href=(c && (c.s||c.rech))||"";
+    if(href && href.indexOf("ebay")!==-1) return href;
+    var q=("pokemon "+((c&&c.nom)||"")+" "+((c&&c.n)||"")).replace(/\s+/g," ").trim();
+    return "https://www.ebay.fr/sch/i.html?_nkw="+enc(q)+"&mkcid=1&mkrid=709-53476-19255-0&siteid=71&campid="+CAMP+"&customid=grille-rech&toolid=10001&mkevt=1";
+  }
+  function urlVentes(c){
+    return (c && c.vend) || "";
+  }
+  function lien(cls, href, label, sponsored){
+    var a=document.createElement("a");
+    a.className=cls;
+    a.href=href;
+    a.target="_blank";
+    a.rel=sponsored ? "sponsored noopener" : "noopener";
+    a.textContent=label;
+    a.addEventListener("click", function(ev){ ev.stopPropagation(); }, true);
+    return a;
+  }
+  function injecter(){
+    var C=extraireC();
+    if(!C || !C.length) return;
+    var cards=document.querySelectorAll("#list article.card, .grid article.card");
+    for(var i=0;i<cards.length;i++){
+      var art=cards[i];
+      if(art.querySelector(".mq-btns-grille")) continue;
+      var btn=art.querySelector("button.frame[data-i]");
+      if(!btn) continue;
+      var c=C[+btn.getAttribute("data-i")];
+      if(!c) continue;
+      var row=document.createElement("div");
+      row.className="mq-btns-grille";
+      row.addEventListener("click", function(ev){ ev.stopPropagation(); }, true);
+      var rech=urlRecherche(c);
+      if(rech){
+        row.appendChild(lien("btn-ebay btn-ebay-recherche btn-ebay-grille", rech, tr(LABEL_RECH), true));
+      }
+      var vend=urlVentes(c);
+      if(vend){
+        row.appendChild(lien("btn-ebay btn-ebay-grille", vend, tr(LABEL_VEND), true));
+      }
+      if(!row.firstChild) continue;
+      var pic=art.querySelector(".pic");
+      if(pic && pic.parentNode===art) art.appendChild(row);
+      else art.appendChild(row);
+    }
+  }
+  function demarrer(){
+    injecter();
+    if(window.MutationObserver && document.body){
+      var t=0;
+      var obs=new MutationObserver(function(){
+        if(t) return;
+        t=1;
+        setTimeout(function(){ t=0; injecter(); }, 40);
+      });
+      var list=document.getElementById("list")||document.body;
+      obs.observe(list,{childList:true,subtree:true});
+    }
+  }
+  if(document.readyState==="loading") document.addEventListener("DOMContentLoaded", demarrer);
   else demarrer();
 })();
