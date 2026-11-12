@@ -125,7 +125,7 @@ article.billet{scroll-margin-top:96px}
 .ep-lien{cursor:pointer}.ep-c a.ep-nom{text-decoration:none;font-size:1rem}.ep-mini{font-size:.8rem;color:#555;margin:.2rem 0 .8rem}.ep-v{font-size:.85rem;color:#222;display:grid;gap:2px}.ep-v a{font-size:.85rem}.ep-gr{display:inline-block;background:#0b3d91;color:#fff;border-radius:6px;padding:0 5px;font-size:.72rem;font-weight:700}.ep-note{background:#eef3fb;border-left:3px solid #0a58ca;padding:10px 14px;color:#222}
 @media (max-width:600px){.ep-grid{grid-template-columns:repeat(2,1fr);gap:8px}.ep-t{font-size:.85rem}.ep-t td:nth-child(3){display:none}.ep-t th:nth-child(3){display:none}}
 </style><link rel="stylesheet" href="holo5.css">
-<style id="agrandi">html{font-size:106%}body{font-size:1.035rem}.wrap{max-width:1180px!important;margin-left:auto!important;margin-right:auto!important}.logo{font-size:calc(1.7rem * 1.35)!important}</style><link rel="stylesheet" href="site-commun.css"><meta name="referrer" content="strict-origin-when-cross-origin"></head><body>
+<style id="agrandi">html{font-size:106%}body{font-size:1.035rem}.wrap{max-width:1180px!important;margin-left:auto!important;margin-right:auto!important}.logo{font-size:calc(1.7rem * 1.35)!important}</style><link rel="stylesheet" href="site-commun.css?v=20261112p"><meta name="referrer" content="strict-origin-when-cross-origin"></head><body>
 <header class="site wrap"><nav class="sitenav" aria-label="Navigation principale">
   <a class="logo" href="index.html"><img class="logo-img" src="img/logo-mimiqui.webp" alt="" width="95" height="120" style="width:auto;height:4.2rem;object-fit:contain;transform:none">Le Coin de Mimiqui<span>.</span></a>
   <ul class="menu-principal" id="menu-principal">
@@ -158,7 +158,7 @@ article.billet{scroll-margin-top:96px}
 <ul class="sous-menu">
 <li><a href="boutique.html">Boutique</a></li>
 <li><a href="jeu.html#boosters">Boosters</a></li>
-<li><a href="https://www.ebay.fr/sch/i.html?_nkw=carte%20Pok%C3%A9mon&amp;mkcid=1&amp;mkrid=709-53476-19255-0&amp;siteid=71&amp;campid=5339225196&amp;customid=encours-menu&amp;toolid=10001&amp;mkevt=1" target="_blank" rel="sponsored noopener">Annonces eBay en cours</a></li>
+<li><a href="https://www.ebay.fr/sch/i.html?_nkw=carte+Pok%C3%A9mon&amp%3Bmkcid=1&amp%3Bmkrid=709-53476-19255-0&amp%3Bsiteid=71&amp%3Bcampid=5339225196&amp%3Bcustomid=encours-menu&amp%3Btoolid=10001&amp%3Bmkevt=1&mkcid=1&mkrid=709-53476-19255-0&siteid=71&campid=5339225196&toolid=10001&mkevt=1" target="_blank" rel="sponsored noopener">Annonces eBay en cours</a></li>
 <li><a href="cartes-psa10.html">Cartes PSA 10</a></li>
 <li><a href="guide-acheteur.html">Guide de l’acheteur</a></li>
 </ul></li>
@@ -184,7 +184,7 @@ var b=o.brut.slice().sort(function(x,y){return y.p-x.p});if(b.length===1)h+='Ven
 else if(b.length){var hi=b[0],lo=b[b.length-1];h+='<span>'+b.length+' ventes · '+(b.length?b.map(function(x){return x.d}).sort(function(x,y){return x.split("/").reverse().join("")<y.split("/").reverse().join("")?-1:1}).filter(function(x,i,a){return i===0||i===a.length-1}).join(" au "):"")+'</span><span>Plus haut : <a href="'+hi.u+'" target="_blank" rel="sponsored noopener">'+fp(hi.p)+'</a> ('+hi.d+')</span><span>Plus bas : <a href="'+lo.u+'" target="_blank" rel="sponsored noopener">'+fp(lo.p)+'</a> ('+lo.d+')</span>'}
 o.grade.forEach(function(g){h+='<span><span class="ep-gr">Gradée PCA 9,5</span> <a href="'+g.u+'" target="_blank" rel="sponsored noopener">'+fp(g.p)+'</a> le '+g.d+' (hors min/max)</span>'});
 return '<div class="ep-v">'+(court?'<small><b>eBay cette semaine</b></small>':'')+h+'</div>'}
-function se(c){return "https://www.ebay.fr/sch/i.html?_nkw="+encodeURIComponent("pokemon "+c.nom+" "+c.n+"/088 équilibre parfait")+"&mkcid=1&mkrid=709-53476-19255-0&siteid=71&campid=5339225196&customid=equilibre&toolid=10001&mkevt=1"}
+function se(c){return "https://www.ebay.fr/sch/i.html?_nkw=&mkcid=1&mkrid=709-53476-19255-0&siteid=71&campid=5339225196&toolid=10001&mkevt=1"+encodeURIComponent("pokemon "+c.nom+" "+c.n+"/088 équilibre parfait")+"&mkcid=1&mkrid=709-53476-19255-0&siteid=71&campid=5339225196&customid=equilibre&toolid=10001&mkevt=1"}
 function dep(c){var o=VE[c.n],nb=o?o.brut.length+o.grade.length:0,h;
 if(!nb)h='<p>Aucune vente cette semaine</p>';else{var b=o.brut.slice().sort(function(x,y){return y.p-x.p}),L=function(x){return '<a href="'+x.u+'" target="_blank" rel="sponsored noopener">'+fp(x.p)+'</a> <small>('+x.d+')</small>'};h='<p>'+nb+' vente'+(nb>1?'s':'')+'</p>';
 if(b.length===1)h+='<p>Prix : '+L(b[0])+'</p>';else if(b.length)h+='<p>Plus haut : '+L(b[0])+'</p><p>Plus bas : '+L(b[b.length-1])+'</p>';
@@ -214,4 +214,4 @@ var EB=document.getElementById("ep-eb");if(EB)EB.innerHTML=C.map(function(c){ret
 @media (max-width:520px){.cookie-info{flex-direction:column;align-items:stretch}}
 </style>
 <script>(function(){var b=document.getElementById("cookie-info");if(!b)return;var k="coin-mimiqui-info-cookies",vu=false;try{vu=localStorage.getItem(k)==="1"}catch(e){}if(!vu)b.hidden=false;document.getElementById("cookie-ok").addEventListener("click",function(){b.hidden=true;try{localStorage.setItem(k,"1")}catch(e){}});})();</script>
-<script src="site-commun.js" defer></script><p class="pied-legal">Site de fan non officiel &middot; <a href="mentions-legales.html#liens">Liens affili&eacute;s</a> &middot; <a href="mentions-legales.html">Mentions l&eacute;gales</a></p><style>.pied-legal{margin:1.2rem auto 1.4rem;text-align:center;font-size:.72rem;font-weight:300;color:#7a869a;letter-spacing:.02em}.pied-legal a{color:#7a869a;text-decoration:underline}</style></body></html>
+<script src="site-commun.js?v=20261112p" defer></script><p class="pied-legal">Site de fan non officiel &middot; <a href="mentions-legales.html#liens">Liens affili&eacute;s</a> &middot; <a href="mentions-legales.html">Mentions l&eacute;gales</a></p><style>.pied-legal{margin:1.2rem auto 1.4rem;text-align:center;font-size:.72rem;font-weight:300;color:#7a869a;letter-spacing:.02em}.pied-legal a{color:#7a869a;text-decoration:underline}</style></body></html>

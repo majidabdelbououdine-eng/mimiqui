@@ -3,23 +3,32 @@ var __acc=/(\/|\/index\.html?)$/i.test(location.pathname);
 
 /* echelle site ~90% cumulé v2 */
 (function(){if(document.getElementById('echelle-site'))return;var s=document.createElement('style');s.id='echelle-site';s.textContent='html{font-size:106%!important}';(document.head||document.documentElement).appendChild(s);})();
+/* effets holographiques (holo.css / holo.js) */
+(function(){if(document.getElementById('holo-css'))return;var v='20261112p';var l=document.createElement('link');l.id='holo-css';l.rel='stylesheet';l.href='holo.css?v='+v;(document.head||document.documentElement).appendChild(l);var s=document.createElement('script');s.id='holo-js';s.src='holo.js?v='+v;s.defer=true;(document.head||document.documentElement).appendChild(s);})();
 (function(){
   "use strict";
   var page=(location.pathname.split('/').pop()||'index.html').toLowerCase();
   if(page==='accueil.html')page='index.html';
 
+  var SITE_CACHE="20261112p";
   var EBAY_ENCOURS="https://www.ebay.fr/sch/i.html?_nkw=carte%20Pok%C3%A9mon&mkcid=1&mkrid=709-53476-19255-0&siteid=71&campid=5339225196&customid=encours-menu&toolid=10001&mkevt=1";
   var SERIES_MEGA=[
-    {t:"Règne Delta",s:[["Française","regne-delta.html"],["Japonaise","regne-delta-ja.html"]]},
-    {t:"Équilibre Parfait",s:[["Française","equilibre-parfait-ventes.html"],["Japonaise","equilibre-parfait-ja.html"],["Anglaise","equilibre-parfait-en.html"]]},
-    {t:"30ᵉ Anniversaire",s:[["Française","trentieme-anniversaire-ventes.html"],["Anglaise","trentieme-anniversaire-en.html"]]},
-    {t:"Héros Transcendants",s:[["Française","heros-transcendants.html"],["Anglaise","heros-transcendants-en.html"]]},
-    {t:"Nuit Noire",s:[["Française","nuit-noire-ventes.html"],["Japonaise","nuit-noire-ja.html"],["Anglaise","nuit-noire-en.html"]]},
-    {t:"Méga-Évolution",s:[["Française","mega-evolution-cartes.html"],["Anglaise","mega-evolution-en.html"]]},
-    {t:"Flammes Fantasmagoriques",s:[["Française","heros-fantasmagoriques.html"],["Japonaise","flammes-fantasmagoriques-ja.html"],["Anglaise","flammes-fantasmagoriques-en.html"]]},
-    {t:"Chaos Ascendant",s:[["Française","chaos-ascendant-ventes.html"],["Japonaise","chaos-ascendant-ja.html"],["Anglaise","chaos-ascendant-en.html"]]}
+    {t:"Règne Delta",n:141,s:[["Française","regne-delta.html",141],["Japonaise","regne-delta-ja.html",113]]},
+    {t:"Nuit Noire",n:120,s:[["Française","nuit-noire-ventes.html",120],["Japonaise","nuit-noire-ja.html",118],["Anglaise","nuit-noire-en.html",120]]},
+    {t:"Chaos Ascendant",n:122,s:[["Française","chaos-ascendant-ventes.html",122],["Japonaise","chaos-ascendant-ja.html",120],["Anglaise","chaos-ascendant-en.html",122]]},
+    {t:"Équilibre Parfait",n:124,s:[["Française","equilibre-parfait-ventes.html",124],["Japonaise","equilibre-parfait-ja.html",117],["Anglaise","equilibre-parfait-en.html",124]]},
+    {t:"30ᵉ Anniversaire",n:191,s:[["Française","trentieme-anniversaire-ventes.html",191],["Anglaise","trentieme-anniversaire-en.html",158]]},
+    {t:"Héros Transcendants",n:295,s:[["Française","heros-transcendants.html",295],["Anglaise","heros-transcendants-en.html",295]]},
+    {t:"Flammes Fantasmagoriques",n:130,s:[["Française","heros-fantasmagoriques.html",130],["Japonaise","flammes-fantasmagoriques-ja.html",116],["Anglaise","flammes-fantasmagoriques-en.html",130]]},
+    {t:"Méga-Évolution",n:88,s:[["Française","mega-evolution-cartes.html",88],["Anglaise","mega-evolution-en.html",89]]}
   ];
-  var PAGES_SERIES=["regne-delta.html","regne-delta-ja.html","equilibre-parfait-ventes.html","equilibre-parfait-ja.html","equilibre-parfait-en.html","equilibre-parfait.html","trentieme-anniversaire-ventes.html","trentieme-anniversaire-en.html","trentieme-anniversaire.html","heros-transcendants.html","heros-transcendants-en.html","nuit-noire-ventes.html","nuit-noire-ja.html","nuit-noire-en.html","mega-evolution-cartes.html","mega-evolution-en.html","heros-fantasmagoriques.html","flammes-fantasmagoriques-ja.html","flammes-fantasmagoriques-en.html","chaos-ascendant-ventes.html","chaos-ascendant-ja.html","chaos-ascendant-en.html","chaos-ascendant.html"];
+  var SERIES_EV=[
+    {t:"151",h:"ecarlate-violet-151.html",n:207},
+    {t:"Flammes Obsidiennes",h:"flammes-obsidiennes.html",n:230},
+    {t:"Évolutions à Paldea",h:"evolutions-paldea.html",n:279},
+    {t:"Écarlate et Violet",h:"ecarlate-violet.html",n:258}
+  ];
+  var PAGES_SERIES=["regne-delta.html","regne-delta-ja.html","equilibre-parfait-ventes.html","equilibre-parfait-ja.html","equilibre-parfait-en.html","equilibre-parfait.html","trentieme-anniversaire-ventes.html","trentieme-anniversaire-en.html","trentieme-anniversaire.html","heros-transcendants.html","heros-transcendants-en.html","nuit-noire-ventes.html","nuit-noire-ja.html","nuit-noire-en.html","mega-evolution-cartes.html","mega-evolution-en.html","heros-fantasmagoriques.html","flammes-fantasmagoriques-ja.html","flammes-fantasmagoriques-en.html","chaos-ascendant-ventes.html","chaos-ascendant-ja.html","chaos-ascendant-en.html","chaos-ascendant.html","ecarlate-violet.html","evolutions-paldea.html","flammes-obsidiennes.html","ecarlate-violet-151.html"];
   var SECTIONS=[
     {t:"Accueil",h:"index.html",p:["index.html"]},
     {t:"Cartes",h:"cartes.html",p:["cartes.html","cartes-japonaises.html","cartes-anglaises.html","cartes-pokemon.html","pokemon.html"].concat(PAGES_SERIES),s:[
@@ -28,11 +37,11 @@ var __acc=/(\/|\/index\.html?)$/i.test(location.pathname);
     {t:"Pokémon",h:"cartes-generation-1.html",p:["cartes-generation-1.html","cartes-pikachu-ventes.html","cartes-dracaufeu-ventes.html","cartes-evoli-ventes.html","cartes-mewtwo-ventes.html","carte-pikachu.html"],s:[
       ["Pikachu","cartes-pikachu-ventes.html"],["Dracaufeu","cartes-dracaufeu-ventes.html"],["Évoli","cartes-evoli-ventes.html"],["Mewtwo","cartes-mewtwo-ventes.html"],["Génération 1","cartes-generation-1.html"],["1025 Pokémon","cartes-pokemon.html"]
     ]},
-    {t:"Prix",h:"cotation.html",p:["cotation.html","top-ventes-semaine.html","registre.html","archive-ventes.html","registre-pokemon.html","adjuge.html"],s:[
-      ["Cotation","cotation.html"],["Top ventes de la semaine","top-ventes-semaine.html"],["Ventes passées Spécial Mimiqui","registre.html"],["Archive des ventes","archive-ventes.html"],["Registre des cartes passées","registre-pokemon.html"]
+    {t:"Prix",h:"top-ventes.html",p:["cotation.html","cotes-series.html","top-ventes-semaine.html","top-ventes.html","cartes-gradees.html","registre.html","archive-ventes.html","registre-pokemon.html","adjuge.html"],s:[
+      ["Top ventes","top-ventes.html"],["Cartes gradées PSA","cartes-gradees.html"],["Ventes passées Mimiqui","registre.html"],["Cartes Pokémon passées, par type","registre-pokemon.html"]
     ]},
-    {t:"Acheter",h:"boutique.html",p:["boutique.html","cartes-psa10.html","guide-acheteur.html"],s:[
-      ["Boutique","boutique.html"],["Boosters","jeu.html#boosters"],["Annonces eBay en cours",EBAY_ENCOURS],["Cartes PSA 10","cartes-psa10.html"],["Guide de l’acheteur","guide-acheteur.html"]
+    {t:"Acheter",h:"boutique.html",p:["boutique.html","bonnes-affaires.html","acheter-par-serie.html","displays-etb.html","precommandes.html","cartes-psa10.html","guide-acheteur.html"],s:[
+      ["Boutique","boutique.html"],["Bonnes affaires eBay","bonnes-affaires.html"],["Acheter par série","acheter-par-serie.html"],["Displays et ETB","displays-etb.html"],["Boosters","jeu.html#boosters"],["Précommandes","precommandes.html"],["Annonces eBay en cours",EBAY_ENCOURS],["Cartes PSA 10","cartes-psa10.html"],["Guide de l’acheteur","guide-acheteur.html"]
     ]},
     {t:"Vendre",h:"vendre.html",p:["vendre.html","estimer-ma-carte.html","guide-vendre-ebay.html"],s:[
       ["Estimer ma carte","estimer-ma-carte.html"],["Guide pour vendre sur eBay","guide-vendre-ebay.html"],["Vendre sur eBay","vendre.html"]
@@ -60,6 +69,9 @@ var __acc=/(\/|\/index\.html?)$/i.test(location.pathname);
     }
     return a;
   }
+  function nomSet(t,n){
+    return n? (t+" ("+n+")") : t;
+  }
   function groupeSeries(parentUl){
     var li=el("li",{"class":"sm-groupe"});
     var b=el("button",{type:"button","class":"sm-tog","aria-expanded":"false"});
@@ -75,15 +87,34 @@ var __acc=/(\/|\/index\.html?)$/i.test(location.pathname);
     SERIES_MEGA.forEach(function(set){
       var g=el("li",{"class":"sm-groupe"});
       var bt=el("button",{type:"button","class":"sm-tog","aria-expanded":"false"});
-      bt.appendChild(document.createTextNode(set.t+" "));
+      bt.appendChild(document.createTextNode(nomSet(set.t,set.n)+" "));
       bt.appendChild(el("span",{"class":"sm-fl","aria-hidden":"true"},"\u25B8"));
       var u=el("ul",{"class":"sm-sous"});
-      set.s.forEach(function(it){ var x=el("li"); x.appendChild(el("a",{href:it[1]},it[0])); u.appendChild(x); });
+      set.s.forEach(function(it){
+        var x=el("li");
+        var lab=it[0];
+        if(it[2]) lab=nomSet(it[0],it[2]);
+        x.appendChild(el("a",{href:it[1]},lab));
+        u.appendChild(x);
+      });
       g.append(bt,u); sousM.appendChild(g);
     });
     mega.append(bm,sousM); sous.appendChild(mega);
+    var ev=el("li",{"class":"sm-groupe"});
+    var be=el("button",{type:"button","class":"sm-tog","aria-expanded":"false"});
+    be.appendChild(document.createTextNode("Écarlate et Violet "));
+    be.appendChild(el("span",{"class":"sm-fl","aria-hidden":"true"},"\u25B8"));
+    var sousE=el("ul",{"class":"sm-sous"});
+    SERIES_EV.forEach(function(it){
+      var x=el("li");
+      var nom=it.t||it[0], href=it.h||it[1], n=it.n;
+      x.appendChild(el("a",{href:href},nomSet(nom,n)));
+      sousE.appendChild(x);
+    });
+    ev.append(be,sousE); sous.appendChild(ev);
     li.append(b,sous); parentUl.appendChild(li);
   }
+
   function menu(){
     var nav=document.querySelector("nav.sitenav,header nav.top"); if(!nav)return;
     var ul=nav.querySelector("ul.menu-principal"); if(!ul)return;
@@ -126,7 +157,8 @@ var __acc=/(\/|\/index\.html?)$/i.test(location.pathname);
       h.addEventListener("click",function(){var o=nav.classList.toggle("menu-ouvert");h.setAttribute("aria-expanded",o?"true":"false");h.setAttribute("aria-label",o?"Fermer le menu":"Ouvrir le menu");});
     }
     document.addEventListener("click",function(e){if(!nav.contains(e.target)){nav.classList.remove("menu-ouvert");ul.querySelectorAll("li.ouvert").forEach(function(l){l.classList.remove("ouvert");});}});
-    document.addEventListener("keydown",function(e){if(e.key==="Escape"){nav.classList.remove("menu-ouvert");ul.querySelectorAll("li.ouvert").forEach(function(l){l.classList.remove("ouvert");});}});
+    document.addEventListener("keydown",function(e){if(e.key==="Escape"){nav.classList.remove("menu-ouvert");ul.querySelectorAll("li.ouvert").forEach(function(l){l.classList.remove("ouvert");});fermerRecherche();}});
+    ajouterRecherche(nav);
   }
 
   /* Fil d'Ariane */
@@ -136,6 +168,8 @@ var __acc=/(\/|\/index\.html?)$/i.test(location.pathname);
     if(cur){
       if(cur.s){items.push([cur.t,cur.h]);
         var sp=cur.s.filter(function(s){return (s[1]||"").split("#")[0].toLowerCase()===page;})[0];
+        if(!sp && page==="archive-ventes.html") sp=["Ventes passées Mimiqui",null];
+        if(!sp && page==="top-ventes-semaine.html") sp=["Top ventes",null];
         if(sp)items.push([sp[0],null]);
         else if(page==="pokemon.html"){items.push(["Cartes Pokémon","cartes-pokemon.html"]);
           var n=new URLSearchParams(location.search).get("n");items.push([n?decodeURIComponent(n):"Pokémon",null]);}
@@ -162,8 +196,8 @@ var __acc=/(\/|\/index\.html?)$/i.test(location.pathname);
     var groupes=[
       ["Cartes",[["Cartes FR","cartes.html"],["Cartes JA","cartes-japonaises.html"],["Cartes EN","cartes-anglaises.html"],["Cartes Pokémon / séries","cartes-pokemon.html"],["Génération 1","cartes-generation-1.html"]]],
       ["Pokémon",[["Pikachu","cartes-pikachu-ventes.html"],["Dracaufeu","cartes-dracaufeu-ventes.html"],["Évoli","cartes-evoli-ventes.html"],["Mewtwo","cartes-mewtwo-ventes.html"],["Génération 1","cartes-generation-1.html"],["1025 Pokémon","cartes-pokemon.html"]]],
-      ["Prix",[["Cotation","cotation.html"],["Top ventes de la semaine","top-ventes-semaine.html"],["Ventes passées Spécial Mimiqui","registre.html"],["Archive des ventes","archive-ventes.html"],["Registre des cartes passées","registre-pokemon.html"]]],
-      ["Acheter et vendre",[["Boutique","boutique.html"],["Boosters","jeu.html#boosters"],["Annonces eBay en cours",EBAY_ENCOURS],["Cartes PSA 10","cartes-psa10.html"],["Guide de l’acheteur","guide-acheteur.html"],["Estimer ma carte","estimer-ma-carte.html"],["Guide pour vendre sur eBay","guide-vendre-ebay.html"],["Vendre sur eBay","vendre.html"]]],
+      ["Prix",[["Top ventes","top-ventes.html"],["Cartes gradées PSA","cartes-gradees.html"],["Ventes passées Mimiqui","registre.html"],["Cartes Pokémon passées, par type","registre-pokemon.html"]]],
+      ["Acheter et vendre",[["Boutique","boutique.html"],["Bonnes affaires eBay","bonnes-affaires.html"],["Acheter par série","acheter-par-serie.html"],["Displays et ETB","displays-etb.html"],["Boosters","jeu.html#boosters"],["Précommandes","precommandes.html"],["Annonces eBay en cours",EBAY_ENCOURS],["Cartes PSA 10","cartes-psa10.html"],["Guide de l’acheteur","guide-acheteur.html"],["Estimer ma carte","estimer-ma-carte.html"],["Guide pour vendre sur eBay","guide-vendre-ebay.html"],["Vendre sur eBay","vendre.html"]]],
       ["Découvrir",[["Nouveautés","nouveautes.html"],["Blog","blog.html"],["Blog Instagram","https://www.instagram.com/lecoindemimiqui/"],["Jeu","jeu.html"],["Le film 2027","index.html#film"],["Le déguisement","index.html#deguisement"],["Faiblesses","index.html#types"]]],
       ["Le site",[["À propos / Contact","a-propos.html"],["Créer un compte","index.html#compte"],["Assistant Instagram","assistant-instagram.html"],["Cookies et vie privée","confidentialite.html"],["Mentions légales","mentions-legales.html"],["Liens affiliés","mentions-legales.html#liens"]]]
     ];
@@ -186,7 +220,146 @@ var __acc=/(\/|\/index\.html?)$/i.test(location.pathname);
     i.value=q;['input','change','keyup'].forEach(function(t){i.dispatchEvent(new Event(t,{bubbles:true}));});
   }
 
-  function go(){try{menu();}catch(e){console.error(e);}try{ariane();}catch(e){console.error(e);}try{pied();}catch(e){console.error(e);}try{rechercheQ();}catch(e){console.error(e);}}
+  
+  function fermerRecherche(){
+    var box=document.querySelector(".nav-recherche");
+    if(!box)return;
+    box.classList.remove("ouvert");
+    var b=box.querySelector(".nav-rech-btn");
+    if(b)b.setAttribute("aria-expanded","false");
+  }
+  function chargerIndexRecherche(cb){
+    if(window.RECHERCHE_CARTES){ cb(window.RECHERCHE_CARTES); return; }
+    if(window.__rechChargement){ window.__rechChargement.push(cb); return; }
+    window.__rechChargement=[cb];
+    var s=document.createElement("script");
+    s.src="recherche-cartes-data.js?v="+(typeof SITE_CACHE==="string"?SITE_CACHE:"20261112p");
+    s.onload=function(){
+      var fns=window.__rechChargement||[]; window.__rechChargement=null;
+      fns.forEach(function(fn){ try{fn(window.RECHERCHE_CARTES||{sets:[]});}catch(e){} });
+    };
+    s.onerror=function(){ window.__rechChargement=null; cb({sets:[]}); };
+    document.head.appendChild(s);
+  }
+  function normRech(s){
+    return String(s||"").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/œ/g,"oe").replace(/æ/g,"ae");
+  }
+  function ancreId(k){ return "carte-"+String(k||"").replace(/[^A-Za-z0-9_-]+/g,"-"); }
+  function ajouterRecherche(nav){
+    if(!nav||nav.querySelector(".nav-recherche"))return;
+    var box=el("div",{"class":"nav-recherche"});
+    var btn=el("button",{type:"button","class":"nav-rech-btn","aria-expanded":"false","aria-label":"Rechercher une carte","title":"Rechercher une carte"});
+    btn.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.5-3.5"></path></svg>';
+    var pan=el("div",{"class":"nav-rech-panneau","role":"search"});
+    var inp=el("input",{type:"search",placeholder:"Nom ou numéro d’une carte…","aria-label":"Rechercher une carte par nom","autocomplete":"off"});
+    var aide=el("p",{"class":"nav-rech-aide"},"Parmi les cartes des pages de sets déjà en ligne.");
+    var liste=el("ul",{"class":"nav-rech-liste",id:"nav-rech-liste"});
+    var vide=el("p",{"class":"nav-rech-vide",hidden:"hidden"},"Aucune carte trouvée.");
+    pan.append(inp,aide,liste,vide);
+    box.append(btn,pan);
+    var ham=nav.querySelector(".hamburger");
+    if(ham&&ham.parentNode) ham.parentNode.insertBefore(box, ham);
+    else nav.appendChild(box);
+    btn.addEventListener("click",function(ev){
+      ev.preventDefault(); ev.stopPropagation();
+      var o=!box.classList.contains("ouvert");
+      if(o){ box.classList.add("ouvert"); btn.setAttribute("aria-expanded","true"); chargerIndexRecherche(function(){ inp.focus(); }); }
+      else fermerRecherche();
+    });
+    pan.addEventListener("click",function(ev){ ev.stopPropagation(); });
+    var tmr=null;
+    function render(){
+      var q=normRech(inp.value).trim();
+      liste.textContent=""; vide.hidden=true; aide.hidden=!!q;
+      if(q.length<2){ if(q) vide.hidden=false, vide.textContent="Saisir au moins 2 caractères."; return; }
+      var data=window.RECHERCHE_CARTES||{sets:[]};
+      var hits=[], max=30;
+      data.sets.forEach(function(st){
+        (st.c||[]).forEach(function(c){
+          if(hits.length>=max) return;
+          var k=c[0], n=c[1], nom=c[2];
+          var blob=normRech(nom+" "+n+" "+k);
+          if(blob.indexOf(q)<0) return;
+          hits.push({k:k,n:n,nom:nom,set:st.s,page:st.p,lang:st.l});
+        });
+      });
+      if(!hits.length){ vide.hidden=false; vide.textContent="Aucune carte trouvée."; return; }
+      hits.forEach(function(h){
+        var li=el("li");
+        var a=el("a",{href:h.page+"?k="+encodeURIComponent(h.k)+"#"+ancreId(h.k)});
+        a.appendChild(document.createTextNode(h.nom));
+        var sm=el("small",null,(h.n?h.n+" · ":"")+h.set+(h.lang?" · "+h.lang:""));
+        a.appendChild(sm);
+        li.appendChild(a); liste.appendChild(li);
+      });
+    }
+    inp.addEventListener("input",function(){ if(tmr)clearTimeout(tmr); tmr=setTimeout(render,80); });
+    inp.addEventListener("keydown",function(ev){ if(ev.key==="Escape"){ fermerRecherche(); btn.focus(); } });
+  }
+  function ongletsRegistre(){
+    if(page!=="registre.html" && page!=="archive-ventes.html") return;
+    if(document.querySelector(".onglets-ventes-mimiqui")) return;
+    var bar=el("nav",{"class":"onglets-ventes-mimiqui","aria-label":"Ventes passées Mimiqui"});
+    var a1=el("a",{href:"registre.html"},"Par semaine");
+    var a2=el("a",{href:"archive-ventes.html"},"Archive (365 jours)");
+    if(page==="registre.html") a1.setAttribute("aria-current","page");
+    else a2.setAttribute("aria-current","page");
+    bar.append(a1,a2);
+    var ariane=document.querySelector(".fil-ariane");
+    var header=document.querySelector("header.site,header.wrap,body>header");
+    var ref=ariane||header;
+    if(ref&&ref.parentNode) ref.parentNode.insertBefore(bar, ref.nextSibling);
+    else document.body.insertBefore(bar, document.body.firstChild);
+  }
+  function ancreCarte(){
+    var qs; try{ qs=new URLSearchParams(location.search);}catch(e){ qs=new URLSearchParams(); }
+    var k=qs.get("k"), nom=qs.get("carte")||"";
+    var hash=(location.hash||"").replace(/^#/,"");
+    if(!k && hash.indexOf("carte-")===0) k=hash.slice(6);
+    if(!k && !nom) return;
+    function apply(){
+      if(typeof C==="undefined" || !C || !C.length) return false;
+      var list=document.getElementById("list");
+      if(!list || !list.querySelector("article.card")) return false;
+      document.querySelectorAll("article.card button[data-i]").forEach(function(b){
+        var i=+b.getAttribute("data-i"), c=C[i]; if(!c)return;
+        var art=b.closest("article");
+        if(art && !art.id) art.id=ancreId(c.k||c.n||String(i));
+      });
+      var target=null;
+      if(k){
+        var want=ancreId(k);
+        target=document.getElementById(want);
+        if(!target){
+          C.forEach(function(c,i){
+            if(target) return;
+            if(String(c.k)===String(k) || ancreId(c.k)===want || String(c.n)===String(k)){
+              var b=document.querySelector('button[data-i="'+i+'"]');
+              if(b) target=b.closest("article");
+            }
+          });
+        }
+      }
+      if(!target && nom){
+        var box=document.getElementById("q");
+        if(box){ box.value=nom; ["input","change","keyup"].forEach(function(ev){ box.dispatchEvent(new Event(ev,{bubbles:true})); }); }
+        var w=nom.toLowerCase();
+        document.querySelectorAll("article.card h3").forEach(function(h){
+          if(!target && (h.textContent||"").toLowerCase().indexOf(w)>=0) target=h.closest("article");
+        });
+      }
+      if(target){
+        try{ target.scrollIntoView({block:"center",behavior:"smooth"}); }catch(e){ target.scrollIntoView(true); }
+        var btn=target.querySelector("button.frame,button[data-i]");
+        if(btn && k){ try{ btn.click(); }catch(e2){} }
+      }
+      return true;
+    }
+    if(apply()) return;
+    var n=0, id=setInterval(function(){ if(apply()||++n>25) clearInterval(id); }, 200);
+  }
+
+function go(){try{menu();}catch(e){console.error(e);}try{ariane();}catch(e){console.error(e);}try{pied();}catch(e){console.error(e);}try{rechercheQ();}catch(e){console.error(e);}try{ongletsRegistre();}catch(e){console.error(e);}try{ancreCarte();}catch(e){console.error(e);}}
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',go);else go();
   window.addEventListener('load',rechercheQ);
 })();
@@ -295,11 +468,25 @@ var t=setInterval(function(){if(document.getElementById('fenetre-defilante')){ma
 new MutationObserver(function(ms){for(var i=0;i<ms.length;i++)for(var k=0;k<ms[i].addedNodes.length;k++)if(ms[i].addedNodes[k].id==='fenetre-defilante')maj()}).observe(document.documentElement,{childList:true,subtree:true});
 window.__fdMaj=maj;window.__fdFond=fondSous;})();
 /* Sous-menus hologramme : contraste adaptatif (meme detection que la fenetre defilante) */
-(function(){function majSM(li){var sm=li.querySelector('ul.sous-menu');if(!sm||!window.__fdFond)return;
- var L=window.__fdFond(sm);sm.classList.toggle('sm-clair',L>0.4);sm.classList.toggle('sm-sombre',L<=0.4)}
- function att(e){var li=e.target.closest&&e.target.closest('ul.menu-principal>li');if(!li)return;setTimeout(function(){majSM(li)},40);setTimeout(function(){majSM(li)},260)}
- document.addEventListener('mouseover',att,{passive:true});document.addEventListener('focusin',att);
- addEventListener('scroll',function(){var o=document.querySelectorAll('ul.menu-principal>li:hover,ul.menu-principal>li:focus-within');for(var i=0;i<o.length;i++)majSM(o[i])},{passive:true});})();
+(function(){function razSM(){document.querySelectorAll('ul.sous-menu.sm-clair,ul.sous-menu.sm-sombre,ul.sm-sous.sm-clair,ul.sm-sous.sm-sombre').forEach(function(sm){sm.classList.remove('sm-clair','sm-sombre');});}
+ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',razSM);else razSM();
+ document.addEventListener('mouseover',function(e){var sm=e.target.closest&&e.target.closest('ul.sous-menu,ul.sm-sous');if(sm)sm.classList.remove('sm-clair','sm-sombre');},{passive:true});})();
+(function(){
+  if(document.getElementById('menu-theme-unique'))return;
+  var s=document.createElement('style');s.id='menu-theme-unique';
+  s.textContent=
+    'html body nav ul.menu-principal ul.sous-menu,html body nav ul.menu-principal ul.sous-menu.sm-clair,html body nav ul.menu-principal ul.sous-menu.sm-sombre,html body nav ul.menu-principal li.li-vendre>ul.sous-menu,html body nav ul.menu-principal ul.sm-sous{'+
+    'background-color:rgba(255,255,255,.96)!important;background-image:repeating-linear-gradient(0deg,rgba(0,200,255,.06) 0 1px,transparent 1px 4px)!important;'+
+    '-webkit-backdrop-filter:blur(12px) saturate(1.3)!important;backdrop-filter:blur(12px) saturate(1.3)!important;'+
+    'border:1px solid rgba(0,210,255,.75)!important;border-radius:12px!important;box-shadow:0 0 14px rgba(0,200,255,.45),0 10px 26px rgba(0,0,0,.18)!important}'+
+    'html body nav ul.menu-principal ul.sous-menu a,html body nav ul.menu-principal ul.sous-menu .sm-tog,html body nav ul.menu-principal ul.sm-sous a,html body nav ul.menu-principal li.li-vendre>ul.sous-menu a,html body header.wrap nav.top ul.sous-menu a,html body header.wrap nav.top ul.sm-sous a{'+
+    'color:#0b3d91!important;font-weight:800!important;text-shadow:0 0 1px rgba(255,255,255,.9)!important;border-bottom:0!important;border-color:transparent!important}'+
+    'html body nav ul.menu-principal ul.sous-menu a:hover,html body nav ul.menu-principal ul.sous-menu a[aria-current],html body nav ul.menu-principal .sm-groupe:hover>.sm-tog,html body nav ul.menu-principal .sm-groupe.sm-ouvert>.sm-tog,html body nav ul.menu-principal ul.sm-sous a:hover,html body nav ul.menu-principal li.li-vendre>ul.sous-menu a:hover{'+
+    'background:rgba(0,200,255,.14)!important;color:#0b3d91!important}';
+  function place(){(document.body||document.documentElement).appendChild(s);}
+  if(document.body)place();else document.addEventListener('DOMContentLoaded',place);
+})();
+
 /* Teaser : clic = grand ecran au milieu avec effet ouverture (2026-11-02) */
 (function(){
 var fond=null,ouvert=false,etaitReduit=false;
@@ -375,76 +562,19 @@ function init(){
     var b=g.querySelector(':scope > .sm-tog') || g.querySelector('.sm-tog');
     var s=g.querySelector(':scope > .sm-sous') || g.querySelector('.sm-sous');
     if(!b||!s)return;
-                                function cote(){
+    function cote(){
       var d=window.innerWidth>600;
-      var liC = g.closest('ul.menu-principal>li');
-      var inCartes = !!(liC && liC.querySelector(':scope > a[href="cartes.html"]'));
       var gc=false;
       if(d){
-        if(inCartes){ gc = true; }
-        else {
-          var rr=g.getBoundingClientRect();
-          var need = (s.offsetWidth||160)+8;
-          gc = (rr.right + need > window.innerWidth - 8) && (rr.left - 8 >= need);
-        }
+        var rr=g.getBoundingClientRect();
+        var need=(s.offsetWidth||160)+8;
+        gc=(rr.right+need>window.innerWidth-8)&&(rr.left-8>=need);
       }
       g.classList.toggle('sm-gauche', gc);
       var f=g.querySelector(':scope > .sm-tog .sm-fl') || g.querySelector('.sm-fl');
-      if(f){ var acc=document.body.classList.contains('page-accueil')||document.documentElement.classList.contains('page-accueil'); f.textContent = (acc && inCartes) ? '\u25B8' : (gc ? '\u25C2' : '\u25B8'); }
+      if(f){ f.textContent = gc ? '\u25C2' : '\u25B8'; }
       fitSous(s, b.getBoundingClientRect().top);
-      function clearPlace(){
-        ['position','left','right','top','bottom','transform','width','max-width','columns','visibility','opacity','pointer-events','display'].forEach(function(p){ s.style.removeProperty(p); });
-      }
-      function placeCartes(){
-        if(!(d && inCartes)) return;
-        var accueil = document.body.classList.contains('page-accueil') || document.documentElement.classList.contains('page-accueil');
-        clearPlace();
-        s.style.setProperty('visibility','hidden','important');
-        s.style.setProperty('display','block','important');
-        s.style.setProperty('position','absolute','important');
-        s.style.setProperty('left','0','important');
-        s.style.setProperty('top','0','important');
-        var w = Math.max(s.scrollWidth||0, s.offsetWidth||0, 140);
-        var h = Math.max(s.scrollHeight||0, s.offsetHeight||0, 40);
-        if(h > window.innerHeight - 16){
-          s.style.setProperty('columns','2','important');
-          s.style.setProperty('column-gap','0.25rem','important');
-          w = Math.max(s.scrollWidth||0, s.offsetWidth||0, Math.min(460, window.innerWidth-16));
-          h = Math.max(s.scrollHeight||0, s.offsetHeight||0, 40);
-        }
-        var anchor = b.getBoundingClientRect();
-        var wantLeft;
-        if(accueil){
-          wantLeft = Math.round(anchor.right - 6);
-          if(wantLeft + w > window.innerWidth - 4) wantLeft = Math.max(4, window.innerWidth - w - 4);
-          if(wantLeft < 4) wantLeft = 4;
-        } else {
-          wantLeft = Math.round(anchor.left - w + 6);
-          if(wantLeft < 4) wantLeft = 4;
-          if(wantLeft + w > window.innerWidth - 4) wantLeft = Math.max(4, window.innerWidth - w - 4);
-        }
-        var wantTop = Math.round(anchor.top);
-        if(wantTop + h > window.innerHeight - 4) wantTop = Math.max(4, window.innerHeight - h - 4);
-        if(wantTop < 4) wantTop = 4;
-        var op = s.offsetParent || g;
-        var obr = op.getBoundingClientRect();
-        var left = Math.round(wantLeft - obr.left);
-        var top = Math.round(wantTop - obr.top);
-        s.style.setProperty('position','absolute','important');
-        s.style.setProperty('left', left + 'px','important');
-        s.style.setProperty('right','auto','important');
-        s.style.setProperty('top', top + 'px','important');
-        s.style.setProperty('transform','none','important');
-        s.style.removeProperty('visibility');
-        s.style.removeProperty('display');
-      }
-      if(d && inCartes){
-        placeCartes();
-        requestAnimationFrame(function(){ placeCartes(); });
-      } else {
-        clearPlace();
-        if(d && gc) s.style.setProperty('transform','translateX(6px)','important');
-      }
+      ['position','left','right','top','bottom','transform','width','max-width','columns','column-gap','visibility','opacity','pointer-events','display'].forEach(function(p){ s.style.removeProperty(p); });
     }
     cote();
     window.addEventListener('resize', cote);
@@ -498,7 +628,7 @@ if(document.readyState==='loading') document.addEventListener('DOMContentLoaded'
 (function(){
  var css='@media (min-width:1000px){'+
  'nav ul.menu-principal>li.li-vendre{position:relative}'+
- 'nav ul.menu-principal>li.li-vendre>ul.sous-menu{z-index:2147483000!important;background:#fff!important;background-image:none!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important;opacity:1!important;box-shadow:0 12px 32px rgba(0,0,0,.28)!important}nav ul.menu-principal>li.li-vendre>ul.sous-menu a{color:#111!important;text-shadow:none!important}nav ul.menu-principal>li.li-vendre>ul.sous-menu a:hover{color:#d0021b!important}'+
+ 'nav ul.menu-principal>li.li-vendre>ul.sous-menu{z-index:2147483000!important}'+
  'nav ul.menu-principal>li.li-vendre.v-droite>ul.sous-menu{left:auto!important;right:0!important}'+
  'header:has(li.li-vendre:hover),header:has(li.li-vendre:focus-within),header:has(li.li-vendre .ouvre-sous[aria-expanded=true]),nav:has(li.li-vendre:hover),nav:has(li.li-vendre:focus-within){z-index:2147483000!important}'+
  '}';

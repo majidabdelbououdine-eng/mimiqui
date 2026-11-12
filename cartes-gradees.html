@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="fr"><head>
+<meta charset="utf-8">
+<link rel="icon" type="image/webp" href="img/logo-mimiqui.webp">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<link rel="stylesheet" href="site-commun.css?v=20261112p">
+<style>
+@font-face{font-family:"Bodoni Moda";font-style:normal;font-weight:500;font-display:swap;src:url(fonts/bodoni-moda-latin-500-normal.woff2) format("woff2")}
+@font-face{font-family:"Bodoni Moda";font-style:italic;font-weight:500;font-display:swap;src:url(fonts/bodoni-moda-latin-500-italic.woff2) format("woff2")}
+@font-face{font-family:"Bodoni Moda";font-style:normal;font-weight:700;font-display:swap;src:url(fonts/bodoni-moda-latin-700-normal.woff2) format("woff2")}
+@font-face{font-family:"Source Sans 3";font-style:normal;font-weight:400;font-display:swap;src:url(fonts/source-sans-3-latin-400-normal.woff2) format("woff2")}
+@font-face{font-family:"Source Sans 3";font-style:normal;font-weight:600;font-display:swap;src:url(fonts/source-sans-3-latin-600-normal.woff2) format("woff2")}
+@font-face{font-family:"Source Sans 3";font-style:normal;font-weight:700;font-display:swap;src:url(fonts/source-sans-3-latin-700-normal.woff2) format("woff2")}
+</style>
+<meta name="description" content="Ventes de cartes Pokémon gradées (PSA, CGC et autres) relevées sur eBay.fr dans les pages de sets du Coin de Mimiqui, classées par prix.">
+<title>Cartes gradées PSA – Le Coin de Mimiqui</title>
+<link rel="canonical" href="https://mimiqui.fr/cartes-gradees.html">
+<style>
+:root{--bg:#ffffff;--ink:#111111;--muted:#5a5a5a;--line:rgba(17,17,17,.16);--soft:#f6f5f2;--rouge:#d0021b;--f-display:"Bodoni Moda","Didot",Georgia,serif;--f-body:"Source Sans 3","Helvetica Neue",Arial,sans-serif}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 var(--f-body)}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.etiquette{font-weight:700;font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--rouge);margin:0}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;line-height:1.1;margin:0}
+.tete{padding-block:36px 8px;display:grid;gap:12px}
+.tete h1{font-size:clamp(2.2rem,6vw,3.6rem);font-weight:500;letter-spacing:-.02em}
+.tete h1 em{color:var(--rouge)}
+.tete p{color:var(--muted);max-width:72ch;margin:0}
+.page-corps{padding:12px 0 56px}
+.page-corps h2{font-size:clamp(1.4rem,3vw,1.9rem);margin:32px 0 10px}
+.page-corps p{margin:0 0 12px;color:var(--muted)}
+.pied-legal{margin:1.2rem auto 1.4rem;text-align:center;font-size:.72rem;font-weight:300;color:#7a869a}
+.pied-legal a{color:#7a869a;text-decoration:underline}
+.cookie-info{position:fixed;left:16px;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:60;max-width:620px;margin:0 auto;background:#111;color:#fff;display:flex;gap:14px;align-items:center;padding:12px 16px;border-radius:14px;box-shadow:0 8px 30px rgba(0,0,0,.25);font:14px/1.45 var(--f-body)}
+.cookie-info[hidden]{display:none}
+.cookie-info p{margin:0;flex:1}
+.cookie-info a{color:#fff;text-decoration:underline}
+.cookie-info button{flex:none;font:700 12px var(--f-body);letter-spacing:.08em;text-transform:uppercase;background:#fff;color:#111;border:0;border-radius:999px;padding:8px 16px;cursor:pointer}
+
+/* Hub cards */
+.series-sec{margin:28px 0 8px}
+.series-sec h2{font-size:clamp(1.35rem,3vw,1.8rem);margin:0 0 6px}
+.series-sec .ss-note{color:var(--muted);margin:0 0 14px;font-size:.95rem}
+.grille-sets{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px}
+a.set-card{display:flex;flex-direction:column;text-decoration:none;color:inherit;background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:0 1px 0 rgba(17,17,17,.04);transition:transform .15s,box-shadow .15s,border-color .15s}
+a.set-card:hover,a.set-card:focus-visible{transform:translateY(-3px);border-color:#22d3ee;box-shadow:0 0 0 1px rgba(0,200,255,.35),0 8px 20px rgba(0,180,255,.18);outline:none}
+.set-card .visuel{aspect-ratio:3/4;background:var(--soft);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.set-card .visuel img{width:100%;height:100%;object-fit:contain;background:#f3f6fb}
+.set-card .visuel.vide{color:#0b3d91;font:600 .9rem/1.3 var(--f-body);padding:16px;text-align:center}
+.set-card .corps{padding:10px 12px 14px;display:grid;gap:4px}
+.set-card h3{font-size:1.15rem;font-weight:500}
+.set-card .meta{font-size:.82rem;color:var(--muted)}
+.set-card .lang{display:inline-block;font:700 .68rem var(--f-body);letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--line);border-radius:999px;padding:2px 8px;margin-right:4px;color:#0b3d91}
+.set-card .bientot{font:700 .72rem var(--f-body);letter-spacing:.06em;text-transform:uppercase;color:var(--rouge)}
+.set-card.soon{opacity:.92}
+
+/* Tables */
+.table-wrap{overflow:auto;margin:8px 0 8px;border:1px solid var(--line);border-radius:12px;background:#fff}
+table.ventes{width:100%;border-collapse:collapse;font-size:.95rem}
+table.ventes th,table.ventes td{padding:8px 10px;text-align:left;vertical-align:middle;border-bottom:1px solid var(--line)}
+table.ventes th{font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);background:var(--soft);font-weight:700;white-space:nowrap}
+table.ventes tr:last-child td{border-bottom:0}
+table.ventes tbody tr:hover{background:#f7fbff}
+table.ventes .rang{font:700 .72rem var(--f-body);letter-spacing:.08em;color:var(--rouge);white-space:nowrap}
+table.ventes .carte{display:flex;gap:10px;align-items:center;min-width:12rem}
+table.ventes .carte img{width:44px;height:62px;object-fit:contain;background:var(--soft);border-radius:4px;flex:none}
+table.ventes .carte .nom{font-weight:600;line-height:1.25}
+table.ventes .carte .num{display:block;font-size:.8rem;color:var(--muted);font-weight:400}
+table.ventes .prix{font:800 1.05rem/1.1 Arial,Helvetica,sans-serif;font-variant-numeric:tabular-nums;white-space:nowrap}
+table.ventes .date{white-space:nowrap}
+table.ventes a.ebay{font:700 .78rem var(--f-body);color:var(--rouge);text-decoration:none;white-space:nowrap}
+table.ventes a.ebay:hover{text-decoration:underline}
+table.ventes a.setlien{color:inherit;text-decoration:none}
+table.ventes a.setlien:hover{text-decoration:underline}
+.sources{margin:18px 0 0;padding:12px 14px;background:var(--soft);border-radius:12px;font-size:.9rem;color:var(--muted)}
+.sources ul{margin:8px 0 0;padding-left:1.2rem}
+@media (max-width:640px){
+  table.ventes .carte img{width:36px;height:50px}
+  table.ventes th,table.ventes td{padding:7px 8px}
+}
+</style>
+</head>
+<body>
+<header class="site wrap"><nav class="sitenav" aria-label="Navigation principale">
+  <a class="logo" href="index.html"><img class="logo-img" src="img/logo-mimiqui.webp" alt="" width="95" height="120" style="width:auto;height:4.2rem;object-fit:contain;transform:none">Le Coin de Mimiqui<span>.</span></a>
+  <ul class="menu-principal" id="menu-principal">
+<li><a href="index.html">Accueil</a></li>
+<li><a href="cartes.html">Cartes</a></li>
+<li><a href="cartes-generation-1.html">Pokémon</a></li>
+<li><a href="cotation.html">Prix</a></li>
+<li><a href="boutique.html">Acheter</a></li>
+<li><a href="vendre.html">Vendre</a></li>
+<li><a href="nouveautes.html">Nouveautés</a></li>
+<li><a href="blog.html">Blog</a></li>
+</ul>
+</nav></header>
+
+<main class="wrap page-corps">
+  <section class="tete">
+    <p class="etiquette">Prix · cartes gradées</p>
+    <h1>Cartes gradées <em>PSA</em></h1>
+    <p>Toutes les ventes gradées relevées dans les pages de sets déjà en ligne (Règne Delta, Écarlate et Violet, Évolutions à Paldea, Flammes Obsidiennes), classées du prix le plus élevé au plus bas. Il s’agit surtout de PSA, mais aussi de CGC, TAG, ACE, PCA ou Collect Aura lorsqu’une vente apparaît ainsi dans les données. Prix eBay.fr hors frais de port, aucun montant inventé. Si le grade n’est pas lisible dans le titre de l’annonce, il est laissé en tiret.</p>
+    <p id="resume"></p>
+  </section>
+  <div id="table-grades"></div>
+  <div id="sources"></div>
+</main>
+
+<script src="ventes-sets-data.js"></script>
+<script>
+(function(){
+  "use strict";
+  var DATA=window.VENTES_SETS||{};
+  var CAMPID=DATA.campid||"5339225196";
+  function e(s){return String(s==null?"":s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+  function eur(p){
+    if(p==null||p==="") return "—";
+    return Number(p).toLocaleString("fr-FR",{style:"currency",currency:"EUR"});
+  }
+  function iso(d){
+    if(!d) return "";
+    var p=String(d).split("/");
+    return p.length===3 ? p[2]+"-"+p[1]+"-"+p[0] : d;
+  }
+  function lienEbay(u){
+    if(!u) return "";
+    if(u.indexOf("campid=")<0){
+      u += (u.indexOf("?")>=0?"&":"?")+"campid="+CAMPID;
+    } else if(u.indexOf("campid="+CAMPID)<0){
+      u=u.replace(/campid=\d+/,"campid="+CAMPID);
+    }
+    return u;
+  }
+  function ligne(v,i,avecGrade){
+    var img=v.img?'<img src="'+e(v.img)+'" alt="" loading="lazy" width="44" height="62">':'';
+    var grade=v.grade?e(v.grade):"—";
+    var page=v.page||"#";
+    var ebay=lienEbay(v.u);
+    var lien=ebay?'<a class="ebay" href="'+e(ebay)+'" target="_blank" rel="sponsored noopener">Voir sur eBay</a>':'—';
+    return '<tr>'+
+      '<td class="rang">n° '+(i+1)+'</td>'+
+      '<td><div class="carte">'+img+'<div><a class="setlien" href="'+e(page)+'"><span class="nom">'+e(v.nom)+'</span><span class="num">'+e(v.num)+'</span></a></div></div></td>'+
+      '<td><a class="setlien" href="'+e(page)+'">'+e(v.set)+'</a></td>'+
+      '<td class="prix">'+eur(v.p)+'</td>'+
+      '<td class="date"><time datetime="'+e(iso(v.d))+'">'+e(v.d)+'</time></td>'+
+      (avecGrade?'<td>'+grade+'</td>':'')+
+      '<td>'+lien+'</td>'+
+    '</tr>';
+  }
+  function table(rows, avecGrade){
+    if(!rows||!rows.length) return "<p>Aucune vente relevée dans les pages de sets pour cette catégorie.</p>";
+    var th='<thead><tr><th>Rang</th><th>Carte</th><th>Set</th><th>Prix</th><th>Date</th>'+(avecGrade?'<th>Grade</th>':'')+'<th>Annonce</th></tr></thead>';
+    var body=rows.map(function(v,i){return ligne(v,i,avecGrade)}).join("");
+    return '<div class="table-wrap"><table class="ventes">'+th+'<tbody>'+body+'</tbody></table></div>';
+  }
+  function sources(){
+    var s=DATA.sources||[];
+    if(!s.length) return "";
+    var lis=s.map(function(x){
+      return "<li><a href=\""+e(x.file)+"\">"+e(x.set)+"</a> — "+x.ventes+" vente"+(x.ventes>1?"s":"")+" non gradée"+(x.ventes>1?"s":"")+", "+x.grades+" gradée"+(x.grades>1?"s":"")+(x.dmin&&x.dmax?" (du "+e(x.dmin)+" au "+e(x.dmax)+")":"")+".</li>";
+    }).join("");
+    return '<div class="sources"><p>Sources : pages de sets locales, prix eBay.fr hors frais de port, aucun montant inventé. </p><ul>'+lis+"</ul></div>";
+  }
+  window.__prixTables={DATA:DATA,table:table,sources:sources,eur:eur};
+})();
+</script>
+
+<script>
+(function(){
+  var T=window.__prixTables, D=T.DATA;
+  var g=D.grades||[];
+  var r=document.getElementById("resume");
+  var soc={};
+  g.forEach(function(v){ var k=(v.grade||"").split(" ")[0]||"non lu"; soc[k]=(soc[k]||0)+1; });
+  var bits=Object.keys(soc).sort(function(a,b){return soc[b]-soc[a]}).map(function(k){return soc[k]+" "+k});
+  if(r) r.textContent=g.length+" vente"+(g.length>1?"s":"")+" gradée"+(g.length>1?"s":"")+" (du "+(D.dmin||"")+" au "+(D.dmax||"")+")"+(bits.length?" : "+bits.join(", ")+".":".");
+  document.getElementById("table-grades").innerHTML=T.table(g, true);
+  document.getElementById("sources").innerHTML=T.sources();
+})();
+</script>
+
+<footer class="wrap">Le Coin de Mimiqui · site de fan non officiel, sans lien avec Nintendo, Game Freak ou The Pokémon Company. · <a href="confidentialite.html">Cookies et vie privée</a> · <a href="a-propos.html">À propos / Contact</a></footer>
+<script>(function(){var h=document.querySelector("header.wrap, header.site");if(!h)return;function m(){document.documentElement.style.setProperty("--hh",h.offsetHeight+"px")}m();if(window.ResizeObserver)new ResizeObserver(m).observe(h);})();</script>
+<div class="cookie-info" id="cookie-info" hidden role="region" aria-label="Cookies">
+  <p>Ce site ne dépose aucun cookie publicitaire ni de mesure d’audience. Les liens eBay, Amazon et Instagram mènent vers des sites qui ont leurs propres cookies. <a href="confidentialite.html">En savoir plus</a></p>
+  <button type="button" id="cookie-ok">D’accord</button>
+</div>
+<script>(function(){var b=document.getElementById("cookie-info");if(!b)return;var k="coin-mimiqui-info-cookies",vu=false;try{vu=localStorage.getItem(k)==="1"}catch(e){}if(!vu)b.hidden=false;document.getElementById("cookie-ok").addEventListener("click",function(){b.hidden=true;try{localStorage.setItem(k,"1")}catch(e){}});})();</script>
+<script src="site-commun.js?v=20261112p" defer></script>
+<p class="pied-legal">Site de fan non officiel &middot; <a href="mentions-legales.html#liens">Liens affiliés</a> &middot; <a href="mentions-legales.html">Mentions légales</a> &middot; <a href="a-propos.html">À propos / Contact</a></p>
+</body></html>

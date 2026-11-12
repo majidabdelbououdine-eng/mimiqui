@@ -209,7 +209,7 @@ dl{font-size:13px}
 .card details{font-size:13px}
 .card .hp{font-size:12px}
 </style>
-<style id="agrandi">html{font-size:106%}body{font-size:1.035rem}.wrap{max-width:1180px!important;margin-left:auto!important;margin-right:auto!important}.logo{font-size:calc(1.7rem * 1.35)!important}</style><link rel="stylesheet" href="site-commun.css"><meta name="referrer" content="strict-origin-when-cross-origin"><style id="holo-infos">
+<style id="agrandi">html{font-size:106%}body{font-size:1.035rem}.wrap{max-width:1180px!important;margin-left:auto!important;margin-right:auto!important}.logo{font-size:calc(1.7rem * 1.35)!important}</style><link rel="stylesheet" href="site-commun.css?v=20261112p"><meta name="referrer" content="strict-origin-when-cross-origin"><style id="holo-infos">
 .pic>div{position:relative}
 .card:has(.frame:hover),.card:has(.frame:focus-visible){overflow:visible!important;z-index:40;position:relative}
 .hi-win{position:absolute;left:100%;top:50%;margin-left:6px;width:180px;max-width:92vw;z-index:41;display:flex;flex-direction:column;align-items:center;gap:3px;text-align:center;pointer-events:none;opacity:0;transform:translate(-30%,-50%) scale(.2);transform-origin:0 50%;transition:opacity .35s ease,transform .45s cubic-bezier(.2,1.4,.4,1);background:none;border:0;box-shadow:none;color:#000;font:800 15px/1.25 "Source Sans 3",Arial,sans-serif;text-shadow:0 0 2px #fff,0 0 4px #fff,0 0 8px #fff,0 0 14px rgba(120,230,255,.95),0 0 22px rgba(255,120,220,.6)}
@@ -267,7 +267,7 @@ dl{font-size:13px}
 <ul class="sous-menu">
 <li><a href="boutique.html">Boutique</a></li>
 <li><a href="jeu.html#boosters">Boosters</a></li>
-<li><a href="https://www.ebay.fr/sch/i.html?_nkw=carte%20Pok%C3%A9mon&amp;mkcid=1&amp;mkrid=709-53476-19255-0&amp;siteid=71&amp;campid=5339225196&amp;customid=encours-menu&amp;toolid=10001&amp;mkevt=1" target="_blank" rel="sponsored noopener">Annonces eBay en cours</a></li>
+<li><a href="https://www.ebay.fr/sch/i.html?_nkw=carte+Pok%C3%A9mon&amp%3Bmkcid=1&amp%3Bmkrid=709-53476-19255-0&amp%3Bsiteid=71&amp%3Bcampid=5339225196&amp%3Bcustomid=encours-menu&amp%3Btoolid=10001&amp%3Bmkevt=1&mkcid=1&mkrid=709-53476-19255-0&siteid=71&campid=5339225196&toolid=10001&mkevt=1" target="_blank" rel="sponsored noopener">Annonces eBay en cours</a></li>
 <li><a href="cartes-psa10.html">Cartes PSA 10</a></li>
 <li><a href="guide-acheteur.html">Guide de l’acheteur</a></li>
 </ul></li>
@@ -323,7 +323,7 @@ const num = c => c.localId + (c.count && /^\d+$/.test(c.localId) ? "/"+c.count :
 const EBAY_CAMPID = "5339225196";
 const ebayRecherche = c => `${c.name} ${num(c)} anglais`;
 function ebayURL(c){
-  let u = "https://www.ebay.fr/sch/i.html?_nkw=" + encodeURIComponent(ebayRecherche(c));
+  let u = "https://www.ebay.fr/sch/i.html?_nkw=&mkcid=1&mkrid=709-53476-19255-0&siteid=71&campid=5339225196&toolid=10001&mkevt=1" + encodeURIComponent(ebayRecherche(c));
   if (EBAY_CAMPID) u += "&mkcid=1&mkrid=709-53476-19255-0&siteid=71&campid=" + encodeURIComponent(EBAY_CAMPID) + "&customid=mimiqui&toolid=10001&mkevt=1";
   return u;
 }
@@ -336,7 +336,7 @@ function affaireHTML(c, k){
   if (c.serieId==="tcgp") return "";
   const C = (window.COTATION && window.COTATION.cartes && window.COTATION.cartes[k]) || {};
   const e = v => v.toLocaleString("fr-FR",{style:"currency",currency:"EUR"});
-  const tri = epn("https://www.ebay.fr/sch/i.html?_nkw=" + encodeURIComponent(ebayRecherche(c)) + "&_sop=15&LH_BIN=1", "bonnesaffaires");
+  const tri = epn("https://www.ebay.fr/sch/i.html?_nkw=&mkcid=1&mkrid=709-53476-19255-0&siteid=71&campid=5339225196&toolid=10001&mkevt=1" + encodeURIComponent(ebayRecherche(c)) + "&_sop=15&LH_BIN=1", "bonnesaffaires");
   const o = C.ebay_bas;
   let haut = "";
   if (o && o.prix != null) {
@@ -350,14 +350,14 @@ function affaireHTML(c, k){
     <a href="${esc(tri)}" target="_blank" rel="sponsored noopener">eBay, achat immédiat, prix croissant ↗</a>${C.cm_url?`<a href="${esc(C.cm_url)}" target="_blank" rel="noopener">Cardmarket, offres ↗</a>`:""}</div>`;
 }
 function prixConseilHTML(c){if(c.serieId==="tcgp")return "";const C=(window.COTATION&&COTATION.cartes&&COTATION.cartes[key(c)])||{},t=C.tendance!=null?Number(C.tendance):null,q=encodeURIComponent(ebayRecherche(c)),e2=v=>v.toFixed(2).replace(".",",")+" €";
-const u="https://www.ebay.fr/sch/i.html?_nkw="+q+(t!=null?"&_udlo="+(t*0.7).toFixed(2)+"&_udhi="+(t*0.9).toFixed(2):"");
+const u="https://www.ebay.fr/sch/i.html?_nkw=&mkcid=1&mkrid=709-53476-19255-0&siteid=71&campid=5339225196&toolid=10001&mkevt=1"+q+(t!=null?"&_udlo="+(t*0.7).toFixed(2)+"&_udhi="+(t*0.9).toFixed(2):"");
 return `<div class="prix-conseil"><div><span class="pc-l">Prix d'achat conseillé</span><b>${t!=null?e2(t*0.8):"cote indisponible"}</b><small>${t!=null?"cote − 20 %":""}</small></div><div><span class="pc-l">Prix de revente conseillé</span><b>${t!=null?e2(t*1.2):"cote indisponible"}</b><small>${t!=null?"cote + 20 %":""}</small></div><a class="pc-btn" href="${esc(epn(u,"rechercher"))}" target="_blank" rel="sponsored noopener">Rechercher la carte sur eBay ↗</a>${t!=null?`<small class="pc-n">Recherche entre ${e2(t*0.7)} et ${e2(t*0.9)} (cote − 30 % à − 10 %)</small>`:""}</div>`}
 function coteHTML(k){
   const C = (window.COTATION && window.COTATION.cartes && window.COTATION.cartes[k]) || {};
   const e = v => v==null ? "–" : v.toLocaleString("fr-FR",{style:"currency",currency:"EUR"});
   return `<a class="cote-mini" href="cotation.html#${k}" aria-label="Voir le graphique des prix de cette carte">
     <span class="cm-l">Cote Cardmarket</span><span class="cm-v">${e(C.tendance)}</span>
-    <span class="cm-l">Ventes ce mois</span><span class="cm-v vm" data-vm="${esc(k)}">…</span></a>${(()=>{const c=CARDS.find(x=>key(x)===k);if(!c||c.serieId==="tcgp")return "";const u="https://www.ebay.fr/sch/i.html?_nkw="+encodeURIComponent(ebayRecherche(c))+"&LH_BIN=1&_sop=15"+(C.tendance!=null?"&_udhi="+Math.ceil(C.tendance):"");return `<a class="eb-sous" href="${esc(epn(u,"souscote"))}" target="_blank" rel="sponsored noopener">${C.tendance!=null?"Achat immédiat sous la cote":"Achat immédiat, prix croissant"} ↗</a>`})()}`;
+    <span class="cm-l">Ventes ce mois</span><span class="cm-v vm" data-vm="${esc(k)}">…</span></a>${(()=>{const c=CARDS.find(x=>key(x)===k);if(!c||c.serieId==="tcgp")return "";const u="https://www.ebay.fr/sch/i.html?_nkw=&mkcid=1&mkrid=709-53476-19255-0&siteid=71&campid=5339225196&toolid=10001&mkevt=1"+encodeURIComponent(ebayRecherche(c))+"&LH_BIN=1&_sop=15"+(C.tendance!=null?"&_udhi="+Math.ceil(C.tendance):"");return `<a class="eb-sous" href="${esc(epn(u,"souscote"))}" target="_blank" rel="sponsored noopener">${C.tendance!=null?"Achat immédiat sous la cote":"Achat immédiat, prix croissant"} ↗</a>`})()}`;
 }
 // Conseil d'achat, calculé comme le prix conseillé de la rubrique « Vendre sur eBay » (vendre.html)
 function conseilHTML(c, k){
@@ -415,7 +415,7 @@ function cardHTML(c){
     <div class="pic"><div>${pic}</div>${c.serieId==="tcgp"?"":`<a class="ebay" href="${esc(ebayURL(c))}" target="_blank" rel="sponsored noopener">Voir sur eBay</a><button class="btn-ventes" type="button" data-ventes>Ventes basses et hautes</button>`}${coteHTML(k)}</div>
     <div class="body">
       ${prixConseilHTML(c)}
-      ${c.serieId==="tcgp"?"":`<a class="eb-vendues" href="${esc(epn("https://www.ebay.fr/sch/i.html?_nkw="+encodeURIComponent(ebayRecherche(c))+"&LH_Sold=1&LH_Complete=1","dejavendues"))}" target="_blank" rel="sponsored noopener">Déjà vendues sur eBay ↗</a>`}
+      ${c.serieId==="tcgp"?"":`<a class="eb-vendues" href="${esc(epn("https://www.ebay.fr/sch/i.html?_nkw=&mkcid=1&mkrid=709-53476-19255-0&siteid=71&campid=5339225196&toolid=10001&mkevt=1"+encodeURIComponent(ebayRecherche(c))+"&LH_Sold=1&LH_Complete=1","dejavendues"))}" target="_blank" rel="sponsored noopener">Déjà vendues sur eBay ↗</a>`}
       <div class="chips">${types}${rar}${sfx}</div>
       <dl>${rows}</dl>
       ${n?`<details><summary>${(c.abilities||[]).length?"Talent et attaques":"Attaques"} (${n})</summary>${abil}${atks}</details>`:""}
@@ -454,7 +454,7 @@ function ventesHTML(k){
   const c = CARDS.find(x => key(x) === k); if (!c) return "";
   const n = num(c), e = v => v.toLocaleString("fr-FR",{style:"currency",currency:"EUR"});
   const j = d => { const t = new Date(d+"T12:00:00"); return isNaN(t) ? d : t.toLocaleDateString("fr-FR",{day:"numeric",month:"short",year:"numeric"}); };
-  const vendues = epn("https://www.ebay.fr/sch/i.html?_nkw=" + encodeURIComponent(ebayRecherche(c)) + "&LH_Sold=1&LH_Complete=1", "mimiqui");
+  const vendues = epn("https://www.ebay.fr/sch/i.html?_nkw=&mkcid=1&mkrid=709-53476-19255-0&siteid=71&campid=5339225196&toolid=10001&mkevt=1" + encodeURIComponent(ebayRecherche(c)) + "&LH_Sold=1&LH_Complete=1", "mimiqui");
   const tete = `<h4>Ventes eBay · ${esc(c.name)} ${esc(n)}</h4>`;
   const pied = `<p class="lb-pied"><a href="${esc(vendues)}" target="_blank" rel="sponsored noopener">Toutes les ventes sur eBay ↗</a> <a href="registre.html">Registre complet →</a></p>`;
   if (VENTES === null) return tete + `<p class="lb-n">Chargement des ventes…</p>` + pied;
@@ -511,7 +511,7 @@ if (window.claude && window.claude.use) window.claude.use("db").then(db => {
 @media (max-width:520px){.cookie-info{flex-direction:column;align-items:stretch}}
 </style>
 <script>(function(){var b=document.getElementById("cookie-info");if(!b)return;var k="coin-mimiqui-info-cookies",vu=false;try{vu=localStorage.getItem(k)==="1"}catch(e){}if(!vu)b.hidden=false;document.getElementById("cookie-ok").addEventListener("click",function(){b.hidden=true;try{localStorage.setItem(k,"1")}catch(e){}});})();</script>
-<script src="site-commun.js" defer></script><p class="pied-legal">Site de fan non officiel &middot; <a href="mentions-legales.html#liens">Liens affili&eacute;s</a> &middot; <a href="mentions-legales.html">Mentions l&eacute;gales</a></p><style>.pied-legal{margin:1.2rem auto 1.4rem;text-align:center;font-size:.72rem;font-weight:300;color:#7a869a;letter-spacing:.02em}.pied-legal a{color:#7a869a;text-decoration:underline}</style><script id="hi-g-js">document.addEventListener("mouseover",e=>{const fr=e.target.closest&&e.target.closest(".frame");if(!fr)return;const w=fr.parentElement.querySelector(".hi-win");if(!w)return;const r=fr.getBoundingClientRect();w.classList.toggle("hi-g",r.right+196>document.documentElement.clientWidth)});</script>
+<script src="site-commun.js?v=20261112p" defer></script><p class="pied-legal">Site de fan non officiel &middot; <a href="mentions-legales.html#liens">Liens affili&eacute;s</a> &middot; <a href="mentions-legales.html">Mentions l&eacute;gales</a></p><style>.pied-legal{margin:1.2rem auto 1.4rem;text-align:center;font-size:.72rem;font-weight:300;color:#7a869a;letter-spacing:.02em}.pied-legal a{color:#7a869a;text-decoration:underline}</style><script id="hi-g-js">document.addEventListener("mouseover",e=>{const fr=e.target.closest&&e.target.closest(".frame");if(!fr)return;const w=fr.parentElement.querySelector(".hi-win");if(!w)return;const r=fr.getBoundingClientRect();w.classList.toggle("hi-g",r.right+196>document.documentElement.clientWidth)});</script>
 <style id="infos-clic">.card>.body{display:none}.card.infos-on>.body{display:block;animation:icIn .3s ease}@keyframes icIn{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}.card .frame[data-zoom]{cursor:pointer}</style>
 <script id="infos-clic-js">document.addEventListener("click",e=>{const fr=e.target.closest&&e.target.closest(".card .frame");if(fr){if(e.detail>1)return;e.preventDefault();e.stopImmediatePropagation();const c=fr.closest(".card");const on=!c.classList.contains("infos-on");document.querySelectorAll(".card.infos-on").forEach(x=>x.classList.remove("infos-on"));c.classList.toggle("infos-on",on);return}if(!(e.target.closest&&e.target.closest(".card.infos-on>.body")))document.querySelectorAll(".card.infos-on").forEach(x=>x.classList.remove("infos-on"))},true);</script>
 <script src="registre-ventes-data.js"></script>

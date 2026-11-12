@@ -139,7 +139,7 @@ a.btn{text-decoration:none;display:inline-block}
 .cg-note{font-size:.8rem;color:var(--muted);margin:8px 0 0;white-space:normal}
 </style>
 <script src="cotation-data.js"></script>
-<style id="agrandi">html{font-size:106%}body{font-size:1.035rem}.wrap{max-width:1180px!important;margin-left:auto!important;margin-right:auto!important}.logo{font-size:calc(1.7rem * 1.35)!important}</style><link rel="stylesheet" href="site-commun.css"><meta name="referrer" content="strict-origin-when-cross-origin"></head><body>
+<style id="agrandi">html{font-size:106%}body{font-size:1.035rem}.wrap{max-width:1180px!important;margin-left:auto!important;margin-right:auto!important}.logo{font-size:calc(1.7rem * 1.35)!important}</style><link rel="stylesheet" href="site-commun.css?v=20261112p"><meta name="referrer" content="strict-origin-when-cross-origin"></head><body>
 <header class="site wrap"><nav class="sitenav" aria-label="Navigation principale">
   <a class="logo" href="index.html"><img class="logo-img" src="img/logo-mimiqui.webp" alt="" width="95" height="120" style="width:auto;height:4.2rem;object-fit:contain;transform:none">Le Coin de Mimiqui<span>.</span></a>
   <ul class="menu-principal" id="menu-principal">
@@ -172,7 +172,7 @@ a.btn{text-decoration:none;display:inline-block}
 <ul class="sous-menu">
 <li><a href="boutique.html">Boutique</a></li>
 <li><a href="jeu.html#boosters">Boosters</a></li>
-<li><a href="https://www.ebay.fr/sch/i.html?_nkw=carte%20Pok%C3%A9mon&amp;mkcid=1&amp;mkrid=709-53476-19255-0&amp;siteid=71&amp;campid=5339225196&amp;customid=encours-menu&amp;toolid=10001&amp;mkevt=1" target="_blank" rel="sponsored noopener">Annonces eBay en cours</a></li>
+<li><a href="https://www.ebay.fr/sch/i.html?_nkw=carte+Pok%C3%A9mon&amp%3Bmkcid=1&amp%3Bmkrid=709-53476-19255-0&amp%3Bsiteid=71&amp%3Bcampid=5339225196&amp%3Bcustomid=encours-menu&amp%3Btoolid=10001&amp%3Bmkevt=1&mkcid=1&mkrid=709-53476-19255-0&siteid=71&campid=5339225196&toolid=10001&mkevt=1" target="_blank" rel="sponsored noopener">Annonces eBay en cours</a></li>
 <li><a href="cartes-psa10.html">Cartes PSA 10</a></li>
 <li><a href="guide-acheteur.html">Guide de l’acheteur</a></li>
 </ul></li>
@@ -343,9 +343,9 @@ function calcMimiqui(raw){
  prix=t!=null?t*1.2:null;ach=t!=null?t*0.8:null;
  methA=t!=null?"Prix d'achat = cote Cardmarket − 20 % ("+eur(t)+" × 0,8). Le bouton « Rechercher la carte sur eBay » cherche entre "+eur(Math.round(t*70)/100)+" et "+eur(Math.round(t*90)/100)+" (cote − 30 % à − 10 %).":"";
  meth=t!=null?"Prix de revente = cote Cardmarket + 20 % ("+eur(t)+" × 1,2). Les ventes du registre sont données à titre indicatif.":"Cote Cardmarket indisponible pour cette carte : pas de prix conseillé (on n'invente rien). La recherche eBay se fait sans filtre de prix.";
- var rech=epn("https://www.ebay.fr/sch/i.html?_nkw="+encodeURIComponent(raw.q)+(t!=null?"&_udlo="+(t*0.7).toFixed(2)+"&_udhi="+(t*0.9).toFixed(2):""),"rechercher");
- var vend=epn("https://www.ebay.fr/sch/i.html?_nkw="+encodeURIComponent(raw.q)+"&LH_Sold=1&LH_Complete=1","estimer");
- var sell=epn("https://www.ebay.fr/sl/sell","estimer");
+ var rech=epn("https://www.ebay.fr/sch/i.html?_nkw=&mkcid=1&mkrid=709-53476-19255-0&siteid=71&campid=5339225196&toolid=10001&mkevt=1"+encodeURIComponent(raw.q)+(t!=null?"&_udlo="+(t*0.7).toFixed(2)+"&_udhi="+(t*0.9).toFixed(2):""),"rechercher");
+ var vend=epn("https://www.ebay.fr/sch/i.html?_nkw=&mkcid=1&mkrid=709-53476-19255-0&siteid=71&campid=5339225196&toolid=10001&mkevt=1"+encodeURIComponent(raw.q)+"&LH_Sold=1&LH_Complete=1","estimer");
+ var sell=epn("https://www.ebay.fr/sl/sell?mkcid=1&mkrid=709-53476-19255-0&siteid=71&campid=5339225196&toolid=10001&mkevt=1","estimer");
  var h='<div class="est-res">'+(raw.img?'<img src="'+esc(raw.img)+'" alt="Carte '+esc(raw.nom+" "+raw.num)+'">':'<div></div>')+'<div><h2 style="margin:0">'+esc(raw.nom)+' <small>'+esc(raw.num)+'</small></h2><p class="note">'+esc(raw.ext)+'</p>'+
  '<p class="etiquette">Prix de revente conseillé <small>(cote + 20 %)</small></p><div class="est-prix">'+(prix!=null?eur(Math.round(prix*100)/100):"cote indisponible")+'</div>'+
  '<p class="etiquette">Prix d\'achat conseillé <small>(cote − 20 %)</small></p><div class="est-prix">'+(ach!=null?eur(Math.round(ach*100)/100):"cote indisponible")+'</div>'+'<dl class="est-dl"><dt>Cote Cardmarket</dt><dd>'+(t!=null?eur(t):"non disponible")+'</dd><dt>Ventes du registre</dt><dd>'+(vs.length?vs.length+" vente"+(vs.length>1?"s":"")+" (du "+vs[vs.length-1].date.split("-").reverse().join("/")+" au "+vs[0].date.split("-").reverse().join("/")+")":"aucune")+'</dd></dl>'+
@@ -359,9 +359,9 @@ function calcMega(c){
  var prix=t!=null?Math.round(t*120)/100:null, ach=t!=null?Math.round(t*80)/100:null;
  var kw=c.q||(c.nom+" "+c.num+" "+(c.ext||""));
  var range=t!=null?"&_udlo="+(t*0.7).toFixed(2)+"&_udhi="+(t*0.9).toFixed(2):"";
- var rech=epn("https://www.ebay.fr/sch/i.html?_nkw="+encodeURIComponent(kw)+range,"rechercher");
- var vend=epn("https://www.ebay.fr/sch/i.html?_nkw="+encodeURIComponent(kw)+"&LH_Sold=1&LH_Complete=1"+range,"estimer");
- var sell=epn("https://www.ebay.fr/sl/sell","estimer");
+ var rech=epn("https://www.ebay.fr/sch/i.html?_nkw=&mkcid=1&mkrid=709-53476-19255-0&siteid=71&campid=5339225196&toolid=10001&mkevt=1"+encodeURIComponent(kw)+range,"rechercher");
+ var vend=epn("https://www.ebay.fr/sch/i.html?_nkw=&mkcid=1&mkrid=709-53476-19255-0&siteid=71&campid=5339225196&toolid=10001&mkevt=1"+encodeURIComponent(kw)+"&LH_Sold=1&LH_Complete=1"+range,"estimer");
+ var sell=epn("https://www.ebay.fr/sl/sell?mkcid=1&mkrid=709-53476-19255-0&siteid=71&campid=5339225196&toolid=10001&mkevt=1","estimer");
  var meth=t!=null?"Prix d'achat conseillé = cote × 0,80 ("+eur(t)+" × 0,8). Prix de revente conseillé = cote × 1,20 ("+eur(t)+" × 1,2). Les liens eBay filtrent entre "+eur(Math.round(t*70)/100)+" et "+eur(Math.round(t*90)/100)+" (cote × 0,70 à × 0,90).":"Cote non disponible : aucun prix n'est proposé. La recherche eBay se fait sans filtre de prix.";
  var img=c.img?'<img src="'+esc(c.img)+'" alt="Carte '+esc(c.nom+" "+c.num)+'" referrerpolicy="no-referrer">':'<div></div>';
  var h='<div class="est-res">'+img+'<div><h2 style="margin:0">'+esc(c.nom)+' <small>'+esc(c.num)+'</small></h2><p class="note">'+esc((SETNOM[c.set]||c.ext)+" · "+(LN[c.l]||c.l))+'</p>'+
@@ -393,4 +393,4 @@ $("e-carte").addEventListener("change",calc);
 $("e-etat").addEventListener("change",calc);
 })();
 </script>
-<script src="site-commun.js" defer></script><p class="pied-legal">Site de fan non officiel &middot; <a href="mentions-legales.html#liens">Liens affili&eacute;s</a> &middot; <a href="mentions-legales.html">Mentions l&eacute;gales</a></p><style>.pied-legal{margin:1.2rem auto 1.4rem;text-align:center;font-size:.72rem;font-weight:300;color:#7a869a;letter-spacing:.02em}.pied-legal a{color:#7a869a;text-decoration:underline}</style></body></html>
+<script src="site-commun.js?v=20261112p" defer></script><p class="pied-legal">Site de fan non officiel &middot; <a href="mentions-legales.html#liens">Liens affili&eacute;s</a> &middot; <a href="mentions-legales.html">Mentions l&eacute;gales</a></p><style>.pied-legal{margin:1.2rem auto 1.4rem;text-align:center;font-size:.72rem;font-weight:300;color:#7a869a;letter-spacing:.02em}.pied-legal a{color:#7a869a;text-decoration:underline}</style></body></html>

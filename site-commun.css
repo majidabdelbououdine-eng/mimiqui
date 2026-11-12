@@ -791,3 +791,328 @@ nav ul.menu-principal .sm-groupe>ul.sm-sous:has(.sm-groupe)>li{
 a.btn-encours{display:inline-flex;align-items:center;justify-content:center;text-align:center;text-decoration:none;font:700 .78rem/1.25 var(--f-body,inherit);letter-spacing:.03em;padding:10px 14px;border-radius:999px;cursor:pointer;width:100%;box-sizing:border-box}
 .fiche-info a.btn-encours,.fiche-info .btn-ventes{width:auto;max-width:100%;margin:10px 10px 0 0;padding:12px 22px;font-size:.85rem;letter-spacing:.08em;text-transform:uppercase}
 .liste-ventes a.btn-encours{width:auto;max-width:100%;margin-top:6px;padding:7px 12px;font-size:.72rem}
+
+/* === Menus unifiés : même thème Prix/Acheter + flyouts à droite (2026-11-12) === */
+@media (min-width:601px){
+  nav ul.menu-principal>li:not(.li-vendre)>ul.sous-menu,
+  nav ul.menu-principal ul.sm-sous{
+    background-color:rgba(255,255,255,.96)!important;
+    flex-direction:column!important;
+    flex-wrap:nowrap!important;
+    gap:0!important;
+    align-items:stretch!important;
+    height:auto!important;
+    min-height:0!important;
+    background-image:repeating-linear-gradient(0deg,rgba(0,200,255,.06) 0 1px,transparent 1px 4px)!important;
+    -webkit-backdrop-filter:blur(12px) saturate(1.3)!important;
+    backdrop-filter:blur(12px) saturate(1.3)!important;
+    border:1px solid rgba(0,210,255,.75)!important;
+    border-radius:12px!important;
+    box-shadow:0 0 14px rgba(0,200,255,.45),0 10px 26px rgba(0,0,0,.18)!important;
+    overflow:visible!important;
+  }
+  nav ul.menu-principal>li:not(.li-vendre)>ul.sous-menu{
+    display:block!important;
+    position:absolute!important;
+  }
+  nav ul.menu-principal ul.sm-sous{
+    display:none!important;
+    position:absolute!important;
+  }
+  nav ul.menu-principal .sm-groupe:hover>ul.sm-sous,
+  nav ul.menu-principal .sm-groupe.sm-ouvert>ul.sm-sous,
+  nav ul.menu-principal .sm-groupe:focus-within>ul.sm-sous{
+    display:flex!important;
+    flex-direction:column!important;
+    flex-wrap:nowrap!important;
+    gap:0!important;
+    align-items:stretch!important;
+  }
+  nav ul.menu-principal>li:not(.li-vendre)>ul.sous-menu.sm-clair,
+  nav ul.menu-principal ul.sous-menu.sm-clair,
+  nav ul.menu-principal ul.sous-menu.sm-clair ul.sm-sous{
+    background-color:rgba(255,255,255,.96)!important;
+  }
+  nav ul.menu-principal>li:not(.li-vendre)>ul.sous-menu.sm-sombre,
+  nav ul.menu-principal ul.sous-menu.sm-sombre,
+  nav ul.menu-principal ul.sous-menu.sm-sombre ul.sm-sous{
+    background-color:rgba(5,15,30,.94)!important;
+  }
+  nav ul.menu-principal>li:not(.li-vendre)>ul.sous-menu:not(.sm-sombre) a,
+  nav ul.menu-principal>li:not(.li-vendre)>ul.sous-menu:not(.sm-sombre) .sm-tog,
+  nav ul.menu-principal>li:not(.li-vendre)>ul.sous-menu:not(.sm-sombre) ul.sm-sous a{
+    color:#0b3d91!important;
+    font-weight:800!important;
+    text-shadow:0 0 1px rgba(255,255,255,.9)!important;
+  }
+  nav ul.menu-principal ul.sous-menu.sm-clair a,
+  nav ul.menu-principal ul.sous-menu.sm-clair .sm-tog,
+  nav ul.menu-principal ul.sous-menu.sm-clair ul.sm-sous a{
+    color:#0b3d91!important;
+    font-weight:800!important;
+    text-shadow:0 0 1px rgba(255,255,255,.9)!important;
+  }
+  nav ul.menu-principal ul.sous-menu.sm-sombre a,
+  nav ul.menu-principal ul.sous-menu.sm-sombre .sm-tog,
+  nav ul.menu-principal ul.sous-menu.sm-sombre ul.sm-sous a{
+    color:#f2fbff!important;
+    font-weight:800!important;
+    text-shadow:0 0 6px rgba(0,220,255,.8),0 1px 2px rgba(0,0,0,.8)!important;
+  }
+  nav ul.menu-principal .sm-groupe:hover>.sm-tog,
+  nav ul.menu-principal .sm-groupe.sm-ouvert>.sm-tog,
+  nav ul.menu-principal ul.sm-sous a:hover,
+  nav ul.menu-principal ul.sm-sous a[aria-current]{
+    background:rgba(0,200,255,.14)!important;
+  }
+
+  /* Flyouts imbriqués : toujours à droite du parent (sauf .sm-gauche si plus de place) */
+  nav ul.menu-principal .sm-groupe>ul.sm-sous,
+  nav ul.menu-principal>li:has(>a[href="cartes.html"]) .sm-groupe>ul.sm-sous,
+  nav ul.menu-principal>li:has(>a[href="cartes.html"])>ul.sous-menu .sm-groupe>ul.sm-sous,
+  nav ul.menu-principal>li:has(>a[href="cartes.html"]) .sm-groupe:hover>ul.sm-sous,
+  nav ul.menu-principal>li:has(>a[href="cartes.html"]) .sm-groupe.sm-ouvert>ul.sm-sous,
+  body.page-accueil nav ul.menu-principal>li:has(>a[href="cartes.html"]) .sm-groupe>ul.sm-sous,
+  html.page-accueil nav ul.menu-principal>li:has(>a[href="cartes.html"]) .sm-groupe>ul.sm-sous{
+    left:calc(100% - 6px)!important;
+    right:auto!important;
+    top:-.35rem!important;
+    transform:none!important;
+    columns:1!important;
+    column-gap:normal!important;
+    width:max-content!important;
+    min-width:10rem!important;
+    max-width:min(18rem,90vw)!important;
+  }
+  nav ul.menu-principal ul.sm-sous::before,
+  nav ul.menu-principal>li:has(>a[href="cartes.html"]) .sm-groupe>ul.sm-sous::before,
+  body.page-accueil nav ul.menu-principal>li:has(>a[href="cartes.html"]) .sm-groupe>ul.sm-sous::before,
+  html.page-accueil nav ul.menu-principal>li:has(>a[href="cartes.html"]) .sm-groupe>ul.sm-sous::before{
+    left:-18px!important;
+    right:auto!important;
+    width:18px!important;
+  }
+  /* Repli vers la gauche uniquement si le JS pose .sm-gauche (pas assez de place à droite) */
+  nav ul.menu-principal .sm-groupe.sm-gauche>ul.sm-sous,
+  nav ul.menu-principal>li:has(>a[href="cartes.html"]) .sm-groupe.sm-gauche>ul.sm-sous,
+  nav ul.menu-principal>li:has(>a[href="cartes.html"]) .sm-groupe.sm-gauche:hover>ul.sm-sous,
+  nav ul.menu-principal>li:has(>a[href="cartes.html"]) .sm-groupe.sm-gauche.sm-ouvert>ul.sm-sous,
+  body.page-accueil nav ul.menu-principal>li:has(>a[href="cartes.html"]) .sm-groupe.sm-gauche>ul.sm-sous,
+  html.page-accueil nav ul.menu-principal>li:has(>a[href="cartes.html"]) .sm-groupe.sm-gauche>ul.sm-sous{
+    left:auto!important;
+    right:calc(100% - 6px)!important;
+    transform:none!important;
+  }
+  nav ul.menu-principal .sm-groupe.sm-gauche>ul.sm-sous::before,
+  nav ul.menu-principal>li:has(>a[href="cartes.html"]) .sm-groupe.sm-gauche>ul.sm-sous::before{
+    left:auto!important;
+    right:-18px!important;
+    width:18px!important;
+  }
+  nav ul.menu-principal .sm-groupe>ul.sm-sous:has(.sm-groupe){
+    columns:1!important;
+    min-width:10rem!important;
+    max-width:min(18rem,90vw)!important;
+  }
+
+  nav ul.menu-principal>li:not(.li-vendre)>ul.sous-menu>li,
+  nav ul.menu-principal ul.sm-sous>li{
+    display:block!important;
+    width:100%!important;
+    flex:none!important;
+  }
+  /* Le dépliant passe au-dessus des boutons de page (PSA, cotation, etc.) */
+  header.wrap:has(nav ul.menu-principal>li:is(:hover,:focus-within,.ouvert)),
+  header.site:has(nav ul.menu-principal>li:is(:hover,:focus-within,.ouvert)){
+    z-index:30000!important;
+  }
+}
+
+
+/* === Thème UNIQUE des dépliants, toutes pages, tous niveaux (2026-11-12) === */
+html body nav ul.menu-principal ul.sous-menu,
+html body nav ul.menu-principal ul.sous-menu.sm-clair,
+html body nav ul.menu-principal ul.sous-menu.sm-sombre,
+html body nav ul.menu-principal li.li-vendre>ul.sous-menu,
+html body nav ul.menu-principal ul.sm-sous,
+html body nav ul.menu-principal ul.sous-menu.sm-clair ul.sm-sous,
+html body nav ul.menu-principal ul.sous-menu.sm-sombre ul.sm-sous{
+  background-color:rgba(255,255,255,.96)!important;
+  background-image:repeating-linear-gradient(0deg,rgba(0,200,255,.06) 0 1px,transparent 1px 4px)!important;
+  -webkit-backdrop-filter:blur(12px) saturate(1.3)!important;
+  backdrop-filter:blur(12px) saturate(1.3)!important;
+  border:1px solid rgba(0,210,255,.75)!important;
+  border-radius:12px!important;
+  box-shadow:0 0 14px rgba(0,200,255,.45),0 10px 26px rgba(0,0,0,.18)!important;
+}
+html body nav ul.menu-principal ul.sous-menu a,
+html body nav ul.menu-principal ul.sous-menu.sm-clair a,
+html body nav ul.menu-principal ul.sous-menu.sm-sombre a,
+html body nav ul.menu-principal li.li-vendre>ul.sous-menu a,
+html body nav ul.menu-principal ul.sous-menu .sm-tog,
+html body nav ul.menu-principal ul.sous-menu.sm-clair .sm-tog,
+html body nav ul.menu-principal ul.sous-menu.sm-sombre .sm-tog,
+html body nav ul.menu-principal ul.sm-sous a,
+html body header.wrap nav.top ul.sous-menu a,
+html body header.wrap nav.top ul.sm-sous a,
+html body header.wrap nav.top ul.sous-menu .sm-tog{
+  color:#0b3d91!important;
+  font-weight:800!important;
+  text-shadow:0 0 1px rgba(255,255,255,.9)!important;
+  border-bottom:0!important;
+  border-color:transparent!important;
+  text-decoration:none!important;
+}
+html body nav ul.menu-principal ul.sous-menu a:hover,
+html body nav ul.menu-principal ul.sous-menu a[aria-current],
+html body nav ul.menu-principal ul.sous-menu.sm-clair a:hover,
+html body nav ul.menu-principal ul.sous-menu.sm-sombre a:hover,
+html body nav ul.menu-principal li.li-vendre>ul.sous-menu a:hover,
+html body nav ul.menu-principal .sm-groupe:hover>.sm-tog,
+html body nav ul.menu-principal .sm-groupe.sm-ouvert>.sm-tog,
+html body nav ul.menu-principal ul.sm-sous a:hover,
+html body nav ul.menu-principal ul.sm-sous a[aria-current],
+html body header.wrap nav.top ul.sous-menu a:hover,
+html body header.wrap nav.top ul.sm-sous a:hover{
+  background:rgba(0,200,255,.14)!important;
+  color:#0b3d91!important;
+  border-bottom:0!important;
+  border-color:transparent!important;
+}
+
+/* Neutralise les styles de page (accueil.html) qui ouvraient les flyouts Cartes à gauche */
+@media (min-width:601px){
+  html body nav ul.menu-principal .sm-groupe>ul.sm-sous,
+  html body nav.top ul.menu-principal>li:has(>a[href="cartes.html"])>ul.sous-menu .sm-groupe>ul.sm-sous,
+  html body nav.top ul.menu-principal>li:has(>a[href="cartes.html"])>ul.sous-menu .sm-groupe.sm-gauche>ul.sm-sous,
+  html body nav.top ul.menu-principal>li:has(>a[href="cartes.html"]) .sm-groupe>ul.sm-sous,
+  html body nav.top ul.menu-principal>li:has(>a[href="cartes.html"]) .sm-groupe:hover>ul.sm-sous,
+  html body nav.top ul.menu-principal>li:has(>a[href="cartes.html"]) .sm-groupe.sm-ouvert>ul.sm-sous{
+    left:calc(100% - 6px)!important;
+    right:auto!important;
+    transform:none!important;
+  }
+  html body nav ul.menu-principal .sm-groupe.sm-gauche>ul.sm-sous,
+  html body nav.top ul.menu-principal>li:has(>a[href="cartes.html"])>ul.sous-menu .sm-groupe.sm-gauche>ul.sm-sous,
+  html body nav.top ul.menu-principal>li:has(>a[href="cartes.html"]) .sm-groupe.sm-gauche>ul.sm-sous,
+  html body nav.top ul.menu-principal>li:has(>a[href="cartes.html"]) .sm-groupe.sm-gauche:hover>ul.sm-sous,
+  html body nav.top ul.menu-principal>li:has(>a[href="cartes.html"]) .sm-groupe.sm-gauche.sm-ouvert>ul.sm-sous{
+    left:auto!important;
+    right:calc(100% - 6px)!important;
+    transform:none!important;
+  }
+}
+
+/* === MENU V2 (2026-11-12) : recherche, comptes de cartes, mobile hamburger, onglets registre === */
+.sm-nb{font-weight:600;opacity:.75;font-size:.85em}
+
+/* Icône et panneau de recherche dans le menu partagé */
+.nav-recherche{position:relative;margin-left:.4rem;display:flex;align-items:center}
+.nav-rech-btn{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border:1px solid rgba(0,170,240,.65);border-radius:999px;background:rgba(255,255,255,.12);color:inherit;cursor:pointer;padding:0}
+.nav-rech-btn svg{width:20px;height:20px;display:block}
+.nav-rech-btn:hover,.nav-rech-btn[aria-expanded="true"]{background:rgba(0,200,255,.16);border-color:#22d3ee}
+.nav-rech-panneau{display:none;position:absolute;right:0;top:calc(100% + 8px);width:min(28rem,92vw);background:rgba(255,255,255,.98);color:#111;border:1px solid rgba(0,210,255,.75);border-radius:12px;box-shadow:0 0 14px rgba(0,200,255,.35),0 10px 26px rgba(0,0,0,.18);padding:12px;z-index:40000}
+.nav-recherche.ouvert .nav-rech-panneau{display:block}
+.nav-rech-panneau input[type="search"]{width:100%;font:16px/1.4 var(--f-body,"Source Sans 3",sans-serif);padding:8px 12px;border:1px solid rgba(17,17,17,.2);border-radius:999px;background:#fff;color:#111}
+.nav-rech-liste{list-style:none;margin:8px 0 0;padding:0;max-height:min(60vh,420px);overflow:auto}
+.nav-rech-liste li{margin:0;border-bottom:1px solid rgba(17,17,17,.08)}
+.nav-rech-liste a{display:block;padding:8px 6px;text-decoration:none;color:#0b3d91;font-weight:700}
+.nav-rech-liste a:hover,.nav-rech-liste a:focus-visible{background:rgba(0,200,255,.14)}
+.nav-rech-liste small{display:block;font-weight:500;color:#5a5a5a;font-size:.8rem}
+.nav-rech-vide,.nav-rech-aide{margin:8px 4px 0;color:#5a5a5a;font-size:.9rem}
+
+/* Onglets Ventes passées Mimiqui (registre / archive) */
+.onglets-ventes-mimiqui{display:flex;flex-wrap:wrap;gap:8px;margin:12px auto 8px;padding:0 16px;max-width:1180px}
+.onglets-ventes-mimiqui a{font:700 12px var(--f-body,"Source Sans 3",sans-serif);letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:1px solid #111;color:#111;background:#fff;border-radius:999px;padding:8px 16px}
+.onglets-ventes-mimiqui a[aria-current="page"]{background:#111;color:#fff}
+
+/* Mobile : hamburger prioritaire sur les styles de page (index/accueil nav.top ul{display:flex}) */
+@media (max-width:799px){
+  html body nav .hamburger,
+  html body .nav-commune .hamburger,
+  html body header .hamburger{
+    display:block!important;
+    margin-left:auto;
+    z-index:40;
+  }
+  html body header.site,
+  html body header.wrap{
+    position:relative;
+  }
+  html body nav.sitenav,
+  html body nav.nav-commune,
+  html body header.wrap nav.top{
+    display:flex!important;
+    flex-wrap:wrap;
+    align-items:center;
+    gap:.4rem;
+    width:100%;
+  }
+  html body nav.nav-commune ul.menu-principal,
+  html body header.wrap nav.top ul.menu-principal,
+  html body nav.sitenav ul.menu-principal,
+  html body header nav ul.menu-principal{
+    display:none!important;
+    flex-direction:column!important;
+    align-items:stretch!important;
+    width:100%!important;
+    gap:0!important;
+    padding:.5rem 0!important;
+    background:rgba(255,255,255,.98);
+    color:#111;
+    border-radius:12px;
+    margin-top:.4rem;
+    max-height:min(80vh,calc(100dvh - 5rem));
+    overflow:auto;
+  }
+  html body nav.nav-commune.menu-ouvert ul.menu-principal,
+  html body nav.menu-ouvert ul.menu-principal,
+  html body header.wrap nav.top.menu-ouvert ul.menu-principal,
+  html body nav.sitenav.menu-ouvert ul.menu-principal{
+    display:flex!important;
+  }
+  html body nav.menu-ouvert ul.menu-principal>li,
+  html body nav.nav-commune.menu-ouvert ul.menu-principal>li{
+    display:flex!important;
+    flex-wrap:wrap!important;
+    justify-content:space-between;
+    width:100%!important;
+    border-top:1px solid rgba(17,17,17,.12);
+  }
+  html body nav.menu-ouvert ul.menu-principal>li>a{
+    color:#111!important;
+    flex:1 1 auto;
+    padding:.8rem .6rem!important;
+  }
+  html body nav.menu-ouvert .ouvre-sous{
+    font-size:1.1rem!important;
+    padding:.8rem 1rem!important;
+    color:#111!important;
+  }
+  /* Dépliants en pile, ouverts au clic (.ouvert / .sm-ouvert), pas en flyout */
+  html body nav.menu-ouvert ul.menu-principal>li>ul.sous-menu,
+  html body nav.menu-ouvert ul.menu-principal ul.sm-sous,
+  html body nav.menu-ouvert ul.menu-principal .sm-groupe>ul.sm-sous,
+  html body nav.menu-ouvert ul.menu-principal>li:has(>a[href="cartes.html"]) .sm-groupe>ul.sm-sous{
+    position:static!important;
+    left:auto!important;
+    right:auto!important;
+    top:auto!important;
+    transform:none!important;
+    width:100%!important;
+    min-width:0!important;
+    max-width:none!important;
+    display:none!important;
+    box-shadow:none!important;
+    margin:0 0 .4rem!important;
+    columns:1!important;
+  }
+  html body nav.menu-ouvert ul.menu-principal>li.ouvert>ul.sous-menu,
+  html body nav.menu-ouvert ul.menu-principal .sm-groupe.sm-ouvert>ul.sm-sous,
+  html body nav.menu-ouvert ul.menu-principal>li:has(>a[href="cartes.html"]) .sm-groupe.sm-ouvert>ul.sm-sous{
+    display:flex!important;
+    flex-direction:column!important;
+  }
+  html body nav.menu-ouvert .nav-recherche{width:100%;margin:.4rem 0}
+  html body nav.menu-ouvert .nav-rech-panneau{position:static;width:100%;box-shadow:none}
+}

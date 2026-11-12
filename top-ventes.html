@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="fr"><head>
+<meta charset="utf-8">
+<link rel="icon" type="image/webp" href="img/logo-mimiqui.webp">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<link rel="stylesheet" href="site-commun.css?v=20261112p">
+<style>
+@font-face{font-family:"Bodoni Moda";font-style:normal;font-weight:500;font-display:swap;src:url(fonts/bodoni-moda-latin-500-normal.woff2) format("woff2")}
+@font-face{font-family:"Bodoni Moda";font-style:italic;font-weight:500;font-display:swap;src:url(fonts/bodoni-moda-latin-500-italic.woff2) format("woff2")}
+@font-face{font-family:"Bodoni Moda";font-style:normal;font-weight:700;font-display:swap;src:url(fonts/bodoni-moda-latin-700-normal.woff2) format("woff2")}
+@font-face{font-family:"Source Sans 3";font-style:normal;font-weight:400;font-display:swap;src:url(fonts/source-sans-3-latin-400-normal.woff2) format("woff2")}
+@font-face{font-family:"Source Sans 3";font-style:normal;font-weight:600;font-display:swap;src:url(fonts/source-sans-3-latin-600-normal.woff2) format("woff2")}
+@font-face{font-family:"Source Sans 3";font-style:normal;font-weight:700;font-display:swap;src:url(fonts/source-sans-3-latin-700-normal.woff2) format("woff2")}
+</style>
+<meta name="description" content="Les plus grosses ventes eBay de la semaine et du mois, d’après les relevés déjà en ligne sur Le Coin de Mimiqui. Aucun prix inventé.">
+<title>Top ventes – Le Coin de Mimiqui</title>
+<link rel="canonical" href="https://mimiqui.fr/top-ventes.html">
+<style>
+:root{--bg:#ffffff;--ink:#111111;--muted:#5a5a5a;--line:rgba(17,17,17,.16);--soft:#f6f5f2;--rouge:#d0021b;--f-display:"Bodoni Moda","Didot",Georgia,serif;--f-body:"Source Sans 3","Helvetica Neue",Arial,sans-serif}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 var(--f-body)}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.etiquette{font-weight:700;font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--rouge);margin:0}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;line-height:1.1;margin:0}
+.tete{padding-block:36px 8px;display:grid;gap:12px}
+.tete h1{font-size:clamp(2.2rem,6vw,3.6rem);font-weight:500;letter-spacing:-.02em}
+.tete h1 em{color:var(--rouge)}
+.tete p{color:var(--muted);max-width:72ch;margin:0}
+.page-corps{padding:12px 0 56px}
+.page-corps h2{font-size:clamp(1.4rem,3vw,1.9rem);margin:32px 0 10px}
+.page-corps p{margin:0 0 12px;color:var(--muted)}
+.pied-legal{margin:1.2rem auto 1.4rem;text-align:center;font-size:.72rem;font-weight:300;color:#7a869a}
+.pied-legal a{color:#7a869a;text-decoration:underline}
+.cookie-info{position:fixed;left:16px;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:60;max-width:620px;margin:0 auto;background:#111;color:#fff;display:flex;gap:14px;align-items:center;padding:12px 16px;border-radius:14px;box-shadow:0 8px 30px rgba(0,0,0,.25);font:14px/1.45 var(--f-body)}
+.cookie-info[hidden]{display:none}
+.cookie-info p{margin:0;flex:1}
+.cookie-info a{color:#fff;text-decoration:underline}
+.cookie-info button{flex:none;font:700 12px var(--f-body);letter-spacing:.08em;text-transform:uppercase;background:#fff;color:#111;border:0;border-radius:999px;padding:8px 16px;cursor:pointer}
+.vue-toggle{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 18px}
+.vue-toggle button{font:700 12px var(--f-body);letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--ink);background:#fff;color:var(--ink);border-radius:999px;padding:8px 16px;cursor:pointer}
+.vue-toggle button[aria-pressed="true"]{background:var(--ink);color:#fff}
+.vue-panneau[hidden]{display:none!important}
+.liste-ventes{list-style:none;margin:16px 0 0;padding:0;display:grid;gap:10px;max-width:none}
+.liste-ventes li{display:grid;grid-template-columns:72px 1fr auto;gap:12px;align-items:center;border:1px solid var(--line);padding:8px 10px;background:#fff}
+.liste-ventes li img,.liste-ventes .no-vig{width:72px;height:72px;object-fit:cover;border-radius:4px;background:var(--soft)}
+.liste-ventes .lv-titre{font-weight:600;font-size:.95rem;line-height:1.3;text-decoration:none}
+.liste-ventes .lv-meta{font-size:.78rem;color:var(--muted)}
+.liste-ventes a.lv-lien,.liste-ventes a.btn-encours{font-size:.75rem;font-weight:700;color:var(--rouge);margin-right:8px}
+.date-vente{font:700 1.02rem/1.3 var(--f-body);color:var(--ink);display:block}
+.prix-vente{font:800 1.7rem/1.05 Arial,Helvetica,sans-serif;font-variant-numeric:tabular-nums;color:var(--ink);display:block}
+.lv-prix-bloc{text-align:right;min-width:8.5rem}
+.rang{font:700 .72rem var(--f-body);letter-spacing:.08em;color:var(--rouge);text-transform:uppercase}
+@media (max-width:560px){.liste-ventes li{grid-template-columns:64px 1fr}.lv-prix-bloc{grid-column:2;text-align:left}}
+.table-wrap{overflow:auto;margin:8px 0 8px;border:1px solid var(--line);border-radius:12px;background:#fff}
+table.ventes{width:100%;border-collapse:collapse;font-size:.95rem}
+table.ventes th,table.ventes td{padding:8px 10px;text-align:left;vertical-align:middle;border-bottom:1px solid var(--line)}
+table.ventes th{font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);background:var(--soft);font-weight:700;white-space:nowrap}
+table.ventes tr:last-child td{border-bottom:0}
+table.ventes tbody tr:hover{background:#f7fbff}
+table.ventes .rang{font:700 .72rem var(--f-body);letter-spacing:.08em;color:var(--rouge);white-space:nowrap}
+table.ventes .carte{display:flex;gap:10px;align-items:center;min-width:12rem}
+table.ventes .carte img{width:44px;height:62px;object-fit:contain;background:var(--soft);border-radius:4px;flex:none}
+table.ventes .carte .nom{font-weight:600;line-height:1.25}
+table.ventes .carte .num{display:block;font-size:.8rem;color:var(--muted);font-weight:400}
+table.ventes .prix{font:800 1.05rem/1.1 Arial,Helvetica,sans-serif;font-variant-numeric:tabular-nums;white-space:nowrap}
+table.ventes .date{white-space:nowrap}
+table.ventes a.ebay{font:700 .78rem var(--f-body);color:var(--rouge);text-decoration:none;white-space:nowrap}
+table.ventes a.ebay:hover{text-decoration:underline}
+table.ventes a.setlien{color:inherit;text-decoration:none}
+table.ventes a.setlien:hover{text-decoration:underline}
+.sources{margin:18px 0 0;padding:12px 14px;background:var(--soft);border-radius:12px;font-size:.9rem;color:var(--muted)}
+.sources ul{margin:8px 0 0;padding-left:1.2rem}
+</style>
+</head>
+<body>
+<header class="site wrap"><nav class="sitenav" aria-label="Navigation principale">
+  <a class="logo" href="index.html"><img class="logo-img" src="img/logo-mimiqui.webp" alt="" width="95" height="120" style="width:auto;height:4.2rem;object-fit:contain;transform:none">Le Coin de Mimiqui<span>.</span></a>
+  <ul class="menu-principal" id="menu-principal">
+<li><a href="index.html">Accueil</a></li>
+<li><a href="cartes.html">Cartes</a></li>
+<li><a href="cartes-generation-1.html">Pokémon</a></li>
+<li><a href="top-ventes.html">Prix</a></li>
+<li><a href="boutique.html">Acheter</a></li>
+<li><a href="vendre.html">Vendre</a></li>
+<li><a href="nouveautes.html">Nouveautés</a></li>
+<li><a href="blog.html">Blog</a></li>
+</ul>
+</nav></header>
+<main class="wrap page-corps">
+  <section class="tete">
+    <p class="etiquette">Prix · top ventes</p>
+    <h1>Top ventes</h1>
+    <p>Les ventes les plus chères déjà relevées sur le site, à choisir selon la période : la semaine (archives eBay du site, du 3 au 10 novembre 2026) ou le mois (ventes eBay.fr des pages de sets, du 12/10/2026 au 09/11/2026, hors frais de port). Aucun prix n’a été inventé.</p>
+    <div class="vue-toggle" role="tablist" aria-label="Choisir la période">
+      <button type="button" id="btn-semaine" role="tab" aria-controls="vue-semaine" aria-pressed="false">Semaine</button>
+      <button type="button" id="btn-mois" role="tab" aria-controls="vue-mois" aria-pressed="false">Mois</button>
+    </div>
+  </section>
+
+  <div id="vue-semaine" class="vue-panneau" role="tabpanel" hidden>
+    <p id="resume-semaine"></p>
+    <div id="liste-semaine"></div>
+  </div>
+
+  <div id="vue-mois" class="vue-panneau" role="tabpanel" hidden>
+    <p id="resume-mois"></p>
+    <section>
+      <h2>Ventes non gradées</h2>
+      <p id="intro-ventes"></p>
+      <div id="table-ventes"></div>
+    </section>
+    <section>
+      <h2>Ventes gradées</h2>
+      <p id="intro-grades"></p>
+      <div id="table-grades"></div>
+    </section>
+    <div id="sources-mois"></div>
+  </div>
+</main>
+<script src="data-top-ventes-semaine.js"></script>
+<script src="ventes-sets-data.js"></script>
+<script>
+(function(){
+  "use strict";
+  function e(s){return String(s==null?"":s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+  function money(v,c){
+    if(v==null) return "—";
+    try{return Number(v).toLocaleString("fr-FR",{style:"currency",currency:c||"EUR"});}
+    catch(ex){return Number(v).toLocaleString("fr-FR")+" "+(c||"");}
+  }
+  function jourISO(d){
+    if(!d) return "";
+    var t=new Date(d+"T12:00:00");
+    return isNaN(t)?d:t.toLocaleDateString("fr-FR",{day:"numeric",month:"long",year:"numeric",timeZone:"Europe/Paris"});
+  }
+  function iso(d){
+    if(!d) return "";
+    var p=String(d).split("/");
+    return p.length===3 ? p[2]+"-"+p[1]+"-"+p[0] : d;
+  }
+  function eur(p){
+    if(p==null||p==="") return "—";
+    return Number(p).toLocaleString("fr-FR",{style:"currency",currency:"EUR"});
+  }
+  function lienEbay(u, camp){
+    if(!u) return "";
+    camp=camp||"5339225196";
+    if(u.indexOf("campid=")<0) u += (u.indexOf("?")>=0?"&":"?")+"campid="+camp;
+    else if(u.indexOf("campid="+camp)<0) u=u.replace(/campid=\d+/,"campid="+camp);
+    return u;
+  }
+
+  /* Semaine : données déjà présentes dans data-top-ventes-semaine.js */
+  (function(){
+    var DATA=window.TOP_VENTES_SEMAINE||{};
+    var box=document.getElementById("resume-semaine");
+    if(box){
+      var dev=DATA.devises||{};
+      var bits=Object.keys(dev).map(function(k){return dev[k]+" vente"+(dev[k]>1?"s":"")+" en "+k;});
+      var per=DATA.periode||{};
+      box.textContent=(DATA.totalPeriode||0)+" ventes à l’unité sur la période"+(per.debut&&per.fin?" du "+jourISO(per.debut)+" au "+jourISO(per.fin):"")+(bits.length? " ("+bits.join(", ")+")":"")+". Classement : les "+(DATA.n||30)+" prix les plus élevés, devise indiquée à côté de chaque montant. Lots exclus.";
+    }
+    var list=document.getElementById("liste-semaine");
+    var ventes=DATA.ventes||[];
+    if(!list) return;
+    if(!ventes.length){ list.innerHTML="<p>Aucune vente à l’unité n’est archivée pour cette période.</p>"; return; }
+    var ul=document.createElement("ul"); ul.className="liste-ventes";
+    ventes.forEach(function(v,i){
+      var li=document.createElement("li");
+      if(v.vignette){
+        var im=document.createElement("img"); im.src=v.vignette; im.alt=""; im.loading="lazy"; li.appendChild(im);
+      } else {
+        var sp=document.createElement("span"); sp.className="no-vig"; li.appendChild(sp);
+      }
+      var mid=document.createElement("div");
+      var rang=document.createElement("div"); rang.className="rang"; rang.textContent="n° " + (i+1);
+      var a=document.createElement("a"); a.className="lv-titre"; a.href=v.href||"#";
+      a.textContent=v.nom+(v.serie?" · "+v.serie:"")+(v.num?" n° "+v.num:"");
+      var meta=document.createElement("div"); meta.className="lv-meta";
+      meta.textContent=v.titre||"";
+      mid.append(rang,a,meta);
+      if(v.url){
+        var eb=document.createElement("a"); eb.className="lv-lien"; eb.href=lienEbay(v.url); eb.target="_blank"; eb.rel="sponsored noopener";
+        eb.textContent="Annonce eBay";
+        mid.appendChild(eb);
+      }
+      if(v.encours){
+        var en=document.createElement("a"); en.className="btn-encours"; en.href=lienEbay(v.encours); en.target="_blank"; en.rel="sponsored noopener";
+        en.textContent="Voir les annonces en cours sur eBay";
+        mid.appendChild(en);
+      }
+      var pr=document.createElement("div"); pr.className="lv-prix-bloc";
+      var dt=document.createElement("time"); dt.className="date-vente"; dt.dateTime=v.date||""; dt.textContent=jourISO(v.date);
+      var px=document.createElement("b"); px.className="prix-vente"; px.textContent=money(v.prix,v.devise);
+      pr.append(dt,px);
+      li.append(mid,pr);
+      ul.appendChild(li);
+    });
+    list.appendChild(ul);
+  })();
+
+  /* Mois : données déjà présentes dans ventes-sets-data.js */
+  (function(){
+    var DATA=window.VENTES_SETS||{};
+    var CAMPID=DATA.campid||"5339225196";
+    function ligne(v,i,avecGrade){
+      var img=v.img?'<img src="'+e(v.img)+'" alt="" loading="lazy" width="44" height="62">':'';
+      var grade=v.grade?e(v.grade):"—";
+      var page=v.page||"#";
+      var ebay=lienEbay(v.u, CAMPID);
+      var lien=ebay?'<a class="ebay" href="'+e(ebay)+'" target="_blank" rel="sponsored noopener">Voir sur eBay</a>':'—';
+      return '<tr>'+
+        '<td class="rang">n° '+(i+1)+'</td>'+
+        '<td><div class="carte">'+img+'<div><a class="setlien" href="'+e(page)+'"><span class="nom">'+e(v.nom)+'</span><span class="num">'+e(v.num)+'</span></a></div></div></td>'+
+        '<td><a class="setlien" href="'+e(page)+'">'+e(v.set)+'</a></td>'+
+        '<td class="prix">'+eur(v.p)+'</td>'+
+        '<td class="date"><time datetime="'+e(iso(v.d))+'">'+e(v.d)+'</time></td>'+
+        (avecGrade?'<td>'+grade+'</td>':'')+
+        '<td>'+lien+'</td>'+
+      '</tr>';
+    }
+    function table(rows, avecGrade){
+      if(!rows||!rows.length) return "<p>Aucune vente relevée dans les pages de sets pour cette catégorie.</p>";
+      var th='<thead><tr><th>Rang</th><th>Carte</th><th>Set</th><th>Prix</th><th>Date</th>'+(avecGrade?'<th>Grade</th>':'')+'<th>Annonce</th></tr></thead>';
+      var body=rows.map(function(v,i){return ligne(v,i,avecGrade)}).join("");
+      return '<div class="table-wrap"><table class="ventes">'+th+'<tbody>'+body+'</tbody></table></div>';
+    }
+    var nV=DATA.nVentes||0, nG=DATA.nGrades||0, topN=DATA.topN||50;
+    var r=document.getElementById("resume-mois");
+    if(r) r.textContent=(nV+nG)+" ventes relevées au total (du "+(DATA.dmin||"")+" au "+(DATA.dmax||"")+") : "+nV+" non gradées et "+nG+" gradées. Classement : les "+topN+" prix les plus élevés de chaque catégorie.";
+    var iv=document.getElementById("intro-ventes"); if(iv) iv.textContent="Les "+Math.min(topN, (DATA.ventes||[]).length)+" ventes non gradées les plus chères, sur "+nV+" relevées.";
+    var ig=document.getElementById("intro-grades"); if(ig) ig.textContent="Les "+Math.min(topN, (DATA.grades||[]).length)+" ventes gradées les plus chères, sur "+nG+" relevées.";
+    document.getElementById("table-ventes").innerHTML=table(DATA.ventes||[], false);
+    document.getElementById("table-grades").innerHTML=table((DATA.grades||[]).slice(0, topN), true);
+    var s=DATA.sources||[];
+    var box=document.getElementById("sources-mois");
+    if(box){
+      var lis=s.map(function(x){
+        return "<li><a href=\""+e(x.file)+"\">"+e(x.set)+"</a> — "+x.ventes+" vente"+(x.ventes>1?"s":"")+" non gradée"+(x.ventes>1?"s":"")+", "+x.grades+" gradée"+(x.grades>1?"s":"")+(x.dmin&&x.dmax?" (du "+e(x.dmin)+" au "+e(x.dmax)+")":"")+".</li>";
+      }).join("");
+      box.innerHTML='<div class="sources"><p>Sources : pages de sets locales, prix eBay.fr hors frais de port, aucun montant inventé.</p><ul>'+lis+"</ul></div>";
+    }
+  })();
+
+  function montrer(vue){
+    vue = (vue==="mois")?"mois":"semaine";
+    document.getElementById("vue-semaine").hidden = vue!=="semaine";
+    document.getElementById("vue-mois").hidden = vue!=="mois";
+    document.getElementById("btn-semaine").setAttribute("aria-pressed", vue==="semaine"?"true":"false");
+    document.getElementById("btn-mois").setAttribute("aria-pressed", vue==="mois"?"true":"false");
+    try{
+      var u=new URL(location.href);
+      u.searchParams.set("vue", vue);
+      history.replaceState(null,"",u.pathname+u.search+u.hash);
+    }catch(ex){}
+  }
+  document.getElementById("btn-semaine").addEventListener("click",function(){montrer("semaine");});
+  document.getElementById("btn-mois").addEventListener("click",function(){montrer("mois");});
+  var q="";
+  try{ q=(new URLSearchParams(location.search).get("vue")||"").toLowerCase(); }catch(ex){}
+  montrer(q==="mois"?"mois":"semaine");
+})();
+</script>
+<footer class="wrap">Le Coin de Mimiqui · site de fan non officiel, sans lien avec Nintendo, Game Freak ou The Pokémon Company. · <a href="confidentialite.html">Cookies et vie privée</a> · <a href="a-propos.html">À propos / Contact</a></footer>
+<script>(function(){var h=document.querySelector("header.wrap, header.site");if(!h)return;function m(){document.documentElement.style.setProperty("--hh",h.offsetHeight+"px")}m();if(window.ResizeObserver)new ResizeObserver(m).observe(h);})();</script>
+<div class="cookie-info" id="cookie-info" hidden role="region" aria-label="Cookies">
+  <p>Ce site ne dépose aucun cookie publicitaire ni de mesure d’audience. Les liens eBay, Amazon et Instagram mènent vers des sites qui ont leurs propres cookies. <a href="confidentialite.html">En savoir plus</a></p>
+  <button type="button" id="cookie-ok">D’accord</button>
+</div>
+<script>(function(){var b=document.getElementById("cookie-info");if(!b)return;var k="coin-mimiqui-info-cookies",vu=false;try{vu=localStorage.getItem(k)==="1"}catch(e){}if(!vu)b.hidden=false;document.getElementById("cookie-ok").addEventListener("click",function(){b.hidden=true;try{localStorage.setItem(k,"1")}catch(e){}});})();</script>
+<script src="site-commun.js?v=20261112p" defer></script>
+<p class="pied-legal">Site de fan non officiel &middot; <a href="mentions-legales.html#liens">Liens affiliés</a> &middot; <a href="mentions-legales.html">Mentions légales</a> &middot; <a href="a-propos.html">À propos / Contact</a></p>
+</body></html>
