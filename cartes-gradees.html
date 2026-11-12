@@ -3,7 +3,7 @@
 <meta charset="utf-8">
 <link rel="icon" type="image/webp" href="img/logo-mimiqui.webp">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<link rel="stylesheet" href="site-commun.css?v=20261112z">
+<link rel="stylesheet" href="site-commun.css?v=20261112ab">
 <style>
 @font-face{font-family:"Bodoni Moda";font-style:normal;font-weight:500;font-display:swap;src:url(fonts/bodoni-moda-latin-500-normal.woff2) format("woff2")}
 @font-face{font-family:"Bodoni Moda";font-style:italic;font-weight:500;font-display:swap;src:url(fonts/bodoni-moda-latin-500-italic.woff2) format("woff2")}
@@ -13,7 +13,7 @@
 @font-face{font-family:"Source Sans 3";font-style:normal;font-weight:700;font-display:swap;src:url(fonts/source-sans-3-latin-700-normal.woff2) format("woff2")}
 </style>
 <meta name="description" content="Ventes de cartes Pokémon gradées (PSA, CGC et autres) relevées sur eBay.fr dans les pages de sets du Coin de Mimiqui, classées par prix.">
-<title>Cartes gradées PSA – Le Coin de Mimiqui</title>
+<title>Cartes gradées PSA : cartes Pokémon, cotes et prix – Le Coin de Mimiqui</title>
 <link rel="canonical" href="https://mimiqui.fr/cartes-gradees.html">
 <style>
 :root{--bg:#ffffff;--ink:#111111;--muted:#5a5a5a;--line:rgba(17,17,17,.16);--soft:#f6f5f2;--rouge:#d0021b;--f-display:"Bodoni Moda","Didot",Georgia,serif;--f-body:"Source Sans 3","Helvetica Neue",Arial,sans-serif}
@@ -79,7 +79,7 @@ table.ventes a.setlien:hover{text-decoration:underline}
   table.ventes th,table.ventes td{padding:7px 8px}
 }
 </style>
-</head>
+<meta property="og:type" content="website"><meta property="og:site_name" content="Le Coin de Mimiqui"><meta property="og:title" content="Cartes gradées PSA : cartes Pokémon, cotes et prix – Le Coin de Mimiqui"><meta property="og:description" content="Ventes de cartes Pokémon gradées (PSA, CGC et autres) relevées sur eBay.fr dans les pages de sets du Coin de Mimiqui, classées par prix."><meta property="og:url" content="https://mimiqui.fr/cartes-gradees.html"><meta property="og:image" content="https://mimiqui.fr/img/logo-mimiqui.webp"><meta property="og:locale" content="fr_FR"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Cartes gradées PSA : cartes Pokémon, cotes et prix – Le Coin de Mimiqui"><meta name="twitter:description" content="Ventes de cartes Pokémon gradées (PSA, CGC et autres) relevées sur eBay.fr dans les pages de sets du Coin de Mimiqui, classées par prix."><meta name="twitter:image" content="https://mimiqui.fr/img/logo-mimiqui.webp"><script type="application/ld+json" id="mq-jsonld">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://mimiqui.fr/"},{"@type":"ListItem","position":2,"name":"Cartes gradées PSA","item":"https://mimiqui.fr/cartes-gradees.html"}]}</script></head>
 <body>
 <header class="site wrap"><nav class="sitenav" aria-label="Navigation principale">
   <a class="logo" href="index.html"><img class="logo-img" src="img/logo-mimiqui.webp" alt="" width="95" height="120" style="width:auto;height:4.2rem;object-fit:contain;transform:none">Le Coin de Mimiqui<span>.</span></a>
@@ -132,7 +132,7 @@ table.ventes a.setlien:hover{text-decoration:underline}
     return u;
   }
   function ligne(v,i,avecGrade){
-    var img=v.img?'<img src="'+e(v.img)+'" alt="" loading="lazy" width="44" height="62">':'';
+    var img=v.img?'<img decoding="async" src="'+e(v.img)+'" alt="" loading="lazy" width="44" height="62">':'';
     var grade=v.grade?e(v.grade):"—";
     var page=v.page||"#";
     var ebay=lienEbay(v.u);
@@ -186,6 +186,6 @@ table.ventes a.setlien:hover{text-decoration:underline}
   <button type="button" id="cookie-ok">D’accord</button>
 </div>
 <script>(function(){var b=document.getElementById("cookie-info");if(!b)return;var k="coin-mimiqui-info-cookies",vu=false;try{vu=localStorage.getItem(k)==="1"}catch(e){}if(!vu)b.hidden=false;document.getElementById("cookie-ok").addEventListener("click",function(){b.hidden=true;try{localStorage.setItem(k,"1")}catch(e){}});})();</script>
-<script src="site-commun.js?v=20261112z" defer></script>
+<script src="site-commun.js?v=20261112ab" defer></script>
 <p class="pied-legal">Site de fan non officiel &middot; <a href="mentions-legales.html#liens">Liens affiliés</a> &middot; <a href="mentions-legales.html">Mentions légales</a> &middot; <a href="a-propos.html">À propos / Contact</a></p>
 </body></html>

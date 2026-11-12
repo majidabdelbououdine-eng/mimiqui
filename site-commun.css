@@ -1262,3 +1262,49 @@ article.card>.mq-btns-grille{margin-top:auto}
 .mq-btns-grille>a.btn-ebay.btn-ebay-grille:not(.btn-ebay-recherche){background:#0b3d91!important}
 .mq-btns-grille>a.btn-ebay.btn-ebay-grille:not(.btn-ebay-recherche):hover,
 .mq-btns-grille>a.btn-ebay.btn-ebay-grille:not(.btn-ebay-recherche):focus-visible{background:#072e6e!important}
+
+
+/* Accueil : encart publicité bonnes affaires */
+.promo-ba{margin:1.2rem auto 0;padding:1.4rem 0 1.6rem;border-top:1px solid rgba(17,17,17,.12);border-bottom:1px solid rgba(17,17,17,.12);background:#f6f5f2}
+.promo-ba::before{content:"";display:block;position:relative}
+.promo-ba-entete{text-align:center;margin:0 auto 1.1rem;max-width:40rem}
+.promo-ba-entete .etiquette{font-weight:700;font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--rouge,#d0021b);margin:0 0 .35rem;font-family:var(--texte-font,"Source Sans 3",Arial,sans-serif)}
+.promo-ba-entete h2{font-family:var(--titre-font,"Bodoni Moda",Georgia,serif);font-size:clamp(1.5rem,3.5vw,2.2rem);margin:0 0 .4rem;font-weight:500;color:#111}
+.promo-ba-entete p{margin:0 0 1rem;font-family:var(--texte-font,"Source Sans 3",Arial,sans-serif);color:#5a5a5a}
+.promo-ba-grille{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.promo-ba-card{display:grid;grid-template-columns:72px 1fr;gap:10px;align-items:start;background:#fff;border:1px solid rgba(17,17,17,.16);border-radius:12px;padding:10px;color:#111}
+.promo-ba-visuel img{width:72px;height:auto;aspect-ratio:63/88;object-fit:cover;display:block;background:#f6f5f2}
+.promo-ba-info h3{font:700 1rem/1.2 var(--texte-font,"Source Sans 3",Arial,sans-serif);margin:0 0 4px}
+.promo-ba-meta,.promo-ba-port{margin:0 0 4px;font-size:.78rem;color:#5a5a5a}
+.promo-ba-prix{margin:0 0 4px;font-variant-numeric:tabular-nums}
+.promo-ba-prix b{font:700 1.15rem/1 var(--titre-font,"Bodoni Moda",Georgia,serif)}
+.promo-ba-prix span{color:#5a5a5a;font-size:.85rem;margin-left:.25rem}
+.promo-ba-badge{display:inline-block;margin-left:.35rem;background:var(--rouge,#d0021b);color:#fff;font:700 .72rem/1 var(--texte-font,"Source Sans 3",Arial,sans-serif);padding:.2rem .4rem;border-radius:999px}
+.promo-ba-lien{font:700 .8rem/1.2 var(--texte-font,"Source Sans 3",Arial,sans-serif);color:var(--rouge,#d0021b);text-decoration:none}
+.promo-ba-lien:hover{text-decoration:underline}
+@media (max-width:960px){.promo-ba-grille{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.promo-ba-grille{grid-template-columns:1fr}}
+
+
+/* Page Mon compte (abonnement Stripe) */
+.mq-compte{max-width:42rem;margin:0 auto 3rem;font-family:var(--texte-font,"Source Sans 3",Arial,sans-serif)}
+.mq-compte .tete{margin:1.4rem 0 1.6rem}
+.mq-compte h1{font-family:var(--titre-font,"Bodoni Moda",Georgia,serif);font-size:clamp(1.8rem,4vw,2.6rem);font-weight:500;margin:.2rem 0 .6rem}
+.mq-compte h1 em{font-style:italic;color:var(--rouge,#d0021b)}
+.mq-compte h2{font-family:var(--titre-font,"Bodoni Moda",Georgia,serif);font-size:1.4rem;font-weight:500;margin:1.6rem 0 .6rem}
+.mq-etat{border:1px solid rgba(17,17,17,.16);border-radius:12px;padding:1.1rem 1.2rem;background:#fff;margin:0 0 1.2rem}
+.mq-etat p{margin:0 0 .4rem}
+.mq-etat .mq-etat-label{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:#5a5a5a}
+.mq-etat[data-etat="ok"] .mq-etat-valeur{color:#0a7a32;font-weight:700}
+.mq-etat[data-etat="off"] .mq-etat-valeur{color:var(--rouge,#d0021b);font-weight:700}
+.mq-compte-actions{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 1.2rem}
+.mq-compte .btn-pill.rouge{text-decoration:none}
+.mq-compte .btn-pill[aria-disabled="true"],.mq-compte .btn-pill.attente{opacity:.7;cursor:not-allowed;background:#eee;color:#555;border-color:#ccc}
+.mq-compte form{display:grid;gap:8px;margin:0 0 1rem;max-width:28rem}
+.mq-compte label{font-weight:700;font-size:.85rem}
+.mq-compte input[type=email]{font:inherit;padding:.7rem .9rem;border:1px solid #111;border-radius:8px}
+.mq-compte button[type=submit]{border:0;background:var(--rouge,#d0021b);color:#fff;font-weight:700;border-radius:999px;padding:.7rem 1.3rem;cursor:pointer;font-family:inherit;justify-self:start}
+.mq-compte .mq-note{font-size:.9rem;color:#5a5a5a;line-height:1.45}
+.mq-compte .mq-msg{margin:.4rem 0 0;font-weight:600}
+.mq-compte [hidden]{display:none!important}
+
