@@ -481,11 +481,35 @@ header.wrap:has(nav ul.menu-principal>li:is(:hover,:focus-within,.ouvert)>a[href
 <link rel="stylesheet" href="accueil-apercu.css?v=20261107b">
 <style id="accueil-ajustements-20261112">
 @media (min-width:701px){
-  html body #fenetre-defilante{transform:translate(-50%,calc(-50% + 113px))}
+  html body #fenetre-defilante{top:232px!important;transform:none!important}
 }
-.ap-accueil .promo-ba{max-width:none;margin-left:0;margin-right:0;width:100%;box-sizing:border-box}
-.ap-accueil .promo-ba-grille{grid-template-columns:1fr!important}
+.promo-ba-grille{grid-template-columns:repeat(4,minmax(200px,1fr))!important;overflow-x:auto}
+@media (max-width:800px){
+  .promo-ba-grille{display:flex!important;grid-template-columns:none!important;overflow-x:auto;-webkit-overflow-scrolling:touch;scroll-snap-type:x mandatory;gap:12px}
+  .promo-ba-grille .promo-ba-card{flex:0 0 min(260px,80vw);scroll-snap-align:start}
+}
 </style>
+<script>
+(function(){
+  function place(){
+    if(window.matchMedia&&!matchMedia("(min-width:701px)").matches)return;
+    var w=document.getElementById("fenetre-defilante");
+    var h=document.querySelector("header.wrap,header.site,body>header");
+    if(!w||!h)return;
+    var top=Math.round(h.getBoundingClientRect().bottom+window.scrollY+20);
+    w.style.setProperty("top",top+"px","important");
+    w.style.setProperty("transform","none","important");
+  }
+  function go(){
+    place();
+    var n=0,t=setInterval(function(){place();if(document.getElementById("fenetre-defilante")&&++n>8)clearInterval(t);},150);
+    setTimeout(function(){clearInterval(t);place();},4000);
+    window.addEventListener("resize",place);
+  }
+  if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",go);
+  else go();
+})();
+</script>
 <section class="ap-accueil ap-avec-pastilles" aria-label="Cote et dernières ventes">
   <div class="ap-cherche">
     <h2>Combien vaut ma carte ?</h2>
@@ -496,6 +520,7 @@ header.wrap:has(nav ul.menu-principal>li:is(:hover,:focus-within,.ouvert)>a[href
     </form>
   </div>
   
+</section>
 <section class="wrap promo-ba" aria-labelledby="promo-ba-titre">
   <div class="promo-ba-entete">
     <p class="etiquette">Bonnes affaires</p>
@@ -554,6 +579,7 @@ header.wrap:has(nav ul.menu-principal>li:is(:hover,:focus-within,.ouvert)>a[href
     </article>
   </div>
 </section>
+<section class="ap-accueil ap-avec-pastilles" aria-label="Cote et dernières ventes">
 <div class="ap-ventes" id="dernieres-ventes">
     <div class="ap-entete">
       <h2 id="dv-titre">Dernières ventes réalisées</h2>
