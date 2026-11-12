@@ -5,18 +5,18 @@ var __acc=/(\/|\/index\.html?)$/i.test(location.pathname);
 (function(){if(document.getElementById('echelle-site'))return;var s=document.createElement('style');s.id='echelle-site';s.textContent='html{font-size:106%!important}';(document.head||document.documentElement).appendChild(s);})();
 
 /* effets holographiques (holo.css / holo.js) */
-(function(){if(document.getElementById('holo-css'))return;var v='20261112af';var l=document.createElement('link');l.id='holo-css';l.rel='stylesheet';l.href='holo.css?v='+v;(document.head||document.documentElement).appendChild(l);var s=document.createElement('script');s.id='holo-js';s.src='holo.js?v='+v;s.defer=true;(document.head||document.documentElement).appendChild(s);})();
+(function(){if(document.getElementById('holo-css'))return;var v='20261112ag';var l=document.createElement('link');l.id='holo-css';l.rel='stylesheet';l.href='holo.css?v='+v;(document.head||document.documentElement).appendChild(l);var s=document.createElement('script');s.id='holo-js';s.src='holo.js?v='+v;s.defer=true;(document.head||document.documentElement).appendChild(s);})();
 /* maquette-pro : surcharge chargee apres holo.css */
-(function(){var v='20261112af';function go(){if(document.getElementById('maquette-pro-css'))return;var l=document.createElement('link');l.id='maquette-pro-css';l.rel='stylesheet';l.href='maquette-pro.css?v='+v;var h=document.getElementById('holo-css');if(h&&h.parentNode){if(h.nextSibling)h.parentNode.insertBefore(l,h.nextSibling);else h.parentNode.appendChild(l);}else{(document.head||document.documentElement).appendChild(l);}}go();if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',go);setTimeout(go,50);})();
+(function(){var v='20261112ag';function go(){if(document.getElementById('maquette-pro-css'))return;var l=document.createElement('link');l.id='maquette-pro-css';l.rel='stylesheet';l.href='maquette-pro.css?v='+v;var h=document.getElementById('holo-css');if(h&&h.parentNode){if(h.nextSibling)h.parentNode.insertBefore(l,h.nextSibling);else h.parentNode.appendChild(l);}else{(document.head||document.documentElement).appendChild(l);}}go();if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',go);setTimeout(go,50);})();
 /* i18n FR / EN / JA */
-(function(){if(document.getElementById('i18n-js'))return;var v='20261112af';var page=(location.pathname.split('/').pop()||'index.html').toLowerCase();var lang='fr';try{var q=new URLSearchParams(location.search);var l=q.get('uilang')||((page!=='carte-pikachu.html')?q.get('lang'):'')||localStorage.getItem('mimiqui-lang')||'fr';if(/^(fr|en|ja)$/.test(l))lang=l;}catch(e){}document.documentElement.setAttribute('lang',lang==='ja'?'ja':lang==='en'?'en':'fr');if(lang!=='fr'){var h=document.createElement('style');h.id='i18n-hide';h.textContent='html:not(.i18n-ready) body{opacity:0}';(document.head||document.documentElement).appendChild(h);setTimeout(function(){var x=document.getElementById('i18n-hide');if(x&&x.parentNode)x.parentNode.removeChild(x);document.documentElement.classList.add('i18n-ready');},400);}function add(src,id){var s=document.createElement('script');s.id=id;s.src=src;s.async=false;(document.head||document.documentElement).appendChild(s);}if(lang==='en')add('i18n-en.js?v='+v,'i18n-en');if(lang==='ja')add('i18n-ja.js?v='+v,'i18n-ja');add('i18n.js?v='+v,'i18n-js');})();
+(function(){if(document.getElementById('i18n-js'))return;var v='20261112ag';var page=(location.pathname.split('/').pop()||'index.html').toLowerCase();var lang='fr';try{var q=new URLSearchParams(location.search);var l=q.get('uilang')||((page!=='carte-pikachu.html')?q.get('lang'):'')||localStorage.getItem('mimiqui-lang')||'fr';if(/^(fr|en|ja)$/.test(l))lang=l;}catch(e){}document.documentElement.setAttribute('lang',lang==='ja'?'ja':lang==='en'?'en':'fr');if(lang!=='fr'){var h=document.createElement('style');h.id='i18n-hide';h.textContent='html:not(.i18n-ready) body{opacity:0}';(document.head||document.documentElement).appendChild(h);setTimeout(function(){var x=document.getElementById('i18n-hide');if(x&&x.parentNode)x.parentNode.removeChild(x);document.documentElement.classList.add('i18n-ready');},400);}function add(src,id){var s=document.createElement('script');s.id=id;s.src=src;s.async=false;(document.head||document.documentElement).appendChild(s);}if(lang==='en')add('i18n-en.js?v='+v,'i18n-en');if(lang==='ja')add('i18n-ja.js?v='+v,'i18n-ja');add('i18n.js?v='+v,'i18n-js');})();
 
 (function(){
   "use strict";
   var page=(location.pathname.split('/').pop()||'index.html').toLowerCase();
   if(page==='accueil.html')page='index.html';
 
-  var SITE_CACHE="20261112af";
+  var SITE_CACHE="20261112ag";
   var EBAY_ENCOURS="https://www.ebay.fr/sch/i.html?_nkw=carte%20Pok%C3%A9mon&mkcid=1&mkrid=709-53476-19255-0&siteid=71&campid=5339225196&customid=encours-menu&toolid=10001&mkevt=1";
   var SERIES_MEGA=[
     {t:"Règne Delta",n:141,s:[["Française","regne-delta.html",141],["Japonaise","regne-delta-ja.html",113]]},
@@ -1233,6 +1233,11 @@ if(document.readyState==='loading') document.addEventListener('DOMContentLoaded'
   function aAcces(){
     try{ return localStorage.getItem(KEY)==="ok"; }catch(e){ return false; }
   }
+  try{ document.documentElement.classList.toggle("mq-abonne", aAcces()); }catch(e){}
+  window.MIMIQUI_ABO = window.MIMIQUI_ABO || {};
+  window.MIMIQUI_ABO.aAcces = aAcces;
+  window.MIMIQUI_ABO.KEY = KEY;
+  window.MIMIQUI_ABO.STRIPE = STRIPE;
   function tr(s){
     try{
       if(window.MIMIQUI_I18N && typeof window.MIMIQUI_I18N.t==="function"){
@@ -1314,12 +1319,13 @@ if(document.readyState==='loading') document.addEventListener('DOMContentLoaded'
     var focus=fond.querySelector(".mq-abo-btn");
     if(focus) focus.focus();
   }
+  window.MIMIQUI_ABO.ouvrir = ouvrirFenetre;
   function masquerDansFiche(vin){
     if(!vin || aAcces() || vin.querySelector(".mq-paywall")) return;
-    var nodes=[], seen={};
+    var nodes=[], seen=[];
     function add(n){
-      if(!n || seen[n] || (n.classList && n.classList.contains("vp-pied"))) return;
-      seen[n]=1; nodes.push(n);
+      if(!n || seen.indexOf(n)>=0 || (n.classList && n.classList.contains("vp-pied"))) return;
+      seen.push(n); nodes.push(n);
     }
     add(vin.querySelector(".vp-hb"));
     var hs=vin.querySelectorAll("h4");
@@ -1499,6 +1505,39 @@ if(document.readyState==='loading') document.addEventListener('DOMContentLoaded'
 
 (function(){
   "use strict";
+  var SEL=[
+    ".liste-ventes li .prix-vente",
+    ".derniere-vente:not(.vide) .prix-vente",
+    ".ep-v a",
+    ".ep-dep-in a",
+    "#fr-cartes li.fv b",
+    "#ja-cartes li.fv b",
+    "#en-cartes li.fv b",
+    "#ventes li:not(.groupe-v):not(.sans) b",
+    "#par-pays .rc ul li b",
+    "#par-pays .rc .rr",
+    "#ap-liste .ap-meta strong",
+    ".ap-liste .ap-meta strong",
+    "li.vente > .p",
+    "li.av-carte .av-meta strong",
+    "table.ventes td.prix"
+  ].join(",");
+
+  function aAcces(){
+    try{
+      if(window.MIMIQUI_ABO && typeof window.MIMIQUI_ABO.aAcces==="function") return window.MIMIQUI_ABO.aAcces();
+      return localStorage.getItem("mimiqui_acces")==="ok";
+    }catch(e){ return false; }
+  }
+  function ouvrirAbo(){
+    try{
+      if(window.MIMIQUI_ABO && typeof window.MIMIQUI_ABO.ouvrir==="function"){
+        window.MIMIQUI_ABO.ouvrir();
+        return;
+      }
+    }catch(e){}
+    location.href="https://buy.stripe.com/aFa9AVcwYdTOgDcdez67S00";
+  }
   function aUnPrix(el){
     var t=(el.textContent||"").replace(/\s+/g," ").trim();
     if(!t) return false;
@@ -1508,20 +1547,63 @@ if(document.readyState==='loading') document.addEventListener('DOMContentLoaded'
     if(/^0\s*ventes?$/i.test(t)) return false;
     return /\d/.test(t);
   }
+  function ignore(el){
+    if(!el || !el.closest) return true;
+    if(el.closest("#vp-in, .vp-in, .mq-paywall, .mq-paywall-veil, .mq-abo-fen, .mq-abo-fond")) return true;
+    if(el.closest("a.btn-ebay, a.eb-sous, a.pc-btn, .mq-btns-grille")) return true;
+    return false;
+  }
+  function assurerFlou(el){
+    if(!el) return;
+    var kids=el.children;
+    for(var i=0;i<kids.length;i++){
+      if(kids[i].classList && kids[i].classList.contains("mq-prix-masque")) return;
+    }
+    var wrap=document.createElement("span");
+    wrap.className="mq-prix-masque";
+    while(el.firstChild) wrap.appendChild(el.firstChild);
+    el.appendChild(wrap);
+  }
+  function retirerFlou(el){
+    if(!el) return;
+    var kids=el.children;
+    var w=null;
+    for(var i=0;i<kids.length;i++){
+      if(kids[i].classList && kids[i].classList.contains("mq-prix-masque")){ w=kids[i]; break; }
+    }
+    if(!w) return;
+    while(w.firstChild) el.insertBefore(w.firstChild, w);
+    el.removeChild(w);
+  }
   function poser(el, ok){
     if(!el) return;
-    if(ok) el.classList.add("mq-cadenas");
-    else el.classList.remove("mq-cadenas");
+    if(ignore(el)){
+      el.classList.remove("mq-cadenas","mq-verrou");
+      retirerFlou(el);
+      return;
+    }
+    if(ok && !aAcces()){
+      el.classList.add("mq-cadenas","mq-verrou");
+      assurerFlou(el);
+    }else{
+      el.classList.remove("mq-verrou");
+      retirerFlou(el);
+      el.classList.remove("mq-cadenas");
+    }
   }
   function marquerCadenas(){
-    /* jamais de cadenas sur un bouton (Ventes réalisées, recherche, Achat immédiat) */
     var btns=document.querySelectorAll("a.btn-ebay, a.eb-sous, a.pc-btn, .mq-btns-grille a");
-    for(var i=0;i<btns.length;i++) btns[i].classList.remove("mq-cadenas");
+    for(var i=0;i<btns.length;i++){
+      btns[i].classList.remove("mq-cadenas","mq-verrou");
+      retirerFlou(btns[i]);
+    }
+
+    var nodes=document.querySelectorAll(SEL);
+    for(var s=0;s<nodes.length;s++) poser(nodes[s], aUnPrix(nodes[s]));
 
     var tds=document.querySelectorAll('#tableau td[data-l="Prix le plus vendu"], #tableau td[data-l="Plus bas"], #tableau td[data-l="Plus haut"]');
     for(var j=0;j<tds.length;j++) poser(tds[j], aUnPrix(tds[j]));
 
-    /* Cotation : seulement les chiffres eBay de ventes (pas la cote, pas les annonces) */
     var dts=document.querySelectorAll("dl.chiffres dt, .chiffres dt");
     var lab=/eBay\s*:\s*(plus haute vente|vente la plus basse)|vente la plus (haute|basse)|plus haute vente|dernière vente/i;
     for(var k=0;k<dts.length;k++){
@@ -1531,7 +1613,6 @@ if(document.readyState==='loading') document.addEventListener('DOMContentLoaded'
       if(dd && dd.tagName==="DD") poser(dd, aUnPrix(dd) && !dd.classList.contains("na"));
     }
 
-    /* Journal des relevés : colonnes eBay plus haute / plus basse vente */
     var tables=document.querySelectorAll(".journal table, .journal-box table");
     for(var ti=0;ti<tables.length;ti++){
       var ths=tables[ti].querySelectorAll("thead th, tr:first-child th");
@@ -1550,7 +1631,6 @@ if(document.readyState==='loading') document.addEventListener('DOMContentLoaded'
       }
     }
 
-    /* « Ventes ce mois » : cadenas seulement s'il y a au moins une vente chiffrée */
     var vms=document.querySelectorAll(".cm-v.vm, [data-vm]");
     for(var v=0;v<vms.length;v++){
       var el=vms[v];
@@ -1558,7 +1638,24 @@ if(document.readyState==='loading') document.addEventListener('DOMContentLoaded'
       poser(el, aUnPrix(el) && !/^…$/.test(t) && !/aucune vente/i.test(t));
     }
   }
+  function cibleVerrou(el){
+    if(!el || !el.closest) return null;
+    var v=el.closest(".mq-verrou");
+    if(v && !ignore(v)) return v;
+    var n=el.closest(SEL);
+    if(n && !ignore(n) && aUnPrix(n) && !aAcces()) return n;
+    return null;
+  }
+  function onLockEvent(ev){
+    if(aAcces()) return;
+    var t=cibleVerrou(ev.target);
+    if(!t) return;
+    ev.preventDefault();
+    ev.stopPropagation();
+    ouvrirAbo();
+  }
   function demarrer(){
+    try{ document.documentElement.classList.toggle("mq-abonne", aAcces()); }catch(e){}
     marquerCadenas();
     if(window.MutationObserver&&document.body){
       var t=0;
@@ -1570,6 +1667,7 @@ if(document.readyState==='loading') document.addEventListener('DOMContentLoaded'
       obs.observe(document.body,{childList:true,subtree:true});
     }
   }
+  document.addEventListener("click", onLockEvent, true);
   if(document.readyState==="loading") document.addEventListener("DOMContentLoaded", demarrer);
   else demarrer();
 })();

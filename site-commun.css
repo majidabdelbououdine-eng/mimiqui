@@ -1197,26 +1197,44 @@ html body header.wrap nav.top ul.sm-sous a:hover{
     flex:1 1 100%;
   }
 }
-/* cadenas uniquement sur une vente réalisée (un vrai prix), jamais sur un bouton, un état vide ou Achat immédiat */
-.liste-ventes li .prix-vente::before,
-.derniere-vente:not(.vide) .prix-vente::before,
-.vp-in .vp-hb a::before,
-.vp-in ol li a b::before,
-#vp-in .vp-hb a::before,
-#vp-in ol li a b::before,
-.ep-v a::before,
-.ep-dep-in a::before,
-#fr-cartes li.fv b::before,
-#ja-cartes li.fv b::before,
-#en-cartes li.fv b::before,
-#ventes li:not(.groupe-v):not(.sans) b::before,
-#par-pays .rc ul li b::before,
-#ap-liste .ap-meta strong::before,
-.ap-liste .ap-meta strong::before,
-li.vente > .p::before,
-li.av-carte .av-meta strong::before,
-table.ventes td.prix::before,
-.mq-cadenas::before{
+/* cadenas : verrouille les ventes réalisées (un vrai prix) tant que l'abonnement n'est pas activé. Jamais sur un bouton, un état vide ou Achat immédiat. Le panneau .vp-in garde le paywall existant. */
+html:not(.mq-abonne) .liste-ventes li .prix-vente,
+html:not(.mq-abonne) .derniere-vente:not(.vide) .prix-vente,
+html:not(.mq-abonne) .ep-v a,
+html:not(.mq-abonne) .ep-dep-in a,
+html:not(.mq-abonne) #fr-cartes li.fv b,
+html:not(.mq-abonne) #ja-cartes li.fv b,
+html:not(.mq-abonne) #en-cartes li.fv b,
+html:not(.mq-abonne) #ventes li:not(.groupe-v):not(.sans) b,
+html:not(.mq-abonne) #par-pays .rc ul li b,
+html:not(.mq-abonne) #par-pays .rc .rr,
+html:not(.mq-abonne) #ap-liste .ap-meta strong,
+html:not(.mq-abonne) .ap-liste .ap-meta strong,
+html:not(.mq-abonne) li.vente > .p,
+html:not(.mq-abonne) li.av-carte .av-meta strong,
+html:not(.mq-abonne) table.ventes td.prix{
+  color:transparent;
+  -webkit-text-fill-color:transparent;
+  text-shadow:0 0 10px rgba(17,17,17,.55);
+  user-select:none;
+  cursor:pointer;
+}
+html:not(.mq-abonne) .liste-ventes li .prix-vente::before,
+html:not(.mq-abonne) .derniere-vente:not(.vide) .prix-vente::before,
+html:not(.mq-abonne) .ep-v a::before,
+html:not(.mq-abonne) .ep-dep-in a::before,
+html:not(.mq-abonne) #fr-cartes li.fv b::before,
+html:not(.mq-abonne) #ja-cartes li.fv b::before,
+html:not(.mq-abonne) #en-cartes li.fv b::before,
+html:not(.mq-abonne) #ventes li:not(.groupe-v):not(.sans) b::before,
+html:not(.mq-abonne) #par-pays .rc ul li b::before,
+html:not(.mq-abonne) #par-pays .rc .rr::before,
+html:not(.mq-abonne) #ap-liste .ap-meta strong::before,
+html:not(.mq-abonne) .ap-liste .ap-meta strong::before,
+html:not(.mq-abonne) li.vente > .p::before,
+html:not(.mq-abonne) li.av-carte .av-meta strong::before,
+html:not(.mq-abonne) table.ventes td.prix::before,
+html:not(.mq-abonne) .mq-cadenas.mq-verrou::before{
   content:"\1F512";
   display:inline-block;
   flex:0 0 auto;
@@ -1227,8 +1245,31 @@ table.ventes td.prix::before,
   line-height:1;
   letter-spacing:0;
   text-transform:none;
+  color:#111;
+  -webkit-text-fill-color:#111;
+  text-shadow:none;
   font-family:"Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif;
 }
+html:not(.mq-abonne) .mq-cadenas.mq-verrou{
+  color:inherit;
+  -webkit-text-fill-color:inherit;
+  text-shadow:none;
+  cursor:pointer;
+  position:relative;
+}
+html:not(.mq-abonne) .mq-cadenas.mq-verrou .mq-prix-masque{
+  filter:blur(8px);
+  opacity:.4;
+  user-select:none;
+  pointer-events:none;
+  display:inline-block;
+  vertical-align:baseline;
+}
+html.mq-abonne .mq-cadenas::before,
+html.mq-abonne .mq-cadenas.mq-verrou::before{
+  content:none;
+}
+
 /* menu-rapide 2026-11-12 */
 @media (hover:hover){nav ul.menu-principal>li>ul.sous-menu{transition:opacity .05s linear,visibility 0s linear .12s!important}nav ul.menu-principal>li:hover>ul.sous-menu,nav ul.menu-principal>li:focus-within>ul.sous-menu,nav ul.menu-principal>li.ouvert>ul.sous-menu{transition:opacity .05s linear,visibility 0s!important}nav ul.menu-principal>li>a,nav ul.menu-principal ul.sous-menu a,nav ul.menu-principal .sm-tog{transition-duration:.05s!important}nav ul.menu-principal ul.sm-sous,nav ul.menu-principal .sm-groupe>ul{transition-duration:.05s!important;transition-delay:0s!important}}
 
