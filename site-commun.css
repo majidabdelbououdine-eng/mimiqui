@@ -419,11 +419,11 @@ html body div#mini-teaser:not(.mt-grand) .mt-barre,html body div#mini-teaser:not
 html body div#mini-teaser:not(.mt-grand) .mt-barre{border-bottom:1px solid rgba(120,200,255,.75)!important;color:#fff!important;text-shadow:0 1px 3px #000,0 0 3px rgba(0,0,0,.95)!important}
 html body div#mini-teaser:not(.mt-grand) .mt-taille,html body div#mini-teaser:not(.mt-grand) .mt-grand-btn{background:transparent!important;box-shadow:none!important;border:1px solid rgba(120,200,255,.75)!important;color:#fff!important;text-shadow:0 1px 3px #000!important}
 /* === Entree / sortie hologramme (classe posee par JS, jamais cache sans JS) === */
-html.h5-in body{animation:h5entree .7s ease-out both}
-html.h5-in body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:100005;background:linear-gradient(180deg,transparent 0,rgba(0,230,255,.0) 40%,rgba(0,230,255,.35) 50%,transparent 60%),repeating-linear-gradient(0deg,rgba(0,230,255,.08) 0 1px,transparent 1px 3px);background-size:100% 200%,100% 100%;animation:h5balaye .7s ease-out forwards}
+html.h5-in body{animation:h5entree .18s ease-out both}
+html.h5-in body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:100005;background:linear-gradient(180deg,transparent 0,rgba(0,230,255,.0) 40%,rgba(0,230,255,.35) 50%,transparent 60%),repeating-linear-gradient(0deg,rgba(0,230,255,.08) 0 1px,transparent 1px 3px);background-size:100% 200%,100% 100%;animation:h5balaye .18s ease-out forwards}
 @keyframes h5entree{0%{opacity:0;transform:scale(.985);filter:brightness(1.4) hue-rotate(-10deg)}30%{opacity:.6}38%{opacity:.35}55%{opacity:.9}100%{opacity:1;transform:none;filter:none}}
 @keyframes h5balaye{0%{background-position:0 100%,0 0;opacity:1}100%{background-position:0 -100%,0 0;opacity:0}}
-html.h5-out body{animation:h5sortie .3s ease-in forwards}
+html.h5-out body{animation:h5sortie .12s ease-in forwards}
 @keyframes h5sortie{0%{opacity:1}40%{opacity:.6}55%{opacity:.85}100%{opacity:.15;transform:scale(.99);filter:brightness(1.5)}}
 @media(prefers-reduced-motion:reduce){html.h5-in body,html.h5-out body{animation:none!important}html.h5-in body::after{display:none}}
 /* Video coin : pas de bouton play rouge, clic sur l'image = grand ecran */
@@ -1197,20 +1197,37 @@ html body header.wrap nav.top ul.sm-sous a:hover{
     flex:1 1 100%;
   }
 }
-/* cadenas sur le bouton des ventes eBay (pas le bouton Rechercher) */
-.vp .vp-pied a.btn-ebay[href*="LH_Sold"]::before,
-.vp-pied a.btn-ebay[href*="LH_Sold"]::before,
-a.btn-ebay[href*="LH_Sold"]:not(.btn-ebay-recherche)::before{
+/* cadenas uniquement sur une vente réalisée (un vrai prix), jamais sur un bouton, un état vide ou Achat immédiat */
+.liste-ventes li .prix-vente::before,
+.derniere-vente:not(.vide) .prix-vente::before,
+.vp-in .vp-hb a::before,
+.vp-in ol li a b::before,
+#vp-in .vp-hb a::before,
+#vp-in ol li a b::before,
+.ep-v a::before,
+.ep-dep-in a::before,
+#fr-cartes li.fv b::before,
+#ja-cartes li.fv b::before,
+#en-cartes li.fv b::before,
+#ventes li:not(.groupe-v):not(.sans) b::before,
+#par-pays .rc ul li b::before,
+#ap-liste .ap-meta strong::before,
+.ap-liste .ap-meta strong::before,
+li.vente > .p::before,
+li.av-carte .av-meta strong::before,
+table.ventes td.prix::before,
+.mq-cadenas::before{
   content:"\1F512";
   display:inline-block;
   flex:0 0 auto;
-  margin-right:.45em;
-  font-size:1.05em;
+  margin-right:.35em;
+  font-size:1em;
   font-weight:400;
   font-style:normal;
   line-height:1;
   letter-spacing:0;
   text-transform:none;
+  font-family:"Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif;
 }
 /* menu-rapide 2026-11-12 */
 @media (hover:hover){nav ul.menu-principal>li>ul.sous-menu{transition:opacity .05s linear,visibility 0s linear .12s!important}nav ul.menu-principal>li:hover>ul.sous-menu,nav ul.menu-principal>li:focus-within>ul.sous-menu,nav ul.menu-principal>li.ouvert>ul.sous-menu{transition:opacity .05s linear,visibility 0s!important}nav ul.menu-principal>li>a,nav ul.menu-principal ul.sous-menu a,nav ul.menu-principal .sm-tog{transition-duration:.05s!important}nav ul.menu-principal ul.sm-sous,nav ul.menu-principal .sm-groupe>ul{transition-duration:.05s!important;transition-delay:0s!important}}

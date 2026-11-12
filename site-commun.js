@@ -5,18 +5,18 @@ var __acc=/(\/|\/index\.html?)$/i.test(location.pathname);
 (function(){if(document.getElementById('echelle-site'))return;var s=document.createElement('style');s.id='echelle-site';s.textContent='html{font-size:106%!important}';(document.head||document.documentElement).appendChild(s);})();
 
 /* effets holographiques (holo.css / holo.js) */
-(function(){if(document.getElementById('holo-css'))return;var v='20261112ac';var l=document.createElement('link');l.id='holo-css';l.rel='stylesheet';l.href='holo.css?v='+v;(document.head||document.documentElement).appendChild(l);var s=document.createElement('script');s.id='holo-js';s.src='holo.js?v='+v;s.defer=true;(document.head||document.documentElement).appendChild(s);})();
+(function(){if(document.getElementById('holo-css'))return;var v='20261112af';var l=document.createElement('link');l.id='holo-css';l.rel='stylesheet';l.href='holo.css?v='+v;(document.head||document.documentElement).appendChild(l);var s=document.createElement('script');s.id='holo-js';s.src='holo.js?v='+v;s.defer=true;(document.head||document.documentElement).appendChild(s);})();
 /* maquette-pro : surcharge chargee apres holo.css */
-(function(){var v='20261112ac';function go(){if(document.getElementById('maquette-pro-css'))return;var l=document.createElement('link');l.id='maquette-pro-css';l.rel='stylesheet';l.href='maquette-pro.css?v='+v;var h=document.getElementById('holo-css');if(h&&h.parentNode){if(h.nextSibling)h.parentNode.insertBefore(l,h.nextSibling);else h.parentNode.appendChild(l);}else{(document.head||document.documentElement).appendChild(l);}}go();if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',go);setTimeout(go,50);})();
+(function(){var v='20261112af';function go(){if(document.getElementById('maquette-pro-css'))return;var l=document.createElement('link');l.id='maquette-pro-css';l.rel='stylesheet';l.href='maquette-pro.css?v='+v;var h=document.getElementById('holo-css');if(h&&h.parentNode){if(h.nextSibling)h.parentNode.insertBefore(l,h.nextSibling);else h.parentNode.appendChild(l);}else{(document.head||document.documentElement).appendChild(l);}}go();if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',go);setTimeout(go,50);})();
 /* i18n FR / EN / JA */
-(function(){if(document.getElementById('i18n-js'))return;var v='20261112ac';var page=(location.pathname.split('/').pop()||'index.html').toLowerCase();var lang='fr';try{var q=new URLSearchParams(location.search);var l=q.get('uilang')||((page!=='carte-pikachu.html')?q.get('lang'):'')||localStorage.getItem('mimiqui-lang')||'fr';if(/^(fr|en|ja)$/.test(l))lang=l;}catch(e){}document.documentElement.setAttribute('lang',lang==='ja'?'ja':lang==='en'?'en':'fr');if(lang!=='fr'){var h=document.createElement('style');h.id='i18n-hide';h.textContent='html:not(.i18n-ready) body{opacity:0}';(document.head||document.documentElement).appendChild(h);setTimeout(function(){var x=document.getElementById('i18n-hide');if(x&&x.parentNode)x.parentNode.removeChild(x);document.documentElement.classList.add('i18n-ready');},1500);}function add(src,id){var s=document.createElement('script');s.id=id;s.src=src;s.async=false;(document.head||document.documentElement).appendChild(s);}if(lang==='en')add('i18n-en.js?v='+v,'i18n-en');if(lang==='ja')add('i18n-ja.js?v='+v,'i18n-ja');add('i18n.js?v='+v,'i18n-js');})();
+(function(){if(document.getElementById('i18n-js'))return;var v='20261112af';var page=(location.pathname.split('/').pop()||'index.html').toLowerCase();var lang='fr';try{var q=new URLSearchParams(location.search);var l=q.get('uilang')||((page!=='carte-pikachu.html')?q.get('lang'):'')||localStorage.getItem('mimiqui-lang')||'fr';if(/^(fr|en|ja)$/.test(l))lang=l;}catch(e){}document.documentElement.setAttribute('lang',lang==='ja'?'ja':lang==='en'?'en':'fr');if(lang!=='fr'){var h=document.createElement('style');h.id='i18n-hide';h.textContent='html:not(.i18n-ready) body{opacity:0}';(document.head||document.documentElement).appendChild(h);setTimeout(function(){var x=document.getElementById('i18n-hide');if(x&&x.parentNode)x.parentNode.removeChild(x);document.documentElement.classList.add('i18n-ready');},400);}function add(src,id){var s=document.createElement('script');s.id=id;s.src=src;s.async=false;(document.head||document.documentElement).appendChild(s);}if(lang==='en')add('i18n-en.js?v='+v,'i18n-en');if(lang==='ja')add('i18n-ja.js?v='+v,'i18n-ja');add('i18n.js?v='+v,'i18n-js');})();
 
 (function(){
   "use strict";
   var page=(location.pathname.split('/').pop()||'index.html').toLowerCase();
   if(page==='accueil.html')page='index.html';
 
-  var SITE_CACHE="20261112ac";
+  var SITE_CACHE="20261112af";
   var EBAY_ENCOURS="https://www.ebay.fr/sch/i.html?_nkw=carte%20Pok%C3%A9mon&mkcid=1&mkrid=709-53476-19255-0&siteid=71&campid=5339225196&customid=encours-menu&toolid=10001&mkevt=1";
   var SERIES_MEGA=[
     {t:"Règne Delta",n:141,s:[["Française","regne-delta.html",141],["Japonaise","regne-delta-ja.html",113]]},
@@ -609,11 +609,52 @@ function go(){try{menu();}catch(e){console.error(e);}try{ariane();}catch(e){cons
 })();
 /* Son au premier geste du visiteur */
 (function(){var fait=false;function son(e){return;if(fait||!window.__mtAuto)return;var p=window.__mtPlayer;if(!p||!p.unMute)return;try{p.unMute();p.setVolume(100);p.playVideo();fait=true;['pointerdown','keydown','touchstart','click'].forEach(function(t){window.removeEventListener(t,son,true)})}catch(x){}}['pointerdown','keydown','touchstart','click'].forEach(function(t){window.addEventListener(t,son,true)})})();
-/* Navigation instantanee : precharge une page interne au survol */
-(function(){var vu={};function pre(e){var a=e.target.closest&&e.target.closest('a[href]');if(!a)return;var u;try{u=new URL(a.href,location.href)}catch(x){return}
-if(u.origin!==location.origin||!/\.html?$/.test(u.pathname)||u.pathname===location.pathname||vu[u.pathname])return;vu[u.pathname]=1;
-var l=document.createElement('link');l.rel='prefetch';l.href=u.pathname;document.head.appendChild(l)}
-document.addEventListener('mouseover',pre,{passive:true});document.addEventListener('touchstart',pre,{passive:true});})();
+/* Navigation instantanee : precharge une page interne au survol / focus / touche */
+(function(){
+  var vu={};
+  function cible(a){
+    if(!a||!a.getAttribute) return null;
+    if(a.target&&a.target!=='_self') return null;
+    if(a.hasAttribute('download')) return null;
+    var u;try{u=new URL(a.href,location.href)}catch(x){return null}
+    if(u.origin!==location.origin) return null;
+    if(!/\.html?$/.test(u.pathname) && u.pathname.slice(-1)!=='/') return null;
+    if(u.pathname===location.pathname && u.search===location.search) return null;
+    return u;
+  }
+  function pre(e){
+    var a=e.target.closest&&e.target.closest('a[href]');
+    var u=cible(a); if(!u) return;
+    var key=u.pathname+u.search;
+    if(vu[key]) return; vu[key]=1;
+    var l=document.createElement('link');
+    l.rel='prefetch';
+    l.as='document';
+    l.href=u.pathname+u.search;
+    document.head.appendChild(l);
+  }
+  document.addEventListener('pointerover',pre,{passive:true});
+  document.addEventListener('touchstart',pre,{passive:true});
+  document.addEventListener('focusin',pre,{passive:true});
+  function speculation(){
+    if(!(window.HTMLScriptElement&&HTMLScriptElement.supports&&HTMLScriptElement.supports('speculationrules'))) return;
+    if(document.getElementById('mq-spec')) return;
+    var hrefs=[], seen={};
+    var links=document.querySelectorAll('nav a[href], .menu-principal a[href]');
+    for(var i=0;i<links.length && hrefs.length<12;i++){
+      var u=cible(links[i]); if(!u) continue;
+      var k=u.pathname+u.search; if(seen[k]) continue; seen[k]=1; hrefs.push(k);
+    }
+    if(!hrefs.length) return;
+    var s=document.createElement('script');
+    s.type='speculationrules';
+    s.id='mq-spec';
+    s.textContent=JSON.stringify({prefetch:[{source:'list',urls:hrefs,eagerness:'moderate'}]});
+    document.head.appendChild(s);
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',speculation);
+  else speculation();
+})();
 
 /* Fenetre defilante hologramme (toutes les pages), fermable et memorisee */
 (function(){var K='mimiquiFenetreFermee';
@@ -720,15 +761,12 @@ function go(){
 }
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',go);else go();
 })();
-/* === Entree / sortie hologramme (sauf pokemon.html) === */
+/* === Entree hologramme courte (sauf pokemon.html). Plus d'attente a la sortie : navigation native immediate. === */
 (function(){
 var page=(location.pathname.split('/').pop()||'index.html').toLowerCase();if(page==='pokemon.html')return;
 var H=document.documentElement,RM=matchMedia('(prefers-reduced-motion: reduce)').matches;if(RM)return;
-H.classList.add('h5-in');setTimeout(function(){H.classList.remove('h5-in')},900);
-addEventListener('pageshow',function(e){if(e.persisted)H.classList.remove('h5-out')});
-document.addEventListener('click',function(e){if(e.defaultPrevented||e.button!==0||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey)return;var a=e.target.closest&&e.target.closest('a[href]');if(!a||a.target&&a.target!=='_self'||a.hasAttribute('download'))return;
- var u;try{u=new URL(a.href,location.href)}catch(x){return}if(u.origin!==location.origin||(u.pathname===location.pathname&&u.hash))return;if(u.href===location.href)return;
- e.preventDefault();H.classList.add('h5-out');setTimeout(function(){location.href=u.href},280)});
+H.classList.add('h5-in');setTimeout(function(){H.classList.remove('h5-in')},220);
+addEventListener('pageshow',function(e){if(e.persisted)H.classList.remove('h5-out','h5-in')});
 })();
 /* Sous-rubrique : flyout droite/gauche + hauteur viewport (menus compacts) */
 (function(){
@@ -1456,4 +1494,103 @@ if(document.readyState==='loading') document.addEventListener('DOMContentLoaded'
   }
   if(document.readyState==="loading") document.addEventListener("DOMContentLoaded", demarrer);
   else demarrer();
+})();
+
+
+(function(){
+  "use strict";
+  function aUnPrix(el){
+    var t=(el.textContent||"").replace(/\s+/g," ").trim();
+    if(!t) return false;
+    if(/^[–—\-·.…]+$/.test(t)) return false;
+    if(/aucune vente/i.test(t)) return false;
+    if(/^à venir$/i.test(t)) return false;
+    if(/^0\s*ventes?$/i.test(t)) return false;
+    return /\d/.test(t);
+  }
+  function poser(el, ok){
+    if(!el) return;
+    if(ok) el.classList.add("mq-cadenas");
+    else el.classList.remove("mq-cadenas");
+  }
+  function marquerCadenas(){
+    /* jamais de cadenas sur un bouton (Ventes réalisées, recherche, Achat immédiat) */
+    var btns=document.querySelectorAll("a.btn-ebay, a.eb-sous, a.pc-btn, .mq-btns-grille a");
+    for(var i=0;i<btns.length;i++) btns[i].classList.remove("mq-cadenas");
+
+    var tds=document.querySelectorAll('#tableau td[data-l="Prix le plus vendu"], #tableau td[data-l="Plus bas"], #tableau td[data-l="Plus haut"]');
+    for(var j=0;j<tds.length;j++) poser(tds[j], aUnPrix(tds[j]));
+
+    /* Cotation : seulement les chiffres eBay de ventes (pas la cote, pas les annonces) */
+    var dts=document.querySelectorAll("dl.chiffres dt, .chiffres dt");
+    var lab=/eBay\s*:\s*(plus haute vente|vente la plus basse)|vente la plus (haute|basse)|plus haute vente|dernière vente/i;
+    for(var k=0;k<dts.length;k++){
+      var dt=dts[k];
+      if(!lab.test(dt.textContent||"")) continue;
+      var dd=dt.nextElementSibling;
+      if(dd && dd.tagName==="DD") poser(dd, aUnPrix(dd) && !dd.classList.contains("na"));
+    }
+
+    /* Journal des relevés : colonnes eBay plus haute / plus basse vente */
+    var tables=document.querySelectorAll(".journal table, .journal-box table");
+    for(var ti=0;ti<tables.length;ti++){
+      var ths=tables[ti].querySelectorAll("thead th, tr:first-child th");
+      if(!ths.length) ths=tables[ti].querySelectorAll("tr:first-child th, tr:first-child td");
+      var cols=[];
+      for(var c=0;c<ths.length;c++){
+        var tx=ths[c].textContent||"";
+        if(/eBay\s*:\s*(plus haute vente|vente la plus basse)|plus haute vente|vente la plus basse/i.test(tx)) cols.push(c);
+      }
+      var rows=tables[ti].querySelectorAll("tr");
+      for(var r=0;r<rows.length;r++){
+        var cells=rows[r].querySelectorAll("td");
+        for(var ci=0;ci<cols.length;ci++){
+          if(cells[cols[ci]]) poser(cells[cols[ci]], aUnPrix(cells[cols[ci]]));
+        }
+      }
+    }
+
+    /* « Ventes ce mois » : cadenas seulement s'il y a au moins une vente chiffrée */
+    var vms=document.querySelectorAll(".cm-v.vm, [data-vm]");
+    for(var v=0;v<vms.length;v++){
+      var el=vms[v];
+      var t=(el.textContent||"").trim();
+      poser(el, aUnPrix(el) && !/^…$/.test(t) && !/aucune vente/i.test(t));
+    }
+  }
+  function demarrer(){
+    marquerCadenas();
+    if(window.MutationObserver&&document.body){
+      var t=0;
+      var obs=new MutationObserver(function(){
+        if(t) return;
+        t=1;
+        setTimeout(function(){ t=0; marquerCadenas(); }, 40);
+      });
+      obs.observe(document.body,{childList:true,subtree:true});
+    }
+  }
+  if(document.readyState==="loading") document.addEventListener("DOMContentLoaded", demarrer);
+  else demarrer();
+})();
+
+
+(function(){
+  "use strict";
+  function lazyImages(){
+    var vh=window.innerHeight||800;
+    var imgs=document.querySelectorAll("img:not([loading])");
+    for(var i=0;i<imgs.length;i++){
+      var im=imgs[i];
+      if(im.closest("header,.logo,#mini-teaser")) continue;
+      if(im.classList.contains("logo-img")) continue;
+      var top=0;
+      try{ top=im.getBoundingClientRect().top; }catch(e){ top=vh+1; }
+      if(top<vh*1.15) continue;
+      im.loading="lazy";
+      if(!im.hasAttribute("decoding")) im.decoding="async";
+    }
+  }
+  if(document.readyState==="loading") document.addEventListener("DOMContentLoaded", lazyImages);
+  else lazyImages();
 })();
