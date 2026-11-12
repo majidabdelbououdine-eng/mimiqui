@@ -3,14 +3,18 @@ var __acc=/(\/|\/index\.html?)$/i.test(location.pathname);
 
 /* echelle site ~90% cumulé v2 */
 (function(){if(document.getElementById('echelle-site'))return;var s=document.createElement('style');s.id='echelle-site';s.textContent='html{font-size:106%!important}';(document.head||document.documentElement).appendChild(s);})();
+
 /* effets holographiques (holo.css / holo.js) */
-(function(){if(document.getElementById('holo-css'))return;var v='20261112p';var l=document.createElement('link');l.id='holo-css';l.rel='stylesheet';l.href='holo.css?v='+v;(document.head||document.documentElement).appendChild(l);var s=document.createElement('script');s.id='holo-js';s.src='holo.js?v='+v;s.defer=true;(document.head||document.documentElement).appendChild(s);})();
+(function(){if(document.getElementById('holo-css'))return;var v='20261112u';var l=document.createElement('link');l.id='holo-css';l.rel='stylesheet';l.href='holo.css?v='+v;(document.head||document.documentElement).appendChild(l);var s=document.createElement('script');s.id='holo-js';s.src='holo.js?v='+v;s.defer=true;(document.head||document.documentElement).appendChild(s);})();
+/* i18n FR / EN / JA */
+(function(){if(document.getElementById('i18n-js'))return;var v='20261112u';var page=(location.pathname.split('/').pop()||'index.html').toLowerCase();var lang='fr';try{var q=new URLSearchParams(location.search);var l=q.get('uilang')||((page!=='carte-pikachu.html')?q.get('lang'):'')||localStorage.getItem('mimiqui-lang')||'fr';if(/^(fr|en|ja)$/.test(l))lang=l;}catch(e){}document.documentElement.setAttribute('lang',lang==='ja'?'ja':lang==='en'?'en':'fr');if(lang!=='fr'){var h=document.createElement('style');h.id='i18n-hide';h.textContent='html:not(.i18n-ready) body{opacity:0}';(document.head||document.documentElement).appendChild(h);setTimeout(function(){var x=document.getElementById('i18n-hide');if(x&&x.parentNode)x.parentNode.removeChild(x);document.documentElement.classList.add('i18n-ready');},1500);}function add(src,id){var s=document.createElement('script');s.id=id;s.src=src;s.async=false;(document.head||document.documentElement).appendChild(s);}if(lang==='en')add('i18n-en.js?v='+v,'i18n-en');if(lang==='ja')add('i18n-ja.js?v='+v,'i18n-ja');add('i18n.js?v='+v,'i18n-js');})();
+
 (function(){
   "use strict";
   var page=(location.pathname.split('/').pop()||'index.html').toLowerCase();
   if(page==='accueil.html')page='index.html';
 
-  var SITE_CACHE="20261112p";
+  var SITE_CACHE="20261112u";
   var EBAY_ENCOURS="https://www.ebay.fr/sch/i.html?_nkw=carte%20Pok%C3%A9mon&mkcid=1&mkrid=709-53476-19255-0&siteid=71&campid=5339225196&customid=encours-menu&toolid=10001&mkevt=1";
   var SERIES_MEGA=[
     {t:"Règne Delta",n:141,s:[["Française","regne-delta.html",141],["Japonaise","regne-delta-ja.html",113]]},
@@ -23,12 +27,13 @@ var __acc=/(\/|\/index\.html?)$/i.test(location.pathname);
     {t:"Méga-Évolution",n:88,s:[["Française","mega-evolution-cartes.html",88],["Anglaise","mega-evolution-en.html",89]]}
   ];
   var SERIES_EV=[
-    {t:"151",h:"ecarlate-violet-151.html",n:207},
-    {t:"Flammes Obsidiennes",h:"flammes-obsidiennes.html",n:230},
-    {t:"Évolutions à Paldea",h:"evolutions-paldea.html",n:279},
-    {t:"Écarlate et Violet",h:"ecarlate-violet.html",n:258}
+    {t:"Destinées de Paldea",n:245,s:[["Française","destinees-de-paldea.html",245],["Japonaise","destinees-de-paldea-ja.html",320],["Anglaise","destinees-de-paldea-en.html",245]]},
+    {t:"151",n:207,s:[["Française","ecarlate-violet-151.html",207],["Japonaise","ecarlate-violet-151-ja.html",210],["Anglaise","ecarlate-violet-151-en.html",207]]},
+    {t:"Flammes Obsidiennes",n:230,s:[["Française","flammes-obsidiennes.html",230],["Japonaise","flammes-obsidiennes-ja.html",141],["Anglaise","flammes-obsidiennes-en.html",230]]},
+    {t:"Évolutions à Paldea",n:279,s:[["Française","evolutions-paldea.html",279],["Japonaise","evolutions-paldea-ja.html",198],["Anglaise","evolutions-paldea-en.html",279]]},
+    {t:"Écarlate et Violet",n:258,s:[["Française","ecarlate-violet.html",258],["Japonaise","ecarlate-violet-ja.html",216],["Anglaise","ecarlate-violet-en.html",258]]}
   ];
-  var PAGES_SERIES=["regne-delta.html","regne-delta-ja.html","equilibre-parfait-ventes.html","equilibre-parfait-ja.html","equilibre-parfait-en.html","equilibre-parfait.html","trentieme-anniversaire-ventes.html","trentieme-anniversaire-en.html","trentieme-anniversaire.html","heros-transcendants.html","heros-transcendants-en.html","nuit-noire-ventes.html","nuit-noire-ja.html","nuit-noire-en.html","mega-evolution-cartes.html","mega-evolution-en.html","heros-fantasmagoriques.html","flammes-fantasmagoriques-ja.html","flammes-fantasmagoriques-en.html","chaos-ascendant-ventes.html","chaos-ascendant-ja.html","chaos-ascendant-en.html","chaos-ascendant.html","ecarlate-violet.html","evolutions-paldea.html","flammes-obsidiennes.html","ecarlate-violet-151.html"];
+  var PAGES_SERIES=["regne-delta.html","regne-delta-ja.html","equilibre-parfait-ventes.html","equilibre-parfait-ja.html","equilibre-parfait-en.html","equilibre-parfait.html","trentieme-anniversaire-ventes.html","trentieme-anniversaire-en.html","trentieme-anniversaire.html","heros-transcendants.html","heros-transcendants-en.html","nuit-noire-ventes.html","nuit-noire-ja.html","nuit-noire-en.html","mega-evolution-cartes.html","mega-evolution-en.html","heros-fantasmagoriques.html","flammes-fantasmagoriques-ja.html","flammes-fantasmagoriques-en.html","chaos-ascendant-ventes.html","chaos-ascendant-ja.html","chaos-ascendant-en.html","chaos-ascendant.html","ecarlate-violet.html","evolutions-paldea.html","flammes-obsidiennes.html","ecarlate-violet-151.html","destinees-de-paldea.html","destinees-de-paldea-en.html","destinees-de-paldea-ja.html","ecarlate-violet-151-en.html","ecarlate-violet-151-ja.html","flammes-obsidiennes-en.html","flammes-obsidiennes-ja.html","evolutions-paldea-en.html","evolutions-paldea-ja.html","ecarlate-violet-en.html","ecarlate-violet-ja.html"];
   var SECTIONS=[
     {t:"Accueil",h:"index.html",p:["index.html"]},
     {t:"Cartes",h:"cartes.html",p:["cartes.html","cartes-japonaises.html","cartes-anglaises.html","cartes-pokemon.html","pokemon.html"].concat(PAGES_SERIES),s:[
@@ -105,11 +110,20 @@ var __acc=/(\/|\/index\.html?)$/i.test(location.pathname);
     be.appendChild(document.createTextNode("Écarlate et Violet "));
     be.appendChild(el("span",{"class":"sm-fl","aria-hidden":"true"},"\u25B8"));
     var sousE=el("ul",{"class":"sm-sous"});
-    SERIES_EV.forEach(function(it){
-      var x=el("li");
-      var nom=it.t||it[0], href=it.h||it[1], n=it.n;
-      x.appendChild(el("a",{href:href},nomSet(nom,n)));
-      sousE.appendChild(x);
+    SERIES_EV.forEach(function(set){
+      var g=el("li",{"class":"sm-groupe"});
+      var bt=el("button",{type:"button","class":"sm-tog","aria-expanded":"false"});
+      bt.appendChild(document.createTextNode(nomSet(set.t,set.n)+" "));
+      bt.appendChild(el("span",{"class":"sm-fl","aria-hidden":"true"},"\u25B8"));
+      var u=el("ul",{"class":"sm-sous"});
+      set.s.forEach(function(it){
+        var x=el("li");
+        var lab=it[0];
+        if(it[2]) lab=nomSet(it[0],it[2]);
+        x.appendChild(el("a",{href:it[1]},lab));
+        u.appendChild(x);
+      });
+      g.append(bt,u); sousE.appendChild(g);
     });
     ev.append(be,sousE); sous.appendChild(ev);
     li.append(b,sous); parentUl.appendChild(li);
@@ -233,7 +247,7 @@ var __acc=/(\/|\/index\.html?)$/i.test(location.pathname);
     if(window.__rechChargement){ window.__rechChargement.push(cb); return; }
     window.__rechChargement=[cb];
     var s=document.createElement("script");
-    s.src="recherche-cartes-data.js?v="+(typeof SITE_CACHE==="string"?SITE_CACHE:"20261112p");
+    s.src="recherche-cartes-data.js?v="+(typeof SITE_CACHE==="string"?SITE_CACHE:"20261112u");
     s.onload=function(){
       var fns=window.__rechChargement||[]; window.__rechChargement=null;
       fns.forEach(function(fn){ try{fn(window.RECHERCHE_CARTES||{sets:[]});}catch(e){} });
