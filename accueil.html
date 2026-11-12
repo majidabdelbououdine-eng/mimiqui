@@ -469,7 +469,7 @@ header.wrap:has(nav ul.menu-principal>li:is(:hover,:focus-within,.ouvert)>a[href
 <link rel="stylesheet" href="accueil-apercu.css?v=20261107b">
 <style id="accueil-ajustements-20261112">
 @media (min-width:701px){
-  html body #fenetre-defilante{top:232px!important;transform:none!important}
+  html body #fenetre-defilante{top:215px!important;transform:none!important}
 }
 .promo-ba-grille{grid-template-columns:repeat(4,minmax(200px,1fr))!important;overflow-x:auto}
 @media (max-width:800px){
@@ -484,7 +484,7 @@ header.wrap:has(nav ul.menu-principal>li:is(:hover,:focus-within,.ouvert)>a[href
     var w=document.getElementById("fenetre-defilante");
     var h=document.querySelector("header.wrap,header.site,body>header");
     if(!w||!h)return;
-    var top=Math.round(h.getBoundingClientRect().bottom+window.scrollY+20);
+    var top=Math.round(h.getBoundingClientRect().bottom+window.scrollY+3);
     w.style.setProperty("top",top+"px","important");
     w.style.setProperty("transform","none","important");
   }
