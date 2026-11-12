@@ -467,6 +467,16 @@ header.wrap:has(nav ul.menu-principal>li:is(:hover,:focus-within,.ouvert)>a[href
 </nav>
 </header>
 <link rel="stylesheet" href="accueil-apercu.css?v=20261107b">
+<style id="accueil-ajustements-20261112">
+@media (min-width:801px){
+  form.barre-recherche-site,#barre-recherche-site{transform:translateX(-150px)}
+}
+@media (min-width:701px){
+  html body #fenetre-defilante{transform:translate(-50%,calc(-50% + 113px))}
+}
+.ap-accueil .promo-ba{max-width:none;margin-left:0;margin-right:0;width:100%;box-sizing:border-box}
+.ap-accueil .promo-ba-grille{grid-template-columns:1fr!important}
+</style>
 <section class="ap-accueil" aria-label="Cote et dernières ventes">
   <div class="ap-cherche">
     <h2>Combien vaut ma carte ?</h2>
@@ -476,18 +486,7 @@ header.wrap:has(nav ul.menu-principal>li:is(:hover,:focus-within,.ouvert)>a[href
       <button type="submit">Estimer</button>
     </form>
   </div>
-  <div class="ap-ventes" id="dernieres-ventes">
-    <div class="ap-entete">
-      <h2 id="dv-titre">Dernières ventes réalisées</h2>
-      <p class="ap-compteur" id="ap-compteur"></p>
-    </div>
-    <ol class="ap-liste" id="ap-liste"></ol>
-    <p class="ap-pied"><a class="ap-tout" href="registre.html">Voir tout le registre des ventes</a><a class="ap-tout" href="archive-ventes.html">Archive des ventes</a></p>
-  </div>
-</section>
-<script src="registre-ventes-data.js" defer></script>
-<script src="cotation-data.js" defer></script>
-<script src="accueil-apercu.js?v=20261107b" defer></script>
+  
 <section class="wrap promo-ba" aria-labelledby="promo-ba-titre">
   <div class="promo-ba-entete">
     <p class="etiquette">Bonnes affaires</p>
@@ -546,6 +545,18 @@ header.wrap:has(nav ul.menu-principal>li:is(:hover,:focus-within,.ouvert)>a[href
     </article>
   </div>
 </section>
+<div class="ap-ventes" id="dernieres-ventes">
+    <div class="ap-entete">
+      <h2 id="dv-titre">Dernières ventes réalisées</h2>
+      <p class="ap-compteur" id="ap-compteur"></p>
+    </div>
+    <ol class="ap-liste" id="ap-liste"></ol>
+    <p class="ap-pied"><a class="ap-tout" href="registre.html">Voir tout le registre des ventes</a><a class="ap-tout" href="archive-ventes.html">Archive des ventes</a></p>
+  </div>
+</section>
+<script src="registre-ventes-data.js" defer></script>
+<script src="cotation-data.js" defer></script>
+<script src="accueil-apercu.js?v=20261107b" defer></script>
 
 
 <style id="holo-haut">
