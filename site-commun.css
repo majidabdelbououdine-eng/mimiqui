@@ -1197,3 +1197,5 @@ html body header.wrap nav.top ul.sm-sous a:hover{
     flex:1 1 100%;
   }
 }
+/* menu-rapide 2026-11-12 */
+@media (hover:hover){nav ul.menu-principal>li>ul.sous-menu{transition:opacity .05s linear,visibility 0s linear .12s!important}nav ul.menu-principal>li:hover>ul.sous-menu,nav ul.menu-principal>li:focus-within>ul.sous-menu,nav ul.menu-principal>li.ouvert>ul.sous-menu{transition:opacity .05s linear,visibility 0s!important}nav ul.menu-principal>li>a,nav ul.menu-principal ul.sous-menu a,nav ul.menu-principal .sm-tog{transition-duration:.05s!important}nav ul.menu-principal ul.sm-sous,nav ul.menu-principal .sm-groupe>ul{transition-duration:.05s!important;transition-delay:0s!important}}

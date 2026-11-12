@@ -14,7 +14,7 @@ var __acc=/(\/|\/index\.html?)$/i.test(location.pathname);
   var page=(location.pathname.split('/').pop()||'index.html').toLowerCase();
   if(page==='accueil.html')page='index.html';
 
-  var SITE_CACHE="20261112v";
+  var SITE_CACHE="20261112x";
   var EBAY_ENCOURS="https://www.ebay.fr/sch/i.html?_nkw=carte%20Pok%C3%A9mon&mkcid=1&mkrid=709-53476-19255-0&siteid=71&campid=5339225196&customid=encours-menu&toolid=10001&mkevt=1";
   var SERIES_MEGA=[
     {t:"Règne Delta",n:141,s:[["Française","regne-delta.html",141],["Japonaise","regne-delta-ja.html",113]]},
@@ -254,7 +254,7 @@ var __acc=/(\/|\/index\.html?)$/i.test(location.pathname);
     if(window.__rechChargement){ window.__rechChargement.push(cb); return; }
     window.__rechChargement=[cb];
     var s=document.createElement("script");
-    s.src="recherche-cartes-data.js?v="+(typeof SITE_CACHE==="string"?SITE_CACHE:"20261112v");
+    s.src="recherche-cartes-data.js?v="+(typeof SITE_CACHE==="string"?SITE_CACHE:"20261112x");
     s.onload=function(){
       var fns=window.__rechChargement||[]; window.__rechChargement=null;
       fns.forEach(function(fn){ try{fn(window.RECHERCHE_CARTES||{sets:[]});}catch(e){} });
@@ -600,7 +600,7 @@ function init(){
     cote();
     window.addEventListener('resize', cote);
     var closeTimer=null;
-    var CLOSE_MS=400;
+    var CLOSE_MS=150;
     function openG(){
       if(closeTimer){ clearTimeout(closeTimer); closeTimer=null; }
       g.classList.add('sm-ouvert');
