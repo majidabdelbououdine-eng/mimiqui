@@ -35,7 +35,6 @@
   var GROUPS = [
     ["regne-delta.html", null, "regne-delta-ja.html"],
     ["nuit-noire-ventes.html", "nuit-noire-en.html", "nuit-noire-ja.html"],
-    ["nuit-noire.html", "nuit-noire-en.html", "nuit-noire-ja.html"],
     ["chaos-ascendant-ventes.html", "chaos-ascendant-en.html", "chaos-ascendant-ja.html"],
     ["chaos-ascendant.html", "chaos-ascendant-en.html", "chaos-ascendant-ja.html"],
     ["equilibre-parfait-ventes.html", "equilibre-parfait-en.html", "equilibre-parfait-ja.html"],
@@ -44,9 +43,7 @@
     ["trentieme-anniversaire.html", "trentieme-anniversaire-en.html", null],
     ["heros-transcendants.html", "heros-transcendants-en.html", null],
     ["heros-fantasmagoriques.html", "flammes-fantasmagoriques-en.html", "flammes-fantasmagoriques-ja.html"],
-    ["flammes-fantasmagoriques.html", "flammes-fantasmagoriques-en.html", "flammes-fantasmagoriques-ja.html"],
     ["mega-evolution-cartes.html", "mega-evolution-en.html", null],
-    ["mega-evolution.html", "mega-evolution-en.html", null],
     ["destinees-de-paldea.html", "destinees-de-paldea-en.html", "destinees-de-paldea-ja.html"],
     ["ecarlate-violet-151.html", "ecarlate-violet-151-en.html", "ecarlate-violet-151-ja.html"],
     ["flammes-obsidiennes.html", "flammes-obsidiennes-en.html", "flammes-obsidiennes-ja.html"],
