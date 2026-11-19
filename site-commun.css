@@ -456,7 +456,7 @@ nav ul.menu-principal .sm-groupe.sm-ouvert>ul.sm-sous{visibility:visible;opacity
 
 /* Prix et Acheter : dépliant vers la gauche (ordinateur) */
 @media (min-width:601px){
-nav ul.menu-principal>li:has(>a[href="cotation.html"])>ul.sous-menu,
+nav ul.menu-principal>li:has(>a[href="top-ventes.html"])>ul.sous-menu,
 nav ul.menu-principal>li:has(>a[href="boutique.html"])>ul.sous-menu{left:auto!important;right:0!important}
 }
 
