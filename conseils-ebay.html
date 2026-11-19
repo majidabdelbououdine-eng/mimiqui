@@ -17,7 +17,7 @@
 @font-face{font-family:"Source Sans 3";font-style:normal;font-weight:700;font-display:swap;src:url(fonts/source-sans-3-latin-700-normal.woff2) format("woff2")}
 </style>
 <style id="agrandi">html{font-size:106%}body{font-size:1.035rem}.wrap{max-width:1180px!important;margin-left:auto!important;margin-right:auto!important}.logo{font-size:calc(1.7rem * 1.35)!important}</style>
-<link rel="stylesheet" href="site-commun.css?v=20261119ab">
+<link rel="stylesheet" href="site-commun.css?v=20261119ac">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <script type="application/ld+json" id="mq-jsonld">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://mimiqui.fr/"},{"@type":"ListItem","position":2,"name":"Conseils eBay","item":"https://mimiqui.fr/conseils-ebay.html"}]}</script>
 <script>try{if(localStorage.getItem("mimiqui_acces")==="ok")document.documentElement.classList.add("mq-abonne")}catch(e){}</script>
@@ -115,6 +115,21 @@ html body aside.conseil-collection p:last-child{margin:0}
 .conseil-extensions h2{font-family:var(--titre-font,"Bodoni Moda",Georgia,serif);font-size:clamp(1.45rem,3vw,2rem);font-weight:500;margin:0 0 .6rem}
 .conseil-extensions p{margin:0 0 .7rem;max-width:72ch}
 .conseil-extensions .ext-liens a{margin-right:.8rem}
+.ext-carte{margin:0 0 1rem;padding:14px 16px;border:1px solid rgba(17,17,17,.14);border-radius:12px;background:#fbfbfa}
+.ext-carte .quand{margin:0 0 .25rem;font-weight:700;font-size:.85rem}
+.ext-carte h3{font-family:var(--titre-font,"Bodoni Moda",Georgia,serif);font-size:1.25rem;font-weight:500;margin:0 0 .4rem}
+.ext-carte h3 a{color:inherit;text-decoration:none}
+.ext-carte h3 a:hover{color:var(--rouge,#d0021b);text-decoration:underline}
+.ext-carte p{margin:0 0 .4rem}
+.conseil-tendance{margin:22px 0 8px;background:#fff;border:1px solid rgba(17,17,17,.14);border-top:6px solid #d0021b;border-radius:14px;padding:22px 24px 20px}
+.conseil-tendance .etiquette{font-weight:700;font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--rouge,#d0021b);margin:0 0 .35rem}
+.conseil-tendance h2{font-family:var(--titre-font,"Bodoni Moda",Georgia,serif);font-size:clamp(1.45rem,3vw,2rem);font-weight:500;margin:0 0 .6rem}
+.conseil-tendance p,.conseil-tendance li{margin:0 0 .55rem;max-width:74ch}
+.top10-recents{margin:22px 0 8px}
+.top10-recents .etiquette{font-weight:700;font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--rouge,#d0021b);margin:0 0 .35rem}
+.top10-recents h2{font-family:var(--titre-font,"Bodoni Moda",Georgia,serif);font-size:clamp(1.5rem,3.2vw,2.1rem);font-weight:500;margin:0 0 .6rem}
+.top10-recents .intro{max-width:74ch;margin:0 0 .8rem}
+
 .extensions-suite{margin-top:1rem;padding-top:1rem;border-top:1px dashed rgba(17,17,17,.2);min-height:3.5rem}
 .extensions-suite .ext-reserve{margin:0;color:#5a5a5a;font-size:.92rem}
 
@@ -169,9 +184,12 @@ html body aside.conseil-collection p:last-child{margin:0}
       <a href="#acheter-malin">Acheter malin</a>
       <a href="#bien-vendre">Mes conseils pour vendre</a>
       <a href="#je-garde-gen1">Je garde la 1re génération</a>
-      <a href="#je-garde-etoile">Je garde les rares à étoile</a>
+      <a href="#je-garde-etoile">Je garde les rares à une étoile noire</a>
       <a href="#conseil-mimiqui-film">Mimiqui × Wild Card 2027</a>
       <a href="#conseil-extensions">Nouvelles extensions et sorties</a>
+      <a href="sets-a-venir.html">Sets à venir</a>
+      <a href="#conseil-tendance">Tendance et rareté</a>
+      <a href="#top10-recents">10 Pokémon récents à surveiller</a>
       <a href="#conseil-abonnes">À mes abonnés</a>
       <a href="#conseil-blog">Discuter sur le blog</a>
       <a href="#exemple-regne-delta">Exemple · Règne Delta</a>
@@ -191,11 +209,13 @@ html body aside.conseil-collection p:last-child{margin:0}
       <li><a href="#conseil-collection"><span class="ico" aria-hidden="true">🔎</span><span class="txt">Cherchez d’abord dans votre collection</span><span class="fleche" aria-hidden="true">↓</span></a></li>
       <li><a href="#acheter-malin"><span class="ico" aria-hidden="true">💡</span><span class="txt">Acheter malin sur eBay : à l’unité, PSA de préférence, PCA au minimum</span><span class="fleche" aria-hidden="true">↓</span></a></li>
       <li><a href="#je-garde-gen1"><span class="ico" aria-hidden="true">✦</span><span class="txt">Gardez les 151 de la 1re génération</span><span class="fleche" aria-hidden="true">↓</span></a></li>
-      <li><a href="#je-garde-etoile"><span class="ico" aria-hidden="true">★</span><span class="txt">Gardez les rares à étoile ★</span><span class="fleche" aria-hidden="true">↓</span></a></li>
+      <li><a href="#je-garde-etoile"><span class="ico" aria-hidden="true">★</span><span class="txt">Je garde les rares à une étoile noire ★</span><span class="fleche" aria-hidden="true">↓</span></a></li>
       <li><a href="#conseil-mimiqui-film"><span class="ico" aria-hidden="true">🎬</span><span class="txt">Mimiqui × film Wild Card 2027 : achetez maintenant, vendez à la bande-annonce</span><span class="fleche" aria-hidden="true">↓</span></a></li>
       <li><a href="#conseil-film-public"><span class="ico" aria-hidden="true">🎯</span><span class="txt">Misez sur les Pokémon et les personnages du film — amateurs et pros</span><span class="fleche" aria-hidden="true">↓</span></a></li>
       <li><a href="#bien-vendre"><span class="ico" aria-hidden="true">🏷️</span><span class="txt">Vendre : moins de 200&nbsp;€ sur eBay, plus de 200&nbsp;€ en maison de ventes (Interenchères, Drouot, Catawiki)</span><span class="fleche" aria-hidden="true">↓</span></a></li>
-      <li><a href="#conseil-extensions"><span class="ico" aria-hidden="true">📦</span><span class="txt">Je vous présente chaque nouvelle extension et chaque nouvelle sortie (sets, coffrets…)</span><span class="fleche" aria-hidden="true">↓</span></a></li>
+      <li><a href="sets-a-venir.html"><span class="ico" aria-hidden="true">📦</span><span class="txt">Je vous présente chaque nouvelle extension et chaque nouvelle sortie (sets, coffrets…) — voir les sets à venir</span><span class="fleche" aria-hidden="true">→</span></a></li>
+      <li><a href="#conseil-tendance"><span class="ico" aria-hidden="true">📈</span><span class="txt">J’achète en fonction de la tendance et de la rareté</span><span class="fleche" aria-hidden="true">↓</span></a></li>
+      <li><a href="#top10-recents"><span class="ico" aria-hidden="true">🔟</span><span class="txt">Mes 10 Pokémon récents à surveiller</span><span class="fleche" aria-hidden="true">↓</span></a></li>
       <li><a href="#conseil-blog"><span class="ico" aria-hidden="true">💬</span><span class="txt">Venez discuter et échanger avec moi sur mon blog</span><span class="fleche" aria-hidden="true">↓</span></a></li>
     </ol>
   </section>
@@ -203,7 +223,7 @@ html body aside.conseil-collection p:last-child{margin:0}
   <aside class="conseil-collection" id="conseil-collection">
     <p class="etiquette">Avant d’acheter</p>
     <h2>Mon conseil : cherchez d’abord dans votre collection</h2>
-    <p>Avant d’acheter quoi que ce soit, je vous conseille de fouiller d’abord vos propres cartes. Vous avez peut-être déjà des <a href="cartes.html">Mimiqui</a>, des cartes de la <a href="cartes-generation-1.html">1re génération</a> (les 151, de Bulbizarre à Mew), des rares à étoile (★) ou des Pokémon du film — à garder, ou à vendre.</p>
+    <p>Avant d’acheter quoi que ce soit, je vous conseille de fouiller d’abord vos propres cartes. Vous avez peut-être déjà des <a href="cartes.html">Mimiqui</a>, des cartes de la <a href="cartes-generation-1.html">1re génération</a> (les 151, de Bulbizarre à Mew), des rares à une étoile noire (★) ou des Pokémon du film — à garder, ou à vendre.</p>
     <p>Je les sors, je les trie, et je les protège (pochette et toploader). Pour savoir ce qu’elles valent, je passe par <a href="estimer-ma-carte.html">Combien vaut ma carte</a> et les pages de <a href="cotation.html">cotes et prix</a> du site, sans inventer un chiffre.</p>
   </aside>
 
@@ -241,6 +261,15 @@ html body aside.conseil-collection p:last-child{margin:0}
     </section>
   </div>
 
+  <section class="conseil-tendance" id="conseil-tendance">
+    <p class="etiquette">Mon repère d’achat</p>
+    <h2>J’achète en fonction de la tendance et de la rareté</h2>
+    <p>Quand j’achète, je commence par regarder la <strong>tendance</strong> déjà visible sur le site : les prix des ventes relevées, s’ils montent ou s’ils baissent sur la période publiée, et si le Pokémon est demandé. Je n’invente pas une hausse ou une baisse : s’il n’y a qu’une cote ou trop peu de ventes pour le dire, je le dis clairement.</p>
+    <p>Je regarde ensuite la <strong>rareté</strong> : le symbole imprimé sur la carte (rond, losange, étoile noire…), les <strong>illustrations rares</strong>, et les tirages plus limités (illustration spéciale rare, Méga Hyper Rare, etc.). Une rareté plus élevée n’est pas une garantie de prix, mais ça fait partie de ce que je surveille, avec l’état de l’exemplaire.</p>
+    <p>Je m’appuie uniquement sur les cotes et les ventes déjà affichées sur le site — par exemple sur <a href="cotation.html">Cotes et prix</a>, les pages de sets, et la sélection ci-dessous. Pour une notation, je préfère <strong>PSA</strong> ; <strong>PCA au minimum</strong>. Ce sont mes repères, pas un conseil financier.</p>
+    <p><a href="#top10-recents">Voir mes 10 Pokémon récents à surveiller</a></p>
+  </section>
+
   <div class="paires" id="je-garde">
     <section class="carte-conseil" id="je-garde-gen1">
       <h2>Je garde les cartes de la 1re génération</h2>
@@ -255,14 +284,15 @@ html body aside.conseil-collection p:last-child{margin:0}
     </section>
 
     <section class="carte-conseil" id="je-garde-etoile">
-      <h2>Je garde les cartes rares à étoile</h2>
+      <h2>Je garde les cartes rares à une étoile noire</h2>
       <ul>
-        <li>Je garde aussi les cartes <strong>rares à étoile</strong> : celles qui portent le symbole de rareté <strong>★</strong> en bas de la carte, le plus souvent en bas à droite, près de l’icône de l’extension et du nom de l’illustrateur.</li>
-        <li>Pour la reconnaître : une <strong>commune</strong> a généralement un rond (●), une <strong>peu commune</strong> un losange (◆), une <strong>rare</strong> une étoile (★). Sur beaucoup de cartes « rare holo », c’est encore cette étoile, avec un motif holographique sur l’illustration.</li>
-        <li>Ce n’est pas une garantie de valeur à elle seule : je regarde le Pokémon, le set, la langue et surtout l’état. Mais une vraie rare à étoile, en bel état, je la conserve plutôt que de la laisser circuler à la légère.</li>
+        <li>Pour ce conseil, je ne garde que les cartes dont le symbole de rareté est <strong>une seule étoile noire</strong> (★), en bas de la carte, le plus souvent en bas à droite, près de l’icône de l’extension et du nom de l’illustrateur. Ce sont les rares «&nbsp;simples&nbsp;».</li>
+        <li>Je n’inclus pas les cartes qui portent <strong>deux étoiles ou plus</strong>, une étoile <strong>blanche</strong> ou <strong>dorée</strong>, ni les raretés spéciales (illustration rare, illustration spéciale rare, ultra rare, Méga Hyper Rare, etc.).</li>
+        <li>Pour s’y retrouver : une <strong>commune</strong> a généralement un rond (●), une <strong>peu commune</strong> un losange (◆), une <strong>rare simple</strong> une seule étoile noire (★). Si l’illustration est holographique mais que le symbole reste une seule étoile noire, je la compte ici. Si le symbole change, je l’exclus.</li>
+        <li>Ce n’est pas une garantie de valeur à elle seule : je regarde le Pokémon, le set, la langue et surtout l’état. Une vraie rare à une étoile noire, en bel état, je la conserve plutôt que de la laisser circuler à la légère.</li>
         <li>Même réflexe de protection : pochette et toploader. Pour une notation, je préfère <strong>PSA</strong> ; <strong>PCA au minimum</strong>.</li>
       </ul>
-      <a class="btn-pill rouge" href="https://www.ebay.fr/sch/i.html?_nkw=carte%20pokemon%20rare%20holo%20%C3%A9toile&mkcid=1&mkrid=709-53476-19255-0&siteid=71&campid=5339225196&customid=conseils&toolid=10001&mkevt=1" target="_blank" rel="sponsored noopener">Voir les annonces sur eBay</a>
+      <a class="btn-pill rouge" href="https://www.ebay.fr/sch/i.html?_nkw=carte%20pokemon%20rare%20etoile&mkcid=1&mkrid=709-53476-19255-0&siteid=71&campid=5339225196&customid=conseils-etoile&toolid=10001&mkevt=1" target="_blank" rel="sponsored noopener">Voir les annonces sur eBay</a>
     </section>
   </div>
 
@@ -300,9 +330,15 @@ html body aside.conseil-collection p:last-child{margin:0}
   <section class="conseil-extensions" id="conseil-extensions">
     <p class="etiquette">Sorties à suivre</p>
     <h2>Je vous présente chaque nouvelle extension et chaque nouvelle sortie</h2>
-    <p>Au fil des annonces, je vous présente les nouvelles extensions, les sets et les coffrets : la date de sortie dès qu’elle est officielle, et les cartes à surveiller, sans inventer ce qui n’est pas encore publié. Je mets ces informations à jour chaque semaine.</p>
+    <p>Au fil des annonces, je vous présente les nouvelles extensions, les sets et les coffrets : la date de sortie dès qu’elle est officielle, et les cartes à surveiller, sans inventer ce qui n’est pas encore publié. Je rassemble les sets officiellement annoncés, pas encore sortis, sur la page <a href="sets-a-venir.html">Nouveaux sets à venir</a>. Je mets ces informations à jour chaque semaine.</p>
     <p class="ext-liens">Vous les retrouvez déjà dans <a href="index.html#actus-accueil">À la une</a> sur l’accueil, dans les <a href="nouveautes.html">Nouveautés</a>, et sur les pages de sets déjà en ligne — par exemple <a href="regne-delta.html">Règne Delta</a>, dont j’ai détaillé les cartes à l’unité plus bas.</p>
     <div class="extensions-suite" id="extensions-a-suivre">
+      <article class="ext-carte">
+        <p class="quand">À paraître le samedi 6 février 2027</p>
+        <h3><a href="poings-fluides.html">Méga-Évolution – Poings Fluides</a></h3>
+        <p>Annonce officielle TPCI du 19&nbsp;novembre&nbsp;2026 (nom anglais : Mega Evolution—Flowing Fists). Je rassemble sur la page du set les faits officiels et les cartes déjà révélées — en français et, à part, le set japonais Hadou Seeker, avec sa numérotation JP. La liste sera complétée au fil des révélations officielles.</p>
+        <p><a href="poings-fluides.html">Voir la page du set</a></p>
+      </article>
       <p class="ext-reserve">D’autres extensions et sorties seront ajoutées ici, au fur et à mesure des annonces officielles.</p>
     </div>
   </section>
@@ -316,6 +352,114 @@ html body aside.conseil-collection p:last-child{margin:0}
     <div class="abo-actions">
       <a class="btn-pill rouge" href="https://buy.stripe.com/aFa9AVcwYdTOgDcdez67S00" target="_blank" rel="noopener">S’abonner</a>
       <a class="btn-pill" href="conditions-abonnement.html">Conditions d’abonnement</a>
+    </div>
+  </section>
+
+  <section class="top10-recents" id="top10-recents">
+    <p class="etiquette">Sélection à l’unité</p>
+    <h2>Mes 10 Pokémon récents à surveiller</h2>
+    <p class="intro">Voici dix cartes de sets récents déjà traités sur le site (Règne Delta, Nuit Noire, Chaos Ascendant). Pour chacune : la photo utilisée sur le site, le nom, le set et le numéro, la rareté indiquée sur la fiche, et la cote déjà publiée. Pour Règne Delta, la cote est la médiane des ventes eBay.fr non gradées du 27/10 au 12/11/2026, hors port. Pour Nuit Noire et Chaos Ascendant, la page du set affiche une cote Cardmarket et des ventes eBay.fr sur une période donnée : je reprends ces chiffres, sans en inventer d’autres. Si la fiche ne dit pas que le prix monte ou baisse, je ne l’invente pas. Ce sont mes repères d’achat, pas un conseil financier.</p>
+    <div class="grille-tuiles">
+    <article class="tuile-carte" id="top-dlr-138">
+      <a class="tuile-visuel" href="regne-delta.html#138"><img src="https://pokecardex-scans.b-cdn.net/sets/DLR/FR/138.jpg?class=hd" alt="Méga-Rayquaza-ex 138/103, Règne Delta" width="200" height="279" loading="lazy"></a>
+      <div class="tuile-corps">
+        <p class="tuile-rar">Illustration spéciale rare</p>
+        <h3>Méga-Rayquaza-ex <span>Règne Delta · 138/103</span></h3>
+        <p class="tuile-cote">Cote du site <b>372,26&nbsp;€</b> <span>médiane des ventes eBay.fr non gradées du 27/10 au 12/11/2026, hors port — 74 ventes à l’unité. La fiche du set ne classe pas cette carte en hausse ou en baisse : je m’en tiens à cette médiane sur la période.</span></p>
+        <p class="tuile-conseil">Je surveille cette illustration spéciale rare : c’est un Méga très demandé. Attention au numéro : je ne la confonds pas avec la Double rare 084/103 (cote du site 6,41&nbsp;€, 84 ventes) ni avec la Méga Hyper Rare 141/103 (326,39&nbsp;€, 30 ventes). J’achète à l’unité, photos nettes ; PSA de préférence, PCA au minimum. Au-dessus de 200&nbsp;€, je vends plutôt en maison de ventes.</p>
+        <a class="btn-pill rouge" href="https://www.ebay.fr/sch/i.html?_nkw=pokemon%20M%C3%A9ga-Rayquaza-ex%20138/103%20R%C3%A8gne%20Delta&mkcid=1&mkrid=709-53476-19255-0&siteid=71&campid=5339225196&customid=top10-dlr138&toolid=10001&mkevt=1" target="_blank" rel="sponsored noopener">Voir les annonces sur eBay</a>
+      </div>
+    </article>
+    <article class="tuile-carte" id="top-dlr-136">
+      <a class="tuile-visuel" href="regne-delta.html#136"><img src="https://pokecardex-scans.b-cdn.net/sets/DLR/FR/136.jpg?class=hd" alt="Raikou-ex 136/103, Règne Delta" width="200" height="279" loading="lazy"></a>
+      <div class="tuile-corps">
+        <p class="tuile-rar">Illustration spéciale rare</p>
+        <h3>Raikou-ex <span>Règne Delta · 136/103</span></h3>
+        <p class="tuile-cote">Cote du site <b>93,36&nbsp;€</b> <span>médiane eBay.fr non gradées du 27/10 au 12/11/2026, hors port — 42 ventes à l’unité. Pas de mention de hausse ou de baisse sur la fiche : seulement cette médiane.</span></p>
+        <p class="tuile-conseil">Illustration spéciale d’un légendaire, sous les 200&nbsp;€ d’après la cote du site. Je vérifie qu’il s’agit bien du 136/103, pas de l’Ultra Rare 121/103 (cote 5,75&nbsp;€, 21 ventes). À l’unité, sur eBay ; PSA de préférence, PCA au minimum.</p>
+        <a class="btn-pill rouge" href="https://www.ebay.fr/sch/i.html?_nkw=pokemon%20Raikou-ex%20136/103%20R%C3%A8gne%20Delta&mkcid=1&mkrid=709-53476-19255-0&siteid=71&campid=5339225196&customid=top10-dlr136&toolid=10001&mkevt=1" target="_blank" rel="sponsored noopener">Voir les annonces sur eBay</a>
+      </div>
+    </article>
+    <article class="tuile-carte" id="top-dlr-114">
+      <a class="tuile-visuel" href="regne-delta.html#114"><img src="https://pokecardex-scans.b-cdn.net/sets/DLR/FR/114.jpg?class=hd" alt="Évoli 114/103, Règne Delta" width="200" height="279" loading="lazy"></a>
+      <div class="tuile-corps">
+        <p class="tuile-rar">Illustration rare</p>
+        <h3>Évoli <span>Règne Delta · 114/103</span></h3>
+        <p class="tuile-cote">Cote du site <b>27,78&nbsp;€</b> <span>médiane eBay.fr non gradées du 27/10 au 12/11/2026, hors port — 59 ventes à l’unité. La fiche donne cette médiane, sans tendance en hausse ou en baisse.</span></p>
+        <p class="tuile-conseil">J’aime les illustrations rares d’Évoli : le personnage reste très demandé. Je reste sur eBay, à l’unité, si le prix port compris reste cohérent avec cette cote. Notation : PSA de préférence, PCA au minimum.</p>
+        <a class="btn-pill rouge" href="https://www.ebay.fr/sch/i.html?_nkw=pokemon%20%C3%89voli%20114/103%20R%C3%A8gne%20Delta&mkcid=1&mkrid=709-53476-19255-0&siteid=71&campid=5339225196&customid=top10-dlr114&toolid=10001&mkevt=1" target="_blank" rel="sponsored noopener">Voir les annonces sur eBay</a>
+      </div>
+    </article>
+    <article class="tuile-carte" id="top-dlr-111">
+      <a class="tuile-visuel" href="regne-delta.html#111"><img src="https://pokecardex-scans.b-cdn.net/sets/DLR/FR/111.jpg?class=hd" alt="Groudon 111/103, Règne Delta" width="200" height="279" loading="lazy"></a>
+      <div class="tuile-corps">
+        <p class="tuile-rar">Illustration rare</p>
+        <h3>Groudon <span>Règne Delta · 111/103</span></h3>
+        <p class="tuile-cote">Cote du site <b>24,00&nbsp;€</b> <span>médiane eBay.fr non gradées du 27/10 au 12/11/2026, hors port — 45 ventes à l’unité. Pas de hausse ou de baisse indiquée sur la fiche.</span></p>
+        <p class="tuile-conseil">Illustration rare d’un légendaire très reconnu. Je l’achète à l’unité si l’annonce correspond au 111/103 et si l’état est net. PSA de préférence, PCA au minimum.</p>
+        <a class="btn-pill rouge" href="https://www.ebay.fr/sch/i.html?_nkw=pokemon%20Groudon%20111/103%20R%C3%A8gne%20Delta&mkcid=1&mkrid=709-53476-19255-0&siteid=71&campid=5339225196&customid=top10-dlr111&toolid=10001&mkevt=1" target="_blank" rel="sponsored noopener">Voir les annonces sur eBay</a>
+      </div>
+    </article>
+    <article class="tuile-carte" id="top-dlr-117">
+      <a class="tuile-visuel" href="regne-delta.html#117"><img src="https://pokecardex-scans.b-cdn.net/sets/DLR/FR/117.jpg?class=hd" alt="Kecleon 117/103, Règne Delta" width="200" height="279" loading="lazy"></a>
+      <div class="tuile-corps">
+        <p class="tuile-rar">Illustration rare</p>
+        <h3>Kecleon <span>Règne Delta · 117/103</span></h3>
+        <p class="tuile-cote">Cote du site <b>21,36&nbsp;€</b> <span>médiane eBay.fr non gradées du 27/10 au 12/11/2026, hors port — 104 ventes à l’unité, le plus grand nombre de ventes de cette sélection sur ce set. La fiche ne la classe pas en hausse ou en baisse.</span></p>
+        <p class="tuile-conseil">Beaucoup de ventes déjà relevées pour une illustration rare : ça m’aide à lire le marché, sans inventer une tendance. Je reste prudent sur les titres « possible PSA 10 ». J’achète à l’unité ; PSA de préférence, PCA au minimum.</p>
+        <a class="btn-pill rouge" href="https://www.ebay.fr/sch/i.html?_nkw=pokemon%20Kecleon%20117/103%20R%C3%A8gne%20Delta&mkcid=1&mkrid=709-53476-19255-0&siteid=71&campid=5339225196&customid=top10-dlr117&toolid=10001&mkevt=1" target="_blank" rel="sponsored noopener">Voir les annonces sur eBay</a>
+      </div>
+    </article>
+    <article class="tuile-carte" id="top-dlr-137">
+      <a class="tuile-visuel" href="regne-delta.html#137"><img src="https://pokecardex-scans.b-cdn.net/sets/DLR/FR/137.jpg?class=hd" alt="Méga-Golemastoc-ex 137/103, Règne Delta" width="200" height="279" loading="lazy"></a>
+      <div class="tuile-corps">
+        <p class="tuile-rar">Illustration spéciale rare</p>
+        <h3>Méga-Golemastoc-ex <span>Règne Delta · 137/103</span></h3>
+        <p class="tuile-cote">Cote du site <b>28,73&nbsp;€</b> <span>médiane eBay.fr non gradées du 27/10 au 12/11/2026, hors port — 12 ventes à l’unité. Pas de mention de hausse ou de baisse sur la fiche.</span></p>
+        <p class="tuile-conseil">Je surveille les Méga en illustration spéciale rare, y compris ceux moins médiatisés que Dracaufeu ou Rayquaza. Je vérifie le 137/103, pas l’Ultra Rare 122/103 (cote 10,68&nbsp;€, 3 ventes). À l’unité, eBay ; PSA de préférence, PCA au minimum.</p>
+        <a class="btn-pill rouge" href="https://www.ebay.fr/sch/i.html?_nkw=pokemon%20M%C3%A9ga-Golemastoc-ex%20137/103%20R%C3%A8gne%20Delta&mkcid=1&mkrid=709-53476-19255-0&siteid=71&campid=5339225196&customid=top10-dlr137&toolid=10001&mkevt=1" target="_blank" rel="sponsored noopener">Voir les annonces sur eBay</a>
+      </div>
+    </article>
+    <article class="tuile-carte" id="top-nn-116">
+      <a class="tuile-visuel" href="nuit-noire-ventes.html"><img src="img-nuit-noire/116.webp" alt="Méga-Darkrai-ex 116/084, Nuit Noire" width="200" height="279" loading="lazy"></a>
+      <div class="tuile-corps">
+        <p class="tuile-rar">Illustration spéciale rare</p>
+        <h3>Méga-Darkrai-ex <span>Nuit Noire · 116/084</span></h3>
+        <p class="tuile-cote">Cote Cardmarket affichée sur la page du set : <b>117,90&nbsp;€</b>. <span>Sur les 10 ventes eBay.fr à l’unité relevées du 04/10 au 04/11/2026 (hors port), la moyenne est de 280,10&nbsp;€, au-dessus de cette cote — même comparaison que sur la fiche du set. Je ne déduis pas une hausse ou une baisse dans le temps à partir de cette seule période.</span></p>
+        <p class="tuile-conseil">Méga en illustration spéciale rare, déjà recherché. J’achète seulement le 116/084, pas la Méga Hyper Rare 120/084 ni l’Ultra Rare 101/084. À l’unité ; PSA de préférence, PCA au minimum. Au-dessus de 200&nbsp;€, je pense maison de ventes.</p>
+        <a class="btn-pill rouge" href="https://www.ebay.fr/sch/i.html?_nkw=pokemon%20M%C3%A9ga-Darkrai-ex%20116/084%20Nuit%20Noire&mkcid=1&mkrid=709-53476-19255-0&siteid=71&campid=5339225196&customid=top10-nn116&toolid=10001&mkevt=1" target="_blank" rel="sponsored noopener">Voir les annonces sur eBay</a>
+      </div>
+    </article>
+    <article class="tuile-carte" id="top-nn-117">
+      <a class="tuile-visuel" href="nuit-noire-ventes.html"><img src="img-nuit-noire/117.webp" alt="Morpeko-ex 117/084, Nuit Noire" width="200" height="279" loading="lazy"></a>
+      <div class="tuile-corps">
+        <p class="tuile-rar">Illustration spéciale rare</p>
+        <h3>Morpeko-ex <span>Nuit Noire · 117/084</span></h3>
+        <p class="tuile-cote">Cote Cardmarket affichée sur la page du set : <b>23,54&nbsp;€</b>. <span>Sur les 11 ventes eBay.fr à l’unité relevées du 04/10 au 04/11/2026 (hors port), la moyenne est de 55,22&nbsp;€, au-dessus de cette cote, selon le même mode de comparaison que la fiche. Pas de courbe de hausse ou de baisse publiée au-delà de cette période.</span></p>
+        <p class="tuile-conseil">Illustration spéciale rare d’un Pokémon encore très visible dans le jeu. Sous les 200&nbsp;€ d’après la cote du site, je reste sur eBay, à l’unité, en vérifiant le 117/084 (pas l’Ultra Rare 102/084). PSA de préférence, PCA au minimum.</p>
+        <a class="btn-pill rouge" href="https://www.ebay.fr/sch/i.html?_nkw=pokemon%20Morpeko-ex%20117/084%20Nuit%20Noire&mkcid=1&mkrid=709-53476-19255-0&siteid=71&campid=5339225196&customid=top10-nn117&toolid=10001&mkevt=1" target="_blank" rel="sponsored noopener">Voir les annonces sur eBay</a>
+      </div>
+    </article>
+    <article class="tuile-carte" id="top-ch-116">
+      <a class="tuile-visuel" href="chaos-ascendant-ventes.html"><img src="https://assets.tcgdex.net/fr/me/me04/116/low.webp" alt="Méga-Amphinobi-ex 116/086, Chaos Ascendant" width="200" height="279" loading="lazy"></a>
+      <div class="tuile-corps">
+        <p class="tuile-rar">Illustration spéciale rare</p>
+        <h3>Méga-Amphinobi-ex <span>Chaos Ascendant · 116/086</span></h3>
+        <p class="tuile-cote">Cote Cardmarket affichée sur la page du set : <b>114,67&nbsp;€</b>. <span>Sur les 5 ventes eBay.fr à l’unité relevées du 11/10 au 03/11/2026 (hors port), la moyenne est de 175,81&nbsp;€, au-dessus de cette cote, comme le calcule la fiche du set. Échantillon limité : je ne parle pas de hausse ou de baisse dans le temps.</span></p>
+        <p class="tuile-conseil">Je surveille ce Méga en illustration spéciale rare. Je ne le confonds pas avec la Méga Hyper Rare 122/086 (cote Cardmarket 118,79&nbsp;€ sur la même page, sans vente eBay à l’unité relevée sur cette période). À l’unité ; PSA de préférence, PCA au minimum.</p>
+        <a class="btn-pill rouge" href="https://www.ebay.fr/sch/i.html?_nkw=pokemon%20M%C3%A9ga-Amphinobi-ex%20116/086%20Chaos%20Ascendant&mkcid=1&mkrid=709-53476-19255-0&siteid=71&campid=5339225196&customid=top10-ch116&toolid=10001&mkevt=1" target="_blank" rel="sponsored noopener">Voir les annonces sur eBay</a>
+      </div>
+    </article>
+    <article class="tuile-carte" id="top-ch-091">
+      <a class="tuile-visuel" href="chaos-ascendant-ventes.html"><img src="https://assets.tcgdex.net/fr/me/me04/091/low.webp" alt="Xerneas 091/086, Chaos Ascendant" width="200" height="279" loading="lazy"></a>
+      <div class="tuile-corps">
+        <p class="tuile-rar">Illustration rare</p>
+        <h3>Xerneas <span>Chaos Ascendant · 091/086</span></h3>
+        <p class="tuile-cote">Cote Cardmarket affichée sur la page du set : <b>5,34&nbsp;€</b>. <span>Sur les 4 ventes eBay.fr à l’unité relevées du 11/10 au 03/11/2026 (hors port), la moyenne est de 10,67&nbsp;€, au-dessus de cette cote, selon la même comparaison que la fiche. Peu de ventes : je n’en tire pas une tendance de long terme.</span></p>
+        <p class="tuile-conseil">Illustration rare d’un légendaire, encore abordable d’après les chiffres du site. Je l’achète à l’unité si l’état est net et si le numéro est bien le 091/086. PSA de préférence, PCA au minimum.</p>
+        <a class="btn-pill rouge" href="https://www.ebay.fr/sch/i.html?_nkw=pokemon%20Xerneas%20091/086%20Chaos%20Ascendant&mkcid=1&mkrid=709-53476-19255-0&siteid=71&campid=5339225196&customid=top10-ch091&toolid=10001&mkevt=1" target="_blank" rel="sponsored noopener">Voir les annonces sur eBay</a>
+      </div>
+    </article>
     </div>
   </section>
 
@@ -790,7 +934,7 @@ html body aside.conseil-collection p:last-child{margin:0}
   <button type="button" id="cookie-ok">D’accord</button>
 </div>
 <script>(function(){var b=document.getElementById("cookie-info");if(!b)return;var k="coin-mimiqui-info-cookies",vu=false;try{vu=localStorage.getItem(k)==="1"}catch(e){}if(!vu)b.hidden=false;document.getElementById("cookie-ok").addEventListener("click",function(){b.hidden=true;try{localStorage.setItem(k,"1")}catch(e){}});})();</script>
-<script src="site-commun.js?v=20261119ab" defer></script>
+<script src="site-commun.js?v=20261119ac" defer></script>
 <p class="pied-legal">Site de fan non officiel &middot; <a href="mentions-legales.html#liens">Liens affiliés</a> &middot; <a href="mentions-legales.html">Mentions légales</a> &middot; <a href="a-propos.html">À propos / Contact</a></p>
 <script>
 (function(){
