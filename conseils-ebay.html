@@ -17,7 +17,7 @@
 @font-face{font-family:"Source Sans 3";font-style:normal;font-weight:700;font-display:swap;src:url(fonts/source-sans-3-latin-700-normal.woff2) format("woff2")}
 </style>
 <style id="agrandi">html{font-size:106%}body{font-size:1.035rem}.wrap{max-width:1180px!important;margin-left:auto!important;margin-right:auto!important}.logo{font-size:calc(1.7rem * 1.35)!important}</style>
-<link rel="stylesheet" href="site-commun.css?v=20261119af">
+<link rel="stylesheet" href="site-commun.css?v=20261119aj">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <script type="application/ld+json" id="mq-jsonld">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://mimiqui.fr/"},{"@type":"ListItem","position":2,"name":"Conseils eBay","item":"https://mimiqui.fr/conseils-ebay.html"}]}</script>
 <script>try{if(localStorage.getItem("mimiqui_acces")==="ok")document.documentElement.classList.add("mq-abonne")}catch(e){}</script>
@@ -33,6 +33,33 @@ html{scroll-padding-top:calc(var(--hh, 5.5rem) + 12px)}
 .sommaire a:hover{background:#111;color:#fff}
 .paires{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:22px 0 8px}
 @media (max-width:800px){.paires{grid-template-columns:1fr}}
+.conseils-vides{display:grid;grid-template-columns:1fr;gap:18px;margin:22px 0 8px}
+.zone-a-remplir{min-height:7.5rem}
+.zone-a-remplir:not(:empty){min-height:0}
+.intro-151{margin:0}
+.liste-151{margin:0}
+.liste-151 summary{cursor:pointer;font-weight:600;padding:4px 0}
+.table-151-wrap{max-height:min(36rem,70vh);overflow:auto;margin-top:8px;border:1px solid rgba(17,17,17,.12);border-radius:10px}
+.table-151{width:100%;border-collapse:collapse;font-size:.92rem}
+.table-151 th,.table-151 td{padding:5px 8px;text-align:left;border-bottom:1px solid rgba(17,17,17,.08);vertical-align:middle}
+.table-151 thead th{position:sticky;top:0;background:#fff;font-size:.75rem;letter-spacing:.04em;text-transform:uppercase;color:#444;z-index:1}
+.table-151 .pop,.table-151 .num,.table-151 .vot{white-space:nowrap;font-variant-numeric:tabular-nums}
+.table-151 .pop{width:4.5rem;text-align:right}
+.table-151 .num{width:3.6rem;color:#555}
+.table-151 .spr{width:44px;padding-right:4px}
+.table-151 .spr img{display:block;width:36px;height:36px;object-fit:contain}
+.table-151 .vot{text-align:right;color:#444}
+.table-151 .carte{font-size:.9rem;line-height:1.3}
+.table-151 .carte .lang{color:#666;font-size:.8rem}
+.table-151 .lien-ebay{font-size:.8rem;margin-left:.2rem;white-space:nowrap}
+.table-151 .spr{width:52px;padding:4px 6px 4px 4px}
+.table-151 .spr img{display:block;width:44px;height:auto;max-height:62px;object-fit:contain;border-radius:3px}
+.table-151 .vot{font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:600}
+.table-151 tbody tr:nth-child(even){background:#fafaf8}
+.source-151{margin:.65rem 0 0;font-size:.85rem;color:#444;max-width:72ch}
+.source-151 a{color:inherit}
+.visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.carte-conseil h3{font-size:1.05rem;font-weight:600;margin:0;color:#222;line-height:1.35}
 .carte-conseil{background:#fff;border:1px solid rgba(17,17,17,.14);border-top:6px solid #d0021b;border-radius:14px;padding:22px 24px 20px;display:flex;flex-direction:column;gap:12px}
 .carte-conseil h2{font-family:var(--titre-font,"Bodoni Moda",Georgia,serif);font-size:clamp(1.5rem,3vw,2rem);font-weight:500;margin:0}
 .carte-conseil ul{margin:0;padding-left:1.15rem}
@@ -181,6 +208,8 @@ html body aside.conseil-collection p:last-child{margin:0}
     <p class="chapo">Des repères concrets pour acheter malin et bien vendre des cartes Pokémon, exclusivement sur eBay — en vous appuyant sur les ventes déjà réalisées et les cotes de ce site. Ce sont mes conseils, indicatifs, pas un avis sur un exemplaire en particulier ni un conseil financier.</p>
     <nav class="sommaire" aria-label="Sommaire">
       <a href="#conseil-collection">Cherchez dans votre collection</a>
+      <a href="conseils-achat.html">Conseils achat</a>
+      <a href="conseils-vente.html">Conseils vente</a>
       <a href="#acheter-malin">Acheter malin</a>
       <a href="#bien-vendre">Mes conseils pour vendre</a>
       <a href="#je-garde-gen1">Je garde la 1re génération</a>
@@ -207,6 +236,8 @@ html body aside.conseil-collection p:last-child{margin:0}
     </div>
     <ol class="fiche-liste">
       <li><a href="#conseil-collection"><span class="ico" aria-hidden="true">🔎</span><span class="txt">Cherchez d’abord dans votre collection</span><span class="fleche" aria-hidden="true">↓</span></a></li>
+      <li><a href="conseils-achat.html"><span class="ico" aria-hidden="true">💡</span><span class="txt">Conseils achat : acheter au prix bas pour revendre à long terme</span><span class="fleche" aria-hidden="true">→</span></a></li>
+      <li><a href="conseils-vente.html"><span class="ico" aria-hidden="true">🏷️</span><span class="txt">Conseils vente</span><span class="fleche" aria-hidden="true">→</span></a></li>
       <li><a href="#acheter-malin"><span class="ico" aria-hidden="true">💡</span><span class="txt">Acheter malin sur eBay : à l’unité, PSA de préférence, PCA au minimum</span><span class="fleche" aria-hidden="true">↓</span></a></li>
       <li><a href="#je-garde-gen1"><span class="ico" aria-hidden="true">✦</span><span class="txt">Gardez les 151 de la 1re génération</span><span class="fleche" aria-hidden="true">↓</span></a></li>
       <li><a href="#je-garde-etoile"><span class="ico" aria-hidden="true">★</span><span class="txt">Je garde les rares à une étoile noire ★</span><span class="fleche" aria-hidden="true">↓</span></a></li>
@@ -934,7 +965,7 @@ html body aside.conseil-collection p:last-child{margin:0}
   <button type="button" id="cookie-ok">D’accord</button>
 </div>
 <script>(function(){var b=document.getElementById("cookie-info");if(!b)return;var k="coin-mimiqui-info-cookies",vu=false;try{vu=localStorage.getItem(k)==="1"}catch(e){}if(!vu)b.hidden=false;document.getElementById("cookie-ok").addEventListener("click",function(){b.hidden=true;try{localStorage.setItem(k,"1")}catch(e){}});})();</script>
-<script src="site-commun.js?v=20261119af" defer></script>
+<script src="site-commun.js?v=20261119aj" defer></script>
 <p class="pied-legal">Site de fan non officiel &middot; <a href="mentions-legales.html#liens">Liens affiliés</a> &middot; <a href="mentions-legales.html">Mentions légales</a> &middot; <a href="a-propos.html">À propos / Contact</a></p>
 <script>
 (function(){

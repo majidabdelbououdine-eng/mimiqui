@@ -9,18 +9,18 @@ var __acc=/(\/|\/index\.html?)$/i.test(location.pathname);
 (function(){if(document.getElementById('echelle-site'))return;var s=document.createElement('style');s.id='echelle-site';s.textContent='html{font-size:106%!important}';(document.head||document.documentElement).appendChild(s);})();
 
 /* effets holographiques (holo.css / holo.js) */
-(function(){if(document.getElementById('holo-css'))return;var v='20261119af';var l=document.createElement('link');l.id='holo-css';l.rel='stylesheet';l.href='holo.css?v='+v;(document.head||document.documentElement).appendChild(l);var s=document.createElement('script');s.id='holo-js';s.src='holo.js?v='+v;s.defer=true;(document.head||document.documentElement).appendChild(s);})();
+(function(){if(document.getElementById('holo-css'))return;var v='20261119aj';var l=document.createElement('link');l.id='holo-css';l.rel='stylesheet';l.href='holo.css?v='+v;(document.head||document.documentElement).appendChild(l);var s=document.createElement('script');s.id='holo-js';s.src='holo.js?v='+v;s.defer=true;(document.head||document.documentElement).appendChild(s);})();
 /* maquette-pro : surcharge chargee apres holo.css */
-(function(){var v='20261119af';function go(){if(document.getElementById('maquette-pro-css'))return;var l=document.createElement('link');l.id='maquette-pro-css';l.rel='stylesheet';l.href='maquette-pro.css?v='+v;var h=document.getElementById('holo-css');if(h&&h.parentNode){if(h.nextSibling)h.parentNode.insertBefore(l,h.nextSibling);else h.parentNode.appendChild(l);}else{(document.head||document.documentElement).appendChild(l);}}go();if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',go);setTimeout(go,50);})();
+(function(){var v='20261119aj';function go(){if(document.getElementById('maquette-pro-css'))return;var l=document.createElement('link');l.id='maquette-pro-css';l.rel='stylesheet';l.href='maquette-pro.css?v='+v;var h=document.getElementById('holo-css');if(h&&h.parentNode){if(h.nextSibling)h.parentNode.insertBefore(l,h.nextSibling);else h.parentNode.appendChild(l);}else{(document.head||document.documentElement).appendChild(l);}}go();if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',go);setTimeout(go,50);})();
 /* i18n FR / EN / JA */
-(function(){if(document.getElementById('i18n-js'))return;var v='20261119af';var page=(location.pathname.split('/').pop()||'index.html').toLowerCase();var lang='fr';try{var q=new URLSearchParams(location.search);var l=q.get('uilang')||((page!=='carte-pikachu.html')?q.get('lang'):'')||localStorage.getItem('mimiqui-lang')||'fr';if(/^(fr|en|ja)$/.test(l))lang=l;}catch(e){}document.documentElement.setAttribute('lang',lang==='ja'?'ja':lang==='en'?'en':'fr');if(lang!=='fr'){var h=document.createElement('style');h.id='i18n-hide';h.textContent='html:not(.i18n-ready) body{opacity:0}';(document.head||document.documentElement).appendChild(h);setTimeout(function(){var x=document.getElementById('i18n-hide');if(x&&x.parentNode)x.parentNode.removeChild(x);document.documentElement.classList.add('i18n-ready');},400);}function add(src,id){var s=document.createElement('script');s.id=id;s.src=src;s.async=false;(document.head||document.documentElement).appendChild(s);}if(lang==='en')add('i18n-en.js?v='+v,'i18n-en');if(lang==='ja')add('i18n-ja.js?v='+v,'i18n-ja');add('i18n.js?v='+v,'i18n-js');})();
+(function(){if(document.getElementById('i18n-js'))return;var v='20261119aj';var page=(location.pathname.split('/').pop()||'index.html').toLowerCase();var lang='fr';try{var q=new URLSearchParams(location.search);var l=q.get('uilang')||((page!=='carte-pikachu.html')?q.get('lang'):'')||localStorage.getItem('mimiqui-lang')||'fr';if(/^(fr|en|ja)$/.test(l))lang=l;}catch(e){}document.documentElement.setAttribute('lang',lang==='ja'?'ja':lang==='en'?'en':'fr');if(lang!=='fr'){var h=document.createElement('style');h.id='i18n-hide';h.textContent='html:not(.i18n-ready) body{opacity:0}';(document.head||document.documentElement).appendChild(h);setTimeout(function(){var x=document.getElementById('i18n-hide');if(x&&x.parentNode)x.parentNode.removeChild(x);document.documentElement.classList.add('i18n-ready');},400);}function add(src,id){var s=document.createElement('script');s.id=id;s.src=src;s.async=false;(document.head||document.documentElement).appendChild(s);}if(lang==='en')add('i18n-en.js?v='+v,'i18n-en');if(lang==='ja')add('i18n-ja.js?v='+v,'i18n-ja');add('i18n.js?v='+v,'i18n-js');})();
 
 (function(){
   "use strict";
   var page=(location.pathname.split('/').pop()||'index.html').toLowerCase();
   if(page==='accueil.html')page='index.html';
 
-  var SITE_CACHE="20261119af";
+  var SITE_CACHE="20261119aj";
   var EBAY_ENCOURS="https://www.ebay.fr/sch/i.html?_nkw=carte%20Pok%C3%A9mon&mkcid=1&mkrid=709-53476-19255-0&siteid=71&campid=5339225196&customid=encours-menu&toolid=10001&mkevt=1";
   var SERIES_MEGA=[
     {t:"Poings Fluides",s:[["Page du set (à venir, 6 fév. 2027)","poings-fluides.html"]]},
@@ -72,6 +72,8 @@ var __acc=/(\/|\/index\.html?)$/i.test(location.pathname);
     {t:"Vendre",h:"vendre.html",p:["vendre.html","estimer-ma-carte.html","guide-vendre-ebay.html","conseils-ebay.html"],s:[
       ["Conseils eBay","conseils-ebay.html"],["Estimer ma carte","estimer-ma-carte.html"],["Guide pour vendre sur eBay","guide-vendre-ebay.html"],["Vendre sur eBay","vendre.html"]
     ]},
+    {t:"Conseils achat",h:"conseils-achat.html",p:["conseils-achat.html"],s:[["#001 Bulbizarre","conseils-achat.html#p001"],["#002 Herbizarre","conseils-achat.html#p002"],["#003 Florizarre","conseils-achat.html#p003"],["#004 Salamèche","conseils-achat.html#p004"],["#005 Reptincel","conseils-achat.html#p005"],["#006 Dracaufeu","conseils-achat.html#p006"],["#007 Carapuce","conseils-achat.html#p007"],["#008 Carabaffe","conseils-achat.html#p008"],["#009 Tortank","conseils-achat.html#p009"],["#010 Chenipan","conseils-achat.html#p010"],["#011 Chrysacier","conseils-achat.html#p011"],["#012 Papilusion","conseils-achat.html#p012"],["#013 Aspicot","conseils-achat.html#p013"],["#014 Coconfort","conseils-achat.html#p014"],["#015 Dardargnan","conseils-achat.html#p015"],["#016 Roucool","conseils-achat.html#p016"],["#017 Roucoups","conseils-achat.html#p017"],["#018 Roucarnage","conseils-achat.html#p018"],["#019 Rattata","conseils-achat.html#p019"],["#020 Rattatac","conseils-achat.html#p020"],["#021 Piafabec","conseils-achat.html#p021"],["#022 Rapasdepic","conseils-achat.html#p022"],["#023 Abo","conseils-achat.html#p023"],["#024 Arbok","conseils-achat.html#p024"],["#025 Pikachu","conseils-achat.html#p025"],["#026 Raichu","conseils-achat.html#p026"],["#027 Sabelette","conseils-achat.html#p027"],["#028 Sablaireau","conseils-achat.html#p028"],["#029 Nidoran♀","conseils-achat.html#p029"],["#030 Nidorina","conseils-achat.html#p030"],["#031 Nidoqueen","conseils-achat.html#p031"],["#032 Nidoran♂","conseils-achat.html#p032"],["#033 Nidorino","conseils-achat.html#p033"],["#034 Nidoking","conseils-achat.html#p034"],["#035 Mélofée","conseils-achat.html#p035"],["#036 Mélodelfe","conseils-achat.html#p036"],["#037 Goupix","conseils-achat.html#p037"],["#038 Feunard","conseils-achat.html#p038"],["#039 Rondoudou","conseils-achat.html#p039"],["#040 Grodoudou","conseils-achat.html#p040"],["#041 Nosferapti","conseils-achat.html#p041"],["#042 Nosferalto","conseils-achat.html#p042"],["#043 Mystherbe","conseils-achat.html#p043"],["#044 Ortide","conseils-achat.html#p044"],["#045 Rafflesia","conseils-achat.html#p045"],["#046 Paras","conseils-achat.html#p046"],["#047 Parasect","conseils-achat.html#p047"],["#048 Mimitoss","conseils-achat.html#p048"],["#049 Aéromite","conseils-achat.html#p049"],["#050 Taupiqueur","conseils-achat.html#p050"],["#051 Triopikeur","conseils-achat.html#p051"],["#052 Miaouss","conseils-achat.html#p052"],["#053 Persian","conseils-achat.html#p053"],["#054 Psykokwak","conseils-achat.html#p054"],["#055 Akwakwak","conseils-achat.html#p055"],["#056 Férosinge","conseils-achat.html#p056"],["#057 Colossinge","conseils-achat.html#p057"],["#058 Caninos","conseils-achat.html#p058"],["#059 Arcanin","conseils-achat.html#p059"],["#060 Ptitard","conseils-achat.html#p060"],["#061 Têtarte","conseils-achat.html#p061"],["#062 Tartard","conseils-achat.html#p062"],["#063 Abra","conseils-achat.html#p063"],["#064 Kadabra","conseils-achat.html#p064"],["#065 Alakazam","conseils-achat.html#p065"],["#066 Machoc","conseils-achat.html#p066"],["#067 Machopeur","conseils-achat.html#p067"],["#068 Mackogneur","conseils-achat.html#p068"],["#069 Chétiflor","conseils-achat.html#p069"],["#070 Boustiflor","conseils-achat.html#p070"],["#071 Empiflor","conseils-achat.html#p071"],["#072 Tentacool","conseils-achat.html#p072"],["#073 Tentacruel","conseils-achat.html#p073"],["#074 Racaillou","conseils-achat.html#p074"],["#075 Gravalanch","conseils-achat.html#p075"],["#076 Grolem","conseils-achat.html#p076"],["#077 Ponyta","conseils-achat.html#p077"],["#078 Galopa","conseils-achat.html#p078"],["#079 Ramoloss","conseils-achat.html#p079"],["#080 Flagadoss","conseils-achat.html#p080"],["#081 Magnéti","conseils-achat.html#p081"],["#082 Magnéton","conseils-achat.html#p082"],["#083 Canarticho","conseils-achat.html#p083"],["#084 Doduo","conseils-achat.html#p084"],["#085 Dodrio","conseils-achat.html#p085"],["#086 Otaria","conseils-achat.html#p086"],["#087 Lamantine","conseils-achat.html#p087"],["#088 Tadmorv","conseils-achat.html#p088"],["#089 Grotadmorv","conseils-achat.html#p089"],["#090 Kokiyas","conseils-achat.html#p090"],["#091 Crustabri","conseils-achat.html#p091"],["#092 Fantominus","conseils-achat.html#p092"],["#093 Spectrum","conseils-achat.html#p093"],["#094 Ectoplasma","conseils-achat.html#p094"],["#095 Onix","conseils-achat.html#p095"],["#096 Soporifik","conseils-achat.html#p096"],["#097 Hypnomade","conseils-achat.html#p097"],["#098 Krabby","conseils-achat.html#p098"],["#099 Krabboss","conseils-achat.html#p099"],["#100 Voltorbe","conseils-achat.html#p100"],["#101 Électrode","conseils-achat.html#p101"],["#102 Noeunoeuf","conseils-achat.html#p102"],["#103 Noadkoko","conseils-achat.html#p103"],["#104 Osselait","conseils-achat.html#p104"],["#105 Ossatueur","conseils-achat.html#p105"],["#106 Kicklee","conseils-achat.html#p106"],["#107 Tygnon","conseils-achat.html#p107"],["#108 Excelangue","conseils-achat.html#p108"],["#109 Smogo","conseils-achat.html#p109"],["#110 Smogogo","conseils-achat.html#p110"],["#111 Rhinocorne","conseils-achat.html#p111"],["#112 Rhinoféros","conseils-achat.html#p112"],["#113 Leveinard","conseils-achat.html#p113"],["#114 Saquedeneu","conseils-achat.html#p114"],["#115 Kangourex","conseils-achat.html#p115"],["#116 Hypotrempe","conseils-achat.html#p116"],["#117 Hypocéan","conseils-achat.html#p117"],["#118 Poissirène","conseils-achat.html#p118"],["#119 Poissoroy","conseils-achat.html#p119"],["#120 Stari","conseils-achat.html#p120"],["#121 Staross","conseils-achat.html#p121"],["#122 M. Mime","conseils-achat.html#p122"],["#123 Insécateur","conseils-achat.html#p123"],["#124 Lippoutou","conseils-achat.html#p124"],["#125 Élektek","conseils-achat.html#p125"],["#126 Magmar","conseils-achat.html#p126"],["#127 Scarabrute","conseils-achat.html#p127"],["#128 Tauros","conseils-achat.html#p128"],["#129 Magicarpe","conseils-achat.html#p129"],["#130 Léviator","conseils-achat.html#p130"],["#131 Lokhlass","conseils-achat.html#p131"],["#132 Métamorph","conseils-achat.html#p132"],["#133 Évoli","conseils-achat.html#p133"],["#134 Aquali","conseils-achat.html#p134"],["#135 Voltali","conseils-achat.html#p135"],["#136 Pyroli","conseils-achat.html#p136"],["#137 Porygon","conseils-achat.html#p137"],["#138 Amonita","conseils-achat.html#p138"],["#139 Amonistar","conseils-achat.html#p139"],["#140 Kabuto","conseils-achat.html#p140"],["#141 Kabutops","conseils-achat.html#p141"],["#142 Ptéra","conseils-achat.html#p142"],["#143 Ronflex","conseils-achat.html#p143"],["#144 Artikodin","conseils-achat.html#p144"],["#145 Électhor","conseils-achat.html#p145"],["#146 Sulfura","conseils-achat.html#p146"],["#147 Minidraco","conseils-achat.html#p147"],["#148 Draco","conseils-achat.html#p148"],["#149 Dracolosse","conseils-achat.html#p149"],["#150 Mewtwo","conseils-achat.html#p150"],["#151 Mew","conseils-achat.html#p151"]]},
+    {t:"Conseils vente",h:"conseils-vente.html",p:["conseils-vente.html"]},
     {t:"Nouveautés",h:"nouveautes.html",p:["nouveautes.html","sets-a-venir.html"],s:[["Nouveautés","nouveautes.html"],["Sets à venir","sets-a-venir.html"],["Poings Fluides (à venir)","poings-fluides.html"]]},
     {t:"Blog",h:"blog.html",p:["blog.html"]},
     {t:"Mon compte",h:"mon-compte.html",p:["mon-compte.html"]}
@@ -161,13 +163,28 @@ var __acc=/(\/|\/index\.html?)$/i.test(location.pathname);
     SECTIONS.forEach(function(sec){
       var li=el("li");
       if(sec.t==="Vendre") li.classList.add("li-vendre");
+      if(sec.t==="Conseils achat") li.classList.add("li-conseils-achat");
       var a=el("a",{href:sec.h},sec.t);
       if(sec===cur){ li.classList.add("actif"); a.setAttribute("aria-current", (sec.s&&sec.s.length)?"true":"page"); }
       li.appendChild(a);
       if(sec.s && sec.s.length){
         var btn=el("button",{type:"button","class":"ouvre-sous","aria-expanded":"false","aria-label":"Sous-menu "+sec.t});
         btn.innerHTML="&#9662;";
-        var sm=el("ul",{"class":"sous-menu"});
+        var sm=el("ul",{"class":"sous-menu"+(sec.t==="Conseils achat"?" sous-menu-conseils-achat":"")});
+        if(sec.t==="Conseils achat"){
+          var g=el("li",{"class":"sm-groupe sm-groupe-top1gen sm-ouvert"});
+          var tb=el("button",{type:"button","class":"sm-tog","aria-expanded":"true"});
+          tb.appendChild(document.createTextNode("Le top 1re génération "));
+          tb.appendChild(el("span",{"class":"sm-fl","aria-hidden":"true"},"\u25BE"));
+          var sous=el("ul",{"class":"liste-top1gen"});
+          sec.s.forEach(function(it){
+            var x=el("li");
+            x.appendChild(lienEbay(it[1], it[0]));
+            sous.appendChild(x);
+          });
+          g.append(tb,sous);
+          sm.appendChild(g);
+        } else {
         sec.s.forEach(function(it){
           if(sec.t==="Cartes" && it[1]==="cartes-pokemon.html"){
             groupeSeries(sm);
@@ -177,9 +194,14 @@ var __acc=/(\/|\/index\.html?)$/i.test(location.pathname);
           x.appendChild(lienEbay(it[1], it[0]));
           sm.appendChild(x);
         });
+        }
         sm.querySelectorAll("a").forEach(function(s){
-          var href=(s.getAttribute("href")||"").split("#")[0].toLowerCase();
-          if(href===page) s.setAttribute("aria-current","page");
+          var raw=(s.getAttribute("href")||"");
+          var href=raw.split("#")[0].toLowerCase();
+          if(sec.t==="Conseils achat"){
+            var h=raw.indexOf("#")>=0?raw.slice(raw.indexOf("#")):"";
+            if(href===page && h && h===(location.hash||"")) s.setAttribute("aria-current","page");
+          }else if(href===page) s.setAttribute("aria-current","page");
         });
         btn.addEventListener("click",function(e){e.preventDefault();var o=li.classList.toggle("ouvert");btn.setAttribute("aria-expanded",o?"true":"false");});
         li.append(btn,sm);
@@ -777,6 +799,7 @@ addEventListener('pageshow',function(e){if(e.persisted)H.classList.remove('h5-ou
 (function(){
 function fitSous(sm, anchorTop){
   if(!sm) return;
+  if(sm.classList.contains('sous-menu-151')||sm.classList.contains('sm-sous-151')||sm.classList.contains('sous-menu-conseils-achat')||(sm.parentElement&&(sm.parentElement.classList.contains('li-conseils-achat')||sm.parentElement.classList.contains('sm-groupe-top1gen')))) return;
   /* Pas de max-height / scrollbar : menus compacts + colonnes côté CSS */
   sm.classList.remove('sm-scroll');
   sm.style.maxHeight = '';
@@ -787,6 +810,18 @@ function init(){
     var b=g.querySelector(':scope > .sm-tog') || g.querySelector('.sm-tog');
     var s=g.querySelector(':scope > .sm-sous') || g.querySelector('.sm-sous');
     if(!b||!s)return;
+    if(g.classList.contains('sm-groupe-top1gen')){
+      /* Liste sous la rubrique, pas en flyout latéral */
+      var f=g.querySelector(':scope > .sm-tog .sm-fl') || g.querySelector('.sm-fl');
+      if(f) f.textContent='\u25BE';
+      b.addEventListener('click', function(e){
+        e.preventDefault(); e.stopPropagation();
+        var o=g.classList.toggle('sm-ouvert');
+        b.setAttribute('aria-expanded', o?'true':'false');
+        if(f) f.textContent = o ? '\u25BE' : '\u25B8';
+      });
+      return;
+    }
     function cote(){
       var d=window.innerWidth>600;
       var gc=false;
@@ -847,6 +882,69 @@ function init(){
   });
 }
 if(document.readyState==='loading') document.addEventListener('DOMContentLoaded', init); else init();
+})();
+
+/* Conseils achat : rubrique « Le top 1re génération » + liste 151 défilante */
+(function(){
+  if(document.getElementById('menu-conseils-achat-css'))return;
+  var css=
+    'html body nav ul.menu-principal>li.li-conseils-achat .liste-top1gen{display:none;list-style:none;margin:0;padding:.15rem 0 .25rem;max-height:min(22rem,65vh);overflow-x:hidden;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;scrollbar-width:thin;width:100%;box-sizing:border-box;columns:auto;column-count:auto;}'+
+    'html body nav ul.menu-principal>li.li-conseils-achat .sm-groupe-top1gen.sm-ouvert>.liste-top1gen{display:block;}'+
+    'html body nav ul.menu-principal>li.li-conseils-achat .liste-top1gen>li{display:block;}'+
+    'html body nav ul.menu-principal>li.li-conseils-achat .liste-top1gen a{display:block;padding:.28rem .9rem;font-size:.88rem;line-height:1.25;white-space:nowrap;}'+
+    '@media (max-width:799px){html body nav.menu-ouvert ul.menu-principal>li.li-conseils-achat .sm-groupe-top1gen.sm-ouvert>.liste-top1gen{max-height:min(16rem,45vh);width:100%;}}'+
+    'html body nav ul.menu-principal>li.li-conseils-achat>ul.sous-menu,'+
+    'html body nav ul.menu-principal>li.li-conseils-achat>ul.sous-menu-conseils-achat,'+
+    'html body nav ul.menu-principal>li.li-conseils-achat.ouvert>ul.sous-menu{'+
+      'max-height:none!important;overflow:visible!important;'+
+      'min-width:16rem!important;max-width:min(22rem,90vw)!important;padding:.25rem 0!important;'+
+    '}'+
+    '@media (min-width:800px){'+
+      'html body nav ul.menu-principal>li.li-conseils-achat>ul.sous-menu{left:auto!important;right:0!important}'+
+    '}'+
+    'html body nav ul.menu-principal>li.li-conseils-achat .sm-groupe-top1gen>button.sm-tog{'+
+      'width:100%;font-weight:800!important;padding:.4rem .9rem!important;font-size:.92rem!important;'+
+    '}'+
+    'html body nav ul.menu-principal>li.li-conseils-achat .sm-groupe-top1gen>ul.sm-sous,'+
+    'html body nav ul.menu-principal>li.li-conseils-achat .sm-groupe-top1gen>ul.sm-sous-151,'+
+    'html body nav ul.menu-principal>li.li-conseils-achat .sm-groupe-top1gen.sm-ouvert>ul.sm-sous{'+
+      'position:static!important;left:auto!important;right:auto!important;top:auto!important;transform:none!important;'+
+      'display:none!important;visibility:visible!important;opacity:1!important;pointer-events:auto!important;'+
+      'min-width:0!important;width:100%!important;max-width:100%!important;margin:0!important;padding:.15rem 0 .25rem!important;'+
+      'border:0!important;box-shadow:none!important;background:transparent!important;border-radius:0!important;'+
+    '}'+
+    'html body nav ul.menu-principal>li.li-conseils-achat .sm-groupe-top1gen.sm-ouvert>ul.sm-sous,'+
+    'html body nav ul.menu-principal>li.li-conseils-achat .sm-groupe-top1gen.sm-ouvert>ul.sm-sous-151,'+
+    'html body nav ul.menu-principal>li.li-conseils-achat.ouvert .sm-groupe-top1gen.sm-ouvert>ul.sm-sous{'+
+      'display:block!important;'+
+      'max-height:min(22rem,65vh)!important;overflow-x:hidden!important;overflow-y:auto!important;'+
+      'overscroll-behavior:contain;-webkit-overflow-scrolling:touch;scrollbar-width:thin;'+
+    '}'+
+    'html body nav ul.menu-principal>li.li-conseils-achat .sm-groupe-top1gen>ul.sm-sous,'+'html body nav ul.menu-principal>li.li-conseils-achat .sm-groupe-top1gen>ul.sm-sous-151,'+'html body nav.menu-ouvert ul.menu-principal>li.li-conseils-achat .sm-groupe-top1gen>ul.sm-sous{'+'columns:1!important;column-count:1!important;-webkit-columns:1!important;column-width:auto!important;'+'}'+'html body nav ul.menu-principal>li.li-conseils-achat .sm-groupe-top1gen>ul.sm-sous a{'+
+      'padding:.28rem .9rem!important;font-size:.88rem!important;line-height:1.25;white-space:nowrap;'+
+    '}'+
+    '@media (hover:hover) and (min-width:800px){'+
+      'html body nav ul.menu-principal>li.li-conseils-achat .sm-groupe-top1gen:hover>ul.sm-sous,'+
+      'html body nav ul.menu-principal>li.li-conseils-achat .sm-groupe-top1gen:focus-within>ul.sm-sous{'+
+        'display:block!important;max-height:min(22rem,65vh)!important;overflow-x:hidden!important;overflow-y:auto!important;'+
+      '}'+
+    '}'+
+    '@media (max-width:799px){'+
+      'html body nav.menu-ouvert ul.menu-principal>li.li-conseils-achat>ul.sous-menu,'+
+      'html body nav.menu-ouvert ul.menu-principal>li.li-conseils-achat.ouvert>ul.sous-menu{'+
+        'max-height:none!important;overflow:visible!important;width:100%!important;max-width:100%!important;min-width:0!important;'+
+        'position:static!important;display:block!important;flex:none!important;'+
+      '}'+
+      'html body nav.menu-ouvert ul.menu-principal>li.li-conseils-achat .sm-groupe-top1gen.sm-ouvert>ul.sm-sous,'+
+      'html body nav.nav-commune.menu-ouvert ul.menu-principal>li.li-conseils-achat .sm-groupe-top1gen.sm-ouvert>ul.sm-sous-151{'+
+        'display:block!important;position:static!important;max-height:min(16rem,45vh)!important;'+
+        'overflow-x:hidden!important;overflow-y:auto!important;width:100%!important;flex:none!important;'+
+      '}'+
+      'html body nav.menu-ouvert ul.menu-principal>li.li-conseils-achat .sm-groupe-top1gen>ul.sm-sous>li{'+
+        'flex:0 0 auto!important;display:block!important;width:100%;'+
+      '}'+
+    '}';
+  var st=document.createElement('style');st.id='menu-conseils-achat-css';st.textContent=css;document.head.appendChild(st);
 })();
 
 /* menu-vendre : le sous-menu « Vendre sur eBay » s'ouvre dans l'espace libre, au-dessus de tout */
