@@ -9,18 +9,18 @@ var __acc=/(\/|\/index\.html?)$/i.test(location.pathname);
 (function(){if(document.getElementById('echelle-site'))return;var s=document.createElement('style');s.id='echelle-site';s.textContent='html{font-size:106%!important}';(document.head||document.documentElement).appendChild(s);})();
 
 /* effets holographiques (holo.css / holo.js) */
-(function(){if(document.getElementById('holo-css'))return;var v='20261119aj';var l=document.createElement('link');l.id='holo-css';l.rel='stylesheet';l.href='holo.css?v='+v;(document.head||document.documentElement).appendChild(l);var s=document.createElement('script');s.id='holo-js';s.src='holo.js?v='+v;s.defer=true;(document.head||document.documentElement).appendChild(s);})();
+(function(){if(document.getElementById('holo-css'))return;var v='20261120b';var l=document.createElement('link');l.id='holo-css';l.rel='stylesheet';l.href='holo.css?v='+v;(document.head||document.documentElement).appendChild(l);var s=document.createElement('script');s.id='holo-js';s.src='holo.js?v='+v;s.defer=true;(document.head||document.documentElement).appendChild(s);})();
 /* maquette-pro : surcharge chargee apres holo.css */
-(function(){var v='20261119aj';function go(){if(document.getElementById('maquette-pro-css'))return;var l=document.createElement('link');l.id='maquette-pro-css';l.rel='stylesheet';l.href='maquette-pro.css?v='+v;var h=document.getElementById('holo-css');if(h&&h.parentNode){if(h.nextSibling)h.parentNode.insertBefore(l,h.nextSibling);else h.parentNode.appendChild(l);}else{(document.head||document.documentElement).appendChild(l);}}go();if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',go);setTimeout(go,50);})();
+(function(){var v='20261120b';function go(){if(document.getElementById('maquette-pro-css'))return;var l=document.createElement('link');l.id='maquette-pro-css';l.rel='stylesheet';l.href='maquette-pro.css?v='+v;var h=document.getElementById('holo-css');if(h&&h.parentNode){if(h.nextSibling)h.parentNode.insertBefore(l,h.nextSibling);else h.parentNode.appendChild(l);}else{(document.head||document.documentElement).appendChild(l);}}go();if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',go);setTimeout(go,50);})();
 /* i18n FR / EN / JA */
-(function(){if(document.getElementById('i18n-js'))return;var v='20261119aj';var page=(location.pathname.split('/').pop()||'index.html').toLowerCase();var lang='fr';try{var q=new URLSearchParams(location.search);var l=q.get('uilang')||((page!=='carte-pikachu.html')?q.get('lang'):'')||localStorage.getItem('mimiqui-lang')||'fr';if(/^(fr|en|ja)$/.test(l))lang=l;}catch(e){}document.documentElement.setAttribute('lang',lang==='ja'?'ja':lang==='en'?'en':'fr');if(lang!=='fr'){var h=document.createElement('style');h.id='i18n-hide';h.textContent='html:not(.i18n-ready) body{opacity:0}';(document.head||document.documentElement).appendChild(h);setTimeout(function(){var x=document.getElementById('i18n-hide');if(x&&x.parentNode)x.parentNode.removeChild(x);document.documentElement.classList.add('i18n-ready');},400);}function add(src,id){var s=document.createElement('script');s.id=id;s.src=src;s.async=false;(document.head||document.documentElement).appendChild(s);}if(lang==='en')add('i18n-en.js?v='+v,'i18n-en');if(lang==='ja')add('i18n-ja.js?v='+v,'i18n-ja');add('i18n.js?v='+v,'i18n-js');})();
+(function(){if(document.getElementById('i18n-js'))return;var v='20261120b';var page=(location.pathname.split('/').pop()||'index.html').toLowerCase();var lang='fr';try{var q=new URLSearchParams(location.search);var l=q.get('uilang')||((page!=='carte-pikachu.html')?q.get('lang'):'')||localStorage.getItem('mimiqui-lang')||'fr';if(/^(fr|en|ja)$/.test(l))lang=l;}catch(e){}document.documentElement.setAttribute('lang',lang==='ja'?'ja':lang==='en'?'en':'fr');if(lang!=='fr'){var h=document.createElement('style');h.id='i18n-hide';h.textContent='html:not(.i18n-ready) body{opacity:0}';(document.head||document.documentElement).appendChild(h);setTimeout(function(){var x=document.getElementById('i18n-hide');if(x&&x.parentNode)x.parentNode.removeChild(x);document.documentElement.classList.add('i18n-ready');},400);}function add(src,id){var s=document.createElement('script');s.id=id;s.src=src;s.async=false;(document.head||document.documentElement).appendChild(s);}if(lang==='en')add('i18n-en.js?v='+v,'i18n-en');if(lang==='ja')add('i18n-ja.js?v='+v,'i18n-ja');add('i18n.js?v='+v,'i18n-js');})();
 
 (function(){
   "use strict";
   var page=(location.pathname.split('/').pop()||'index.html').toLowerCase();
   if(page==='accueil.html')page='index.html';
 
-  var SITE_CACHE="20261119aj";
+  var SITE_CACHE="20261120b";
   var EBAY_ENCOURS="https://www.ebay.fr/sch/i.html?_nkw=carte%20Pok%C3%A9mon&mkcid=1&mkrid=709-53476-19255-0&siteid=71&campid=5339225196&customid=encours-menu&toolid=10001&mkevt=1";
   var SERIES_MEGA=[
     {t:"Poings Fluides",s:[["Page du set (à venir, 6 fév. 2027)","poings-fluides.html"]]},
@@ -172,11 +172,16 @@ var __acc=/(\/|\/index\.html?)$/i.test(location.pathname);
         btn.innerHTML="&#9662;";
         var sm=el("ul",{"class":"sous-menu"+(sec.t==="Conseils achat"?" sous-menu-conseils-achat":"")});
         if(sec.t==="Conseils achat"){
-          var g=el("li",{"class":"sm-groupe sm-groupe-top1gen sm-ouvert"});
-          var tb=el("button",{type:"button","class":"sm-tog","aria-expanded":"true"});
-          tb.appendChild(document.createTextNode("Le top 1re génération "));
-          tb.appendChild(el("span",{"class":"sm-fl","aria-hidden":"true"},"\u25BE"));
+          var g=el("li",{"class":"sm-groupe sm-groupe-top1gen"});
+          var tb=el("button",{type:"button","class":"sm-tog","aria-expanded":"false"});
+          tb.appendChild(document.createTextNode("151 Pokémon 1er génération Le top "));
+          tb.appendChild(el("span",{"class":"sm-fl","aria-hidden":"true"},"\u25B8"));
           var sous=el("ul",{"class":"liste-top1gen"});
+          var liTop=el("li",{"class":"li-le-top-menu"});
+          var bTop=el("button",{type:"button","class":"btn-le-top-menu","id":"btn-le-top-menu","aria-haspopup":"dialog","aria-controls":"dialog-le-top-site","aria-expanded":"false"});
+          bTop.appendChild(document.createTextNode("Le top"));
+          liTop.appendChild(bTop);
+          sous.appendChild(liTop);
           sec.s.forEach(function(it){
             var x=el("li");
             x.appendChild(lienEbay(it[1], it[0]));
@@ -184,6 +189,9 @@ var __acc=/(\/|\/index\.html?)$/i.test(location.pathname);
           });
           g.append(tb,sous);
           sm.appendChild(g);
+          var liAchat=el("li",{"class":"li-achat-prix-bas"});
+          liAchat.appendChild(el("a",{href:"conseils-achat.html"},"Achète au prix bas"));
+          sm.appendChild(liAchat);
         } else {
         sec.s.forEach(function(it){
           if(sec.t==="Cartes" && it[1]==="cartes-pokemon.html"){
@@ -580,7 +588,7 @@ function go(){try{menu();}catch(e){console.error(e);}try{ariane();}catch(e){cons
   var KS='mimiquiBrowseStart',KA='mimiquiTeaserAutoReduit',KO='mimiquiTeaserKeepOpen';
   var AUTO_MS=60000; /* 1 minute de navigation (session) */
   function go(){
-    if(/(^|\/)registre-pokemon\.html$/i.test(location.pathname))return;if(document.getElementById('mini-teaser'))return;window.__mtAuto=true;
+    if(/(^|\/)registre-pokemon\.html$/i.test(location.pathname))return;if(/(^|\/)conseils-achat\.html$/i.test(location.pathname))return;if(document.documentElement.classList.contains('sans-mini-teaser')||(document.body&&document.body.classList.contains('sans-mini-teaser')))return;if(document.getElementById('mini-teaser'))return;window.__mtAuto=true;
     var t=0;try{t=parseFloat(localStorage.getItem(KT))||0}catch(e){}
     var red=false;try{red=localStorage.getItem(KR)==='1'}catch(e){}
     var keepOpen=false,autoDone=false,browseStart=0,now=Date.now();
@@ -808,12 +816,12 @@ function fitSous(sm, anchorTop){
 function init(){
   document.querySelectorAll('.sm-groupe').forEach(function(g){
     var b=g.querySelector(':scope > .sm-tog') || g.querySelector('.sm-tog');
-    var s=g.querySelector(':scope > .sm-sous') || g.querySelector('.sm-sous');
-    if(!b||!s)return;
+    var s=g.querySelector(':scope > .sm-sous') || g.querySelector('.sm-sous') || g.querySelector(':scope > .liste-top1gen');
     if(g.classList.contains('sm-groupe-top1gen')){
-      /* Liste sous la rubrique, pas en flyout latéral */
+      /* Dépliant : clic pour ouvrir/fermer, pas de flyout */
+      if(!b)return;
       var f=g.querySelector(':scope > .sm-tog .sm-fl') || g.querySelector('.sm-fl');
-      if(f) f.textContent='\u25BE';
+      if(f) f.textContent=g.classList.contains('sm-ouvert')?'\u25BE':'\u25B8';
       b.addEventListener('click', function(e){
         e.preventDefault(); e.stopPropagation();
         var o=g.classList.toggle('sm-ouvert');
@@ -822,6 +830,7 @@ function init(){
       });
       return;
     }
+    if(!b||!s)return;
     function cote(){
       var d=window.innerWidth>600;
       var gc=false;
@@ -884,7 +893,7 @@ function init(){
 if(document.readyState==='loading') document.addEventListener('DOMContentLoaded', init); else init();
 })();
 
-/* Conseils achat : rubrique « Le top 1re génération » + liste 151 défilante */
+/* Conseils achat : rubrique « 151 Pokémon 1er génération Le top » + liste 151 défilante */
 (function(){
   if(document.getElementById('menu-conseils-achat-css'))return;
   var css=
@@ -897,13 +906,14 @@ if(document.readyState==='loading') document.addEventListener('DOMContentLoaded'
     'html body nav ul.menu-principal>li.li-conseils-achat>ul.sous-menu-conseils-achat,'+
     'html body nav ul.menu-principal>li.li-conseils-achat.ouvert>ul.sous-menu{'+
       'max-height:none!important;overflow:visible!important;'+
-      'min-width:16rem!important;max-width:min(22rem,90vw)!important;padding:.25rem 0!important;'+
+      'min-width:16.5rem!important;max-width:min(24rem,92vw)!important;padding:.25rem 0!important;'+
     '}'+
     '@media (min-width:800px){'+
       'html body nav ul.menu-principal>li.li-conseils-achat>ul.sous-menu{left:auto!important;right:0!important}'+
     '}'+
+    'html body nav ul.menu-principal>li.li-conseils-achat>ul.sous-menu>li.li-achat-prix-bas,html body nav ul.menu-principal>li.li-conseils-achat>ul.sous-menu-conseils-achat>li.li-achat-prix-bas{display:block;list-style:none;margin:0;padding:0}'+    'html body nav ul.menu-principal>li.li-conseils-achat>ul.sous-menu>li.li-achat-prix-bas>a,html body nav ul.menu-principal>li.li-conseils-achat>ul.sous-menu-conseils-achat>li.li-achat-prix-bas>a{display:block;padding:.4rem .9rem;font-size:.9rem;font-weight:800;line-height:1.25;white-space:normal}'+
     'html body nav ul.menu-principal>li.li-conseils-achat .sm-groupe-top1gen>button.sm-tog{'+
-      'width:100%;font-weight:800!important;padding:.4rem .9rem!important;font-size:.92rem!important;'+
+      'width:100%;font-weight:800!important;padding:.4rem .9rem!important;font-size:.9rem!important;white-space:normal;text-align:left;line-height:1.25;'+
     '}'+
     'html body nav ul.menu-principal>li.li-conseils-achat .sm-groupe-top1gen>ul.sm-sous,'+
     'html body nav ul.menu-principal>li.li-conseils-achat .sm-groupe-top1gen>ul.sm-sous-151,'+
@@ -1794,4 +1804,144 @@ if(document.readyState==='loading') document.addEventListener('DOMContentLoaded'
   }
   if(document.readyState==="loading") document.addEventListener("DOMContentLoaded", lazyImages);
   else lazyImages();
+})();
+
+/* Popup « Le top » depuis le menu, toutes les pages */
+(function(){
+  var TEXT="Le top, c'est la cotation approximative du Pokémon.";
+  function injectCss(){
+    if(document.getElementById("le-top-site-css"))return;
+    var css=
+      "html body nav ul.menu-principal>li.li-conseils-achat .liste-top1gen>li.li-le-top-menu{position:sticky;top:0;z-index:2;display:block;padding:.3rem .75rem .4rem;background:#fff;}"+
+      "html body nav ul.menu-principal>li.li-conseils-achat .btn-le-top-menu{display:inline-block;font-family:inherit;font-weight:700;font-size:.88rem;line-height:1.2;padding:7px 12px;min-height:36px;border:1px solid var(--rouge,#d0021b);border-radius:10px;background:#fff;color:var(--rouge,#d0021b);cursor:pointer;white-space:nowrap}"+
+      "html body nav ul.menu-principal>li.li-conseils-achat .btn-le-top-menu:hover,html body nav ul.menu-principal>li.li-conseils-achat .btn-le-top-menu:focus-visible{background:var(--rouge,#d0021b);color:#fff;outline:none}"+
+      ".fond-le-top-site{position:fixed;inset:0;z-index:12000;background:transparent}"+
+      ".fond-le-top-site[hidden]{display:none !important}"+
+      ".dialog-le-top-site{position:fixed;width:7.5cm;height:10cm;box-sizing:border-box;background:transparent !important;border:0 !important;outline:0 !important;border-radius:14px;box-shadow:0 0 16px rgba(120,230,255,.3),0 0 28px rgba(255,130,220,.16),inset 0 0 22px rgba(200,245,255,.12) !important;padding:22px 16px 14px;overflow:hidden;isolation:isolate;color:#000 !important;font-weight:700;display:flex;flex-direction:column;right:max(16px, env(safe-area-inset-right));bottom:max(16px, env(safe-area-inset-bottom));z-index:12001}"+
+      ".dialog-le-top-site::before{content:\"\";position:absolute;inset:-45%;width:190%;height:190%;margin:auto;pointer-events:none;z-index:0;opacity:.2;background:conic-gradient(from 0deg,rgba(255,90,200,.7),rgba(255,220,90,.65),rgba(80,255,210,.65),rgba(80,170,255,.7),rgba(190,110,255,.7),rgba(255,90,200,.7));mix-blend-mode:screen;animation:le-top-holo-spin 14s linear infinite}"+
+      ".dialog-le-top-site::after{content:\"\";position:absolute;inset:0;border-radius:inherit;pointer-events:none;z-index:0;opacity:.2;background:linear-gradient(115deg,transparent 20%,rgba(255,255,255,.5) 46%,rgba(180,255,255,.35) 52%,transparent 70%);background-size:220% 220%;mix-blend-mode:screen;animation:le-top-holo-shine 7s ease-in-out infinite,le-top-holo-flicker 3.8s ease-in-out infinite}"+
+      ".dialog-le-top-site>*{position:relative;z-index:1}"+
+      ".dialog-le-top-site p{margin:0 0 1.2em;font-size:.95rem;line-height:1.45;color:#000;font-weight:700;text-shadow:0 0 5px rgba(255,255,255,.85),0 1px 0 rgba(255,255,255,.7)}"+
+      ".dialog-le-top-defile{position:relative;flex:1 1 auto;min-height:0;overflow:hidden}"+
+      ".dialog-le-top-piste{position:absolute;left:0;right:0;top:0;animation:le-top-defile 16s linear infinite}"+
+      ".dialog-le-top-site:hover .dialog-le-top-piste{animation-play-state:paused}"+
+      "@keyframes le-top-defile{0%,18%{top:0;transform:translateY(0)}100%{top:100%;transform:translateY(-100%)}}"+
+      "@keyframes le-top-holo-spin{to{transform:rotate(360deg)}}"+
+      "@keyframes le-top-holo-shine{0%,100%{background-position:0% 40%}50%{background-position:100% 60%}}"+
+      "@keyframes le-top-holo-flicker{0%,100%{opacity:.16}40%{opacity:.26}55%{opacity:.18}70%{opacity:.24}}"+
+      "@media (prefers-reduced-motion:reduce){.dialog-le-top-piste{animation:none;transform:none;position:static}.dialog-le-top-defile{overflow:auto}.dialog-le-top-site::before,.dialog-le-top-site::after{animation:none;opacity:.16}}"+
+      ".fermer-le-top-site{position:absolute;top:0;right:0;width:28px;height:28px;border:0;background:transparent;font-size:.85rem;line-height:1;cursor:pointer;color:#000;font-weight:600;border-radius:6px;z-index:2;opacity:.35;padding:0}"+
+      ".fermer-le-top-site:hover,.fermer-le-top-site:focus-visible{opacity:.9;background:transparent;outline:none}";
+    var st=document.createElement("style");
+    st.id="le-top-site-css";
+    st.textContent=css;
+    (document.head||document.documentElement).appendChild(st);
+  }
+  function overlaps(a,b,pad){
+    pad=pad||8;
+    return !(a.right+pad<b.left||a.left-pad>b.right||a.bottom+pad<b.top||a.top-pad>b.bottom);
+  }
+  function place(){
+    var box=document.getElementById("dialog-le-top-site");
+    if(!box||box.parentElement&&box.parentElement.hidden)return;
+    var margin=16;
+    var right=margin, bottom=margin;
+    box.style.right=right+"px";
+    box.style.bottom=bottom+"px";
+    var boxR=box.getBoundingClientRect();
+    var avoid=[];
+    var teaser=document.getElementById("mini-teaser");
+    if(teaser){
+      var tr=teaser.getBoundingClientRect(), cs=getComputedStyle(teaser);
+      if(cs.display!=="none"&&cs.visibility!=="hidden"&&tr.width>2&&tr.height>2) avoid.push(tr);
+    }
+    var haut=document.getElementById("btn-haut-wrap");
+    if(haut){
+      var hr=haut.getBoundingClientRect(), hcs=getComputedStyle(haut);
+      if(hcs.display!=="none"&&hr.width>2&&hr.height>2) avoid.push(hr);
+    }
+    document.querySelectorAll("nav .sous-menu, nav .liste-top1gen, header, nav").forEach(function(el){
+      var r=el.getBoundingClientRect();
+      if(r.width>2&&r.height>2) avoid.push(r);
+    });
+    var i, hit, tries=0;
+    function rectAt(rt,bt){
+      return {left:innerWidth-rt-boxR.width, right:innerWidth-rt, top:innerHeight-bt-boxR.height, bottom:innerHeight-bt, width:boxR.width, height:boxR.height};
+    }
+    while(tries<8){
+      hit=null;
+      var cur=rectAt(right,bottom);
+      if(cur.top<margin){ bottom=Math.max(margin, innerHeight-boxR.height-margin); cur=rectAt(right,bottom); }
+      for(i=0;i<avoid.length;i++){ if(overlaps(cur,avoid[i])){ hit=avoid[i]; break; } }
+      if(!hit)break;
+      /* Prefer sitting above a bottom-right obstacle, else slide left */
+      var needBottom=Math.round(innerHeight-hit.top+12);
+      if(needBottom+boxR.height+margin<=innerHeight){ bottom=needBottom; }
+      else { right=Math.round(innerWidth-hit.left+12); }
+      tries++;
+    }
+    box.style.right=Math.max(margin,right)+"px";
+    box.style.bottom=Math.max(margin,bottom)+"px";
+  }
+  var last=null;
+  function openTop(from){
+    ensure();
+    var fond=document.getElementById("fond-le-top-site");
+    var box=document.getElementById("dialog-le-top-site");
+    var close=document.getElementById("fermer-le-top-site");
+    if(!fond||!box)return;
+    last=from||document.activeElement;
+    fond.hidden=false;
+    var btn=document.getElementById("btn-le-top-menu");
+    if(btn) btn.setAttribute("aria-expanded","true");
+    place();
+    (close&&close.focus?close:box).focus();
+    requestAnimationFrame(place);
+  }
+  function closeTop(){
+    var fond=document.getElementById("fond-le-top-site");
+    if(!fond||fond.hidden)return;
+    fond.hidden=true;
+    var btn=document.getElementById("btn-le-top-menu");
+    if(btn) btn.setAttribute("aria-expanded","false");
+    if(last&&last.focus) last.focus();
+    else if(btn) btn.focus();
+  }
+  function ensure(){
+    injectCss();
+    if(document.getElementById("fond-le-top-site"))return;
+    var fond=document.createElement("div");
+    fond.className="fond-le-top-site";
+    fond.id="fond-le-top-site";
+    fond.hidden=true;
+    fond.innerHTML='<div class="dialog-le-top-site" id="dialog-le-top-site" role="dialog" aria-modal="true" aria-label="Le top" tabindex="-1"><button type="button" class="fermer-le-top-site" id="fermer-le-top-site" aria-label="Fermer">×</button><div class="dialog-le-top-defile"><div class="dialog-le-top-piste"><p>'+TEXT+"</p></div></div></div>";
+    (document.body||document.documentElement).appendChild(fond);
+    var box=document.getElementById("dialog-le-top-site");
+    var close=document.getElementById("fermer-le-top-site");
+    close.addEventListener("click",function(e){e.preventDefault();e.stopPropagation();closeTop();});
+    fond.addEventListener("click",function(e){if(e.target===fond)closeTop();});
+    document.addEventListener("keydown",function(e){
+      if(fond.hidden)return;
+      if(e.key==="Escape"){e.preventDefault();closeTop();return;}
+      if(e.key!=="Tab")return;
+      var list=[].slice.call(box.querySelectorAll("button,[href],input,select,textarea,[tabindex]:not([tabindex='-1'])"));
+      if(!list.length){e.preventDefault();close.focus();return;}
+      var first=list[0], lastEl=list[list.length-1];
+      if(e.shiftKey&&document.activeElement===first){e.preventDefault();lastEl.focus();}
+      else if(!e.shiftKey&&document.activeElement===lastEl){e.preventDefault();first.focus();}
+    });
+    addEventListener("resize",function(){ if(!fond.hidden) place(); });
+  }
+  function bind(){
+    injectCss();
+    document.addEventListener("click",function(e){
+      var b=e.target.closest&&e.target.closest(".btn-le-top-menu, #btn-le-top-menu");
+      if(!b)return;
+      e.preventDefault();
+      e.stopPropagation();
+      openTop(b);
+    },true);
+  }
+  if(document.readyState==="loading") document.addEventListener("DOMContentLoaded",bind);
+  else bind();
 })();
