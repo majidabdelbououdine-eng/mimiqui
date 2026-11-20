@@ -12,6 +12,7 @@ window.I18N_DICT_EN = {
   "Achète au prix bas": "Buy at a low price",
   "Conseils vente": "Selling advice",
   "Nouveautés": "What’s new",
+  "Découvrez le nouveau set Poings Fluides pour le 6 février 2027": "Discover the new Flowing Fists set on 6 February 2027",
   "News set Poings Fluides": "News set Flowing Fists",
   "News set Poings Fluides : sortie le 6 février 2027 – Le Coin de Mimiqui": "News set Flowing Fists: release February 6, 2027 – Le Coin de Mimiqui",
   "Blog": "Blog",

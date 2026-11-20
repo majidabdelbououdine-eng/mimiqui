@@ -3,7 +3,7 @@
 <meta charset="utf-8">
 <link rel="icon" type="image/webp" href="img/logo-mimiqui.webp">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<link rel="stylesheet" href="site-commun.css?v=20261120b">
+<link rel="stylesheet" href="site-commun.css?v=20261120d">
 <style>
 @font-face{font-family:"Bodoni Moda";font-style:normal;font-weight:500;font-display:swap;src:url(fonts/bodoni-moda-latin-500-normal.woff2) format("woff2")}
 @font-face{font-family:"Bodoni Moda";font-style:italic;font-weight:500;font-display:swap;src:url(fonts/bodoni-moda-latin-500-italic.woff2) format("woff2")}
@@ -122,6 +122,33 @@ h1,h2,h3{font-family:var(--f-display);text-wrap:balance;line-height:1.1;margin:0
 }
 .fermer-rare{position:absolute;top:0;right:0;width:28px;height:28px;border:0;background:transparent;font-size:.85rem;line-height:1;cursor:pointer;color:#000;font-weight:600;border-radius:6px;z-index:2;opacity:.35;padding:0}
 .fermer-rare:hover,.fermer-rare:focus-visible{opacity:.9;background:transparent;outline:none}
+
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+#groupe-rare{scroll-margin-top:calc(var(--hh, 5.5rem) + 20px);padding:8px;border-radius:14px;transition:background .4s,box-shadow .4s}
+#groupe-rare.surbrillance-rares{background:#fff3f3;box-shadow:0 0 0 4px rgba(208,2,27,.45);animation:rares-flash 1.8s ease}
+@keyframes rares-flash{0%{background:#ffe4e6;box-shadow:0 0 0 6px rgba(208,2,27,.55)}100%{background:transparent;box-shadow:none}}
+@media (prefers-reduced-motion:reduce){
+  #groupe-rare.surbrillance-rares{animation:none;background:#fff3f3;box-shadow:0 0 0 3px #d0021b}
+}
+.hero-pf{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:28px;align-items:center;margin:20px 0 8px;padding:28px 28px 26px;background:#fff;border:1px solid rgba(17,17,17,.14);border-top:6px solid #d0021b;border-radius:14px}
+.hero-pf-texte .etiquette{margin:0 0 .5rem}
+.hero-pf-texte h1{font-size:clamp(2rem,5.2vw,3.3rem);font-weight:500;letter-spacing:-.02em;line-height:1.12;margin:0 0 14px}
+.hero-pf-texte h1 em{color:var(--rouge);font-style:italic}
+.hero-pf-texte p{margin:0 0 10px;max-width:42ch;font-size:1.08rem;line-height:1.45;color:#222}
+.btn-voir-rares{display:inline-flex;align-items:center;justify-content:center;margin-top:14px;padding:.85rem 1.6rem;min-height:52px;font-size:1rem;letter-spacing:.08em;font-weight:800;box-shadow:0 8px 22px rgba(208,2,27,.28)}
+.btn-voir-rares:hover,.btn-voir-rares:focus-visible{transform:translateY(-1px);box-shadow:0 10px 26px rgba(208,2,27,.36)}
+.hero-pf-visuels{display:flex;align-items:center;justify-content:center;gap:14px;min-width:0}
+.hero-pf-visuels .hero-booster{width:min(150px,28%);height:auto;border-radius:10px;box-shadow:0 10px 24px rgba(30,20,40,.2);flex:none}
+.hero-pf-cartes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;flex:1;min-width:0}
+.hero-pf-cartes img{width:100%;height:auto;border-radius:8px;box-shadow:0 6px 16px rgba(30,20,40,.18);background:#f6f5f2}
+.hero-pf-visuels figcaption{display:none}
+@media (max-width:860px){
+  .hero-pf{grid-template-columns:1fr;padding:20px 16px 18px;gap:18px}
+  .hero-pf-texte p{max-width:none}
+  .btn-voir-rares{width:100%}
+  .hero-pf-visuels .hero-booster{width:110px}
+}
 </style>
 </head>
 <body>
@@ -142,10 +169,23 @@ h1,h2,h3{font-family:var(--f-display);text-wrap:balance;line-height:1.1;margin:0
 
 
 <main class="wrap">
-  <section class="tete">
-    <p class="etiquette">News set · JCC Pokémon</p>
-    <h1>News set <em>Poings Fluides</em></h1>
-    <p class="chapo">Présentation du nouveau set officiel du Jeu de Cartes à Collectionner Pokémon, <strong>Méga-Évolution – Poings Fluides</strong>, prévu le <strong>samedi 6 février 2027</strong>. Les cartes ci-dessous sont uniquement celles déjà officiellement révélées, avec leur rareté telle qu’indiquée par les sources. La liste complète n’est pas encore publiée.</p>
+  <section class="hero-pf" aria-labelledby="hero-pf-titre">
+    <div class="hero-pf-texte">
+      <p class="etiquette">Méga-Évolution · samedi 6 février 2027</p>
+      <h1 id="hero-pf-titre">Poings Fluides : les premières <em>Méga-Évolutions Z</em> du JCC</h1>
+      <p>Plus de 110 cartes. En vedette : Méga-Lucario Z-ex, Méga-Absol Z-ex, Méga-Carchacrok Z-ex et Méga-Floréclat-ex.</p>
+      <p>Le communiqué officiel annonce aussi 11 illustrations rares, 17 ultra rares et 6 illustrations spéciales rares.</p>
+      <a class="btn-pill rouge btn-voir-rares" href="#groupe-rare" id="btn-voir-rares">Voir les cartes rares</a>
+    </div>
+    <div class="hero-pf-visuels">
+      <img class="hero-booster" src="img/poings-fluides/booster-wrap-fr.webp" width="220" height="402" alt="Booster officiel Méga-Évolution – Poings Fluides, visuel Méga-Lucario Z (TPCI)" decoding="async">
+      <div class="hero-pf-cartes">
+        <img src="img/poings-fluides/fr-058.webp" width="200" height="279" alt="Méga-Lucario Z-ex, scan officiel pokemon.com/fr" decoding="async">
+        <img src="img/poings-fluides/fr-031.webp" width="200" height="279" alt="Méga-Absol Z-ex, scan officiel pokemon.com/fr" decoding="async">
+        <img src="img/poings-fluides/fr-068.webp" width="200" height="279" alt="Méga-Carchacrok Z-ex, scan officiel pokemon.com/fr" decoding="async">
+        <img src="img/poings-fluides/fr-055.webp" width="200" height="279" alt="Méga-Floréclat-ex, scan officiel pokemon.com/fr" decoding="async">
+      </div>
+    </div>
   </section>
 
   <div class="page-corps">
@@ -1685,7 +1725,7 @@ h1,h2,h3{font-family:var(--f-display);text-wrap:balance;line-height:1.1;margin:0
   <button type="button" id="cookie-ok">D’accord</button>
 </div>
 <script>(function(){var b=document.getElementById("cookie-info");if(!b)return;var k="coin-mimiqui-info-cookies",vu=false;try{vu=localStorage.getItem(k)==="1"}catch(e){}if(!vu)b.hidden=false;document.getElementById("cookie-ok").addEventListener("click",function(){b.hidden=true;try{localStorage.setItem(k,"1")}catch(e){}});})();</script>
-<script src="site-commun.js?v=20261120b" defer></script>
+<script src="site-commun.js?v=20261120d" defer></script>
 <p class="pied-legal">Site de fan non officiel &middot; <a href="mentions-legales.html#liens">Liens affiliés</a> &middot; <a href="mentions-legales.html">Mentions légales</a> &middot; <a href="a-propos.html">À propos / Contact</a></p>
 
 <script>
@@ -1704,6 +1744,28 @@ h1,h2,h3{font-family:var(--f-display);text-wrap:balance;line-height:1.1;margin:0
     if(empty){empty.hidden = n>0;}
   }
   btns.forEach(function(b){b.addEventListener("click", function(){apply(b.getAttribute("data-rar"))})});
+})();
+</script>
+
+
+<script>
+(function(){
+  var btn=document.getElementById("btn-voir-rares");
+  var cible=document.getElementById("groupe-rare");
+  if(!btn||!cible)return;
+  btn.addEventListener("click", function(e){
+    e.preventDefault();
+    cible.classList.remove("surbrillance-rares");
+    void cible.offsetWidth;
+    var reduce=window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var hh=parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--hh"))||0;
+    var y=cible.getBoundingClientRect().top + (window.pageYOffset||document.documentElement.scrollTop||0) - hh - 20;
+    window.scrollTo({top:Math.max(0,y), behavior: reduce ? "auto" : "smooth"});
+    cible.classList.add("surbrillance-rares");
+    window.setTimeout(function(){cible.classList.remove("surbrillance-rares");}, 1800);
+    if(history.replaceState) history.replaceState(null, "", "#groupe-rare");
+    else location.hash="groupe-rare";
+  });
 })();
 </script>
 

@@ -12,6 +12,7 @@ window.I18N_DICT_JA = {
   "Achète au prix bas": "安く買う",
   "Conseils vente": "売却のアドバイス",
   "Nouveautés": "新着",
+  "Découvrez le nouveau set Poings Fluides pour le 6 février 2027": "2027年2月6日発売の新セット「ハドウシーカー」をチェック",
   "News set Poings Fluides": "ニュースセット ハドウシーカー",
   "News set Poings Fluides : sortie le 6 février 2027 – Le Coin de Mimiqui": "ニュースセット ハドウシーカー：2027年2月6日発売 – Le Coin de Mimiqui",
   "Blog": "ブログ",
