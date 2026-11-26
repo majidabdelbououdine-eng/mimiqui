@@ -519,6 +519,43 @@ body:has(#hero-accueil) #mini-teaser,
 }
 </style>
 
+<style id="recherche-haut-accueil">
+#recherche-haut.ap-accueil,
+#recherche-haut.ap-accueil.ap-avec-pastilles{
+  max-width:1180px!important;
+  width:auto;
+  margin:10px auto 8px!important;
+  padding:8px 16px 4px!important;
+  overflow:visible!important;
+}
+#recherche-haut .ap-cherche{margin:0;overflow:visible}
+#recherche-haut .ap-desc{
+  margin:0 0 12px;
+  color:#fff;
+  font:600 .98rem/1.4 "Source Sans 3",Arial,sans-serif;
+  max-width:44rem;
+}
+#recherche-haut .mq-app-sugg{z-index:80}
+#recherche-haut .mq-app-sugg .mq-app-archive small{color:#3d4d66;font-weight:600}
+#recherche-haut button.ap-btn-archive{background:#0848a8}
+#recherche-haut button.ap-btn-archive:hover{background:#073a88}
+@media (max-width:420px){
+  #recherche-haut.ap-accueil{margin:8px 10px!important;padding:4px 0!important}
+}
+</style>
+<section class="ap-accueil" id="recherche-haut" aria-label="Recherche une carte dans l'archive des ventes">
+  <div class="ap-cherche">
+    <h2>Combien vaut ma carte ?</h2>
+    <p class="ap-desc">Recherche une carte par Pokémon dans l'archive des ventes pour voir son prix de vente sur tout le site</p>
+    <form id="ap-form" action="estimer-ma-carte.html" method="get" role="search">
+      <label class="ap-sr" for="ap-q">Nom de la carte</label>
+      <input id="ap-q" name="q" type="search" placeholder="Nom, extension ou numéro" autocomplete="off" enterkeyhint="search">
+      <button type="submit">Estimer</button>
+      <button type="submit" class="ap-btn-archive" formaction="archive-ventes.html">Voir l’archive</button>
+    </form>
+  </div>
+</section>
+
 <section class="mq-hero-simple wrap" id="hero-accueil">
   <p class="etiquette">Le Coin de Mimiqui</p>
   <h1>Je vous aide à acheter et vendre vos cartes Pokémon au bon prix</h1>
@@ -577,17 +614,6 @@ body:has(#hero-accueil) #mini-teaser,
   </article>
 </section>
 
-<section class="ap-accueil ap-avec-pastilles" aria-label="Cote et dernières ventes">
-  <div class="ap-cherche">
-    <h2>Combien vaut ma carte ?</h2>
-    <form id="ap-form" action="estimer-ma-carte.html" method="get" role="search">
-      <label class="ap-sr" for="ap-q">Nom de la carte</label>
-      <input id="ap-q" name="q" type="search" placeholder="Nom, extension ou numéro" autocomplete="off" enterkeyhint="search">
-      <button type="submit">Estimer</button>
-    </form>
-  </div>
-  
-</section>
 <section class="wrap promo-ba" aria-labelledby="promo-ba-titre">
   <div class="promo-ba-entete">
     <p class="etiquette">Bonnes affaires</p>
@@ -1514,4 +1540,48 @@ els.forEach(function(e,k){e.classList.add('fx');e.style.transitionDelay=(k%4)*70
 document.documentElement.classList.add('fx-on');
 setTimeout(function(){els.forEach(function(e){e.classList.add('fx-vu')})},6000);
 }catch(e){document.documentElement.classList.remove('fx-on')}})();
-</script><script src="apparition-pokemon.js?v=20261126"></script><script src="site-commun.js?v=20261126f" defer></script><script src="accueil-interactif.js?v=20261104h" defer></script><p class="pied-legal">Site de fan non officiel &middot; <a href="mentions-legales.html#liens">Liens affili&eacute;s</a> &middot; <a href="mentions-legales.html">Mentions l&eacute;gales</a></p><style>.pied-legal{margin:1.2rem auto 1.4rem;text-align:center;font-size:.72rem;font-weight:300;color:#7a869a;letter-spacing:.02em}.pied-legal a{color:#7a869a;text-decoration:underline}</style></body></html>
+</script><script src="apparition-pokemon.js?v=20261126"></script>
+<script>
+(function(){
+  "use strict";
+  function hrefArchive(nom){
+    return "archive-ventes.html?q=" + encodeURIComponent(String(nom || "").trim());
+  }
+  function enrichir(){
+    var input = document.getElementById("ap-q");
+    var liste = document.getElementById("ap-q-sugg");
+    if (!input || !liste) return;
+    Array.prototype.slice.call(liste.querySelectorAll(":scope > li.mq-app-archive")).forEach(function (n) { n.remove(); });
+    var q = input.value.trim();
+    if (!q) return;
+    var nom = q;
+    var first = liste.querySelector("a[href] b");
+    if (first && first.textContent.trim()) nom = first.textContent.trim();
+    var li = document.createElement("li");
+    li.className = "mq-app-archive";
+    var a = document.createElement("a");
+    a.href = hrefArchive(nom);
+    a.setAttribute("role", "option");
+    a.setAttribute("aria-selected", "false");
+    var b = document.createElement("b");
+    b.textContent = "Ventes de " + nom + " dans l'archive";
+    var sm = document.createElement("small");
+    sm.textContent = "Prix des ventes relevées sur tout le site";
+    a.appendChild(b);
+    a.appendChild(sm);
+    li.appendChild(a);
+    if (liste.firstChild) liste.insertBefore(li, liste.firstChild);
+    else liste.appendChild(li);
+    liste.hidden = false;
+  }
+  function boot(){
+    var input = document.getElementById("ap-q");
+    if (!input) return;
+    ["input", "focus"].forEach(function (ev) {
+      input.addEventListener(ev, function () { setTimeout(enrichir, 0); });
+    });
+  }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", boot);
+  else boot();
+})();
+</script><script src="site-commun.js?v=20261126f" defer></script><script src="accueil-interactif.js?v=20261104h" defer></script><p class="pied-legal">Site de fan non officiel &middot; <a href="mentions-legales.html#liens">Liens affili&eacute;s</a> &middot; <a href="mentions-legales.html">Mentions l&eacute;gales</a></p><style>.pied-legal{margin:1.2rem auto 1.4rem;text-align:center;font-size:.72rem;font-weight:300;color:#7a869a;letter-spacing:.02em}.pied-legal a{color:#7a869a;text-decoration:underline}</style></body></html>
