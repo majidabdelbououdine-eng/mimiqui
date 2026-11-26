@@ -3,5 +3,6 @@ Allow: /
 Disallow: /merci-abonnement.html
 Disallow: /assistant-instagram.html
 Disallow: /_ARCHIVES/
+Disallow: /mon-compte.html
 
 Sitemap: https://mimiqui.fr/sitemap.xml
