@@ -585,31 +585,52 @@ function go(){try{menu();}catch(e){console.error(e);}try{ariane();}catch(e){cons
 (function(){
   if(window.__miniTeaser)return;window.__miniTeaser=1;
   var SRC='videos/wild-card-bande-annonce.mp4',KT='mimiquiTeaserTemps',KR='mimiquiTeaserReduit';
-  var KS='mimiquiBrowseStart',KA='mimiquiTeaserAutoReduit',KO='mimiquiTeaserKeepOpen';
-  var AUTO_MS=60000; /* 1 minute de navigation (session) */
+  var KS='mimiquiBrowseStart',KA='mimiquiTeaserAutoReduit',KO='mimiquiTeaserKeepOpen',KF='mimiquiTeaserAutoFerme';
+  var AUTO_MS=20000; /* 20 secondes de navigation (session) */
   function go(){
     if(/(^|\/)registre-pokemon\.html$/i.test(location.pathname))return;if(/(^|\/)conseils-achat\.html$/i.test(location.pathname))return;if(document.documentElement.classList.contains('sans-mini-teaser')||(document.body&&document.body.classList.contains('sans-mini-teaser')))return;if(document.getElementById('mini-teaser'))return;window.__mtAuto=true;
     var t=0;try{t=parseFloat(localStorage.getItem(KT))||0}catch(e){}
     var red=false;try{red=localStorage.getItem(KR)==='1'}catch(e){}
-    var keepOpen=false,autoDone=false,browseStart=0,now=Date.now();
+    var browseStart=0,now=Date.now(),autoFerme=false;
     try{
       browseStart=parseInt(sessionStorage.getItem(KS)||'0',10)||0;
       if(!browseStart){browseStart=now;sessionStorage.setItem(KS,String(browseStart))}
-      keepOpen=sessionStorage.getItem(KO)==='1';
-      autoDone=sessionStorage.getItem(KA)==='1';
+      autoFerme=sessionStorage.getItem(KF)==='1';
     }catch(e){browseStart=now}
     var elapsed=now-browseStart;
-    if(!keepOpen&&(autoDone||elapsed>=AUTO_MS))red=true;
+    if(autoFerme||elapsed>=AUTO_MS){
+      try{sessionStorage.setItem(KF,'1')}catch(e){}
+      return;
+    }
     var box=document.createElement('div');box.id='mini-teaser';if(red)box.className='reduit';
     box.innerHTML='<div class="mt-barre"><span class="mt-titre">Pok\u00e9mon : Wild Card \u2013 teaser</span><button type="button" class="mt-taille" aria-label="R\u00e9duire ou agrandir"></button></div><div class="mt-video"><video id="mini-teaser-yt" src="'+SRC+'" muted autoplay loop playsinline preload="metadata"></video><button type="button" class="mt-play" aria-label="Lecture"></button></div>';
     document.body.appendChild(box);
     var v=box.querySelector('video'),pb=box.querySelector('.mt-play');v.muted=true;
     v.addEventListener('loadedmetadata',function(){try{if(t&&t<v.duration)v.currentTime=t}catch(e){}});
-    function maj(){pb.style.display=(!v.paused&&!v.muted)?'none':''}
+    function maj(){if(!pb||!pb.isConnected)return;pb.style.display=(!v.paused&&!v.muted)?'none':''}
     v.addEventListener('play',maj);v.addEventListener('pause',maj);v.addEventListener('volumechange',maj);
     var pl=v.play();if(pl&&pl.catch)pl.catch(function(){});
     window.__mtPlayer={unMute:function(){v.muted=false},mute:function(){v.muted=true},setVolume:function(n){v.volume=Math.min(1,n/100)},playVideo:function(){var q=v.play();if(q&&q.catch)q.catch(function(){})},pauseVideo:function(){v.pause()},isMuted:function(){return v.muted},getCurrentTime:function(){return v.currentTime}};
-    new MutationObserver(function(){var g=box.classList.contains('mt-grand');v.controls=g;if(g){v.muted=false;v.volume=1;window.__mtPlayer.playVideo()}else{v.muted=true}}).observe(box,{attributes:true,attributeFilter:['class']});
+    var fermePending=false,saveTimer=0,obs=null;
+    function fermerAuto(){
+      try{sessionStorage.setItem(KF,'1')}catch(e){}
+      if(!box||!box.parentNode)return;
+      if(box.classList.contains('mt-grand')){fermePending=true;return;}
+      fermePending=false;
+      if(obs){try{obs.disconnect()}catch(e){}}
+      if(saveTimer)clearInterval(saveTimer);
+      try{v.pause();v.removeAttribute('src');v.load()}catch(e){}
+      box.remove();
+      document.body.classList.remove('avec-mini-teaser');
+    }
+    obs=new MutationObserver(function(){
+      if(!box.parentNode){if(obs)obs.disconnect();return;}
+      var g=box.classList.contains('mt-grand');
+      v.controls=g;
+      if(g){v.muted=false;v.volume=1;window.__mtPlayer.playVideo()}
+      else{v.muted=true;if(fermePending)fermerAuto()}
+    });
+    obs.observe(box,{attributes:true,attributeFilter:['class']});
     var b=box.querySelector('.mt-taille');
     function lab(){b.textContent=box.classList.contains('reduit')?'\u2922 Agrandir':'\u2013 R\u00e9duire'}lab();
     function applyReduit(on){
@@ -617,27 +638,17 @@ function go(){try{menu();}catch(e){console.error(e);}try{ariane();}catch(e){cons
       try{localStorage.setItem(KR,on?'1':'0')}catch(e){}
       lab();
     }
-    function autoReduire(){
-      try{if(sessionStorage.getItem(KO)==='1')return}catch(e){}
-      if(box.classList.contains('mt-grand'))return; /* ne pas casser le grand ecran */
-      applyReduit(true);
-      try{sessionStorage.setItem(KA,'1')}catch(e){}
-    }
     b.addEventListener('click',function(){
       var next=!box.classList.contains('reduit');
       applyReduit(next);
       try{
         if(next){sessionStorage.removeItem(KO)}
-        else{sessionStorage.setItem(KO,'1')} /* utilisateur rouvre : on respecte */
+        else{sessionStorage.setItem(KO,'1')}
       }catch(e){}
     });
-    if(!keepOpen&&!red&&elapsed<AUTO_MS){
-      setTimeout(autoReduire, Math.max(0, AUTO_MS-elapsed));
-    }else if(!keepOpen&&red){
-      try{sessionStorage.setItem(KA,'1')}catch(e){}
-    }
-    function save(){try{localStorage.setItem(KT,String(v.currentTime||0))}catch(e){}}
-    window.addEventListener('beforeunload',save);window.addEventListener('pagehide',save);setInterval(save,3000);
+    setTimeout(fermerAuto, Math.max(0, AUTO_MS-elapsed));
+    function save(){if(!document.getElementById('mini-teaser'))return;try{localStorage.setItem(KT,String(v.currentTime||0))}catch(e){}}
+    window.addEventListener('beforeunload',save);window.addEventListener('pagehide',save);saveTimer=setInterval(save,3000);
     document.body.classList.add('avec-mini-teaser');
   }
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',go);else go();
