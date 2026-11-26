@@ -20,9 +20,9 @@ test("signature Stripe valide et rejet si altérée", async () => {
   assert.equal(await verifyStripeSignature(payload, "", secret), false);
 });
 
-test("gratuit : 3 dernières ventes + moyenne / min / max, pas le reste", () => {
+test("gratuit : toutes les ventes, sans aucun prix ni stats de prix", () => {
   const ventes = [1, 2, 3, 4, 5].map((n) =>
-    vente({ id: String(n), prix: n * 10, date: "2026-11-0" + n })
+    vente({ id: "11223344" + n, prix: n * 10, date: "2026-11-0" + n, carte: "Pikachu " + n + " 25 €", lien: "https://www.ebay.fr/itm/11223344" + n })
   );
   const payload = buildPayload({
     pack: { slug: "pikachu", nom: "Pikachu", ventes },
@@ -31,21 +31,52 @@ test("gratuit : 3 dernières ventes + moyenne / min / max, pas le reste", () => 
     q: "Pikachu",
   });
   assert.equal(payload.abonne, false);
+  assert.equal(payload.prix_reserves, true);
   assert.equal(payload.total, 5);
-  assert.equal(payload.visible, LIBRE_N);
-  assert.equal(payload.masquees, 2);
-  assert.equal(payload.ventes.length, 3);
-  assert.deepEqual(
-    payload.ventes.map((v) => v.id),
-    ["5", "4", "3"]
+  assert.equal(payload.visible, 5);
+  assert.equal(payload.masquees, 0);
+  assert.equal(payload.ventes.length, 5);
+  assert.deepEqual(payload.stats, []);
+  assert.deepEqual(payload.ventes.map((v) => v.date), ["2026-11-05", "2026-11-04", "2026-11-03", "2026-11-02", "2026-11-01"]);
+  for (const v of payload.ventes) {
+    assert.equal(v.prix, undefined);
+    assert.equal(v.devise, undefined);
+    assert.equal(v.id, undefined);
+    assert.equal(v.lien, undefined);
+    assert.ok(!/€/.test(v.carte), v.carte);
+    assert.match(v.carte, /^Pikachu \d$/);
+  }
+  for (const info of Object.values(payload.onglets)) assert.deepEqual(Object.keys(info), ["n"]);
+  const brut = JSON.stringify({ ventes: payload.ventes, onglets: payload.onglets, stats: payload.stats });
+  assert.ok(!/"(?:prix|moyen|min|max|devise|lien)"/.test(brut), brut);
+  assert.ok(!/11223344/.test(brut));
+  // Les calculs côté abonné restent disponibles.
+  assert.equal(statsOf(ventes)[0].max, 50);
+  assert.equal(lastN(ventes, 1)[0].id, "112233445");
+  assert.equal(LIBRE_N, 3);
+});
+
+test("gratuit : pagination offset / limit", () => {
+  const ventes = Array.from({ length: 130 }, (_, i) =>
+    vente({ id: String(i), prix: i, date: "2026-" + String(1 + (i % 12)).padStart(2, "0") + "-01" })
   );
-  const st = payload.stats[0];
-  assert.equal(st.n, 5);
-  assert.equal(st.min, 10);
-  assert.equal(st.max, 50);
-  assert.equal(st.moyen, 30);
-  assert.ok(statsOf(ventes)[0]);
-  assert.equal(lastN(ventes, 1)[0].id, "5");
+  const p1 = buildPayload({ pack: { slug: "p", nom: "P", ventes }, filtre: {}, abonne: false, q: "P" });
+  assert.equal(p1.ventes.length, 60);
+  assert.equal(p1.suivant, 60);
+  const p3 = buildPayload({ pack: { slug: "p", nom: "P", ventes }, filtre: {}, abonne: false, q: "P", offset: "120", limit: "60" });
+  assert.equal(p3.ventes.length, 10);
+  assert.equal(p3.suivant, null);
+  const gros = buildPayload({ pack: { slug: "p", nom: "P", ventes }, filtre: {}, abonne: false, q: "P", limit: "99999" });
+  assert.equal(gros.ventes.length, 130 > 240 ? 240 : 130);
+});
+
+test("fail-closed : abonne doit valoir true exactement", () => {
+  const ventes = [vente({ id: "1", prix: 9, date: "2026-11-01" })];
+  for (const abonne of [undefined, null, "true", 1, {}]) {
+    const p = buildPayload({ pack: { slug: "p", nom: "P", ventes }, filtre: {}, abonne, q: "P" });
+    assert.equal(p.abonne, false);
+    assert.equal(p.ventes[0].prix, undefined);
+  }
 });
 
 test("abonné : toutes les ventes", () => {
@@ -60,7 +91,7 @@ test("abonné : toutes les ventes", () => {
   assert.equal(payload.ventes.length, 4);
 });
 
-test("GET /api/ventes sans session ne renvoie que 3 ventes", async () => {
+test("GET /api/ventes sans session : toutes les ventes, sans prix", async () => {
   const env = testEnv();
   await seedPokemon(env, "pikachu", [
     vente({ id: "a", prix: 1, date: "2026-11-01" }),
@@ -73,9 +104,11 @@ test("GET /api/ventes sans session ne renvoie que 3 ventes", async () => {
   const body = await res.json();
   assert.equal(body.abonne, false);
   assert.equal(body.total, 4);
-  assert.equal(body.ventes.length, 3);
-  assert.equal(body.masquees, 1);
-  assert.equal(body.stats[0].max, 4);
+  assert.equal(body.ventes.length, 4);
+  assert.equal(body.masquees, 0);
+  assert.deepEqual(body.stats, []);
+  assert.ok(body.ventes.every((v) => v.prix === undefined));
+  assert.equal(res.headers.get("cache-control"), "private, no-store");
 });
 
 test("webhook checkout.session.completed enregistre l'abonné ; /moi puis ventes complètes", async () => {
@@ -146,6 +179,8 @@ test("webhook checkout.session.completed enregistre l'abonné ; /moi puis ventes
     assert.equal(fullBody.abonne, true);
     assert.equal(fullBody.ventes.length, 4);
     assert.equal(fullBody.masquees, 0);
+    assert.ok(fullBody.ventes.every((v) => typeof v.prix === "number"));
+    assert.ok(fullBody.stats.length > 0);
   } finally {
     await stripe.close();
   }
