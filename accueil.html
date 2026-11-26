@@ -1,4 +1,4 @@
-<!doctype html><html lang="fr" class="page-accueil"><head><script>try{if(localStorage.getItem("mimiqui_acces")==="ok")document.documentElement.classList.add("mq-abonne")}catch(e){}</script><meta charset="utf-8"><link rel="stylesheet" href="site-commun.css?v=20261120d"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Accueil du Coin de Mimiqui : cartes Pokémon, cotes, dernières ventes réalisées et offres eBay autour de Mimiqui."><link rel="icon" type="image/webp" href="img/logo-mimiqui.webp"><style id="agrandi">html{font-size:106%}body{font-size:1.035rem}.wrap{max-width:1180px!important;margin-left:auto!important;margin-right:auto!important}.logo{font-size:calc(1.7rem * 1.35)!important}</style><title>Accueil : cartes Pokémon, cotes et prix – Le Coin de Mimiqui</title><link rel="canonical" href="https://mimiqui.fr/"><meta property="og:url" content="https://mimiqui.fr/"><meta property="og:image" content="https://mimiqui.fr/img/sm9-53.webp"><meta name="twitter:image" content="https://mimiqui.fr/img/sm9-53.webp"><meta property="og:type" content="website"><meta property="og:title" content="Accueil : cartes Pokémon, cotes et prix – Le Coin de Mimiqui"><meta property="og:description" content="Accueil du Coin de Mimiqui : cartes Pokémon, cotes, dernières ventes réalisées et offres eBay autour de Mimiqui."><meta property="og:locale" content="fr_FR"><meta property="og:site_name" content="Le Coin de Mimiqui"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Accueil : cartes Pokémon, cotes et prix – Le Coin de Mimiqui"><meta name="twitter:description" content="Accueil du Coin de Mimiqui : cartes Pokémon, cotes, dernières ventes réalisées et offres eBay autour de Mimiqui.">
+<!doctype html><html lang="fr" class="page-accueil"><head><script>try{if(localStorage.getItem("mimiqui_acces")==="ok")document.documentElement.classList.add("mq-abonne")}catch(e){}</script><meta charset="utf-8"><link rel="stylesheet" href="site-commun.css?v=20261126d"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Accueil du Coin de Mimiqui : cartes Pokémon, cotes, dernières ventes réalisées et offres eBay autour de Mimiqui."><link rel="icon" type="image/webp" href="img/logo-mimiqui.webp"><style id="agrandi">html{font-size:106%}body{font-size:1.035rem}.wrap{max-width:1180px!important;margin-left:auto!important;margin-right:auto!important}.logo{font-size:calc(1.7rem * 1.35)!important}</style><title>Accueil : cartes Pokémon, cotes et prix – Le Coin de Mimiqui</title><link rel="canonical" href="https://mimiqui.fr/"><meta property="og:url" content="https://mimiqui.fr/"><meta property="og:image" content="https://mimiqui.fr/img/sm9-53.webp"><meta name="twitter:image" content="https://mimiqui.fr/img/sm9-53.webp"><meta property="og:type" content="website"><meta property="og:title" content="Accueil : cartes Pokémon, cotes et prix – Le Coin de Mimiqui"><meta property="og:description" content="Accueil du Coin de Mimiqui : cartes Pokémon, cotes, dernières ventes réalisées et offres eBay autour de Mimiqui."><meta property="og:locale" content="fr_FR"><meta property="og:site_name" content="Le Coin de Mimiqui"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Accueil : cartes Pokémon, cotes et prix – Le Coin de Mimiqui"><meta name="twitter:description" content="Accueil du Coin de Mimiqui : cartes Pokémon, cotes, dernières ventes réalisées et offres eBay autour de Mimiqui.">
 </head><body class="page-accueil"><script>/* Chaque page s'ouvre en haut, sauf si le lien vise une section (#...) */try{history.scrollRestoration="manual"}catch(e){}(function(){function haut(){if(!location.hash)window.scrollTo(0,0)}haut();document.addEventListener("DOMContentLoaded",haut);window.addEventListener("load",haut);window.addEventListener("pageshow",haut)})();</script>
 <meta name="claude:viewport-fit-sides" content="cover">
 <style>
@@ -467,9 +467,6 @@ header.wrap:has(nav ul.menu-principal>li:is(:hover,:focus-within,.ouvert)>a[href
 </header>
 <link rel="stylesheet" href="accueil-apercu.css?v=20261107b">
 <style id="accueil-ajustements-20261112">
-@media (min-width:701px){
-  html body #fenetre-defilante{top:215px!important;transform:none!important}
-}
 .promo-ba-grille{grid-template-columns:repeat(4,minmax(200px,1fr))!important;overflow-x:auto}
 .promo-ba-avis{font-weight:600;color:#222;margin:0 0 1rem}
 .promo-ba-prix{display:flex;flex-wrap:wrap;align-items:center;gap:.2rem .35rem}.promo-ba-prix span{margin-left:0}
@@ -480,27 +477,6 @@ html body .promo-ba-prix span.promo-ba-badge,html body span.promo-ba-badge{color
   .promo-ba-grille .promo-ba-card{flex:0 0 min(260px,80vw);scroll-snap-align:start}
 }
 </style>
-<script>
-(function(){
-  function place(){
-    if(window.matchMedia&&!matchMedia("(min-width:701px)").matches)return;
-    var w=document.getElementById("fenetre-defilante");
-    var h=document.querySelector("header.wrap,header.site,body>header");
-    if(!w||!h)return;
-    var top=Math.round(h.getBoundingClientRect().bottom+window.scrollY+3);
-    w.style.setProperty("top",top+"px","important");
-    w.style.setProperty("transform","none","important");
-  }
-  function go(){
-    place();
-    var n=0,t=setInterval(function(){place();if(document.getElementById("fenetre-defilante")&&++n>8)clearInterval(t);},150);
-    setTimeout(function(){clearInterval(t);place();},4000);
-    window.addEventListener("resize",place);
-  }
-  if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",go);
-  else go();
-})();
-</script>
 <section class="ap-accueil" aria-label="Cote et dernières ventes">
   <div class="ap-cherche">
     <h2>Combien vaut ma carte ?</h2>
@@ -1192,4 +1168,4 @@ background-size:100% 100%,300% 300%;background-position:0 0,var(--hx,50%) var(--
   <form method="dialog"><button class="btn">J'ai compris</button></form>
 </dialog>
 <script>(function(){var d=document.getElementById("aide"),b=document.getElementById("aide-ouvrir");if(!d||!b)return;b.addEventListener("click",function(){if(d.showModal)d.showModal();else d.setAttribute("open","")});d.addEventListener("click",function(e){if(e.target===d)d.close()});})();</script>
-<script src="site-commun.js?v=20261126b" defer></script><p class="pied-legal">Site de fan non officiel &middot; <a href="mentions-legales.html#liens">Liens affili&eacute;s</a> &middot; <a href="mentions-legales.html">Mentions l&eacute;gales</a></p><style>.pied-legal{margin:1.2rem auto 1.4rem;text-align:center;font-size:.72rem;font-weight:300;color:#7a869a;letter-spacing:.02em}.pied-legal a{color:#7a869a;text-decoration:underline}</style></body></html>
+<script src="apparition-pokemon.js?v=20261126"></script><script src="site-commun.js?v=20261126d" defer></script><p class="pied-legal">Site de fan non officiel &middot; <a href="mentions-legales.html#liens">Liens affili&eacute;s</a> &middot; <a href="mentions-legales.html">Mentions l&eacute;gales</a></p><style>.pied-legal{margin:1.2rem auto 1.4rem;text-align:center;font-size:.72rem;font-weight:300;color:#7a869a;letter-spacing:.02em}.pied-legal a{color:#7a869a;text-decoration:underline}</style></body></html>

@@ -1,3 +1,14 @@
+
+/* Dates d'apparition des Pokémon dans les suggestions de recherche */
+(function(){
+  function load(){
+    if (window.mimiquiApparition) return;
+    var s=document.createElement("script");
+    s.src="apparition-pokemon.js?v=20261126";
+    document.head.appendChild(s);
+  }
+  load();
+})();
 var __acc=/(\/|\/index\.html?)$/i.test(location.pathname);
 /* site-commun.js : menu, hamburger, fil d'Ariane, pied de page (Le Coin de Mimiqui) */
 
@@ -507,6 +518,8 @@ function normRech(s){
           if(h.type==="set") sm.textContent="Série"+(h.lang?" · "+h.lang:"");
           else sm.textContent=(h.n?h.n+" · ":"")+h.set+(h.lang?" · "+h.lang:"");
           a.appendChild(sm);
+          var app=window.mimiquiApparition&&window.mimiquiApparition.lignePourSuggestion(h);
+          if(app){ var ap=el("small",{"class":"mq-app-line"}); ap.textContent=app; a.appendChild(ap); }
           li.appendChild(a); liste.appendChild(li);
         });
       });
@@ -703,25 +716,7 @@ function go(){try{menu();}catch(e){console.error(e);}try{ariane();}catch(e){cons
   else speculation();
 })();
 
-/* Fenetre defilante hologramme (toutes les pages), fermable et memorisee */
-(function(){var K='mimiquiFenetreFermee';
-var T='<p class="fd-tag">Au cin\u00e9ma</p><p class="fd-titre">Pok\u00e9mon : <em>Wild Card</em></p><p class="fd-date">\u00c0 venir en 2027</p><p>Le premier film consacr\u00e9 au JCC Pok\u00e9mon, avec Mimiqui en partenaire du h\u00e9ros.</p><p class="fd-tag">Annonce \u00b7 30 ao\u00fbt 2026</p><p><b>Le film est annonc\u00e9</b><br>R\u00e9v\u00e9l\u00e9 \u00e0 la cl\u00f4ture des Championnats du monde Pok\u00e9mon 2026, \u00e0 San Francisco.</p><p class="fd-tag">Vid\u00e9o</p><p><b>Le teaser officiel</b><br>39 secondes, aussi en version japonaise.</p><p class="fd-tag">Blog</p><p><b>Ce qu\u2019on sait du film</b><br>L\u2019histoire, l\u2019\u00e9quipe et le teaser.</p>';
-function ferme(){try{return localStorage.getItem(K)==='1'}catch(e){return false}}
-function set(v){try{localStorage.setItem(K,v?'1':'0')}catch(e){}}
-function tab(){if(document.getElementById('fd-rouvrir'))return;var b=document.createElement('button');b.id='fd-rouvrir';b.type='button';b.textContent='Wild Card \u25b8';b.setAttribute('aria-label','Rouvrir la fen\u00eatre du film');b.addEventListener('click',function(){set(false);b.remove();win()});document.body.appendChild(b)}
-function win(){if(document.getElementById('fenetre-defilante'))return;var d=document.createElement('section');d.id='fenetre-defilante';if(/pokemon\.html?$/i.test(location.pathname))d.className='fd-simple';d.setAttribute('aria-label','Le film Pok\u00e9mon : Wild Card en bref');
-d.innerHTML='<button type="button" class="fd-fermer" aria-label="Fermer">\u00d7</button><div class="fd-piste"><div class="fd-bloc">'+T+'</div><div class="fd-bloc" aria-hidden="true">'+T+'</div></div>';
-d.querySelector('.fd-fermer').addEventListener('click',function(){set(true);d.remove();tab()});document.body.appendChild(d)}
-function go(){if(/blog\.html?$/i.test(location.pathname))return;if(window.matchMedia&&matchMedia('(max-width:600px)').matches){tab();return}if(/(\/|\/index\.html?)$/i.test(location.pathname)){set(false);win();return}if(ferme())tab();else win()}
-if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',go);else go();})();
-/* Fenetre defilante : profondeur (le texte arrive du fond vers le visiteur en montant) */
-(function(){if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches)return;
-function boucle(){var w=document.getElementById('fenetre-defilante');if(w&&!document.hidden){var r=w.getBoundingClientRect(),ps=w.querySelectorAll('.fd-bloc p');
-for(var i=0;i<ps.length;i++){var b=ps[i].getBoundingClientRect(),c=(b.top+b.height/2-r.top)/r.height;if(c<-0.2||c>1.2)continue;
-var k=1-Math.min(1,Math.max(0,c));/* 0 en bas, 1 en haut */
-var b0=w.classList.contains('fond-clair')?0.4:0.18;ps[i].style.opacity=(b0+(1-b0)*k).toFixed(3);ps[i].style.transform='translateZ('+(-120+150*k).toFixed(1)+'px) scale('+(0.8+0.25*k).toFixed(3)+')'}}
-requestAnimationFrame(boucle)}requestAnimationFrame(boucle)})();
-/* Fenetre defilante : texte bleu sur fond clair, hologramme blanc/cyan sur fond sombre */
+/* Mesure de luminance sous un element (contraste des menus et commentaires) */
 (function(){
 function lum(c){var m=c&&c.match(/rgba?\(([\d.]+),\s*([\d.]+),\s*([\d.]+)(?:,\s*([\d.]+))?/);if(!m)return null;if(m[4]!==undefined&&+m[4]<0.35)return null;
  var f=function(v){v/=255;return v<=0.03928?v/12.92:Math.pow((v+0.055)/1.055,2.4)};return 0.2126*f(+m[1])+0.7152*f(+m[2])+0.0722*f(+m[3])}
@@ -731,12 +726,7 @@ function fondSous(w){var r=w.getBoundingClientRect(),pts=[[.5,.5],[.25,.3],[.75,
    for(var a=e;a&&L===null;a=a.parentElement){var cs=getComputedStyle(a);L=lum(cs.backgroundColor);if(L===null&&cs.backgroundImage&&cs.backgroundImage.indexOf('gradient')>=0){var g=cs.backgroundImage.match(/rgba?\([^)]*\)/);if(g)L=lum(g[0])}}}
   if(L===null)L=lum(getComputedStyle(document.body).backgroundColor);if(L===null)L=1;tot+=L;n++}
  return tot/n}
-function maj(){var w=document.getElementById('fenetre-defilante');if(!w)return;var L=fondSous(w);w.classList.toggle('fond-clair',L>0.4);w.setAttribute('data-lum',L.toFixed(2))}
-var att=false;function plan(){if(att)return;att=true;setTimeout(function(){att=false;maj()},150)}
-addEventListener('scroll',plan,{passive:true});addEventListener('resize',plan);addEventListener('load',maj);
-var t=setInterval(function(){if(document.getElementById('fenetre-defilante')){maj();clearInterval(t)}},200);setTimeout(function(){clearInterval(t)},10000);
-new MutationObserver(function(ms){for(var i=0;i<ms.length;i++)for(var k=0;k<ms[i].addedNodes.length;k++)if(ms[i].addedNodes[k].id==='fenetre-defilante')maj()}).observe(document.documentElement,{childList:true,subtree:true});
-window.__fdMaj=maj;window.__fdFond=fondSous;})();
+window.__fdFond=fondSous;})();
 /* Sous-menus hologramme : contraste adaptatif (meme detection que la fenetre defilante) */
 (function(){function razSM(){document.querySelectorAll('ul.sous-menu.sm-clair,ul.sous-menu.sm-sombre,ul.sm-sous.sm-clair,ul.sm-sous.sm-sombre').forEach(function(sm){sm.classList.remove('sm-clair','sm-sombre');});}
  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',razSM);else razSM();
@@ -1138,6 +1128,8 @@ if(document.readyState==='loading') document.addEventListener('DOMContentLoaded'
             b.appendChild(document.createTextNode(c.nom||c.pkmn||"Carte"));
             var sp=el("span",null, (c.type==="set"?["Série", c.set||c.serie]:[c.set||c.serie, (c.n||c.num)?("n° "+(c.n||c.num)):""]).filter(Boolean).join(" · "));
             a.append(b,sp);
+            var app=window.mimiquiApparition&&window.mimiquiApparition.lignePourSuggestion(c);
+            if(app){ a.appendChild(el("span",{"class":"brs-app"},app)); }
             liste.appendChild(a);
           });
         }
