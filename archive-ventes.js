@@ -1,5 +1,6 @@
 /* Archive des ventes : filtre client, fenêtre de 365 jours, résumé par Pokémon.
-   Les chiffres viennent uniquement de window.ARCHIVE_VENTES. */
+   Les chiffres viennent de window.ARCHIVE_VENTES, fusionné avec
+   window.SET_DE_BASE_VENTES (USD, sans filtre de 365 jours). */
 (function () {
   "use strict";
   var JOURS = 365;
@@ -23,6 +24,60 @@
   }
   function euros(n) {
     return Number(n).toLocaleString("fr-FR", { style: "currency", currency: "EUR" });
+  }
+  function formatPrix(n, devise) {
+    var dev = String(devise || "EUR").toUpperCase();
+    if (dev === "USD") {
+      return Number(n).toFixed(2).replace(".", ",") + " USD";
+    }
+    if (dev && dev !== "EUR") {
+      return Number(n).toLocaleString("fr-FR", { style: "currency", currency: dev });
+    }
+    return euros(n);
+  }
+  function deviseDe(v) {
+    return String((v && (v.devise || v.dev)) || "EUR").toUpperCase();
+  }
+  function estSetDeBase(v) {
+    return !!(v && (v.set === "Set de Base" || v.serie === "Set de Base"));
+  }
+  function isoDate(d) {
+    if (dateOk(d)) return d;
+    if (/^\d{2}\/\d{2}\/\d{4}$/.test(d || "")) {
+      var p = d.split("/");
+      return p[2] + "-" + p[1] + "-" + p[0];
+    }
+    return d || "";
+  }
+  function normaliseSdb(list) {
+    var out = [];
+    (list || []).forEach(function (v) {
+      if (!v || typeof v !== "object") return;
+      var id = String(v.id || "").trim();
+      var lien = String(v.lien || v.u || "").trim();
+      if (!id) {
+        var m = lien.match(/\/itm\/(\d+)/i);
+        if (m) id = m[1];
+      }
+      if (!id) return;
+      var etat = String(v.etat || "");
+      if (!etat && v.grade) etat = "gradee " + v.grade;
+      out.push({
+        id: id,
+        carte: v.carte || v.nom || "",
+        numero: v.numero || "",
+        set: v.set || "Set de Base",
+        langue: v.langue || "fr",
+        prix: Number(v.prix),
+        devise: String(v.devise || v.dev || "USD").toUpperCase(),
+        date: isoDate(v.date),
+        etat: etat,
+        photo: v.photo || v.vignette || "",
+        lien: lien,
+        edition: v.edition || v.ed || ""
+      });
+    });
+    return out;
   }
   function jour(d) {
     if (!dateOk(d)) return "";
@@ -90,16 +145,24 @@
   function lienEbay(v) {
     var idt = identifiants(v);
     if (!idt.id) return idt.lien || "";
-    return "https://www.ebay.fr/itm/" + encodeURIComponent(idt.id) +
-      "?mkcid=1&mkrid=709-53476-19255-0&siteid=71&campid=" + CAMP +
-      "&customid=archive&toolid=10001&mkevt=1";
+    var raw = String((v && (v.lien || v.u)) || idt.lien || "");
+    var com = /ebay\.com/i.test(raw);
+    var host = com ? "www.ebay.com" : "www.ebay.fr";
+    var mkrid = com ? "711-53200-19255-0" : "709-53476-19255-0";
+    var siteid = com ? "0" : "71";
+    var custom = estSetDeBase(v) ? "set-de-base" : "archive";
+    return "https://" + host + "/itm/" + encodeURIComponent(idt.id) +
+      "?mkcid=1&mkrid=" + mkrid + "&siteid=" + siteid + "&campid=" + CAMP +
+      "&customid=" + custom + "&toolid=10001&mkevt=1";
   }
   function langueLabel(code) {
     return LANGUES[code] || code || "";
   }
 
   function source() {
-    return dedupe(Array.isArray(window.ARCHIVE_VENTES) ? window.ARCHIVE_VENTES : []);
+    var base = Array.isArray(window.ARCHIVE_VENTES) ? window.ARCHIVE_VENTES : [];
+    var sdb = normaliseSdb(window.SET_DE_BASE_VENTES);
+    return dedupe(base.concat(sdb));
   }
 
   function remplit(select, valeurs, etiquette, label) {
@@ -118,12 +181,22 @@
     if (garde && valeurs.indexOf(garde) >= 0) select.value = garde;
   }
 
+  function devisesListe(ventes) {
+    var d = [];
+    (ventes || []).forEach(function (v) {
+      var x = deviseDe(v);
+      if (d.indexOf(x) < 0) d.push(x);
+    });
+    return d;
+  }
   function dessin(ventes) {
     var svg = $("av-chart");
     if (!svg) return;
     while (svg.firstChild) svg.removeChild(svg.firstChild);
-    if (!ventes.length) { svg.hidden = true; return; }
+    var devises = devisesListe(ventes);
+    if (!ventes.length || devises.length !== 1) { svg.hidden = true; return; }
     svg.hidden = false;
+    var devise = devises[0];
     var NS = "http://www.w3.org/2000/svg";
     function el(name, attrs) {
       var e = document.createElementNS(NS, name);
@@ -143,7 +216,7 @@
     var gap = n > 1 ? Math.min(3, innerW / n * 0.25) : 0;
     var bw = n > 1 ? (innerW - gap * (n - 1)) / n : Math.min(28, innerW);
     var titre = el("title", {});
-    titre.textContent = "Historique des prix : " + n + " vente" + (n > 1 ? "s" : "") + ", de " + euros(ord[0].prix) + " à " + euros(max);
+    titre.textContent = "Historique des prix : " + n + " vente" + (n > 1 ? "s" : "") + ", de " + formatPrix(ord[0].prix, devise) + " à " + formatPrix(max, devise);
     svg.appendChild(titre);
     svg.appendChild(el("line", { x1: pl, y1: pt + innerH, x2: W - pr, y2: pt + innerH, stroke: "#0b3d91", "stroke-width": "1" }));
     ord.forEach(function (v, i) {
@@ -155,7 +228,7 @@
         fill: "#0a58ca", rx: "1"
       });
       var tip = document.createElementNS(NS, "title");
-      tip.textContent = jour(v.date) + " · " + euros(v.prix) + " · " + v.carte + (v.numero ? " " + v.numero : "");
+      tip.textContent = jour(v.date) + " · " + formatPrix(v.prix, deviseDe(v)) + " · " + v.carte + (v.numero ? " " + v.numero : "");
       rect.appendChild(tip);
       svg.appendChild(rect);
     });
@@ -167,8 +240,8 @@
       te.textContent = txt;
       svg.appendChild(te);
     }
-    lab(euros(max), pl - 6, pt + 4);
-    lab("0 €", pl - 6, pt + innerH);
+    lab(formatPrix(max, devise), pl - 6, pt + 4);
+    lab(formatPrix(0, devise), pl - 6, pt + innerH);
     lab(jourCourt(ord[0].date), pl, H - 8, "start");
     if (ord.length > 1) lab(jourCourt(ord[ord.length - 1].date), W - pr, H - 8, "end");
   }
@@ -209,7 +282,7 @@
     var meta = document.createElement("p");
     meta.className = "av-meta";
     var prix = document.createElement("strong");
-    prix.textContent = euros(v.prix);
+    prix.textContent = formatPrix(v.prix, deviseDe(v));
     meta.appendChild(prix);
     var time = document.createElement("time");
     time.dateTime = v.date;
@@ -251,44 +324,50 @@
       return;
     }
     box.hidden = false;
-    titre.textContent = "« " + q + " » — 12 derniers mois";
+    titre.textContent = "« " + q + " »";
     stats.textContent = "";
     if (!ventes.length) {
       var vide = document.createElement("p");
       vide.className = "av-aucune";
-      vide.textContent = "Aucune vente pour « " + q + " » sur les 12 derniers mois.";
+      vide.textContent = "Aucune vente affichée pour « " + q + " ».";
       stats.appendChild(vide);
       hist.textContent = "";
       if (legende) legende.hidden = true;
       dessin([]);
       return;
     }
-    var somme = 0, min = ventes[0].prix, max = ventes[0].prix;
-    ventes.forEach(function (v) {
-      somme += v.prix;
-      if (v.prix < min) min = v.prix;
-      if (v.prix > max) max = v.prix;
-    });
-    var moy = somme / ventes.length;
-    var lignes = [
-      ["Ventes", String(ventes.length)],
-      ["Prix moyen", euros(moy)],
-      ["Prix minimum", euros(min)],
-      ["Prix maximum", euros(max)]
-    ];
-    lignes.forEach(function (l) {
-      var wrap = document.createElement("div");
-      var dt = document.createElement("dt");
-      dt.textContent = l[0];
-      var dd = document.createElement("dd");
-      dd.textContent = l[1];
-      wrap.appendChild(dt);
-      wrap.appendChild(dd);
-      stats.appendChild(wrap);
+    function ajouteLignes(lignes) {
+      lignes.forEach(function (l) {
+        var wrap = document.createElement("div");
+        var dt = document.createElement("dt");
+        dt.textContent = l[0];
+        var dd = document.createElement("dd");
+        dd.textContent = l[1];
+        wrap.appendChild(dt);
+        wrap.appendChild(dd);
+        stats.appendChild(wrap);
+      });
+    }
+    var devises = devisesListe(ventes);
+    devises.forEach(function (dev) {
+      var sous = ventes.filter(function (v) { return deviseDe(v) === dev; });
+      var somme = 0, min = sous[0].prix, max = sous[0].prix;
+      sous.forEach(function (v) {
+        somme += v.prix;
+        if (v.prix < min) min = v.prix;
+        if (v.prix > max) max = v.prix;
+      });
+      var prefixe = devises.length > 1 ? " (" + dev + ")" : "";
+      ajouteLignes([
+        [devises.length > 1 ? "Ventes" + prefixe : "Ventes", String(sous.length)],
+        ["Prix moyen" + prefixe, formatPrix(somme / sous.length, dev)],
+        ["Prix minimum" + prefixe, formatPrix(min, dev)],
+        ["Prix maximum" + prefixe, formatPrix(max, dev)]
+      ]);
     });
     var note = document.createElement("p");
     note.className = "av-calc";
-    note.textContent = "Calculé sur les " + ventes.length + " vente" + (ventes.length > 1 ? "s" : "") + " affichée" + (ventes.length > 1 ? "s" : "") + " (365 derniers jours).";
+    note.textContent = "Calculé sur les " + ventes.length + " vente" + (ventes.length > 1 ? "s" : "") + " affichée" + (ventes.length > 1 ? "s" : "") + " (365 derniers jours, ventes du Set de Base conservées au-delà).";
     stats.appendChild(note);
     dessin(ventes);
     hist.textContent = "";
@@ -303,7 +382,7 @@
       time.dateTime = v.date;
       time.textContent = jour(v.date);
       var b = document.createElement("b");
-      b.textContent = euros(v.prix);
+      b.textContent = formatPrix(v.prix, deviseDe(v));
       var span = document.createElement("span");
       span.textContent = v.carte + (v.numero ? " " + v.numero : "");
       li.appendChild(time);
@@ -316,13 +395,22 @@
   function boot() {
     var f = fenetre();
     var toutes = source().filter(valide);
-    var recentes = toutes.filter(function (v) { return dansFenetre(v, f); });
-    var anciennes = toutes.filter(function (v) { return v.date < f.debut || v.date > f.fin; });
+    var recentes = toutes.filter(function (v) {
+      return estSetDeBase(v) || dansFenetre(v, f);
+    });
+    var anciennes = toutes.filter(function (v) {
+      return !estSetDeBase(v) && (v.date < f.debut || v.date > f.fin);
+    });
     var note = $("av-note");
     if (note) {
-      note.textContent = anciennes.length
-        ? anciennes.length + " vente" + (anciennes.length > 1 ? "s" : "") + " de plus de 365 jours " + (anciennes.length > 1 ? "restent" : "reste") + " dans l'archive et " + (anciennes.length > 1 ? "ne sont pas affichées" : "n'est pas affichée") + "."
-        : "Les ventes de plus de 365 jours restent dans l'archive et ne s'affichent pas.";
+      var bits = [];
+      if (anciennes.length) {
+        bits.push(anciennes.length + " vente" + (anciennes.length > 1 ? "s" : "") + " de plus de 365 jours " + (anciennes.length > 1 ? "restent" : "reste") + " dans l'archive et " + (anciennes.length > 1 ? "ne sont pas affichées" : "n'est pas affichée") + ".");
+      } else {
+        bits.push("Les ventes de plus de 365 jours restent dans l'archive et ne s'affichent pas.");
+      }
+      bits.push("Les ventes du Set de Base restent visibles, en USD, même après 365 jours.");
+      note.textContent = bits.join(" ");
     }
     var sets = [];
     var langues = [];
@@ -368,14 +456,14 @@
       liste.forEach(function (v) { ol.appendChild(carte(v)); });
       if (compte) {
         var n = liste.length;
-        compte.textContent = n + " vente" + (n > 1 ? "s" : "") + " sur les 365 derniers jours";
+        compte.textContent = n + " vente" + (n > 1 ? "s" : "") + " affichée" + (n > 1 ? "s" : "") + " (365 derniers jours, Set de Base conservé au-delà)";
       }
       if (vide) {
         vide.hidden = liste.length > 0;
         if (!liste.length) {
           vide.textContent = qRaw
-            ? "Aucune vente pour « " + qRaw + " » sur les 12 derniers mois."
-            : (recentes.length ? "Aucune vente ne correspond à ces filtres." : "Aucune vente de moins d'un an dans l'archive.");
+            ? "Aucune vente affichée pour « " + qRaw + " »."
+            : (recentes.length ? "Aucune vente ne correspond à ces filtres." : "Aucune vente à afficher dans l'archive.");
         }
       }
       resume(qRaw, liste);

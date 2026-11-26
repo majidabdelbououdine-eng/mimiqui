@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="description" content="Archive des ventes eBay du Coin de Mimiqui : recherche par Pokémon, filtres par set, langue et mois. Photos et prix conservés un an.">
+<meta name="description" content="Archive des ventes eBay du Coin de Mimiqui : recherche par Pokémon, filtres par set, langue et mois. Photos et prix conservés un an, ventes du Set de Base en USD sans limite de durée.">
 <link rel="icon" type="image/webp" href="img/logo-mimiqui.webp">
 <title>Archive des ventes : cartes Pokémon, cotes et prix – Le Coin de Mimiqui</title>
 <link rel="canonical" href="https://mimiqui.fr/archive-ventes.html">
@@ -12,12 +12,12 @@
 <meta name="twitter:image" content="https://mimiqui.fr/img/sm9-53.webp">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Archive des ventes : cartes Pokémon, cotes et prix – Le Coin de Mimiqui">
-<meta property="og:description" content="Archive des ventes eBay du Coin de Mimiqui : recherche par Pokémon, filtres par set, langue et mois. Photos et prix conservés un an.">
+<meta property="og:description" content="Archive des ventes eBay du Coin de Mimiqui : recherche par Pokémon, filtres par set, langue et mois. Photos et prix conservés un an, ventes du Set de Base en USD sans limite de durée.">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="Le Coin de Mimiqui">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Archive des ventes : cartes Pokémon, cotes et prix – Le Coin de Mimiqui">
-<meta name="twitter:description" content="Archive des ventes eBay du Coin de Mimiqui : recherche par Pokémon, filtres par set, langue et mois. Photos et prix conservés un an.">
+<meta name="twitter:description" content="Archive des ventes eBay du Coin de Mimiqui : recherche par Pokémon, filtres par set, langue et mois. Photos et prix conservés un an, ventes du Set de Base en USD sans limite de durée.">
 <link rel="stylesheet" href="site-commun.css?v=20261120d">
 <style>
 :root{--navy:#0b3d91;--navy-2:#0a58ca;--encre:#10233f;--muted:#3d4d66;--fond:#f4f7fc}
@@ -135,7 +135,7 @@ header.site{border-bottom:3px solid var(--navy)}
 <main class="wrap" id="contenu">
   <header class="av-tete">
     <h1>Archive des ventes</h1>
-    <p>Ventes relevées dans le registre, conservées ici avec leur photo locale. Seules celles des 365 derniers jours sont affichées.</p>
+    <p>Ventes relevées dans le registre, conservées ici avec leur photo locale. Seules celles des 365 derniers jours sont affichées, sauf les ventes du Set de Base, conservées en USD et visibles sans limite de durée.</p>
     <p class="av-note" id="av-note"></p>
   </header>
   <form class="av-filtres" id="av-form" role="search">
@@ -165,7 +165,8 @@ header.site{border-bottom:3px solid var(--navy)}
   <ol class="av-liste" id="av-liste"></ol>
 </main>
 <script src="archive-ventes-data.js" defer></script>
-<script src="archive-ventes.js" defer></script>
+<script src="data-set-de-base-ventes.js?v=20261126c" defer></script>
+<script src="archive-ventes.js?v=20261126c" defer></script>
 <script src="site-commun.js?v=20261126b" defer></script>
 <p class="pied-legal">Site de fan non officiel &middot; <a href="mentions-legales.html#liens">Liens affiliés</a> &middot; <a href="mentions-legales.html">Mentions légales</a></p>
 </body>
