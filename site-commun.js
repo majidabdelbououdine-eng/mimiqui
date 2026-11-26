@@ -1,3 +1,14 @@
+
+/* Dates d'apparition des Pokémon dans les suggestions de recherche */
+(function(){
+  function load(){
+    if (window.mimiquiApparition) return;
+    var s=document.createElement("script");
+    s.src="apparition-pokemon.js?v=20261126";
+    document.head.appendChild(s);
+  }
+  load();
+})();
 var __acc=/(\/|\/index\.html?)$/i.test(location.pathname);
 /* site-commun.js : menu, hamburger, fil d'Ariane, pied de page (Le Coin de Mimiqui) */
 
@@ -507,6 +518,8 @@ function normRech(s){
           if(h.type==="set") sm.textContent="Série"+(h.lang?" · "+h.lang:"");
           else sm.textContent=(h.n?h.n+" · ":"")+h.set+(h.lang?" · "+h.lang:"");
           a.appendChild(sm);
+          var app=window.mimiquiApparition&&window.mimiquiApparition.lignePourSuggestion(h);
+          if(app){ var ap=el("small",{"class":"mq-app-line"}); ap.textContent=app; a.appendChild(ap); }
           li.appendChild(a); liste.appendChild(li);
         });
       });
@@ -1138,6 +1151,8 @@ if(document.readyState==='loading') document.addEventListener('DOMContentLoaded'
             b.appendChild(document.createTextNode(c.nom||c.pkmn||"Carte"));
             var sp=el("span",null, (c.type==="set"?["Série", c.set||c.serie]:[c.set||c.serie, (c.n||c.num)?("n° "+(c.n||c.num)):""]).filter(Boolean).join(" · "));
             a.append(b,sp);
+            var app=window.mimiquiApparition&&window.mimiquiApparition.lignePourSuggestion(c);
+            if(app){ a.appendChild(el("span",{"class":"brs-app"},app)); }
             liste.appendChild(a);
           });
         }
