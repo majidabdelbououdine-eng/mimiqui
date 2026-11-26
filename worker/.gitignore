@@ -1,0 +1,7 @@
+node_modules/
+.dev.vars
+.wrangler/
+data/*.json
+data/bulk*.json
+data/ventes/
+!data/.gitkeep

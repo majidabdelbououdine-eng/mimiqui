@@ -1,0 +1,32 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "mimiqui-api",
+  "main": "src/index.js",
+  "compatibility_date": "2026-11-26",
+  "observability": {
+    "enabled": true,
+    "traces": { "enabled": true }
+  },
+  // Routes attachées seulement au moment du déploiement (ne pas lancer
+  // wrangler deploy avant « publie »). wrangler dev ignore le DNS réel.
+  "routes": [
+    { "pattern": "mimiqui.fr/api/*", "zone_name": "mimiqui.fr" },
+    { "pattern": "www.mimiqui.fr/api/*", "zone_name": "mimiqui.fr" }
+  ],
+  "kv_namespaces": [
+    { "binding": "VENTES" }
+  ],
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "mimiqui-abos",
+      "migrations_dir": "migrations"
+    }
+  ],
+  "vars": {
+    "PUBLIC_ORIGIN": "https://mimiqui.fr",
+    "WEEKLY_PRICE_CENTS": "299",
+    "PRICE_ID": "price_1Ub2KVRPA7ND4soIl9jsR9Ry",
+    "DEV_RETURN_MAGIC_LINK": "0"
+  }
+}

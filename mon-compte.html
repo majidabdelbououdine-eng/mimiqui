@@ -20,7 +20,7 @@
 <meta name="twitter:title" content="Mon compte et abonnement – Le Coin de Mimiqui">
 <meta name="twitter:description" content="Gérez votre accès aux données de vente du Coin de Mimiqui : état de l’abonnement, souscription Stripe et restauration de l’accès.">
 <meta name="twitter:image" content="https://mimiqui.fr/img/logo-mimiqui.webp">
-<script type="application/ld+json" id="mq-jsonld">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://mimiqui.fr/"},{"@type":"ListItem","position":2,"name":"Mon compte","item":"https://mimiqui.fr/mon-compte.html"}]}</script><script>try{if(localStorage.getItem("mimiqui_acces")==="ok")document.documentElement.classList.add("mq-abonne")}catch(e){}</script></head>
+<script type="application/ld+json" id="mq-jsonld">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://mimiqui.fr/"},{"@type":"ListItem","position":2,"name":"Mon compte","item":"https://mimiqui.fr/mon-compte.html"}]}</script></head>
 <body>
 <header class="site wrap">
   <nav class="sitenav" aria-label="Navigation principale">
@@ -43,14 +43,14 @@
     <p class="mq-note" id="mq-etat-detail">Les tableaux de ventes restent masqués jusqu’à l’activation, après le paiement.</p>
   </div>
   <div class="mq-compte-actions">
-    <a class="btn-pill rouge" id="mq-btn-abo" href="https://buy.stripe.com/aFa9AVcwYdTOgDcdez67S00" target="_blank" rel="noopener">S’abonner</a>
+    <a class="btn-pill rouge" id="mq-btn-abo" href="#">S’abonner — 2,99 € / semaine</a>
     <a class="btn-pill" id="mq-btn-portail" href="#" hidden>Gérer / résilier mon abonnement</a>
-    <p class="mq-note" id="mq-portail-attente" hidden>Gérer / résilier mon abonnement : bientôt disponible.</p>
+    <p class="mq-note" id="mq-portail-attente" hidden>Le portail de résiliation s'affiche une fois l'abonnement confirmé.</p>
     <p class="mq-note">Avant de vous abonner, consultez les <a href="conditions-abonnement.html">conditions d’abonnement</a> et la <a href="confidentialite.html">politique de confidentialité</a>.</p>
   </div>
   <section>
     <h2>Restaurer mon accès</h2>
-    <p>Si vous avez déjà payé, l’accès se réactive en ouvrant le lien affiché après le paiement (la page de retour du site). Saisir votre e-mail ci-dessous ne débloque pas l’accès à lui seul : il est seulement enregistré sur cet appareil, pour vous reconnaître.</p>
+    <p>Si vous avez déjà payé, saisissez l'e-mail utilisé chez Stripe : un lien de connexion vous est envoyé (valable 15 minutes). Aucun mot de passe n'est demandé, et aucune donnée de carte n'est saisie sur cette page.</p>
     <form id="mq-restore" action="#" method="post">
       <label for="mq-email">E-mail utilisé chez Stripe</label>
       <input id="mq-email" name="email" type="email" autocomplete="email" required placeholder="vous@exemple.com">
@@ -62,59 +62,112 @@
 <script>
 (function(){
   "use strict";
-  var KEY="mimiqui_acces";
-  var DATE_KEY="mimiqui_acces_date";
-  var MAIL_KEY="mimiqui_stripe_email";
-  var STRIPE="https://buy.stripe.com/aFa9AVcwYdTOgDcdez67S00";
-  var STRIPE_PORTAL_URL="https://billing.stripe.com/p/login/aFa9AVcwYdTOgDcdez67S00";
-  function aAcces(){
-    try{ return localStorage.getItem(KEY)==="ok"; }catch(e){ return false; }
-  }
-  function dateAcces(){
-    try{ return localStorage.getItem(DATE_KEY)||""; }catch(e){ return ""; }
+  function api(){
+    try{
+      if(window.MIMIQUI_ABO && typeof window.MIMIQUI_ABO.apiBase==="function") return window.MIMIQUI_ABO.apiBase();
+    }catch(e){}
+    var h=location.hostname;
+    if(h==="localhost"||h==="127.0.0.1") return "http://127.0.0.1:8787/api";
+    return "/api";
   }
   var etat=document.getElementById("mq-etat");
   var val=document.getElementById("mq-etat-valeur");
   var det=document.getElementById("mq-etat-detail");
   var portail=document.getElementById("mq-btn-portail");
   var attente=document.getElementById("mq-portail-attente");
-  if(aAcces()){
-    etat.setAttribute("data-etat","ok");
-    val.textContent="Activé";
-    var d=dateAcces();
-    det.textContent=d ? ("Activé sur cet appareil. Date d’activation enregistrée : "+d+"." ) : "Activé sur cet appareil, via le lien reçu après le paiement.";
-  }else{
-    etat.setAttribute("data-etat","off");
-    val.textContent="Non activé";
-    det.textContent="Les tableaux de ventes restent masqués jusqu’à l’activation, après le paiement.";
-  }
-  if(STRIPE_PORTAL_URL){
-    portail.href=STRIPE_PORTAL_URL;
-    portail.target="_blank";
-    portail.rel="noopener";
-    portail.hidden=false;
-    attente.hidden=true;
-  }else{
-    portail.hidden=true;
-    attente.hidden=false;
-  }
+  var abo=document.getElementById("mq-btn-abo");
   var form=document.getElementById("mq-restore");
   var email=document.getElementById("mq-email");
   var msg=document.getElementById("mq-restore-msg");
-  try{
-    var saved=localStorage.getItem(MAIL_KEY)||"";
-    if(saved) email.value=saved;
-  }catch(e){}
+  var params=new URLSearchParams(location.search);
+  function show(on, detail){
+    etat.setAttribute("data-etat", on ? "ok" : "off");
+    val.textContent = on ? "Activé" : "Non activé";
+    det.textContent = detail || (on
+      ? "Abonnement actif sur cet appareil."
+      : "Les ventes détaillées de l'archive restent masquées jusqu'à l'activation, après le paiement.");
+    if(on){
+      portail.hidden=false;
+      attente.hidden=true;
+      abo.textContent="Gérer mon abonnement";
+    }else{
+      portail.hidden=true;
+      attente.hidden=false;
+      abo.textContent="S'abonner — 2,99 € / semaine";
+    }
+  }
+  if(params.get("acces")==="ok") show(true, "Accès restauré via le lien reçu par e-mail.");
+  if(params.get("acces")==="echec") show(false, "Le lien de connexion est invalide ou a expiré. Demandez-en un nouveau.");
+  fetch(api()+"/moi", { credentials:"include" })
+    .then(function(r){ return r.json(); })
+    .then(function(j){
+      if(j && j.abonne){
+        show(true, j.email ? ("Connecté avec " + j.email + ".") : "Abonnement actif.");
+        if(j.email && email && !email.value) email.value=j.email;
+      }else if(params.get("acces")!=="ok"){
+        show(false);
+      }
+    })
+    .catch(function(){
+      if(params.get("acces")!=="ok") show(false, "L'API d'abonnement n'est pas encore joignable. Elle le sera après la mise en ligne du Worker.");
+    });
+  function allerCheckout(ev){
+    ev.preventDefault();
+    var body={};
+    if(email && email.value) body.email=email.value.trim();
+    fetch(api()+"/checkout", {
+      method:"POST",
+      credentials:"include",
+      headers:{ "content-type":"application/json", accept:"application/json" },
+      body: JSON.stringify(body)
+    })
+      .then(function(r){ return r.json().then(function(j){ return {ok:r.ok,j:j}; }); })
+      .then(function(res){
+        if(res.ok && res.j && res.j.url){ location.href=res.j.url; return; }
+        alert((res.j && res.j.error) || "Impossible d'ouvrir le paiement pour le moment.");
+      })
+      .catch(function(){ alert("L'API de paiement n'est pas joignable pour le moment."); });
+  }
+  if(abo) abo.addEventListener("click", allerCheckout);
+  if(portail) portail.addEventListener("click", function(ev){
+    ev.preventDefault();
+    var body={};
+    if(email && email.value) body.email=email.value.trim();
+    fetch(api()+"/portail", {
+      method:"POST",
+      credentials:"include",
+      headers:{ "content-type":"application/json", accept:"application/json" },
+      body: JSON.stringify(body)
+    })
+      .then(function(r){ return r.json().then(function(j){ return {ok:r.ok,j:j}; }); })
+      .then(function(res){
+        if(res.ok && res.j && res.j.url){ location.href=res.j.url; return; }
+        alert((res.j && res.j.error) || "Portail indisponible pour le moment.");
+      })
+      .catch(function(){ alert("L'API n'est pas joignable pour le moment."); });
+  });
   form.addEventListener("submit", function(ev){
     ev.preventDefault();
     var v=(email.value||"").trim();
     if(!v){ email.focus(); return; }
-    try{ localStorage.setItem(MAIL_KEY, v); }catch(e){}
-    msg.hidden=false;
-    msg.textContent="E-mail enregistré sur cet appareil. Pour réactiver l’accès, ouvrez le lien reçu après le paiement (page de retour du site). Saisir l’e-mail ne débloque pas les ventes à lui seul.";
+    fetch(api()+"/login", {
+      method:"POST",
+      credentials:"include",
+      headers:{ "content-type":"application/json" },
+      body: JSON.stringify({ email:v })
+    })
+      .then(function(r){ return r.json().then(function(j){ return {ok:r.ok,j:j}; }); })
+      .then(function(res){
+        msg.hidden=false;
+        msg.textContent=(res.j && (res.j.message || res.j.error)) || "Demande envoyée.";
+      })
+      .catch(function(){
+        msg.hidden=false;
+        msg.textContent="L'envoi du lien n'est pas possible pour le moment (API ou e-mail non configurés).";
+      });
   });
 })();
 </script>
-<script src="site-commun.js?v=20261126i" defer></script>
+<script src="site-commun.js?v=20261126j" defer></script>
 </body>
 </html>
