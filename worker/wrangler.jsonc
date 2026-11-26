@@ -29,6 +29,7 @@
     "PUBLIC_ORIGIN": "https://mimiqui.fr",
     "WEEKLY_PRICE_CENTS": "299",
     "PRICE_ID": "price_1Ub2KVRPA7ND4soIl9jsR9Ry",
-    "DEV_RETURN_MAGIC_LINK": "0"
+    "DEV_RETURN_MAGIC_LINK": "0",
+    "RESEND_FROM": "Le Coin de Mimiqui <acces@mimiqui.fr>"
   }
 }

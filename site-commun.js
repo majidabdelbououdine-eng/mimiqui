@@ -582,11 +582,11 @@ function go(){try{menu();}catch(e){console.error(e);}try{ariane();}catch(e){cons
 /* Mini-lecteur teaser Pokemon : Wild Card - video locale (sans YouTube) */
 (function(){
   if(window.__miniTeaser)return;window.__miniTeaser=1;
-  var SRC='videos/wild-card-bande-annonce.mp4',KT='mimiquiTeaserTemps',KR='mimiquiTeaserReduit';
+  var SRC='videos/wild-card-bande-annonce.mp4',POSTER='videos/wild-card-teaser-poster.webp',KT='mimiquiTeaserTemps',KR='mimiquiTeaserReduit';
   var KS='mimiquiBrowseStart',KA='mimiquiTeaserAutoReduit',KO='mimiquiTeaserKeepOpen',KF='mimiquiTeaserAutoFerme';
   var AUTO_MS=20000; /* 20 secondes de navigation (session) */
   function go(){
-    if(/(^|\/)registre-pokemon\.html$/i.test(location.pathname))return;if(/(^|\/)conseils-achat\.html$/i.test(location.pathname))return;if(document.documentElement.classList.contains('sans-mini-teaser')||(document.body&&document.body.classList.contains('sans-mini-teaser')))return;if(document.getElementById('mini-teaser'))return;window.__mtAuto=true;
+    if(/(^|\/)registre-pokemon\.html$/i.test(location.pathname))return;if(/(^|\/)conseils-achat\.html$/i.test(location.pathname))return;if(document.documentElement.classList.contains('sans-mini-teaser')||(document.body&&document.body.classList.contains('sans-mini-teaser')))return;if(document.getElementById('mini-teaser'))return;window.__mtAuto=false;
     var t=0;try{t=parseFloat(localStorage.getItem(KT))||0}catch(e){}
     var red=false;try{red=localStorage.getItem(KR)==='1'}catch(e){}
     var browseStart=0,now=Date.now(),autoFerme=false;
@@ -601,14 +601,26 @@ function go(){try{menu();}catch(e){console.error(e);}try{ariane();}catch(e){cons
       return;
     }
     var box=document.createElement('div');box.id='mini-teaser';if(red)box.className='reduit';
-    box.innerHTML='<div class="mt-barre"><span class="mt-titre">Pok\u00e9mon : Wild Card \u2013 teaser</span><button type="button" class="mt-taille" aria-label="R\u00e9duire ou agrandir"></button></div><div class="mt-video"><video id="mini-teaser-yt" src="'+SRC+'" muted autoplay loop playsinline preload="metadata"></video><button type="button" class="mt-play" aria-label="Lecture"></button></div>';
+    box.innerHTML='<div class="mt-barre"><span class="mt-titre">Pok\u00e9mon : Wild Card \u2013 teaser</span><button type="button" class="mt-taille" aria-label="R\u00e9duire ou agrandir"></button></div><div class="mt-video"><img class="mt-poster" src="'+POSTER+'" alt="" width="640" height="360"><video id="mini-teaser-yt" playsinline preload="none"></video><button type="button" class="mt-play" aria-label="Lecture"></button></div>';
     document.body.appendChild(box);
     var v=box.querySelector('video'),pb=box.querySelector('.mt-play');v.muted=true;
+    var charge=false, autoT=0;
+    function charger(){
+      if(charge) return;
+      charge=true;
+      v.src=SRC;
+      v.setAttribute('preload','auto');
+    }
     v.addEventListener('loadedmetadata',function(){try{if(t&&t<v.duration)v.currentTime=t}catch(e){}});
-    function maj(){if(!pb||!pb.isConnected)return;pb.style.display=(!v.paused&&!v.muted)?'none':''}
-    v.addEventListener('play',maj);v.addEventListener('pause',maj);v.addEventListener('volumechange',maj);
-    var pl=v.play();if(pl&&pl.catch)pl.catch(function(){});
-    window.__mtPlayer={unMute:function(){v.muted=false},mute:function(){v.muted=true},setVolume:function(n){v.volume=Math.min(1,n/100)},playVideo:function(){var q=v.play();if(q&&q.catch)q.catch(function(){})},pauseVideo:function(){v.pause()},isMuted:function(){return v.muted},getCurrentTime:function(){return v.currentTime}};
+    function maj(){if(!pb||!pb.isConnected)return;pb.style.display=(!v.paused&&charge)?'none':''}
+    v.addEventListener('play',function(){box.classList.add('is-playing');maj()});
+    v.addEventListener('pause',maj);v.addEventListener('volumechange',maj);
+    function jouer(){
+      charger();
+      if(autoT){clearTimeout(autoT);autoT=0}
+      var q=v.play();if(q&&q.catch)q.catch(function(){});
+    }
+    window.__mtPlayer={unMute:function(){v.muted=false},mute:function(){v.muted=true},setVolume:function(n){v.volume=Math.min(1,n/100)},playVideo:function(){jouer()},pauseVideo:function(){v.pause()},isMuted:function(){return v.muted},getCurrentTime:function(){return v.currentTime}};
     var fermePending=false,saveTimer=0,obs=null;
     function fermerAuto(){
       try{sessionStorage.setItem(KF,'1')}catch(e){}
@@ -644,7 +656,7 @@ function go(){try{menu();}catch(e){console.error(e);}try{ariane();}catch(e){cons
         else{sessionStorage.setItem(KO,'1')}
       }catch(e){}
     });
-    setTimeout(fermerAuto, Math.max(0, AUTO_MS-elapsed));
+    autoT=setTimeout(fermerAuto, Math.max(0, AUTO_MS-elapsed));
     function save(){if(!document.getElementById('mini-teaser'))return;try{localStorage.setItem(KT,String(v.currentTime||0))}catch(e){}}
     window.addEventListener('beforeunload',save);window.addEventListener('pagehide',save);saveTimer=setInterval(save,3000);
     document.body.classList.add('avec-mini-teaser');
@@ -763,7 +775,7 @@ function go(){
  // 1 accueil
  if(page==='index.html'||page===''){var h=document.querySelector('h1');if(h&&!h.querySelector('.h5-holo'))h.appendChild(holo(MIMI,'h5-mimi-titre'))}
  // 3 blog
- if(page==='blog.html'){var t=document.querySelector('.tete');if(t&&!t.querySelector('.h5-film')){var f=holo('videos/wild-card-bande-annonce.mp4','h5-film',true);t.appendChild(f);if(RM){var v=f.querySelector('video');v.removeAttribute('autoplay');v.pause()}}}
+ if(page==='blog.html'){var t=document.querySelector('.tete');if(t&&!t.querySelector('.h5-film')){t.appendChild(holo('videos/wild-card-teaser-poster.webp','h5-film',false))}}
  // 4 aide
  document.querySelectorAll('dialog.aide').forEach(function(d){new MutationObserver(function(){if(d.open&&!d.querySelector('.h5-aide'))d.appendChild(holo(MIMI,'h5-aide'))}).observe(d,{attributes:true,attributeFilter:['open']})});
  // 2 cartes
