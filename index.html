@@ -547,11 +547,10 @@ body:has(#hero-accueil) #mini-teaser,
   <div class="ap-cherche">
     <h2>Combien vaut ma carte ?</h2>
     <p class="ap-desc">Recherche une carte par Pokémon dans l'archive des ventes pour voir son prix de vente sur tout le site</p>
-    <form id="ap-form" action="estimer-ma-carte.html" method="get" role="search">
+    <form id="ap-form" action="archive-ventes.html" method="get" role="search">
       <label class="ap-sr" for="ap-q">Nom de la carte</label>
       <input id="ap-q" name="q" type="search" placeholder="Nom, extension ou numéro" autocomplete="off" enterkeyhint="search">
-      <button type="submit">Estimer</button>
-      <button type="submit" class="ap-btn-archive" formaction="archive-ventes.html">Voir l’archive</button>
+      <button type="submit" class="ap-btn-archive">Voir l’archive</button>
     </form>
   </div>
 </section>
@@ -1547,6 +1546,18 @@ setTimeout(function(){els.forEach(function(e){e.classList.add('fx-vu')})},6000);
   function hrefArchive(nom){
     return "archive-ventes.html?q=" + encodeURIComponent(String(nom || "").trim());
   }
+  function nomDepuisLien(a, fallback){
+    try {
+      var u = new URL(a.href, location.href);
+      if (/archive-ventes\.html$/i.test(u.pathname) && u.searchParams.get("q")) return u.searchParams.get("q");
+    } catch (e) {}
+    var b = a.querySelector("b");
+    var t = b && b.textContent.trim();
+    if (t && t.indexOf("Ventes de ") === 0) {
+      t = t.replace(/^Ventes de\s+/, "").replace(/\s+dans l'archive$/, "");
+    }
+    return t || fallback || "";
+  }
   function enrichir(){
     var input = document.getElementById("ap-q");
     var liste = document.getElementById("ap-q-sugg");
@@ -1554,6 +1565,11 @@ setTimeout(function(){els.forEach(function(e){e.classList.add('fx-vu')})},6000);
     Array.prototype.slice.call(liste.querySelectorAll(":scope > li.mq-app-archive")).forEach(function (n) { n.remove(); });
     var q = input.value.trim();
     if (!q) return;
+    Array.prototype.slice.call(liste.querySelectorAll("a[href]")).forEach(function (a) {
+      var b = a.querySelector("b");
+      var nom = (b && b.textContent.trim()) || q;
+      a.href = hrefArchive(nom);
+    });
     var nom = q;
     var first = liste.querySelector("a[href] b");
     if (first && first.textContent.trim()) nom = first.textContent.trim();
@@ -1574,12 +1590,31 @@ setTimeout(function(){els.forEach(function(e){e.classList.add('fx-vu')})},6000);
     else liste.appendChild(li);
     liste.hidden = false;
   }
+  function allerArchive(nom){
+    var q = String(nom || "").trim();
+    if (!q) return;
+    location.href = hrefArchive(q);
+  }
   function boot(){
     var input = document.getElementById("ap-q");
     if (!input) return;
     ["input", "focus"].forEach(function (ev) {
       input.addEventListener(ev, function () { setTimeout(enrichir, 0); });
     });
+    var wrap = input.closest(".mq-app-wrap") || input.parentElement;
+    if (wrap) {
+      function versArchive(e){
+        var a = e.target.closest("a[href]");
+        if (!a || !wrap.contains(a)) return;
+        var nom = nomDepuisLien(a, input.value);
+        if (!nom) return;
+        e.preventDefault();
+        e.stopPropagation();
+        allerArchive(nom);
+      }
+      wrap.addEventListener("mousedown", versArchive, true);
+      wrap.addEventListener("click", versArchive, true);
+    }
   }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", boot);
   else boot();
