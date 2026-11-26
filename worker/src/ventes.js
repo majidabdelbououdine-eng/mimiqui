@@ -178,44 +178,110 @@ export function ongletsOf(ventes) {
   return out;
 }
 
+// Visiteur non abonné : toutes les ventes, sans aucun prix (ni valeur dérivée).
+// Liste blanche : un champ absent d'ici n'est jamais envoyé (fail-closed).
+// Pas d'id ni de lien : le numéro d'annonce eBay mènerait au prix vendu.
+export const CHAMPS_SANS_PRIX = ["carte", "numero", "set", "serie", "pokemon", "langue", "date", "etat", "edition", "photo", "source"];
+export const PAGE_LIBRE = 60;
+export const PAGE_LIBRE_MAX = 240;
+export const PAGE_ABONNE = 5000;
+
+// Montant éventuel recopié dans un titre d'annonce (« 25 € », « $40 », « 12,50 EUR »).
+const MONTANT = /(?:€|\$|£|¥|\b(?:eur|usd|gbp|jpy)\b)\s*\d+(?:[.,]\d+)?|\d+(?:[.,]\d+)?\s*(?:(?:€|\$|£|¥)(?!\s*\d)|\b(?:eur|euros?|usd|gbp|jpy)\b)/gi;
+
+export function sansPrix(v) {
+  const out = {};
+  for (const k of CHAMPS_SANS_PRIX) {
+    const val = v && v[k];
+    if (val === undefined || val === null || val === "") continue;
+    // Uniquement des textes courts : pas d'objet imbriqué qui porterait un prix.
+    if (typeof val !== "string" && typeof val !== "number") continue;
+    out[k] = k === "photo" ? String(val) : String(val).replace(MONTANT, " ").replace(/\s+/g, " ").trim();
+  }
+  return out;
+}
+
+// Tri sans prix (le tri abonné départage par prix, ce qui en révélerait l'ordre).
+function recentesSansPrix(ventes) {
+  return (ventes || []).slice().sort((a, b) => {
+    const da = String(a.date || "");
+    const db = String(b.date || "");
+    if (da !== db) return da < db ? 1 : -1;
+    const ia = String(a.carte || "") + String(a.numero || "");
+    const ib = String(b.carte || "") + String(b.numero || "");
+    return ia < ib ? -1 : ia > ib ? 1 : 0;
+  });
+}
+
+function entier(val, defaut, min, max) {
+  const n = parseInt(val, 10);
+  if (!Number.isFinite(n)) return defaut;
+  return Math.min(max, Math.max(min, n));
+}
+
 /**
- * Réponse API : les stats portent sur toutes les ventes du Pokémon (filtre compris).
- * Les ventes renvoyées sont limitées à 3 si le visiteur n'est pas abonné.
+ * Réponse API.
+ * - Abonné (session.abonne === true uniquement) : prix, stats, jusqu'à 5000 ventes.
+ * - Sinon : toutes les ventes par pages (offset / limit), photo et infos de la carte,
+ *   sans prix, sans devise, sans lien d'annonce, sans stats de prix.
  */
-export function buildPayload({ pack, filtre, abonne, q, matches }) {
+export function buildPayload({ pack, filtre, abonne, q, matches, offset, limit }) {
+  const estAbonne = abonne === true;
   if (matches) {
-    return { abonne, q, matches, prix: "2,99 € / semaine" };
+    return { abonne: estAbonne, q, matches, prix: "2,99 € / semaine" };
   }
   const toutes = filterVentes((pack && pack.ventes) || [], filtre);
   const onglet = filtre.onglet || "";
   const cible = onglet ? toutes.filter((v) => groupeDe(v) === onglet) : toutes;
-  const stats = statsOf(toutes);
-  const onglets = ongletsOf(toutes);
   const sets = uniqueValues(toutes, "set").sort((a, b) => a.localeCompare(b, "fr"));
   const langues = uniqueValues(toutes, "langue").sort();
   const mois = monthsOf(toutes);
   const sources = sourcesOf(toutes);
-  const visible = abonne ? lastN(cible, 5000) : lastN(cible, LIBRE_N);
   const baseTotal = cible.length;
-  return {
-    abonne: !!abonne,
+  const commun = {
     q: q || "",
     slug: pack && pack.slug,
     nom: pack && pack.nom,
     onglet: onglet || "",
     total: toutes.length,
     total_onglet: baseTotal,
-    visible: visible.length,
-    masquees: abonne ? 0 : Math.max(0, baseTotal - visible.length),
-    stats,
-    onglets,
     sets,
     langues,
     mois,
     sources,
-    ventes: visible,
     prix: "2,99 € / semaine",
     maj: pack && pack.maj,
+  };
+  if (estAbonne) {
+    const visible = lastN(cible, PAGE_ABONNE);
+    return {
+      abonne: true,
+      ...commun,
+      visible: visible.length,
+      masquees: 0,
+      stats: statsOf(toutes),
+      onglets: ongletsOf(toutes),
+      ventes: visible,
+    };
+  }
+  const debut = entier(offset, 0, 0, Math.max(0, baseTotal));
+  const taille = entier(limit, PAGE_LIBRE, 1, PAGE_LIBRE_MAX);
+  const page = recentesSansPrix(cible).slice(debut, debut + taille).map(sansPrix);
+  const onglets = {};
+  for (const [id, info] of Object.entries(ongletsOf(toutes))) onglets[id] = { n: info.n };
+  const suivant = debut + page.length < baseTotal ? debut + page.length : null;
+  return {
+    abonne: false,
+    ...commun,
+    prix_reserves: true,
+    offset: debut,
+    limit: taille,
+    suivant,
+    visible: page.length,
+    masquees: 0,
+    stats: [],
+    onglets,
+    ventes: page,
   };
 }
 
@@ -230,7 +296,10 @@ export async function handleVentes(env, request, session) {
     mois: u.searchParams.get("mois") || "",
     onglet: u.searchParams.get("onglet") || "",
   };
-  const abonne = !!(session && session.abonne);
+  // Fail-closed : seul session.abonne === true donne accès aux prix.
+  const abonne = !!session && session.abonne === true;
+  const offset = u.searchParams.get("offset");
+  const limit = u.searchParams.get("limit");
 
   if (!q && !slugParam) {
     return json({
@@ -288,5 +357,8 @@ export async function handleVentes(env, request, session) {
       prix: "2,99 € / semaine",
     });
   }
-  return json(buildPayload({ pack, filtre, abonne, q: q || pack.nom }));
+  // Réponse différente selon la session : jamais en cache partagé.
+  return json(buildPayload({ pack, filtre, abonne, q: q || pack.nom, offset, limit }), 200, {
+    "cache-control": "private, no-store",
+  });
 }

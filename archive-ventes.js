@@ -452,15 +452,18 @@
       img.loading = "lazy";
       img.src = v.photo;
       img.addEventListener("error", function () {
-        if (img.dataset.step === "jpg") { img.remove(); return; }
+        if (img.dataset.step === "jpg") { img.remove(); li.className += " av-sans-photo"; return; }
         if (/\.webp(\?|$)/.test(img.src)) {
           img.dataset.step = "jpg";
           img.src = img.src.replace(/\.webp(\?|$)/, ".jpg$1");
           return;
         }
         img.remove();
+        li.className += " av-sans-photo";
       });
       li.appendChild(img);
+    } else {
+      li.className += " av-sans-photo";
     }
     var body = document.createElement("div");
     body.className = "av-corps";
@@ -475,8 +478,16 @@
     }
     var meta = document.createElement("p");
     meta.className = "av-meta";
-    var prix = document.createElement("strong");
-    prix.textContent = formatPrix(v.prix, deviseDe(v));
+    var prix;
+    if (typeof v.prix === "number" && isFinite(v.prix)) {
+      prix = document.createElement("strong");
+      prix.textContent = formatPrix(v.prix, deviseDe(v));
+    } else {
+      // Prix jamais reçu (non abonné) : rien à flouter, seulement un cadenas.
+      prix = document.createElement("span");
+      prix.className = "av-prix-abo";
+      prix.textContent = "🔒 Prix réservé aux abonnés";
+    }
     meta.appendChild(prix);
     var time = document.createElement("time");
     time.dateTime = v.date;
@@ -498,7 +509,9 @@
       a.href = url;
       a.target = "_blank";
       a.rel = "nofollow sponsored noopener";
-      a.textContent = "Voir sur eBay";
+      a.className = "av-ebay";
+      a.textContent = "Rechercher sur eBay";
+      a.setAttribute("aria-label", "Rechercher « " + requeteRechercheEbay(v) + " » sur eBay (nouvel onglet)");
       body.appendChild(a);
     }
     li.appendChild(body);
@@ -510,7 +523,7 @@
     if (!p.length) return 0;
     return p.length % 2 ? p[(p.length - 1) / 2] : (p[p.length / 2 - 1] + p[p.length / 2]) / 2;
   }
-  function resume(q, ventes) {
+  function resume(q, ventes, payload) {
     var box = $("av-resume");
     var titre = $("av-resume-titre");
     var stats = $("av-stats");
@@ -531,6 +544,26 @@
       vide.className = "av-aucune";
       vide.textContent = "Aucune vente affichée pour « " + q + " ».";
       stats.appendChild(vide);
+      hist.textContent = "";
+      if (legende) legende.hidden = true;
+      dessin([]);
+      return;
+    }
+    if (!payload || payload.abonne !== true) {
+      // Non abonné : aucun prix reçu, donc ni moyenne, ni minimum, ni historique.
+      var n = (payload && (payload.total_onglet || payload.total)) || ventes.length;
+      var w = document.createElement("div");
+      var dt0 = document.createElement("dt");
+      dt0.textContent = "Ventes";
+      var dd0 = document.createElement("dd");
+      dd0.textContent = n.toLocaleString("fr-FR");
+      w.appendChild(dt0);
+      w.appendChild(dd0);
+      stats.appendChild(w);
+      var np = document.createElement("p");
+      np.className = "av-calc";
+      np.textContent = "Prix moyen, minimum, maximum et historique des prix réservés aux abonnés.";
+      stats.appendChild(np);
       hist.textContent = "";
       if (legende) legende.hidden = true;
       dessin([]);
@@ -665,6 +698,7 @@
     var requete = 0;
     var chargement = false;
     var erreurApi = "";
+    var suiteEnCours = false;
 
     function prepareFiltres(payload) {
       remplit($("av-set"), payload.sets || [], "Tous les sets", function (s) { return s; });
@@ -673,7 +707,7 @@
       sourcesTable(payload.sources || {}, payload.total || 0);
       var note = $("av-note");
       if (note) {
-        note.textContent = "Les ventes de plus de 365 jours restent dans l'archive et ne s'affichent pas. Les ventes du Set de Base restent visibles, en USD, même après 365 jours. Les 3 ventes les plus récentes ainsi que le prix moyen, le plus bas et le plus haut sont visibles sans abonnement.";
+        note.textContent = "Les ventes de plus de 365 jours restent dans l'archive et ne s'affichent pas. Les ventes du Set de Base restent visibles même après 365 jours. Toutes les ventes sont visibles avec leur photo ; les prix sont réservés aux abonnés.";
       }
     }
 
@@ -710,21 +744,20 @@
       var box = $("av-cadenas");
       if (!box) return;
       box.textContent = "";
-      if (!payload || payload.abonne || !payload.q || !(payload.masquees > 0 || (payload.total_onglet || payload.total || 0) > (payload.visible || 0))) {
+      if (!payload || payload.abonne === true || !payload.q || !(payload.total || 0)) {
         box.hidden = true;
         return;
       }
       box.hidden = false;
       var p = document.createElement("p");
       p.className = "av-cadenas-titre";
-      var n = payload.masquees || 0;
-      p.textContent = "🔒 " + n.toLocaleString("fr-FR") + " vente" + (n > 1 ? "s" : "") + " masquée" + (n > 1 ? "s" : "") + " — détail réservé aux abonnés.";
+      p.textContent = "🔒 Les prix sont réservés aux abonnés.";
       var t = document.createElement("p");
-      t.textContent = "Les 3 ventes les plus récentes et les prix moyen, minimum et maximum restent visibles. Abonnement : " + (payload.prix || "2,99 € / semaine") + ".";
+      t.textContent = "Toutes les ventes restent visibles avec leur photo. Abonnement : " + (payload.prix || "2,99 € / semaine") + ".";
       var a = document.createElement("a");
       a.className = "av-cadenas-btn";
       a.href = "mon-compte.html";
-      a.textContent = "Débloquer avec l'abonnement";
+      a.textContent = "Débloquer les prix";
       box.appendChild(p);
       box.appendChild(t);
       box.appendChild(a);
@@ -807,20 +840,14 @@
       var frag = document.createDocumentFragment();
       var sourceListe = listeActive();
       sourceListe.slice(0, limite).forEach(function (v) { frag.appendChild(carte(v)); });
-      if (payload && !payload.abonne && payload.masquees > 0) {
-        var nFlou = Math.min(6, payload.masquees);
-        for (var i = 0; i < nFlou; i++) {
-          var li = document.createElement("li");
-          li.className = "av-carte av-masquee";
-          li.setAttribute("aria-hidden", "true");
-          li.innerHTML = "<div class=\"av-meta\"><strong>••••</strong><span>vente masquée</span></div>";
-          frag.appendChild(li);
-        }
-      }
       ol.appendChild(frag);
       if (plus) {
-        var reste = sourceListe.length - limite;
-        plus.hidden = reste <= 0;
+        var totalListe = sourceListe.length;
+        if (payload && payload.abonne !== true && typeof payload.total_onglet === "number") {
+          totalListe = Math.max(totalListe, payload.total_onglet);
+        }
+        var reste = totalListe - limite;
+        plus.hidden = reste <= 0 || suiteEnCours;
         if (reste > 0) plus.textContent = "Afficher " + Math.min(PAGE, reste) + " ventes de plus (" + reste.toLocaleString("fr-FR") + " restantes)";
       }
     }
@@ -853,7 +880,7 @@
             vide.appendChild(b);
           });
         }
-        resume("", []);
+        resume("", [], null);
         sourcesTable({}, 0);
         return;
       }
@@ -871,7 +898,8 @@
         } else if (payload && payload.abonne) {
           compte.textContent = n.toLocaleString("fr-FR") + " vente" + (n > 1 ? "s" : "") + " trouvée" + (n > 1 ? "s" : "") + " (365 derniers jours, Set de Base conservé au-delà)" + (n > PAGE ? ", les plus récentes d'abord" : "");
         } else if (payload) {
-          compte.textContent = n.toLocaleString("fr-FR") + " vente" + (n > 1 ? "s" : "") + " au total. " + (payload.visible || 0) + " visible" + ((payload.visible || 0) > 1 ? "s" : "") + " sans abonnement.";
+          var nt = payload.total_onglet || payload.total || 0;
+          compte.textContent = nt.toLocaleString("fr-FR") + " vente" + (nt > 1 ? "s" : "") + " trouvée" + (nt > 1 ? "s" : "") + ", les plus récentes d'abord. Prix réservés aux abonnés.";
         } else {
           compte.textContent = "";
         }
@@ -885,13 +913,27 @@
           vide.textContent = "Recherche dans l'archive…";
         } else if (!qRaw) {
           vide.hidden = false;
-          vide.textContent = "Indiquez un nom de Pokémon pour afficher les ventes (3 dernières et moyenne, minimum, maximum visibles gratuitement).";
+          vide.textContent = "Indiquez un nom de Pokémon pour afficher toutes ses ventes avec photo (prix réservés aux abonnés).";
         } else {
           vide.hidden = derniere.length > 0;
           if (!derniere.length) vide.textContent = payload && payload.message ? payload.message : ("Aucune vente affichée pour « " + qRaw + " ».");
         }
       }
-      resume(qRaw, payload && payload.abonne ? derniere : derniere);
+      resume(qRaw, derniere, payload);
+    }
+
+    function urlApi(qRaw, extra, onglet) {
+      var url = apiBase() + "/ventes?q=" + encodeURIComponent(qRaw);
+      if (extra && extra.slug) url += "&slug=" + encodeURIComponent(extra.slug);
+      var set = $("av-set") && $("av-set").value;
+      var langue = $("av-langue") && $("av-langue").value;
+      var mois = $("av-mois") && $("av-mois").value;
+      if (set) url += "&set=" + encodeURIComponent(set);
+      if (langue) url += "&langue=" + encodeURIComponent(langue);
+      if (mois) url += "&mois=" + encodeURIComponent(mois);
+      var og = onglet === undefined ? ongletActif : onglet;
+      if (og) url += "&onglet=" + encodeURIComponent(og);
+      return url;
     }
 
     function charger(extra) {
@@ -909,15 +951,8 @@
       }
       chargement = true;
       affichePayload(dernierPayload && dernierPayload.q === qRaw ? dernierPayload : { q: qRaw, ventes: [], total: 0 });
-      var url = apiBase() + "/ventes?q=" + encodeURIComponent(qRaw);
-      if (extra && extra.slug) url += "&slug=" + encodeURIComponent(extra.slug);
-      var set = $("av-set") && $("av-set").value;
-      var langue = $("av-langue") && $("av-langue").value;
-      var mois = $("av-mois") && $("av-mois").value;
-      if (set) url += "&set=" + encodeURIComponent(set);
-      if (langue) url += "&langue=" + encodeURIComponent(langue);
-      if (mois) url += "&mois=" + encodeURIComponent(mois);
-      if (ongletActif) url += "&onglet=" + encodeURIComponent(ongletActif);
+      limite = PAGE;
+      var url = urlApi(qRaw, extra) + "&limit=" + PAGE;
       fetch(url, { credentials: "include" })
         .then(function (r) {
           if (!r.ok) throw new Error("api-" + r.status);
@@ -933,6 +968,33 @@
           chargement = false;
           erreurApi = "L'archive abonnés n'est pas encore joignable (API /api). Elle le sera après la mise en ligne du Worker. En local : wrangler dev sur le port 8787.";
           affichePayload({ q: qRaw, ventes: [], total: 0, abonne: false });
+        });
+    }
+
+    function chargerSuite(p) {
+      var mon = requete;
+      suiteEnCours = true;
+      rendListe(p);
+      var url = urlApi($("av-q").value.trim(), p.slug ? { slug: p.slug } : null, p.onglet || "") + "&offset=" + encodeURIComponent(p.suivant) + "&limit=" + PAGE;
+      fetch(url, { credentials: "include" })
+        .then(function (r) {
+          if (!r.ok) throw new Error("api-" + r.status);
+          return r.json();
+        })
+        .then(function (data) {
+          suiteEnCours = false;
+          if (mon !== requete) return;
+          if (!data || data.abonne === true) { charger(); return; }
+          derniere = derniere.concat(data.ventes || []);
+          p.ventes = derniere;
+          p.suivant = data.suivant;
+          p.visible = derniere.length;
+          rendListe(p);
+        })
+        .catch(function () {
+          suiteEnCours = false;
+          limite -= PAGE;
+          rendListe(p);
         });
     }
 
@@ -960,7 +1022,16 @@
       charger();
     });
     var plus = $("av-plus");
-    if (plus) plus.addEventListener("click", function () { limite += PAGE; rendListe(dernierPayload); });
+    if (plus) plus.addEventListener("click", function () {
+      limite += PAGE;
+      var p = dernierPayload;
+      // Non abonné : les ventes arrivent par pages depuis le serveur (sans prix).
+      if (p && p.abonne !== true && p.suivant != null && derniere.length < limite) {
+        chargerSuite(p);
+        return;
+      }
+      rendListe(dernierPayload);
+    });
 
     charger();
   }
