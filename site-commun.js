@@ -74,7 +74,7 @@ var __acc=/(\/|\/index\.html?)$/i.test(location.pathname);
     {t:"Pokémon",h:"cartes-generation-1.html",p:["cartes-generation-1.html","cartes-pikachu-ventes.html","cartes-dracaufeu-ventes.html","cartes-evoli-ventes.html","cartes-mewtwo-ventes.html","carte-pikachu.html"],s:[
       ["Pikachu","cartes-pikachu-ventes.html"],["Dracaufeu","cartes-dracaufeu-ventes.html"],["Évoli","cartes-evoli-ventes.html"],["Mewtwo","cartes-mewtwo-ventes.html"],["Génération 1","cartes-generation-1.html"],["1025 Pokémon","cartes-pokemon.html"]
     ]},
-    {t:"Prix",h:"top-ventes.html",p:["cotes-series.html","top-ventes-semaine.html","top-ventes.html","cartes-gradees.html","registre.html","archive-ventes.html","registre-pokemon.html"],s:[
+    {t:"Prix",h:"archive-ventes.html",p:["cotes-series.html","top-ventes-semaine.html","top-ventes.html","cartes-gradees.html","registre.html","archive-ventes.html","registre-pokemon.html"],s:[
       ["Archive (365 jours)","archive-ventes.html"],["Cartes Pokémon passées, par type","registre-pokemon.html"]
     ]},
     {t:"Acheter",h:"boutique.html",p:["boutique.html","bonnes-affaires.html","acheter-par-serie.html","displays-etb.html","precommandes.html","cartes-psa10.html","guide-acheteur.html","conseils-ebay.html"],s:[
