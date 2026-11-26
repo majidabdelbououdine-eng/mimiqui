@@ -751,15 +751,12 @@
       box.hidden = false;
       var p = document.createElement("p");
       p.className = "av-cadenas-titre";
-      p.textContent = "🔒 Les prix sont réservés aux abonnés.";
-      var t = document.createElement("p");
-      t.textContent = "Toutes les ventes restent visibles avec leur photo. Abonnement : " + (payload.prix || "2,99 € / semaine") + ".";
+      p.textContent = "🔒 Prix réservés aux abonnés (" + (payload.prix || "2,99 € / semaine") + ").";
       var a = document.createElement("a");
       a.className = "av-cadenas-btn";
       a.href = "mon-compte.html";
       a.textContent = "Débloquer les prix";
       box.appendChild(p);
-      box.appendChild(t);
       box.appendChild(a);
     }
 
@@ -770,35 +767,53 @@
       bar.textContent = "";
       var onglets = (payload && payload.onglets) || {};
       var ids = GROUPES.filter(function (g) { return onglets[g.id] && onglets[g.id].n; }).map(function (g) { return g.id; });
+      var entete = $("av-types-entete");
       if (!payload || !payload.q || !ids.length) {
         bar.hidden = true;
+        if (entete) entete.hidden = true;
         if (panel) { panel.hidden = true; panel.textContent = ""; }
         return;
       }
       bar.hidden = false;
-      if (ids.indexOf(ongletActif) < 0) ongletActif = ids[0] || "";
-      GROUPES.forEach(function (g) {
-        var info = onglets[g.id];
-        if (!info || !info.n) return;
+      if (entete) entete.hidden = false;
+      // L'onglet sélectionné est celui que la liste affiche vraiment (réponse API),
+      // « Toutes » quand aucun filtre de type n'est appliqué.
+      // Pendant un chargement, on garde l'onglet demandé (la réponse affichée est l'ancienne).
+      if (!chargement) ongletActif = payload.onglet || "";
+      if (ongletActif && ids.indexOf(ongletActif) < 0) ongletActif = "";
+      function bouton(id, libelle, n) {
         var b = document.createElement("button");
         b.type = "button";
         b.setAttribute("role", "tab");
-        b.id = "av-onglet-" + g.id;
-        b.setAttribute("aria-selected", g.id === ongletActif ? "true" : "false");
+        b.id = "av-onglet-" + (id || "toutes");
+        b.setAttribute("aria-selected", id === ongletActif ? "true" : "false");
         b.setAttribute("aria-controls", "av-liste");
-        b.textContent = g.court + " (" + info.n.toLocaleString("fr-FR") + ")";
+        var span = document.createElement("span");
+        span.textContent = libelle;
+        var nb = document.createElement("b");
+        nb.textContent = n.toLocaleString("fr-FR");
+        b.appendChild(span);
+        b.appendChild(document.createTextNode(" "));
+        b.appendChild(nb);
         b.addEventListener("click", function () {
-          ongletActif = g.id;
+          if (ongletActif === id) return;
+          ongletActif = id;
           limite = PAGE;
           charger();
         });
         bar.appendChild(b);
+      }
+      bouton("", "Toutes", payload.total || 0);
+      GROUPES.forEach(function (g) {
+        var info = onglets[g.id];
+        if (!info || !info.n) return;
+        bouton(g.id, g.court, info.n);
       });
       if (panel) {
         panel.textContent = "";
         var g = GROUPES.filter(function (x) { return x.id === ongletActif; })[0];
         var info = g ? onglets[g.id] : null;
-        if (!g || !info) { panel.hidden = true; return; }
+        if (!g || !info || !(info.stats && info.stats.length)) { panel.hidden = true; return; }
         panel.hidden = false;
         var h = document.createElement("h2");
         h.className = "av-groupe-titre";

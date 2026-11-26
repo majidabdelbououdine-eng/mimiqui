@@ -36,13 +36,13 @@ header.site{border-bottom:3px solid var(--navy)}
 .av-tete h1{margin:0 0 8px;color:var(--navy);font:700 clamp(1.8rem,4.5vw,2.7rem)/1.1 "Bodoni Moda",Georgia,serif}
 .av-tete p{margin:0;max-width:68ch;color:var(--muted)}
 .av-note{margin:8px 0 0;font-size:.92rem;color:var(--navy)}
-.av-filtres{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:end}
+.av-filtres{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 10px;align-items:end}
 .av-filtres label{display:flex;flex-direction:column;gap:4px;font-size:.78rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--navy);min-width:0;flex:1 1 10rem}
 .av-filtres label.av-nom{flex:2 1 16rem}
 .av-filtres input,.av-filtres select{width:100%;min-width:0;max-width:100%;border:1px solid rgba(11,61,145,.35);border-radius:999px;padding:11px 14px;font:600 1rem/1.3 "Source Sans 3",Arial,sans-serif;color:var(--encre);background:#fff}
 .av-filtres button{flex:0 0 auto;border:0;border-radius:999px;padding:12px 16px;background:var(--navy);color:#fff;font:800 .78rem/1 "Source Sans 3",Arial,sans-serif;letter-spacing:.04em;text-transform:uppercase;cursor:pointer}
 .av-filtres button:hover{background:var(--navy-2)}
-.av-compte{margin:0 0 12px;font-weight:700;color:var(--navy-2)}
+.av-compte{margin:0 0 8px;font-size:.92rem;font-weight:700;color:var(--navy-2)}
 .av-resume{border:1px solid rgba(11,61,145,.22);border-radius:16px;padding:16px;margin:0 0 16px;background:var(--fond);min-width:0}
 .av-resume h2{margin:0 0 10px;color:var(--navy);font:700 clamp(1.25rem,3vw,1.7rem)/1.2 "Bodoni Moda",Georgia,serif;overflow-wrap:anywhere}
 .av-stats{display:flex;flex-wrap:wrap;gap:8px;margin:0}
@@ -95,9 +95,9 @@ header.site{border-bottom:3px solid var(--navy)}
   .av-carte img{width:72px;height:100px}
 }
 
-.av-onglets{display:flex;flex-wrap:wrap;gap:8px;margin:4px 0 12px}
+.av-onglets{display:flex;flex-wrap:nowrap;gap:6px;margin:0 0 8px;overflow-x:auto;padding-bottom:2px;scrollbar-width:thin}
 .av-onglets[hidden]{display:none}
-.av-onglets button{border:1px solid rgba(11,61,145,.35);background:#fff;color:var(--navy);border-radius:999px;padding:8px 14px;font:800 .78rem/1.2 "Source Sans 3",Arial,sans-serif;letter-spacing:.03em;text-transform:uppercase;cursor:pointer}
+.av-onglets button{flex:0 0 auto;white-space:nowrap;border:1px solid rgba(11,61,145,.35);background:#fff;color:var(--navy);border-radius:999px;padding:6px 12px;font:800 .78rem/1.2 "Source Sans 3",Arial,sans-serif;letter-spacing:.03em;text-transform:uppercase;cursor:pointer}
 .av-onglets button:hover{background:#e7eefb}
 .av-onglets button[aria-selected="true"]{background:var(--navy);color:#fff;border-color:var(--navy)}
 .av-groupe-stats{margin:0 0 14px}
@@ -110,11 +110,30 @@ header.site{border-bottom:3px solid var(--navy)}
 .av-stats-type{gap:6px}
 .av-stats-type>div{min-width:min(100%,7.2rem);flex:1 1 7.2rem;padding:8px 10px}
 
-.av-cadenas{margin:0 0 16px;padding:18px 20px;border:2px solid var(--navy);border-radius:16px;background:#fff}
-.av-cadenas-titre{margin:0 0 8px;font:700 1.05rem "Source Sans 3",Arial,sans-serif;color:var(--navy)}
-.av-cadenas p{margin:0 0 10px;color:var(--muted)}
-.av-cadenas-btn{display:inline-block;background:var(--navy);color:#fff;text-decoration:none;font:700 0.95rem "Source Sans 3",Arial,sans-serif;padding:10px 18px;border-radius:999px}
+.av-cadenas{display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px;margin:0 0 12px;padding:6px 6px 6px 14px;border:1px solid var(--navy);border-radius:999px;background:#fff}
+.av-cadenas[hidden]{display:none}
+.av-cadenas-titre{margin:0;flex:1 1 14rem;font:700 .92rem/1.3 "Source Sans 3",Arial,sans-serif;color:var(--navy)}
+.av-cadenas-btn{display:inline-block;background:var(--navy);color:#fff;text-decoration:none;font:700 .82rem/1.2 "Source Sans 3",Arial,sans-serif;padding:7px 14px;border-radius:999px}
 .av-cadenas-btn:hover{background:var(--navy-2)}
+/* Sous la recherche : cartes à gauche, liste par type à droite (empilé sur mobile). */
+.av-cols{display:grid;grid-template-columns:minmax(0,1fr) 13.5rem;gap:16px;align-items:start}
+.av-col-cartes{min-width:0}
+.av-col-types{position:sticky;top:12px;min-width:0}
+.av-types-entete{margin:0 0 6px;font:800 .78rem/1.2 "Source Sans 3",Arial,sans-serif;letter-spacing:.06em;text-transform:uppercase;color:var(--navy)}
+.av-types-entete[hidden]{display:none}
+.av-col-types .av-onglets{flex-direction:column;flex-wrap:nowrap;overflow:visible;gap:4px}
+.av-col-types .av-onglets button{display:flex;justify-content:space-between;gap:8px;width:100%;text-align:left;border-radius:10px;padding:8px 10px}
+.av-col-types .av-onglets button b{font-variant-numeric:tabular-nums}
+.av-col-types .av-groupe-titre{font-size:1rem;margin:12px 0 6px}
+.av-col-types .av-stats-type>div{flex:1 1 100%}
+@media (max-width:760px){
+  .av-cols{grid-template-columns:minmax(0,1fr);gap:8px}
+  .av-col-types{order:-1;position:static}
+  .av-cadenas{border-radius:14px}
+  .av-types-entete{display:none}
+  .av-col-types .av-onglets{flex-direction:row;overflow-x:auto;padding-bottom:2px}
+  .av-col-types .av-onglets button{width:auto;flex:0 0 auto;border-radius:999px;padding:6px 12px}
+}
 .av-masquee{filter:blur(7px);user-select:none;pointer-events:none;opacity:.55}
 .av-carte.av-sans-photo{grid-template-columns:minmax(0,1fr)}
 .av-meta .av-prix-abo{color:#0b3d91;font-size:.86rem;font-weight:700}
@@ -186,6 +205,20 @@ header.site{border-bottom:3px solid var(--navy)}
     </label>
     <button type="button" id="av-reset">Effacer</button>
   </form>
+  <div class="av-cols">
+    <div class="av-col-cartes">
+      <p class="av-compte" id="av-compte" aria-live="polite"></p>
+      <div class="av-cadenas" id="av-cadenas" hidden></div>
+      <p class="av-vide" id="av-vide" hidden></p>
+      <ol class="av-liste" id="av-liste"></ol>
+      <p class="av-plus-wrap"><button type="button" class="av-plus" id="av-plus" hidden>Afficher plus de ventes</button></p>
+    </div>
+    <aside class="av-col-types" aria-label="Ventes par type">
+      <p class="av-types-entete" id="av-types-entete" hidden>Par type</p>
+      <div class="av-onglets" id="av-onglets" hidden role="tablist" aria-label="Ventes par type" aria-orientation="vertical"></div>
+      <div class="av-groupe-stats" id="av-groupe-stats" hidden></div>
+    </aside>
+  </div>
   <section class="av-resume" id="av-resume" hidden aria-live="polite">
     <h2 id="av-resume-titre"></h2>
     <dl class="av-stats" id="av-stats"></dl>
@@ -197,15 +230,8 @@ header.site{border-bottom:3px solid var(--navy)}
     <summary id="av-sources-titre">Ventes par source</summary>
     <ul class="av-sources-liste" id="av-sources-liste"></ul>
   </details>
-  <div class="av-onglets" id="av-onglets" hidden role="tablist" aria-label="Ventes par type"></div>
-  <div class="av-groupe-stats" id="av-groupe-stats" hidden></div>
-  <p class="av-compte" id="av-compte" aria-live="polite"></p>
-  <div class="av-cadenas" id="av-cadenas" hidden></div>
-  <p class="av-vide" id="av-vide" hidden></p>
-  <ol class="av-liste" id="av-liste"></ol>
-  <p class="av-plus-wrap"><button type="button" class="av-plus" id="av-plus" hidden>Afficher plus de ventes</button></p>
 </main>
-<script src="archive-ventes.js?v=20261126s" defer></script>
+<script src="archive-ventes.js?v=20261126t" defer></script>
 <script src="site-commun.js?v=20261126k" defer></script>
 <p class="pied-legal">Site de fan non officiel &middot; <a href="mentions-legales.html#liens">Liens affiliés</a> &middot; <a href="mentions-legales.html">Mentions légales</a></p>
 </body>
