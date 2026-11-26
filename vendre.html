@@ -236,7 +236,8 @@ a.btn{text-decoration:none;display:inline-block}
   <p class="mention">Le prix conseillé est une estimation : la cote Cardmarket date du relevé hebdomadaire de la page Cotation, et les ventes réelles viennent du registre de la rubrique Adjugé. Pour les cartes gradées, le prix dépend surtout de la note : regarde les ventes récentes. Pour les sets Équilibre Parfait et 30ᵉ Anniversaire, le prix conseillé vient uniquement des ventes eBay.fr de la semaine du 27 octobre au 3 novembre 2026 (hors frais de port) ; pour Chaos Ascendant, des ventes eBay.fr du 11 octobre au 3 novembre 2026 (hors frais de port) ; pour Nuit Noire, des ventes eBay.fr du 4 octobre au 4 novembre 2026 (hors frais de port) ; sans vente, aucun prix n'est proposé. Liens partenaires eBay.</p>
 </main>
 <footer class="wrap">Le Coin de Mimiqui · site de fan non officiel, sans lien avec Nintendo, Game Freak ou The Pokémon Company. · <a href="confidentialite.html">Cookies et vie privée</a></footer>
-<script>
+<script src="verrou-ventes.js?v=20261126v"></script>
+<script>MQV.attendre(["ventes-30anniv","ventes-chaos","ventes-equilibre","ventes-nuit-noire"],function(){MQV.injecter("ventes-30anniv",window.VENTES_30A);MQV.injecter("ventes-chaos",window.VENTES_CHAOS);MQV.injecter("ventes-equilibre",window.VENTES_EQ);MQV.injecter("ventes-nuit-noire",window.VENTES_NUIT);
 (function () {
   "use strict";
   var EBAY_CAMPID = "5339225196";
@@ -412,7 +413,7 @@ var gr=/\b(PCA|PSA|CGC|BGS|CCC|CG ?Card|grad|not[ée]e)/i.test(v.titre||"");var 
     }).catch(function () {});
   }
 })();
-</script>
+},{"cibles":[]});</script>
 <script>(function(){var h=document.querySelector("header.wrap, header.site");if(!h)return;function m(){document.documentElement.style.setProperty("--hh",h.offsetHeight+"px")}m();if(window.ResizeObserver)new ResizeObserver(m).observe(h);})();</script>
 <div class="cookie-info" id="cookie-info" hidden role="region" aria-label="Cookies">
   <p>Ce site ne dépose aucun cookie publicitaire. La fréquentation est mesurée avec Cloudflare Web Analytics, un outil sans cookie. Les liens eBay, Amazon et Instagram mènent vers des sites qui ont leurs propres cookies. <a href="confidentialite.html">En savoir plus</a></p>
@@ -428,4 +429,4 @@ var gr=/\b(PCA|PSA|CGC|BGS|CCC|CG ?Card|grad|not[ée]e)/i.test(v.titre||"");var 
 @media (max-width:520px){.cookie-info{flex-direction:column;align-items:stretch}}
 </style>
 <script>(function(){var b=document.getElementById("cookie-info");if(!b)return;var k="coin-mimiqui-info-cookies",vu=false;try{vu=localStorage.getItem(k)==="1"}catch(e){}if(!vu)b.hidden=false;document.getElementById("cookie-ok").addEventListener("click",function(){b.hidden=true;try{localStorage.setItem(k,"1")}catch(e){}});})();</script>
-<script src="site-commun.js?v=20261126i" defer></script><p class="pied-legal">Site de fan non officiel &middot; <a href="mentions-legales.html#liens">Liens affili&eacute;s</a> &middot; <a href="mentions-legales.html">Mentions l&eacute;gales</a></p><style>.pied-legal{margin:1.2rem auto 1.4rem;text-align:center;font-size:.72rem;font-weight:300;color:#7a869a;letter-spacing:.02em}.pied-legal a{color:#7a869a;text-decoration:underline}</style></body></html>
+<script src="site-commun.js?v=20261126v" defer></script><p class="pied-legal">Site de fan non officiel &middot; <a href="mentions-legales.html#liens">Liens affili&eacute;s</a> &middot; <a href="mentions-legales.html">Mentions l&eacute;gales</a></p><style>.pied-legal{margin:1.2rem auto 1.4rem;text-align:center;font-size:.72rem;font-weight:300;color:#7a869a;letter-spacing:.02em}.pied-legal a{color:#7a869a;text-decoration:underline}</style></body></html>
