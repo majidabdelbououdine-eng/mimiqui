@@ -1443,7 +1443,7 @@ window.SET_DE_BASE_VENTES =
     "date": "2026-10-29",
     "etat": "",
     "edition": "1st",
-    "photo": "",
+    "photo": "https://assets.tcgdex.net/fr/base/base1/95/low.webp",
     "lien": "https://www.ebay.com/itm/136153365393?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339225196&toolid=10001&mkevt=1"
   }
 ];
