@@ -146,19 +146,6 @@
     var mots = { nm: "Near Mint", ex: "Excellent", bon: "Bon", neuve: "Neuve", occasion: "Occasion", gradee: "Gradée" };
     return mots[s.toLowerCase()] || s;
   }
-  function lienEbay(v) {
-    var idt = identifiants(v);
-    if (!idt.id) return idt.lien || "";
-    var raw = String((v && (v.lien || v.u)) || idt.lien || "");
-    var com = /ebay\.com/i.test(raw);
-    var host = com ? "www.ebay.com" : "www.ebay.fr";
-    var mkrid = com ? "711-53200-19255-0" : "709-53476-19255-0";
-    var siteid = com ? "0" : "71";
-    var custom = estSetDeBase(v) ? "set-de-base" : "archive";
-    return "https://" + host + "/itm/" + encodeURIComponent(idt.id) +
-      "?mkcid=1&mkrid=" + mkrid + "&siteid=" + siteid + "&campid=" + CAMP +
-      "&customid=" + custom + "&toolid=10001&mkevt=1";
-  }
   function langueLabel(code) {
     return LANGUES[code] || code || "";
   }
@@ -210,6 +197,65 @@
       if (l) return "brute-" + l;
     }
     return "autre";
+  }
+  var LANGUE_RECH = { fr: "FR", ja: "JP", jp: "JP", en: "EN", de: "DE", it: "IT", es: "ES", pt: "PT", ko: "KO", zh: "ZH" };
+  var BRUIT_RECH = /\b(?:vendu[es]?|ventes?|ench[eè]res?|lots?|port\s+inclus|frais\s+de\s+port|livraison|ebay|item|annonces?|voir\s+sur|meilleure\s+offre|best\s+offer|sold|shipping|free\s+shipping|near\s+mint|lightly\s+played|moderately\s+played|heavily\s+played|damaged)\b/gi;
+  var PRIX_RECH = /(?:€|\$|usd|eur)\s*\d+(?:[.,]\d+)?|\d+[.,]\d+\s*(?:€|eur|usd|\$)/gi;
+  var GRADE_RECH = /\b(?:psa|cgc|bgs|pca|sgc)\s*[:-]?\s*[0-9]+(?:[.,][0-9]+)?\b|\bgradee\b|\bgrad[eé]e?s?\b/gi;
+
+  function nettoieRech(s, oterGrade) {
+    BRUIT_RECH.lastIndex = 0;
+    PRIX_RECH.lastIndex = 0;
+    GRADE_RECH.lastIndex = 0;
+    var t = String(s || "").replace(/[_]+/g, " ").replace(BRUIT_RECH, " ").replace(PRIX_RECH, " ");
+    if (oterGrade) t = t.replace(GRADE_RECH, " ");
+    return t.replace(/[|•·]+/g, " ").replace(/\s+/g, " ").trim();
+  }
+  function contientNorm(hay, needle) {
+    var h = " " + norm(hay) + " ";
+    var n = norm(needle);
+    return !!n && h.indexOf(" " + n + " ") !== -1;
+  }
+  function gradeRecherche(v) {
+    if (etatClasse(v) !== "gradee") return "";
+    var s = String((v && v.etat) || "").trim();
+    var g = s.match(/^gradee\s+([A-Za-z]+)\s+([0-9]+(?:[.,][0-9]+)?)$/i);
+    if (g) return g[1].toUpperCase() + " " + g[2].replace(",", ".");
+    var t = texteDetection(v);
+    var m = t.match(/\b(psa|cgc|bgs|pca|sgc)\s*[:-]?\s*([0-9]+(?:[.,][0-9]+)?)\b/i);
+    if (m) return m[1].toUpperCase() + " " + m[2].replace(",", ".");
+    return "";
+  }
+  function requeteRechercheEbay(v) {
+    var grade = gradeRecherche(v);
+    var oterGrade = !grade;
+    var parts = [];
+    var nom = nettoieRech(v && v.carte, oterGrade);
+    var poke = nettoieRech(v && v.pokemon, oterGrade);
+    if (nom) parts.push(nom);
+    if (poke && !contientNorm(parts.join(" "), poke)) parts.push(poke);
+    var num = String((v && v.numero) || "").trim();
+    if (num && !contientNorm(parts.join(" "), num)) parts.push(num);
+    var set = nettoieRech(v && (v.set || v.serie), false);
+    if (set && !contientNorm(parts.join(" "), set)) parts.push(set);
+    var lang = String((v && v.langue) || "").toLowerCase().trim();
+    if (lang === "jp") lang = "ja";
+    if (!LANGUE_RECH[lang]) lang = langueClasse(v);
+    var tok = LANGUE_RECH[lang];
+    if (tok && !contientNorm(parts.join(" "), tok) && !contientNorm(parts.join(" "), langueLabel(lang))) parts.push(tok);
+    if (grade) parts.push(grade);
+    var q = parts.join(" ").replace(/\s+/g, " ").trim();
+    if (q && !/\bpok[eé]mon\b/i.test(q) && q.indexOf("ポケモン") === -1) q = "Pokémon " + q;
+    return q;
+  }
+  function lienEbay(v) {
+    var q = requeteRechercheEbay(v);
+    if (!q) return "";
+    var custom = estSetDeBase(v) ? "set-de-base" : "archive";
+    var nkw = encodeURIComponent(q).replace(/%2F/gi, "/");
+    return "https://www.ebay.fr/sch/i.html?_nkw=" + nkw +
+      "&mkcid=1&mkrid=709-53476-19255-0&siteid=71&campid=" + CAMP +
+      "&customid=" + custom + "&toolid=10001&mkevt=1";
   }
   function repartit(ventes) {
     var map = {};
@@ -453,7 +499,7 @@
       var a = document.createElement("a");
       a.href = url;
       a.target = "_blank";
-      a.rel = "sponsored noopener";
+      a.rel = "nofollow sponsored noopener";
       a.textContent = "Voir sur eBay";
       body.appendChild(a);
     }
