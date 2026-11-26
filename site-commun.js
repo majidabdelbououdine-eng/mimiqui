@@ -108,6 +108,7 @@ var __acc=/(\/|\/index\.html?)$/i.test(location.pathname);
     b.appendChild(el("span",{"class":"sm-fl","aria-hidden":"true"},"\u25B8"));
     var sous=el("ul",{"class":"sm-sous"});
     var l0=el("li"); l0.appendChild(el("a",{href:"cartes-pokemon.html"},"Toutes les séries")); sous.appendChild(l0);
+    var lSdb=el("li"); lSdb.appendChild(el("a",{href:"set-de-base.html"},"Set de Base")); sous.appendChild(lSdb);
     var mega=el("li",{"class":"sm-groupe"});
     var bm=el("button",{type:"button","class":"sm-tog","aria-expanded":"false"});
     bm.appendChild(document.createTextNode("Méga-Évolution "));
@@ -150,15 +151,6 @@ var __acc=/(\/|\/index\.html?)$/i.test(location.pathname);
       g.append(bt,u); sousE.appendChild(g);
     });
     ev.append(be,sousE); sous.appendChild(ev);
-    var wiz=el("li",{"class":"sm-groupe"});
-    var bw=el("button",{type:"button","class":"sm-tog","aria-expanded":"false"});
-    bw.appendChild(document.createTextNode("Wizards "));
-    bw.appendChild(el("span",{"class":"sm-fl","aria-hidden":"true"},"\u25B8"));
-    var sousW=el("ul",{"class":"sm-sous"});
-    var gw=el("li");
-    gw.appendChild(el("a",{href:"set-de-base.html"},"Set de Base"));
-    sousW.appendChild(gw);
-    wiz.append(bw,sousW); sous.appendChild(wiz);
     li.append(b,sous); parentUl.appendChild(li);
   }
 
