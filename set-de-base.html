@@ -115,6 +115,12 @@ article.billet{scroll-margin-top:96px}
 .ep-c:hover{transform:translateY(-3px);box-shadow:0 0 22px rgba(0,200,255,.35)}
 .ep-c img{width:100%;height:auto;aspect-ratio:600/825;border-radius:8px;background:#eef3fb}
 .ep-c b{color:#0b3d91}.ep-c small{color:#444}.ep-p{font-weight:700;color:#0b3d91}.ep-c a{color:#0a58ca;font-weight:600;font-size:.9rem}
+.ep-c{position:relative}
+.ep-top{display:flex;align-items:center;flex-wrap:wrap;gap:4px 6px;position:relative;width:100%}
+.ep-top-aide{flex:0 0 auto;box-sizing:border-box;width:1.2em;height:1.2em;margin:0;padding:0;border:1.5px solid #0b3d91;border-radius:50%;background:#0b3d91;color:#fff;font:700 .68rem/1 "Source Sans 3",Arial,sans-serif;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;vertical-align:middle}
+.ep-top-aide:hover,.ep-top-aide:focus-visible{background:#fff;color:#0b3d91;outline:2px solid #0b3d91;outline-offset:2px}
+.ep-top-bulle{position:absolute;left:0;right:0;top:calc(100% + 5px);z-index:6;background:#fff;color:#0b3d91;border:1px solid #0b3d91;border-radius:8px;padding:8px 10px;font-weight:400;font-size:.78rem;line-height:1.4;box-shadow:0 4px 14px rgba(11,61,145,.22)}
+.ep-c:has(.ep-top-aide[aria-expanded="true"]){z-index:5}
 .ep h2{color:#0b3d91;margin-top:2.2rem}
 .ep-t{width:100%;border-collapse:collapse;font-size:.95rem}.ep-t th,.ep-t td{border-bottom:1px solid rgba(10,88,202,.2);padding:6px;text-align:left}.ep-t th{color:#0b3d91}
 .ep-t a{color:#0a58ca}.ep-dep{border:1px solid #0a58ca;border-radius:10px;background:linear-gradient(135deg,#eef5ff,#e3fbff);box-shadow:0 0 10px rgba(0,200,255,.25);font-size:.85rem}
@@ -225,7 +231,7 @@ var g=document.getElementById("ep-grid"),q=document.getElementById("ep-q"),r=doc
 var R=[];C.forEach(function(c){if(c.r&&R.indexOf(c.r)<0)R.push(c.r)});R.forEach(function(x){var o=document.createElement("option");o.value=o.textContent=x;r.appendChild(o)});
 function cote(c){
   if(!c.t) return '<span class="ep-p">—</span>';
-  var h='<span class="ep-p">Top : '+c.t+'</span>';
+  var h='<span class="ep-top"><span class="ep-p">Top : '+c.t+'</span><button type="button" class="ep-top-aide" aria-expanded="false" aria-label="Qu’est-ce que le Top ?">?</button><span class="ep-top-bulle" hidden role="tooltip">Le Top est le prix moyen auquel cette carte se vend actuellement sur Cardmarket (version normale, pas 1ʳᵉ édition), relevé le 25/11/2026.</span></span>';
   if(c.lo||c.dt){
     var extra=[];
     if(c.lo) extra.push("À partir de : "+c.lo);
@@ -246,6 +252,34 @@ function aff(){
   g.innerHTML=h;nb.textContent=n+" carte"+(n>1?"s":"");
 }
 q.addEventListener("input",aff);r.addEventListener("change",aff);aff();
+function fermeTopAide(sauf){
+  g.querySelectorAll(".ep-top-aide[aria-expanded='true']").forEach(function(btn){
+    if(btn===sauf)return;
+    btn.setAttribute("aria-expanded","false");
+    var b=btn.parentElement&&btn.parentElement.querySelector(".ep-top-bulle");
+    if(b)b.hidden=true;
+  });
+}
+g.addEventListener("click",function(ev){
+  var btn=ev.target.closest(".ep-top-aide");
+  if(!btn||!g.contains(btn))return;
+  ev.preventDefault();
+  ev.stopPropagation();
+  var ouvert=btn.getAttribute("aria-expanded")==="true";
+  fermeTopAide();
+  if(!ouvert){
+    btn.setAttribute("aria-expanded","true");
+    var b=btn.parentElement.querySelector(".ep-top-bulle");
+    if(b)b.hidden=false;
+  }
+});
+document.addEventListener("click",function(ev){
+  if(ev.target.closest(".ep-top-aide")||ev.target.closest(".ep-top-bulle"))return;
+  fermeTopAide();
+});
+document.addEventListener("keydown",function(ev){
+  if(ev.key==="Escape")fermeTopAide();
+});
 })();
 </script>
 <footer class="wrap">Le Coin de Mimiqui · site de fan non officiel, sans lien avec Nintendo, Game Freak ou The Pokémon Company. · <a href="confidentialite.html">Cookies et vie privée</a></footer>
