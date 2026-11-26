@@ -957,10 +957,6 @@ html body header.wrap nav.top ul.sm-sous a:hover{
 .nav-rech-liste small{display:block;font-weight:500;color:#5a5a5a;font-size:.8rem}
 .nav-rech-vide,.nav-rech-aide{margin:8px 4px 0;color:#5a5a5a;font-size:.9rem}
 
-/* Onglets Ventes passées Mimiqui (registre / archive) */
-.onglets-ventes-mimiqui{display:flex;flex-wrap:wrap;gap:8px;margin:12px auto 8px;padding:0 16px;max-width:1180px}
-.onglets-ventes-mimiqui a{font:700 12px var(--f-body,"Source Sans 3",sans-serif);letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:1px solid #111;color:#111;background:#fff;border-radius:999px;padding:8px 16px}
-.onglets-ventes-mimiqui a[aria-current="page"]{background:#111;color:#fff}
 
 /* Mobile : hamburger prioritaire sur les styles de page (index/accueil nav.top ul{display:flex}) */
 @media (max-width:799px){

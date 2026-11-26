@@ -75,7 +75,7 @@ var __acc=/(\/|\/index\.html?)$/i.test(location.pathname);
       ["Pikachu","cartes-pikachu-ventes.html"],["Dracaufeu","cartes-dracaufeu-ventes.html"],["Évoli","cartes-evoli-ventes.html"],["Mewtwo","cartes-mewtwo-ventes.html"],["Génération 1","cartes-generation-1.html"],["1025 Pokémon","cartes-pokemon.html"]
     ]},
     {t:"Prix",h:"top-ventes.html",p:["cotes-series.html","top-ventes-semaine.html","top-ventes.html","cartes-gradees.html","registre.html","archive-ventes.html","registre-pokemon.html"],s:[
-      ["Top ventes","top-ventes.html"],["Cartes gradées PSA","cartes-gradees.html"],["Ventes passées Mimiqui","registre.html"],["Cartes Pokémon passées, par type","registre-pokemon.html"]
+      ["Top ventes","top-ventes.html"],["Cartes gradées PSA","cartes-gradees.html"],["Ventes passées Mimiqui","registre.html"],["Archive (365 jours)","archive-ventes.html"],["Cartes Pokémon passées, par type","registre-pokemon.html"]
     ]},
     {t:"Acheter",h:"boutique.html",p:["boutique.html","bonnes-affaires.html","acheter-par-serie.html","displays-etb.html","precommandes.html","cartes-psa10.html","guide-acheteur.html","conseils-ebay.html"],s:[
       ["Boutique","boutique.html"],["Bonnes affaires eBay","bonnes-affaires.html"],["Acheter par série","acheter-par-serie.html"],["Displays et ETB","displays-etb.html"],["Boosters","jeu.html#boosters"],["Précommandes","precommandes.html"],["Annonces eBay en cours",EBAY_ENCOURS],["Cartes PSA 10","cartes-psa10.html"],["Guide de l’acheteur","guide-acheteur.html"],["Conseils eBay","conseils-ebay.html"]
@@ -246,7 +246,6 @@ var __acc=/(\/|\/index\.html?)$/i.test(location.pathname);
     if(cur){
       if(cur.s){items.push([cur.t,cur.h]);
         var sp=cur.s.filter(function(s){return (s[1]||"").split("#")[0].toLowerCase()===page;})[0];
-        if(!sp && page==="archive-ventes.html") sp=["Ventes passées Mimiqui",null];
         if(!sp && page==="top-ventes-semaine.html") sp=["Top ventes",null];
         if(sp)items.push([sp[0],null]);
         else if(page==="pokemon.html"){items.push(["Cartes Pokémon","cartes-pokemon.html"]);
@@ -275,7 +274,7 @@ var __acc=/(\/|\/index\.html?)$/i.test(location.pathname);
       ["Spécial mimiqui",[["Cartes FR","cartes.html"],["Cartes EN","cartes-anglaises.html"],["Cartes JA","cartes-japonaises.html"]]],
       ["Cartes",[["Cartes Pokémon / séries","cartes-pokemon.html"],["Génération 1","cartes-generation-1.html"]]],
       ["Pokémon",[["Pikachu","cartes-pikachu-ventes.html"],["Dracaufeu","cartes-dracaufeu-ventes.html"],["Évoli","cartes-evoli-ventes.html"],["Mewtwo","cartes-mewtwo-ventes.html"],["Génération 1","cartes-generation-1.html"],["1025 Pokémon","cartes-pokemon.html"]]],
-      ["Prix",[["Top ventes","top-ventes.html"],["Cartes gradées PSA","cartes-gradees.html"],["Ventes passées Mimiqui","registre.html"],["Cartes Pokémon passées, par type","registre-pokemon.html"]]],
+      ["Prix",[["Top ventes","top-ventes.html"],["Cartes gradées PSA","cartes-gradees.html"],["Ventes passées Mimiqui","registre.html"],["Archive (365 jours)","archive-ventes.html"],["Cartes Pokémon passées, par type","registre-pokemon.html"]]],
       ["Acheter et vendre",[["Boutique","boutique.html"],["Bonnes affaires eBay","bonnes-affaires.html"],["Acheter par série","acheter-par-serie.html"],["Displays et ETB","displays-etb.html"],["Boosters","jeu.html#boosters"],["Précommandes","precommandes.html"],["Annonces eBay en cours",EBAY_ENCOURS],["Cartes PSA 10","cartes-psa10.html"],["Guide de l’acheteur","guide-acheteur.html"],["Conseils eBay","conseils-ebay.html"],["Estimer ma carte","estimer-ma-carte.html"],["Guide pour vendre sur eBay","guide-vendre-ebay.html"],["Vendre sur eBay","vendre.html"]]],
       ["Découvrir",[["Nouveautés","nouveautes.html"],["Sets à venir","sets-a-venir.html"],["Blog","blog.html"],["Blog Instagram","https://www.instagram.com/lecoindemimiqui/"],["Jeu","jeu.html"],["Le film 2027","index.html#film"],["Le déguisement","index.html#deguisement"],["Faiblesses","index.html#types"]]],
       ["Le site",[["À propos / Contact","a-propos.html"],["Mon compte","mon-compte.html"],["Créer un compte","index.html#compte"],["Assistant Instagram","assistant-instagram.html"],["Cookies et vie privée","confidentialite.html"],["Mentions légales","mentions-legales.html"],["Conditions d’abonnement","conditions-abonnement.html"],["Liens affiliés","mentions-legales.html#liens"]]]
@@ -527,21 +526,6 @@ function normRech(s){
     inp.addEventListener("input",function(){ if(tmr)clearTimeout(tmr); tmr=setTimeout(render,40); });
     inp.addEventListener("keydown",function(ev){ if(ev.key==="Escape"){ fermerRecherche(); btn.focus(); } });
   }
-  function ongletsRegistre(){
-    if(page!=="registre.html" && page!=="archive-ventes.html") return;
-    if(document.querySelector(".onglets-ventes-mimiqui")) return;
-    var bar=el("nav",{"class":"onglets-ventes-mimiqui","aria-label":"Ventes passées Mimiqui"});
-    var a1=el("a",{href:"registre.html"},"Par semaine");
-    var a2=el("a",{href:"archive-ventes.html"},"Archive (365 jours)");
-    if(page==="registre.html") a1.setAttribute("aria-current","page");
-    else a2.setAttribute("aria-current","page");
-    bar.append(a1,a2);
-    var ariane=document.querySelector(".fil-ariane");
-    var header=document.querySelector("header.site,header.wrap,body>header");
-    var ref=ariane||header;
-    if(ref&&ref.parentNode) ref.parentNode.insertBefore(bar, ref.nextSibling);
-    else document.body.insertBefore(bar, document.body.firstChild);
-  }
   function ancreCarte(){
     var qs; try{ qs=new URLSearchParams(location.search);}catch(e){ qs=new URLSearchParams(); }
     var k=qs.get("k"), nom=qs.get("carte")||"";
@@ -590,7 +574,7 @@ function normRech(s){
     var n=0, id=setInterval(function(){ if(apply()||++n>25) clearInterval(id); }, 200);
   }
 
-function go(){try{menu();}catch(e){console.error(e);}try{ariane();}catch(e){console.error(e);}try{pied();}catch(e){console.error(e);}try{rechercheQ();}catch(e){console.error(e);}try{ongletsRegistre();}catch(e){console.error(e);}try{ancreCarte();}catch(e){console.error(e);}}
+function go(){try{menu();}catch(e){console.error(e);}try{ariane();}catch(e){console.error(e);}try{pied();}catch(e){console.error(e);}try{rechercheQ();}catch(e){console.error(e);}try{ancreCarte();}catch(e){console.error(e);}}
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',go);else go();
   window.addEventListener('load',rechercheQ);
 })();
