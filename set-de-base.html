@@ -151,7 +151,6 @@ article.billet{scroll-margin-top:96px}
 .ep-avis strong{font-weight:800}
 .ep-ebay{display:flex;flex-wrap:wrap;gap:8px 12px;margin-top:4px}
 .ep-ebay a{font-size:.85rem}
-.ep-etat{margin:4px 0 0;font-size:.78rem;color:#333;font-weight:600}
 @media (max-width:600px){.ep-grid{grid-template-columns:repeat(2,1fr);gap:8px}.ep-t{font-size:.85rem}.ep-t td:nth-child(3){display:none}.ep-t th:nth-child(3){display:none}}
 </style><link rel="stylesheet" href="holo5.css">
 <style id="agrandi">html{font-size:106%}body{font-size:1.035rem}.wrap{max-width:1180px!important;margin-left:auto!important;margin-right:auto!important}.logo{font-size:calc(1.7rem * 1.35)!important}</style><link rel="stylesheet" href="site-commun.css?v=20261126i"><meta name="referrer" content="strict-origin-when-cross-origin"><link rel="alternate" hreflang="fr" href="https://mimiqui.fr/set-de-base.html"><link rel="alternate" hreflang="x-default" href="https://mimiqui.fr/set-de-base.html"><script type="application/ld+json" id="mq-jsonld">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://mimiqui.fr/"},{"@type":"ListItem","position":2,"name":"Cartes Pokémon / séries","item":"https://mimiqui.fr/cartes-pokemon.html"},{"@type":"ListItem","position":3,"name":"Set de Base","item":"https://mimiqui.fr/set-de-base.html"}]},{"@type":"ItemList","name":"Set de Base","numberOfItems":102,"url":"https://mimiqui.fr/set-de-base.html"}]}</script><script>try{if(localStorage.getItem("mimiqui_acces")==="ok")document.documentElement.classList.add("mq-abonne")}catch(e){}</script></head><body>
@@ -280,7 +279,7 @@ function ebaySold(c){
   return "https://www.ebay.fr/sch/i.html?_nkw="+encodeURIComponent(c.nom+" "+c.n+"/102 Set de Base")+"&LH_Sold=1&LH_Complete=1&mkcid=1&mkrid=709-53476-19255-0&siteid=71&campid=5339225196&customid=set-de-base&toolid=10001&mkevt=1";
 }
 function liensEbay(c){
-  return '<div class="ep-ebay"><a href="'+ebaySearch(c)+'" target="_blank" rel="sponsored noopener">Annonces eBay</a><a href="'+ebaySold(c)+'" target="_blank" rel="sponsored noopener">Ventes terminées</a></div><p class="ep-etat">Avant tout achat, regardez bien la carte et son état (photos, bords, coins, surface).</p>';
+  return '<div class="ep-ebay"><a href="'+ebaySearch(c)+'" target="_blank" rel="sponsored noopener">Annonces eBay</a><a href="'+ebaySold(c)+'" target="_blank" rel="sponsored noopener">Ventes terminées</a></div>';
 }
 function dep(c){
   var o=VE[c.n], nb=o?(o.brut.length+o.grade.length):0, h;
