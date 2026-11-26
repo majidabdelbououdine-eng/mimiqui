@@ -3,6 +3,7 @@
   "name": "mimiqui-api",
   "main": "src/index.js",
   "compatibility_date": "2026-11-26",
+  "workers_dev": false,
   "observability": {
     "enabled": true,
     "traces": { "enabled": true }
@@ -14,12 +15,13 @@
     { "pattern": "www.mimiqui.fr/api/*", "zone_name": "mimiqui.fr" }
   ],
   "kv_namespaces": [
-    { "binding": "VENTES" }
+    { "binding": "VENTES", "id": "7aed989f24364bd9820e3159b7287d23" }
   ],
   "d1_databases": [
     {
       "binding": "DB",
       "database_name": "mimiqui-abos",
+      "database_id": "8f75e224-b472-4496-af2d-cf6e7271a3e6",
       "migrations_dir": "migrations"
     }
   ],
