@@ -1,0 +1,13 @@
+# Copier vers .dev.vars (ne jamais committer ni coller dans le chat).
+# Clés de TEST Stripe uniquement pour wrangler dev.
+STRIPE_SECRET_KEY=sk_test_remplacer
+STRIPE_WEBHOOK_SECRET=whsec_remplacer
+SESSION_SECRET=changer-cette-chaine-longue-et-aleatoire
+PRICE_ID=price_remplacer
+# Optionnel : envoi des liens magiques. Sans clé, le lien n'est pas envoyé
+# (en local, DEV_RETURN_MAGIC_LINK=1 le renvoie dans la réponse JSON).
+# RESEND_API_KEY=
+# RESEND_FROM=Le Coin de Mimiqui <noreply@votre-domaine>
+DEV_RETURN_MAGIC_LINK=1
+STRIPE_API_BASE=https://api.stripe.com
+PUBLIC_ORIGIN=http://127.0.0.1:8787

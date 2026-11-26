@@ -1337,19 +1337,45 @@ if(document.readyState==='loading') document.addEventListener('DOMContentLoaded'
 (function(){
   "use strict";
   var KEY="mimiqui_acces";
-  var STRIPE="https://buy.stripe.com/aFa9AVcwYdTOgDcdez67S00";
+  var COMPTE="mon-compte.html";
   var MSG="Données de vente réservées aux abonnés – 2,99 €/semaine";
   var BTN="S’abonner";
   var ARIA="Abonnement aux données de vente";
+  var accesEtat=false;
 
-  function aAcces(){
-    try{ return localStorage.getItem(KEY)==="ok"; }catch(e){ return false; }
+  function apiBase(){
+    var h=location.hostname;
+    if(h==="localhost"||h==="127.0.0.1") return (window.MIMIQUI_API_BASE||"http://127.0.0.1:8787/api");
+    return "/api";
   }
-  try{ document.documentElement.classList.toggle("mq-abonne", aAcces()); }catch(e){}
+  function aAcces(){ return accesEtat===true; }
+  try{
+    localStorage.removeItem(KEY);
+    localStorage.removeItem("mimiqui_acces_date");
+  }catch(e){}
+  try{ document.documentElement.classList.remove("mq-abonne"); }catch(e){}
   window.MIMIQUI_ABO = window.MIMIQUI_ABO || {};
   window.MIMIQUI_ABO.aAcces = aAcces;
+  window.MIMIQUI_ABO.apiBase = apiBase;
   window.MIMIQUI_ABO.KEY = KEY;
-  window.MIMIQUI_ABO.STRIPE = STRIPE;
+  function rafraichirAcces(){
+    return fetch(apiBase()+"/moi", { credentials:"include" })
+      .then(function(r){ return r.json(); })
+      .then(function(j){
+        accesEtat=!!(j && j.abonne);
+        try{ document.documentElement.classList.toggle("mq-abonne", accesEtat); }catch(e){}
+        window.MIMIQUI_ABO.etat=j||{abonne:false};
+        try{ document.dispatchEvent(new Event("mq-acces")); }catch(e){}
+        return accesEtat;
+      })
+      .catch(function(){
+        accesEtat=false;
+        try{ document.documentElement.classList.remove("mq-abonne"); }catch(e){}
+        return false;
+      });
+  }
+  window.MIMIQUI_ABO.rafraichir = rafraichirAcces;
+  rafraichirAcces();
   function tr(s){
     try{
       if(window.MIMIQUI_I18N && typeof window.MIMIQUI_I18N.t==="function"){
@@ -1368,9 +1394,7 @@ if(document.readyState==='loading') document.addEventListener('DOMContentLoaded'
   function boutonAbonner(){
     var a=document.createElement("a");
     a.className="mq-abo-btn";
-    a.href=STRIPE;
-    a.target="_blank";
-    a.rel="noopener";
+    a.href=COMPTE;
     a.textContent=tr(BTN);
     return a;
   }
@@ -1424,7 +1448,7 @@ if(document.readyState==='loading') document.addEventListener('DOMContentLoaded'
       var t=fond.querySelector("#mq-abo-titre, .mq-abo-msg");
       if(t) t.textContent=tr(MSG);
       var b=fond.querySelector(".mq-abo-btn");
-      if(b){ b.textContent=tr(BTN); b.href=STRIPE; }
+      if(b){ b.textContent=tr(BTN); b.href=COMPTE; b.removeAttribute('target'); b.removeAttribute('rel'); }
     }
     fond.removeAttribute("hidden");
     fond.removeAttribute("aria-hidden");
@@ -1638,7 +1662,7 @@ if(document.readyState==='loading') document.addEventListener('DOMContentLoaded'
   function aAcces(){
     try{
       if(window.MIMIQUI_ABO && typeof window.MIMIQUI_ABO.aAcces==="function") return window.MIMIQUI_ABO.aAcces();
-      return localStorage.getItem("mimiqui_acces")==="ok";
+      return false;
     }catch(e){ return false; }
   }
   function ouvrirAbo(){
@@ -1648,7 +1672,7 @@ if(document.readyState==='loading') document.addEventListener('DOMContentLoaded'
         return;
       }
     }catch(e){}
-    location.href="https://buy.stripe.com/aFa9AVcwYdTOgDcdez67S00";
+    location.href="mon-compte.html";
   }
   function aUnPrix(el){
     var t=(el.textContent||"").replace(/\s+/g," ").trim();
@@ -1769,6 +1793,10 @@ if(document.readyState==='loading') document.addEventListener('DOMContentLoaded'
   function demarrer(){
     try{ document.documentElement.classList.toggle("mq-abonne", aAcces()); }catch(e){}
     marquerCadenas();
+    document.addEventListener("mq-acces", function(){
+      try{ document.documentElement.classList.toggle("mq-abonne", aAcces()); }catch(e){}
+      marquerCadenas();
+    });
     if(window.MutationObserver&&document.body){
       var t=0;
       var obs=new MutationObserver(function(){

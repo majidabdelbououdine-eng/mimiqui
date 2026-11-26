@@ -10,8 +10,6 @@
   var MOIS = ["janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"];
   var LANGUES = { fr: "Français", ja: "Japonais", en: "Anglais", de: "Allemand", it: "Italien", es: "Espagnol", pt: "Portugais", ko: "Coréen", zh: "Chinois" };
   var PAGE = 60;
-  var SITE_DATA = "data-archive-site-ventes.js?v=20261126a";
-
   function $(id) { return document.getElementById(id); }
   function norm(s) {
     return String(s || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().trim();
@@ -647,55 +645,36 @@
     });
   }
 
+  function apiBase() {
+    try {
+      if (window.MIMIQUI_ABO && typeof window.MIMIQUI_ABO.apiBase === "function") {
+        return window.MIMIQUI_ABO.apiBase();
+      }
+    } catch (e) {}
+    var h = location.hostname;
+    if (h === "localhost" || h === "127.0.0.1") return "http://127.0.0.1:8787/api";
+    return "/api";
+  }
+
   function boot() {
-    var f = fenetre();
-    var recentes = [];
-    var chargement = !window.ARCHIVE_SITE_VENTES;
     var limite = PAGE;
     var derniere = [];
     var ongletActif = "";
     var parType = {};
+    var dernierPayload = null;
+    var requete = 0;
+    var chargement = false;
+    var erreurApi = "";
 
-    function prepare() {
-      var toutes = source().filter(valide);
-      recentes = toutes.filter(function (v) {
-        return estSetDeBase(v) || dansFenetre(v, f);
-      });
-      var anciennes = toutes.filter(function (v) {
-        return !estSetDeBase(v) && (v.date < f.debut || v.date > f.fin);
-      });
+    function prepareFiltres(payload) {
+      remplit($("av-set"), payload.sets || [], "Tous les sets", function (s) { return s; });
+      remplit($("av-langue"), payload.langues || [], "Toutes", langueLabel);
+      remplit($("av-mois"), payload.mois || [], "Tous les mois", moisLabel);
+      sourcesTable(payload.sources || {}, payload.total || 0);
       var note = $("av-note");
       if (note) {
-        var bits = [];
-        if (chargement) bits.push("Chargement de toutes les ventes du site…");
-        if (anciennes.length) {
-          bits.push(anciennes.length + " vente" + (anciennes.length > 1 ? "s" : "") + " de plus de 365 jours " + (anciennes.length > 1 ? "restent" : "reste") + " dans l'archive et " + (anciennes.length > 1 ? "ne sont pas affichées" : "n'est pas affichée") + ".");
-        } else {
-          bits.push("Les ventes de plus de 365 jours restent dans l'archive et ne s'affichent pas.");
-        }
-        bits.push("Les ventes du Set de Base restent visibles, en USD, même après 365 jours.");
-        note.textContent = bits.join(" ");
+        note.textContent = "Les ventes de plus de 365 jours restent dans l'archive et ne s'affichent pas. Les ventes du Set de Base restent visibles, en USD, même après 365 jours. Les 3 ventes les plus récentes ainsi que le prix moyen, le plus bas et le plus haut sont visibles sans abonnement.";
       }
-      var sets = [];
-      var langues = [];
-      var mois = [];
-      var vuS = {}, vuL = {}, vuM = {};
-      var parSource = {};
-      recentes.forEach(function (v) {
-        if (v.set && !vuS[v.set]) { vuS[v.set] = 1; sets.push(v.set); }
-        if (v.langue && !vuL[v.langue]) { vuL[v.langue] = 1; langues.push(v.langue); }
-        var ym = v.date.slice(0, 7);
-        if (!vuM[ym]) { vuM[ym] = 1; mois.push(ym); }
-        var s = v.source || "Autre";
-        parSource[s] = (parSource[s] || 0) + 1;
-      });
-      sets.sort(function (a, b) { return a.localeCompare(b, "fr"); });
-      langues.sort();
-      mois.sort();
-      remplit($("av-set"), sets, "Tous les sets", function (s) { return s; });
-      remplit($("av-langue"), langues, "Toutes", langueLabel);
-      remplit($("av-mois"), mois, "Tous les mois", moisLabel);
-      sourcesTable(parSource, recentes.length);
     }
 
     function sourcesTable(parSource, total) {
@@ -723,57 +702,79 @@
 
     var params = new URLSearchParams(location.search);
     if (params.get("q")) $("av-q").value = params.get("q");
+    if (params.get("onglet")) ongletActif = params.get("onglet");
 
-    function listeActive() {
-      if (ongletActif && parType[ongletActif]) return parType[ongletActif];
-      return derniere;
+    function listeActive() { return derniere; }
+
+    function rendCadenas(payload) {
+      var box = $("av-cadenas");
+      if (!box) return;
+      box.textContent = "";
+      if (!payload || payload.abonne || !payload.q || !(payload.masquees > 0 || (payload.total_onglet || payload.total || 0) > (payload.visible || 0))) {
+        box.hidden = true;
+        return;
+      }
+      box.hidden = false;
+      var p = document.createElement("p");
+      p.className = "av-cadenas-titre";
+      var n = payload.masquees || 0;
+      p.textContent = "🔒 " + n.toLocaleString("fr-FR") + " vente" + (n > 1 ? "s" : "") + " masquée" + (n > 1 ? "s" : "") + " — détail réservé aux abonnés.";
+      var t = document.createElement("p");
+      t.textContent = "Les 3 ventes les plus récentes et les prix moyen, minimum et maximum restent visibles. Abonnement : " + (payload.prix || "2,99 € / semaine") + ".";
+      var a = document.createElement("a");
+      a.className = "av-cadenas-btn";
+      a.href = "mon-compte.html";
+      a.textContent = "Débloquer avec l'abonnement";
+      box.appendChild(p);
+      box.appendChild(t);
+      box.appendChild(a);
     }
-    function rendOnglets(avecGroupes) {
+
+    function rendOnglets(payload) {
       var bar = $("av-onglets");
       var panel = $("av-groupe-stats");
       if (!bar) return;
       bar.textContent = "";
-      if (!avecGroupes) {
+      var onglets = (payload && payload.onglets) || {};
+      var ids = GROUPES.filter(function (g) { return onglets[g.id] && onglets[g.id].n; }).map(function (g) { return g.id; });
+      if (!payload || !payload.q || !ids.length) {
         bar.hidden = true;
         if (panel) { panel.hidden = true; panel.textContent = ""; }
-        ongletActif = "";
         return;
       }
       bar.hidden = false;
-      var ids = GROUPES.filter(function (g) { return (parType[g.id] || []).length; }).map(function (g) { return g.id; });
       if (ids.indexOf(ongletActif) < 0) ongletActif = ids[0] || "";
       GROUPES.forEach(function (g) {
-        var n = (parType[g.id] || []).length;
-        if (!n) return;
+        var info = onglets[g.id];
+        if (!info || !info.n) return;
         var b = document.createElement("button");
         b.type = "button";
         b.setAttribute("role", "tab");
         b.id = "av-onglet-" + g.id;
         b.setAttribute("aria-selected", g.id === ongletActif ? "true" : "false");
         b.setAttribute("aria-controls", "av-liste");
-        b.textContent = g.court + " (" + n.toLocaleString("fr-FR") + ")";
+        b.textContent = g.court + " (" + info.n.toLocaleString("fr-FR") + ")";
         b.addEventListener("click", function () {
           ongletActif = g.id;
           limite = PAGE;
-          rendOnglets(true);
-          rendListe();
+          charger();
         });
         bar.appendChild(b);
       });
       if (panel) {
         panel.textContent = "";
         var g = GROUPES.filter(function (x) { return x.id === ongletActif; })[0];
-        var sous = parType[ongletActif] || [];
-        if (!g || !sous.length) { panel.hidden = true; return; }
+        var info = g ? onglets[g.id] : null;
+        if (!g || !info) { panel.hidden = true; return; }
         panel.hidden = false;
         var h = document.createElement("h2");
         h.className = "av-groupe-titre";
-        h.textContent = g.titre + " — " + sous.length.toLocaleString("fr-FR") + " vente" + (sous.length > 1 ? "s" : "");
+        h.textContent = g.titre + " — " + info.n.toLocaleString("fr-FR") + " vente" + (info.n > 1 ? "s" : "");
         panel.appendChild(h);
         var dl = document.createElement("dl");
         dl.className = "av-stats av-stats-type";
-        statsDevise(sous).forEach(function (s) {
-          var prefixe = devisesListe(sous).length > 1 ? " (" + s.devise + ")" : "";
+        (info.stats || []).forEach(function (s) {
+          var prefixe = (info.stats.length > 1 ? " (" + s.devise + ")" : "");
           [
             ["Prix moyen" + prefixe, formatPrix(s.moyen, s.devise)],
             ["Prix minimum" + prefixe, formatPrix(s.min, s.devise)],
@@ -798,13 +799,24 @@
         }
       }
     }
-    function rendListe() {
+
+    function rendListe(payload) {
       var ol = $("av-liste");
       var plus = $("av-plus");
       ol.textContent = "";
       var frag = document.createDocumentFragment();
       var sourceListe = listeActive();
       sourceListe.slice(0, limite).forEach(function (v) { frag.appendChild(carte(v)); });
+      if (payload && !payload.abonne && payload.masquees > 0) {
+        var nFlou = Math.min(6, payload.masquees);
+        for (var i = 0; i < nFlou; i++) {
+          var li = document.createElement("li");
+          li.className = "av-carte av-masquee";
+          li.setAttribute("aria-hidden", "true");
+          li.innerHTML = "<div class=\"av-meta\"><strong>••••</strong><span>vente masquée</span></div>";
+          frag.appendChild(li);
+        }
+      }
       ol.appendChild(frag);
       if (plus) {
         var reste = sourceListe.length - limite;
@@ -813,64 +825,131 @@
       }
     }
 
-    function affiche() {
+    function affichePayload(payload) {
+      dernierPayload = payload;
       var qRaw = $("av-q").value.trim();
-      var q = norm(qRaw);
-      var set = $("av-set").value;
-      var langue = $("av-langue").value;
-      var mois = $("av-mois").value;
-      var liste = recentes.filter(function (v) {
-        if (q && String(v._q || norm(v.carte)).indexOf(q) < 0) return false;
-        if (set && v.set !== set) return false;
-        if (langue && v.langue !== langue) return false;
-        if (mois && v.date.slice(0, 7) !== mois) return false;
-        return true;
-      });
-      liste.sort(function (a, b) {
-        if (a.date !== b.date) return a.date < b.date ? 1 : -1;
-        if (a.prix !== b.prix) return b.prix - a.prix;
-        return String(a.carte).localeCompare(String(b.carte), "fr");
-      });
-      derniere = liste;
-      limite = PAGE;
-      var qPresent = !!qRaw;
-      parType = qPresent ? repartit(liste) : {};
-      if (!qPresent) ongletActif = "";
-      rendOnglets(qPresent && liste.length > 0);
+      if (payload && payload.matches && payload.matches.length) {
+        parType = {};
+        derniere = [];
+        rendOnglets(null);
+        rendListe(payload);
+        rendCadenas(null);
+        var compte = $("av-compte");
+        var vide = $("av-vide");
+        if (compte) compte.textContent = payload.matches.length + " Pokémon correspondent à « " + qRaw + " ». Choisissez :";
+        if (vide) {
+          vide.hidden = false;
+          vide.textContent = "";
+          payload.matches.forEach(function (m) {
+            var b = document.createElement("button");
+            b.type = "button";
+            b.className = "av-plus";
+            b.style.margin = "0 8px 8px 0";
+            b.textContent = m.nom + " (" + (m.n || 0).toLocaleString("fr-FR") + ")";
+            b.addEventListener("click", function () {
+              $("av-q").value = m.nom;
+              charger({ slug: m.slug });
+            });
+            vide.appendChild(b);
+          });
+        }
+        resume("", []);
+        sourcesTable({}, 0);
+        return;
+      }
+      derniere = (payload && payload.ventes) || [];
+      prepareFiltres(payload || { sets: [], langues: [], mois: [], sources: {}, total: 0 });
+      rendOnglets(payload);
       var compte = $("av-compte");
       var vide = $("av-vide");
-      rendListe();
+      rendListe(payload);
+      rendCadenas(payload);
+      var n = payload ? (payload.abonne ? (payload.total_onglet || payload.total || derniere.length) : payload.total) : 0;
       if (compte) {
-        var n = liste.length;
-        compte.textContent = n.toLocaleString("fr-FR") + " vente" + (n > 1 ? "s" : "") + " trouvée" + (n > 1 ? "s" : "") + " (365 derniers jours, Set de Base conservé au-delà)" + (n > PAGE ? ", les plus récentes d'abord" : "") + (chargement ? " — chargement des autres ventes du site…" : "");
-      }
-      if (vide) {
-        vide.hidden = liste.length > 0;
-        if (!liste.length) {
-          vide.textContent = chargement
-            ? "Recherche dans toutes les ventes du site…"
-            : qRaw
-              ? "Aucune vente affichée pour « " + qRaw + " »."
-              : (recentes.length ? "Aucune vente ne correspond à ces filtres." : "Aucune vente à afficher dans l'archive.");
+        if (!qRaw) {
+          compte.textContent = "Cherchez un Pokémon pour voir les ventes de l'archive.";
+        } else if (payload && payload.abonne) {
+          compte.textContent = n.toLocaleString("fr-FR") + " vente" + (n > 1 ? "s" : "") + " trouvée" + (n > 1 ? "s" : "") + " (365 derniers jours, Set de Base conservé au-delà)" + (n > PAGE ? ", les plus récentes d'abord" : "");
+        } else if (payload) {
+          compte.textContent = n.toLocaleString("fr-FR") + " vente" + (n > 1 ? "s" : "") + " au total. " + (payload.visible || 0) + " visible" + ((payload.visible || 0) > 1 ? "s" : "") + " sans abonnement.";
+        } else {
+          compte.textContent = "";
         }
       }
-      resume(qRaw, liste);
+      if (vide) {
+        if (erreurApi) {
+          vide.hidden = false;
+          vide.textContent = erreurApi;
+        } else if (chargement) {
+          vide.hidden = false;
+          vide.textContent = "Recherche dans l'archive…";
+        } else if (!qRaw) {
+          vide.hidden = false;
+          vide.textContent = "Indiquez un nom de Pokémon pour afficher les ventes (3 dernières et moyenne, minimum, maximum visibles gratuitement).";
+        } else {
+          vide.hidden = derniere.length > 0;
+          if (!derniere.length) vide.textContent = payload && payload.message ? payload.message : ("Aucune vente affichée pour « " + qRaw + " ».");
+        }
+      }
+      resume(qRaw, payload && payload.abonne ? derniere : derniere);
     }
 
-    var minuterie = null;
+    function charger(extra) {
+      var qRaw = $("av-q").value.trim();
+      var mon = ++requete;
+      erreurApi = "";
+      if (!qRaw && !(extra && extra.slug)) {
+        chargement = false;
+        ongletActif = "";
+        affichePayload({ q: "", ventes: [], total: 0, abonne: !!(dernierPayload && dernierPayload.abonne), besoin: "pokemon" });
+        rendOnglets(null);
+        rendCadenas(null);
+        sourcesTable({}, 0);
+        return;
+      }
+      chargement = true;
+      affichePayload(dernierPayload && dernierPayload.q === qRaw ? dernierPayload : { q: qRaw, ventes: [], total: 0 });
+      var url = apiBase() + "/ventes?q=" + encodeURIComponent(qRaw);
+      if (extra && extra.slug) url += "&slug=" + encodeURIComponent(extra.slug);
+      var set = $("av-set") && $("av-set").value;
+      var langue = $("av-langue") && $("av-langue").value;
+      var mois = $("av-mois") && $("av-mois").value;
+      if (set) url += "&set=" + encodeURIComponent(set);
+      if (langue) url += "&langue=" + encodeURIComponent(langue);
+      if (mois) url += "&mois=" + encodeURIComponent(mois);
+      if (ongletActif) url += "&onglet=" + encodeURIComponent(ongletActif);
+      fetch(url, { credentials: "include" })
+        .then(function (r) {
+          if (!r.ok) throw new Error("api-" + r.status);
+          return r.json();
+        })
+        .then(function (data) {
+          if (mon !== requete) return;
+          chargement = false;
+          affichePayload(data);
+        })
+        .catch(function () {
+          if (mon !== requete) return;
+          chargement = false;
+          erreurApi = "L'archive abonnés n'est pas encore joignable (API /api). Elle le sera après la mise en ligne du Worker. En local : wrangler dev sur le port 8787.";
+          affichePayload({ q: qRaw, ventes: [], total: 0, abonne: false });
+        });
+    }
+
     function afficheBientot() {
       if (minuterie) clearTimeout(minuterie);
-      minuterie = setTimeout(affiche, 120);
+      minuterie = setTimeout(function () { ongletActif = ""; charger(); }, 160);
     }
+    var minuterie = null;
     $("av-q").addEventListener("input", afficheBientot);
-    $("av-q").addEventListener("change", affiche);
+    $("av-q").addEventListener("change", function () { ongletActif = ""; charger(); });
     ["input", "change"].forEach(function (ev) {
-      $("av-set").addEventListener(ev, affiche);
-      $("av-langue").addEventListener(ev, affiche);
-      $("av-mois").addEventListener(ev, affiche);
+      $("av-set").addEventListener(ev, function () { charger(); });
+      $("av-langue").addEventListener(ev, function () { charger(); });
+      $("av-mois").addEventListener(ev, function () { charger(); });
     });
     var form = $("av-form");
-    if (form) form.addEventListener("submit", function (e) { e.preventDefault(); affiche(); });
+    if (form) form.addEventListener("submit", function (e) { e.preventDefault(); charger(); });
     var reset = $("av-reset");
     if (reset) reset.addEventListener("click", function () {
       $("av-q").value = "";
@@ -878,22 +957,12 @@
       $("av-langue").value = "";
       $("av-mois").value = "";
       ongletActif = "";
-      affiche();
+      charger();
     });
     var plus = $("av-plus");
-    if (plus) plus.addEventListener("click", function () { limite += PAGE; rendListe(); });
+    if (plus) plus.addEventListener("click", function () { limite += PAGE; rendListe(dernierPayload); });
 
-    prepare();
-    affiche();
-
-    if (chargement) {
-      var sc = document.createElement("script");
-      sc.src = SITE_DATA;
-      sc.async = true;
-      sc.onload = function () { chargement = false; prepare(); affiche(); };
-      sc.onerror = function () { chargement = false; prepare(); affiche(); };
-      document.head.appendChild(sc);
-    }
+    charger();
   }
 
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", boot);

@@ -4,11 +4,39 @@
 <meta charset="utf-8">
 <script>
 (function(){
-  try{
-    localStorage.setItem("mimiqui_acces","ok");
-    localStorage.setItem("mimiqui_acces_date", new Date().toISOString());
-  }catch(e){}
-  setTimeout(function(){ location.replace("index.html"); }, 50);
+  "use strict";
+  function api(){
+    var h=location.hostname;
+    if(h==="localhost"||h==="127.0.0.1") return "http://127.0.0.1:8787/api";
+    return "/api";
+  }
+  var params=new URLSearchParams(location.search);
+  var sid=params.get("session_id")||"";
+  document.addEventListener("DOMContentLoaded", function(){
+    var titre=document.querySelector("h1");
+    var ps=document.querySelectorAll("main p");
+    function msg(t1,t2){
+      if(titre) titre.textContent=t1;
+      if(ps[0]) ps[0].textContent=t2;
+    }
+    if(!sid){
+      msg("Activation impossible","Le retour de paiement n'a pas fourni de session Stripe. Ouvrez « Mon compte » et restaurez l'accès avec l'e-mail utilisé lors du paiement.");
+      return;
+    }
+    fetch(api()+"/merci?session_id="+encodeURIComponent(sid), { credentials:"include" })
+      .then(function(r){ return r.json().then(function(j){ return {ok:r.ok, j:j}; }); })
+      .then(function(res){
+        if(res.ok && res.j && res.j.abonne){
+          msg("Merci pour votre abonnement","Votre accès aux données de vente est activé. Vous allez être redirigé vers l'archive.");
+          setTimeout(function(){ location.replace("archive-ventes.html"); }, 900);
+        }else{
+          msg("Paiement en cours ou incomplet",(res.j && res.j.error) || "Nous n'avons pas encore pu confirmer l'abonnement. Si vous venez de payer, patientez une minute puis ouvrez Mon compte.");
+        }
+      })
+      .catch(function(){
+        msg("Activation indisponible","L'API d'abonnement n'est pas joignable pour le moment. Réessayez, ou ouvrez Mon compte avec l'e-mail utilisé chez Stripe.");
+      });
+  });
 })();
 </script>
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
@@ -27,13 +55,13 @@ h1{font:500 2rem/1.15 "Bodoni Moda",Georgia,serif;margin:0 0 12px}
 p{margin:0 0 16px;color:#5a5a5a}
 a{color:#0b3d91;font-weight:700}
 </style>
-<meta name="description" content="Merci pour votre abonnement : cartes Pokémon, cotes et prix, avec les ventes eBay relevées, sur Le Coin de Mimiqui."><meta property="og:type" content="website"><meta property="og:site_name" content="Le Coin de Mimiqui"><meta property="og:title" content="Merci pour votre abonnement – Le Coin de Mimiqui"><meta property="og:description" content="Merci pour votre abonnement : cartes Pokémon, cotes et prix, avec les ventes eBay relevées, sur Le Coin de Mimiqui."><meta property="og:url" content="https://mimiqui.fr/merci-abonnement.html"><meta property="og:image" content="https://mimiqui.fr/img/logo-mimiqui.webp"><meta property="og:locale" content="fr_FR"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Merci pour votre abonnement – Le Coin de Mimiqui"><meta name="twitter:description" content="Merci pour votre abonnement : cartes Pokémon, cotes et prix, avec les ventes eBay relevées, sur Le Coin de Mimiqui."><meta name="twitter:image" content="https://mimiqui.fr/img/logo-mimiqui.webp"><script type="application/ld+json" id="mq-jsonld">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://mimiqui.fr/"},{"@type":"ListItem","position":2,"name":"Merci pour votre abonnement","item":"https://mimiqui.fr/merci-abonnement.html"}]}</script><script>try{if(localStorage.getItem("mimiqui_acces")==="ok")document.documentElement.classList.add("mq-abonne")}catch(e){}</script></head>
+<meta name="description" content="Merci pour votre abonnement : cartes Pokémon, cotes et prix, avec les ventes eBay relevées, sur Le Coin de Mimiqui."><meta property="og:type" content="website"><meta property="og:site_name" content="Le Coin de Mimiqui"><meta property="og:title" content="Merci pour votre abonnement – Le Coin de Mimiqui"><meta property="og:description" content="Merci pour votre abonnement : cartes Pokémon, cotes et prix, avec les ventes eBay relevées, sur Le Coin de Mimiqui."><meta property="og:url" content="https://mimiqui.fr/merci-abonnement.html"><meta property="og:image" content="https://mimiqui.fr/img/logo-mimiqui.webp"><meta property="og:locale" content="fr_FR"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Merci pour votre abonnement – Le Coin de Mimiqui"><meta name="twitter:description" content="Merci pour votre abonnement : cartes Pokémon, cotes et prix, avec les ventes eBay relevées, sur Le Coin de Mimiqui."><meta name="twitter:image" content="https://mimiqui.fr/img/logo-mimiqui.webp"><script type="application/ld+json" id="mq-jsonld">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://mimiqui.fr/"},{"@type":"ListItem","position":2,"name":"Merci pour votre abonnement","item":"https://mimiqui.fr/merci-abonnement.html"}]}</script></head>
 <body>
   <main class="merci">
     <h1>Merci pour votre abonnement</h1>
     <p>Votre accès aux données de vente est activé. Vous allez être redirigé vers l’accueil.</p>
     <p><a href="index.html">Retour à l’accueil</a></p>
   </main>
-  <script src="site-commun.js?v=20261126i" defer></script>
+  <script src="site-commun.js?v=20261126j" defer></script>
 </body>
 </html>
