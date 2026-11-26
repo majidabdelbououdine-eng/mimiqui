@@ -216,7 +216,7 @@ article.billet{scroll-margin-top:96px}
 <p id="ep-nb"></p><div class="ep-grid" id="ep-grid"></div>
 </main>
 <script src="cartes-donnees.js"></script>
-<script src="data-set-de-base-ventes.js?v=20261126c"></script>
+<script src="data-set-de-base-ventes.js?v=20261126s"></script>
 <script>
 (function(){
 function padNum(n){
@@ -271,7 +271,7 @@ function construitVE(list){
   return ve;
 }
 var VE=construitVE(window.SET_DE_BASE_VENTES);
-function fpUSD(p){return p.toFixed(2).replace(".",",")+" USD"}
+function fpMontant(p,dev){var d=String(dev||"USD").toUpperCase();var s=Number(p).toFixed(2).replace(".",",");return d==="EUR"?s+" €":s+" "+d;}
 function ebaySearch(c){
   return "https://www.ebay.fr/sch/i.html?_nkw="+encodeURIComponent(c.nom+" "+c.n+"/102 Set de Base")+"&mkcid=1&mkrid=709-53476-19255-0&siteid=71&campid=5339225196&customid=set-de-base&toolid=10001&mkevt=1";
 }
@@ -288,19 +288,26 @@ function dep(c){
     return '<details class="ep-dep"><summary>Ventes eBay relevées (0)</summary><div class="ep-dep-in">'+h+'</div></details>';
   }
   var b=o.brut.slice().sort(function(x,y){return y.p-x.p});
-  var L=function(x){return '<a href="'+x.u+'" target="_blank" rel="sponsored noopener">'+fpUSD(x.p)+'</a> <small>('+x.d+(x.ed&&x.ed!=="?"?" · "+(x.ed==="1st"?"1re éd.":x.ed==="unl"?"illimité":x.ed):"")+')</small>'};
-  h='<p>'+nb+' vente'+(nb>1?'s':'')+' relevée'+(nb>1?'s':'')+' · montants en USD</p>';
-  if(b.length===1) h+='<p>Prix (non gradée) : '+L(b[0])+'</p>';
-  else if(b.length){
+  var L=function(x){return '<a href="'+x.u+'" target="_blank" rel="sponsored noopener">'+fpMontant(x.p,x.dev)+'</a> <small>('+x.d+(x.ed&&x.ed!=="?"?" · "+(x.ed==="1st"?"1re éd.":x.ed==="unl"?"illimité":x.ed):"")+')</small>'};
+  h='<p>'+nb+' vente'+(nb>1?'s':'')+' relevée'+(nb>1?'s':'')+' · chaque montant dans sa devise (USD ou €), sans conversion</p>';
+  if(b.length){
     var dates=b.map(function(x){return x.d}).sort(function(x,y){return x.split("/").reverse().join("")<y.split("/").reverse().join("")?-1:1});
     var fromto=dates.filter(function(x,i,a){return i===0||i===a.length-1}).join(" au ");
-    h+='<p>'+b.length+' vente'+(b.length>1?'s':'')+' non gradée'+(b.length>1?'s':'')+(fromto?' · '+fromto:'')+'</p>';
-    h+='<p>Plus haut : '+L(b[0])+'</p><p>Plus bas : '+L(b[b.length-1])+'</p>';
+    if(b.length>1) h+='<p>'+b.length+' ventes non gradées'+(fromto?' · '+fromto:'')+'</p>';
+    var byDev={};
+    b.forEach(function(x){var d=String(x.dev||"USD").toUpperCase();(byDev[d]=byDev[d]||[]).push(x);});
+    var devs=Object.keys(byDev);
+    devs.forEach(function(d){
+      var g=byDev[d].slice().sort(function(x,y){return y.p-x.p});
+      var tag=devs.length>1?(" ("+d+")"):"";
+      if(g.length===1) h+='<p>Prix (non gradée'+tag+') : '+L(g[0])+'</p>';
+      else h+='<p>Plus haut'+tag+' : '+L(g[0])+'</p><p>Plus bas'+tag+' : '+L(g[g.length-1])+'</p>';
+    });
   }
   o.grade.slice().sort(function(x,y){return y.p-x.p}).forEach(function(g){
     h+='<p><span class="ep-gr">'+String(g.g||"Gradée").replace(/[&<>"]/g,function(ch){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[ch]})+'</span> '+L(g)+'</p>';
   });
-  h+='<p><small>Source : eBay (ebaysoldlistings.com)</small></p>';
+  h+='<p><small>Source : eBay (ventes terminées relevées)</small></p>';
   h+='<p><a href="'+ebaySold(c)+'" target="_blank" rel="sponsored noopener">Toutes les ventes terminées sur eBay</a></p>';
   return '<details class="ep-dep"><summary>Ventes eBay relevées ('+nb+')</summary><div class="ep-dep-in">'+h+'</div></details>';
 }
