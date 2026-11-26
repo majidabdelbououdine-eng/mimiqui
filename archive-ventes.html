@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="description" content="Archive des ventes eBay du Coin de Mimiqui : recherche par Pokémon, filtres par set, langue et mois. Photos et prix conservés un an, ventes du Set de Base en USD sans limite de durée.">
+<meta name="description" content="Archive de toutes les ventes eBay relevées sur le Coin de Mimiqui : recherche par Pokémon, filtres par set, langue et mois. Prix conservés un an, ventes du Set de Base en USD sans limite de durée.">
 <link rel="icon" type="image/webp" href="img/logo-mimiqui.webp">
 <title>Archive des ventes : cartes Pokémon, cotes et prix – Le Coin de Mimiqui</title>
 <link rel="canonical" href="https://mimiqui.fr/archive-ventes.html">
@@ -12,13 +12,13 @@
 <meta name="twitter:image" content="https://mimiqui.fr/img/sm9-53.webp">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Archive des ventes : cartes Pokémon, cotes et prix – Le Coin de Mimiqui">
-<meta property="og:description" content="Archive des ventes eBay du Coin de Mimiqui : recherche par Pokémon, filtres par set, langue et mois. Photos et prix conservés un an, ventes du Set de Base en USD sans limite de durée.">
+<meta property="og:description" content="Archive de toutes les ventes eBay relevées sur le Coin de Mimiqui : recherche par Pokémon, filtres par set, langue et mois. Prix conservés un an, ventes du Set de Base en USD sans limite de durée.">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="Le Coin de Mimiqui">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Archive des ventes : cartes Pokémon, cotes et prix – Le Coin de Mimiqui">
-<meta name="twitter:description" content="Archive des ventes eBay du Coin de Mimiqui : recherche par Pokémon, filtres par set, langue et mois. Photos et prix conservés un an, ventes du Set de Base en USD sans limite de durée.">
-<link rel="stylesheet" href="site-commun.css?v=20261126f">
+<meta name="twitter:description" content="Archive de toutes les ventes eBay relevées sur le Coin de Mimiqui : recherche par Pokémon, filtres par set, langue et mois. Prix conservés un an, ventes du Set de Base en USD sans limite de durée.">
+<link rel="stylesheet" href="site-commun.css?v=20261126g">
 <style>
 :root{--navy:#0b3d91;--navy-2:#0a58ca;--encre:#10233f;--muted:#3d4d66;--fond:#f4f7fc}
 *{box-sizing:border-box}
@@ -51,6 +51,7 @@ header.site{border-bottom:3px solid var(--navy)}
 .av-stats dd{margin:2px 0 0;font:800 1.15rem/1.2 "Source Sans 3",Arial,sans-serif;color:var(--navy);font-variant-numeric:tabular-nums}
 .av-calc,.av-aucune{flex:1 1 100%;margin:4px 0 0;color:var(--muted);font-size:.92rem}
 .av-chart{width:100%;max-width:100%;height:auto;display:block;margin-top:12px;background:#fff;border-radius:12px}
+.av-chart[hidden]{display:none}
 .av-hist-legende{margin:12px 0 6px;font-weight:800;color:var(--navy);font-size:.95rem}
 .av-hist{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,240px),1fr));gap:6px}
 .av-hist li{display:grid;grid-template-columns:minmax(0,1.1fr) auto;gap:2px 8px;background:#fff;border-radius:10px;padding:8px 10px;min-width:0}
@@ -70,6 +71,15 @@ header.site{border-bottom:3px solid var(--navy)}
 .av-corps a{justify-self:start;display:inline-block;max-width:100%;margin-top:4px;background:var(--navy);color:#fff;text-decoration:none;font:800 .75rem/1.2 "Source Sans 3",Arial,sans-serif;letter-spacing:.04em;text-transform:uppercase;padding:8px 12px;border-radius:999px}
 .av-corps a:hover{background:var(--navy-2);color:#fff}
 .av-vide{margin:8px 0 24px;color:var(--muted)}
+.av-sources{border:1px solid rgba(11,61,145,.22);border-radius:14px;padding:10px 14px;margin:0 0 14px;background:#fff;min-width:0}
+.av-sources summary{cursor:pointer;font-weight:800;color:var(--navy)}
+.av-sources-liste{list-style:none;margin:10px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,260px),1fr));gap:4px 16px}
+.av-sources-liste li{display:flex;justify-content:space-between;gap:8px;border-bottom:1px dashed rgba(11,61,145,.15);padding:3px 0;font-size:.92rem;min-width:0}
+.av-sources-liste span{overflow-wrap:anywhere}
+.av-sources-liste b{color:var(--navy-2);font-variant-numeric:tabular-nums}
+.av-plus-wrap{margin:0 0 28px;text-align:center}
+.av-plus{border:0;border-radius:999px;padding:12px 18px;background:var(--navy);color:#fff;font:800 .82rem/1.2 "Source Sans 3",Arial,sans-serif;letter-spacing:.03em;cursor:pointer;max-width:100%}
+.av-plus:hover{background:var(--navy-2)}
 .pied-legal{margin:1.2rem auto 1.4rem;text-align:center;font-size:.72rem;font-weight:300;color:#7a869a;letter-spacing:.02em}
 .pied-legal a{color:#7a869a;text-decoration:underline}
 /* La fenêtre film fixe (haut droite) et le teaser ne doivent pas couvrir les ventes. */
@@ -134,7 +144,7 @@ header.site{border-bottom:3px solid var(--navy)}
 <main class="wrap" id="contenu">
   <header class="av-tete">
     <h1>Archive des ventes</h1>
-    <p>Ventes relevées dans le registre, conservées ici avec leur photo locale. Seules celles des 365 derniers jours sont affichées, sauf les ventes du Set de Base, conservées en USD et visibles sans limite de durée.</p>
+    <p>Toutes les ventes eBay réalisées relevées sur le site : pages des séries (françaises, anglaises et japonaises), fiches Pokémon, cartes PSA 10 et ventes passées Spécial Mimiqui. Seules celles des 365 derniers jours sont affichées, sauf les ventes du Set de Base, conservées en USD et visibles sans limite de durée. Avant tout achat, regardez bien la carte et son état.</p>
     <p class="av-note" id="av-note"></p>
   </header>
   <form class="av-filtres" id="av-form" role="search">
@@ -159,14 +169,19 @@ header.site{border-bottom:3px solid var(--navy)}
     <p class="av-hist-legende" id="av-hist-legende" hidden>Historique des prix</p>
     <ol class="av-hist" id="av-hist"></ol>
   </section>
+  <details class="av-sources" id="av-sources" hidden>
+    <summary id="av-sources-titre">Ventes par source</summary>
+    <ul class="av-sources-liste" id="av-sources-liste"></ul>
+  </details>
   <p class="av-compte" id="av-compte" aria-live="polite"></p>
   <p class="av-vide" id="av-vide" hidden></p>
   <ol class="av-liste" id="av-liste"></ol>
+  <p class="av-plus-wrap"><button type="button" class="av-plus" id="av-plus" hidden>Afficher plus de ventes</button></p>
 </main>
 <script src="archive-ventes-data.js" defer></script>
 <script src="data-set-de-base-ventes.js?v=20261126c" defer></script>
-<script src="archive-ventes.js?v=20261126c" defer></script>
-<script src="site-commun.js?v=20261126f" defer></script>
+<script src="archive-ventes.js?v=20261126d" defer></script>
+<script src="site-commun.js?v=20261126g" defer></script>
 <p class="pied-legal">Site de fan non officiel &middot; <a href="mentions-legales.html#liens">Liens affiliés</a> &middot; <a href="mentions-legales.html">Mentions légales</a></p>
 </body>
 </html>
