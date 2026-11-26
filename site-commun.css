@@ -197,31 +197,6 @@ html body .promo-film,html body .promo-film .pf-card{animation:holo-flicker3 6s 
 #mini-teaser{opacity:.72!important;animation:none}
 #mini-teaser:hover{opacity:.85!important}
 
-/* ===== Fenetre defilante hologramme (toutes les pages) ===== */
-#fenetre-defilante{position:fixed;top:50%;left:43%;transform:translate(-50%,-50%);width:11cm;height:7cm;max-width:90vw;max-height:60vh;overflow:hidden;border-radius:14px;background:linear-gradient(135deg,rgba(3,22,38,.78),rgba(6,40,60,.7));-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border:1px solid rgba(120,230,255,.65);box-shadow:0 0 18px rgba(0,200,255,.5),0 0 44px rgba(0,160,255,.25),inset 0 0 26px rgba(0,220,255,.18);z-index:4000}
-#fenetre-defilante::after{content:"";position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(0deg,rgba(0,230,255,.06) 0 1px,transparent 1px 3px),linear-gradient(180deg,rgba(3,22,38,.9),transparent 14%,transparent 86%,rgba(3,22,38,.9))}
-#fenetre-defilante .fd-fermer{position:absolute;top:6px;right:8px;z-index:3;width:30px;height:30px;border-radius:50%;border:1px solid rgba(120,230,255,.7);background:rgba(3,22,38,.85);color:#fff;font-size:1.2rem;line-height:1;cursor:pointer;box-shadow:0 0 8px rgba(0,220,255,.6)}
-#fenetre-defilante .fd-piste{animation:fd-defile 28s linear infinite}
-#fenetre-defilante:hover .fd-piste,#fenetre-defilante:focus-within .fd-piste{animation-play-state:paused}
-#fenetre-defilante .fd-bloc{padding:18px 44px 6px 22px}
-#fenetre-defilante p{margin:0 0 12px;color:#f4feff;font-weight:700;line-height:1.35;text-shadow:0 1px 2px rgba(0,0,0,.9),0 0 8px rgba(0,220,255,.6)}
-#fenetre-defilante .fd-tag{color:#7fe9ff;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:4px}
-#fenetre-defilante .fd-titre{font-family:"Bodoni Moda",Bodoni,serif;font-size:1.7rem;line-height:1.05}
-#fenetre-defilante .fd-titre em{color:#ff4d5e}
-#fenetre-defilante .fd-date{font-family:"Bodoni Moda",Bodoni,serif;font-size:1.2rem}
-#fd-rouvrir{position:fixed;left:0;top:50%;transform:translateY(-50%);z-index:4000;writing-mode:vertical-rl;padding:10px 6px;border:1px solid rgba(120,230,255,.7);border-left:0;border-radius:0 10px 10px 0;background:rgba(3,22,38,.85);color:#e8fbff;font-weight:700;font-size:.75rem;cursor:pointer;box-shadow:0 0 10px rgba(0,220,255,.5)}
-@keyframes fd-defile{from{transform:translateY(0)}to{transform:translateY(-50%)}}
-@media (max-width:700px){#fenetre-defilante{left:50%;width:88vw;height:4.5cm}#fenetre-defilante .fd-titre{font-size:1.3rem}}
-@media (prefers-reduced-motion:reduce){#fenetre-defilante{overflow-y:auto}#fenetre-defilante .fd-piste{animation:none}#fenetre-defilante .fd-bloc[aria-hidden]{display:none}}
-
-/* Fenetre defilante : verre presque invisible, clics traversants */
-#fenetre-defilante{background:rgba(3,22,38,.1)!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important;border:1px solid rgba(120,230,255,.35)!important;box-shadow:0 0 12px rgba(0,200,255,.25)!important;pointer-events:none}
-#fenetre-defilante::after{background:repeating-linear-gradient(0deg,rgba(0,230,255,.035) 0 1px,transparent 1px 3px)!important}
-#fenetre-defilante .fd-fermer{pointer-events:auto}
-#fenetre-defilante p{text-shadow:0 1px 2px rgba(0,0,0,.95),0 0 3px rgba(0,0,0,.8),0 0 10px rgba(0,220,255,.75)!important}
-#fenetre-defilante .fd-fermer{opacity:.5;background:rgba(3,22,38,.35)!important;transition:opacity .2s}
-#fenetre-defilante .fd-fermer:hover,#fenetre-defilante .fd-fermer:focus-visible{opacity:1}
-
 /* ===== Typographie "gras sur maigre" (2026-11-02) ===== */
 @font-face{font-family:"Source Sans 3";font-style:normal;font-weight:300;font-display:swap;src:url("fonts/source-sans-3-latin-300-normal.woff2") format("woff2")}
 @font-face{font-family:"Source Sans 3";font-style:normal;font-weight:800;font-display:swap;src:url("fonts/source-sans-3-latin-800-normal.woff2") format("woff2")}
@@ -234,28 +209,11 @@ main p,body>section p{color:inherit}
 /* Gras : titres, chiffres, prix, etiquettes */
 main h1,main h2,main h3,body>section h1,body>section h2,body>section h3,.promo-film h2,.pf-date{font-weight:900!important;letter-spacing:-.01em}
 main h4,body>section h4,main th,main dt,main b,main strong,body>section b,body>section strong,.pf-card b,.rub b,.accueil-tuiles strong,.rang,.prix,.cote,.rr,.t10-rar,.etiquette,.pf-tag,.annonce-tag,.chip,main summary .rn{font-weight:800!important}
-.pf-card small,.etiquette,.pf-tag,.annonce-tag,.fd-tag{letter-spacing:.14em}
+.pf-card small,.etiquette,.pf-tag,.annonce-tag{letter-spacing:.14em}
 /* Contraste dans les titres : mot-cle gras + suite maigre */
 main h2 em,main h2 small,main h1 em,main h1 small,main h3 em,body>section h2 small,main summary .rn em{font-weight:300!important}
 main h2 em{font-style:italic}
 
-/* Fenetre defilante : effet de profondeur */
-#fenetre-defilante{perspective:600px}
-#fenetre-defilante .fd-bloc p{transform-origin:50% 50%;will-change:transform,opacity}
-
-#fenetre-defilante .fd-fermer{opacity:.7;background:rgba(3,22,38,.55)!important}
-#fenetre-defilante .fd-fermer:hover,#fenetre-defilante .fd-fermer:focus-visible{opacity:1}
-
-/* Fenetre defilante descendue de 2,5 cm, toujours a l'ecran */
-#fenetre-defilante{top:min(calc(50% + 2.5cm),calc(100vh - min(7cm,60vh)/2 - 12px))}
-
-/* Fenetre defilante sur fond clair : texte bleu marine contraste */
-#fenetre-defilante.fond-clair{background:rgba(255,255,255,.12)!important;border-color:rgba(11,61,145,.45)!important;box-shadow:0 0 12px rgba(11,61,145,.18)!important}
-#fenetre-defilante.fond-clair::after{background:repeating-linear-gradient(0deg,rgba(11,61,145,.04) 0 1px,transparent 1px 3px)!important}
-#fenetre-defilante.fond-clair p,#fenetre-defilante.fond-clair p b{color:#0b3d91!important;font-weight:800!important;text-shadow:0 0 1px rgba(255,255,255,.9),0 0 6px rgba(255,255,255,.7)!important}
-#fenetre-defilante.fond-clair .fd-tag{color:#0a58ca!important;font-weight:800!important}
-#fenetre-defilante.fond-clair .fd-titre em{color:#c8102e!important;text-shadow:none!important}
-#fenetre-defilante.fond-clair .fd-fermer{background:rgba(255,255,255,.75)!important;color:#0b3d91!important;border-color:rgba(11,61,145,.6)!important;box-shadow:0 0 6px rgba(11,61,145,.3)!important}
 /* === Cartes accueil en hologramme (t123u) === */
 .t10-img{position:relative;display:inline-block;border-radius:6px;overflow:hidden;animation:cartes-holo-flot 5s ease-in-out infinite;box-shadow:0 0 0 1px rgba(0,220,255,.55),0 0 14px rgba(0,200,255,.45)}
 .t10-img img,.eventail img{opacity:.85;filter:saturate(1.05) drop-shadow(0 0 6px rgba(0,210,255,.55)) hue-rotate(-6deg)}
@@ -287,7 +245,7 @@ header.site,header.wrap:first-of-type{z-index:6000!important}header.wrap:not(:fi
 /* === Ameliorations 2026-11-02 : boutons hologramme harmonises === */
 .btn:not(.cartes-btn),.t10-ebay,a.ebay,.btn-ventes,.btn-encours,.insta-btn,.aide-btn,.annonce-btns a,.pf-btns a,.boutons a{color:#0b3d91!important;background:rgba(0,200,255,.12)!important;border:1px solid rgba(0,190,255,.7)!important;box-shadow:0 0 10px rgba(0,200,255,.35),inset 0 0 10px rgba(0,229,255,.15)!important;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);font-weight:800!important;text-shadow:none!important;transition:background .25s,box-shadow .25s,color .25s}
 .btn:not(.cartes-btn):hover,.t10-ebay:hover,a.ebay:hover,.btn-ventes:hover,.btn-encours:hover,.insta-btn:hover,.aide-btn:hover,.annonce-btns a:hover,.pf-btns a:hover,.boutons a:hover{background:rgba(0,200,255,.24)!important;box-shadow:0 0 18px rgba(0,200,255,.6),inset 0 0 14px rgba(0,229,255,.3)!important;color:#062a66!important}
-.promo-film .btn,.fond-sombre .btn,header .btn,#fenetre-defilante .btn,.sm-sombre .btn{color:#e8fbff!important;text-shadow:0 0 6px rgba(0,220,255,.8),0 1px 2px rgba(0,0,0,.8)!important}
+.promo-film .btn,.fond-sombre .btn,header .btn,.sm-sombre .btn{color:#e8fbff!important;text-shadow:0 0 6px rgba(0,220,255,.8),0 1px 2px rgba(0,0,0,.8)!important}
 .fond-clair .cartes-btn,.sm-clair .cartes-btn{color:#0b3d91!important;text-shadow:none!important}
 /* Video hologramme du combat (jeu.html) */
 .combat-holo{position:relative;margin:1.5rem auto;max-width:720px;border-radius:16px;overflow:hidden;background:#000;border:1px solid rgba(0,220,255,.7);box-shadow:0 0 18px rgba(0,200,255,.5),0 0 44px rgba(0,160,255,.25)}
@@ -296,7 +254,6 @@ header.site,header.wrap:first-of-type{z-index:6000!important}header.wrap:not(:fi
 .combat-holo figcaption{position:absolute;left:0;right:0;bottom:0;padding:.5rem;text-align:center;color:#e8fbff;font-weight:800;text-shadow:0 0 8px rgba(0,220,255,.9),0 1px 2px #000;z-index:2}
 /* Mobile (bureau inchange) */
 @media (max-width:600px){
-#fenetre-defilante{width:86vw!important;height:42vh!important;left:50%!important;top:55%!important}
 #mini-teaser{width:170px!important;right:8px!important;bottom:8px!important}
 nav ul.menu-principal{flex-wrap:wrap!important;justify-content:center!important;gap:.3rem .8rem!important}
 nav ul.menu-principal>li>ul.sous-menu{left:0!important;min-width:12rem!important;max-width:90vw!important}
@@ -319,7 +276,7 @@ main input, main select, main textarea, #outils input, #outils select, input[typ
 main select, #outils select { cursor: pointer !important; }
 .fond-clair main input, .fond-clair input[type=search] { caret-color: #0b3d91; }
 /* Correctif : boutons lisibles sur fond sombre hologramme */
-.promo-film .pf-btns a,.promo-film .annonce-btns a,#fenetre-defilante .annonce-btns a,.fond-sombre .pf-btns a,.fond-sombre .annonce-btns a{color:#e8fbff!important;text-shadow:0 0 6px rgba(0,220,255,.85),0 1px 2px rgba(0,0,0,.8)!important}
+.promo-film .pf-btns a,.promo-film .annonce-btns a,.fond-sombre .pf-btns a,.fond-sombre .annonce-btns a{color:#e8fbff!important;text-shadow:0 0 6px rgba(0,220,255,.85),0 1px 2px rgba(0,0,0,.8)!important}
 
 /* === Correctifs controle 2026-11-02 === */
 /* 1. Pas de voile gris sur le bandeau de titre des pages cartes : la bande hologramme reste sur l'en-tete seulement */
@@ -337,7 +294,6 @@ h1,h2,h3,p,.logo,a{overflow-wrap:anywhere;word-break:normal}
 .logo{font-size:1.9rem!important}
 input,select,textarea,button{box-sizing:border-box!important;max-width:100%!important}
 .promo-film h1,.promo-film h2{font-size:clamp(1.6rem,9vw,2.4rem)!important}
-#fenetre-defilante{top:auto!important;bottom:12px!important;transform:translateX(-50%)!important;height:30vh!important;width:80vw!important}
 #mini-teaser{z-index:100001!important}
 }
 /* === Aide : fenetre hologramme transparente (2026-11-02) === */
@@ -351,31 +307,11 @@ dialog.aide li::marker{color:#00e5ff}
 dialog.aide .btn{background:rgba(0,229,255,.12)!important;color:#fff!important;border:1px solid rgba(0,229,255,.75)!important;box-shadow:0 0 12px rgba(0,229,255,.35);opacity:.85;cursor:pointer;text-shadow:0 0 6px rgba(0,229,255,.7)}
 dialog.aide .btn:hover{opacity:1;background:rgba(0,229,255,.25)!important}@media (max-width:600px){html,body{overflow-x:clip}}
 
-/* ===== Fenetre defilante : a droite, 10 cm x 6 cm (2026-11-02) ===== */
-html body #fenetre-defilante{position:fixed!important;left:auto!important;right:16px!important;top:96px!important;bottom:auto!important;transform:none!important;width:378px!important;height:227px!important;max-width:calc(100vw - 32px)!important;max-height:calc(100vh - 300px)!important;z-index:7900}
-html body #fenetre-defilante p{font-weight:300}
-html body #fenetre-defilante p b,html body #fenetre-defilante .fd-titre,html body #fenetre-defilante .fd-tag,html body #fenetre-defilante .fd-date{font-weight:800}
-html body #fenetre-defilante .fd-titre{font-size:1.45rem}
-html body #fd-rouvrir{position:fixed;right:12px;top:96px;bottom:auto;left:auto;z-index:7900}
-@media (max-width:600px){html body #fenetre-defilante{right:8px!important;top:70px!important;width:calc(100vw - 16px)!important;height:180px!important}}
-/* pokemon.html : sans hologramme */
-html body #fenetre-defilante.fd-simple{background:#fff!important;border:1px solid #0b3d91!important;box-shadow:0 2px 10px rgba(0,0,0,.2)!important;animation:none!important;pointer-events:auto}
-html body #fenetre-defilante.fd-simple::after{display:none!important}
-html body #fenetre-defilante.fd-simple p,html body #fenetre-defilante.fd-simple p b,html body #fenetre-defilante.fd-simple .fd-tag{color:#0b3d91!important;text-shadow:none!important}
-html body #fenetre-defilante.fd-simple .fd-titre em{color:#c8102e!important}
-html body #fenetre-defilante.fd-simple .fd-fermer{background:#fff!important;color:#0b3d91!important;border-color:#0b3d91!important;box-shadow:none!important;opacity:1}
 /* ===== Video flottante : moins d'hologramme, toujours aussi nette qu'au survol (2026-11-02) ===== */
 html body #mini-teaser,html body #mini-teaser:hover{opacity:.85!important;animation:none!important;border:1px solid rgba(120,230,255,.45)!important;box-shadow:0 0 6px rgba(0,200,255,.3),0 4px 14px rgba(0,0,0,.25)!important}
 html body #mini-teaser::before{opacity:.35}
 html body #mini-teaser .mt-video::after{background:repeating-linear-gradient(0deg,rgba(0,230,255,.025) 0 1px,transparent 1px 4px)!important}
 html body #mini-teaser .mt-video iframe{filter:none!important}
-/* ===== Infos du film toujours en bleu, comme l'accueil (2026-11-02) ===== */
-html body #fenetre-defilante{background:rgba(255,255,255,.14)!important;border-color:rgba(11,61,145,.45)!important}
-html body #fenetre-defilante::after{background:repeating-linear-gradient(0deg,rgba(11,61,145,.04) 0 1px,transparent 1px 3px)!important}
-html body #fenetre-defilante p,html body #fenetre-defilante p b,html body #fenetre-defilante .fd-titre,html body #fenetre-defilante .fd-date{color:#0b3d91!important;text-shadow:0 0 2px #fff,0 0 5px #fff,0 0 10px rgba(255,255,255,.85)!important}
-html body #fenetre-defilante .fd-tag{color:#0a58ca!important}
-html body #fenetre-defilante .fd-titre em{color:#c8102e!important}
-html body #fenetre-defilante .fd-fermer{background:rgba(255,255,255,.75)!important;color:#0b3d91!important;border-color:rgba(11,61,145,.6)!important}
 /* ===== Teaser en grand au milieu (2026-11-02) ===== */
 #mt-fond{position:fixed;inset:0;z-index:100002;background:rgba(2,12,24,.72);-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px);animation:mt-fond-in .35s ease}
 @keyframes mt-fond-in{from{opacity:0}to{opacity:1}}
@@ -403,7 +339,7 @@ html body #mini-teaser:not(.mt-grand) .mt-taille,html body #mini-teaser:not(.mt-
   html,body{overflow-x:hidden;max-width:100%}
   img,video,iframe,table{max-width:100%;height:auto}
   h1,h2,h3{overflow-wrap:anywhere;word-break:normal}
-  #fenetre-defilante,.rf-droite,.rf-bas{display:none!important}
+  .rf-droite,.rf-bas{display:none!important}
   #mini-teaser{width:160px!important;height:auto!important;right:8px!important;bottom:8px!important}
   #mini-teaser.mt-grand,.mt-grand{width:94vw!important;max-width:94vw!important;left:3vw!important;right:auto!important}
   nav ul,nav{flex-wrap:wrap}

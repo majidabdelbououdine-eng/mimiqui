@@ -58,7 +58,7 @@ body{
 /* Typographie : Inter partout, titres plus nets */
 html body h1,html body h2,html body h3,html body h4,
 html body .logo,html body .title h3,html body .eyebrow,
-html body .vp h3,html body .lb-v h4,html body .fd-titre,html body .fd-date{
+html body .vp h3,html body .lb-v h4{
   font-family:var(--mq-font)!important;
   letter-spacing:-0.02em;
   text-shadow:none!important;
@@ -550,23 +550,6 @@ html body .pied-legal{
   margin:0 auto 2rem!important;
 }
 html body .pied-legal a{color:#8a867f!important}
-
-/* Widgets décoratifs un peu plus discrets (conservés) */
-html body #fenetre-defilante{
-  background:rgba(255,255,255,.94)!important;
-  border:1px solid var(--mq-line)!important;
-  box-shadow:var(--mq-shadow)!important;
-  backdrop-filter:blur(8px)!important;
-  color:var(--mq-ink)!important;
-}
-html body #fenetre-defilante p{text-shadow:none!important;color:var(--mq-ink)!important}
-html body #fd-rouvrir{
-  background:#fff!important;
-  color:var(--mq-ink)!important;
-  border:1px solid var(--mq-line)!important;
-  box-shadow:var(--mq-shadow)!important;
-  writing-mode:vertical-rl;
-}
 
 /* Mobile */
 @media (max-width:799px){
