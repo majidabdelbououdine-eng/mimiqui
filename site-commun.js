@@ -75,7 +75,7 @@ var __acc=/(\/|\/index\.html?)$/i.test(location.pathname);
       ["Pikachu","cartes-pikachu-ventes.html"],["Dracaufeu","cartes-dracaufeu-ventes.html"],["Évoli","cartes-evoli-ventes.html"],["Mewtwo","cartes-mewtwo-ventes.html"],["Génération 1","cartes-generation-1.html"],["1025 Pokémon","cartes-pokemon.html"]
     ]},
     {t:"Prix",h:"top-ventes.html",p:["cotes-series.html","top-ventes-semaine.html","top-ventes.html","cartes-gradees.html","registre.html","archive-ventes.html","registre-pokemon.html"],s:[
-      ["Top ventes","top-ventes.html"],["Archive (365 jours)","archive-ventes.html"],["Cartes Pokémon passées, par type","registre-pokemon.html"]
+      ["Archive (365 jours)","archive-ventes.html"],["Cartes Pokémon passées, par type","registre-pokemon.html"]
     ]},
     {t:"Acheter",h:"boutique.html",p:["boutique.html","bonnes-affaires.html","acheter-par-serie.html","displays-etb.html","precommandes.html","cartes-psa10.html","guide-acheteur.html","conseils-ebay.html"],s:[
       ["Boutique","boutique.html"],["Bonnes affaires eBay","bonnes-affaires.html"],["Acheter par série","acheter-par-serie.html"],["Displays et ETB","displays-etb.html"],["Boosters","jeu.html#boosters"],["Précommandes","precommandes.html"],["Annonces eBay en cours",EBAY_ENCOURS],["Cartes PSA 10","cartes-psa10.html"],["Guide de l’acheteur","guide-acheteur.html"],["Conseils eBay","conseils-ebay.html"]
@@ -247,6 +247,7 @@ var __acc=/(\/|\/index\.html?)$/i.test(location.pathname);
       if(cur.s){items.push([cur.t,cur.h]);
         var sp=cur.s.filter(function(s){return (s[1]||"").split("#")[0].toLowerCase()===page;})[0];
         if(!sp && page==="top-ventes-semaine.html") sp=["Top ventes",null];
+        if(!sp && page==="top-ventes.html") sp=["Top ventes",null];
         if(!sp && page==="registre.html") sp=["Ventes passées Mimiqui",null];
         if(!sp && page==="cartes-gradees.html") sp=["Cartes gradées PSA",null];
         if(sp)items.push([sp[0],null]);
@@ -276,7 +277,7 @@ var __acc=/(\/|\/index\.html?)$/i.test(location.pathname);
       ["Spécial mimiqui",[["Cartes FR","cartes.html"],["Cartes EN","cartes-anglaises.html"],["Cartes JA","cartes-japonaises.html"]]],
       ["Cartes",[["Cartes Pokémon / séries","cartes-pokemon.html"],["Génération 1","cartes-generation-1.html"]]],
       ["Pokémon",[["Pikachu","cartes-pikachu-ventes.html"],["Dracaufeu","cartes-dracaufeu-ventes.html"],["Évoli","cartes-evoli-ventes.html"],["Mewtwo","cartes-mewtwo-ventes.html"],["Génération 1","cartes-generation-1.html"],["1025 Pokémon","cartes-pokemon.html"]]],
-      ["Prix",[["Top ventes","top-ventes.html"],["Archive (365 jours)","archive-ventes.html"],["Cartes Pokémon passées, par type","registre-pokemon.html"]]],
+      ["Prix",[["Archive (365 jours)","archive-ventes.html"],["Cartes Pokémon passées, par type","registre-pokemon.html"]]],
       ["Acheter et vendre",[["Boutique","boutique.html"],["Bonnes affaires eBay","bonnes-affaires.html"],["Acheter par série","acheter-par-serie.html"],["Displays et ETB","displays-etb.html"],["Boosters","jeu.html#boosters"],["Précommandes","precommandes.html"],["Annonces eBay en cours",EBAY_ENCOURS],["Cartes PSA 10","cartes-psa10.html"],["Guide de l’acheteur","guide-acheteur.html"],["Conseils eBay","conseils-ebay.html"],["Estimer ma carte","estimer-ma-carte.html"],["Guide pour vendre sur eBay","guide-vendre-ebay.html"],["Vendre sur eBay","vendre.html"]]],
       ["Découvrir",[["Nouveautés","nouveautes.html"],["Sets à venir","sets-a-venir.html"],["Blog","blog.html"],["Blog Instagram","https://www.instagram.com/lecoindemimiqui/"],["Jeu","jeu.html"],["Le film 2027","index.html#film"],["Le déguisement","index.html#deguisement"],["Faiblesses","index.html#types"]]],
       ["Le site",[["À propos / Contact","a-propos.html"],["Mon compte","mon-compte.html"],["Créer un compte","index.html#compte"],["Assistant Instagram","assistant-instagram.html"],["Cookies et vie privée","confidentialite.html"],["Mentions légales","mentions-legales.html"],["Conditions d’abonnement","conditions-abonnement.html"],["Liens affiliés","mentions-legales.html#liens"]]]
