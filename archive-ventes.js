@@ -163,6 +163,88 @@
     return LANGUES[code] || code || "";
   }
 
+
+  var ETATS_BRUTS = { nm: 1, ex: 1, bon: 1, neuve: 1, occasion: 1 };
+  var GROUPES = [
+    { id: "brute-fr", titre: "Cartes brutes — Français", court: "Brutes FR" },
+    { id: "brute-ja", titre: "Cartes brutes — Japonais", court: "Brutes JP" },
+    { id: "brute-en", titre: "Cartes brutes — Anglais", court: "Brutes EN" },
+    { id: "gradee", titre: "Cartes gradées", court: "Gradées" },
+    { id: "autre", titre: "Autre / non précisé", court: "Autre / non précisé" }
+  ];
+  var GRADEURS_TITRE = /\b(?:psa|pca|cgc|bgs)\b/i;
+
+  function texteDetection(v) {
+    return [v && v.carte, v && v.numero, v && v.set, v && v.etat, v && v.edition, v && v.pokemon, v && v.source]
+      .filter(Boolean).join(" ");
+  }
+  function etatClasse(v) {
+    var e = String((v && v.etat) || "").trim();
+    if (e === "—" || e === "-" || e === "–") e = "";
+    var n = norm(e);
+    if (n.indexOf("gradee") === 0) return "gradee";
+    if (ETATS_BRUTS[n]) return "brute";
+    if (GRADEURS_TITRE.test(texteDetection(v))) return "gradee";
+    return "autre";
+  }
+  function langueDepuisTitre(v) {
+    var t = " " + norm(texteDetection(v)) + " ";
+    if (/\bfrancais(?:e|es)?\b|\bfrench\b|\bfr\b/.test(t)) return "fr";
+    if (/\bjaponais(?:e|es)?\b|\bjapanese\b|\bjp\b|\bjpn\b/.test(t)) return "ja";
+    if (/\banglais(?:e|es)?\b|\benglish\b/.test(t)) return "en";
+    if (/\(\s*en\s*\)|\[\s*en\s*\]|\/\s*en(?:\s|\/|$)|(?:^|\s)en\s*\/|\blangue\s*en\b|\ben-us\b|\bus-en\b/.test(t)) return "en";
+    return "";
+  }
+  function langueClasse(v) {
+    var code = String((v && v.langue) || "").toLowerCase().trim();
+    if (code === "jp") code = "ja";
+    if (code === "fr" || code === "ja" || code === "en") return code;
+    if (!code) return langueDepuisTitre(v);
+    return "";
+  }
+  function groupeDe(v) {
+    var et = etatClasse(v);
+    if (et === "gradee") return "gradee";
+    if (et === "brute") {
+      var l = langueClasse(v);
+      if (l) return "brute-" + l;
+    }
+    return "autre";
+  }
+  function repartit(ventes) {
+    var map = {};
+    GROUPES.forEach(function (g) { map[g.id] = []; });
+    (ventes || []).forEach(function (v) {
+      var id = groupeDe(v);
+      if (!map[id]) map.autre.push(v);
+      else map[id].push(v);
+    });
+    return map;
+  }
+  function statsDevise(ventes) {
+    var out = [];
+    devisesListe(ventes).forEach(function (dev) {
+      var sous = ventes.filter(function (v) { return deviseDe(v) === dev; });
+      if (!sous.length) return;
+      var somme = 0, min = sous[0].prix, max = sous[0].prix;
+      sous.forEach(function (v) {
+        somme += v.prix;
+        if (v.prix < min) min = v.prix;
+        if (v.prix > max) max = v.prix;
+      });
+      out.push({
+        devise: dev,
+        n: sous.length,
+        moyen: somme / sous.length,
+        min: min,
+        max: max,
+        median: median(sous)
+      });
+    });
+    return out;
+  }
+
+
   function deplieSite(d) {
     var out = [];
     if (!d || !Array.isArray(d.ventes) || !Array.isArray(d.cartes)) return out;
@@ -444,6 +526,51 @@
     note.className = "av-calc";
     note.textContent = "Calculé sur les " + ventes.length + " vente" + (ventes.length > 1 ? "s" : "") + " affichée" + (ventes.length > 1 ? "s" : "") + " (365 derniers jours, ventes du Set de Base conservées au-delà).";
     stats.appendChild(note);
+    var parType = repartit(ventes);
+    var blocs = document.createElement("div");
+    blocs.className = "av-types";
+    var typTitre = document.createElement("p");
+    typTitre.className = "av-types-titre";
+    typTitre.textContent = "Par type";
+    blocs.appendChild(typTitre);
+    GROUPES.forEach(function (g) {
+      var sous = parType[g.id] || [];
+      if (!sous.length) return;
+      var art = document.createElement("article");
+      art.className = "av-type";
+      var h = document.createElement("h3");
+      h.textContent = g.titre + " (" + sous.length.toLocaleString("fr-FR") + ")";
+      art.appendChild(h);
+      var dl = document.createElement("dl");
+      dl.className = "av-stats av-stats-type";
+      statsDevise(sous).forEach(function (s) {
+        var prefixe = s.devise && devisesListe(sous).length > 1 ? " (" + s.devise + ")" : "";
+        [
+          ["Ventes" + prefixe, String(s.n)],
+          ["Prix moyen" + prefixe, formatPrix(s.moyen, s.devise)],
+          ["Prix minimum" + prefixe, formatPrix(s.min, s.devise)],
+          ["Prix maximum" + prefixe, formatPrix(s.max, s.devise)]
+        ].forEach(function (l) {
+          var wrap = document.createElement("div");
+          var dt = document.createElement("dt");
+          dt.textContent = l[0];
+          var dd = document.createElement("dd");
+          dd.textContent = l[1];
+          wrap.appendChild(dt);
+          wrap.appendChild(dd);
+          dl.appendChild(wrap);
+        });
+      });
+      art.appendChild(dl);
+      if (g.id === "autre") {
+        var hint = document.createElement("p");
+        hint.className = "av-calc";
+        hint.textContent = "Ventes dont l'état (brute ou gradée) ou la langue n'est pas indiqué dans l'archive, sans interprétation.";
+        art.appendChild(hint);
+      }
+      blocs.appendChild(art);
+    });
+    if (blocs.querySelector(".av-type")) stats.appendChild(blocs);
     dessin(ventes);
     hist.textContent = "";
     if (legende) legende.hidden = false;
@@ -480,6 +607,8 @@
     var chargement = !window.ARCHIVE_SITE_VENTES;
     var limite = PAGE;
     var derniere = [];
+    var ongletActif = "";
+    var parType = {};
 
     function prepare() {
       var toutes = source().filter(valide);
@@ -549,15 +678,90 @@
     var params = new URLSearchParams(location.search);
     if (params.get("q")) $("av-q").value = params.get("q");
 
+    function listeActive() {
+      if (ongletActif && parType[ongletActif]) return parType[ongletActif];
+      return derniere;
+    }
+    function rendOnglets(avecGroupes) {
+      var bar = $("av-onglets");
+      var panel = $("av-groupe-stats");
+      if (!bar) return;
+      bar.textContent = "";
+      if (!avecGroupes) {
+        bar.hidden = true;
+        if (panel) { panel.hidden = true; panel.textContent = ""; }
+        ongletActif = "";
+        return;
+      }
+      bar.hidden = false;
+      var ids = GROUPES.filter(function (g) { return (parType[g.id] || []).length; }).map(function (g) { return g.id; });
+      if (ids.indexOf(ongletActif) < 0) ongletActif = ids[0] || "";
+      GROUPES.forEach(function (g) {
+        var n = (parType[g.id] || []).length;
+        if (!n) return;
+        var b = document.createElement("button");
+        b.type = "button";
+        b.setAttribute("role", "tab");
+        b.id = "av-onglet-" + g.id;
+        b.setAttribute("aria-selected", g.id === ongletActif ? "true" : "false");
+        b.setAttribute("aria-controls", "av-liste");
+        b.textContent = g.court + " (" + n.toLocaleString("fr-FR") + ")";
+        b.addEventListener("click", function () {
+          ongletActif = g.id;
+          limite = PAGE;
+          rendOnglets(true);
+          rendListe();
+        });
+        bar.appendChild(b);
+      });
+      if (panel) {
+        panel.textContent = "";
+        var g = GROUPES.filter(function (x) { return x.id === ongletActif; })[0];
+        var sous = parType[ongletActif] || [];
+        if (!g || !sous.length) { panel.hidden = true; return; }
+        panel.hidden = false;
+        var h = document.createElement("h2");
+        h.className = "av-groupe-titre";
+        h.textContent = g.titre + " — " + sous.length.toLocaleString("fr-FR") + " vente" + (sous.length > 1 ? "s" : "");
+        panel.appendChild(h);
+        var dl = document.createElement("dl");
+        dl.className = "av-stats av-stats-type";
+        statsDevise(sous).forEach(function (s) {
+          var prefixe = devisesListe(sous).length > 1 ? " (" + s.devise + ")" : "";
+          [
+            ["Prix moyen" + prefixe, formatPrix(s.moyen, s.devise)],
+            ["Prix minimum" + prefixe, formatPrix(s.min, s.devise)],
+            ["Prix maximum" + prefixe, formatPrix(s.max, s.devise)]
+          ].forEach(function (l) {
+            var wrap = document.createElement("div");
+            var dt = document.createElement("dt");
+            dt.textContent = l[0];
+            var dd = document.createElement("dd");
+            dd.textContent = l[1];
+            wrap.appendChild(dt);
+            wrap.appendChild(dd);
+            dl.appendChild(wrap);
+          });
+        });
+        panel.appendChild(dl);
+        if (g.id === "autre") {
+          var hint = document.createElement("p");
+          hint.className = "av-calc";
+          hint.textContent = "Ventes dont l'état (brute ou gradée) ou la langue n'est pas indiqué dans l'archive, sans interprétation.";
+          panel.appendChild(hint);
+        }
+      }
+    }
     function rendListe() {
       var ol = $("av-liste");
       var plus = $("av-plus");
       ol.textContent = "";
       var frag = document.createDocumentFragment();
-      derniere.slice(0, limite).forEach(function (v) { frag.appendChild(carte(v)); });
+      var sourceListe = listeActive();
+      sourceListe.slice(0, limite).forEach(function (v) { frag.appendChild(carte(v)); });
       ol.appendChild(frag);
       if (plus) {
-        var reste = derniere.length - limite;
+        var reste = sourceListe.length - limite;
         plus.hidden = reste <= 0;
         if (reste > 0) plus.textContent = "Afficher " + Math.min(PAGE, reste) + " ventes de plus (" + reste.toLocaleString("fr-FR") + " restantes)";
       }
@@ -583,6 +787,10 @@
       });
       derniere = liste;
       limite = PAGE;
+      var qPresent = !!qRaw;
+      parType = qPresent ? repartit(liste) : {};
+      if (!qPresent) ongletActif = "";
+      rendOnglets(qPresent && liste.length > 0);
       var compte = $("av-compte");
       var vide = $("av-vide");
       rendListe();
@@ -623,6 +831,7 @@
       $("av-set").value = "";
       $("av-langue").value = "";
       $("av-mois").value = "";
+      ongletActif = "";
       affiche();
     });
     var plus = $("av-plus");
