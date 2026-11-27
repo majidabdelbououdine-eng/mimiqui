@@ -7,7 +7,10 @@ import { json } from "./util.js";
  * - sinon : 3 ventes les plus récentes (de la page, ou de la carte demandée) SANS PRIX + nombre masqué.
  * Fail-closed : sans KV ou en cas d'erreur, aucune vente n'est renvoyée.
  */
-const CLE_OK = /^(?:pkmn|page):[a-z0-9-]{1,80}$|^(?:set-de-base|ventes-30anniv|ventes-chaos|ventes-equilibre|ventes-nuit-noire)$/;
+const CLE_OK = /^(?:pkmn|page):[a-z0-9-]{1,80}$|^(?:set-de-base|ventes-30anniv|ventes-chaos|ventes-equilibre|ventes-nuit-noire)$|^prix:(?:top-semaine|ventes-sets|psa10|registre|registre-page|accueil)$/;
+/** Clés « prix: » : seulement les montants retirés des fichiers publics (top ventes, PSA 10, registre…).
+ *  Abonné : valeurs KV « verrou:f:prix:<nom> » ; sinon rien (aucune lecture KV, aucun montant). */
+const PRIX_SEULS = /^prix:/;
 const PRIX = "2,99 € / semaine";
 const NO_STORE = { "cache-control": "private, no-store" };
 const CHAMPS_PRIX = ["p", "prix", "prix_eur", "price"];
@@ -49,6 +52,10 @@ export async function handleVerrou(env, request, session) {
 
   const out = {};
   for (const c of cles) {
+    if (PRIX_SEULS.test(c)) {
+      out[c] = { total: 0, ajouts: [], masquees: 0, prix_masques: true };
+      continue;
+    }
     const val = await env.VENTES.get("verrou:l:" + c, "json");
     if (!val) {
       out[c] = { total: 0, ajouts: [], masquees: 0, absent: true };

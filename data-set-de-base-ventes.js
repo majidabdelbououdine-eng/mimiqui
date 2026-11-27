@@ -14,18 +14,18 @@
  * Exemple à copier (remplacer les valeurs par celles de la vente) :
  *
  *   {
- *     "id": "128080201759",
- *     "carte": "Abra",
- *     "numero": "043/102",
+ *     "id": "000000000000",
+ *     "carte": "Nom de la carte",
+ *     "numero": "000/102",
  *     "set": "Set de Base",
  *     "langue": "fr",
- *     "prix": 8.99,
+ *     "prix": 0.00,
  *     "devise": "USD",
- *     "date": "2026-11-08",
+ *     "date": "AAAA-MM-JJ",
  *     "etat": "",
  *     "edition": "1st",
  *     "photo": "",
- *     "lien": "https://www.ebay.com/itm/128080201759"
+ *     "lien": "https://www.ebay.com/itm/000000000000"
  *   }
  *
  * Champs :

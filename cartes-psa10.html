@@ -528,8 +528,10 @@ document.querySelectorAll(".psa-lien .psa-g .psa-tog").forEach(function(tog){
 <main class="wrap" id="list"></main>
 <div class="wrap ps-notes"><p>Prix relev&eacute;s sur eBay.fr le 03/11/2026, hors frais de port. Ventes conclues sur le dernier mois.</p><p>Indicatif, pas un conseil financier.</p><p>Les ventes dont le titre ne pr&eacute;cise pas le num&eacute;ro ou la langue restent s&eacute;par&eacute;es (signal&eacute;es &laquo; titres sans num&eacute;ro / langue &raquo;).</p></div>
 <footer class="wrap">Donn&eacute;es eBay.fr relev&eacute;es le 03/11/2026. Images&nbsp;: annonces eBay. Pok&eacute;mon est une marque de Nintendo, Game Freak et The Pok&eacute;mon Company ; site non officiel.</footer>
+<script src="verrou-ventes.js?v=20261127q"></script>
 <script src="psa10-donnees.js"></script>
-<script>(function(){var P=window.PSA10||{cartes:[],series:[]},C=P.cartes;
+<script>MQV.attendre(["prix:psa10"],function(){MQV.remplir("prix:psa10",window.PSA10);
+(function(){var P=window.PSA10||{cartes:[],series:[]},C=P.cartes;
 var LGMAP={fr:"Français",ja:"Japonais",en:"Anglais",de:"Allemand"};
 var LGPARAM=(new URLSearchParams(location.search).get("lg")||"").toLowerCase();
 var LGFILTER=LGMAP[LGPARAM]||"";
@@ -575,7 +577,8 @@ function aff(){var t=q.value.toLowerCase().trim(),sv=fs.value,k=0;
   return '<section class="serie" id="'+slug(s)+'"><h2>'+e(s)+'<small>'+L.length+' carte'+(L.length>1?'s':'')+'</small></h2>'+(AFFICHE_ANNONCES?bons(s,L):'')+'<div class="ps-g">'+L.map(carte).join("")+'</div></section>'}).join("")||(function(){var sn=fs.value||'ce set';var qe='pokemon PSA 10 '+sn+(LGFILTER?(' '+({Japonais:'japanese',Anglais:'english'}[LGFILTER]||'')):'');var eu='https://www.ebay.fr/sch/i.html?_nkw=&mkcid=1&mkrid=709-53476-19255-0&siteid=71&campid=5339225196&toolid=10001&mkevt=1'+encodeURIComponent(qe)+'&LH_Sold=1&LH_Complete=1&mkcid=1&mkrid=709-53476-19255-0&siteid=71&campid=5339225196&customid=psa10&toolid=10001&mkevt=1';return '<p class="ps-pas">Aucune PSA 10 relev&eacute;e pour le moment</p><p class="ps-ebay">'+A(eu,'Voir les PSA 10 de ce set sur eBay')+'</p>';})();
  cnt.textContent=k+" carte"+(k>1?"s":"")}
 [q,fs].forEach(function(x){x.addEventListener("input",aff);x.addEventListener("change",aff)});aff();
-})();</script>
+})();
+},{"cibles":[]});</script>
 <script>(function(){var h=document.querySelector("header.wrap, header.site");if(!h)return;function m(){document.documentElement.style.setProperty("--hh",h.offsetHeight+"px")}m();if(window.ResizeObserver)new ResizeObserver(m).observe(h);})();</script>
 <div class="cookie-info" id="cookie-info" hidden role="region" aria-label="Cookies">
   <p>Ce site ne dépose aucun cookie publicitaire. La fréquentation est mesurée avec Cloudflare Web Analytics, un outil sans cookie. Les liens eBay, Amazon et Instagram mènent vers des sites qui ont leurs propres cookies. <a href="confidentialite.html">En savoir plus</a></p>

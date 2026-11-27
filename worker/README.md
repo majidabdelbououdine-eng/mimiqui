@@ -67,3 +67,11 @@ Compte Stripe (lecture seule, 26 nov. 2026) : France, `charges_enabled` et `payo
 Depuis cette version, `/api/verrou` renvoie les 3 ventes libres **sans montant** (`p` / `prix` / `prix_eur` à `null`, `prix_masque: true`) aux non-abonnés ; les abonnés reçoivent les prix. `verrou-ventes.js` remplace chaque montant affiché pour ces ventes par « Prix réservé aux abonnés » (et masque le graphique des prix). La page Vendre ne reçoit aucune vente libre. Pas de réécriture KV nécessaire : le filtrage se fait à la lecture.
 
 Les 385 fichiers `archives-ventes-<pokemon>/<langue>/<carte>.json` (ventes avec prix, non utilisés par les pages) sont retirés du dépôt public ; copie privée : `/home/box/mimiqui-verrou-sources/archives-json/`.
+
+### Clés « prix: » (top ventes, ventes des sets, PSA 10, registre, accueil)
+
+Les montants des ventes sont retirés des fichiers publics `data-top-ventes-semaine.js`, `ventes-sets-data.js`, `psa10-donnees.js`, `registre-ventes-data.js` (valeurs `null`), de `registre.html` et de la carte de la semaine d'`index.html` (« Prix réservé aux abonnés », `data-mqp`). Cartes, photos, titres, dates et liens eBay (campid) restent publics.
+
+- `/api/verrou?k=prix:<nom>` (`top-semaine`, `ventes-sets`, `psa10`, `registre`, `registre-page`, `accueil`) : non-abonné → aucun montant, aucune lecture KV ; abonné → `verrou:f:prix:<nom>` (`valeurs` = `[chemin, montant]`, ou `textes` pour le HTML).
+- Client : `MQV.remplir(cle, objet)` et `MQV.remplirDom(cle)` dans `verrou-ventes.js`.
+- Générer : `node scripts/build-prix.mjs --sources /home/box/mimiqui-verrou-sources/prix-avant-masquage [--appliquer]` → `data/prix-bulk.json` (6 clés), puis `npx wrangler kv bulk put data/prix-bulk.json --binding VENTES --remote`.

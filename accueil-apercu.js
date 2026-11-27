@@ -168,6 +168,17 @@
   function boot() {
     renduVentes(cartesCote());
   }
-  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", boot);
-  else boot();
+  function lancer() {
+    // Montants des ventes réservés aux abonnés : servis par /api/verrou (clés « prix: »).
+    if (!window.MQV) { boot(); return; }
+    var cles = ["prix:registre"];
+    if (document.querySelector('[data-mqp^="accueil:"]')) cles.push("prix:accueil");
+    MQV.attendre(cles, function () {
+      MQV.remplir("prix:registre", window.REGISTRE_VENTES);
+      MQV.remplirDom("prix:accueil");
+      boot();
+    }, { cibles: [] });
+  }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", lancer);
+  else lancer();
 })();
