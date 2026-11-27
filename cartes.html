@@ -513,7 +513,7 @@ if (window.claude && window.claude.use) window.claude.use("db").then(db => {
 <style id="infos-clic">.card>.body{display:none}.card.infos-on>.body{display:block;animation:icIn .3s ease}@keyframes icIn{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}.card .frame[data-zoom]{cursor:pointer}</style>
 <script id="infos-clic-js">document.addEventListener("click",e=>{const fr=e.target.closest&&e.target.closest(".card .frame");if(fr){if(e.detail>1)return;e.preventDefault();e.stopImmediatePropagation();const c=fr.closest(".card");const on=!c.classList.contains("infos-on");document.querySelectorAll(".card.infos-on").forEach(x=>x.classList.remove("infos-on"));c.classList.toggle("infos-on",on);return}if(!(e.target.closest&&e.target.closest(".card.infos-on>.body")))document.querySelectorAll(".card.infos-on").forEach(x=>x.classList.remove("infos-on"))},true);</script>
 <script src="verrou-ventes.js?v=20261127q"></script>
-<script src="registre-ventes-data.js"></script>
+<script src="registre-ventes-data.js?v=20261127q"></script>
 <script id="ventes-mois-js">MQV.attendre(["prix:registre"],function(){MQV.remplir("prix:registre",window.REGISTRE_VENTES);
 (function(){
 function maj(){const R=window.REGISTRE_VENTES||[];const lim=new Date(Date.now()-30*864e5).toISOString().slice(0,10);
