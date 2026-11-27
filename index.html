@@ -593,8 +593,9 @@ background:repeating-linear-gradient(115deg,rgba(255,0,140,.5) 0%,rgba(255,200,0
   .aa-cartes img{width:64px;height:89px}
 }
 @media (prefers-reduced-motion:reduce){.aa-bloc::before{animation:none}.aa-cartes a{transition:none}}
-.sous-menu a.nav-archive{font-weight:800;color:#0b3d91}
-.sous-menu a.nav-archive::after{content:"60 000+";margin-left:.45em;padding:.1em .45em;border-radius:999px;background:#0b3d91;color:#fff;font-size:.7em;font-weight:800;vertical-align:middle}
+/* Le menu est reconstruit par site-commun.js : on cible le lien par son adresse. */
+.sous-menu a.nav-archive,.sous-menu a[href="archive-ventes.html"]{font-weight:800;color:#0b3d91}
+.sous-menu a.nav-archive::after,.sous-menu a[href="archive-ventes.html"]::after{content:"60 000+";margin-left:.45em;padding:.1em .45em;border-radius:999px;background:#0b3d91;color:#fff;font-size:.7em;font-weight:800;vertical-align:middle}
 </style>
 <section class="aa-bloc wrap" id="accueil-archive" aria-labelledby="aa-titre">
   <div class="aa-texte">
