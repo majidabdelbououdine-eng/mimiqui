@@ -58,9 +58,77 @@
         cible = cible[seg];
       }
       if (!Array.isArray(cible)) return;
-      g.items.sort(function (a, b) { return a[1] - b[1]; }).forEach(function (a) { cible.push(a[2]); });
+      g.items.sort(function (a, b) { return a[1] - b[1]; }).forEach(function (a) {
+        var v = a[2];
+        if (v && v.prix_masque) {
+          if (etat.sansLibres) return; // page d'outil (Vendre) : pas de vente libre sans prix
+          CHAMPS_PRIX.forEach(function (k) { if (k in v && v[k] == null) v[k] = SENTINELLE; });
+          etat.prixMasques = true;
+        }
+        cible.push(v);
+      });
     });
     return obj;
+  }
+  /* Prix des 3 ventes libres : le Worker n'envoie aucun montant (null). On met une valeur
+     repère pour que le code d'origine de la page s'exécute, puis chaque montant affiché
+     qui en dérive est remplacé par « Prix réservé aux abonnés ». */
+  var CHAMPS_PRIX = ["p", "prix", "prix_eur", "price"];
+  var SENTINELLE = 8888888.88;
+  var RE_REPERE = /[-+]?8[\s\u00a0\u202f.,']?888[\s\u00a0\u202f.,']?88[89](?:[.,]\d{1,2})?(?:[\s\u00a0\u202f]*(?:€|\$\s?US|US\$|\$|USD|EUR|¥|JPY))?/g;
+  var TEXTE_RESERVE = "Prix réservé aux abonnés";
+  function remplacerTexte(node) {
+    var t = node.nodeValue;
+    if (!t || t.indexOf("888") < 0) return;
+    RE_REPERE.lastIndex = 0;
+    if (!RE_REPERE.test(t)) return;
+    RE_REPERE.lastIndex = 0;
+    node.nodeValue = t.replace(RE_REPERE, TEXTE_RESERVE);
+    var el = node.parentNode;
+    if (el && el.classList) {
+      var svg = el.closest && el.closest("svg");
+      if (svg) { masquerGraphique(svg); return; }
+      el.classList.add("mq-prix-reserve");
+    }
+  }
+  function masquerGraphique(svg) {
+    var box = svg.parentNode;
+    if (!box || box.getAttribute("data-mq-graph")) return;
+    box.setAttribute("data-mq-graph", "1");
+    svg.style.display = "none";
+    var p = document.createElement("p");
+    p.className = "mq-prix-reserve mq-graph-note";
+    p.textContent = "🔒 Graphique des prix réservé aux abonnés.";
+    box.insertBefore(p, svg);
+  }
+  function balayer(root) {
+    if (!etat.prixMasques || !root) return;
+    if (root.nodeType === 3) { remplacerTexte(root); return; }
+    if (root.nodeType !== 1) return;
+    var w = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null);
+    var n, liste = [];
+    while ((n = w.nextNode())) liste.push(n);
+    liste.forEach(remplacerTexte);
+    var attrs = root.querySelectorAll ? root.querySelectorAll("[title],[aria-label]") : [];
+    for (var i = 0; i < attrs.length; i++) {
+      ["title", "aria-label"].forEach(function (a) {
+        var v = attrs[i].getAttribute(a);
+        if (v && v.indexOf("888") >= 0) { RE_REPERE.lastIndex = 0; attrs[i].setAttribute(a, v.replace(RE_REPERE, TEXTE_RESERVE)); }
+      });
+    }
+  }
+  function surveillerPrix() {
+    if (!etat.prixMasques || etat.surveille) return;
+    etat.surveille = true;
+    balayer(document.body);
+    if (window.MutationObserver) {
+      new MutationObserver(function (ms) {
+        ms.forEach(function (m) {
+          if (m.type === "characterData") remplacerTexte(m.target);
+          else for (var i = 0; i < m.addedNodes.length; i++) balayer(m.addedNodes[i]);
+        });
+      }).observe(document.body, { childList: true, subtree: true, characterData: true });
+    }
   }
   function masquees() {
     var n = 0;
@@ -78,7 +146,7 @@
     var t = document.createElement("p");
     t.textContent = etat.erreur
       ? "Le service des ventes est momentanément indisponible. Réessayez plus tard."
-      : "Les 3 ventes les plus récentes restent visibles. Abonnement : " + (etat.prix || PRIX) + ".";
+      : "Les 3 ventes les plus récentes restent visibles, sans leur prix. Abonnement : " + (etat.prix || PRIX) + ".";
     var a = document.createElement("a");
     a.className = "av-cadenas-btn";
     a.href = "mon-compte.html";
@@ -120,14 +188,20 @@
       ".mq-cadenas-ventes .av-cadenas-titre{margin:0 0 8px;font:700 1.05rem 'Source Sans 3',Arial,sans-serif;color:#0b3d91}" +
       ".mq-cadenas-ventes p{margin:0 0 10px;color:#5b6474}" +
       ".mq-cadenas-ventes .av-cadenas-btn{display:inline-block;background:#0b3d91;color:#fff;text-decoration:none;font:700 .95rem 'Source Sans 3',Arial,sans-serif;padding:10px 18px;border-radius:999px}" +
-      ".mq-cadenas-ventes .av-cadenas-btn:hover{background:#082d6b}";
+      ".mq-cadenas-ventes .av-cadenas-btn:hover{background:#082d6b}" +
+      "html .mq-prix-reserve.mq-prix-reserve{color:#0b3d91!important;-webkit-text-fill-color:#0b3d91!important;font-size:.9rem!important;font-weight:700;white-space:normal;text-shadow:none!important}" +
+      "html .liste-ventes li .mq-prix-reserve.mq-prix-reserve{font-size:.95rem!important}" +
+      "html.mq-verrou-serveur .mq-prix-reserve.mq-prix-reserve::before{content:\"\\1F512\\00a0\"!important;color:#0b3d91;-webkit-text-fill-color:#0b3d91}" +
+      "html.mq-verrou-serveur .mq-graph-note.mq-graph-note::before{content:none!important}" +
+      ".mq-graph-note{margin:8px 0;padding:10px 12px;border:1px dashed #0b3d91;border-radius:10px}";
     (document.head || document.documentElement).appendChild(s);
   }
   /** Charge les clés, attend le DOM, puis lance fn (le code d'origine de la page). */
   function attendre(cles, fn, opts) {
     opts = opts || {};
+    etat.sansLibres = opts.libres === false;
     return Promise.all([charger(cles, opts), domPret()]).then(function () {
-      try { fn(); } finally { style(); poser(opts.cibles); }
+      try { fn(); } finally { style(); surveillerPrix(); poser(opts.cibles); }
     });
   }
   window.MQV = { attendre: attendre, charger: charger, injecter: injecter, poser: function (c) { style(); poser(c); }, etat: etat };

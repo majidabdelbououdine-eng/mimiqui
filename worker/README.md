@@ -61,3 +61,9 @@ Compte Stripe (lecture seule, 26 nov. 2026) : France, `charges_enabled` et `payo
   `node scripts/build-verrou.mjs --sources /home/box/mimiqui-verrou-sources` et
   `npx wrangler kv bulk put data/verrou-bulk.json --binding VENTES --remote`.
 - Première mise en place (déjà faite dans la PR) : `node scripts/build-verrou.mjs --appliquer` sur des fichiers encore pleins. Le script refuse de tourner sur des fichiers déjà vidés.
+
+### Sans prix pour les non-abonnés
+
+Depuis cette version, `/api/verrou` renvoie les 3 ventes libres **sans montant** (`p` / `prix` / `prix_eur` à `null`, `prix_masque: true`) aux non-abonnés ; les abonnés reçoivent les prix. `verrou-ventes.js` remplace chaque montant affiché pour ces ventes par « Prix réservé aux abonnés » (et masque le graphique des prix). La page Vendre ne reçoit aucune vente libre. Pas de réécriture KV nécessaire : le filtrage se fait à la lecture.
+
+Les 385 fichiers `archives-ventes-<pokemon>/<langue>/<carte>.json` (ventes avec prix, non utilisés par les pages) sont retirés du dépôt public ; copie privée : `/home/box/mimiqui-verrou-sources/archives-json/`.

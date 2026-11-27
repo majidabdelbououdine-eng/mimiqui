@@ -176,7 +176,7 @@ article.billet{scroll-margin-top:96px}
 <p id="ep-nb"></p><div class="ep-grid" id="ep-grid"></div>
 <p class="ep-mini" style="margin-top:2rem"><a href="equilibre-parfait-ventes.html">&rarr; Voir les ventes eBay de la semaine</a></p></main>
 <script src="ventes-equilibre.js"></script>
-<script src="verrou-ventes.js?v=20261126v"></script>
+<script src="verrou-ventes.js?v=20261127p"></script>
 <script>MQV.attendre(["ventes-equilibre"],function(){MQV.injecter("ventes-equilibre",window.VENTES_EQ);(function(){var VE=window.VENTES_EQ||{};function fp(p){return p.toFixed(2).replace(".",",")+" €"}
 function ven(c,court){var o=VE[c.n],h="";if(!o||(!o.brut.length&&!o.grade.length))return court?"":'Aucune vente relevée cette semaine · <a href="'+c.eb+'" target="_blank" rel="sponsored noopener">Voir sur eBay</a>';
 var b=o.brut.slice().sort(function(x,y){return y.p-x.p});if(b.length===1)h+='Vendue <a href="'+b[0].u+'" target="_blank" rel="sponsored noopener">'+fp(b[0].p)+'</a> le '+b[0].d;
