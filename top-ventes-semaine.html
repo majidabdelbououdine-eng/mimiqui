@@ -111,8 +111,10 @@ h1,h2,h3{font-family:var(--f-display);text-wrap:balance;line-height:1.1;margin:0
   </section>
   <div id="liste"></div>
 </main>
+<script src="verrou-ventes.js?v=20261127q"></script>
 <script src="data-top-ventes-semaine.js"></script>
-<script>
+<script>MQV.attendre(["prix:top-semaine"],function(){MQV.remplir("prix:top-semaine",window.TOP_VENTES_SEMAINE);
+
 (function(){
   "use strict";
   var DATA=window.TOP_VENTES_SEMAINE||{};
@@ -172,7 +174,8 @@ h1,h2,h3{font-family:var(--f-display);text-wrap:balance;line-height:1.1;margin:0
   });
   list.appendChild(ul);
 })();
-</script>
+
+},{"cibles":[]});</script>
 
 <footer class="wrap">Le Coin de Mimiqui · site de fan non officiel, sans lien avec Nintendo, Game Freak ou The Pokémon Company. · <a href="confidentialite.html">Cookies et vie privée</a> · <a href="a-propos.html">À propos / Contact</a></footer>
 <script>(function(){var h=document.querySelector("header.wrap, header.site");if(!h)return;function m(){document.documentElement.style.setProperty("--hh",h.offsetHeight+"px")}m();if(window.ResizeObserver)new ResizeObserver(m).observe(h);})();</script>

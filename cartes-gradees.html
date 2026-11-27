@@ -106,8 +106,10 @@ table.ventes a.setlien:hover{text-decoration:underline}
   <div id="sources"></div>
 </main>
 
+<script src="verrou-ventes.js?v=20261127q"></script>
 <script src="ventes-sets-data.js"></script>
-<script>
+<script>MQV.attendre(["prix:ventes-sets"],function(){MQV.remplir("prix:ventes-sets",window.VENTES_SETS);
+
 (function(){
   "use strict";
   var DATA=window.VENTES_SETS||{};
@@ -163,9 +165,11 @@ table.ventes a.setlien:hover{text-decoration:underline}
   }
   window.__prixTables={DATA:DATA,table:table,sources:sources,eur:eur};
 })();
-</script>
 
-<script>
+},{"cibles":[]});</script>
+
+<script>MQV.attendre(["prix:ventes-sets"],function(){
+
 (function(){
   var T=window.__prixTables, D=T.DATA;
   var g=D.grades||[];
@@ -177,7 +181,8 @@ table.ventes a.setlien:hover{text-decoration:underline}
   document.getElementById("table-grades").innerHTML=T.table(g, true);
   document.getElementById("sources").innerHTML=T.sources();
 })();
-</script>
+
+},{"cibles":[]});</script>
 
 <footer class="wrap">Le Coin de Mimiqui · site de fan non officiel, sans lien avec Nintendo, Game Freak ou The Pokémon Company. · <a href="confidentialite.html">Cookies et vie privée</a> · <a href="a-propos.html">À propos / Contact</a></footer>
 <script>(function(){var h=document.querySelector("header.wrap, header.site");if(!h)return;function m(){document.documentElement.style.setProperty("--hh",h.offsetHeight+"px")}m();if(window.ResizeObserver)new ResizeObserver(m).observe(h);})();</script>

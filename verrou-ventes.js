@@ -12,7 +12,7 @@
   try {
     var st0 = document.createElement("style");
     st0.id = "mq-verrou-libres";
-    st0.textContent = "html.mq-verrou-serveur:not(.mq-abonne) .liste-ventes li .prix-vente,html.mq-verrou-serveur:not(.mq-abonne) .derniere-vente:not(.vide) .prix-vente,html.mq-verrou-serveur:not(.mq-abonne) .ep-v a,html.mq-verrou-serveur:not(.mq-abonne) .ep-dep-in a,html.mq-verrou-serveur:not(.mq-abonne) #fr-cartes li.fv b,html.mq-verrou-serveur:not(.mq-abonne) #ja-cartes li.fv b,html.mq-verrou-serveur:not(.mq-abonne) #en-cartes li.fv b,html.mq-verrou-serveur:not(.mq-abonne) #ventes li:not(.groupe-v):not(.sans) b,html.mq-verrou-serveur:not(.mq-abonne) li.vente > .p,html.mq-verrou-serveur:not(.mq-abonne) table.ventes td.prix{color:inherit;-webkit-text-fill-color:inherit;text-shadow:none;user-select:auto;cursor:auto}html.mq-verrou-serveur:not(.mq-abonne) .liste-ventes li .prix-vente::before,html.mq-verrou-serveur:not(.mq-abonne) .derniere-vente:not(.vide) .prix-vente::before,html.mq-verrou-serveur:not(.mq-abonne) .ep-v a::before,html.mq-verrou-serveur:not(.mq-abonne) .ep-dep-in a::before,html.mq-verrou-serveur:not(.mq-abonne) #fr-cartes li.fv b::before,html.mq-verrou-serveur:not(.mq-abonne) #ja-cartes li.fv b::before,html.mq-verrou-serveur:not(.mq-abonne) #en-cartes li.fv b::before,html.mq-verrou-serveur:not(.mq-abonne) #ventes li:not(.groupe-v):not(.sans) b::before,html.mq-verrou-serveur:not(.mq-abonne) li.vente > .p::before,html.mq-verrou-serveur:not(.mq-abonne) table.ventes td.prix::before{content:none}";
+    st0.textContent = "html.mq-verrou-serveur:not(.mq-abonne) .liste-ventes li .prix-vente,html.mq-verrou-serveur:not(.mq-abonne) .derniere-vente:not(.vide) .prix-vente,html.mq-verrou-serveur:not(.mq-abonne) .ep-v a,html.mq-verrou-serveur:not(.mq-abonne) .ep-dep-in a,html.mq-verrou-serveur:not(.mq-abonne) #fr-cartes li.fv b,html.mq-verrou-serveur:not(.mq-abonne) #ja-cartes li.fv b,html.mq-verrou-serveur:not(.mq-abonne) #en-cartes li.fv b,html.mq-verrou-serveur:not(.mq-abonne) #ventes li:not(.groupe-v):not(.sans) b,html.mq-verrou-serveur:not(.mq-abonne) li.vente > .p,html.mq-verrou-serveur:not(.mq-abonne) #par-pays .rc ul li b,html.mq-verrou-serveur:not(.mq-abonne) #par-pays .rc .rr,html.mq-verrou-serveur:not(.mq-abonne) #ap-liste .ap-meta strong,html.mq-verrou-serveur:not(.mq-abonne) .ap-liste .ap-meta strong,html.mq-verrou-serveur:not(.mq-abonne) li.av-carte .av-meta strong,html.mq-verrou-serveur:not(.mq-abonne) table.ventes td.prix{color:inherit;-webkit-text-fill-color:inherit;text-shadow:none;user-select:auto;cursor:auto}html.mq-verrou-serveur:not(.mq-abonne) .liste-ventes li .prix-vente::before,html.mq-verrou-serveur:not(.mq-abonne) .derniere-vente:not(.vide) .prix-vente::before,html.mq-verrou-serveur:not(.mq-abonne) .ep-v a::before,html.mq-verrou-serveur:not(.mq-abonne) .ep-dep-in a::before,html.mq-verrou-serveur:not(.mq-abonne) #fr-cartes li.fv b::before,html.mq-verrou-serveur:not(.mq-abonne) #ja-cartes li.fv b::before,html.mq-verrou-serveur:not(.mq-abonne) #en-cartes li.fv b::before,html.mq-verrou-serveur:not(.mq-abonne) #ventes li:not(.groupe-v):not(.sans) b::before,html.mq-verrou-serveur:not(.mq-abonne) li.vente > .p::before,html.mq-verrou-serveur:not(.mq-abonne) #par-pays .rc ul li b::before,html.mq-verrou-serveur:not(.mq-abonne) #par-pays .rc .rr::before,html.mq-verrou-serveur:not(.mq-abonne) #ap-liste .ap-meta strong::before,html.mq-verrou-serveur:not(.mq-abonne) .ap-liste .ap-meta strong::before,html.mq-verrou-serveur:not(.mq-abonne) li.av-carte .av-meta strong::before,html.mq-verrou-serveur:not(.mq-abonne) table.ventes td.prix::before{content:none}";
     (document.head || document.documentElement).appendChild(st0);
   } catch (e) {}
 
@@ -29,11 +29,16 @@
       .then(function (j) {
         etat.abonne = !!j.abonne;
         etat.prix = j.prix || PRIX;
-        etat.cles = j.cles || {};
+        var c = j.cles || {};
+        Object.keys(c).forEach(function (k) { etat.cles[k] = c[k]; });
         etat.pret = true;
         return etat;
       })
-      .catch(function () { etat.erreur = true; etat.pret = true; etat.cles = {}; return etat; });
+      .catch(function () {
+        etat.erreur = true; etat.pret = true;
+        cles.forEach(function (k) { delete etat.cles[k]; });
+        return etat;
+      });
   }
   function domPret() {
     return new Promise(function (res) {
@@ -197,12 +202,54 @@
     (document.head || document.documentElement).appendChild(s);
   }
   /** Charge les clés, attend le DOM, puis lance fn (le code d'origine de la page). */
+  var file = Promise.resolve();
   function attendre(cles, fn, opts) {
     opts = opts || {};
     etat.sansLibres = opts.libres === false;
-    return Promise.all([charger(cles, opts), domPret()]).then(function () {
+    var pret = Promise.all([charger(cles, opts), domPret()]);
+    // Plusieurs appels sur une même page : chargement en parallèle, exécution dans l'ordre.
+    file = file.then(function () { return pret; }).then(function () {
       try { fn(); } finally { style(); surveillerPrix(); poser(opts.cibles); }
-    });
+    }).catch(function (e) { setTimeout(function () { throw e; }); });
+    return file;
   }
-  window.MQV = { attendre: attendre, charger: charger, injecter: injecter, poser: function (c) { style(); poser(c); }, etat: etat };
+  /* Montants retirés des fichiers publics (clés « prix: ») : le fichier public garde
+     tout sauf les prix (null). Abonné : le Worker renvoie [chemin, valeur] et on les remet.
+     Sinon (ou en cas d'erreur) : valeur repère, puis « Prix réservé aux abonnés » à l'affichage. */
+  var CHAMPS_MASQUES = ["p", "prix", "prix_eur", "price", "min", "max", "med"];
+  function remplir(cle, obj) {
+    if (!obj || obj.__mqp) return obj;
+    try { Object.defineProperty(obj, "__mqp", { value: true, enumerable: false }); } catch (e) {}
+    var info = etat.cles[cle];
+    if (etat.abonne && info && Array.isArray(info.valeurs)) {
+      info.valeurs.forEach(function (v) {
+        var ch = v[0], o = obj;
+        for (var i = 0; i < ch.length - 1 && o != null; i++) o = o[ch[i]];
+        if (o != null && o[ch[ch.length - 1]] == null) o[ch[ch.length - 1]] = v[1];
+      });
+    }
+    (function marcher(o) {
+      if (!o || typeof o !== "object") return;
+      if (Array.isArray(o)) { o.forEach(marcher); return; }
+      Object.keys(o).forEach(function (k) {
+        if (o[k] === null && CHAMPS_MASQUES.indexOf(k) >= 0) { o[k] = SENTINELLE; etat.prixMasques = true; }
+        else if (o[k] && typeof o[k] === "object") marcher(o[k]);
+      });
+    })(obj);
+    return obj;
+  }
+  /* Montants écrits dans le HTML : <span class="mq-prix-reserve" data-mqp="nom:i">Prix réservé aux abonnés</span>.
+     Abonné : le texte d'origine vient du Worker (textes[i]). */
+  function remplirDom(cle) {
+    var info = etat.cles[cle], nom = cle.replace(/^prix:/, "");
+    if (!etat.abonne || !info || !Array.isArray(info.textes)) return;
+    var els = document.querySelectorAll('[data-mqp^="' + nom + ':"]');
+    for (var i = 0; i < els.length; i++) {
+      var n = +els[i].getAttribute("data-mqp").slice(nom.length + 1);
+      if (typeof info.textes[n] === "string") { els[i].textContent = info.textes[n]; els[i].classList.remove("mq-prix-reserve"); }
+    }
+  }
+  if (document.querySelector && document.querySelector("[data-mqp]")) style();
+  else domPret().then(function () { if (document.querySelector("[data-mqp]")) style(); });
+  window.MQV = { attendre: attendre, charger: charger, injecter: injecter, remplir: remplir, remplirDom: remplirDom, poser: function (c) { style(); poser(c); }, etat: etat };
 })();

@@ -10,6 +10,7 @@ const store = {
     ajouts: ventes.slice(2),
     cartes: { "langues/fr/0": { total: 5, ajouts: ventes.slice(2) } },
   }),
+  "verrou:f:prix:top-semaine": JSON.stringify({ total: 0, ajouts: [], valeurs: [[["ventes", 0, "prix"], 3250]] }),
 };
 const env = {
   VENTES: {
@@ -54,4 +55,21 @@ test("clé invalide refusée", async () => {
 test("clé absente : aucune vente", async () => {
   const j = await (await handleVerrou(env, req("k=pkmn:absent"), null)).json();
   assert.equal(j.cles["pkmn:absent"].ajouts.length, 0);
+});
+test("clé prix : non abonné, aucun montant ni lecture KV", async () => {
+  let lu = 0;
+  const env2 = { VENTES: { async get(k, t) { lu++; return env.VENTES.get(k, t); } } };
+  const j = await (await handleVerrou(env2, req("k=prix:top-semaine,prix:registre"), null)).json();
+  assert.equal(lu, 0);
+  assert.equal(j.cles["prix:top-semaine"].prix_masques, true);
+  assert.equal(j.cles["prix:top-semaine"].valeurs, undefined);
+  assert.doesNotMatch(JSON.stringify(j), /3250/);
+});
+test("clé prix : abonné reçoit les montants", async () => {
+  const j = await (await handleVerrou(env, req("k=prix:top-semaine"), { abonne: true })).json();
+  assert.deepEqual(j.cles["prix:top-semaine"].valeurs[0], [["ventes", 0, "prix"], 3250]);
+});
+test("clé prix inconnue refusée", async () => {
+  const r = await handleVerrou(env, req("k=prix:autre"), null);
+  assert.equal(r.status, 400);
 });
