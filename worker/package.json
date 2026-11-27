@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "wrangler dev --port 8787 --local",
     "build:ventes": "node scripts/build-ventes-kv.mjs",
-    "test": "node --test test/unit.test.mjs test/api.test.mjs",
+    "test": "node --test test/unit.test.mjs test/api.test.mjs test/verrou.test.mjs",
     "test:unit": "node --test test/unit.test.mjs",
     "dry-run": "wrangler deploy --dry-run",
     "ensure-price": "node scripts/ensure-stripe-price.mjs"

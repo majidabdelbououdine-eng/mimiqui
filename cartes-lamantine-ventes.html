@@ -206,7 +206,8 @@ a.tuile:hover{outline:2px solid var(--rouge);outline-offset:-2px}
   </div>
 </main>
 <script src="data-lamantine-ventes.js"></script>
-<script>
+<script src="verrou-ventes.js?v=20261126v"></script>
+<script>MQV.attendre(["pkmn:lamantine"],function(){MQV.injecter("pkmn:lamantine",window.LAMANTINE_VENTES);
 
 (function () {
   "use strict";
@@ -621,7 +622,7 @@ a.tuile:hover{outline:2px solid var(--rouge);outline-offset:-2px}
   }
 })();
 
-</script>
+},{"cibles":[{"dans":"#dernieres-ventes"}]});</script>
 
 <footer class="wrap">Le Coin de Mimiqui · site de fan non officiel, sans lien avec Nintendo, Game Freak ou The Pokémon Company. · <a href="confidentialite.html">Cookies et vie privée</a></footer>
 <script>(function(){var h=document.querySelector("header.wrap, header.site");if(!h)return;function m(){document.documentElement.style.setProperty("--hh",h.offsetHeight+"px")}m();if(window.ResizeObserver)new ResizeObserver(m).observe(h);})();</script>
@@ -630,7 +631,7 @@ a.tuile:hover{outline:2px solid var(--rouge);outline-offset:-2px}
   <button type="button" id="cookie-ok">D’accord</button>
 </div>
 <script>(function(){var b=document.getElementById("cookie-info");if(!b)return;var k="coin-mimiqui-info-cookies",vu=false;try{vu=localStorage.getItem(k)==="1"}catch(e){}if(!vu)b.hidden=false;document.getElementById("cookie-ok").addEventListener("click",function(){b.hidden=true;try{localStorage.setItem(k,"1")}catch(e){}});})();</script>
-<script src="site-commun.js?v=20261126i" defer></script>
+<script src="site-commun.js?v=20261126v" defer></script>
 <p class="pied-legal">Site de fan non officiel &middot; <a href="mentions-legales.html#liens">Liens affiliés</a> &middot; <a href="mentions-legales.html">Mentions légales</a></p>
 
 </body></html>

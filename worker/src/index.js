@@ -34,6 +34,7 @@ import {
   emailFromStripeObject,
 } from "./stripe.js";
 import { handleVentes } from "./ventes.js";
+import { handleVerrou } from "./verrou.js";
 
 export default {
   async fetch(request, env, ctx) {
@@ -98,6 +99,11 @@ async function route(request, env, ctx) {
   if (method === "GET" && path === "/ventes") {
     const session = await getSession(env, request);
     return handleVentes(env, request, session);
+  }
+
+  if (method === "GET" && path === "/verrou") {
+    const session = await getSession(env, request);
+    return handleVerrou(env, request, session);
   }
 
   return json({ error: "Introuvable" }, 404);

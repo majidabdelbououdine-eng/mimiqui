@@ -1389,6 +1389,7 @@ if(document.readyState==='loading') document.addEventListener('DOMContentLoaded'
     if(!a || !a.getAttribute) return false;
     if(a.classList && a.classList.contains("btn-ebay-recherche")) return false;
     var href=(a.getAttribute("href")||"");
+    if(a.hasAttribute && a.hasAttribute("data-mq-ventes")) return true;
     return a.classList && a.classList.contains("btn-ebay") && href.indexOf("LH_Sold")!==-1;
   }
   function boutonAbonner(){
@@ -1458,6 +1459,8 @@ if(document.readyState==='loading') document.addEventListener('DOMContentLoaded'
   window.MIMIQUI_ABO.ouvrir = ouvrirFenetre;
   function masquerDansFiche(vin){
     if(!vin || aAcces() || vin.querySelector(".mq-paywall")) return;
+    /* Pages au cadenas serveur : seules les 3 ventes libres sont chargées, pas de voile. */
+    if(document.documentElement.classList.contains("mq-verrou-serveur")) return;
     var nodes=[], seen=[];
     function add(n){
       if(!n || seen.indexOf(n)>=0 || (n.classList && n.classList.contains("vp-pied"))) return;
@@ -1685,6 +1688,8 @@ if(document.readyState==='loading') document.addEventListener('DOMContentLoaded'
   }
   function ignore(el){
     if(!el || !el.closest) return true;
+    /* Pages au cadenas serveur (verrou-ventes.js) : seules les ventes libres sont présentes, pas de flou. */
+    if(document.documentElement.classList.contains("mq-verrou-serveur")) return true;
     if(el.closest("#vp-in, .vp-in, .mq-paywall, .mq-paywall-veil, .mq-abo-fen, .mq-abo-fond")) return true;
     if(el.closest("a.btn-ebay, a.eb-sous, a.pc-btn, .mq-btns-grille")) return true;
     return false;

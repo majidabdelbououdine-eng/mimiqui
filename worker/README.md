@@ -49,3 +49,15 @@ Le prix Stripe live à réutiliser (déjà créé, ne pas en créer un second) :
 - Payment Link existant (à mettre à jour ou laisser de côté à la mise en ligne) : `plink_1Ub2OIRPA7ND4soIGfQlY589`
 
 Compte Stripe (lecture seule, 26 nov. 2026) : France, `charges_enabled` et `payouts_enabled` à oui, nom d’affichage « L’Art Récent — XXIe siècle », profil « MIMIQUI.FR ».
+
+## Cadenas des ventes terminées (fiches Pokémon et pages de sets)
+
+`GET /api/verrou?k=<clé>[,<clé>…][&carte=langues/<fr|ja|en>/<index>]` : sans abonnement, les 3 ventes les plus récentes (hors lots) de la page ou de la carte, et le nombre de ventes masquées ; avec abonnement, toutes les ventes. Réponses `Cache-Control: private, no-store`. En cas d’erreur, la page n’affiche aucune vente (fail-closed).
+
+- Clés KV : `verrou:f:<clé>` (toutes les ventes) et `verrou:l:<clé>` (3 libres + comptes). `<clé>` = `pkmn:<slug>` (data-<slug>-ventes.js), `page:<page>` (tableau `var C` d’une page de set), `set-de-base`, `ventes-30anniv`, `ventes-chaos`, `ventes-equilibre`, `ventes-nuit-noire`.
+- Les fichiers publics ne contiennent plus les ventes ; `verrou-ventes.js` les recharge via l’API puis lance le code d’origine de la page.
+- Sources complètes : commit `771b3b47` (historique Git) et copie privée hors dépôt sur la box (`/home/box/mimiqui-verrou-sources/`). **Ne jamais les remettre dans le dépôt** (GitHub Pages publie tout le dépôt).
+- Ajouter / mettre à jour des ventes : modifier la copie privée, puis
+  `node scripts/build-verrou.mjs --sources /home/box/mimiqui-verrou-sources` et
+  `npx wrangler kv bulk put data/verrou-bulk.json --binding VENTES --remote`.
+- Première mise en place (déjà faite dans la PR) : `node scripts/build-verrou.mjs --appliquer` sur des fichiers encore pleins. Le script refuse de tourner sur des fichiers déjà vidés.

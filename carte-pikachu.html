@@ -195,6 +195,7 @@ dl.chiffres dd small{display:block;font-size:.7rem;color:var(--muted);font-weigh
 <li><a href="blog.html">Blog</a></li>
 </ul>
 </nav></header>
+<script src="verrou-ventes.js?v=20261126v"></script>
 <main class="wrap" id="fiche">
   <p>Chargement de la fiche…</p>
 </main>
@@ -548,7 +549,19 @@ dl.chiffres dd small{display:block;font-size:.7rem;color:var(--muted);font-weigh
 
   var s = document.createElement("script");
   s.src = "data-" + pkmn + "-ventes.js";
-  s.onload = demarrer;
+  s.onload = function () {
+    /* Ventes terminées servies par /api/verrou (3 visibles sans abonnement). */
+    var data = lireDonnees(pkmn);
+    var liste = (data.langues && data.langues[lang]) || [];
+    var idx = -1;
+    for (var i = 0; i < liste.length; i++) { if (String(liste[i].id) === String(id)) { idx = i; break; } }
+    var cle = "pkmn:" + pkmn;
+    if (!window.MQV || !/^[a-z0-9-]+$/.test(pkmn)) { demarrer(); return; }
+    MQV.attendre([cle], function () {
+      MQV.injecter(cle, data);
+      demarrer();
+    }, { carte: idx >= 0 ? "langues/" + lang + "/" + idx : "", cibles: [{ dans: "#ventes" }] });
+  };
   s.onerror = function () {
     var main = document.getElementById("fiche");
     if (main) {
@@ -568,7 +581,7 @@ dl.chiffres dd small{display:block;font-size:.7rem;color:var(--muted);font-weigh
   <button type="button" id="cookie-ok">D’accord</button>
 </div>
 <script>(function(){var b=document.getElementById("cookie-info");if(!b)return;var k="coin-mimiqui-info-cookies",vu=false;try{vu=localStorage.getItem(k)==="1"}catch(e){}if(!vu)b.hidden=false;document.getElementById("cookie-ok").addEventListener("click",function(){b.hidden=true;try{localStorage.setItem(k,"1")}catch(e){}});})();</script>
-<script src="site-commun.js?v=20261126i" defer></script>
+<script src="site-commun.js?v=20261126v" defer></script>
 <p class="pied-legal">Site de fan non officiel &middot; <a href="mentions-legales.html#liens">Liens affiliés</a> &middot; <a href="mentions-legales.html">Mentions légales</a></p>
 
 </body></html>
