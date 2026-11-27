@@ -234,6 +234,8 @@ window.I18N_DICT_EN = {
   "Voir sur eBay": "See on eBay",
   "Estimer": "Estimate",
   "Combien vaut ma carte ?": "What’s my card worth?",
+  "Toutes les cartes des 1025 Pokémon": "All cards of the 1025 Pokémon",
+  "Cartes des 1025 Pokémon": "Cards of the 1025 Pokémon",
   "Site de fan non officiel": "Unofficial fan site",
   "Cookies": "Cookies",
   "En savoir plus": "Learn more",

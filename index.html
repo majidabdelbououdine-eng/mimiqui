@@ -542,10 +542,12 @@ body:has(#hero-accueil) #mini-teaser,
 @media (max-width:420px){
   #recherche-haut.ap-accueil{margin:8px 10px!important;padding:4px 0!important}
 }
+#recherche-haut .ap-titre-court{display:none}
+@media (max-width:480px){#recherche-haut .ap-titre-long{display:none}#recherche-haut .ap-titre-court{display:inline}}
 </style>
 <section class="ap-accueil" id="recherche-haut" aria-label="Recherche une carte dans l'archive des ventes">
   <div class="ap-cherche">
-    <h2>Combien vaut ma carte ?</h2>
+    <h2><span class="ap-titre-long">Toutes les cartes des 1025 Pokémon</span><span class="ap-titre-court">Cartes des 1025 Pokémon</span></h2>
     <p class="ap-desc">Recherche une carte par Pokémon dans l'archive des ventes pour voir son prix de vente sur tout le site</p>
     <form id="ap-form" action="archive-ventes.html" method="get" role="search">
       <label class="ap-sr" for="ap-q">Nom de la carte</label>
