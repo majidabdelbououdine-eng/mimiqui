@@ -434,7 +434,7 @@ header.wrap:has(nav ul.menu-principal>li:is(:hover,:focus-within,.ouvert)>a[href
 <li><a href="archive-ventes.html">Prix</a><button type="button" class="ouvre-sous" aria-expanded="false" aria-label="Sous-menu Prix">&#9662;</button>
 <ul class="sous-menu">
 <li><a href="top-ventes-semaine.html">Top ventes de la semaine</a></li>
-<li><a href="archive-ventes.html">Archive des ventes</a></li>
+<li><a class="nav-archive" href="archive-ventes.html">Archive des ventes</a></li>
 <li><a href="registre-pokemon.html">Registre des cartes passées</a></li>
 </ul></li>
 <li><a href="boutique.html">Acheter</a><button type="button" class="ouvre-sous" aria-expanded="false" aria-label="Sous-menu Acheter">&#9662;</button>
@@ -565,6 +565,51 @@ body:has(#hero-accueil) #mini-teaser,
     <a class="btn-pill rouge" href="conseils-ebay.html">Mes conseils</a>
     <a class="btn-pill rouge" href="sets-a-venir.html">Sets à venir</a>
   </div>
+</section>
+
+<style id="accueil-archive-style">
+.aa-bloc{position:relative;isolation:isolate;overflow:hidden;margin:.4rem auto 1rem;padding:1.3rem 1.4rem;border-radius:16px;color:#fff;
+background:radial-gradient(120% 140% at 0% 0%,#1a5fd0 0%,#0b3d91 45%,#072a66 100%);
+box-shadow:0 0 0 1px rgba(120,210,255,.55),0 0 22px rgba(40,160,255,.35),0 10px 24px rgba(7,42,102,.28);
+display:grid;grid-template-columns:minmax(0,1fr) auto;gap:1rem 1.4rem;align-items:center}
+.aa-bloc::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:.28;mix-blend-mode:screen;animation:aaShim 8s linear infinite;
+background:repeating-linear-gradient(115deg,rgba(255,0,140,.5) 0%,rgba(255,200,0,.45) 6%,rgba(0,255,170,.45) 12%,rgba(0,190,255,.5) 18%,rgba(170,80,255,.5) 24%,rgba(255,0,140,.5) 30%);background-size:300% 300%}
+@keyframes aaShim{0%{background-position:0% 0%}50%{background-position:100% 100%}100%{background-position:0% 0%}}
+.aa-texte{min-width:0}
+.aa-etiquette{margin:0 0 .25rem;font:800 .74rem/1.2 "Source Sans 3",Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:#9fdcff}
+#accueil-archive h2{margin:0 0 .35rem!important;font-family:var(--titre-font,"Bodoni Moda",Georgia,serif);font-weight:700;font-size:clamp(1.6rem,3.6vw,2.3rem)!important;line-height:1.15;color:#fff!important;-webkit-text-fill-color:#fff;text-shadow:0 0 12px rgba(140,220,255,.6)}
+.aa-chiffre{margin:0 0 .3rem;font:800 clamp(1.05rem,2.4vw,1.35rem)/1.25 "Source Sans 3",Arial,sans-serif;color:#fff;text-shadow:0 0 10px rgba(140,220,255,.75)}
+.aa-desc{margin:0 0 .9rem;color:#d6ecff;font-size:.98rem;max-width:52ch}
+.aa-btn{display:inline-block;background:#fff;color:#0b3d91!important;text-decoration:none;font:800 .95rem/1.2 "Source Sans 3",Arial,sans-serif;letter-spacing:.02em;padding:.7rem 1.3rem;border-radius:999px;box-shadow:0 0 14px rgba(150,225,255,.8)}
+.aa-btn:hover,.aa-btn:focus-visible{background:#e3f3ff;box-shadow:0 0 22px rgba(150,225,255,1)}
+.aa-cartes{display:flex;gap:.55rem;margin:0;padding:0;list-style:none}
+.aa-cartes a{display:block;border-radius:8px;box-shadow:0 0 0 1px rgba(160,220,255,.7),0 6px 14px rgba(0,0,0,.35);transition:transform .2s ease}
+.aa-cartes a:hover,.aa-cartes a:focus-visible{transform:translateY(-4px) rotate(-1deg)}
+.aa-cartes img{display:block;width:84px;height:117px;object-fit:cover;border-radius:8px;background:#0a3480}
+@media (max-width:760px){
+  .aa-bloc{grid-template-columns:minmax(0,1fr);padding:1.1rem 1rem;text-align:center;margin-left:10px!important;margin-right:10px!important}
+  .aa-desc{margin-left:auto;margin-right:auto}
+  .aa-cartes{justify-content:center;order:-1}
+  .aa-cartes img{width:64px;height:89px}
+}
+@media (prefers-reduced-motion:reduce){.aa-bloc::before{animation:none}.aa-cartes a{transition:none}}
+.sous-menu a.nav-archive{font-weight:800;color:#0b3d91}
+.sous-menu a.nav-archive::after{content:"60 000+";margin-left:.45em;padding:.1em .45em;border-radius:999px;background:#0b3d91;color:#fff;font-size:.7em;font-weight:800;vertical-align:middle}
+</style>
+<section class="aa-bloc wrap" id="accueil-archive" aria-labelledby="aa-titre">
+  <div class="aa-texte">
+    <p class="aa-etiquette">Ventes eBay réalisées</p>
+    <h2 id="aa-titre">Archive des ventes</h2>
+    <p class="aa-chiffre">Plus de 60 000 ventes Pokémon passées, avec photos</p>
+    <p class="aa-desc">Retrouvez les ventes eBay réalisées de vos cartes : recherche par Pokémon, filtres par set, langue et type.</p>
+    <a class="aa-btn" href="archive-ventes.html">Voir l’archive</a>
+  </div>
+  <ul class="aa-cartes" aria-label="Exemples de cartes de l'archive">
+    <li><a href="archive-ventes.html?q=Dracaufeu"><img src="https://assets.tcgdex.net/ja/SV/SV2a/201/low.webp" alt="Dracaufeu ex 201/165, 151" width="84" height="117" loading="lazy" decoding="async"></a></li>
+    <li><a href="archive-ventes.html?q=Pikachu"><img src="https://assets.tcgdex.net/ja/SV/SV8a/236/low.webp" alt="Pikachu ex 236/187, Évolutions Prismatiques" width="84" height="117" loading="lazy" decoding="async"></a></li>
+    <li><a href="archive-ventes.html?q=Mewtwo"><img src="https://assets.tcgdex.net/ja/SV/SV2a/183/low.webp" alt="Mewtwo 183/165, 151" width="84" height="117" loading="lazy" decoding="async"></a></li>
+    <li><a href="archive-ventes.html?q=%C3%89voli"><img src="https://assets.tcgdex.net/ja/SV/SV8a/223/low.webp" alt="Évoli ex 223/187, Évolutions Prismatiques" width="84" height="117" loading="lazy" decoding="async"></a></li>
+  </ul>
 </section>
 
 <section class="mq-semaine wrap" id="cette-semaine" aria-label="Cette semaine">
