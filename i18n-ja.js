@@ -234,6 +234,8 @@ window.I18N_DICT_JA = {
   "Voir sur eBay": "eBayで見る",
   "Estimer": "査定する",
   "Combien vaut ma carte ?": "このカードの価値は？",
+  "Toutes les cartes des 1025 Pokémon": "ポケモン1025種の全カード",
+  "Cartes des 1025 Pokémon": "ポケモン1025種のカード",
   "Site de fan non officiel": "非公式ファンサイト",
   "Cookies": "Cookie",
   "En savoir plus": "詳しく見る",
