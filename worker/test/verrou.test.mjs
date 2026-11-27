@@ -27,6 +27,13 @@ test("non abonné : 3 ventes et nombre masqué", async () => {
   assert.equal(j.abonne, false);
   assert.equal(j.cles["pkmn:test"].ajouts.length, 3);
   assert.equal(j.cles["pkmn:test"].masquees, 2);
+  for (const a of j.cles["pkmn:test"].ajouts) {
+    assert.equal(a[2].prix, null);
+    assert.equal(a[2].prix_masque, true);
+    assert.ok(a[2].date);
+  }
+  const brut = JSON.stringify(j);
+  assert.doesNotMatch(brut, /"prix":\d/);
 });
 test("non abonné, carte précise", async () => {
   const j = await (await handleVerrou(env, req("k=pkmn:test&carte=langues/fr/0"), null)).json();
@@ -38,6 +45,7 @@ test("abonné : toutes les ventes, sans cache", async () => {
   assert.match(r.headers.get("cache-control"), /no-store/);
   const j = await r.json();
   assert.equal(j.cles["pkmn:test"].ajouts.length, 5);
+  assert.equal(j.cles["pkmn:test"].ajouts[4][2].prix, 5);
 });
 test("clé invalide refusée", async () => {
   const r = await handleVerrou(env, req("k=../x"), null);

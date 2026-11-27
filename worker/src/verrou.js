@@ -4,12 +4,23 @@ import { json } from "./util.js";
  * GET /api/verrou?k=<clé>[,<clé>…][&carte=<langues/fr/12>]
  * Ventes terminées des fiches Pokémon et des pages de sets.
  * - abonné : toutes les ventes (texte KV renvoyé tel quel, sans re-parse) ;
- * - sinon : 3 ventes les plus récentes (de la page, ou de la carte demandée) + nombre masqué.
+ * - sinon : 3 ventes les plus récentes (de la page, ou de la carte demandée) SANS PRIX + nombre masqué.
  * Fail-closed : sans KV ou en cas d'erreur, aucune vente n'est renvoyée.
  */
 const CLE_OK = /^(?:pkmn|page):[a-z0-9-]{1,80}$|^(?:set-de-base|ventes-30anniv|ventes-chaos|ventes-equilibre|ventes-nuit-noire)$/;
 const PRIX = "2,99 € / semaine";
 const NO_STORE = { "cache-control": "private, no-store" };
+const CHAMPS_PRIX = ["p", "prix", "prix_eur", "price"];
+
+/** Ventes libres pour non-abonnés : mêmes champs, mais prix mis à null (aucun montant envoyé). */
+export function sansPrix(ajouts) {
+  return (ajouts || []).map((a) => {
+    const v = { ...(a[2] || {}) };
+    for (const k of CHAMPS_PRIX) if (k in v) v[k] = null;
+    v.prix_masque = true;
+    return [a[0], a[1], v];
+  });
+}
 
 export async function handleVerrou(env, request, session) {
   const u = new URL(request.url);
@@ -48,17 +59,17 @@ export async function handleVerrou(env, request, session) {
       out[c] = {
         total: val.total,
         total_carte: sous.total,
-        ajouts: sous.ajouts,
+        ajouts: sansPrix(sous.ajouts),
         masquees: Math.max(0, sous.total - sous.ajouts.length),
         masquees_page: Math.max(0, val.total - sous.ajouts.length),
       };
     } else {
       out[c] = {
         total: val.total,
-        ajouts: val.ajouts,
+        ajouts: sansPrix(val.ajouts),
         masquees: Math.max(0, val.total - val.ajouts.length),
       };
     }
   }
-  return json({ abonne: false, prix: PRIX, libres: 3, cles: out }, 200, NO_STORE);
+  return json({ abonne: false, prix: PRIX, libres: 3, prix_masques: true, cles: out }, 200, NO_STORE);
 }

@@ -236,7 +236,7 @@ a.btn{text-decoration:none;display:inline-block}
   <p class="mention">Le prix conseillé est une estimation : la cote Cardmarket date du relevé hebdomadaire de la page Cotation, et les ventes réelles viennent du registre de la rubrique Adjugé. Pour les cartes gradées, le prix dépend surtout de la note : regarde les ventes récentes. Pour les sets Équilibre Parfait et 30ᵉ Anniversaire, le prix conseillé vient uniquement des ventes eBay.fr de la semaine du 27 octobre au 3 novembre 2026 (hors frais de port) ; pour Chaos Ascendant, des ventes eBay.fr du 11 octobre au 3 novembre 2026 (hors frais de port) ; pour Nuit Noire, des ventes eBay.fr du 4 octobre au 4 novembre 2026 (hors frais de port) ; sans vente, aucun prix n'est proposé. Liens partenaires eBay.</p>
 </main>
 <footer class="wrap">Le Coin de Mimiqui · site de fan non officiel, sans lien avec Nintendo, Game Freak ou The Pokémon Company. · <a href="confidentialite.html">Cookies et vie privée</a></footer>
-<script src="verrou-ventes.js?v=20261126v"></script>
+<script src="verrou-ventes.js?v=20261127p"></script>
 <script>MQV.attendre(["ventes-30anniv","ventes-chaos","ventes-equilibre","ventes-nuit-noire"],function(){MQV.injecter("ventes-30anniv",window.VENTES_30A);MQV.injecter("ventes-chaos",window.VENTES_CHAOS);MQV.injecter("ventes-equilibre",window.VENTES_EQ);MQV.injecter("ventes-nuit-noire",window.VENTES_NUIT);
 (function () {
   "use strict";
@@ -413,7 +413,7 @@ var gr=/\b(PCA|PSA|CGC|BGS|CCC|CG ?Card|grad|not[ée]e)/i.test(v.titre||"");var 
     }).catch(function () {});
   }
 })();
-},{"cibles":[]});</script>
+},{"cibles":[],"libres":false});</script>
 <script>(function(){var h=document.querySelector("header.wrap, header.site");if(!h)return;function m(){document.documentElement.style.setProperty("--hh",h.offsetHeight+"px")}m();if(window.ResizeObserver)new ResizeObserver(m).observe(h);})();</script>
 <div class="cookie-info" id="cookie-info" hidden role="region" aria-label="Cookies">
   <p>Ce site ne dépose aucun cookie publicitaire. La fréquentation est mesurée avec Cloudflare Web Analytics, un outil sans cookie. Les liens eBay, Amazon et Instagram mènent vers des sites qui ont leurs propres cookies. <a href="confidentialite.html">En savoir plus</a></p>

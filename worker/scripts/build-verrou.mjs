@@ -28,7 +28,7 @@ const sources = path.resolve(opt("--sources", root));
 const outDir = path.resolve(opt("--out", path.join(__dirname, "../data")));
 const APPLIQUER = args.includes("--appliquer");
 const LIBRES = 3;
-const VERSION = "20261126v";
+const VERSION = "20261127p";
 const TAG = '<script src="verrou-ventes.js?v=' + VERSION + '"></script>';
 
 const PRIX = ["p", "prix", "prix_eur"];
